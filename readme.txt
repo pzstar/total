@@ -25,6 +25,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.31 - Feb 17, 2020 =
+* Demo Import Option removed to comply with latest Theme submission guideline.
+
 = 1.2.30 - Jan 2 2020 =
 * Christmad & New Year Deal Removed
 

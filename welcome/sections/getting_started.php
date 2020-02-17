@@ -31,7 +31,7 @@
 
     <div class="theme-image">
         <h3><?php echo esc_html__('Demo Import', 'total'); ?></h3>
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Total Plus Demo', 'total'); ?>">
+        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Total Plus Demo', 'total'); ?>">
 
         <div class="theme-import-demo">
             <?php
@@ -43,16 +43,16 @@
                 $total_import_class = 'button button-primary total-activate-plugin';
                 $total_import_button_text = esc_html__('Activate Importer Plugin', 'total');
             elseif ($this->total_check_installed_plugin($total_demo_importer_slug, $total_demo_importer_filename)) :
-                $total_import_class = '';
-                $total_import_button_text = esc_html__('Go to Importer Page >>', 'total');
+                $total_import_class = 'button button-primary';
+                $total_import_button_text = esc_html__('Go to Importer Page', 'total');
                 $total_import_url = admin_url('themes.php?page=pt-one-click-demo-import');
             else :
                 $total_import_class = 'button button-primary total-install-plugin';
                 $total_import_button_text = esc_html__('Install Importer Plugin', 'total');
             endif;
             ?>
-            <p><?php echo sprintf(esc_html__('Or you can import the demo with just one click. It is recommended to import the demo on a fresh WordPress install. Or you can reset the website using %s plugin.', 'total'), '<a target="_blank" href="https://wordpress.org/plugins/wordpress-reset/">WordPress Reset</a>'); ?></p>
-            <p><?php echo esc_html__('Click on the button below to install and activate demo importer plugin.', 'total'); ?></p>
+            <p><?php echo sprintf(esc_html__('Or you can import the demo with just one click. It is recommended to import the demo on a fresh WordPress install. Or you can reset the website using %s plugin.', 'total'), '<a target="_blank" href="' . admin_url('/plugin-install.php?s=wordpress+reset&tab=search&type=term') . '">WordPress Reset</a>'); ?></p>
+            <p><?php echo sprintf(esc_html__('Click on the button below to install and activate demo importer plugin. Find detail documentation on importing demo %s', 'total'), '<a href="https://hashthemes.com/documentation/total-documentation/#ImportDemoContent" target="_blank">' . esc_html__('here', 'total') . '.</a>'); ?></p>
             <a data-slug="<?php echo esc_attr($total_demo_importer_slug); ?>" data-filename="<?php echo esc_attr($total_demo_importer_filename); ?>" class="<?php echo esc_attr($total_import_class); ?>" href="<?php echo $total_import_url; ?>"><?php echo esc_html($total_import_button_text); ?></a>
         </div>
     </div>
