@@ -25,6 +25,11 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.32 - Feb 22, 2020 =
+* Blog Page header spacing issue fixed
+* Minor styles fixes
+* pot file updated
+
 = 1.2.31 - Feb 17, 2020 =
 * Demo Import Option removed to comply with latest Theme submission guideline.
 
