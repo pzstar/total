@@ -2,7 +2,6 @@
 /**
  * @package Total
  */
-
 add_action('widgets_init', 'total_register_personal_info');
 
 function total_register_personal_info() {
@@ -14,7 +13,7 @@ class Total_Personal_Info extends WP_Widget {
     public function __construct() {
         parent::__construct(
                 'total_personal_info', 'Total - Personal Info', array(
-                'description' => esc_html__('A widget to display Personal Information', 'total')
+            'description' => esc_html__('A widget to display Personal Information', 'total')
                 )
         );
     }
@@ -62,10 +61,10 @@ class Total_Personal_Info extends WP_Widget {
     public function widget($args, $instance) {
         extract($args);
 
-        $title = isset( $instance['title'] ) ? $instance['title'] : '' ;
-        $image = isset( $instance['image'] ) ? $instance['image'] : '' ;
-        $intro = isset( $instance['intro'] ) ? $instance['intro'] : '' ;
-        $name = isset( $instance['name'] ) ? $instance['name'] : '' ;
+        $title = isset($instance['title']) ? $instance['title'] : '';
+        $image = isset($instance['image']) ? $instance['image'] : '';
+        $intro = isset($instance['intro']) ? $instance['intro'] : '';
+        $name = isset($instance['name']) ? $instance['name'] : '';
 
 
         echo $before_widget;  // WPCS: XSS OK.
@@ -77,18 +76,22 @@ class Total_Personal_Info extends WP_Widget {
             endif;
 
             if (!empty($image)):
-            $image_id = attachment_url_to_postid($image);
-            $image_src = wp_get_attachment_image_src($image_id, 'thumbnail');
-
-            echo '<div class="ht-pi-image"><img src="'.esc_url($image_src[0]).'"/></div>';
+                $image_id = attachment_url_to_postid($image);
+                if ($image_id) {
+                    $image_array = wp_get_attachment_image_src($image_id, 'thumbnail');
+                    $image_url = $image_array[0];
+                } else {
+                    $image_url = $image;
+                }
+                echo '<div class="ht-pi-image"><img src="' . esc_url($image_url) . '"/></div>';
             endif;
 
             if (!empty($name)):
-            echo '<h5 class="ht-pi-name"><span>'.esc_html($name).'</span></h5>';
+                echo '<h5 class="ht-pi-name"><span>' . esc_html($name) . '</span></h5>';
             endif;
 
             if (!empty($intro)):
-            echo '<div class="ht-pi-intro">'.wp_kses_post($intro).'</div>';
+                echo '<div class="ht-pi-intro">' . wp_kses_post($intro) . '</div>';
             endif;
             ?>
         </div>
