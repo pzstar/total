@@ -30,8 +30,8 @@
     </div>
 
     <div class="theme-image">
-        <h3><?php echo esc_html__('Demo Importer', 'total'); ?></h3>
-        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Total Plus Demo', 'total'); ?>">
+        <h3><?php echo esc_html__('Demo Importer', 'total'); ?><a href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>" target="_blank" class="button button-primary"><?php esc_html_e('View Demo', 'total'); ?></a></h3>
+        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Total Demo', 'total'); ?>">
 
         <div class="theme-import-demo">
             <?php
@@ -52,7 +52,7 @@
             endif;
             ?>
             <p><?php esc_html_e('Or you can get started by importing the demo with just one click.', 'total'); ?></p>
-            <p><?php echo sprintf(esc_html__('Click on the button below to install and activate HashThemes Demo Importer plugin. Check our documentation on importing demo %s', 'total'), '<a href="https://hashthemes.com/documentation/total-documentation/#ImportDemoContent" target="_blank">' . esc_html__('here', 'total') . '.</a>'); ?></p>
+            <p><?php echo sprintf(esc_html__('Click on the button below to install and activate HashThemes Demo Importer plugin. For more detail documentation on how the demo importer works, click %s.', 'total'), '<a href="https://hashthemes.com/documentation/total-documentation/#ImportDemoContent" target="_blank">' . esc_html__('here', 'total') . '</a>'); ?></p>
             <a data-slug="<?php echo esc_attr($total_demo_importer_slug); ?>" data-filename="<?php echo esc_attr($total_demo_importer_filename); ?>" class="<?php echo esc_attr($total_import_class); ?>" href="<?php echo $total_import_url; ?>"><?php echo esc_html($total_import_button_text); ?></a>
         </div>
     </div>

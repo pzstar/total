@@ -83,6 +83,13 @@ function total_customize_register($wp_customize) {
         'pro_text' => esc_html__('View', 'total'),
         'pro_url' => 'https://hashthemes.com/documentation/total-documentation/'
     )));
+    
+    $wp_customize->add_section(new Total_Customize_Section_Pro($wp_customize, 'total-demo-import-section', array(
+        'title' => esc_html__('Import Demo Content', 'total'),
+        'priority' => 1001,
+        'pro_text' => esc_html__('Import', 'total'),
+        'pro_url' => admin_url('/themes.php?page=total-welcome')
+    )));
 
     /* ============GENERAL SETTINGS PANEL============ */
     $wp_customize->add_panel('total_general_settings_panel', array(
@@ -1217,52 +1224,6 @@ function total_customize_register($wp_customize) {
         'settings' => 'total_pro_features',
         'section' => 'total_pro_feature_section',
         'description' => $total_pro_features
-    )));
-
-    /* ============IMPORTANT LINKS============ */
-    $wp_customize->add_section('total_implink_section', array(
-        'title' => esc_html__('Important Links', 'total'),
-        'priority' => 10001
-    ));
-
-    $wp_customize->add_setting('total_imp_links', array(
-        'sanitize_callback' => 'total_sanitize_text'
-    ));
-
-    $wp_customize->add_control(new Total_Info_Text($wp_customize, 'total_imp_links', array(
-        'settings' => 'total_imp_links',
-        'section' => 'total_implink_section',
-        'description' => '<a class="ht-implink" href="https://demo.hashthemes.com/total/" target="_blank">' . esc_html__('Live Demo', 'total') . '</a><a class="ht-implink" href="https://hashthemes.com/support/" target="_blank">' . esc_html__('Support Forum', 'total') . '</a><a class="ht-implink" href="https://www.facebook.com/hashtheme/" target="_blank">' . esc_html__('Like Us in Facebook', 'total') . '</a>',
-    )));
-
-    $wp_customize->add_setting('total_rate_us', array(
-        'sanitize_callback' => 'total_sanitize_text'
-    ));
-
-    $wp_customize->add_control(new Total_Info_Text($wp_customize, 'total_rate_us', array(
-        'settings' => 'total_rate_us',
-        'section' => 'total_implink_section',
-        'description' => sprintf(
-                /* translators: Rating Link */
-                wp_kses_post(__('Please do rate our theme if you liked it %s', 'total')), '<a class="ht-implink" href="https://wordpress.org/support/theme/total/reviews/?filter=5" target="_blank">Rate/Review</a>'
-        ),
-    )));
-
-    $wp_customize->add_setting('total_setup_instruction', array(
-        'sanitize_callback' => 'total_sanitize_text'
-    ));
-
-    $wp_customize->add_control(new Total_Info_Text($wp_customize, 'total_setup_instruction', array(
-        'settings' => 'total_setup_instruction',
-        'section' => 'total_implink_section',
-        'description' => wP_kses_post(__('<strong>Instruction - Setting up Home Page</strong><br/>1. Create a new 
-					page (any title, like Home )<br/>
-2. In right column: Page Attributes -> Template: Home Page<br/>
-3. Click on Publish<br/>
-4. Go to Appearance-> Customize -> General settings -> Static Front Page<br/>
-5. Select - A static page<br/>
-6. In Front Page, select the page that you created in the step 1<br/>
-7. Save changes', 'total'))
     )));
 }
 

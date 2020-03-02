@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Total 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com\n"
-"POT-Creation-Date: 2020-02-21 18:58+0000\n"
+"POT-Creation-Date: 2020-03-02 10:55+0000\n"
 "POT-Revision-Date: Wed Jul 20 2016 15:08:32 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -128,7 +128,7 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:73 inc/widgets/widget-personal-info.php:46
+#: comments.php:73 inc/widgets/widget-personal-info.php:45
 msgid "Name"
 msgstr ""
 
@@ -385,391 +385,365 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:88
+msgid "Import Demo Content"
+msgstr ""
+
+#: inc/customizer.php:90
+msgid "Import"
+msgstr ""
+
+#: inc/customizer.php:96
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:95
+#: inc/customizer.php:102
 msgid "Static Front Page"
 msgstr ""
 
-#: inc/customizer.php:97
+#: inc/customizer.php:104
 msgid "Your theme supports a static front page."
 msgstr ""
 
-#: inc/customizer.php:102
+#: inc/customizer.php:109
 msgid "Site Logo/Title/Tagline"
 msgstr ""
 
-#: inc/customizer.php:108 inc/customizer.php:1200
+#: inc/customizer.php:115 inc/customizer.php:1207
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer.php:114
+#: inc/customizer.php:121
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer.php:127
+#: inc/customizer.php:134
 msgid "Theme Primary Color "
 msgstr ""
 
-#: inc/customizer.php:132
+#: inc/customizer.php:139
 msgid "Header Settings"
 msgstr ""
 
-#: inc/customizer.php:145
+#: inc/customizer.php:152
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:154
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer.php:148
+#: inc/customizer.php:155
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:160
 msgid "Home Sections"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:162
 msgid "Drag and Drop to Reorder"
 msgstr ""
 
-#: inc/customizer.php:160
+#: inc/customizer.php:167
 msgid "Home Slider"
 msgstr ""
 
-#: inc/customizer.php:175
+#: inc/customizer.php:182
 msgid "Slider "
 msgstr ""
 
-#: inc/customizer.php:186 inc/customizer.php:233 inc/customizer.php:394
-#: inc/customizer.php:568 inc/customizer.php:681
+#: inc/customizer.php:193 inc/customizer.php:240 inc/customizer.php:401
+#: inc/customizer.php:575 inc/customizer.php:688
 msgid "Select a Page"
 msgstr ""
 
-#: inc/customizer.php:197
+#: inc/customizer.php:204
 msgid "Note:"
 msgstr ""
 
-#: inc/customizer.php:198
+#: inc/customizer.php:205
 msgid ""
 "The Page featured image works as a slider banner and the title & content "
 "work as a slider caption. <br/> Recommended Image Size: 1900X600"
 msgstr ""
 
-#: inc/customizer.php:203
+#: inc/customizer.php:210
 msgid "About Us Section"
 msgstr ""
 
-#: inc/customizer.php:217 inc/customizer.php:333 inc/customizer.php:426
-#: inc/customizer.php:505 inc/customizer.php:620 inc/customizer.php:764
-#: inc/customizer.php:887 inc/customizer.php:967 inc/customizer.php:1048
-#: inc/customizer.php:1116
+#: inc/customizer.php:224 inc/customizer.php:340 inc/customizer.php:433
+#: inc/customizer.php:512 inc/customizer.php:627 inc/customizer.php:771
+#: inc/customizer.php:894 inc/customizer.php:974 inc/customizer.php:1055
+#: inc/customizer.php:1123
 msgid "Disable Section"
 msgstr ""
 
-#: inc/customizer.php:219 inc/customizer.php:335 inc/customizer.php:428
-#: inc/customizer.php:507 inc/customizer.php:622 inc/customizer.php:766
-#: inc/customizer.php:889 inc/customizer.php:969 inc/customizer.php:1050
-#: inc/customizer.php:1118
+#: inc/customizer.php:226 inc/customizer.php:342 inc/customizer.php:435
+#: inc/customizer.php:514 inc/customizer.php:629 inc/customizer.php:773
+#: inc/customizer.php:896 inc/customizer.php:976 inc/customizer.php:1057
+#: inc/customizer.php:1125
 msgid "Yes"
 msgstr ""
 
-#: inc/customizer.php:220 inc/customizer.php:336 inc/customizer.php:429
-#: inc/customizer.php:508 inc/customizer.php:623 inc/customizer.php:767
-#: inc/customizer.php:890 inc/customizer.php:970 inc/customizer.php:1051
-#: inc/customizer.php:1119
+#: inc/customizer.php:227 inc/customizer.php:343 inc/customizer.php:436
+#: inc/customizer.php:515 inc/customizer.php:630 inc/customizer.php:774
+#: inc/customizer.php:897 inc/customizer.php:977 inc/customizer.php:1058
+#: inc/customizer.php:1126
 msgid "No"
 msgstr ""
 
-#: inc/customizer.php:244
+#: inc/customizer.php:251
 msgid "Progress Bar "
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:261
 msgid "Check to Disable"
 msgstr ""
 
-#: inc/customizer.php:262
+#: inc/customizer.php:269
 #, php-format
 msgid "Progress Bar %d"
 msgstr ""
 
-#: inc/customizer.php:269 inc/customizer.php:359 inc/customizer.php:452
-#: inc/customizer.php:531 inc/customizer.php:646 inc/customizer.php:786
-#: inc/customizer.php:844 inc/customizer.php:913 inc/customizer.php:993
-#: inc/customizer.php:1074 inc/customizer.php:1132
-#: inc/widgets/widget-personal-info.php:30
+#: inc/customizer.php:276 inc/customizer.php:366 inc/customizer.php:459
+#: inc/customizer.php:538 inc/customizer.php:653 inc/customizer.php:793
+#: inc/customizer.php:851 inc/customizer.php:920 inc/customizer.php:1000
+#: inc/customizer.php:1081 inc/customizer.php:1139
+#: inc/widgets/widget-personal-info.php:29
 #: inc/widgets/widget-contact-info.php:30 inc/widgets/widget-latest-post.php:26
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:280
+#: inc/customizer.php:287
 msgid "Percentage"
 msgstr ""
 
-#: inc/customizer.php:291
+#: inc/customizer.php:298
 msgid "Right Image"
 msgstr ""
 
-#: inc/customizer.php:301
+#: inc/customizer.php:308
 msgid "Recommended Image Size: 500X600px"
 msgstr ""
 
-#: inc/customizer.php:313
+#: inc/customizer.php:320
 msgid "Replace Image by widget"
 msgstr ""
 
-#: inc/customizer.php:320 inc/customizer.php:352
+#: inc/customizer.php:327 inc/customizer.php:359
 msgid "Featured Section"
 msgstr ""
 
-#: inc/customizer.php:347 inc/customizer.php:440 inc/customizer.php:519
-#: inc/customizer.php:634 inc/customizer.php:774 inc/customizer.php:901
-#: inc/customizer.php:981 inc/customizer.php:1062
+#: inc/customizer.php:354 inc/customizer.php:447 inc/customizer.php:526
+#: inc/customizer.php:641 inc/customizer.php:781 inc/customizer.php:908
+#: inc/customizer.php:988 inc/customizer.php:1069
 msgid "Section Title & Sub Title"
 msgstr ""
 
-#: inc/customizer.php:364
+#: inc/customizer.php:371
 msgid "Featured Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:371 inc/customizer.php:464 inc/customizer.php:543
-#: inc/customizer.php:658 inc/customizer.php:798 inc/customizer.php:925
-#: inc/customizer.php:1005 inc/customizer.php:1086 inc/customizer.php:1144
+#: inc/customizer.php:378 inc/customizer.php:471 inc/customizer.php:550
+#: inc/customizer.php:665 inc/customizer.php:805 inc/customizer.php:932
+#: inc/customizer.php:1012 inc/customizer.php:1093 inc/customizer.php:1151
 msgid "Sub Title"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:390
 msgid "Featured Page "
 msgstr ""
 
-#: inc/customizer.php:406 inc/customizer.php:580
+#: inc/customizer.php:413 inc/customizer.php:587
 msgid "FontAwesome Icon"
 msgstr ""
 
-#: inc/customizer.php:412 inc/customizer.php:445
+#: inc/customizer.php:419 inc/customizer.php:452
 msgid "Portfolio Section"
 msgstr ""
 
-#: inc/customizer.php:457
+#: inc/customizer.php:464
 msgid "Portfolio Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:475
+#: inc/customizer.php:482
 msgid "Portfolio Category"
 msgstr ""
 
-#: inc/customizer.php:483
+#: inc/customizer.php:490
 msgid "Select Category"
 msgstr ""
 
-#: inc/customizer.php:491 inc/customizer.php:524 inc/customizer.php:536
+#: inc/customizer.php:498 inc/customizer.php:531 inc/customizer.php:543
 msgid "Service Section"
 msgstr ""
 
-#: inc/customizer.php:556
+#: inc/customizer.php:563
 msgid "Service Page "
 msgstr ""
 
-#: inc/customizer.php:590
+#: inc/customizer.php:597
 msgid "Left Image"
 msgstr ""
 
-#: inc/customizer.php:601
+#: inc/customizer.php:608
 msgid "Recommended Image Size: 770X650px"
 msgstr ""
 
-#: inc/customizer.php:606 inc/customizer.php:639
+#: inc/customizer.php:613 inc/customizer.php:646
 msgid "Team Section"
 msgstr ""
 
-#: inc/customizer.php:651
+#: inc/customizer.php:658
 msgid "Team Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:670
+#: inc/customizer.php:677
 msgid "Team Member "
 msgstr ""
 
-#: inc/customizer.php:692
+#: inc/customizer.php:699
 msgid "Team Member Designation"
 msgstr ""
 
-#: inc/customizer.php:704
+#: inc/customizer.php:711
 msgid "Facebook Url"
 msgstr ""
 
-#: inc/customizer.php:716
+#: inc/customizer.php:723
 msgid "Twitter Url"
 msgstr ""
 
-#: inc/customizer.php:728
+#: inc/customizer.php:735
 msgid "Google Plus Url"
 msgstr ""
 
-#: inc/customizer.php:740
+#: inc/customizer.php:747
 msgid "Linkedin Url"
 msgstr ""
 
-#: inc/customizer.php:746 inc/customizer.php:779
+#: inc/customizer.php:753 inc/customizer.php:786
 msgid "Counter Section"
 msgstr ""
 
-#: inc/customizer.php:791
+#: inc/customizer.php:798
 msgid "Counter Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:808
+#: inc/customizer.php:815
 msgid "Section Background"
 msgstr ""
 
-#: inc/customizer.php:817
+#: inc/customizer.php:824
 msgid "Upload Image"
 msgstr ""
 
-#: inc/customizer.php:820
+#: inc/customizer.php:827
 msgid "Recommended Image Size: 1800X400px"
 msgstr ""
 
-#: inc/customizer.php:833
+#: inc/customizer.php:840
 msgid "Counter"
 msgstr ""
 
-#: inc/customizer.php:855
+#: inc/customizer.php:862
 msgid "Counter Value"
 msgstr ""
 
-#: inc/customizer.php:867
+#: inc/customizer.php:874
 msgid "Counter Icon"
 msgstr ""
 
-#: inc/customizer.php:873 inc/customizer.php:906
+#: inc/customizer.php:880 inc/customizer.php:913
 msgid "Testimonial Section"
 msgstr ""
 
-#: inc/customizer.php:918
+#: inc/customizer.php:925
 msgid "Testimonial Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:936
+#: inc/customizer.php:943
 msgid "Testimonial"
 msgstr ""
 
-#: inc/customizer.php:947
+#: inc/customizer.php:954
 msgid "Select the Pages"
 msgstr ""
 
-#: inc/customizer.php:948
+#: inc/customizer.php:955
 msgid "Select Some Pages"
 msgstr ""
 
-#: inc/customizer.php:953 inc/customizer.php:986
+#: inc/customizer.php:960 inc/customizer.php:993
 msgid "Blog Section"
 msgstr ""
 
-#: inc/customizer.php:998
+#: inc/customizer.php:1005
 msgid "Blog Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:1017
+#: inc/customizer.php:1024
 msgid "Number of Posts to show"
 msgstr ""
 
-#: inc/customizer.php:1026
+#: inc/customizer.php:1033
 msgid "Exclude Category from Blog Posts"
 msgstr ""
 
-#: inc/customizer.php:1034
+#: inc/customizer.php:1041
 msgid "Clients Logo Section"
 msgstr ""
 
-#: inc/customizer.php:1067
+#: inc/customizer.php:1074
 msgid "Client Logo Section"
 msgstr ""
 
-#: inc/customizer.php:1079
+#: inc/customizer.php:1086
 msgid "Clients Logo Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:1097
+#: inc/customizer.php:1104
 msgid "Upload Clients Logos"
 msgstr ""
 
-#: inc/customizer.php:1102 inc/customizer.php:1125
+#: inc/customizer.php:1109 inc/customizer.php:1132
 msgid "Call To Action Section"
 msgstr ""
 
-#: inc/customizer.php:1137
+#: inc/customizer.php:1144
 msgid "Call To Action Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:1155
+#: inc/customizer.php:1162
 msgid "Button 1 Text"
 msgstr ""
 
-#: inc/customizer.php:1167
+#: inc/customizer.php:1174
 msgid "Button 1 Link"
 msgstr ""
 
-#: inc/customizer.php:1179
+#: inc/customizer.php:1186
 msgid "Button 2 Text"
 msgstr ""
 
-#: inc/customizer.php:1191
+#: inc/customizer.php:1198
 msgid "Button 2 Link"
 msgstr ""
 
-#: inc/customizer.php:1203
+#: inc/customizer.php:1210
 msgid "Recommended Image Size: 1800X800px"
 msgstr ""
 
-#: inc/customizer.php:1208
+#: inc/customizer.php:1215
 msgid "Pro Theme Features"
 msgstr ""
 
-#: inc/customizer.php:1224
-msgid "Important Links"
-msgstr ""
-
-#: inc/customizer.php:1235
-msgid "Live Demo"
-msgstr ""
-
-#: inc/customizer.php:1235
-msgid "Support Forum"
-msgstr ""
-
-#: inc/customizer.php:1235
-msgid "Like Us in Facebook"
-msgstr ""
-
-#: inc/customizer.php:1247
-#, php-format
-msgid "Please do rate our theme if you liked it %s"
-msgstr ""
-
-#: inc/customizer.php:1258
-msgid ""
-"<strong>Instruction - Setting up Home Page</strong><br/>1. Create a new \n"
-"\t\t\t\t\tpage (any title, like Home )<br/>\n"
-"2. In right column: Page Attributes -> Template: Home Page<br/>\n"
-"3. Click on Publish<br/>\n"
-"4. Go to Appearance-> Customize -> General settings -> Static Front Page<br/>"
-"\n"
-"5. Select - A static page<br/>\n"
-"6. In Front Page, select the page that you created in the step 1<br/>\n"
-"7. Save changes"
-msgstr ""
-
-#: inc/customizer.php:1405
+#: inc/customizer.php:1366
 msgid "Add/Edit Gallery"
 msgstr ""
 
-#: inc/customizer.php:1406
+#: inc/customizer.php:1367
 msgid "Clear"
 msgstr ""
 
@@ -892,15 +866,15 @@ msgid "Unlock all the possibitlies with Total Plus."
 msgstr ""
 
 #: welcome/welcome.php:136
-msgid "Installing Importer Plugin"
+msgid "Installing Demo Importer Plugin"
 msgstr ""
 
 #: welcome/welcome.php:137
-msgid "Activating Importer Plugin"
+msgid "Activating Demo Importer Plugin"
 msgstr ""
 
 #: welcome/welcome.php:138 welcome/sections/getting_started.php:47
-msgid "Go to Importer Page"
+msgid "Go to Demo Importer Page"
 msgstr ""
 
 #: welcome/welcome.php:140
@@ -958,15 +932,15 @@ msgstr ""
 msgid "Home Page"
 msgstr ""
 
-#: inc/widgets/widget-personal-info.php:17
+#: inc/widgets/widget-personal-info.php:16
 msgid "A widget to display Personal Information"
 msgstr ""
 
-#: inc/widgets/widget-personal-info.php:35
+#: inc/widgets/widget-personal-info.php:34
 msgid "Image"
 msgstr ""
 
-#: inc/widgets/widget-personal-info.php:40
+#: inc/widgets/widget-personal-info.php:39
 msgid "Short Intro"
 msgstr ""
 
@@ -1119,39 +1093,35 @@ msgid "Go to Customizer Panels"
 msgstr ""
 
 #: welcome/sections/getting_started.php:33
-msgid "Demo Import"
+msgid "Demo Importer"
+msgstr ""
+
+#: welcome/sections/getting_started.php:33
+msgid "View Demo"
 msgstr ""
 
 #: welcome/sections/getting_started.php:34
-#: welcome/sections/getting_started.php:68
-#: welcome/sections/getting_started.php:81
-#: welcome/sections/getting_started.php:94
-#: welcome/sections/getting_started.php:107
-#: welcome/sections/getting_started.php:120
-msgid "Total Plus Demo"
+msgid "Total Demo"
 msgstr ""
 
 #: welcome/sections/getting_started.php:44
-msgid "Activate Importer Plugin"
+msgid "Activate Demo Importer Plugin"
 msgstr ""
 
 #: welcome/sections/getting_started.php:51
-msgid "Install Importer Plugin"
+msgid "Install Demo Importer Plugin"
 msgstr ""
 
 #: welcome/sections/getting_started.php:54
-#, php-format
-msgid ""
-"Or you can import the demo with just one click. It is recommended to import "
-"the demo on a fresh WordPress install. Or you can reset the website using %s "
-"plugin."
+msgid "Or you can get started by importing the demo with just one click."
 msgstr ""
 
 #: welcome/sections/getting_started.php:55
 #, php-format
 msgid ""
-"Click on the button below to install and activate demo importer plugin. Find "
-"detail documentation on importing demo %s"
+"Click on the button below to install and activate HashThemes Demo Importer "
+"plugin. For more detail documentation on how the demo importer works, click "
+"%s."
 msgstr ""
 
 #: welcome/sections/getting_started.php:55
@@ -1169,6 +1139,14 @@ msgid ""
 "Check out the websites that you can create with the premium version of the "
 "Total Theme. These demos can be imported with just one click in the premium "
 "version."
+msgstr ""
+
+#: welcome/sections/getting_started.php:68
+#: welcome/sections/getting_started.php:81
+#: welcome/sections/getting_started.php:94
+#: welcome/sections/getting_started.php:107
+#: welcome/sections/getting_started.php:120
+msgid "Total Plus Demo"
 msgstr ""
 
 #: welcome/sections/getting_started.php:74

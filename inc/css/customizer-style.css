@@ -259,16 +259,16 @@
     content: "\f116";
 }
 
-#accordion-panel-widgets .accordion-section-title:before{
-    content: "\f116";
-}
-
 #accordion-section-custom_css .accordion-section-title:before{
     content: "\f499";
 }
 
 #accordion-section-total-doc-section .accordion-section-title:before{
     content: "\f105";
+}
+
+#accordion-section-total-demo-import-section .accordion-section-title:before{
+    content: "\f316";
 }
 
 #customize-controls .control-section-pro-section .accordion-section-title:hover,
@@ -291,7 +291,8 @@
     padding: 0px 25px 1px;
 }
 
-#accordion-section-total-doc-section .accordion-section-title .button {
+#accordion-section-total-doc-section .accordion-section-title .button,
+#accordion-section-total-demo-import-section .accordion-section-title .button{
     float: right;
     margin-top: -2px;
 }
