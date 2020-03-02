@@ -410,3 +410,53 @@ function total_remove_itemprop() {
     );
     return $html;
 }
+
+function total_premium_demo_config($demos){
+    $premium_demos = array(
+    'total' => array(
+        'slug' => 'total',
+        'name' => 'Total',
+        'type' => 'pro',
+        'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+        'image' => 'https://hashthemes.com/import-files/total-plus/screen/total.jpg',
+        'preview_url' => 'https://demo.hashthemes.com/total-plus/total/',
+    ),
+    'main-demo' => array(
+        'slug' => 'main-demo',
+        'name' => 'Main Demo',
+        'type' => 'pro',
+        'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+        'image' => 'https://hashthemes.com/import-files/total-plus/screen/main-demo.jpg',
+        'preview_url' => 'https://demo.hashthemes.com/total-plus/main/'
+    ),
+    'creative-agency' => array(
+        'slug' => 'creative-agency',
+        'name' => 'Creative Agency',
+        'type' => 'pro',
+        'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+        'image' => 'https://hashthemes.com/import-files/total-plus/screen/creative-agency.jpg',
+        'preview_url' => 'https://demo.hashthemes.com/total-plus/creative-agency'
+    ),
+    'one-page' => array(
+        'slug' => 'one-page',
+        'name' => 'One Page',
+        'type' => 'pro',
+        'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+        'image' => 'https://hashthemes.com/import-files/total-plus/screen/one-page.jpg',
+        'preview_url' => 'https://demo.hashthemes.com/total-plus/one-page'
+    ),
+    'construction' => array(
+        'slug' => 'construction',
+        'name' => 'Construction',
+        'type' => 'pro',
+        'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+        'image' => 'https://hashthemes.com/import-files/total-plus/screen/construction.jpg',
+        'preview_url' => 'https://demo.hashthemes.com/total-plus/construction'
+    ));
+    
+    $demos = array_merge($demos, $premium_demos);
+    
+    return $demos;
+}
+
+add_action( 'hdi_import_files', 'total_premium_demo_config');
