@@ -25,6 +25,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.35 - March 16, 2020 =
+* Unused file removed
+* Isotope and Owl carousel updated to latest version
+
 = 1.2.34 - March 6, 2020 =
 * pot file updated
 * Other minor fixes

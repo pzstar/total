@@ -261,7 +261,6 @@ function total_scripts() {
     wp_enqueue_script('nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.js', array('jquery'), '1.00', true);
     wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), '1.00', true);
     wp_enqueue_script('jquery-stellar', get_template_directory_uri() . '/js/jquery.stellar.js', array('imagesloaded'), '1.00', false);
-    wp_enqueue_script('wow', get_template_directory_uri() . '/js/wow.js', array('jquery'), '1.00', true);
     wp_enqueue_script('odometer', get_template_directory_uri() . '/js/odometer.js', array('jquery'), '1.00', true);
     wp_enqueue_script('waypoint', get_template_directory_uri() . '/js/waypoint.js', array('jquery'), '1.00', true);
     wp_enqueue_script('total-custom', get_template_directory_uri() . '/js/total-custom.js', array('jquery'), '1.01', true);
