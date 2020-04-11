@@ -14,7 +14,9 @@
 
         <?php wp_head(); ?>
     </head>
+
     <body <?php body_class(); ?>>
+        <?php wp_body_open(); ?>
         <div id="ht-page">
             <header id="ht-masthead" class="ht-site-header">
                 <div class="ht-container ht-clearfix">

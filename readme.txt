@@ -25,6 +25,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.36 - April 10, 2020 =
+* Addition of new wp_body_open hook
+
 = 1.2.35 - March 16, 2020 =
 * Unused file removed
 * Isotope and Owl carousel updated to latest version

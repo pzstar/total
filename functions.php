@@ -293,6 +293,14 @@ function total_admin_scripts() {
 
 add_action('admin_enqueue_scripts', 'total_admin_scripts');
 
+if (!function_exists('wp_body_open')) {
+
+    function wp_body_open() {
+        do_action('wp_body_open');
+    }
+
+}
+
 /**
  * Breadcrumb
  */

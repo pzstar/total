@@ -30,6 +30,11 @@ if (!class_exists('Total_Welcome')) :
 
             /** List of Recommended Free Plugins * */
             $this->free_plugins = array(
+                'simple-floating-menu' => array(
+                    'name' => 'Simple Floating Menu',
+                    'slug' => 'simple-floating-menu',
+                    'filename' => 'simple-floating-menu'
+                ),
                 'wpforms-lite' => array(
                     'name' => 'Contact Form by WPForms',
                     'slug' => 'wpforms-lite',

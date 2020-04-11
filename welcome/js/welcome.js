@@ -46,9 +46,9 @@ jQuery(function ($) {
             url: ajaxurl,
             type: 'POST',
             data: {
-                'action': 'total_activate_plugin',
-                'slug': $button.data('slug'),
-                'file': $button.data('filename')
+                action: 'total_activate_plugin',
+                slug: $button.data('slug'),
+                file: $button.data('filename')
             },
         }).done(function (result) {
             var result = JSON.parse(result)
