@@ -19,6 +19,7 @@ if (!class_exists('Total_Welcome')) :
             $theme = wp_get_theme();
             $this->theme_name = $theme->Name;
             $this->theme_version = $theme->Version;
+            $this->theme_desc = $theme->Description;
 
             /** Define Tabs Sections * */
             $this->tab_sections = array(
@@ -58,6 +59,8 @@ if (!class_exists('Total_Welcome')) :
             /* Theme Activation Notice */
             add_action('admin_notices', array($this, 'total_activation_admin_notice'));
 
+            add_filter('admin_footer_text', array($this, 'total_admin_footer_text'));
+
             /* Create a Welcome Page */
             add_action('admin_menu', array($this, 'total_welcome_register_menu'));
 
@@ -74,7 +77,7 @@ if (!class_exists('Total_Welcome')) :
             if (is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated']))) {
                 ?>
                 <div class="notice notice-success is-dismissible"> 
-                    <p><?php echo esc_html__('Welcome! Thank you for choosing Total. Please make sure you visit Settings Page to get started with Total theme.', 'total'); ?></p>
+                    <p><?php echo sprintf(esc_html__('Welcome! Thank you for choosing %1$s. Please make sure you visit Settings Page to get started with %1$s theme.', 'total'), $this->theme_name, $this->theme_name); ?></p>
                     <p><a class="button button-primary" href="<?php echo admin_url('/themes.php?page=total-welcome') ?>"><?php echo esc_html__('Let\'s Get Started', 'total'); ?></a></p>
                 </div>
                 <?php
@@ -83,7 +86,7 @@ if (!class_exists('Total_Welcome')) :
 
         /** Register Menu for Welcome Page * */
         public function total_welcome_register_menu() {
-            add_theme_page(esc_html__('Welcome', 'total'), esc_html__('Total Settings', 'total'), 'edit_theme_options', 'total-welcome', array($this, 'total_welcome_screen'));
+            add_theme_page(esc_html__('Welcome', 'total'), sprintf(esc_html__('%s Settings', 'total'), $this->theme_name), 'edit_theme_options', 'total-welcome', array($this, 'total_welcome_screen'));
         }
 
         /** Welcome Page * */
@@ -98,13 +101,13 @@ if (!class_exists('Total_Welcome')) :
                                     /* translators: 1-theme name, 2-theme version */
                                     esc_html__('Welcome to %1$s - Version %2$s', 'total'), $this->theme_name, $this->theme_version);
                             ?></h1>
-                        <div class="about-text"><?php echo esc_html__('Total as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce and all other major plugins.', 'total'); ?></div>
+                        <div class="about-text"><?php echo $this->theme_desc; ?></div>
                     </div>
 
                     <div class="promo-banner-wrap">
                         <p><?php esc_html_e('Upgrade for $55', 'total'); ?></p>
-                        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade Now', 'total'); ?></a>
-                        <a class="promo-offer-text" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibitlies with Total Plus.', 'total'); ?></a>
+                        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade Now', 'total'); ?></a>
+                        <a class="promo-offer-text" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibitlies with Total Plus.', 'total'); ?></a>
                     </div>
                 </div>
 
@@ -144,11 +147,11 @@ if (!class_exists('Total_Welcome')) :
                     'importer_url' => admin_url('themes.php?page=hdi-demo-importer'),
                     'error' => esc_html__('Error! Reload the page and try again.', 'total'),
                 );
-                wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome.css');
+                wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), TOTAL_VERSION);
                 wp_enqueue_style('plugin-install');
                 wp_enqueue_script('plugin-install');
                 wp_enqueue_script('updates');
-                wp_enqueue_script('total-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array(), '1.0');
+                wp_enqueue_script('total-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array(), TOTAL_VERSION);
                 wp_localize_script('total-welcome', 'importer_params', $importer_params);
             }
         }
@@ -167,14 +170,10 @@ if (!class_exists('Total_Welcome')) :
         public function total_plugin_generate_url($status, $slug, $file_name) {
             switch ($status) {
                 case 'install':
-                    return wp_nonce_url(
-                            add_query_arg(
-                                    array(
+                    return wp_nonce_url(add_query_arg(array(
                         'action' => 'install-plugin',
                         'plugin' => esc_attr($slug)
-                                    ), network_admin_url('update.php')
-                            ), 'install-plugin_' . esc_attr($slug)
-                    );
+                                    ), network_admin_url('update.php')), 'install-plugin_' . esc_attr($slug));
                     break;
 
                 case 'inactive':
@@ -213,6 +212,38 @@ if (!class_exists('Total_Welcome')) :
             }
             echo wp_json_encode(array('success' => $success));
             die();
+        }
+
+        public function total_admin_footer_text($text) {
+            $screen = get_current_screen();
+
+            if ('appearance_page_total-welcome' == $screen->id) {
+                $text = sprintf(esc_html__('Please leave us a %s rating if you like our theme . A huge thank you from HashThemes in advance!', 'total'), '<a href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>');
+            }
+
+            return $text;
+        }
+
+        public function total_plugin_thumb($plugin_slug = '') {
+            if (!empty($plugin_slug)) {
+                $image_url = "";
+                $image_types = array('icon.svg', 'icon-256x256.png', 'icon-256x256.jpg', 'icon-128x128.png', 'icon-128x128.jpg');
+
+                foreach ($image_types as $image_type) {
+                    $image_url = 'https://ps.w.org/' . $plugin_slug . '/assets/' . $image_type;
+                    if ($this->total_img_exist($image_url)) {
+                        return $image_url;
+                    }
+                }
+            }
+        }
+
+        public function total_img_exist($url = NULL) {
+            if (!$url)
+                return FALSE;
+
+            $headers = get_headers($url);
+            return stripos($headers[0], "200 OK") ? TRUE : FALSE;
         }
 
     }

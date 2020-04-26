@@ -1,11 +1,9 @@
 === Total ===
-
-Contributors: HashThemes
-Tags: two-columns, right-sidebar, custom-background, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, portfolio, photography, holiday, custom-logo
-
-Requires at least: 4.0
-Tested up to: 4.6.0
-Stable tag: 1.0.8
+Contributors: hashthemes
+Requires at least: 5.0
+Tested up to: 5.4
+Stable tag: 1.0.0
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +23,16 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.38 - April 26, 2020 =
+* Themesniffer error fixed
+
+= 1.2.38 - April 25, 2020 =
+* Styling issue fixed
+
+= 1.2.37 - April 24, 2020 =
+* Skip Content and Keyboard navigation fixed
+* Pot file updated
+
 = 1.2.36 - April 10, 2020 =
 * Addition of new wp_body_open hook
 

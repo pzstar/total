@@ -5,6 +5,10 @@
  *
  * @package total
  */
+if (!defined('TOTAL_VERSION')) {
+    define('TOTAL_VERSION', '1.2.38');
+}
+
 if (!function_exists('total_setup')) :
 
     /**
@@ -255,23 +259,23 @@ endif;
  * Enqueue scripts and styles.
  */
 function total_scripts() {
-    wp_enqueue_script('jquery-nav', get_template_directory_uri() . '/js/jquery.nav.js', array('jquery'), '1.00', true);
-    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.00', true);
-    wp_enqueue_script('isotope-pkgd', get_template_directory_uri() . '/js/isotope.pkgd.js', array('jquery', 'imagesloaded'), '1.00', true);
-    wp_enqueue_script('nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.js', array('jquery'), '1.00', true);
-    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), '1.00', true);
-    wp_enqueue_script('jquery-stellar', get_template_directory_uri() . '/js/jquery.stellar.js', array('imagesloaded'), '1.00', false);
-    wp_enqueue_script('odometer', get_template_directory_uri() . '/js/odometer.js', array('jquery'), '1.00', true);
-    wp_enqueue_script('waypoint', get_template_directory_uri() . '/js/waypoint.js', array('jquery'), '1.00', true);
-    wp_enqueue_script('total-custom', get_template_directory_uri() . '/js/total-custom.js', array('jquery'), '1.01', true);
+    wp_enqueue_script('jquery-nav', get_template_directory_uri() . '/js/jquery.nav.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('isotope-pkgd', get_template_directory_uri() . '/js/isotope.pkgd.js', array('jquery', 'imagesloaded'), TOTAL_VERSION, true);
+    wp_enqueue_script('nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('jquery-stellar', get_template_directory_uri() . '/js/jquery.stellar.js', array('imagesloaded'), TOTAL_VERSION, false);
+    wp_enqueue_script('odometer', get_template_directory_uri() . '/js/odometer.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('waypoint', get_template_directory_uri() . '/js/waypoint.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('total-custom', get_template_directory_uri() . '/js/total-custom.js', array('jquery'), TOTAL_VERSION, true);
     wp_localize_script('total-custom', 'total_localize', array('template_path' => get_template_directory_uri()));
 
-    wp_enqueue_style('total-style', get_stylesheet_uri(), array('animate', 'font-awesome', 'owl-carousel', 'nivo-lightbox'), '1.0');
-    wp_enqueue_style('total-fonts', total_fonts_url(), array(), null);
-    wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0');
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), '4.4.0');
-    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.3.3');
-    wp_enqueue_style('nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css', array(), '1.3.3');
+    wp_enqueue_style('total-style', get_stylesheet_uri(), array('animate', 'font-awesome', 'owl-carousel', 'nivo-lightbox'), TOTAL_VERSION);
+    wp_enqueue_style('total-fonts', total_fonts_url(), array(), NULL);
+    wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css', array(), TOTAL_VERSION);
     wp_add_inline_style('total-style', total_dymanic_styles());
 
 
@@ -286,9 +290,9 @@ add_action('wp_enqueue_scripts', 'total_scripts');
  * Enqueue admin style
  */
 function total_admin_scripts() {
-    wp_enqueue_style('total-admin-style', get_template_directory_uri() . '/inc/css/admin-style.css', array(), '1.0');
+    wp_enqueue_style('total-admin-style', get_template_directory_uri() . '/inc/css/admin-style.css', array(), TOTAL_VERSION);
     wp_enqueue_media();
-    wp_enqueue_script('total-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), '1.00', true);
+    wp_enqueue_script('total-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), TOTAL_VERSION, true);
 }
 
 add_action('admin_enqueue_scripts', 'total_admin_scripts');

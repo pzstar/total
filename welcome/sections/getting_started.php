@@ -60,7 +60,7 @@
 
 <div class="getting-started-bottom-wrap">
     <h3><?php echo esc_html__('Total Plus Demos - Check the premium demos. You might be interested in purchasing premium version.', 'total'); ?></h3>
-    <p><?php echo esc_html__('Check out the websites that you can create with the premium version of the Total Theme. These demos can be imported with just one click in the premium version.', 'total'); ?></p>
+    <p><?php echo sprintf(esc_html__('Check out the websites that you can create with the premium version of the %s Theme. These demos can be imported with just one click in the premium version.', 'total'), $this->theme_name); ?></p>
 
     <div class="recomended-plugin-wrap clearfix">
         <div class="recom-plugin-wrap">
@@ -134,9 +134,9 @@
 <div class="upgrade-box">
     <div class="upgrade-box-text">
         <h3><?php echo esc_html__('Upgrade To Premium Version (7 Day Money Back Guarantee)', 'total'); ?></h3>
-        <p><?php echo esc_html__('With Total Theme you can create a beautiful website. But if you want to unlock more possibilites then upgrade to premium version.', 'total'); ?></p>
+        <p><?php echo sprintf(esc_html__('With %s Theme you can create a beautiful website. But if you want to unlock more possibilites then upgrade to premium version.', 'total'), $this->theme_name); ?></p>
         <p><?php echo esc_html__('Try the Premium version and check if it fits to your need or not. If not, we have 7 day money back guarantee.', 'total'); ?></p>
     </div>
 
-    <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/total-plus/" target="_blank"><?php esc_html_e('Upgrade Now', 'total'); ?></a>
+    <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-getting-started&utm_campaign=total-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'total'); ?></a>
 </div>

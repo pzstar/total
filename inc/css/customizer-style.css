@@ -271,6 +271,18 @@
     content: "\f316";
 }
 
+#customize-control-total_pro_features .description ul{
+    list-style: disc;
+    font-style: normal;
+    background: #FFF;
+    padding: 20px 20px 20px 30px;
+    font-size: 14px;
+}
+
+#customize-control-total_pro_features .description ul li{
+    margin-bottom: 8px;
+}
+
 #customize-controls .control-section-pro-section .accordion-section-title:hover,
 #customize-controls .control-section-pro-section .accordion-section-title:focus {
     background-color: #fff;
@@ -302,15 +314,53 @@
     margin-right: 8px;
 }
 
-#customize-control-total_pro_features .description ul{
-    list-style: disc;
-    font-style: normal;
-    background: #FFF;
-    padding: 20px 20px 20px 30px;
-    font-size: 14px;
+.customize-control-total-upgrade-text{
+    background: #FFFFFF;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-#customize-control-total_pro_features .description ul li{
+.customize-control-total-upgrade-text label{
+    padding: 0 0 0 26px;
+    display: block;
+}
+
+.customize-control-total-upgrade-text .dashicons{
+    float: left;
+    margin-left: -26px;
+}
+
+.customize-control-total-upgrade-text ul{
+    margin: 8px 0 0 16px;
+    font-style: italic;
+}
+
+.customize-control-total-upgrade-text ul li{
+    margin-bottom: 3px;
+    padding-left: 8px;
+    line-height: 1.3;
+}
+
+.customize-control-total-upgrade-text ul li:before{
+    content: '- ';
+    margin-left: -8px;
+}
+
+.control-section-total-upgrade-section{
+    background: #FFF;
+    padding: 20px;
+    margin: 15px;
+}
+
+.control-section-total-upgrade-section .button{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.control-section-total-upgrade-section label{
+    display: block;
+    font-weight: bold;
     margin-bottom: 8px;
 }
 

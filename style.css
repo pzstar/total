@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/total/
 Author: Hash Themes
 Author URI: https://hashthemes.com
 Description: Total as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The home page consist of slider, featured section with icon, about us section with progress bar, portfolio section with masonary layout, team section, testimonial section, counter section, blog section with option to add 3, 6 or 9 blog posts, clients logo carousel slider and call to action section. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce - an ecommerce plugin and all other major plugins. The theme can also be used with all major page builder plugins like Elementor, SiteOrigin, WpBakery VisualComposer and Beaver Builder. The theme provides option to import the demo with just one click. DEMO: https://demo.hashthemes.com/total/
-Version: 1.2.36
+Version: 1.2.39
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: total
@@ -64,7 +64,6 @@ a {
 
 a:active,
 a:hover {
-    outline: 0;
 }
 
 abbr[title] {
@@ -443,7 +442,6 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-    outline: 0;
 }
 
 input[type="text"],
@@ -474,14 +472,11 @@ select {
     border: 1px solid #EEE;
     height: 40px;
     padding: 3px 40px 3px 8px;
-    background-color: transparent;
     line-height: 100%;
-    outline: 0;
-    background-image: url("images/arrow.png");
-    background-position: right center;
-    background-repeat: no-repeat;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' width='10px' height='10' fill='%23666666' viewBox='0 0 284.929 284.929' style='enable-background:new 0 0 284.929 284.929;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441 L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082 c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647 c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z'/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E") no-repeat right 10px top 55%;
     position: relative;
     cursor: pointer;
+    border-radius: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -502,7 +497,6 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-    outline: 0;
 }
 
 input[type="text"],
@@ -549,12 +543,10 @@ a:hover{
 }
 
 a:focus {
-    outline: 0;
 }
 
 a:hover,
 a:active {
-    outline: 0;
 }
 
 
@@ -563,11 +555,17 @@ a:active {
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
+    border: 0;
     clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
+    clip-path: inset(50%);
     height: 1px;
-    width: 1px;
+    margin: -1px;
     overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
 .screen-reader-text:focus {
@@ -575,19 +573,26 @@ a:active {
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
+    clip-path: none;
     color: #21759b;
     display: block;
     font-size: 14px;
     font-size: 0.875rem;
     font-weight: bold;
     height: auto;
-    left: 5px;
+    right: 5px;
     line-height: normal;
     padding: 15px 23px 14px;
     text-decoration: none;
     top: 5px;
     width: auto;
-    z-index: 100000; /* Above WP toolbar. */
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+    outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -652,6 +657,10 @@ a:active {
 /* Search widget. */
 .widget_search .search-submit {
     display: none;
+}
+
+.widget-area select{
+    width: 100%;
 }
 
 
@@ -790,9 +799,25 @@ a:active {
     font-family: 'Oswald', sans-serif;
 }
 
-.single .ht-post-info{
-    margin-right: 30px;
-    margin-bottom: 20px;
+.single-entry-meta{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+}
+
+.single-entry-meta .entry-date:before{
+    content: "\f073";
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+
+.single-entry-meta .entry-date span{
+    margin-right: 5px;
+}
+
+.single-entry-meta a{
+    color: inherit;
 }
 
 .ht-post-info .entry-date{
@@ -1459,19 +1484,19 @@ object {
     float: right;
 }
 
-.ht-main-navigation ul {
+.ht-main-navigation .ht-menu ul {
     list-style: none;
     margin: 0;
     padding-left: 0;
 }
 
-.ht-main-navigation li {
+.ht-main-navigation .ht-menu li {
     float: left;
     position: relative;
     margin-left: 10px;
 }
 
-.ht-main-navigation a {
+.ht-main-navigation .ht-menu a {
     position: relative;
     display: block;
     text-decoration: none;
@@ -1487,7 +1512,7 @@ object {
     -webkit-transition: none;
 }
 
-.ht-main-navigation ul ul {
+.ht-main-navigation .ht-menu ul ul {
     display: none;
     position: absolute;
     left: 0;
@@ -1501,7 +1526,7 @@ object {
     box-shadow: 2px 2px 8px rgba(0,0,0,0.05)
 }
 
-.ht-sticky .ht-main-navigation ul ul{
+.ht-sticky .ht-main-navigation .ht-menu ul ul{
     margin-top: 17px;
 }
 
@@ -1510,18 +1535,18 @@ object {
     right: 0;
 }
 
-.ht-main-navigation ul ul ul {
+.ht-main-navigation .ht-menu ul ul ul {
     left: 100%;
     top: 0;
     margin: 0 0 0 8px;
     border-top: 0;
 }
 
-.ht-sticky .ht-main-navigation ul ul ul{
+.ht-sticky .ht-main-navigation .ht-menu ul ul ul{
     margin-top: 0
 }
 
-.ht-main-navigation ul ul a {
+.ht-main-navigation .ht-menu ul ul a {
     text-transform: none;
     font-weight: 400;
     color: #444;
@@ -1530,37 +1555,37 @@ object {
     font-size: 14px;
 }
 
-.ht-main-navigation ul ul li {
+.ht-main-navigation .ht-menu ul ul li {
     float: none;
     margin: 0 0 5px;
 }
 
-.ht-main-navigation ul ul li:last-child{
+.ht-main-navigation .ht-menu ul ul li:last-child{
     margin-bottom: 0;
 }
 
-.ht-main-navigation ul li:hover > ul {
+.ht-main-navigation .ht-menu ul li:hover > ul {
     display: block;
 }
 
-.page-template-home-template .ht-main-navigation .current_page_item > a,
-.page-template-home-template .ht-main-navigation .current-menu-item > a,
-.page-template-home-template .ht-main-navigation .current_page_ancestor > a,
-.home.blog .ht-main-navigation .current_page_item > a,
-.home.blog .ht-main-navigation .current-menu-item > a,
-.home.blog .ht-main-navigation .current_page_ancestor > a{
+.page-template-home-template .ht-main-navigation .ht-menu .current_page_item > a,
+.page-template-home-template .ht-main-navigation .ht-menu .current-menu-item > a,
+.page-template-home-template .ht-main-navigation .ht-menu .current_page_ancestor > a,
+.home.blog .ht-main-navigation .ht-menu .current_page_item > a,
+.home.blog .ht-main-navigation .ht-menu .current-menu-item > a,
+.home.blog .ht-main-navigation .ht-menu .current_page_ancestor > a{
     background: none;
     color: inherit;
 }
 
-.ht-main-navigation li:hover > a,
-.page-template-home-template .ht-main-navigation li:hover > a,
-.home.blog .ht-main-navigation li:hover > a,
-.ht-main-navigation .current_page_item > a,
-.ht-main-navigation .current-menu-item > a,
-.ht-main-navigation .current_page_ancestor > a,
-.page-template-home-template .ht-main-navigation .current > a,
-.home.blog .ht-main-navigation .current > a {
+.ht-main-navigation .ht-menu li:hover > a,
+.page-template-home-template .ht-main-navigation .ht-menu li:hover > a,
+.home.blog .ht-main-navigation .ht-menu li:hover > a,
+.ht-main-navigation .ht-menu .current_page_item > a,
+.ht-main-navigation .ht-menu .current-menu-item > a,
+.ht-main-navigation .ht-menu .current_page_ancestor > a,
+.page-template-home-template .ht-main-navigation .ht-menu .current > a,
+.home.blog .ht-main-navigation .ht-menu .current > a {
     color: #FFF;
     background: #FFC107;
 }
@@ -1569,6 +1594,11 @@ object {
 .menu-item-has-children .ht-dropdown{
     position: relative;
     right: -5px;
+    padding: 0;
+    background: none;
+    color: inherit;
+    transition: none;
+    height: auto;
 }
 
 .menu-item-has-children .ht-dropdown:after {
@@ -2353,7 +2383,7 @@ object {
     padding: 60px 0 80px;
 }
 
-.ht-testimonial-wrap .owl-item img{
+.ht-testimonial-wrap .owl-carousel .owl-item img{
     height: 100px;
     width: 100px;
     margin: 0 auto 20px;
@@ -3289,8 +3319,8 @@ object {
     .toggle-bar span{
         position: absolute;
         top: 50%;
-        margin-top: -2px;
-        height: 4px;
+        margin-top: -1px;
+        height: 2px;
         left: 8px;
         right: 8px;
         background: #FFF;
@@ -3303,10 +3333,6 @@ object {
 
     .ht-sticky#ht-masthead{
         height: 94px;	
-    }
-
-    #ht-site-navigation{
-        width: 20%;
     }
 
     #ht-site-branding{
@@ -3322,7 +3348,7 @@ object {
         padding-top: 0;
     }
 
-    .ht-main-navigation .ht-menu{
+    #ht-site-navigation{
         display: none;
         position: absolute;
         left: 0;
@@ -3330,39 +3356,46 @@ object {
         top: 90px;
         background: #FFC107;
         z-index: 999;
+        width: 100%;
+        padding: 0;
+        float: none;
     }
 
-    .ht-main-navigation li{
+    .ht-main-navigation .ht-menu{
+        float: none;
+    }
+
+    .ht-main-navigation .ht-menu li{
         float: none;
         margin-left: 0;
         text-align: center;
     }
 
-    .ht-main-navigation a,
-    .ht-main-navigation ul ul a{
+    .ht-main-navigation .ht-menu a,
+    .ht-main-navigation .ht-menu ul ul a{
         line-height: 1.3;
         padding: 15px 20px;
         border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
-    .page-template-home-template .ht-main-navigation .current_page_item > a,
-    .page-template-home-template .ht-main-navigation .current-menu-item > a,
-    .page-template-home-template .ht-main-navigation .current_page_ancestor > a,
-    .home.blog .ht-main-navigation .current_page_item > a,
-    .home.blog .ht-main-navigation .current-menu-item > a,
-    .home.blog .ht-main-navigation .current_page_ancestor > a,
-    .ht-main-navigation a{
+    .page-template-home-template .ht-main-navigation .ht-menu .current_page_item > a,
+    .page-template-home-template .ht-main-navigation .ht-menu .current-menu-item > a,
+    .page-template-home-template .ht-main-navigation .ht-menu .current_page_ancestor > a,
+    .home.blog .ht-main-navigation .ht-menu .current_page_item > a,
+    .home.blog .ht-main-navigation .ht-menu .current-menu-item > a,
+    .home.blog .ht-main-navigation .ht-menu .current_page_ancestor > a,
+    .ht-main-navigation .ht-menu a{
         color: #FFF;
     }
 
-    .ht-main-navigation ul ul{
+    .ht-main-navigation .ht-menu ul ul{
         position: static;
         padding: 0;
         margin-top: 0;
         box-shadow: none;
     }
 
-    .ht-main-navigation ul ul ul{
+    .ht-main-navigation .ht-menu ul ul ul{
         margin: 0;
     }
 
@@ -3377,7 +3410,6 @@ object {
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
-        border-radius: 4px;
     }
 
     .menu-item-has-children .ht-dropdown:after,
@@ -3394,15 +3426,15 @@ object {
         content: '\f106';
     }
 
-    .ht-main-navigation ul li:hover > ul{
+    .ht-main-navigation .ht-menu ul li:hover > ul{
         display: none;
     }
 
-    .ht-main-navigation ul ul{
+    .ht-main-navigation .ht-menu ul ul{
         background: none;
     }
 
-    .ht-main-navigation ul ul a{
+    .ht-main-navigation .ht-menu ul ul a{
         color: #FFF;
     }
 
@@ -3424,6 +3456,12 @@ object {
     .ht-section-title,
     .ht-section-tagline{
         width: auto;
+    }
+
+    #ht-home-slider-section img {
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
     }
 
     #ht-about-us-section .ht-container{
@@ -3525,7 +3563,7 @@ object {
 
     .ht-slide-cap-title{
         font-size: 24px;
-        font-size: 4vw;
+        font-size: 5vw;
         margin-bottom: 10px;
     }
 
@@ -3548,9 +3586,20 @@ object {
 }
 
 @media screen and (max-width: 580px){
-    #ht-home-slider-section .bx-wrapper .bx-controls-direction a,
-    .ht-testimonial-wrap .bx-wrapper .bx-controls-direction a{
+    #ht-home-slider-section .owl-carousel .owl-nav .owl-prev, 
+    #ht-home-slider-section .owl-carousel .owl-nav .owl-next{
         display: none;
+    }
+
+    #ht-home-slider-section img {
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .ht-slide-cap-desc{
+        font-size: 14px;
+        font-size: 4vw;
     }
 
     .ht-team-member-wrap{
@@ -3644,6 +3693,27 @@ object {
         float: none;
         width: auto;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .ht-post-info .entry-date span.ht-day{
+        font-size: 1em;
+    }
+
+    .ht-post-info .entry-date span{
+        display: inline;
+        margin-left: 6px;
+    }
+
+    .ht-post-info .entry-date{
+        margin-bottom: 0;
+    }
+
+    .ht-post-info a{
+        padding-top: 0;
+        border: 0;
     }
 
     .ht-post-wrapper{
@@ -3652,7 +3722,11 @@ object {
 }
 
 @media screen and (min-width: 1001px){
-    .ht-main-navigation .ht-menu{
+    .ht-main-navigation{
         display: block !important;
+    }
+
+    .menu-item-has-children .ht-dropdown{
+        pointer-events: none;
     }
 }

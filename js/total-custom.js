@@ -37,7 +37,7 @@ jQuery(function ($) {
         nav: true,
         dots: false,
         autoplayTimeout: 7000,
-        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
     });
 
     $(".ht_client_logo_slider").owlCarousel({
@@ -80,7 +80,7 @@ jQuery(function ($) {
         }
     }).resize();
 
-    $('.menu-item-has-children > a').append('<span class="ht-dropdown"></span>');
+    $('.menu-item-has-children > a').append('<button class="ht-dropdown"></button>');
 
     $('.ht-dropdown').on('click', function () {
         $(this).parent('a').next('ul').slideToggle();
@@ -99,7 +99,9 @@ jQuery(function ($) {
     });
 
     $('.toggle-bar').click(function () {
-        $(this).next('.ht-menu').slideToggle();
+        $(this).next('.ht-main-navigation').slideToggle();
+        totalKeyboardLoop($('.ht-main-navigation'));
+        return false;
     });
 
     setTimeout(function () {
@@ -260,6 +262,40 @@ jQuery(function ($) {
         }
 
     }
+    
+    var totalKeyboardLoop = function (elem) {
+
+        var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
+
+        var firstTabbable = tabbable.first();
+        var lastTabbable = tabbable.last();
+        /*set focus on first input*/
+        firstTabbable.focus();
+
+        /*redirect last tab to first input*/
+        lastTabbable.on('keydown', function (e) {
+            if ((e.which === 9 && !e.shiftKey)) {
+                e.preventDefault();
+                firstTabbable.focus();
+            }
+        });
+
+        /*redirect first shift+tab to last input*/
+        firstTabbable.on('keydown', function (e) {
+            if ((e.which === 9 && e.shiftKey)) {
+                e.preventDefault();
+                lastTabbable.focus();
+            }
+        });
+
+        /* allow escape key to close insiders div */
+        elem.on('keyup', function (e) {
+            if (e.keyCode === 27) {
+                elem.hide();
+            }
+            ;
+        });
+    };
 
 });
 

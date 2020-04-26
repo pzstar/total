@@ -133,7 +133,7 @@ jQuery(document).ready(function ($) {
         axis: 'y',
         helper: 'clone',
         cursor: 'move',
-        items: '> li.control-section:not(#accordion-section-total_slider_section)',
+        items: '> li.control-section:not(#accordion-section-total_slider_section):not(#accordion-section-total-upgrade-section)',
         delay: 150,
         update: function (event, ui) {
             $('#sub-accordion-panel-total_home_panel').find('.total-drag-spinner').show();
@@ -146,7 +146,18 @@ jQuery(document).ready(function ($) {
 // Extends our custom section.
 (function (api) {
 
-    api.sectionConstructor['pro-section'] = api.Section.extend({
+    api.sectionConstructor['total-pro-section'] = api.Section.extend({
+
+        // No events for this type of section.
+        attachEvents: function () {},
+
+        // Always make the section active.
+        isContextuallyActive: function () {
+            return true;
+        }
+    });
+
+    api.sectionConstructor['total-upgrade-section'] = api.Section.extend({
 
         // No events for this type of section.
         attachEvents: function () {},

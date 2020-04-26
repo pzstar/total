@@ -18,6 +18,7 @@
     <body <?php body_class(); ?>>
         <?php wp_body_open(); ?>
         <div id="ht-page">
+            <a class="skip-link screen-reader-text" href="#ht-content"><?php esc_html_e('Skip to content', 'total'); ?></a>
             <header id="ht-masthead" class="ht-site-header">
                 <div class="ht-container ht-clearfix">
                     <div id="ht-site-branding">
@@ -34,9 +35,9 @@
                             <p class="ht-site-description"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('description'); ?></a></p>
                         <?php endif; ?>
                     </div><!-- .site-branding -->
-
+                    
+                    <a href="#" class="toggle-bar"><span></span></a>
                     <nav id="ht-site-navigation" class="ht-main-navigation">
-                        <div class="toggle-bar"><span></span></div>
                         <?php
                         wp_nav_menu(array(
                             'theme_location' => 'primary',

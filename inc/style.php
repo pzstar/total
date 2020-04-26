@@ -18,14 +18,14 @@ h3.comments-title:after,
 .nav-previous a,
 .nav-next a,
 .pagination .page-numbers,
-.ht-main-navigation li:hover > a,
-.page-template-home-template .ht-main-navigation li:hover > a,
-.home.blog .ht-main-navigation li:hover > a,
-.ht-main-navigation .current_page_item > a,
-.ht-main-navigation .current-menu-item > a,
-.ht-main-navigation .current_page_ancestor > a,
-.page-template-home-template .ht-main-navigation .current > a,
-.home.blog .ht-main-navigation .current > a,
+.ht-main-navigation .ht-menu li:hover > a,
+.page-template-home-template .ht-main-navigation .ht-menu li:hover > a,
+.home.blog .ht-main-navigation .ht-menu li:hover > a,
+.ht-main-navigation .ht-menu .current_page_item > a,
+.ht-main-navigation .ht-menu .current-menu-item > a,
+.ht-main-navigation .ht-menu .current_page_ancestor > a,
+.page-template-home-template .ht-main-navigation .ht-menu .current > a,
+.home.blog .ht-main-navigation .ht-menu .current > a,
 .ht-slide-cap-title span,
 .ht-progress-bar-length,
 #ht-featured-post-section,
@@ -123,10 +123,10 @@ a:hover,
 	color:{$color};
 }
 
-.ht-main-navigation ul ul,
+.ht-main-navigation .ht-menu ul ul,
 .ht-featured-link a,
 .ht-counter,
-.ht-testimonial-wrap .owl-item img,
+.ht-testimonial-wrap .owl-carousel .owl-item img,
 .ht-blog-post,
 #ht-colophon,
 .woocommerce ul.products li.product:hover, 
@@ -205,7 +205,7 @@ border-right-color: {$color};
 
 @media screen and (max-width: 1000px){
 .toggle-bar,
-.ht-main-navigation .ht-menu{
+#ht-site-navigation{
 	background:{$color}
 }
 }

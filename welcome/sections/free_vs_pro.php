@@ -22,7 +22,7 @@
             <p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'total'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/total-plus/"><?php esc_html_e('Buy Now ($55 only)', 'total'); ?></a>
+            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-freevspro&utm_campaign=total-upgrade"><?php esc_html_e('Buy Now ($55 only)', 'total'); ?></a>
         </td>
     </tr>
     <tr>
@@ -288,7 +288,7 @@
             <p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'total'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/total-plus/"><?php esc_html_e('Buy Now ($55 only)', 'total'); ?></a>
+            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-freevspro&utm_campaign=total-upgrade"><?php esc_html_e('Buy Now ($55 only)', 'total'); ?></a>
         </td>
     </tr>
 </table>

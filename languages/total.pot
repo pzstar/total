@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Total 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com\n"
-"POT-Creation-Date: 2020-03-02 10:55+0000\n"
+"POT-Creation-Date: 2020-04-24 17:54+0000\n"
 "POT-Revision-Date: Wed Jul 20 2016 15:08:32 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -24,67 +24,67 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: functions.php:51
+#: functions.php:55
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:128
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:126 functions.php:136
+#: functions.php:130 functions.php:140
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: functions.php:134
+#: functions.php:138
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:148
 msgid "Shop Sidebar"
 msgstr ""
 
-#: functions.php:146
+#: functions.php:150
 msgid "Add widgets here to appear in your sidebar of shop page."
 msgstr ""
 
-#: functions.php:154
+#: functions.php:158
 msgid "Footer One"
 msgstr ""
 
-#: functions.php:156 functions.php:166 functions.php:176 functions.php:186
+#: functions.php:160 functions.php:170 functions.php:180 functions.php:190
 msgid "Add widgets here to appear in your Footer."
 msgstr ""
 
-#: functions.php:164
+#: functions.php:168
 msgid "Footer Two"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:178
 msgid "Footer Three"
 msgstr ""
 
-#: functions.php:184
+#: functions.php:188
 msgid "Footer Four"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: functions.php:214
+#: functions.php:218
 msgctxt "Pontano Sans font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not supported
 #. by Inconsolata, translate this to 'off'. Do not translate into your own language.
-#: functions.php:222
+#: functions.php:226
 msgctxt "Oswald font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: To add an additional character subset specific to your language,
 #. translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-#: functions.php:230
+#: functions.php:234
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
@@ -152,6 +152,10 @@ msgstr ""
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: header.php:21
+msgid "Skip to content"
 msgstr ""
 
 #: footer.php:57
@@ -250,501 +254,761 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: inc/customizer.php:18
+#: inc/customizer.php:20
 msgid "-- Don't Replace --"
 msgstr ""
 
-#: inc/customizer.php:40
+#: inc/customizer.php:42
 msgid "One click demo import"
 msgstr ""
 
-#: inc/customizer.php:41
+#: inc/customizer.php:43
 msgid "18 Front page sections with lots of variations"
 msgstr ""
 
-#: inc/customizer.php:42
+#: inc/customizer.php:44
 msgid "Section reorder"
 msgstr ""
 
-#: inc/customizer.php:43
+#: inc/customizer.php:45
 msgid ""
 "Video background, Image Motion background, Parallax background, Gradient "
 "background option for each section"
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:46
 msgid "4 icon pack for icon picker (5000+ Icons)"
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:47
 msgid "Unlimited slider with linkable button"
 msgstr ""
 
-#: inc/customizer.php:46
+#: inc/customizer.php:48
 msgid "Add unlimited blocks(like slider, team, testimonial) for each Section"
 msgstr ""
 
-#: inc/customizer.php:47
+#: inc/customizer.php:49
 msgid "Fully customizable options for Front Page blocks"
 msgstr ""
 
-#: inc/customizer.php:48
+#: inc/customizer.php:50
 msgid "15+ Shape divider to choose from for each section"
 msgstr ""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:51
 msgid "Remove footer credit Text"
 msgstr ""
 
-#: inc/customizer.php:50
+#: inc/customizer.php:52
 msgid "6 header layouts and advanced header settings"
 msgstr ""
 
-#: inc/customizer.php:51
+#: inc/customizer.php:53 inc/customizer.php:1219
 msgid "4 blog layouts"
 msgstr ""
 
-#: inc/customizer.php:52
+#: inc/customizer.php:54
 msgid "In-built MegaMenu"
 msgstr ""
 
-#: inc/customizer.php:53
+#: inc/customizer.php:55
 msgid "Advanced Typography options"
 msgstr ""
 
-#: inc/customizer.php:54
+#: inc/customizer.php:56
 msgid "Advanced color options"
 msgstr ""
 
-#: inc/customizer.php:55
+#: inc/customizer.php:57
 msgid "Top header bar"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:58
 msgid "PreLoader option"
 msgstr ""
 
-#: inc/customizer.php:57
+#: inc/customizer.php:59
 msgid "Sidebar layout options"
 msgstr ""
 
-#: inc/customizer.php:58
+#: inc/customizer.php:60
 msgid "Website layout (Fullwidth or Boxed)"
 msgstr ""
 
-#: inc/customizer.php:59
+#: inc/customizer.php:61
 msgid "Advanced blog settings"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:62
 msgid "Advanced footer setting"
 msgstr ""
 
-#: inc/customizer.php:61
+#: inc/customizer.php:63
 msgid "Front page sections with full window height"
 msgstr ""
 
-#: inc/customizer.php:62
+#: inc/customizer.php:64
 msgid "26 custom widgets"
 msgstr ""
 
-#: inc/customizer.php:63
+#: inc/customizer.php:65
 msgid "Blog single page - Author Box, Social Share and Related Post"
 msgstr ""
 
-#: inc/customizer.php:64
+#: inc/customizer.php:66
 msgid "Google map option"
 msgstr ""
 
-#: inc/customizer.php:65 welcome/sections/free_vs_pro.php:231
+#: inc/customizer.php:67 welcome/sections/free_vs_pro.php:231
 msgid "WooCommerce Compatible"
 msgstr ""
 
-#: inc/customizer.php:66
+#: inc/customizer.php:68
 msgid "Fully Multilingual and Translation ready"
 msgstr ""
 
-#: inc/customizer.php:67
+#: inc/customizer.php:69
 msgid "Fully RTL(Right to left) languages compatible"
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:71
 msgid "Comparision - Free Vs Pro"
 msgstr ""
 
-#: inc/customizer.php:76 welcome/sections/free_vs_pro.php:21
+#: inc/customizer.php:79 welcome/sections/free_vs_pro.php:21
 #: welcome/sections/free_vs_pro.php:287
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: inc/customizer.php:81 welcome/sections/support.php:3
+#: inc/customizer.php:84 welcome/sections/support.php:3
 msgid "Documentation"
 msgstr ""
 
-#: inc/customizer.php:83
+#: inc/customizer.php:86
 msgid "View"
 msgstr ""
 
-#: inc/customizer.php:88
+#: inc/customizer.php:91
 msgid "Import Demo Content"
 msgstr ""
 
-#: inc/customizer.php:90
+#: inc/customizer.php:93
 msgid "Import"
 msgstr ""
 
-#: inc/customizer.php:96
+#: inc/customizer.php:99
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:102
+#: inc/customizer.php:105
 msgid "Static Front Page"
 msgstr ""
 
-#: inc/customizer.php:104
+#: inc/customizer.php:107
 msgid "Your theme supports a static front page."
 msgstr ""
 
-#: inc/customizer.php:109
-msgid "Site Logo/Title/Tagline"
+#: inc/customizer.php:112
+msgid "Site Logo, Title & Tagline"
 msgstr ""
 
-#: inc/customizer.php:115 inc/customizer.php:1207
+#: inc/customizer.php:116
+msgid "Display Site Title and Tagline(Only Displays if Logo is Removed)"
+msgstr ""
+
+#: inc/customizer.php:120 inc/customizer.php:1411
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:126
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:138
 msgid "Theme Primary Color "
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:147
+msgid "For more color options,"
+msgstr ""
+
+#: inc/customizer.php:153
 msgid "Header Settings"
 msgstr ""
 
-#: inc/customizer.php:152
+#: inc/customizer.php:166
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:154
+#: inc/customizer.php:168
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:169
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:160
-msgid "Home Sections"
+#: inc/customizer.php:178
+msgid "For more header layouts and settings,"
 msgstr ""
 
-#: inc/customizer.php:162
-msgid "Drag and Drop to Reorder"
+#: inc/customizer.php:180
+msgid "6 header styles"
 msgstr ""
 
-#: inc/customizer.php:167
-msgid "Home Slider"
+#: inc/customizer.php:181
+msgid "Option to enable/disable top header"
 msgstr ""
 
 #: inc/customizer.php:182
+msgid "Increase/Decrease logo and header height"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid "Search and social button option on header"
+msgstr ""
+
+#: inc/customizer.php:184
+msgid "7 menu hover styles"
+msgstr ""
+
+#: inc/customizer.php:185
+msgid "Mega menu"
+msgstr ""
+
+#: inc/customizer.php:186
+msgid "Advanced header color options"
+msgstr ""
+
+#: inc/customizer.php:187
+msgid "Option for different header banner on each post/page"
+msgstr ""
+
+#: inc/customizer.php:194
+msgid "Home Sections"
+msgstr ""
+
+#: inc/customizer.php:196
+msgid "Drag and Drop to Reorder"
+msgstr ""
+
+#: inc/customizer.php:201
+msgid "Home Slider"
+msgstr ""
+
+#: inc/customizer.php:216
 msgid "Slider "
 msgstr ""
 
-#: inc/customizer.php:193 inc/customizer.php:240 inc/customizer.php:401
-#: inc/customizer.php:575 inc/customizer.php:688
+#: inc/customizer.php:227 inc/customizer.php:293 inc/customizer.php:468
+#: inc/customizer.php:680 inc/customizer.php:811
 msgid "Select a Page"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:238
 msgid "Note:"
 msgstr ""
 
-#: inc/customizer.php:205
+#: inc/customizer.php:239
 msgid ""
 "The Page featured image works as a slider banner and the title & content "
 "work as a slider caption. <br/> Recommended Image Size: 1900X600"
 msgstr ""
 
-#: inc/customizer.php:210
-msgid "About Us Section"
+#: inc/customizer.php:248
+msgid "To add unlimited slider block and for more settings,"
 msgstr ""
 
-#: inc/customizer.php:224 inc/customizer.php:340 inc/customizer.php:433
-#: inc/customizer.php:512 inc/customizer.php:627 inc/customizer.php:771
-#: inc/customizer.php:894 inc/customizer.php:974 inc/customizer.php:1055
-#: inc/customizer.php:1123
-msgid "Disable Section"
-msgstr ""
-
-#: inc/customizer.php:226 inc/customizer.php:342 inc/customizer.php:435
-#: inc/customizer.php:514 inc/customizer.php:629 inc/customizer.php:773
-#: inc/customizer.php:896 inc/customizer.php:976 inc/customizer.php:1057
-#: inc/customizer.php:1125
-msgid "Yes"
-msgstr ""
-
-#: inc/customizer.php:227 inc/customizer.php:343 inc/customizer.php:436
-#: inc/customizer.php:515 inc/customizer.php:630 inc/customizer.php:774
-#: inc/customizer.php:897 inc/customizer.php:977 inc/customizer.php:1058
-#: inc/customizer.php:1126
-msgid "No"
+#: inc/customizer.php:250
+msgid "Unlimited slider blocks"
 msgstr ""
 
 #: inc/customizer.php:251
+msgid ""
+"Repeatable slider block with image, caption and button fields instead of page"
+msgstr ""
+
+#: inc/customizer.php:252
+msgid "Option for Revolution slider or single banner display with text"
+msgstr ""
+
+#: inc/customizer.php:253
+msgid "Option to link slider externally with button"
+msgstr ""
+
+#: inc/customizer.php:254
+msgid "Option to configure slider pause duration"
+msgstr ""
+
+#: inc/customizer.php:255
+msgid "Option to change caption background and text color"
+msgstr ""
+
+#: inc/customizer.php:256
+msgid "Advanced slider settings"
+msgstr ""
+
+#: inc/customizer.php:263
+msgid "About Us Section"
+msgstr ""
+
+#: inc/customizer.php:277 inc/customizer.php:407 inc/customizer.php:518
+#: inc/customizer.php:617 inc/customizer.php:750 inc/customizer.php:912
+#: inc/customizer.php:1051 inc/customizer.php:1146 inc/customizer.php:1244
+#: inc/customizer.php:1327
+msgid "Disable Section"
+msgstr ""
+
+#: inc/customizer.php:279 inc/customizer.php:409 inc/customizer.php:520
+#: inc/customizer.php:619 inc/customizer.php:752 inc/customizer.php:914
+#: inc/customizer.php:1053 inc/customizer.php:1148 inc/customizer.php:1246
+#: inc/customizer.php:1329
+msgid "Yes"
+msgstr ""
+
+#: inc/customizer.php:280 inc/customizer.php:410 inc/customizer.php:521
+#: inc/customizer.php:620 inc/customizer.php:753 inc/customizer.php:915
+#: inc/customizer.php:1054 inc/customizer.php:1149 inc/customizer.php:1247
+#: inc/customizer.php:1330
+msgid "No"
+msgstr ""
+
+#: inc/customizer.php:304
 msgid "Progress Bar "
 msgstr ""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:314
 msgid "Check to Disable"
 msgstr ""
 
-#: inc/customizer.php:269
+#: inc/customizer.php:322
 #, php-format
 msgid "Progress Bar %d"
 msgstr ""
 
-#: inc/customizer.php:276 inc/customizer.php:366 inc/customizer.php:459
-#: inc/customizer.php:538 inc/customizer.php:653 inc/customizer.php:793
-#: inc/customizer.php:851 inc/customizer.php:920 inc/customizer.php:1000
-#: inc/customizer.php:1081 inc/customizer.php:1139
+#: inc/customizer.php:329 inc/customizer.php:433 inc/customizer.php:544
+#: inc/customizer.php:643 inc/customizer.php:776 inc/customizer.php:934
+#: inc/customizer.php:992 inc/customizer.php:1077 inc/customizer.php:1172
+#: inc/customizer.php:1270 inc/customizer.php:1343
 #: inc/widgets/widget-personal-info.php:29
 #: inc/widgets/widget-contact-info.php:30 inc/widgets/widget-latest-post.php:26
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:340
 msgid "Percentage"
 msgstr ""
 
-#: inc/customizer.php:298
+#: inc/customizer.php:351
 msgid "Right Image"
 msgstr ""
 
-#: inc/customizer.php:308
+#: inc/customizer.php:361
 msgid "Recommended Image Size: 500X600px"
 msgstr ""
 
-#: inc/customizer.php:320
+#: inc/customizer.php:373
 msgid "Replace Image by widget"
 msgstr ""
 
-#: inc/customizer.php:327 inc/customizer.php:359
+#: inc/customizer.php:384 inc/customizer.php:490 inc/customizer.php:587
+#: inc/customizer.php:722 inc/customizer.php:880 inc/customizer.php:1025
+#: inc/customizer.php:1121 inc/customizer.php:1217 inc/customizer.php:1302
+#: inc/customizer.php:1423
+msgid "For more settings,"
+msgstr ""
+
+#: inc/customizer.php:386
+msgid "Option to disable the Right Image"
+msgstr ""
+
+#: inc/customizer.php:387 inc/customizer.php:497 inc/customizer.php:596
+#: inc/customizer.php:729 inc/customizer.php:887 inc/customizer.php:1030
+#: inc/customizer.php:1125 inc/customizer.php:1223 inc/customizer.php:1306
+#: inc/customizer.php:1427
+msgid "Multiple background option(image, gradient, video) for the section"
+msgstr ""
+
+#: inc/customizer.php:394 inc/customizer.php:426
 msgid "Featured Section"
 msgstr ""
 
-#: inc/customizer.php:354 inc/customizer.php:447 inc/customizer.php:526
-#: inc/customizer.php:641 inc/customizer.php:781 inc/customizer.php:908
-#: inc/customizer.php:988 inc/customizer.php:1069
+#: inc/customizer.php:421 inc/customizer.php:532 inc/customizer.php:631
+#: inc/customizer.php:764 inc/customizer.php:922 inc/customizer.php:1065
+#: inc/customizer.php:1160 inc/customizer.php:1258
 msgid "Section Title & Sub Title"
 msgstr ""
 
-#: inc/customizer.php:371
+#: inc/customizer.php:438
 msgid "Featured Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:378 inc/customizer.php:471 inc/customizer.php:550
-#: inc/customizer.php:665 inc/customizer.php:805 inc/customizer.php:932
-#: inc/customizer.php:1012 inc/customizer.php:1093 inc/customizer.php:1151
+#: inc/customizer.php:445 inc/customizer.php:556 inc/customizer.php:655
+#: inc/customizer.php:788 inc/customizer.php:946 inc/customizer.php:1089
+#: inc/customizer.php:1184 inc/customizer.php:1282 inc/customizer.php:1355
 msgid "Sub Title"
 msgstr ""
 
-#: inc/customizer.php:390
+#: inc/customizer.php:457
 msgid "Featured Page "
 msgstr ""
 
-#: inc/customizer.php:413 inc/customizer.php:587
+#: inc/customizer.php:480 inc/customizer.php:692
 msgid "FontAwesome Icon"
 msgstr ""
 
-#: inc/customizer.php:419 inc/customizer.php:452
+#: inc/customizer.php:492
+msgid "Unlimited featured block"
+msgstr ""
+
+#: inc/customizer.php:493
+msgid ""
+"Display featured block with repeater instead of page with option of external "
+"url field"
+msgstr ""
+
+#: inc/customizer.php:494
+msgid "7 featured block layouts"
+msgstr ""
+
+#: inc/customizer.php:495 inc/customizer.php:727 inc/customizer.php:1029
+msgid "5000+ icon to choose from(5 icon packs)"
+msgstr ""
+
+#: inc/customizer.php:496 inc/customizer.php:885 inc/customizer.php:1220
+msgid "Configure no of column to display in a row"
+msgstr ""
+
+#: inc/customizer.php:504 inc/customizer.php:537
 msgid "Portfolio Section"
 msgstr ""
 
-#: inc/customizer.php:464
+#: inc/customizer.php:549
 msgid "Portfolio Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:482
+#: inc/customizer.php:567
 msgid "Portfolio Category"
 msgstr ""
 
-#: inc/customizer.php:490
+#: inc/customizer.php:575
 msgid "Select Category"
 msgstr ""
 
-#: inc/customizer.php:498 inc/customizer.php:531 inc/customizer.php:543
+#: inc/customizer.php:589
+msgid "Link portfolio to external url"
+msgstr ""
+
+#: inc/customizer.php:590
+msgid "Option to select active category in the tab"
+msgstr ""
+
+#: inc/customizer.php:591
+msgid "4 portfolio tab styles"
+msgstr ""
+
+#: inc/customizer.php:592
+msgid "6 portfolio masonary styles"
+msgstr ""
+
+#: inc/customizer.php:593
+msgid ""
+"Order portfolio by date, title or random in ascending or descending order"
+msgstr ""
+
+#: inc/customizer.php:594
+msgid "Option to show/hide zoom and link button"
+msgstr ""
+
+#: inc/customizer.php:595
+msgid "Enable/Disable gap between portfolio images"
+msgstr ""
+
+#: inc/customizer.php:603 inc/customizer.php:636 inc/customizer.php:648
 msgid "Service Section"
 msgstr ""
 
-#: inc/customizer.php:563
+#: inc/customizer.php:668
 msgid "Service Page "
 msgstr ""
 
-#: inc/customizer.php:597
+#: inc/customizer.php:702
 msgid "Left Image"
 msgstr ""
 
-#: inc/customizer.php:608
+#: inc/customizer.php:713
 msgid "Recommended Image Size: 770X650px"
 msgstr ""
 
-#: inc/customizer.php:613 inc/customizer.php:646
+#: inc/customizer.php:724
+msgid "Unlimited service block"
+msgstr ""
+
+#: inc/customizer.php:725
+msgid ""
+"Display service block with repeater instead of page with option of external "
+"url field"
+msgstr ""
+
+#: inc/customizer.php:726
+msgid "4 service block layouts"
+msgstr ""
+
+#: inc/customizer.php:728
+msgid "Display image postion in left or right"
+msgstr ""
+
+#: inc/customizer.php:736 inc/customizer.php:769
 msgid "Team Section"
 msgstr ""
 
-#: inc/customizer.php:658
+#: inc/customizer.php:781
 msgid "Team Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:677
+#: inc/customizer.php:800
 msgid "Team Member "
 msgstr ""
 
-#: inc/customizer.php:699
+#: inc/customizer.php:822
 msgid "Team Member Designation"
 msgstr ""
 
-#: inc/customizer.php:711
+#: inc/customizer.php:834
 msgid "Facebook Url"
 msgstr ""
 
-#: inc/customizer.php:723
+#: inc/customizer.php:846
 msgid "Twitter Url"
 msgstr ""
 
-#: inc/customizer.php:735
+#: inc/customizer.php:858
 msgid "Google Plus Url"
 msgstr ""
 
-#: inc/customizer.php:747
+#: inc/customizer.php:870
 msgid "Linkedin Url"
 msgstr ""
 
-#: inc/customizer.php:753 inc/customizer.php:786
+#: inc/customizer.php:882
+msgid "Unlimited team block"
+msgstr ""
+
+#: inc/customizer.php:883
+msgid ""
+"Display team block with repeater instead of page with option of external url "
+"field"
+msgstr ""
+
+#: inc/customizer.php:884
+msgid "6 team block layouts"
+msgstr ""
+
+#: inc/customizer.php:886
+msgid "Display team in grid or carousel slider"
+msgstr ""
+
+#: inc/customizer.php:894 inc/customizer.php:927
 msgid "Counter Section"
 msgstr ""
 
-#: inc/customizer.php:798
+#: inc/customizer.php:939
 msgid "Counter Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:815
+#: inc/customizer.php:956
 msgid "Section Background"
 msgstr ""
 
-#: inc/customizer.php:824
+#: inc/customizer.php:965
 msgid "Upload Image"
 msgstr ""
 
-#: inc/customizer.php:827
+#: inc/customizer.php:968
 msgid "Recommended Image Size: 1800X400px"
 msgstr ""
 
-#: inc/customizer.php:840
+#: inc/customizer.php:981
 msgid "Counter"
 msgstr ""
 
-#: inc/customizer.php:862
+#: inc/customizer.php:1003
 msgid "Counter Value"
 msgstr ""
 
-#: inc/customizer.php:874
+#: inc/customizer.php:1015
 msgid "Counter Icon"
 msgstr ""
 
-#: inc/customizer.php:880 inc/customizer.php:913
+#: inc/customizer.php:1027
+msgid "Unlimited counter block"
+msgstr ""
+
+#: inc/customizer.php:1028
+msgid "4 counter block layouts"
+msgstr ""
+
+#: inc/customizer.php:1037 inc/customizer.php:1070
 msgid "Testimonial Section"
 msgstr ""
 
-#: inc/customizer.php:925
+#: inc/customizer.php:1082
 msgid "Testimonial Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:943
+#: inc/customizer.php:1100
 msgid "Testimonial"
 msgstr ""
 
-#: inc/customizer.php:954
+#: inc/customizer.php:1111
 msgid "Select the Pages"
 msgstr ""
 
-#: inc/customizer.php:955
+#: inc/customizer.php:1112
 msgid "Select Some Pages"
 msgstr ""
 
-#: inc/customizer.php:960 inc/customizer.php:993
+#: inc/customizer.php:1123
+msgid ""
+"Display testimonial block with repeater instead of page with option of "
+"external url field"
+msgstr ""
+
+#: inc/customizer.php:1124
+msgid "4 testiminial block layouts"
+msgstr ""
+
+#: inc/customizer.php:1132 inc/customizer.php:1165
 msgid "Blog Section"
 msgstr ""
 
-#: inc/customizer.php:1005
+#: inc/customizer.php:1177
 msgid "Blog Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:1024
+#: inc/customizer.php:1196
 msgid "Number of Posts to show"
 msgstr ""
 
-#: inc/customizer.php:1033
+#: inc/customizer.php:1205
 msgid "Exclude Category from Blog Posts"
 msgstr ""
 
-#: inc/customizer.php:1041
+#: inc/customizer.php:1221
+msgid "Control excerpt character"
+msgstr ""
+
+#: inc/customizer.php:1222
+msgid "Show/Hide date, author and comment"
+msgstr ""
+
+#: inc/customizer.php:1230
 msgid "Clients Logo Section"
 msgstr ""
 
-#: inc/customizer.php:1074
+#: inc/customizer.php:1263
 msgid "Client Logo Section"
 msgstr ""
 
-#: inc/customizer.php:1086
+#: inc/customizer.php:1275
 msgid "Clients Logo Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:1104
+#: inc/customizer.php:1293
 msgid "Upload Clients Logos"
 msgstr ""
 
-#: inc/customizer.php:1109 inc/customizer.php:1132
+#: inc/customizer.php:1304
+msgid "Option to link the client logos to external url"
+msgstr ""
+
+#: inc/customizer.php:1305
+msgid "4 client logo layouts"
+msgstr ""
+
+#: inc/customizer.php:1313 inc/customizer.php:1336
 msgid "Call To Action Section"
 msgstr ""
 
-#: inc/customizer.php:1144
+#: inc/customizer.php:1348
 msgid "Call To Action Section SubTitle"
 msgstr ""
 
-#: inc/customizer.php:1162
+#: inc/customizer.php:1366
 msgid "Button 1 Text"
 msgstr ""
 
-#: inc/customizer.php:1174
+#: inc/customizer.php:1378
 msgid "Button 1 Link"
 msgstr ""
 
-#: inc/customizer.php:1186
+#: inc/customizer.php:1390
 msgid "Button 2 Text"
 msgstr ""
 
-#: inc/customizer.php:1198
+#: inc/customizer.php:1402
 msgid "Button 2 Link"
 msgstr ""
 
-#: inc/customizer.php:1210
+#: inc/customizer.php:1414
 msgid "Recommended Image Size: 1800X800px"
 msgstr ""
 
-#: inc/customizer.php:1215
+#: inc/customizer.php:1425
+msgid "4 CTA layouts"
+msgstr ""
+
+#: inc/customizer.php:1426
+msgid "Option to display vide in CTA with popup"
+msgstr ""
+
+#: inc/customizer.php:1433
+msgid "More Sections on Premium"
+msgstr ""
+
+#: inc/customizer.php:1437
+msgid "- Highlight Section"
+msgstr ""
+
+#: inc/customizer.php:1438
+msgid "- Pricing Section"
+msgstr ""
+
+#: inc/customizer.php:1439
+msgid "- News and Update Section"
+msgstr ""
+
+#: inc/customizer.php:1440
+msgid "- Tab Section"
+msgstr ""
+
+#: inc/customizer.php:1441
+msgid "- Contact Section with Google Map"
+msgstr ""
+
+#: inc/customizer.php:1442
+msgid "- Custom Elementor Section"
+msgstr ""
+
+#: inc/customizer.php:1448
 msgid "Pro Theme Features"
 msgstr ""
 
-#: inc/customizer.php:1366
+#: inc/customizer.php:1599
 msgid "Add/Edit Gallery"
 msgstr ""
 
-#: inc/customizer.php:1367
+#: inc/customizer.php:1600
 msgid "Clear"
+msgstr ""
+
+#: inc/customizer.php:1830
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: inc/customizer.php:1995
+msgid "Upgrad to Pro"
 msgstr ""
 
 #: inc/total-functions.php:97
@@ -803,82 +1067,80 @@ msgstr ""
 msgid "Sidebar Layout"
 msgstr ""
 
-#: welcome/welcome.php:25
+#: welcome/welcome.php:26
 msgid "Getting Started"
 msgstr ""
 
-#: welcome/welcome.php:26 welcome/sections/recommended_plugins.php:6
+#: welcome/welcome.php:27 welcome/sections/recommended_plugins.php:6
 msgid "Recommended Plugins"
 msgstr ""
 
-#: welcome/welcome.php:27
+#: welcome/welcome.php:28
 msgid "Support"
 msgstr ""
 
-#: welcome/welcome.php:28
+#: welcome/welcome.php:29
 msgid "Free Vs Pro"
 msgstr ""
 
-#: welcome/welcome.php:72
+#: welcome/welcome.php:80
+#, php-format
 msgid ""
-"Welcome! Thank you for choosing Total. Please make sure you visit Settings "
-"Page to get started with Total theme."
+"Welcome! Thank you for choosing %1$s. Please make sure you visit Settings "
+"Page to get started with %1$s theme."
 msgstr ""
 
-#: welcome/welcome.php:73
+#: welcome/welcome.php:81
 msgid "Let's Get Started"
 msgstr ""
 
-#: welcome/welcome.php:81
+#: welcome/welcome.php:89
 msgid "Welcome"
 msgstr ""
 
-#: welcome/welcome.php:81
-msgid "Total Settings"
+#: welcome/welcome.php:89
+#, php-format
+msgid "%s Settings"
 msgstr ""
 
-#: welcome/welcome.php:94
+#: welcome/welcome.php:102
 #, php-format
 msgid "Welcome to %1$s - Version %2$s"
 msgstr ""
 
-#: welcome/welcome.php:96
-msgid ""
-"Total as its name suggest is a complete package theme with all the feature "
-"that you need to make a complete website. The theme has clean and elegant "
-"design with vibrant color(Theme Color Changable Option) and parallax "
-"sections. The theme is fully responsive and is built on customizer that "
-"enable you to configure the website with live preview. The theme is SEO "
-"friendly, Cross browser compatible, fully translation ready and is "
-"compatible with WooCommerce and all other major plugins."
-msgstr ""
-
-#: welcome/welcome.php:100
+#: welcome/welcome.php:108
 msgid "Upgrade for $55"
 msgstr ""
 
-#: welcome/welcome.php:101 welcome/sections/getting_started.php:141
+#: welcome/welcome.php:109 welcome/sections/getting_started.php:141
 msgid "Upgrade Now"
 msgstr ""
 
-#: welcome/welcome.php:102
+#: welcome/welcome.php:110
 msgid "Unlock all the possibitlies with Total Plus."
 msgstr ""
 
-#: welcome/welcome.php:136
+#: welcome/welcome.php:144
 msgid "Installing Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:137
+#: welcome/welcome.php:145
 msgid "Activating Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:138 welcome/sections/getting_started.php:47
+#: welcome/welcome.php:146 welcome/sections/getting_started.php:47
 msgid "Go to Demo Importer Page"
 msgstr ""
 
-#: welcome/welcome.php:140
+#: welcome/welcome.php:148
 msgid "Error! Reload the page and try again."
+msgstr ""
+
+#: welcome/welcome.php:221
+#, php-format
+msgid ""
+"Please leave us a %s rating if you like our theme . A huge thank you from "
+"HashThemes in advance!"
 msgstr ""
 
 #: template-parts/content-single.php:18 template-parts/content-page.php:15
@@ -992,22 +1254,22 @@ msgstr ""
 msgid "No of Letter to Display in Excerpt"
 msgstr ""
 
-#: welcome/sections/support.php:6
+#: welcome/sections/support.php:7
 #, php-format
 msgid ""
 "Read the detailed documentation of the theme. The documentation contain all "
 "the necessary information required to setup the theme %s."
 msgstr ""
 
-#: welcome/sections/support.php:7
+#: welcome/sections/support.php:9
 msgid "Read Full Documentation"
 msgstr ""
 
-#: welcome/sections/support.php:11 welcome/sections/support.php:13
+#: welcome/sections/support.php:13 welcome/sections/support.php:15
 msgid "Create Support Tickets"
 msgstr ""
 
-#: welcome/sections/support.php:12
+#: welcome/sections/support.php:14
 msgid ""
 "Still having problem after reading all the documentation? No Problem!! "
 "Please create a support ticket. Our dedicated support team will help you to "
@@ -1016,19 +1278,19 @@ msgstr ""
 
 #: welcome/sections/recommended_plugins.php:7
 msgid ""
-"Please Install all the plugins. Although these plugins are complementary, we "
-"encourage to install theme to use the theme to full extent"
+"Please install these plugins. These plugins are complementary only and add "
+"more feature to theme."
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:28
+#: welcome/sections/recommended_plugins.php:27
 msgid "Activate"
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:31
+#: welcome/sections/recommended_plugins.php:30
 msgid "Installed"
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:35
+#: welcome/sections/recommended_plugins.php:34
 msgid "Install Now"
 msgstr ""
 
@@ -1135,9 +1397,10 @@ msgid ""
 msgstr ""
 
 #: welcome/sections/getting_started.php:63
+#, php-format
 msgid ""
 "Check out the websites that you can create with the premium version of the "
-"Total Theme. These demos can be imported with just one click in the premium "
+"%s Theme. These demos can be imported with just one click in the premium "
 "version."
 msgstr ""
 
@@ -1162,9 +1425,10 @@ msgid "Upgrade To Premium Version (7 Day Money Back Guarantee)"
 msgstr ""
 
 #: welcome/sections/getting_started.php:137
+#, php-format
 msgid ""
-"With Total Theme you can create a beautiful website. But if you want to "
-"unlock more possibilites then upgrade to premium version."
+"With %s Theme you can create a beautiful website. But if you want to unlock "
+"more possibilites then upgrade to premium version."
 msgstr ""
 
 #: welcome/sections/getting_started.php:138

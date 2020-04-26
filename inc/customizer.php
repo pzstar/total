@@ -12,6 +12,8 @@ function total_customize_register($wp_customize) {
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
     $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+    $wp_customize->get_setting('custom_logo')->transport = 'refresh';
+    $wp_customize->get_control('background_color')->section = 'background_image';
 
     global $wp_registered_sidebars;
 
@@ -70,11 +72,12 @@ function total_customize_register($wp_customize) {
 
 
     $wp_customize->register_section_type('Total_Customize_Section_Pro');
-    // Register sections.
+    $wp_customize->register_section_type('Total_Customize_Upgrade_Section');
+
     $wp_customize->add_section(new Total_Customize_Section_Pro($wp_customize, 'total-pro-section', array(
         'priority' => 0,
         'pro_text' => esc_html__('Upgrade to Pro', 'total'),
-        'pro_url' => 'https://hashthemes.com/wordpress-theme/total-plus/'
+        'pro_url' => 'https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade'
     )));
 
     $wp_customize->add_section(new Total_Customize_Section_Pro($wp_customize, 'total-doc-section', array(
@@ -83,7 +86,7 @@ function total_customize_register($wp_customize) {
         'pro_text' => esc_html__('View', 'total'),
         'pro_url' => 'https://hashthemes.com/documentation/total-documentation/'
     )));
-    
+
     $wp_customize->add_section(new Total_Customize_Section_Pro($wp_customize, 'total-demo-import-section', array(
         'title' => esc_html__('Import Demo Content', 'total'),
         'priority' => 1001,
@@ -106,9 +109,11 @@ function total_customize_register($wp_customize) {
 
     //TITLE AND TAGLINE SETTINGS
     $wp_customize->add_section('title_tagline', array(
-        'title' => esc_html__('Site Logo/Title/Tagline', 'total'),
+        'title' => esc_html__('Site Logo, Title & Tagline', 'total'),
         'panel' => 'total_general_settings_panel',
     ));
+
+    $wp_customize->get_control('header_text')->label = esc_html__('Display Site Title and Tagline(Only Displays if Logo is Removed)', 'total');
 
     //BACKGROUND IMAGE
     $wp_customize->add_section('background_image', array(
@@ -125,13 +130,22 @@ function total_customize_register($wp_customize) {
     $wp_customize->add_setting('total_template_color', array(
         'default' => '#FFC107',
         'sanitize_callback' => 'sanitize_hex_color',
-        'priority' => 1
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_template_color', array(
         'settings' => 'total_template_color',
         'section' => 'colors',
         'label' => esc_html__('Theme Primary Color ', 'total'),
+    )));
+
+    $wp_customize->add_setting('total_color_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_color_upgrade_text', array(
+        'section' => 'colors',
+        'label' => esc_html__('For more color options,', 'total'),
+        'priority' => 100
     )));
 
     //HEADER SETTINGS
@@ -154,6 +168,26 @@ function total_customize_register($wp_customize) {
             'on' => esc_html__('Enable', 'total'),
             'off' => esc_html__('Disable', 'total')
     ))));
+
+    $wp_customize->add_setting('total_header_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_header_upgrade_text', array(
+        'section' => 'total_header_settings',
+        'label' => esc_html__('For more header layouts and settings,', 'total'),
+        'choices' => array(
+            esc_html__('6 header styles', 'total'),
+            esc_html__('Option to enable/disable top header', 'total'),
+            esc_html__('Increase/Decrease logo and header height', 'total'),
+            esc_html__('Search and social button option on header', 'total'),
+            esc_html__('7 menu hover styles', 'total'),
+            esc_html__('Mega menu', 'total'),
+            esc_html__('Advanced header color options', 'total'),
+            esc_html__('Option for different header banner on each post/page', 'total'),
+        ),
+        'priority' => 100
+    )));
 
     /* ============HOME PANEL============ */
     $wp_customize->add_panel('total_home_panel', array(
@@ -203,6 +237,25 @@ function total_customize_register($wp_customize) {
         'section' => 'total_slider_section',
         'label' => esc_html__('Note:', 'total'),
         'description' => wp_kses_post(__('The Page featured image works as a slider banner and the title & content work as a slider caption. <br/> Recommended Image Size: 1900X600', 'total')),
+    )));
+
+    $wp_customize->add_setting('total_slider_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_slider_upgrade_text', array(
+        'section' => 'total_slider_section',
+        'label' => esc_html__('To add unlimited slider block and for more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Unlimited slider blocks', 'total'),
+            esc_html__('Repeatable slider block with image, caption and button fields instead of page', 'total'),
+            esc_html__('Option for Revolution slider or single banner display with text', 'total'),
+            esc_html__('Option to link slider externally with button', 'total'),
+            esc_html__('Option to configure slider pause duration', 'total'),
+            esc_html__('Option to change caption background and text color', 'total'),
+            esc_html__('Advanced slider settings', 'total'),
+        ),
+        'priority' => 100
     )));
 
     /* ============ABOUT US SECTION============ */
@@ -322,6 +375,20 @@ function total_customize_register($wp_customize) {
         ));
     }
 
+    $wp_customize->add_setting('total_about_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_about_upgrade_text', array(
+        'section' => 'total_about_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Option to disable the Right Image', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total')
+        ),
+        'priority' => 100
+    )));
+
     /* ============FEATURED SECTION PANEL============ */
     $wp_customize->add_section('total_featured_section', array(
         'title' => esc_html__('Featured Section', 'total'),
@@ -414,6 +481,24 @@ function total_customize_register($wp_customize) {
         )));
     }
 
+    $wp_customize->add_setting('total_featured_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_featured_upgrade_text', array(
+        'section' => 'total_featured_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Unlimited featured block', 'total'),
+            esc_html__('Display featured block with repeater instead of page with option of external url field', 'total'),
+            esc_html__('7 featured block layouts', 'total'),
+            esc_html__('5000+ icon to choose from(5 icon packs)', 'total'),
+            esc_html__('Configure no of column to display in a row', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
+    )));
+
     /* ============PORTFOLIO SECTION PANEL============ */
     $wp_customize->add_section('total_portfolio_section', array(
         'title' => esc_html__('Portfolio Section', 'total'),
@@ -491,6 +576,26 @@ function total_customize_register($wp_customize) {
         'section' => 'total_portfolio_section',
         'settings' => 'total_portfolio_cat',
         'choices' => $total_cat
+    )));
+
+    $wp_customize->add_setting('total_portfolio_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_portfolio_upgrade_text', array(
+        'section' => 'total_portfolio_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Link portfolio to external url', 'total'),
+            esc_html__('Option to select active category in the tab', 'total'),
+            esc_html__('4 portfolio tab styles', 'total'),
+            esc_html__('6 portfolio masonary styles', 'total'),
+            esc_html__('Order portfolio by date, title or random in ascending or descending order', 'total'),
+            esc_html__('Option to show/hide zoom and link button', 'total'),
+            esc_html__('Enable/Disable gap between portfolio images', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
     )));
 
     /* ============SERVICE SECTION PANEL============ */
@@ -606,6 +711,24 @@ function total_customize_register($wp_customize) {
         'section' => 'total_service_section',
         'settings' => 'total_service_left_bg',
         'description' => esc_html__('Recommended Image Size: 770X650px', 'total')
+    )));
+
+    $wp_customize->add_setting('total_service_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_service_upgrade_text', array(
+        'section' => 'total_service_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Unlimited service block', 'total'),
+            esc_html__('Display service block with repeater instead of page with option of external url field', 'total'),
+            esc_html__('4 service block layouts', 'total'),
+            esc_html__('5000+ icon to choose from(5 icon packs)', 'total'),
+            esc_html__('Display image postion in left or right', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
     )));
 
     /* ============TEAM SECTION PANEL============ */
@@ -748,6 +871,24 @@ function total_customize_register($wp_customize) {
         ));
     }
 
+    $wp_customize->add_setting('total_team_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_team_upgrade_text', array(
+        'section' => 'total_team_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Unlimited team block', 'total'),
+            esc_html__('Display team block with repeater instead of page with option of external url field', 'total'),
+            esc_html__('6 team block layouts', 'total'),
+            esc_html__('Configure no of column to display in a row', 'total'),
+            esc_html__('Display team in grid or carousel slider', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
+    )));
+
     /* ============COUNTER SECTION PANEL============ */
     $wp_customize->add_section('total_counter_section', array(
         'title' => esc_html__('Counter Section', 'total'),
@@ -875,6 +1016,22 @@ function total_customize_register($wp_customize) {
         )));
     }
 
+    $wp_customize->add_setting('total_counter_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_counter_upgrade_text', array(
+        'section' => 'total_counter_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Unlimited counter block', 'total'),
+            esc_html__('4 counter block layouts', 'total'),
+            esc_html__('5000+ icon to choose from(5 icon packs)', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
+    )));
+
     /* ============TESTIMONIAL PANEL============ */
     $wp_customize->add_section('total_testimonial_section', array(
         'title' => esc_html__('Testimonial Section', 'total'),
@@ -953,6 +1110,21 @@ function total_customize_register($wp_customize) {
         'choices' => $total_page_choice,
         'label' => esc_html__('Select the Pages', 'total'),
         'placeholder' => esc_html__('Select Some Pages', 'total')
+    )));
+
+    $wp_customize->add_setting('total_testimonial_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_testimonial_upgrade_text', array(
+        'section' => 'total_testimonial_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Display testimonial block with repeater instead of page with option of external url field', 'total'),
+            esc_html__('4 testiminial block layouts', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
     )));
 
     /* ============BLOG PANEL============ */
@@ -1036,6 +1208,23 @@ function total_customize_register($wp_customize) {
         'choices' => $total_cat
     )));
 
+    $wp_customize->add_setting('total_blog_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_blog_upgrade_text', array(
+        'section' => 'total_blog_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('4 blog layouts', 'total'),
+            esc_html__('Configure no of column to display in a row', 'total'),
+            esc_html__('Control excerpt character', 'total'),
+            esc_html__('Show/Hide date, author and comment', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
+    )));
+
     /* ============CLIENTS LOGO SECTION============ */
     $wp_customize->add_Section('total_client_logo_section', array(
         'title' => esc_html__('Clients Logo Section', 'total'),
@@ -1102,6 +1291,21 @@ function total_customize_register($wp_customize) {
         'settings' => 'total_client_logo_image',
         'section' => 'total_client_logo_section',
         'label' => esc_html__('Upload Clients Logos', 'total'),
+    )));
+
+    $wp_customize->add_setting('total_client_logo_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_client_logo_upgrade_text', array(
+        'section' => 'total_client_logo_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('Option to link the client logos to external url', 'total'),
+            esc_html__('4 client logo layouts', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
     )));
 
     /* ============CALL TO ACTION PANEL============ */
@@ -1210,6 +1414,35 @@ function total_customize_register($wp_customize) {
         'description' => esc_html__('Recommended Image Size: 1800X800px', 'total')
     )));
 
+    $wp_customize->add_setting('total_cta_upgrade_text', array(
+        'sanitize_callback' => 'total_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Total_Upgrade_Text($wp_customize, 'total_cta_upgrade_text', array(
+        'section' => 'total_cta_section',
+        'label' => esc_html__('For more settings,', 'total'),
+        'choices' => array(
+            esc_html__('4 CTA layouts', 'total'),
+            esc_html__('Option to display vide in CTA with popup', 'total'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
+        ),
+        'priority' => 100
+    )));
+
+    $wp_customize->add_section(new Total_Customize_Upgrade_Section($wp_customize, 'total-upgrade-section', array(
+        'title' => esc_html__('More Sections on Premium', 'total'),
+        'panel' => 'total_home_panel',
+        'priority' => 1000,
+        'options' => array(
+            esc_html__('- Highlight Section', 'total'),
+            esc_html__('- Pricing Section', 'total'),
+            esc_html__('- News and Update Section', 'total'),
+            esc_html__('- Tab Section', 'total'),
+            esc_html__('- Contact Section with Google Map', 'total'),
+            esc_html__('- Custom Elementor Section', 'total')
+        )
+    )));
+
     /* ============PRO FEATURES============ */
     $wp_customize->add_section('total_pro_feature_section', array(
         'title' => esc_html__('Pro Theme Features', 'total'),
@@ -1233,17 +1466,17 @@ add_action('customize_register', 'total_customize_register');
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function total_customize_preview_js() {
-    wp_enqueue_script('total-customizer', get_template_directory_uri() . '/js/customizer.js', array('customize-preview'), '20130508', true);
+    wp_enqueue_script('total-customizer', get_template_directory_uri() . '/js/customizer.js', array('customize-preview'), TOTAL_VERSION, true);
 }
 
 add_action('customize_preview_init', 'total_customize_preview_js');
 
 function total_customizer_script() {
-    wp_enqueue_script('total-customizer-script', get_template_directory_uri() . '/inc/js/customizer-scripts.js', array("jquery"), '', true);
-    wp_enqueue_script('total-customizer-chosen-script', get_template_directory_uri() . '/inc/js/chosen.jquery.js', array("jquery"), '1.4.1', true);
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
-    wp_enqueue_style('total-customizer-chosen-style', get_template_directory_uri() . '/inc/css/chosen.css');
-    wp_enqueue_style('total-customizer-style', get_template_directory_uri() . '/inc/css/customizer-style.css');
+    wp_enqueue_script('total-customizer-script', get_template_directory_uri() . '/inc/js/customizer-scripts.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('total-customizer-chosen-script', get_template_directory_uri() . '/inc/js/chosen.jquery.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('total-customizer-chosen-style', get_template_directory_uri() . '/inc/css/chosen.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('total-customizer-style', get_template_directory_uri() . '/inc/css/customizer-style.css', array(), TOTAL_VERSION);
 }
 
 add_action('customize_controls_enqueue_scripts', 'total_customizer_script');
@@ -1264,7 +1497,7 @@ function total_get_section_position($key) {
     return $return;
 }
 
-if (class_exists('WP_Customize_Control')):
+if (class_exists('WP_Customize_Control')) {
 
     class Total_Dropdown_Chooser extends WP_Customize_Control {
 
@@ -1578,9 +1811,47 @@ if (class_exists('WP_Customize_Control')):
 
     }
 
-    endif;
+    // Upgrade Text
+    class Total_Upgrade_Text extends WP_Customize_Control {
 
-if (class_exists('WP_Customize_Section')):
+        public $type = 'total-upgrade-text';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="dashicons dashicons-info"></span>
+
+                <?php if ($this->label) { ?>
+                    <span>
+                        <?php echo wp_kses_post($this->label); ?>
+                    </span>
+                <?php } ?>
+
+                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'total'); ?></strong></a>
+            </label>
+
+            <?php if ($this->description) { ?>
+                <span class="description customize-control-description">
+                    <?php echo wp_kses_post($this->description); ?>
+                </span>
+                <?php
+            }
+
+            $choices = $this->choices;
+            if ($choices) {
+                echo '<ul>';
+                foreach ($choices as $choice) {
+                    echo '<li>' . esc_html($choice) . '</li>';
+                }
+                echo '</ul>';
+            }
+        }
+
+    }
+
+}
+
+if (class_exists('WP_Customize_Section')) {
 
     /**
      * Pro customizer section.
@@ -1597,7 +1868,7 @@ if (class_exists('WP_Customize_Section')):
          * @access public
          * @var    string
          */
-        public $type = 'pro-section';
+        public $type = 'total-pro-section';
 
         /**
          * Custom button text to output.
@@ -1628,7 +1899,7 @@ if (class_exists('WP_Customize_Section')):
             $json = parent::json();
 
             $json['pro_text'] = $this->pro_text;
-            $json['pro_url'] = esc_url($this->pro_url);
+            $json['pro_url'] = $this->pro_url;
 
             return $json;
         }
@@ -1660,7 +1931,75 @@ if (class_exists('WP_Customize_Section')):
 
     }
 
-    endif;
+    class Total_Customize_Upgrade_Section extends WP_Customize_Section {
+
+        /**
+         * The type of customize section being rendered.
+         *
+         * @since  1.0.0
+         * @access public
+         * @var    string
+         */
+        public $type = 'total-upgrade-section';
+
+        /**
+         * Custom button text to output.
+         *
+         * @since  1.0.0
+         * @access public
+         * @var    string
+         */
+        public $text = '';
+        public $options = array();
+
+        /**
+         * Add custom parameters to pass to the JS via JSON.
+         *
+         * @since  1.0.0
+         * @access public
+         * @return void
+         */
+        public function json() {
+            $json = parent::json();
+
+            $json['text'] = $this->text;
+            $json['options'] = $this->options;
+
+            return $json;
+        }
+
+        /**
+         * Outputs the Underscore.js template.
+         *
+         * @since  1.0.0
+         * @access public
+         * @return void
+         */
+        protected function render_template() {
+            ?>
+            <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
+                <label>
+                    <# if ( data.title ) { #>
+                    {{ data.title }}
+                    <# } #>
+                </label>
+
+                <# if ( data.text ) { #>
+                {{ data.text }}
+                <# } #>
+
+                <# _.each( data.options, function(key, value) { #>
+                {{ key }}<br/>
+                <# }) #>
+
+                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'); ?>" class="button button-primary" target="_blank"><?php echo esc_html__('Upgrad to Pro', 'total'); ?></a>
+            </li>
+            <?php
+        }
+
+    }
+
+}
 
 //SANITIZATION FUNCTIONS
 function total_sanitize_text($input) {

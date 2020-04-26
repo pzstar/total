@@ -9,7 +9,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div class="entry-content">
-        <div class="entry-meta ht-post-info">
+        <div class="single-entry-meta">
             <?php total_posted_on(); ?>
         </div><!-- .entry-meta -->
         <?php the_content(); ?>
