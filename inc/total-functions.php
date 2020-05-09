@@ -38,6 +38,12 @@ function total_body_classes($classes) {
         $classes[] = 'ht-sticky-header';
     }
 
+    $total_enable_frontpage = get_theme_mod('total_enable_frontpage', false);
+
+    if (is_front_page() && $total_enable_frontpage) {
+        $classes[] = 'ht-enable-frontpage';
+    }
+
     return $classes;
 }
 
@@ -46,11 +52,11 @@ add_filter('body_class', 'total_body_classes');
 if (!function_exists('total_excerpt')) {
 
     function total_excerpt($content, $letter_count) {
-        $content = strip_shortcodes($content);
-        $content = strip_tags($content);
-        $content = mb_substr($content, 0, $letter_count);
+        $new_content = strip_shortcodes($content);
+        $new_content = strip_tags($new_content);
+        $content = mb_substr($new_content, 0, $letter_count);
 
-        if (strlen($content) == $letter_count) {
+        if (($letter_count !== 0) && (strlen($new_content) > $letter_count)) {
             $content .= "...";
         }
         return $content;

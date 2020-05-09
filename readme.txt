@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.39 - May 9, 2020 =
+* Frontpage option added
+
 = 1.2.38 - April 26, 2020 =
 * Themesniffer error fixed
 

@@ -14,6 +14,7 @@ function total_customize_register($wp_customize) {
     $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
     $wp_customize->get_setting('custom_logo')->transport = 'refresh';
     $wp_customize->get_control('background_color')->section = 'background_image';
+    $wp_customize->get_section('static_front_page')->priority = 2;
 
     global $wp_registered_sidebars;
 
@@ -93,18 +94,22 @@ function total_customize_register($wp_customize) {
         'pro_text' => esc_html__('Import', 'total'),
         'pro_url' => admin_url('/themes.php?page=total-welcome')
     )));
+    
+    /* ============HOMEPAGE SETTINGS PANEL============ */
+    $wp_customize->add_setting('total_enable_frontpage', array(
+        'sanitize_callback' => 'total_sanitize_checkbox'
+    ));
+
+    $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable_frontpage', array(
+        'section' => 'static_front_page',
+        'label' => esc_html__('Enable FrontPage', 'total'),
+        'description' => esc_html__('Overwrites the homepage displays setting and shows the frontpage', 'total')
+    )));
 
     /* ============GENERAL SETTINGS PANEL============ */
     $wp_customize->add_panel('total_general_settings_panel', array(
         'title' => esc_html__('General Settings', 'total'),
         'priority' => 10
-    ));
-
-    //STATIC FRONT PAGE
-    $wp_customize->add_section('static_front_page', array(
-        'title' => esc_html__('Static Front Page', 'total'),
-        'panel' => 'total_general_settings_panel',
-        'description' => esc_html__('Your theme supports a static front page.', 'total'),
     ));
 
     //TITLE AND TAGLINE SETTINGS
@@ -1807,6 +1812,39 @@ if (class_exists('WP_Customize_Control')) {
                 </span>
                 <?php
             }
+        }
+
+    }
+    
+    class Total_Toggle_Control extends WP_Customize_Control {
+
+        /**
+         * Control type
+         *
+         * @var string
+         */
+        public $type = 'total-toggle';
+
+        /**
+         * Control method
+         *
+         * @since 1.0.0
+         */
+        public function render_content() {
+            ?>
+            <div class="total-checkbox-toggle">
+                <div class="toggle-switch">
+                    <input type="checkbox" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" class="toggle-checkbox" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> <?php checked($this->value()); ?>>
+                    <label class="toggle-label" for="<?php echo esc_attr($this->id); ?>"><span></span></label>
+                </div>
+                <span class="customize-control-title toggle-title"><?php echo esc_html($this->label); ?></span>
+                <?php if (!empty($this->description)) { ?>
+                    <span class="description customize-control-description">
+                        <?php echo wp_kses_post($this->description); ?>
+                    </span>
+                <?php } ?>
+            </div>
+            <?php
         }
 
     }
