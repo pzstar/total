@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.41 - May 15, 2020 =
+* One Page Nav - current menu highlighting css issue fixed
+
 = 1.2.39 - May 9, 2020 =
 * Frontpage option added
 
