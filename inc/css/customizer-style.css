@@ -45,7 +45,7 @@
 }
 
 /**SWITCH CONTROL*/
-.onoffswitch {
+.total-onoffswitch {
     position: relative;
     width: 100px;
     margin-right: 15px;
@@ -53,7 +53,7 @@
     cursor: pointer;
 }
 
-.onoffswitch-inner {
+.total-onoffswitch-inner {
     width: 200%;
     margin-left: -100%;
     -moz-transition: margin .3s ease-in 0s;
@@ -62,7 +62,7 @@
     transition: margin .3s ease-in 0s
 }
 
-.onoffswitch-inner > div {
+.total-onoffswitch-inner > div {
     float: left;
     position: relative;
     width: 50%;
@@ -77,18 +77,18 @@
     box-sizing: border-box
 }
 
-.onoffswitch-inner .onoffswitch-active {
+.total-onoffswitch-inner .total-onoffswitch-active {
     background-color: #d4d4d4;
     color: #FFF
 }
 
-.onoffswitch-inner .onoffswitch-inactive {
+.total-onoffswitch-inner .total-onoffswitch-inactive {
     background-color: #d4d4d4;
     color: #FFF;
     text-align: right
 }
 
-.onoffswitch-switch {
+.total-onoffswitch-switch {
     width: 50px;
     margin: 0;
     text-align: center;
@@ -99,16 +99,16 @@
     bottom: 0
 }
 
-.onoffswitch-active .onoffswitch-switch {
+.total-onoffswitch-active .total-onoffswitch-switch {
     background: #0073aa;
     left: 0
 }
 
-.onoffswitch-inactive .onoffswitch-switch {
+.total-onoffswitch-inactive .total-onoffswitch-switch {
     background: #7D7D7D;
     right: 0
 }
-.switch-on .onoffswitch-inner {
+.total-switch-on .total-onoffswitch-inner {
     margin-left: 0
 }
 
@@ -235,11 +235,11 @@
 }
 
 
-.toggle-switch{
+.total-toggle-switch{
     float: right;
 }
 
-.toggle-label {
+.total-toggle-label {
     position: relative;
     display: block;
     width: 40px;
@@ -249,7 +249,7 @@
     transform: translate3d(0, 0, 0);
 }
 
-.toggle-label:before {
+.total-toggle-label:before {
     content: "";
     position: relative;
     top: 3px;
@@ -262,7 +262,7 @@
     transition: background 0.2s ease;
 }
 
-.toggle-label span {
+.total-toggle-label span {
     position: absolute;
     top: 0;
     left: 0;
@@ -274,7 +274,7 @@
     transition: all 0.2s ease;
 }
 
-.toggle-label span:before {
+.total-toggle-label span:before {
     content: "";
     position: absolute;
     display: block;
@@ -288,24 +288,24 @@
     pointer-events: none;
 }
 
-.toggle-checkbox:checked + .toggle-label:before {
+.total-toggle-checkbox:checked + .total-toggle-label:before {
     background: #41cd52;
 }
 
-.toggle-checkbox:checked + .toggle-label span {
+.total-toggle-checkbox:checked + .total-toggle-label span {
     background: #41cd52;
     transform: translateX(20px);
     transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
     box-shadow: 0 3px 8px rgba(65, 205, 82, 0.2);
 }
 
-.toggle-checkbox:checked + .toggle-label span:before {
+.total-toggle-checkbox:checked + .total-toggle-label span:before {
     transform: scale(1);
     opacity: 0;
     transition: all 0.4s ease;
 }
 
-.toggle-switch input[type="checkbox"]{
+.total-toggle-switch input[type="checkbox"]{
     display: none;
 }
 

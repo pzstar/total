@@ -6,7 +6,7 @@
  * @package total
  */
 if (!defined('TOTAL_VERSION')) {
-    define('TOTAL_VERSION', '1.2.41');
+    define('TOTAL_VERSION', '1.2.42');
 }
 
 if (!function_exists('total_setup')) :

@@ -1757,7 +1757,7 @@ if (class_exists('WP_Customize_Control')) {
 
     class Total_Switch_Control extends WP_Customize_Control {
 
-        public $type = 'switch';
+        public $type = 'total-switch';
         public $on_off_label = array();
 
         public function __construct($manager, $id, $args = array()) {
@@ -1778,17 +1778,17 @@ if (class_exists('WP_Customize_Control')) {
             <?php } ?>
 
             <?php
-            $switch_class = ($this->value() == 'on') ? 'switch-on' : '';
+            $switch_class = ($this->value() == 'on') ? 'total-switch-on' : '';
             $on_off_label = $this->on_off_label;
             ?>
-            <div class="onoffswitch <?php echo esc_attr($switch_class); ?>">
-                <div class="onoffswitch-inner">
-                    <div class="onoffswitch-active">
-                        <div class="onoffswitch-switch"><?php echo esc_html($on_off_label['on']) ?></div>
+            <div class="total-onoffswitch <?php echo esc_attr($switch_class); ?>">
+                <div class="total-onoffswitch-inner">
+                    <div class="total-onoffswitch-active">
+                        <div class="total-onoffswitch-switch"><?php echo esc_html($on_off_label['on']) ?></div>
                     </div>
 
-                    <div class="onoffswitch-inactive">
-                        <div class="onoffswitch-switch"><?php echo esc_html($on_off_label['off']) ?></div>
+                    <div class="total-onoffswitch-inactive">
+                        <div class="total-onoffswitch-switch"><?php echo esc_html($on_off_label['off']) ?></div>
                     </div>
                 </div>	
             </div>
@@ -1828,14 +1828,13 @@ if (class_exists('WP_Customize_Control')) {
         /**
          * Control method
          *
-         * @since 1.0.0
          */
         public function render_content() {
             ?>
             <div class="total-checkbox-toggle">
-                <div class="toggle-switch">
-                    <input type="checkbox" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" class="toggle-checkbox" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> <?php checked($this->value()); ?>>
-                    <label class="toggle-label" for="<?php echo esc_attr($this->id); ?>"><span></span></label>
+                <div class="total-toggle-switch">
+                    <input type="checkbox" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" class="total-toggle-checkbox" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> <?php checked($this->value()); ?>>
+                    <label class="total-toggle-label" for="<?php echo esc_attr($this->id); ?>"><span></span></label>
                 </div>
                 <span class="customize-control-title toggle-title"><?php echo esc_html($this->label); ?></span>
                 <?php if (!empty($this->description)) { ?>

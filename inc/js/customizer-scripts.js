@@ -14,13 +14,13 @@ jQuery(document).ready(function ($) {
     });
 
     //Switch Control
-    $('body').on('click', '.onoffswitch', function () {
+    $('body').on('click', '.total-onoffswitch', function () {
         var $this = $(this);
-        if ($this.hasClass('switch-on')) {
-            $(this).removeClass('switch-on');
+        if ($this.hasClass('total-switch-on')) {
+            $(this).removeClass('total-switch-on');
             $this.next('input').val('off').trigger('change')
         } else {
-            $(this).addClass('switch-on');
+            $(this).addClass('total-switch-on');
             $this.next('input').val('on').trigger('change')
         }
     });
