@@ -2,7 +2,7 @@
     <div class="welcome-manual-setup">
         <h3><?php echo esc_html__('Manual Setup from Customizer Panel', 'total'); ?></h3>
         <div class="welcome-theme-thumb">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/set-front-page.gif'); ?>" alt="<?php echo esc_html__('Total Demo', 'total'); ?>">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/set-front-page.gif'); ?>" alt="<?php echo esc_attr__('Total Demo', 'total'); ?>">
         </div>
 
         <ol>

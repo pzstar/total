@@ -310,6 +310,3 @@ License: https://github.com/HubSpot/odometer/blob/master/LICENSE
 
 * JQuery One Page Nav - Copyright (c) 2010 Trevor Davis (http://trevordavis.net)
 License: MIT and GPL (http://opensource.org/licenses/MIT)
-
-* Screenshot Banner Image - https://pixabay.com/en/macbook-apple-imac-computer-screen-606763/
-License: CCO (https://pixabay.com/en/service/terms/#usage)

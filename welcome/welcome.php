@@ -96,7 +96,7 @@ if (!class_exists('Total_Welcome')) :
 
                     <div class="total-welcome-info">
                         <div class="total-welcome-thumb">
-                            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Total Demo', 'total'); ?>">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_attr__('Total Demo', 'total'); ?>">
                         </div>
 
                         <?php

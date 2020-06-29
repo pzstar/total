@@ -7,7 +7,7 @@
     <div class="recomended-plugin-wrap">
         <div class="recommended-plugins">
             <div class="plugin-image">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/total.jpg'); ?>" alt="<?php echo esc_html__('Total Plus Demo', 'total'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/total.jpg'); ?>" alt="<?php echo esc_attr__('Total Plus Demo', 'total'); ?>">
             </div>
 
             <div class="plugin-title-wrap">
@@ -20,7 +20,7 @@
 
         <div class="recommended-plugins">
             <div class="plugin-image">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/construction.jpg'); ?>" alt="<?php echo esc_html__('Total Plus Demo', 'total'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/construction.jpg'); ?>" alt="<?php echo esc_attr__('Total Plus Demo', 'total'); ?>">
             </div>
 
             <div class="plugin-title-wrap">
@@ -33,7 +33,7 @@
 
         <div class="recommended-plugins">
             <div class="plugin-image">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/main-demo.jpg'); ?>" alt="<?php echo esc_html__('Total Plus Demo', 'total'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/main-demo.jpg'); ?>" alt="<?php echo esc_attr__('Total Plus Demo', 'total'); ?>">
             </div>
 
             <div class="plugin-title-wrap">
@@ -46,7 +46,7 @@
 
         <div class="recommended-plugins">
             <div class="plugin-image">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/creative-agency.jpg'); ?>" alt="<?php echo esc_html__('Total Plus Demo', 'total'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/creative-agency.jpg'); ?>" alt="<?php echo esc_attr__('Total Plus Demo', 'total'); ?>">
             </div>
 
             <div class="plugin-title-wrap">
@@ -59,7 +59,7 @@
 
         <div class="recommended-plugins">
             <div class="plugin-image">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/one-page.jpg'); ?>" alt="<?php echo esc_html__('Total Plus Demo', 'total'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/one-page.jpg'); ?>" alt="<?php echo esc_attr__('Total Plus Demo', 'total'); ?>">
             </div>
 
             <div class="plugin-title-wrap">
