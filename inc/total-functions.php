@@ -24,12 +24,14 @@ function total_body_classes($classes) {
     if (is_singular($post_type)) {
         global $post;
         $sidebar_layout = get_post_meta($post->ID, 'total_sidebar_layout', true);
+        $total_hide_title = get_post_meta($post->ID, 'total_hide_title', true);
 
         if (!$sidebar_layout) {
             $sidebar_layout = 'right_sidebar';
         }
 
         $classes[] = 'ht_' . $sidebar_layout;
+        $classes[] = !$total_hide_title ? 'ht-titlebar-enabled' : 'ht-titlebar-disabled';
     }
 
     $sticky_header = get_theme_mod('total_sticky_header_enable');

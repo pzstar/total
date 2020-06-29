@@ -13,7 +13,7 @@ function total_sidebar_layout_meta_box() {
     $screens = array('post', 'page');
 
     add_meta_box(
-            'total_sidebar_layout', esc_html__('Sidebar Layout', 'total'), 'total_sidebar_layout_meta_box_callback', $screens, 'normal', 'high'
+            'total_sidebar_layout', esc_html__('Sidebar Layout', 'total'), 'total_sidebar_layout_meta_box_callback', $screens, 'side', 'high'
     );
 }
 
@@ -34,11 +34,13 @@ function total_sidebar_layout_meta_box_callback($post) {
      * from the database and use the value for the form.
      */
     $total_sidebar_layout = get_post_meta($post->ID, 'total_sidebar_layout', true);
+    $total_hide_title = get_post_meta($post->ID, 'total_hide_title', true);
 
     if (!$total_sidebar_layout) {
         $total_sidebar_layout = 'right_sidebar';
     }
 
+    echo '<div class="total-sidebar-layouts">';
     echo '<label>';
     echo '<input type="radio" name="total_sidebar_layout" value="right_sidebar" ' . checked($total_sidebar_layout, 'right_sidebar', false) . ' />';
     echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/css/right-sidebar.jpg') . '"/>';
@@ -58,6 +60,14 @@ function total_sidebar_layout_meta_box_callback($post) {
     echo '<input type="radio" name="total_sidebar_layout" value="no_sidebar_condensed" ' . checked($total_sidebar_layout, 'no_sidebar_condensed', false) . ' />';
     echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/css/no-sidebar-condensed.jpg') . '"/>';
     echo '</label>';
+    echo '</div>';
+
+    echo '<p>';
+    echo '<input type="checkbox" id="total_hide_title" name="total_hide_title" value="1" ' . checked($total_hide_title, 1, false) . ' />';
+    echo '<label for="total_hide_title">';
+    echo esc_html__('Hide Title', 'total');
+    echo '</label>';
+    echo '</p>';
 }
 
 /**
@@ -101,6 +111,9 @@ function total_sidebar_layout_save_meta_box($post_id) {
         // Update the meta field in the database.
         update_post_meta($post_id, 'total_sidebar_layout', $total_data);
     }
+
+    $total_hide_title = isset($_POST['total_hide_title']) ? true : false;
+    update_post_meta($post_id, 'total_hide_title', $total_hide_title);
 }
 
 add_action('save_post', 'total_sidebar_layout_save_meta_box');

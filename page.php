@@ -5,18 +5,21 @@
  * @package Total
  */
 get_header();
-?>
+$total_hide_title = get_post_meta($post->ID, 'total_hide_title', true);
 
-<header class="ht-main-header">
-    <div class="ht-container">
-        <?php the_title('<h1 class="ht-main-title">', '</h1>'); ?>
-        <?php
-        if (!is_front_page()) {
-            do_action('total_breadcrumbs');
-        }
-        ?>
-    </div>
-</header><!-- .entry-header -->
+if (!$total_hide_title) {
+    ?>
+    <header class="ht-main-header">
+        <div class="ht-container">
+            <?php the_title('<h1 class="ht-main-title">', '</h1>'); ?>
+            <?php
+            if (!is_front_page()) {
+                do_action('total_breadcrumbs');
+            }
+            ?>
+        </div>
+    </header><!-- .entry-header -->
+<?php } ?>
 
 <div class="ht-container">
     <div id="primary" class="content-area">

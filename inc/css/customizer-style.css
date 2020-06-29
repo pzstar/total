@@ -332,6 +332,10 @@
     content: "\f111";
 }
 
+#accordion-section-total_header_settings .accordion-section-title:before{
+    content: "\f212";
+}
+
 #accordion-panel-total_home_panel .accordion-section-title:before{
     content: "\f102";
 }

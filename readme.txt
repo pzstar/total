@@ -23,6 +23,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.43 - Jun 28, 2020 =
+* Added option to hide the titlebar
+* Other minor fixes
+
 = 1.2.42 - May 16, 2020 =
 * Welcome Note issue fixed
 * Other minor styling issue fixed

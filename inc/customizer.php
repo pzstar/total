@@ -156,7 +156,7 @@ function total_customize_register($wp_customize) {
     //HEADER SETTINGS
     $wp_customize->add_section('total_header_settings', array(
         'title' => esc_html__('Header Settings', 'total'),
-        'panel' => 'total_general_settings_panel',
+        'priority' => 15
     ));
 
     //ENABLE/DISABLE STICKY HEADER
@@ -170,8 +170,8 @@ function total_customize_register($wp_customize) {
         'section' => 'total_header_settings',
         'label' => esc_html__('Sticky Header', 'total'),
         'on_off_label' => array(
-            'on' => esc_html__('Enable', 'total'),
-            'off' => esc_html__('Disable', 'total')
+            'on' => esc_html__('Yes', 'total'),
+            'off' => esc_html__('No', 'total')
     ))));
 
     $wp_customize->add_setting('total_header_upgrade_text', array(
