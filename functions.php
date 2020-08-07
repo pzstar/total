@@ -6,7 +6,7 @@
  * @package total
  */
 if (!defined('TOTAL_VERSION')) {
-    define('TOTAL_VERSION', '1.2.43');
+    define('TOTAL_VERSION', '1.2.44');
 }
 
 if (!function_exists('total_setup')) :
@@ -314,6 +314,11 @@ require get_template_directory() . '/inc/breadcrumbs.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * TGMPA
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 /**
  * Custom functions that act independently of the theme templates.

@@ -39,16 +39,11 @@ if (!class_exists('Total_Welcome')) :
                     'slug' => 'hashthemes-demo-importer',
                     'filename' => 'hashthemes-demo-importer'
                 ),
-                'elementor' => array(
-                    'name' => 'Elementor Page Builder',
-                    'slug' => 'elementor',
-                    'filename' => 'elementor'
+                'getwid' => array(
+                    'name' => 'Getwid – Gutenberg Blocks',
+                    'slug' => 'getwid',
+                    'filename' => 'getwid'
                 ),
-                'siteorigin-panels' => array(
-                    'name' => 'Page Builder by SiteOrigin',
-                    'slug' => 'siteorigin-panels',
-                    'filename' => 'siteorigin-panels'
-                )
             );
 
             /* Create a Welcome Page */

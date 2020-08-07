@@ -1008,7 +1008,7 @@ msgid "Upgrade to PRO"
 msgstr ""
 
 #: inc/customizer.php:1995
-msgid "Upgrad to Pro"
+msgid "Upgrade to Pro"
 msgstr ""
 
 #: inc/total-functions.php:97
