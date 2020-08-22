@@ -92,7 +92,7 @@ function total_customize_register($wp_customize) {
         'title' => esc_html__('Import Demo Content', 'total'),
         'priority' => 1001,
         'pro_text' => esc_html__('Import', 'total'),
-        'pro_url' => admin_url('/themes.php?page=total-welcome')
+        'pro_url' => admin_url('admin.php?page=total-welcome')
     )));
     
     /* ============HOMEPAGE SETTINGS PANEL============ */

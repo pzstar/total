@@ -55,8 +55,8 @@
         <td>
             <span><?php esc_html_e('Elementor Widgets', 'total'); ?></span>
             <p><?php esc_html_e('Elementor provides you with unlimited possibilities to create the website of your imagination.', 'total'); ?></td>
-        <td>0</td>
-        <td>20+ Widgets</td>
+        <td>10 Widgets</td>
+        <td>40+ Widgets</td>
     </tr>
     <tr>
         <td>

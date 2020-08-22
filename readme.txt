@@ -23,6 +23,11 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.45 - Aug 22, 2020 =
+* Added Template File for Pagebuilders
+* Typo mistake fixed
+* Recommended Plugins Images statically added
+
 = 1.2.44 - July 3, 2020 =
 * Added recommended plugin via TGMPA
 

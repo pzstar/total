@@ -124,7 +124,7 @@ if (!class_exists('Total_Welcome')) :
                         <div class="total-welcome-getting-started">
                             <h3><?php esc_html_e('Get Started', 'total'); ?></h3>
                             <p><?php printf(esc_html__('Here you will find all the necessary links and information on how to use %s.', 'total'), $this->theme_name); ?></p>
-                            <p><a href="<?php echo esc_url(admin_url('/themes.php?page=total-welcome')); ?>" class="button button-primary"><?php esc_html_e('Go to Setting Page', 'total'); ?></a></p>
+                            <p><a href="<?php echo esc_url(admin_url('admin.php?page=total-welcome')); ?>" class="button button-primary"><?php esc_html_e('Go to Setting Page', 'total'); ?></a></p>
                         </div>
                     </div>
 
@@ -148,7 +148,7 @@ if (!class_exists('Total_Welcome')) :
 
         /** Register Menu for Welcome Page */
         public function welcome_register_menu() {
-            add_theme_page(esc_html__('Welcome', 'total'), sprintf(esc_html__('%s Settings', 'total'), $this->theme_name), 'edit_theme_options', 'total-welcome', array($this, 'welcome_screen'));
+            add_menu_page(esc_html__('Welcome', 'total'), sprintf(esc_html__('%s Settings', 'total'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'total-welcome', array($this, 'welcome_screen'), '', 2);
         }
 
         /** Welcome Page */

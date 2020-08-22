@@ -489,7 +489,17 @@ function total_register_required_plugins() {
             'name' => 'Simple Floating Menu',
             'slug' => 'simple-floating-menu',
             'required' => false,
-        )
+        ),
+        array(
+            'name' => 'Elementor',
+            'slug' => 'elementor',
+            'required' => false,
+        ),
+        array(
+            'name' => 'Hash Elements',
+            'slug' => 'hash-elements',
+            'required' => false,
+        ),
     );
 
     /*

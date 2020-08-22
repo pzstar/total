@@ -14,7 +14,7 @@
         </ol>
         <p><strong><?php echo esc_html__('FROM ELEMENTOR', 'total'); ?></strong></p>
         <ol>
-            <li><?php printf(esc_html__('Firstly install and activate "Elementor" and "Hash Elements" plugin from %s.', 'total'), '<a href="' . admin_url('themes.php?page=total-welcome&section=recommended_plugins') . '" target="_blank">' . esc_html__('Recommended Plugin page', 'total') . '</a>'); ?></li>
+            <li><?php printf(esc_html__('Firstly install and activate "Elementor" and "Hash Elements" plugin from %s.', 'total'), '<a href="' . admin_url('admin.php?page=total-welcome&section=recommended_plugins') . '" target="_blank">' . esc_html__('Recommended Plugin page', 'total') . '</a>'); ?></li>
             <li><?php echo esc_html__('Create a new page and edit with Elementor. Drag and drop the news elements in the Elementor to create your own design.', 'total'); ?></li>
             <li><?php echo esc_html__('Now go to Appearance > Customize > Homepage Settings and choose "A static page" for "Your latest posts" and select the created page for "Home Page" option.', 'total'); ?> </li>
         </ol>
