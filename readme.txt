@@ -1,7 +1,7 @@
 === Total ===
 Contributors: hashthemes
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.5
 Stable tag: 1.0.0
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.46 - Aug 24, 2020 =
+* Priority issue in add_menu_page for welcome page fixed
+
 = 1.2.45 - Aug 22, 2020 =
 * Added Template File for Pagebuilders
 * Typo mistake fixed
