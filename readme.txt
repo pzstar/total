@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.47 - Sep 24, 2020 =
+* Select All option not working in WordPress pages fixed
+
 = 1.2.46 - Aug 24, 2020 =
 * Priority issue in add_menu_page for welcome page fixed
 
