@@ -77,7 +77,7 @@ function total_customize_register($wp_customize) {
 
     $wp_customize->add_section(new Total_Customize_Section_Pro($wp_customize, 'total-pro-section', array(
         'priority' => 0,
-        'pro_text' => esc_html__('Christmas And New Year Discount. Get 40% Off on Upgrading to Pro', 'total'),
+        'pro_text' => esc_html__('Upgrade to Pro', 'total'),
         'pro_url' => 'https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade'
     )));
 

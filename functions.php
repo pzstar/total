@@ -88,6 +88,12 @@ if (!function_exists('total_setup')) :
         add_theme_support('wc-product-gallery-lightbox');
         add_theme_support('wc-product-gallery-slider');
 
+        // Add support for Block Styles.
+        add_theme_support('wp-block-styles');
+
+        // Add support for full and wide align images.
+        add_theme_support('align-wide');
+
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.

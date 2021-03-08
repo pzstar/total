@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.52 - Mar 07, 2021 =
+* Add Theme support for Align Wide and Block Styles added
+
 = 1.2.50 - Dec 16, 2020 =
 * New year Banner added in setting page
 
