@@ -485,16 +485,16 @@ a.buy-pro-btn:hover{
 }
 
 /** Footer Review **/
-body.appearance_page_total-welcome #wpfooter{
+body.toplevel_page_total-welcome #wpfooter{
     position: fixed;
-    background: #23282e;
+    background: #1d2427;
     color: #FFF;
     max-width: 1110px;
     left: 40px;
     margin-right: 40px;
 }
 
-body.appearance_page_total-welcome #wpfooter a{
+body.toplevel_page_total-welcome #wpfooter a{
     color: #FFF;
 }
 

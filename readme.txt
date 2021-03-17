@@ -23,6 +23,13 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.54 - Mar 17, 2021 =
+* Minor design and typo fixes
+
+= 1.2.53 - Mar 11, 2021 =
+* Add theme support for responsive embed and customize selective refresh for widget
+* 'display' => 'swap added for faster Google font loading
+
 = 1.2.52 - Mar 07, 2021 =
 * Add Theme support for Align Wide and Block Styles added
 

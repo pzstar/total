@@ -94,6 +94,12 @@ if (!function_exists('total_setup')) :
         // Add support for full and wide align images.
         add_theme_support('align-wide');
 
+        // Add theme support for selective refresh for widgets.
+        add_theme_support('customize-selective-refresh-widgets');
+
+        // Add support for responsive embedded content.
+        add_theme_support('responsive-embeds');
+
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
@@ -255,6 +261,7 @@ if (!function_exists('total_fonts_url')) :
             $fonts_url = add_query_arg(array(
                 'family' => urlencode(implode('|', $fonts)),
                 'subset' => urlencode($subsets),
+                'display' => 'swap'
                     ), '//fonts.googleapis.com/css');
         }
 

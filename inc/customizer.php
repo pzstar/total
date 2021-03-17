@@ -40,9 +40,11 @@ function total_customize_register($wp_customize) {
     $total_post_count_choice = array(3 => 3, 6 => 6, 9 => 9);
 
     $total_pro_features = '<ul class="upsell-features">
-	<li>' . esc_html__("One click demo import", "total") . '</li>
-	<li>' . esc_html__("18 Front page sections with lots of variations", "total") . '</li>
-	<li>' . esc_html__("Section reorder", "total") . '</li>
+	<li>' . esc_html__("5+ Demos that can be imported with one click", "total") . '</li>
+        <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
+        <li>' . esc_html__("18 Front Page Customizer sections with lots of variations", "total") . '</li>
+	<li>' . esc_html__("30+ Elementor Elements", "total") . '</li>
+        <li>' . esc_html__("26 custom widgets", "total") . '</li>
 	<li>' . esc_html__("Video background, Image Motion background, Parallax background, Gradient background option for each section", "total") . '</li>
 	<li>' . esc_html__("4 icon pack for icon picker (5000+ Icons)", "total") . '</li>
 	<li>' . esc_html__("Unlimited slider with linkable button", "total") . '</li>
@@ -62,7 +64,6 @@ function total_customize_register($wp_customize) {
 	<li>' . esc_html__("Advanced blog settings", "total") . '</li>
 	<li>' . esc_html__("Advanced footer setting", "total") . '</li>
 	<li>' . esc_html__("Front page sections with full window height", "total") . '</li>
-	<li>' . esc_html__("26 custom widgets", "total") . '</li>
 	<li>' . esc_html__("Blog single page - Author Box, Social Share and Related Post", "total") . '</li>
 	<li>' . esc_html__("Google map option", "total") . '</li>
 	<li>' . esc_html__("WooCommerce Compatible", "total") . '</li>
@@ -94,7 +95,7 @@ function total_customize_register($wp_customize) {
         'pro_text' => esc_html__('Import', 'total'),
         'pro_url' => admin_url('admin.php?page=total-welcome')
     )));
-    
+
     /* ============HOMEPAGE SETTINGS PANEL============ */
     $wp_customize->add_setting('total_enable_frontpage', array(
         'sanitize_callback' => 'total_sanitize_checkbox'
@@ -1444,7 +1445,9 @@ function total_customize_register($wp_customize) {
             esc_html__('- News and Update Section', 'total'),
             esc_html__('- Tab Section', 'total'),
             esc_html__('- Contact Section with Google Map', 'total'),
-            esc_html__('- Custom Elementor Section', 'total')
+            esc_html__('- Custom Elementor Section', 'total'),
+            esc_html__('------------------------', 'total'),
+            esc_html__('- Elementor Pagebuilder Compatible. All the above sections can be created with Elementor Page Builder or Customizer whichever you like.', 'total'),
         )
     )));
 
@@ -1815,7 +1818,7 @@ if (class_exists('WP_Customize_Control')) {
         }
 
     }
-    
+
     class Total_Toggle_Control extends WP_Customize_Control {
 
         /**

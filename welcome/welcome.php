@@ -250,7 +250,7 @@ if (!class_exists('Total_Welcome')) :
         public function admin_footer_text($text) {
             $screen = get_current_screen();
 
-            if ('appearance_page_total-welcome' == $screen->id) {
+            if ('toplevel_page_total-welcome' == $screen->id) {
                 $text = sprintf(esc_html__('Please leave us a %s rating if you like our theme . A huge thank you from HashThemes in advance!', 'total'), '<a href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>');
             }
 
