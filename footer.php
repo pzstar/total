@@ -67,7 +67,7 @@
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
-<div id="ht-back-top" class="ht-hide"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+<div id="ht-back-top" class="ht-hide"><i class="fas fa-angle-up"></i></div>
     <?php wp_footer(); ?>
 
 </body>

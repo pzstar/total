@@ -33,7 +33,7 @@ if (!function_exists('total_posted_on')) :
             } else {
                 $comments = esc_html__('1 Comment', 'total');
             }
-            $comment_link = '<a href="' . get_comments_link() . '"><i class="fa fa-comment-o" aria-hidden="true"></i> ' . $comments . '</a>';
+            $comment_link = '<a href="' . get_comments_link() . '"><i class="far fa-comment" aria-hidden="true"></i> ' . $comments . '</a>';
         } else {
             $comment_link = "";
         }
@@ -89,7 +89,7 @@ if (!function_exists('total_entry_category')) :
         if ('post' == get_post_type()) {
             $categories_list = get_the_category_list(', ');
             if ($categories_list && total_categorized_blog()) {
-                echo '<i class="fa fa-bookmark"></i>' . $categories_list; // WPCS: XSS OK.
+                echo '<i class="far fa-bookmark"></i>' . $categories_list; // WPCS: XSS OK.
             }
         }
     }

@@ -52,7 +52,7 @@ if (get_theme_mod('total_service_section_disable') != 'on') {
                                                 }
                                                 ?>
                                                 <br/>
-                                                <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'total'); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'total'); ?> <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>

@@ -31,7 +31,7 @@ if (get_theme_mod('total_portfolio_section_disable') != 'on') {
                 $total_portfolio_cat_array = explode(',', $total_portfolio_cat);
                 ?>	
                 <div class="ht-portfolio-cat-name-list">
-                    <i class="fa fa-th-large" aria-hidden="true"></i>
+                    <i class="fas fa-th-large" aria-hidden="true"></i>
                     <?php
                     foreach ($total_portfolio_cat_array as $total_portfolio_cat_single) {
                         $category_slug = "";
@@ -85,10 +85,10 @@ if (get_theme_mod('total_portfolio_section_disable') != 'on') {
 
                                             <div class="ht-portfolio-caption">
                                                 <h5><?php the_title(); ?></h5>
-                                                <a class="ht-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>
+                                                <a class="ht-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i class="fas fa-link"></i></a>
 
                                                 <?php if (has_post_thumbnail()) { ?>
-                                                    <a class="ht-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($total_image_large[0]) ?>"><i class="fa fa-search"></i></a>
+                                                    <a class="ht-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($total_image_large[0]) ?>"><i class="fas fa-search"></i></a>
                                                     <?php } ?>
                                             </div>
                                         </div>

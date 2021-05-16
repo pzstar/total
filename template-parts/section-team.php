@@ -38,7 +38,8 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
                                 $total_team_designation = get_theme_mod('total_team_designation' . $i);
                                 $total_team_facebook = get_theme_mod('total_team_facebook' . $i);
                                 $total_team_twitter = get_theme_mod('total_team_twitter' . $i);
-                                $total_team_google_plus = get_theme_mod('total_team_google_plus' . $i);
+                                $total_team_instagram = get_theme_mod('total_team_instagram' . $i);
+                                $total_team_linkedin = get_theme_mod('total_team_linkedin' . $i);
                                 ?>
                                 <div class="ht-team-member">
 
@@ -78,18 +79,22 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
                                         </a>
                                     </div>	
 
-                                    <?php if ($total_team_facebook || $total_team_twitter || $total_team_google_plus) { ?>
+                                    <?php if ($total_team_facebook || $total_team_twitter || $total_team_instagram) { ?>
                                         <div class="ht-team-social-id">
                                             <?php if ($total_team_facebook) { ?>
-                                                <a target="_blank" href="<?php echo esc_url($total_team_facebook) ?>"><i class="fa fa-facebook"></i></a>
+                                                <a target="_blank" href="<?php echo esc_url($total_team_facebook) ?>"><i class="fab fa-facebook-f"></i></a>
                                             <?php } ?>
 
                                             <?php if ($total_team_twitter) { ?>
-                                                <a target="_blank" href="<?php echo esc_url($total_team_twitter) ?>"><i class="fa fa-twitter"></i></a>
+                                                <a target="_blank" href="<?php echo esc_url($total_team_twitter) ?>"><i class="fab fa-twitter"></i></a>
                                             <?php } ?>
 
-                                            <?php if ($total_team_google_plus) { ?>
-                                                <a target="_blank" href="<?php echo esc_url($total_team_google_plus) ?>"><i class="fa fa-google-plus"></i></a>
+                                            <?php if ($total_team_instagram) { ?>
+                                                <a target="_blank" href="<?php echo esc_url($total_team_instagram) ?>"><i class="fab fa-instagram"></i></a>
+                                            <?php } ?>
+
+                                            <?php if ($total_team_linkedin) { ?>
+                                                <a target="_blank" href="<?php echo esc_url($total_team_linkedin) ?>"><i class="fab fa-linkedin-in"></i></a>
                                                 <?php } ?>
                                         </div>
                                     <?php } ?>

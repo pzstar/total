@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/total/
 Author: Hash Themes
 Author URI: https://hashthemes.com
 Description: Total as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The home page consist of slider, featured section with icon, about us section with progress bar, portfolio section with masonary layout, team section, testimonial section, counter section, blog section with option to add 3, 6 or 9 blog posts, clients logo carousel slider and call to action section. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce - an ecommerce plugin and all other major plugins. The theme can also be used with all major page builder plugins like Elementor, SiteOrigin, WpBakery VisualComposer and Beaver Builder. The theme provides option to import the demo with just one click. DEMO: https://demo.hashthemes.com/total/
-Version: 1.2.54
+Version: 1.2.57
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: total
@@ -679,7 +679,7 @@ a:active {
     border: none;
 }
 
-.ht-contact-info ul li .fa{
+.ht-contact-info ul li i{
     margin-left: -30px;
     float: left;
     margin-top: 6px;
@@ -898,7 +898,7 @@ a:active {
     margin-bottom: 15px;
 }
 
-.entry-categories .fa{
+.entry-categories i{
     color: #FFC107;
     margin-right: 8px;
 }
@@ -1859,7 +1859,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     transform: translateY(-35px); 
 }
 
-.ht-featured-icon .fa{
+.ht-featured-icon i{
     vertical-align: bottom;
 }
 
@@ -1893,7 +1893,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     text-align: right;
 }
 
-.ht-portfolio-cat-name-list .fa{
+.ht-portfolio-cat-name-list i{
     vertical-align: middle;
     color: #FFC107; 
 }
@@ -2118,6 +2118,11 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 
 .ht-service-text{
     display: none;
+}
+
+.ht-service-text a > i{
+    font-size: 13px;
+    margin-left: 10px;
 }
 
 .ht-service-excerpt h5{
@@ -2519,7 +2524,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     margin-bottom: 10px;
 }
 
-.ht-blog-date .fa{
+.ht-blog-date i{
     margin-right: 10px;
 }
 

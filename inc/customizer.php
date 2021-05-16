@@ -475,7 +475,7 @@ function total_customize_register($wp_customize) {
         ));
 
         $wp_customize->add_setting('total_featured_page_icon' . $i, array(
-            'default' => 'fa fa-bell',
+            'default' => 'far fa-bell',
             'sanitize_callback' => 'total_sanitize_text'
         ));
 
@@ -852,26 +852,24 @@ function total_customize_register($wp_customize) {
             'label' => esc_html__('Twitter Url', 'total')
         ));
 
-        $wp_customize->add_setting('total_team_google_plus' . $i, array(
-            'default' => 'https://plus.google.com',
+        $wp_customize->add_setting('total_team_instagram' . $i, array(
             'sanitize_callback' => 'esc_url_raw'
         ));
 
-        $wp_customize->add_control('total_team_google_plus' . $i, array(
-            'settings' => 'total_team_google_plus' . $i,
+        $wp_customize->add_control('total_team_instagram' . $i, array(
+            'settings' => 'total_team_instagram' . $i,
             'section' => 'total_team_section',
             'type' => 'url',
-            'label' => esc_html__('Google Plus Url', 'total')
+            'label' => esc_html__('Instagram Url', 'total')
         ));
 
         $wp_customize->add_setting('total_team_linkedin' . $i, array(
-            'default' => 'https://linkedin.com',
             'sanitize_callback' => 'esc_url_raw'
         ));
 
         $wp_customize->add_control('total_team_linkedin' . $i, array(
             'settings' => 'total_team_linkedin' . $i,
-            'section' => 'total_team_linkedin' . $i,
+            'section' => 'total_team_section',
             'type' => 'url',
             'label' => esc_html__('Linkedin Url', 'total')
         ));
@@ -1010,7 +1008,7 @@ function total_customize_register($wp_customize) {
         ));
 
         $wp_customize->add_setting('total_counter_icon' . $i, array(
-            'default' => 'fa fa-bell',
+            'default' => 'far fa-bell',
             'sanitize_callback' => 'total_sanitize_text'
         ));
 
@@ -1115,6 +1113,7 @@ function total_customize_register($wp_customize) {
         'section' => 'total_testimonial_section',
         'choices' => $total_page_choice,
         'label' => esc_html__('Select the Pages', 'total'),
+        'description' => esc_html__('Drag & Drop to reorder', 'total'),
         'placeholder' => esc_html__('Select Some Pages', 'total')
     )));
 
@@ -1481,9 +1480,12 @@ add_action('customize_preview_init', 'total_customize_preview_js');
 
 function total_customizer_script() {
     wp_enqueue_script('total-customizer-script', get_template_directory_uri() . '/inc/js/customizer-scripts.js', array('jquery'), TOTAL_VERSION, true);
-    wp_enqueue_script('total-customizer-chosen-script', get_template_directory_uri() . '/inc/js/chosen.jquery.js', array('jquery'), TOTAL_VERSION, true);
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), TOTAL_VERSION);
-    wp_enqueue_style('total-customizer-chosen-style', get_template_directory_uri() . '/inc/css/chosen.css', array(), TOTAL_VERSION);
+    wp_enqueue_script('chosen-jquery', get_template_directory_uri() . '/inc/js/chosen.jquery.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('selectize', get_template_directory_uri() . '/inc/js/selectize.js', array('jquery', 'jquery-ui-sortable'), TOTAL_VERSION, true);
+    wp_enqueue_style('font-awesome-4.7.0', get_template_directory_uri() . '/css/font-awesome-4.7.0.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('font-awesome-5.2.0', get_template_directory_uri() . '/css/font-awesome-5.2.0.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('chosen', get_template_directory_uri() . '/inc/css/chosen.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('selectize', get_template_directory_uri() . '/inc/css/selectize.css', array(), TOTAL_VERSION);
     wp_enqueue_style('total-customizer-style', get_template_directory_uri() . '/inc/css/customizer-style.css', array(), TOTAL_VERSION);
 }
 
@@ -1556,8 +1558,8 @@ if (class_exists('WP_Customize_Control')) {
                 <?php } ?>
 
                 <div class="total-selected-icon">
-                    <i class="fa <?php echo esc_attr($this->value()); ?>"></i>
-                    <span><i class="fa fa-angle-down"></i></span>
+                    <i class="<?php echo esc_attr($this->value()); ?>"></i>
+                    <span><i class="fas fa-chevron-down"></i></span>
                 </div>
 
                 <ul class="total-icon-list clearfix">
@@ -1593,20 +1595,21 @@ if (class_exists('WP_Customize_Control')) {
                     </span>
                 <?php } ?>
 
-                <div class="gallery-screenshot clearfix">
-                    <?php {
-                        $ids = explode(',', $this->value());
-                        foreach ($ids as $attachment_id) {
-                            $img = wp_get_attachment_image_src($attachment_id, 'thumbnail');
-                            echo '<div class="screen-thumb"><img src="' . esc_url($img[0]) . '" /></div>';
+                <ul class="total-gallery-container">
+                    <?php
+                    if ($this->value()) {
+                        $images = explode(',', $this->value());
+                        foreach ($images as $image) {
+                            $image_src = wp_get_attachment_image_src($image, 'thumbnail');
+                            echo '<li data-id="' . $image . '"><span style="background-image:url(' . $image_src[0] . ')"></span><a href="#" class="total-gallery-remove">×</a></li>';
                         }
                     }
                     ?>
-                </div>
+                </ul>
 
-                <input id="edit-gallery" class="button upload_gallery_button" type="button" value="<?php esc_attr_e('Add/Edit Gallery', 'total') ?>" />
-                <input id="clear-gallery" class="button upload_gallery_button" type="button" value="<?php esc_attr_e('Clear', 'total') ?>" />
-                <input type="hidden" class="gallery_values" <?php echo esc_attr($this->link()) ?> value="<?php echo esc_attr($this->value()); ?>">
+                <input type="hidden" <?php echo esc_attr($this->link()) ?> value="<?php echo esc_attr($this->value()); ?>" />
+
+                <a href="#" class="button total-gallery-button"><?php esc_html_e('Add Images', 'total') ?></a>
             </label>
             <?php
         }
@@ -1687,6 +1690,9 @@ if (class_exists('WP_Customize_Control')) {
             if (empty($this->choices))
                 return;
 
+            $new_array = $choices = $this->choices;
+            $stored = array();
+
             $saved_value = $this->value();
             if (!is_array($saved_value)) {
                 $saved_value = array();
@@ -1701,16 +1707,29 @@ if (class_exists('WP_Customize_Control')) {
                     <span class="description customize-control-description">
                         <?php echo wp_kses_post($this->description); ?>
                     </span>
-                <?php } ?>
-
-                <select data-placeholder="<?php echo esc_html($this->placeholder); ?>" multiple="multiple" class="hs-chosen-select" <?php $this->link(); ?>>
                     <?php
-                    foreach ($this->choices as $value => $label) {
+                }
+
+                if ($saved_value) {
+                    foreach ($saved_value as $val) {
+                        $stored[$val] = $choices[$val];
+                    }
+
+                    foreach ($choices as $value => $label) {
                         $selected = '';
-                        if (in_array($value, $saved_value)) {
-                            $selected = 'selected="selected"';
+                        if (!in_array($value, $saved_value)) {
+                            $unstored[$value] = $label;
                         }
-                        echo '<option value="' . esc_attr($value) . '"' . esc_attr($selected) . '>' . esc_html($label) . '</option>';
+                    }
+
+                    $new_array = $stored + $unstored;
+                }
+                ?>
+
+                <select data-placeholder="<?php echo esc_html($this->placeholder); ?>" multiple="multiple" class="hs-selectize" <?php $this->link(); ?>>
+                    <?php
+                    foreach ($new_array as $value => $label) {
+                        echo '<option value="' . esc_attr($value) . '">' . esc_html($label) . '</option>';
                     }
                     ?>
                 </select>

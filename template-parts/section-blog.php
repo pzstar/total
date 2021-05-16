@@ -50,7 +50,7 @@ if (get_theme_mod('total_blog_section_disable') != 'on') {
                             ?>
                             <div class="ht-blog-excerpt">
                                 <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                                <div class="ht-blog-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo get_the_date(); ?></div>
+                                <div class="ht-blog-date"><i class="far fa-calendar" aria-hidden="true"></i><?php echo get_the_date(); ?></div>
                                 <?php
                                 if (has_excerpt() && '' != trim(get_the_excerpt())) {
                                     the_excerpt();

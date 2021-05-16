@@ -23,6 +23,15 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.57 - May 16, 2021 =
+* Fontawesome updated
+
+= 1.2.56 - May 9, 2021 =
+* Customizer Error fixed
+
+= 1.2.55 - May 7, 2021 =
+* Added Selectize for Testimonial Selector
+
 = 1.2.54 - Mar 17, 2021 =
 * Minor design and typo fixes
 

@@ -37,7 +37,7 @@ jQuery(function ($) {
         nav: true,
         dots: false,
         autoplayTimeout: 7000,
-        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        navText: ['<i class="fas fa-chevron-left" aria-hidden="true"></i>', '<i class="fas fa-chevron-right" aria-hidden="true"></i>']
     });
 
     $(".ht_client_logo_slider").owlCarousel({

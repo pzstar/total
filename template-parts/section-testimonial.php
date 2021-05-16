@@ -32,7 +32,9 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                         $args = array(
                             'post_type' => 'page',
                             'post__in' => $total_testimonial_page,
-                            'posts_per_page' => 12
+                            'posts_per_page' => 8,
+                            'ignore_sticky_posts' => true,
+                            'orderby' => 'post__in'
                         );
                         $query = new WP_Query($args);
                         if ($query->have_posts()):
@@ -41,8 +43,9 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                                 ?>
                                 <div class="ht-testimonial">
                                     <div class="ht-testimonial-excerpt">
-                                        <i class="fa fa-quote-left"></i>
+                                        <i class="fas fa-quote-left"></i>
                                         <?php
+                                        
                                         if (has_excerpt() && '' != trim(get_the_excerpt())) {
                                             the_excerpt();
                                         } else {
