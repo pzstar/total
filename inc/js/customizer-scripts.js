@@ -1,16 +1,31 @@
 jQuery(document).ready(function ($) {
     "use strict";
 
-    //FontAwesome Icon Control JS
-    $('body').on('click', '.total-icon-list li', function () {
+    //FontAwesome Icon Chooser
+    $('body').on('click', '.customize-control-icon .total-icon-list li', function () {
         var icon_class = $(this).find('i').attr('class');
-        $(this).addClass('icon-active').siblings().removeClass('icon-active');
-        $(this).parent('.total-icon-list').prev('.total-selected-icon').children('i').attr('class', '').addClass(icon_class);
-        $(this).parent('.total-icon-list').next('input').val(icon_class).trigger('change');
+        $(this).closest('.total-icon-box').find('.total-icon-list li').removeClass('icon-active');
+        $(this).addClass('icon-active');
+        $(this).closest('.total-icon-box').prev('.total-selected-icon').children('i').attr('class', '').addClass(icon_class);
+        $(this).closest('.total-icon-box').next('input').val(icon_class).trigger('change');
+        $(this).closest('.total-icon-box').slideUp();
     });
 
-    $('body').on('click', '.total-selected-icon', function () {
+    $('body').on('click', '.customize-control-icon .total-selected-icon', function () {
         $(this).next().slideToggle();
+    });
+
+    $('body').on('keyup', '.customize-control-icon .total-icon-search input', function (e) {
+        var keyword = $(this).val().toLowerCase();
+        var search_criteria = $(this).closest('.total-icon-box').find('.total-icon-list i');
+
+        $(search_criteria).each(function () {
+            if ($(this).attr('class').indexOf(keyword) > -1) {
+                $(this).parent().show();
+            } else {
+                $(this).parent().hide();
+            }
+        });
     });
 
     //Switch Control
@@ -128,7 +143,7 @@ jQuery(document).ready(function ($) {
     $(".hs-chosen-select").chosen({
         width: "100%"
     })
-    
+
     $(".hs-selectize").selectize({
         plugins: ['remove_button', 'drag_drop'],
         delimiter: ',',

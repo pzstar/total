@@ -91,7 +91,7 @@ function total_customize_register($wp_customize) {
 
     $wp_customize->add_section(new Total_Customize_Section_Pro($wp_customize, 'total-demo-import-section', array(
         'title' => esc_html__('Import Demo Content', 'total'),
-        'priority' => 1001,
+        'priority' => 0,
         'pro_text' => esc_html__('Import', 'total'),
         'pro_url' => admin_url('admin.php?page=total-welcome')
     )));
@@ -104,7 +104,7 @@ function total_customize_register($wp_customize) {
     $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable_frontpage', array(
         'section' => 'static_front_page',
         'label' => esc_html__('Enable FrontPage', 'total'),
-        'description' => esc_html__('Overwrites the homepage displays setting and shows the frontpage', 'total')
+        'description' => sprintf(esc_html__('Overwrites the homepage displays setting and shows the frontpage for Customizer %s', 'total'), '<a href="javascript:wp.customize.panel(\'total_home_panel\').focus()">' . esc_html__('Front Page Sections', 'total') . '</a>') . '<br/><br/>' . esc_html__('Do not enable this option if you want to use Elementor in home page.', 'total')
     )));
 
     /* ============GENERAL SETTINGS PANEL============ */
@@ -1562,15 +1562,21 @@ if (class_exists('WP_Customize_Control')) {
                     <span><i class="fas fa-chevron-down"></i></span>
                 </div>
 
-                <ul class="total-icon-list clearfix">
-                    <?php
-                    $total_font_awesome_icon_array = total_font_awesome_icon_array();
-                    foreach ($total_font_awesome_icon_array as $total_font_awesome_icon) {
-                        $icon_class = $this->value() == $total_font_awesome_icon ? 'icon-active' : '';
-                        echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_font_awesome_icon) . '"></i></li>';
-                    }
-                    ?>
-                </ul>
+                <div class="total-icon-box">
+                    <div class="total-icon-search">
+                        <input type="text" class="total-icon-search-input" placeholder="<?php echo esc_attr__('Type to filter', 'total') ?>" />
+                    </div>
+
+                    <ul class="total-icon-list clearfix">
+                        <?php
+                        $total_font_awesome_icon_array = total_font_awesome_icon_array();
+                        foreach ($total_font_awesome_icon_array as $total_font_awesome_icon) {
+                            $icon_class = $this->value() == $total_font_awesome_icon ? 'icon-active' : '';
+                            echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_font_awesome_icon) . '"></i></li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
                 <input type="hidden" value="<?php $this->value(); ?>" <?php $this->link(); ?> />
             </label>
             <?php
@@ -1861,7 +1867,7 @@ if (class_exists('WP_Customize_Control')) {
                 <span class="customize-control-title toggle-title"><?php echo esc_html($this->label); ?></span>
                 <?php if (!empty($this->description)) { ?>
                     <span class="description customize-control-description">
-                        <?php echo wp_kses_post($this->description); ?>
+                        <?php echo $this->description; ?>
                     </span>
                 <?php } ?>
             </div>

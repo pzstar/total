@@ -23,6 +23,12 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.59 - May 23, 2021 =
+* Added Search feature in icon chooser
+
+= 1.2.58 - May 17, 2021 =
+* Issue caused by fontawesome update fixed
+
 = 1.2.57 - May 16, 2021 =
 * Fontawesome updated
 
