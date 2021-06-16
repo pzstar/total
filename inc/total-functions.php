@@ -19,6 +19,10 @@ function total_body_classes($classes) {
         $classes[] = 'group-blog';
     }
 
+    $website_layout = get_theme_mod('total_website_layout', 'wide');
+
+    $classes[] = 'ht-' . $website_layout;
+
     $post_type = array('post', 'page');
 
     if (is_singular($post_type)) {

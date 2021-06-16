@@ -1291,8 +1291,15 @@ object {
 ## General
 --------------------------------------------------------------*/
 .ht-container{
-    width: 1170px;
+    max-width: 1170px;
     margin: 0 auto;
+}
+
+body.ht-boxed #ht-page {
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+    background: #FFF;
 }
 
 /*--------------------------------------------------------------

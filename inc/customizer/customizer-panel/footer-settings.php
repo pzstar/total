@@ -1,0 +1,157 @@
+<?php
+
+$wp_customize->add_section('total_footer_settings', array(
+    'title' => esc_html__('Footer Settings', 'total'),
+    'priority' => 60
+));
+
+$wp_customize->add_setting('total_footer_nav', array(
+    'sanitize_callback' => 'wp_kses_post',
+));
+
+$wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_nav', array(
+    'section' => 'total_footer_settings',
+    'buttons' => array(
+        array(
+            'name' => esc_html__('Content', 'total'),
+            'fields' => array(
+                'total_footer_col',
+                'total_footer_copyright'
+            ),
+            'active' => true,
+        ),
+        array(
+            'name' => esc_html__('Style', 'total'),
+            'fields' => array(
+                'total_footer_bg',
+                'total_footer_primary_color_heading',
+                'total_footer_bg_color',
+                'total_footer_border_color',
+                'total_footer_title_color',
+                'total_footer_text_color',
+                'total_footer_anchor_color'
+            ),
+        )
+    ),
+)));
+
+$wp_customize->add_setting('total_footer_col', array(
+    'sanitize_callback' => 'total_sanitize_text',
+    'default' => 'col-3-1-1-1'
+));
+
+$wp_customize->add_control(new Total_Selector_Control($wp_customize, 'total_footer_col', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Footer Column', 'total'),
+    'class' => 'ht-one-third-width',
+    'options' => array(
+        'col-1-1' => TOTAL_CUSTOMIZER_URL . 'customizer-panel/assets/images/footer-columns/col-1-1.jpg',
+        'col-2-1-1' => TOTAL_CUSTOMIZER_URL . 'customizer-panel/assets/images/footer-columns/col-2-1-1.jpg',
+        'col-3-1-1-1' => TOTAL_CUSTOMIZER_URL . 'customizer-panel/assets/images/footer-columns/col-3-1-1-1.jpg',
+        'col-4-1-1-1-1' => TOTAL_CUSTOMIZER_URL . 'customizer-panel/assets/images/footer-columns/col-4-1-1-1-1.jpg',
+    )
+)));
+
+$wp_customize->add_setting('total_footer_bg_url', array(
+    'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_setting('total_footer_bg_id', array(
+    'sanitize_callback' => 'absint',
+));
+
+$wp_customize->add_setting('total_footer_bg_repeat', array(
+    'default' => 'no-repeat',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('total_footer_bg_size', array(
+    'default' => 'cover',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('total_footer_bg_position', array(
+    'default' => 'center-center',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('total_footer_bg_attachment', array(
+    'default' => 'scroll',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('total_footer_bg_color', array(
+    'default' => '#222222',
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_setting('total_footer_bg_overlay', array(
+    'sanitize_callback' => 'total_sanitize_color_alpha',
+));
+
+// Registers example_background control
+$wp_customize->add_control(new Total_Background_Image_Control($wp_customize, 'total_footer_bg', array(
+    'label' => esc_html__('Footer Background', 'total'),
+    'section' => 'total_footer_settings',
+    'settings' => array(
+        'image_url' => 'total_footer_bg_url',
+        'image_id' => 'total_footer_bg_id',
+        'repeat' => 'total_footer_bg_repeat',
+        'size' => 'total_footer_bg_size',
+        'position' => 'total_footer_bg_position',
+        'attach' => 'total_footer_bg_attachment',
+        'color' => 'total_footer_bg_color',
+        'overlay' => 'total_footer_bg_overlay'
+    )
+)));
+
+$wp_customize->add_setting('total_footer_title_color', array(
+    'default' => '#EEEEEE',
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_setting('total_footer_border_color', array(
+    'sanitize_callback' => 'total_sanitize_color_alpha',
+));
+
+$wp_customize->add_control(new Total_Alpha_Color_Control($wp_customize, 'total_footer_border_color', array(
+    'label' => esc_html__('Footer Border Color', 'total'),
+    'section' => 'total_footer_settings'
+)));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_footer_title_color', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Footer Title Color', 'total')
+)));
+
+$wp_customize->add_setting('total_footer_text_color', array(
+    'default' => '#EEEEEE',
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_footer_text_color', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Footer Text Color', 'total')
+)));
+
+$wp_customize->add_setting('total_footer_anchor_color', array(
+    'default' => '#EEEEEE',
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_footer_anchor_color', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Footer Anchor Color', 'total')
+)));
+
+$wp_customize->add_setting('total_footer_copyright', array(
+    'sanitize_callback' => 'total_sanitize_text',
+    'default' => esc_html__('&copy; 2021 Flash News. All Right Reserved.', 'total'),
+));
+
+$wp_customize->add_control('total_footer_copyright', array(
+    'section' => 'total_footer_settings',
+    'type' => 'textarea',
+    'label' => esc_html__('Copyright Text', 'total'),
+    'description' => esc_html__('Custom HTMl and Shortcodes Supported', 'total')
+));
