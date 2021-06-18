@@ -359,6 +359,11 @@ require get_template_directory() . '/inc/customizer/customizer.php';
 require get_template_directory() . '/inc/total-metabox.php';
 
 /**
+ * Hooks
+ */
+require get_template_directory() . '/inc/hooks.php';
+
+/**
  * Welcome Page.
  */
 require get_template_directory() . '/welcome/welcome.php';
