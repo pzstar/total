@@ -43,22 +43,22 @@ function total_sidebar_layout_meta_box_callback($post) {
     echo '<div class="total-sidebar-layouts">';
     echo '<label>';
     echo '<input type="radio" name="total_sidebar_layout" value="right_sidebar" ' . checked($total_sidebar_layout, 'right_sidebar', false) . ' />';
-    echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/css/right-sidebar.jpg') . '"/>';
+    echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/customizer/customizer-panel/assets/images/sidebar-layouts/right-sidebar.png') . '"/>';
     echo '</label>';
 
     echo '<label>';
     echo '<input type="radio" name="total_sidebar_layout" value="left_sidebar" ' . checked($total_sidebar_layout, 'left_sidebar', false) . ' />';
-    echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/css/left-sidebar.jpg') . '"/>';
+    echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/customizer/customizer-panel/assets/images/sidebar-layouts/left-sidebar.png') . '"/>';
     echo '</label>';
 
     echo '<label>';
     echo '<input type="radio" name="total_sidebar_layout" value="no_sidebar" ' . checked($total_sidebar_layout, 'no_sidebar', false) . ' />';
-    echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/css/no-sidebar.jpg') . '"/>';
+    echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/customizer/customizer-panel/assets/images/sidebar-layouts/no-sidebar.png') . '"/>';
     echo '</label>';
 
     echo '<label>';
     echo '<input type="radio" name="total_sidebar_layout" value="no_sidebar_condensed" ' . checked($total_sidebar_layout, 'no_sidebar_condensed', false) . ' />';
-    echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/css/no-sidebar-condensed.jpg') . '"/>';
+    echo '<img src="' . esc_url(get_template_directory_uri() . '/inc/customizer/customizer-panel/assets/images/sidebar-layouts/no-sidebar-narrow.png') . '"/>';
     echo '</label>';
     echo '</div>';
 

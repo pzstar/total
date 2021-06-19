@@ -57,6 +57,7 @@ $wp_customize->add_control(new Total_Selector_Control($wp_customize, 'total_foot
 
 $wp_customize->add_setting('total_footer_bg_url', array(
     'sanitize_callback' => 'esc_url_raw',
+    'default' => get_template_directory_uri().'/images/footer-bg.jpg'
 ));
 
 $wp_customize->add_setting('total_footer_bg_id', array(
@@ -64,12 +65,12 @@ $wp_customize->add_setting('total_footer_bg_id', array(
 ));
 
 $wp_customize->add_setting('total_footer_bg_repeat', array(
-    'default' => 'no-repeat',
+    'default' => 'repeat',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 
 $wp_customize->add_setting('total_footer_bg_size', array(
-    'default' => 'cover',
+    'default' => 'auto',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 

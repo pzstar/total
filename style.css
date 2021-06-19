@@ -2588,7 +2588,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 ## Footer
 --------------------------------------------------------------*/
 #ht-colophon{
-    background: url(images/footer-bg.jpg);
     border-top: 4px solid #FFC107;
     font-size: 16px;
     position: relative;

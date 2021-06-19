@@ -82,6 +82,9 @@ class Total_Background_Image_Control extends WP_Customize_Control {
             );
 
             if ('image_url' === $setting_key) {
+                /*
+                $this->json['attachment'] = wp_prepare_attachment_for_js($attachment_id);
+                
                 if ($this->value($setting_key)) {
                     // Get the attachment model for the existing file.
                     $attachment_id = attachment_url_to_postid($this->value($setting_key));
@@ -89,6 +92,7 @@ class Total_Background_Image_Control extends WP_Customize_Control {
                         $this->json['attachment'] = wp_prepare_attachment_for_js($attachment_id);
                     }
                 }
+                */
             } elseif ('repeat' === $setting_key) {
                 $this->json[$setting_key]['choices'] = $background_choices['repeat'];
             } elseif ('size' === $setting_key) {
@@ -112,7 +116,7 @@ class Total_Background_Image_Control extends WP_Customize_Control {
         <span class="customize-control-title">{{{ data.label }}}</span>
         <# } #>
 
-        <div class="total-placeholder <# if ( data.attachment ) { #>hidden<# } #>">
+        <div class="total-placeholder <# if ( data.image_url.value ) { #>hidden<# } #>">
             {{{ data.button_label.select }}}
         </div>
 
@@ -131,7 +135,7 @@ class Total_Background_Image_Control extends WP_Customize_Control {
 
                <input class="total-background-image-id" type="hidden" value="{{ data.image_id.value }}" {{{ data.image_id.link }}}>
 
-               <div class="total-background-image-fields" <# if ( !data.attachment ) { #> style="display:none "<# } #>>
+               <div class="total-background-image-fields" <# if ( !data.image_url.value ) { #> style="display:none "<# } #>>
                <# if ( data.repeat && data.repeat.choices ) { #>
                <li class="background-image-repeat">
                 <# if ( data.repeat.label ) { #>

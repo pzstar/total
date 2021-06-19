@@ -404,7 +404,7 @@ function total_dymanic_styles() {
     $top_footer_anchor_color = get_theme_mod('total_top_footer_anchor_color', '#EEEEEE');
     $bottom_footer_text_color = get_theme_mod('total_bottom_footer_text_color', '#EEEEEE');
     $bottom_footer_anchor_color = get_theme_mod('total_bottom_footer_anchor_color', '#EEEEEE');
-    $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color');
+    $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color', get_template_directory_uri().'/images/footer-bg.jpg');
 
     $custom_css .= total_background_css('total_footer_bg', '#ht-colophon', array(
         'url' => '',
@@ -417,16 +417,16 @@ function total_dymanic_styles() {
     ));
 
     $custom_css .= "
-    .ht-top-footer .widget-title{
+    .ht-main-footer .widget-title{
         color: {$top_footer_title_color};
     }
 
-    .ht-top-footer *{
+    .ht-main-footer *{
         color: {$top_footer_text_color};
     }
 
-    .ht-top-footer a,
-    .ht-top-footer a *{
+    .ht-main-footer a,
+    .ht-main-footer a *{
         color: {$top_footer_anchor_color};
     }";
 
