@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/total/
 Author: Hash Themes
 Author URI: https://hashthemes.com
 Description: Total as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The home page consist of slider, featured section with icon, about us section with progress bar, portfolio section with masonary layout, team section, testimonial section, counter section, blog section with option to add 3, 6 or 9 blog posts, clients logo carousel slider and call to action section. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce - an ecommerce plugin and all other major plugins. The theme can also be used with all major page builder plugins like Elementor, SiteOrigin, WpBakery VisualComposer and Beaver Builder. The theme provides option to import the demo with just one click. DEMO: https://demo.hashthemes.com/total/
-Version: 1.2.59
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: total
@@ -17,7 +17,6 @@ Requires PHP: 5.6
 # Normalize
 --------------------------------------------------------------*/
 html {
-    font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust:     100%;
 }
@@ -627,20 +626,14 @@ a:active {
 .entry-content:before,
 .entry-content:after,
 .comment-content:before,
-.comment-content:after,
-.site-footer:before,
-.site-footer:after,
-.ht-container:before,
-.ht-container:after {
+.comment-content:after {
     content: "";
     display: table;
 }
 
 .ht-clearfix:after,
 .entry-content:after,
-.comment-content:after,
-.site-footer:after,
-.ht-container:after {
+.comment-content:after{
     clear: both;
 }
 
@@ -809,7 +802,6 @@ a:active {
     float: left;
     width: 80px;
     text-align: right;
-    font-family: 'Oswald', sans-serif;
 }
 
 .single-entry-meta{
@@ -873,7 +865,6 @@ a:active {
 }
 
 .entry-header .entry-title{
-    font-weight: 300;
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
@@ -1305,35 +1296,30 @@ body.ht-boxed #ht-page {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-#ht-masthead{
+.ht-site-header{
     border-top: 4px solid #FFC107;
     background: #FFF; 
-    height: 94px;
     border-bottom: 1px solid #F1F1F1;
     z-index: 99;
-    transition: height 0.3s ease;
-    -moz-transition: height 0.3s ease;
-    -webkit-transition: height 0.3s ease;
+    padding: 15px 0;
+    transition: padding 0.3s ease;
 }
 
-.ht-sticky-header #ht-masthead{
+.ht-sticky-header .headroom--not-top#ht-masthead{
     position: fixed;
     left: 0;
     right: 0;
+    padding: 5px 0;
 }
 
-.ht-sticky#ht-masthead{
-    height: 74px;
+.ht-site-header .ht-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #ht-content{
     clear: both;
-}
-
-body.ht-sticky-header #ht-content{
-    position: relative;
-    z-index: 9;
-    padding-top: 94px;
 }
 
 body.home.blog:not(.ht-enable-frontpage) #ht-content,
@@ -1349,19 +1335,10 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 #ht-site-branding{
     float: left;
     width: 30%;
-    padding: 15px 0;
-    transition: padding 0.3s ease;
-    -moz-transition: padding 0.3s ease;
-    -webkit-transition: padding 0.3s ease;
-}
-
-.ht-sticky #ht-site-branding{
-    padding: 5px 0;
 }
 
 #ht-site-branding img{
-    max-height: 60px;
-    width: auto;
+    height: auto;
 }
 
 .ht-main-header{
@@ -1382,7 +1359,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 }
 
 .ht-site-title{
-    font-family: 'Oswald', sans-serif;
     font-weight: 400;
     margin: 0 0 8px;
     letter-spacing: 1px;
@@ -1489,43 +1465,25 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-#ht-site-navigation{
-    float: right;
-    width: 70%;
-    padding: 27px 0;
-    transition: padding 0.3s ease;
-    -moz-transition: padding 0.3s ease;
-    -webkit-transition: padding 0.3s ease;
-}
-
-.ht-sticky #ht-site-navigation{
-    padding: 17px 0;
-}
-
-.ht-main-navigation .ht-menu{
-    float: right;
-}
-
-.ht-main-navigation .ht-menu ul {
+.ht-menu ul {
     list-style: none;
     margin: 0;
     padding-left: 0;
 }
 
-.ht-main-navigation .ht-menu li {
+.ht-menu li {
     float: left;
     position: relative;
     margin-left: 10px;
 }
 
-.ht-main-navigation .ht-menu a {
+.ht-menu a {
     position: relative;
     display: block;
     text-decoration: none;
     color: #444;
     text-transform: uppercase;
     font-size: 14px;
-    font-family: 'Oswald', sans-serif;
     line-height: 36px;
     padding: 0 15px;
     font-weight: 400;
@@ -1534,7 +1492,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     -webkit-transition: none;
 }
 
-.ht-main-navigation .ht-menu ul ul {
+.ht-menu ul ul {
     display: none;
     position: absolute;
     left: 0;
@@ -1548,27 +1506,27 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     box-shadow: 2px 2px 8px rgba(0,0,0,0.05)
 }
 
-.ht-sticky .ht-main-navigation .ht-menu ul ul{
+.ht-sticky .ht-menu ul ul{
     margin-top: 17px;
 }
 
-.ht-main-navigation .ht-menu > ul > li:last-child > ul{
+.ht-menu > ul > li:last-child > ul{
     left: auto;
     right: 0;
 }
 
-.ht-main-navigation .ht-menu ul ul ul {
+.ht-menu ul ul ul {
     left: 100%;
     top: 0;
     margin: 0 0 0 8px;
     border-top: 0;
 }
 
-.ht-sticky .ht-main-navigation .ht-menu ul ul ul{
+.ht-sticky .ht-menu ul ul ul{
     margin-top: 0
 }
 
-.ht-main-navigation .ht-menu ul ul a {
+.ht-menu ul ul a {
     text-transform: none;
     font-weight: 400;
     color: #444;
@@ -1577,26 +1535,31 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     font-size: 14px;
 }
 
-.ht-main-navigation .ht-menu ul ul li {
+.ht-menu ul ul li {
     float: none;
     margin: 0 0 5px;
 }
 
-.ht-main-navigation .ht-menu ul ul li:last-child{
+.ht-menu ul ul li:last-child{
     margin-bottom: 0;
 }
 
-.ht-main-navigation .ht-menu ul li:hover > ul {
+.ht-menu ul li:hover > ul {
     display: block;
 }
 
-.ht-main-navigation .ht-menu li:hover > a,
-.ht-main-navigation .ht-menu .current_page_item > a,
-.ht-main-navigation .ht-menu .current-menu-item > a,
-.ht-main-navigation .ht-menu .current_page_ancestor > a,
-.ht-main-navigation .ht-menu .current > a{
+.ht-menu > ul > li.menu-item:hover > a,
+.ht-menu > ul > li.menu-item.current_page_item > a,
+.ht-menu > ul > li.menu-item.current-menu-item > a,
+.ht-menu > ul > li.menu-item.current_page_ancestor > a,
+.ht-menu > ul > li.menu-item.current > a{
     color: #FFF;
     background: #FFC107;
+}
+
+.ht-menu ul ul li.menu-item:hover > a{
+    background: #FFC107;
+    color: #FFF;
 }
 
 /* styling for both css and generated arrows */
@@ -1694,7 +1657,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     margin-bottom: 25px;
     padding: 0 10%;
     line-height: 1.2;
-    font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
     -webkit-animation-duration: 0.5s;
@@ -2093,7 +2055,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 .ht-service-post{
     margin-bottom: 25px;
     position: relative;
-    z-index: 99;
+    z-index: 9;
 }
 
 .ht-service-post:last-child{
@@ -2360,7 +2322,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     line-height: 1;
     margin-bottom: 25px;
     letter-spacing: 3px;
-    font-family: 'Oswald', sans-serif;
     font-weight: 400;
 }
 
@@ -2603,7 +2564,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     color: #FFF;
     border-radius: 1px;
     margin: 0 4px;
-    font-family: 'Oswald', sans-serif;
 }
 
 .ht-cta-buttons a.ht-cta-button1{
@@ -2631,6 +2591,17 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     background: url(images/footer-bg.jpg);
     border-top: 4px solid #FFC107;
     font-size: 16px;
+    position: relative;
+}
+
+#ht-colophon:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.9;
 }
 
 .page-template-home-template #ht-colophon,
@@ -2638,31 +2609,48 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     margin-top: 0
 }
 
-#ht-colophon a{
+.ht-site-footer a{
     color: #BBB;
     text-decoration: none;
 }
 
-#ht-colophon .widget-title{
+.ht-main-footer .widget-title{
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #BBB;
     margin-bottom: 15px;
 }
 
-#ht-top-footer{
+#ht-main-footer{
+    position: relative;
     color: #BBB;
     padding: 50px 0;
 }
 
-.ht-top-footer{
-    margin-left: -3%;
+.ht-main-footer{
+    display: flex;
+    margin: 0 -20px;
 }
 
 .ht-footer{
-    float: left;
-    width: 22%;
-    margin-left: 3%;
+    width: 25%;
+    padding: 0 20px;
+}
+
+.col-1-1 .ht-footer1 {
+    width: 100%;
+}
+
+.col-2-1-1 .ht-footer {
+    width: 50%;
+}
+
+.col-3-1-1-1 .ht-footer {
+    width: 33.33%;
+}
+
+.col-4-1-1-1-1 .ht-footer {
+    width: 25%;
 }
 
 .ht-footer .widget{
@@ -2684,6 +2672,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 }
 
 #ht-bottom-footer{
+    position: relative;
     background: rgba(0,0,0,0.3);
     padding: 30px 0;
     color: #AAA;
@@ -2871,7 +2860,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 .woocommerce ul.products li.product .woocommerce-loop-category__title, 
 .woocommerce ul.products li.product .woocommerce-loop-product__title, 
 .woocommerce ul.products li.product h3{
-    font-family: 'Pontano Sans', sans-serif;
     margin: 0 0 6px;
     padding: 0;
 }
@@ -3358,58 +3346,52 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         padding: 15px 0;
     }
 
+    .ht-sticky-header .headroom--not-top#ht-masthead{
+        position: relative;
+    }
+
     .ht-sticky-header #ht-content{
         padding-top: 0 !important;
     }
 
-    #ht-site-navigation{
+    #ht-site-navigation .ht-menu{
         display: none;
         position: absolute;
+        background: #FFF;
         left: 0;
         right: 0;
         top: 90px;
-        background: #FFC107;
         z-index: 999;
         width: 100%;
         padding: 0;
         float: none;
     }
 
-    .ht-main-navigation .ht-menu{
+    .ht-menu{
         float: none;
     }
 
-    .ht-main-navigation .ht-menu li{
+    .ht-menu li{
         float: none;
         margin-left: 0;
         text-align: center;
     }
 
-    .ht-main-navigation .ht-menu a,
-    .ht-main-navigation .ht-menu ul ul a{
+    .ht-menu a,
+    .ht-menu ul ul a{
         line-height: 1.3;
         padding: 15px 20px;
         border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
-    .page-template-home-template .ht-main-navigation .ht-menu .current_page_item > a,
-    .page-template-home-template .ht-main-navigation .ht-menu .current-menu-item > a,
-    .page-template-home-template .ht-main-navigation .ht-menu .current_page_ancestor > a,
-    .home.blog .ht-main-navigation .ht-menu .current_page_item > a,
-    .home.blog .ht-main-navigation .ht-menu .current-menu-item > a,
-    .home.blog .ht-main-navigation .ht-menu .current_page_ancestor > a,
-    .ht-main-navigation .ht-menu a{
-        color: #FFF;
-    }
-
-    .ht-main-navigation .ht-menu ul ul{
+    .ht-menu ul ul{
         position: static;
         padding: 0;
         margin-top: 0;
         box-shadow: none;
     }
 
-    .ht-main-navigation .ht-menu ul ul ul{
+    .ht-menu ul ul ul{
         margin: 0;
     }
 
@@ -3440,16 +3422,12 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         content: '\f106';
     }
 
-    .ht-main-navigation .ht-menu ul li:hover > ul{
+    .ht-menu ul li:hover > ul{
         display: none;
     }
 
-    .ht-main-navigation .ht-menu ul ul{
+    .ht-menu ul ul{
         background: none;
-    }
-
-    .ht-main-navigation .ht-menu ul ul a{
-        color: #FFF;
     }
 
     #ht-team-section{
@@ -3561,12 +3539,12 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         background-position: center !important;  
     }
 
-    .ht-top-footer{
-        margin-left: 0;
+    .ht-main-footer{
+        display: block;
     }
 
     .ht-footer{
-        width: auto;
+        width: auto !important;
         margin: 0 0 30px;
         float: none;
     }
@@ -3736,7 +3714,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 }
 
 @media screen and (min-width: 1001px){
-    .ht-main-navigation{
+    .ht-menu{
         display: block !important;
     }
 

@@ -63,7 +63,6 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 )));
 
 $wp_customize->add_setting('total_content_link_hov_color', array(
-    'default' => '#eb3e32',
     'sanitize_callback' => 'sanitize_hex_color',
 ));
 

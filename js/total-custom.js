@@ -7,36 +7,32 @@
  */
 
 jQuery(function ($) {
-    
+
     /* Sticky Header */
     var hHeight = 0;
     var adminbarHeight = 0;
     if ($('body').hasClass('admin-bar')) {
         adminbarHeight = 32;
     }
-    var $stickyHeader = $('.ht-header');
+    var $stickyHeader = $('.ht-site-header');
     if ($('.ht-sticky-header').length > 0 && $stickyHeader.length > 0) {
         hHeight = $stickyHeader.outerHeight();
         $pageWrapper = $('#ht-content');
         var hOffset = $stickyHeader.offset().top;
 
-        var offset = hOffset + hHeight - adminbarHeight;
+        var offset = hOffset - adminbarHeight;
 
         $stickyHeader.headroom({
             offset: offset,
             onTop: function () {
-                if (($('body').hasClass('ht-header-above') || ($('body').hasClass('ht-header-over') && $('body').hasClass('ht-hide-titlebar'))) && !$('body').hasClass('ht-header-style4')) {
-                    $pageWrapper.css({
-                        paddingTop: 0
-                    });
-                }
+                $pageWrapper.css({
+                    paddingTop: 0
+                });
             },
             onNotTop: function () {
-                if (($('body').hasClass('ht-header-above') || ($('body').hasClass('ht-header-over') && $('body').hasClass('ht-hide-titlebar'))) && !$('body').hasClass('ht-header-style4')) {
-                    $pageWrapper.css({
-                        paddingTop: hHeight + 'px'
-                    });
-                }
+                $pageWrapper.css({
+                    paddingTop: hHeight + 'px'
+                });
             }
         });
     }
@@ -122,7 +118,7 @@ jQuery(function ($) {
     });
 
     $('.toggle-bar').click(function () {
-        $(this).next('.ht-main-navigation').slideToggle();
+        $(this).next('.ht-menu').slideToggle();
         totalKeyboardLoop($('.ht-main-navigation'));
         return false;
     });
@@ -285,7 +281,7 @@ jQuery(function ($) {
         }
 
     }
-    
+
     var totalKeyboardLoop = function (elem) {
 
         var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');

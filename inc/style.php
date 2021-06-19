@@ -4,10 +4,10 @@
  * @package Total
  */
 function total_dymanic_styles() {
-    $custom_css = '';
+    $custom_css = $tablet_css = $mobile_css = "";
     $color = get_theme_mod('total_template_color', '#FFC107');
     $color_rgba = total_hex2rgba($color, 0.9);
-    $darker_color = totalColourBrightness($color, -0.9);
+    $darker_color = total_color_brightness($color, -0.9);
 
     $sidebar_width = get_theme_mod('total_sidebar_width', 30);
     $primary_width = 100 - 4 - $sidebar_width;
@@ -49,6 +49,7 @@ function total_dymanic_styles() {
         #secondary{ width:{$sidebar_width}%}
 	";
 
+    /* =============== Primary Color CSS =============== */
     $custom_css .= "
     button,
     input[type='button'],
@@ -60,11 +61,12 @@ function total_dymanic_styles() {
     .nav-previous a,
     .nav-next a,
     .pagination .page-numbers,
-    .ht-main-navigation .ht-menu li:hover > a,
-    .ht-main-navigation .ht-menu .current_page_item > a,
-    .ht-main-navigation .ht-menu .current-menu-item > a,
-    .ht-main-navigation .ht-menu .current_page_ancestor > a,
-    .ht-main-navigation .ht-menu .current > a,
+    .ht-menu > ul > li.menu-item:hover > a,
+    .ht-menu > ul > li.menu-item.current_page_item > a,
+    .ht-menu > ul > li.menu-item.current-menu-item > a,
+    .ht-menu > ul > li.menu-item.current_page_ancestor > a,
+    .ht-menu > ul > li.menu-item.current > a,
+    .ht-menu ul ul li.menu-item:hover > a,
     .ht-slide-cap-title span,
     .ht-progress-bar-length,
     #ht-featured-post-section,
@@ -132,17 +134,18 @@ function total_dymanic_styles() {
     .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
     .woocommerce-MyAccount-navigation-link a
     {
-            background:{$color};
+        background:{$color};
     }
 
     a,
-    a:hover,
+    a:hover, 
+    .woocommerce .woocommerce-breadcrumb a:hover, 
+    .breadcrumb-trail a:hover,
     .ht-post-info .entry-date span.ht-day,
     .entry-categories i,
     .widget-area a:hover,
     .comment-list a:hover,
     .no-comments,
-    .ht-site-title a,
     .woocommerce .woocommerce-breadcrumb a:hover,
     #total-breadcrumbs a:hover,
     .ht-featured-link a,
@@ -159,10 +162,10 @@ function total_dymanic_styles() {
     .woocommerce-error:before, 
     .woocommerce-info:before, 
     .woocommerce-message:before{
-            color:{$color};
+        color:{$color};
     }
 
-    .ht-main-navigation .ht-menu ul ul,
+    .ht-menu ul ul,
     .ht-featured-link a,
     .ht-counter,
     .ht-testimonial-wrap .owl-carousel .owl-item img,
@@ -206,22 +209,22 @@ function total_dymanic_styles() {
     .woocommerce input.button.alt:disabled[disabled]:hover,
     .woocommerce .widget_price_filter .ui-slider .ui-slider-handle
     {
-            border-color: {$color};
+        border-color: {$color};
     }
 
     #ht-masthead,
     .woocommerce-error, 
     .woocommerce-info, 
     .woocommerce-message{
-    border-top-color: {$color};
+        border-top-color: {$color};
     }
 
     .nav-next a:after{
-    border-left-color: {$color};
+        border-left-color: {$color};
     }
 
     .nav-previous a:after{
-    border-right-color: {$color};
+        border-right-color: {$color};
     }
 
     .ht-active .ht-service-icon{
@@ -229,26 +232,228 @@ function total_dymanic_styles() {
     }
 
     .woocommerce ul.products li.product .onsale:after{
-            border-color: transparent transparent {$darker_color} {$darker_color};
+        border-color: transparent transparent {$darker_color} {$darker_color};
     }
 
     .woocommerce span.onsale:after{
-            border-color: transparent {$darker_color} {$darker_color} transparent
+        border-color: transparent {$darker_color} {$darker_color} transparent
     }
 
     .ht-portfolio-caption,
     .ht-team-member-excerpt,
     .ht-title-wrap{
-            background:{$color_rgba}
+        background:{$color_rgba}
     }
 
     @media screen and (max-width: 1000px){
-    .toggle-bar,
-    #ht-site-navigation{
+        .toggle-bar{
             background:{$color}
+        }   
+    }";
+
+    /* =============== Typography CSS =============== */
+    $custom_css .= total_typography_css('total_body', 'html, body, button, input, select, textarea', array(
+        'family' => 'Poppins',
+        'style' => '400',
+        'text_transform' => 'none',
+        'text_decoration' => 'none',
+        'size' => '17',
+        'line_height' => '1.6',
+        'letter_spacing' => '0',
+        'color' => '#444444'
+    ));
+
+    $custom_css .= total_typography_css('total_menu', '.ht-menu > ul > li.menu-item > a', array(
+        'family' => 'Oswald',
+        'style' => '400',
+        'text_transform' => 'uppercase',
+        'text_decoration' => 'none',
+        'size' => '14',
+        'line_height' => '2.6',
+        'letter_spacing' => '0'
+    ));
+
+    $custom_css .= total_typography_css('total_h', 'h1, h2, h3, h4, h5, h6, .ht-site-title, .ht-slide-cap-title, .ht-counter-count', array(
+        'family' => 'Oswald',
+        'style' => '400',
+        'text_transform' => 'none',
+        'text_decoration' => 'none',
+        'line_height' => '1.3',
+        'letter_spacing' => '0'
+    ));
+
+    $i_font_size = get_theme_mod('menu_font_size', '14');
+    $i_font_family = get_theme_mod('menu_font_family', 'Oswald');
+    $custom_css .= ".ht-menu ul ul{
+            font-size: {$i_font_size}px;
+            font-family: {$i_font_family};
+	}";
+
+
+    $content_header_color = get_theme_mod('total_content_header_color', '#000000');
+    $content_text_color = get_theme_mod('total_content_text_color', '#333333');
+    $content_link_color = get_theme_mod('total_content_link_color', '#000000');
+    $content_link_hov_color = get_theme_mod('total_content_link_hov_color');
+
+    $custom_css .= ".ht-main-content h1, .ht-main-content h2, .ht-main-content h3, .ht-main-content h4, .ht-main-content h5, .ht-main-content h6 {color:$content_header_color}";
+    $custom_css .= ".ht-main-content{color:$content_text_color}";
+    $custom_css .= "a{color:$content_link_color}";
+    if ($content_link_hov_color) {
+        $custom_css .= "a:hover, .woocommerce .woocommerce-breadcrumb a:hover, .breadcrumb-trail a:hover{color:$content_link_hov_color}";
     }
-}
-";
+
+    /* =============== Site Title & Tagline Color =============== */
+    $title_color = get_theme_mod('total_title_color', '#333333');
+    $tagline_color = get_theme_mod('total_tagline_color', '#333333');
+    $custom_css .= ".ht-site-title a, .ht-site-title a:hover{color:$title_color}";
+    $custom_css .= ".ht-site-description a, .ht-site-description a:hover{color:$tagline_color}";
+
+    $logo_width = get_theme_mod('total_logo_width');
+    $logo_width_tablet = get_theme_mod('total_logo_width_tablet');
+    $logo_width_mobile = get_theme_mod('total_logo_width_mobile');
+
+    if ($logo_width === 0 || $logo_width) {
+        $custom_css .= "#ht-site-branding img.custom-logo{max-width:{$logo_width}px}";
+    }
+
+    if ($logo_width_tablet === 0 || $logo_width_tablet) {
+        $tablet_css .= "#ht-site-branding img.custom-logo{max-width:{$logo_width_tablet}px}";
+    }
+
+    if ($logo_width_mobile === 0 || $logo_width_mobile) {
+        $mobile_css .= "#ht-site-branding img.custom-logo{max-width:{$logo_width_mobile}px}";
+    }
+
+    /* =============== Site Title & Tagline Color =============== */
+    $mh_bg_color = get_theme_mod('total_mh_bg_color', '#FFFFFF');
+    $custom_css .= ".ht-site-header{background-color:{$mh_bg_color}}";
+    $custom_css .= total_dimension_css('total_mh_spacing', array(
+        'position' => array('left', 'top', 'bottom', 'right'),
+        'selector' => '.ht-site-header',
+        'type' => 'padding',
+        'unit' => 'px',
+        'responsive' => false
+    ));
+
+    /* =============== Primary Menu  =============== */
+    $menu_link_color = get_theme_mod('total_pm_menu_link_color');
+    $menu_link_hover_color = get_theme_mod('total_pm_menu_link_hover_color');
+    $menu_link_hover_bg_color = get_theme_mod('total_pm_menu_hover_bg_color');
+    $submenu_bg_color = get_theme_mod('total_pm_submenu_bg_color');
+    $submenu_link_color = get_theme_mod('total_pm_submenu_link_color');
+    $submenu_link_hover_color = get_theme_mod('total_pm_submenu_link_hover_color');
+    $submenu_link_hover_bg_color = get_theme_mod('total_pm_submenu_link_bg_color');
+
+    if ($menu_link_color) {
+        $custom_css .= "
+        .ht-menu > ul > li.menu-item > a{
+            color: $menu_link_color;
+        }";
+    }
+
+    if ($menu_link_color) {
+        $custom_css .= "
+        .ht-menu > ul > li.menu-item:hover > a,
+        .ht-menu > ul > li.menu-item.current_page_item > a,
+        .ht-menu > ul > li.menu-item.current-menu-item > a,
+        .ht-menu > ul > li.menu-item.current_page_ancestor > a,
+        .ht-menu > ul > li.menu-item.current > a{
+            color: $menu_link_hover_color;
+        }";
+    }
+
+    if ($menu_link_hover_bg_color) {
+        $custom_css .= "
+        .ht-menu > ul > li.menu-item:hover > a,
+        .ht-menu > ul > li.menu-item.current_page_item > a,
+        .ht-menu > ul > li.menu-item.current-menu-item > a,
+        .ht-menu > ul > li.menu-item.current_page_ancestor > a,
+        .ht-menu > ul > li.menu-item.current > a{
+            background-color: $menu_link_hover_bg_color;
+        }";
+    }
+
+    if ($submenu_bg_color) {
+        $custom_css .= "  
+        .ht-menu ul ul{
+            background-color: $submenu_bg_color;
+        }";
+    }
+
+    if ($submenu_link_color) {
+        $custom_css .= ".ht-menu ul ul li.menu-item > a{
+            color: $submenu_link_color;
+        }";
+    }
+
+    if ($submenu_link_hover_color) {
+        $custom_css .= ".ht-menu ul ul li.menu-item:hover > a{
+            color: $submenu_link_hover_color;
+         }";
+    }
+
+    if ($submenu_link_hover_bg_color) {
+        $custom_css .= ".ht-menu ul ul li.menu-item:hover > a{
+            background-color: $submenu_link_hover_bg_color;
+        }";
+    }
+
+    /* =============== Footer Settings =============== */
+    $top_footer_title_color = get_theme_mod('total_top_footer_title_color', '#EEEEEE');
+    $top_footer_text_color = get_theme_mod('total_top_footer_text_color', '#EEEEEE');
+    $top_footer_anchor_color = get_theme_mod('total_top_footer_anchor_color', '#EEEEEE');
+    $bottom_footer_text_color = get_theme_mod('total_bottom_footer_text_color', '#EEEEEE');
+    $bottom_footer_anchor_color = get_theme_mod('total_bottom_footer_anchor_color', '#EEEEEE');
+    $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color');
+
+    $custom_css .= total_background_css('total_footer_bg', '#ht-colophon', array(
+        'url' => '',
+        'repeat' => 'no-repeat',
+        'size' => 'cover',
+        'position' => 'center-center',
+        'attachment' => 'scroll',
+        'color' => '#222222',
+        'overlay' => ''
+    ));
+
+    $custom_css .= "
+    .ht-top-footer .widget-title{
+        color: {$top_footer_title_color};
+    }
+
+    .ht-top-footer *{
+        color: {$top_footer_text_color};
+    }
+
+    .ht-top-footer a,
+    .ht-top-footer a *{
+        color: {$top_footer_anchor_color};
+    }";
+
+    $custom_css .= "
+    .ht-bottom-footer *{
+        color: {$bottom_footer_text_color};
+    }
+
+    .ht-bottom-footer a,
+    .ht-bottom-footer a *{
+        color: {$bottom_footer_anchor_color};
+    }";
+
+    if ($bottom_footer_bg_color) {
+        $custom_css .= "#ht-bottom-footer{background-color:$bottom_footer_bg_color}";
+    }
+
+    /* =============== Front Page Sections =============== */
+    $total_service_left_bg = get_theme_mod('total_service_left_bg');
+    $total_counter_bg = get_theme_mod('total_counter_bg');
+    $total_cta_bg = get_theme_mod('total_cta_bg');
+    $custom_css .= '.ht-service-left-bg{ background-image:url(' . esc_url($total_service_left_bg) . ');}';
+    $custom_css .= '#ht-counter-section{ background-image:url(' . esc_url($total_counter_bg) . ');}';
+    $custom_css .= '#ht-cta-section{ background-image:url(' . esc_url($total_cta_bg) . ');}';
+
+    $custom_css .= "@media screen and (max-width:768px){{$tablet_css}}";
+    $custom_css .= "@media screen and (max-width:480px){{$mobile_css}}";
 
     return total_css_strip_whitespace($custom_css);
 }

@@ -24,12 +24,15 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_na
             'name' => esc_html__('Style', 'total'),
             'fields' => array(
                 'total_footer_bg',
-                'total_footer_primary_color_heading',
                 'total_footer_bg_color',
-                'total_footer_border_color',
-                'total_footer_title_color',
-                'total_footer_text_color',
-                'total_footer_anchor_color'
+                'total_top_footer_heading',
+                'total_top_footer_title_color',
+                'total_top_footer_text_color',
+                'total_top_footer_anchor_color',
+                'total_bottom_footer_heading',
+                'total_bottom_footer_bg_color',
+                'total_bottom_footer_text_color',
+                'total_bottom_footer_anchor_color',
             ),
         )
     ),
@@ -37,7 +40,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_na
 
 $wp_customize->add_setting('total_footer_col', array(
     'sanitize_callback' => 'total_sanitize_text',
-    'default' => 'col-3-1-1-1'
+    'default' => 'col-4-1-1-1-1'
 ));
 
 $wp_customize->add_control(new Total_Selector_Control($wp_customize, 'total_footer_col', array(
@@ -105,48 +108,85 @@ $wp_customize->add_control(new Total_Background_Image_Control($wp_customize, 'to
     )
 )));
 
-$wp_customize->add_setting('total_footer_title_color', array(
+$wp_customize->add_setting('total_top_footer_title_color', array(
     'default' => '#EEEEEE',
     'sanitize_callback' => 'sanitize_hex_color',
 ));
 
-$wp_customize->add_setting('total_footer_border_color', array(
-    'sanitize_callback' => 'total_sanitize_color_alpha',
+$wp_customize->add_setting('total_top_footer_heading', array(
+    'sanitize_callback' => 'total_sanitize_text',
 ));
 
-$wp_customize->add_control(new Total_Alpha_Color_Control($wp_customize, 'total_footer_border_color', array(
-    'label' => esc_html__('Footer Border Color', 'total'),
-    'section' => 'total_footer_settings'
+$wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_top_footer_heading', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Top Footer', 'total'),
 )));
 
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_footer_title_color', array(
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_top_footer_title_color', array(
     'section' => 'total_footer_settings',
     'label' => esc_html__('Footer Title Color', 'total')
 )));
 
-$wp_customize->add_setting('total_footer_text_color', array(
+$wp_customize->add_setting('total_top_footer_text_color', array(
     'default' => '#EEEEEE',
     'sanitize_callback' => 'sanitize_hex_color',
 ));
 
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_footer_text_color', array(
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_top_footer_text_color', array(
     'section' => 'total_footer_settings',
     'label' => esc_html__('Footer Text Color', 'total')
 )));
 
-$wp_customize->add_setting('total_footer_anchor_color', array(
+$wp_customize->add_setting('total_top_footer_anchor_color', array(
     'default' => '#EEEEEE',
     'sanitize_callback' => 'sanitize_hex_color',
 ));
 
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_footer_anchor_color', array(
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_top_footer_anchor_color', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Footer Anchor Color', 'total')
+)));
+
+$wp_customize->add_setting('total_bottom_footer_heading', array(
+    'sanitize_callback' => 'total_sanitize_text',
+));
+
+$wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_bottom_footer_heading', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Bottom Footer', 'total'),
+)));
+
+$wp_customize->add_setting('total_bottom_footer_bg_color', array(
+    'sanitize_callback' => 'total_sanitize_color_alpha',
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_bottom_footer_bg_color', array(
+    'label' => esc_html__('Footer Background', 'total'),
+    'section' => 'total_footer_settings'
+)));
+
+$wp_customize->add_setting('total_bottom_footer_text_color', array(
+    'default' => '#EEEEEE',
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_bottom_footer_text_color', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Footer Text Color', 'total')
+)));
+
+$wp_customize->add_setting('total_bottom_footer_anchor_color', array(
+    'default' => '#EEEEEE',
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_bottom_footer_anchor_color', array(
     'section' => 'total_footer_settings',
     'label' => esc_html__('Footer Anchor Color', 'total')
 )));
 
 $wp_customize->add_setting('total_footer_copyright', array(
-    'sanitize_callback' => 'total_sanitize_text',
-    'default' => esc_html__('&copy; 2021 Flash News. All Right Reserved.', 'total'),
+    'sanitize_callback' => 'total_sanitize_text'
 ));
 
 $wp_customize->add_control('total_footer_copyright', array(

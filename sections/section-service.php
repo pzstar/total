@@ -7,7 +7,7 @@ if (get_theme_mod('total_service_section_disable') != 'on') {
     ?>
     <section id="ht-service-post-section" class="ht-section">
         <div class="ht-service-left-bg"></div>
-        <div class="ht-container">
+        <div class="ht-container ht-clearfix">
             <div class="ht-service-posts ht-clearfix">
                 <?php
                 $total_service_title = get_theme_mod('total_service_title');

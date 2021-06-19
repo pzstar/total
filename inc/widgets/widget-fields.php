@@ -1,14 +1,14 @@
 <?php
+
 /**
  * @package Total
  */
-
 function total_widgets_show_widget_field($instance = '', $widget_field = '', $total_field_value = '') {
 
     extract($widget_field);
 
-    if(isset($total_widgets_default)){
-        $total_field_value = !empty( $total_field_value ) ? $total_field_value : $total_widgets_default;
+    if (isset($total_widgets_default)) {
+        $total_field_value = !empty($total_field_value) ? $total_field_value : $total_widgets_default;
     }
 
     switch ($total_widgets_field_type) {
@@ -124,15 +124,15 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
 
         case 'upload':
             $image = $image_class = "";
-            if($total_field_value){ 
-                $image = '<img src="'.esc_url($total_field_value).'" style="max-width:100%;"/>';    
+            if ($total_field_value) {
+                $image = '<img src="' . esc_url($total_field_value) . '" style="max-width:100%;"/>';
                 $image_class = ' hidden';
             }
             ?>
             <div class="attachment-media-view">
 
-            <label for="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>"><?php echo esc_html($total_widgets_title); ?>:</label><br />
-            
+                <label for="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>"><?php echo esc_html($total_widgets_title); ?>:</label><br />
+
                 <div class="placeholder<?php echo esc_attr($image_class); ?>">
                     <?php esc_html_e('No image selected', 'total'); ?>
                 </div>
@@ -143,17 +143,17 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
                 <div class="actions clearfix">
                     <button type="button" class="button total-delete-button align-left"><?php esc_html_e('Remove', 'total'); ?></button>
                     <button type="button" class="button total-upload-button alignright"><?php esc_html_e('Select Image', 'total'); ?></button>
-                    
+
                     <input name="<?php echo esc_attr($instance->get_field_name($total_widgets_name)); ?>" id="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>" class="upload-id" type="hidden" value="<?php echo esc_url($total_field_value) ?>"/>
                 </div>
 
-            <?php if (isset($total_widgets_description)) { ?>
-                <br />
-                <small><?php echo wp_kses_post($total_widgets_description); ?></small>
-            <?php } ?>
+                <?php if (isset($total_widgets_description)) { ?>
+                    <br />
+                    <small><?php echo wp_kses_post($total_widgets_description); ?></small>
+                <?php } ?>
 
             </div>
-            <?php                        
+            <?php
             break;
     }
 }

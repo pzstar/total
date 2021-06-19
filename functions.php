@@ -158,15 +158,17 @@ function total_widgets_init() {
         'after_title' => '</h4>',
     ));
 
-    register_sidebar(array(
-        'name' => esc_html__('Shop Sidebar', 'total'),
-        'id' => 'total-shop-sidebar',
-        'description' => esc_html__('Add widgets here to appear in your sidebar of shop page.', 'total'),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
-    ));
+    if (total_is_woocommerce_activated()) {
+        register_sidebar(array(
+            'name' => esc_html__('Shop Sidebar', 'total'),
+            'id' => 'total-shop-sidebar',
+            'description' => esc_html__('Add widgets here to appear in your sidebar of shop page.', 'total'),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
+        ));
+    }
 
     register_sidebar(array(
         'name' => esc_html__('Footer One', 'total'),
@@ -222,30 +224,46 @@ if (!function_exists('total_fonts_url')) :
      */
     function total_fonts_url() {
         $fonts_url = '';
-        $fonts = array();
         $subsets = 'latin,latin-ext';
+        $fonts = $standard_font_family = $default_font_list = $font_family_array = $variants_array = $font_array = $google_fonts = array();
 
-        /*
-         * Translators: If there are characters in your language that are not supported
-         * by Open Sans, translate this to 'off'. Do not translate into your own language.
-         */
-        if ('off' !== _x('on', 'Pontano Sans font: on or off', 'total')) {
-            $fonts[] = 'Pontano Sans';
+        $customizer_fonts = apply_filters('total_customizer_fonts', array(
+            'total_body' => 'Poppins',
+            'total_menu' => 'Oswald',
+            'total_h' => 'Oswald'
+        ));
+        $standard_font = total_standard_font_array();
+        $google_font_list = total_google_font_array();
+        $default_font_list = total_default_font_array();
+
+        foreach ($standard_font as $key => $value) {
+            $standard_font_family[] = $value['family'];
         }
 
-        /*
-         * Translators: If there are characters in your language that are not supported
-         * by Inconsolata, translate this to 'off'. Do not translate into your own language.
-         */
-        if ('off' !== _x('on', 'Oswald font: on or off', 'total')) {
-            $fonts[] = 'Oswald:400,700,300';
+        foreach ($default_font_list as $key => $value) {
+            $default_font_family[] = $value['family'];
         }
 
+        foreach ($customizer_fonts as $key => $value) {
+            $font_family_array[] = get_theme_mod($key, $value);
+        }
+
+        $font_family_array = array_unique($font_family_array);
+        $font_family_array = array_diff($font_family_array, array_merge($standard_font_family, $default_font_family));
+
+        foreach ($font_family_array as $font_family) {
+            $font_array = total_search_key($google_font_list, 'family', $font_family);
+            $variants_array = $font_array['0']['variants'];
+            $variants_keys = array_keys($variants_array);
+            $variants = implode(',', $variants_keys);
+
+            $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
+        }
         /*
          * Translators: To add an additional character subset specific to your language,
          * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
          */
-        $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'total');
+        $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'flash-news');
 
         if ('cyrillic' == $subset) {
             $subsets .= ',cyrillic,cyrillic-ext';
@@ -261,11 +279,11 @@ if (!function_exists('total_fonts_url')) :
             $fonts_url = add_query_arg(array(
                 'family' => urlencode(implode('|', $fonts)),
                 'subset' => urlencode($subsets),
-                'display' => 'swap'
+                'display' => 'swap',
                     ), '//fonts.googleapis.com/css');
         }
 
-        return esc_url_raw($fonts_url);
+        return $fonts_url;
     }
 
 endif;
@@ -282,16 +300,16 @@ function total_scripts() {
     wp_enqueue_script('jquery-stellar', get_template_directory_uri() . '/js/jquery.stellar.js', array('imagesloaded'), TOTAL_VERSION, false);
     wp_enqueue_script('odometer', get_template_directory_uri() . '/js/odometer.js', array('jquery'), TOTAL_VERSION, true);
     wp_enqueue_script('waypoint', get_template_directory_uri() . '/js/waypoint.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('headroom', get_template_directory_uri() . '/js/headroom.js', array('jquery'), TOTAL_VERSION, true);
     wp_enqueue_script('total-custom', get_template_directory_uri() . '/js/total-custom.js', array('jquery'), TOTAL_VERSION, true);
     wp_localize_script('total-custom', 'total_localize', array('template_path' => get_template_directory_uri()));
 
-
-    wp_enqueue_style('total-fonts', total_fonts_url(), array(), NULL);
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), TOTAL_VERSION);
     wp_enqueue_style('font-awesome-4.7.0', get_template_directory_uri() . '/css/font-awesome-4.7.0.css', array(), TOTAL_VERSION);
     wp_enqueue_style('font-awesome-5.2.0', get_template_directory_uri() . '/css/font-awesome-5.2.0.css', array(), TOTAL_VERSION);
     wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), TOTAL_VERSION);
     wp_enqueue_style('nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('total-fonts', total_fonts_url(), array(), NULL);
     wp_enqueue_style('total-style', get_stylesheet_uri(), array(), TOTAL_VERSION);
     wp_add_inline_style('total-style', total_dymanic_styles());
 
@@ -307,9 +325,9 @@ add_action('wp_enqueue_scripts', 'total_scripts');
  * Enqueue admin style
  */
 function total_admin_scripts() {
-    wp_enqueue_style('total-admin-style', get_template_directory_uri() . '/inc/css/admin-style.css', array(), TOTAL_VERSION);
+    wp_enqueue_style('total-admin-style', get_template_directory_uri() . '/css/admin-style.css', array(), TOTAL_VERSION);
     wp_enqueue_media();
-    wp_enqueue_script('total-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), TOTAL_VERSION, true);
+    wp_enqueue_script('total-admin-scripts', get_template_directory_uri() . '/js/admin-scripts.js', array('jquery'), TOTAL_VERSION, true);
 }
 
 add_action('admin_enqueue_scripts', 'total_admin_scripts');
@@ -334,19 +352,9 @@ require get_template_directory() . '/inc/breadcrumbs.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * TGMPA
- */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-
-/**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/total-functions.php';
-
-/**
- * Customizer additions.
- */
-//require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/helper-functions.php';
 
 /**
  * Customizer additions.
@@ -356,17 +364,12 @@ require get_template_directory() . '/inc/customizer/customizer.php';
 /**
  * Metabox additions.
  */
-require get_template_directory() . '/inc/total-metabox.php';
+require get_template_directory() . '/inc/metabox.php';
 
 /**
  * Hooks
  */
 require get_template_directory() . '/inc/hooks.php';
-
-/**
- * Welcome Page.
- */
-require get_template_directory() . '/welcome/welcome.php';
 
 /**
  * Dynamic Styles additions.
@@ -380,3 +383,14 @@ require get_template_directory() . '/inc/widgets/widget-fields.php';
 require get_template_directory() . '/inc/widgets/widget-contact-info.php';
 require get_template_directory() . '/inc/widgets/widget-personal-info.php';
 require get_template_directory() . '/inc/widgets/widget-latest-post.php';
+
+/**
+ * Welcome Page.
+ */
+require get_template_directory() . '/welcome/welcome.php';
+
+/**
+ * TGMPA
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+

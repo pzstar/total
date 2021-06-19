@@ -33,7 +33,7 @@ $wp_customize->add_setting('total_body_text_transform', array(
 ));
 
 $wp_customize->add_setting('total_body_size', array(
-    'default' => '16',
+    'default' => '17',
     'sanitize_callback' => 'absint',
 ));
 
@@ -48,7 +48,7 @@ $wp_customize->add_setting('total_body_letter_spacing', array(
 ));
 
 $wp_customize->add_setting('total_body_color', array(
-    'default' => '#333333',
+    'default' => '#444444',
     'sanitize_callback' => 'sanitize_hex_color',
 ));
 
@@ -82,7 +82,7 @@ $wp_customize->add_section('total_header_typography_section', array(
 
 // Add H typography section.
 $wp_customize->add_setting('total_h_family', array(
-    'default' => 'Poppins',
+    'default' => 'Oswald',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 

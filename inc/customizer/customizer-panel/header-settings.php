@@ -51,7 +51,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_titletagl
 
 $wp_customize->add_setting('total_hide_title', array(
     'sanitize_callback' => 'total_sanitize_text',
-    'default' => false,
+    'default' => true,
 ));
 
 $wp_customize->add_control('total_hide_title', array(
@@ -62,7 +62,7 @@ $wp_customize->add_control('total_hide_title', array(
 
 $wp_customize->add_setting('total_hide_tagline', array(
     'sanitize_callback' => 'total_sanitize_text',
-    'default' => false,
+    'default' => true,
 ));
 
 $wp_customize->add_control('total_hide_tagline', array(
@@ -73,7 +73,6 @@ $wp_customize->add_control('total_hide_tagline', array(
 
 $wp_customize->add_setting('total_logo_width', array(
     'sanitize_callback' => 'total_sanitize_number_blank',
-    'default' => 260
 ));
 
 $wp_customize->add_setting('total_logo_width_tablet', array(
@@ -158,9 +157,6 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_main_head
             'fields' => array(
                 'total_mh_color_heading',
                 'total_mh_bg_color',
-                'total_mh_text_color',
-                'total_mh_anchor_color',
-                'total_mh_anchor_hov_color',
                 'total_mh_spacing_heading',
                 'total_mh_spacing',
             ),
@@ -238,7 +234,8 @@ $wp_customize->add_control(new Total_Dimensions_Control($wp_customize, 'total_mh
         'min' => 0,
         'max' => 100,
         'step' => 1,
-    )
+    ),
+    'responsive' => false
 )));
 
 $wp_customize->add_setting('total_header_upgrade_text', array(
@@ -275,16 +272,6 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_pm_nav', 
     'section' => 'total_menu_settings',
     'buttons' => array(
         array(
-            'name' => esc_html__('Content', 'total'),
-            'icon' => 'dashicons dashicons-welcome-write-blog',
-            'fields' => array(
-                'total_pm_sticky',
-                'total_pm_mobile_heading',
-                'total_pm_breakpoint',
-            ),
-            'active' => true,
-        ),
-        array(
             'name' => esc_html__('Style', 'total'),
             'icon' => 'dashicons dashicons-art',
             'fields' => array(
@@ -292,7 +279,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_pm_nav', 
                 'total_pm_separator1',
                 'total_pm_menu_link_color',
                 'total_pm_menu_link_hover_color',
-                'total_pm_menu_link_bg_color',
+                'total_pm_menu_hover_bg_color',
                 'total_pm_separator2',
                 'total_pm_submenu_bg_color',
                 'total_pm_submenu_link_color',
@@ -303,6 +290,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_pm_nav', 
                 'total_pm_menu_link_spacing',
                 'total_pm_submenu_link_spacing',
             ),
+            'active' => true,
         ),
         array(
             'name' => esc_html__('Typography', 'total'),
@@ -311,31 +299,6 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_pm_nav', 
                 'total_menu',
             ),
         ),
-    )
-)));
-
-$wp_customize->add_setting('total_pm_mobile_heading', array(
-    'sanitize_callback' => 'total_sanitize_text',
-));
-
-$wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_pm_mobile_heading', array(
-    'section' => 'total_menu_settings',
-    'label' => esc_html__('Mobile Settings', 'total'),
-)));
-
-$wp_customize->add_setting('total_pm_breakpoint', array(
-    'sanitize_callback' => 'total_sanitize_integer',
-    'default' => 768,
-));
-
-$wp_customize->add_control(new Total_Range_Slider_Control($wp_customize, 'total_pm_breakpoint', array(
-    'section' => 'total_menu_settings',
-    'label' => esc_html__('Mobile Menu Break Point(px)', 'total'),
-    'description' => esc_html__('Will display the mobile menu after the break point value', 'total'),
-    'input_attrs' => array(
-        'min' => 480,
-        'max' => 1800,
-        'step' => 1,
     )
 )));
 
@@ -371,11 +334,11 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
     'label' => esc_html__('Menu Link Color - Hover', 'total')
 )));
 
-$wp_customize->add_setting('total_pm_menu_link_bg_color', array(
+$wp_customize->add_setting('total_pm_menu_hover_bg_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
 ));
 
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_menu_link_bg_color', array(
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_menu_hover_bg_color', array(
     'section' => 'total_menu_settings',
     'label' => esc_html__('Menu Link Backgroud Color - Hover', 'total')
 )));
@@ -426,72 +389,6 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
     'label' => esc_html__('SubMenu Link Backgroud Color - Hover', 'total')
 )));
 
-$wp_customize->add_setting('total_pm_spacing_heading', array(
-    'sanitize_callback' => 'total_sanitize_text',
-));
-
-$wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_pm_spacing_heading', array(
-    'section' => 'total_menu_settings',
-    'label' => esc_html__('Spacing', 'total'),
-)));
-
-$wp_customize->add_setting('total_pm_menu_link_spacing_right_desktop', array(
-    'sanitize_callback' => 'total_sanitize_number_blank',
-));
-
-$wp_customize->add_setting('total_pm_menu_link_spacing_left_desktop', array(
-    'sanitize_callback' => 'total_sanitize_number_blank',
-));
-
-$wp_customize->add_control(new Total_Dimensions_Control($wp_customize, 'total_pm_menu_link_spacing', array(
-    'section' => 'total_menu_settings',
-    'label' => esc_html__('Menu Spacing(px)', 'total'),
-    'description' => esc_html__('Spacing left & right of menu items', 'total'),
-    'settings' => array(
-        'desktop_left' => 'total_pm_menu_link_spacing_left_desktop',
-        'desktop_right' => 'total_pm_menu_link_spacing_right_desktop'
-    ),
-    'input_attrs' => array(
-        'min' => 0,
-        'max' => 100,
-        'step' => 1,
-    ),
-    'responsive' => false
-)));
-
-$wp_customize->add_setting('total_pm_submenu_link_spacing_left_desktop', array(
-    'sanitize_callback' => 'total_sanitize_number_blank',
-));
-
-$wp_customize->add_setting('total_pm_submenu_link_spacing_top_desktop', array(
-    'sanitize_callback' => 'total_sanitize_number_blank',
-));
-
-$wp_customize->add_setting('total_pm_submenu_link_spacing_bottom_desktop', array(
-    'sanitize_callback' => 'total_sanitize_number_blank',
-));
-
-$wp_customize->add_setting('total_pm_submenu_link_spacing_right_desktop', array(
-    'sanitize_callback' => 'total_sanitize_number_blank',
-));
-
-$wp_customize->add_control(new Total_Dimensions_Control($wp_customize, 'total_pm_submenu_link_spacing', array(
-    'section' => 'total_menu_settings',
-    'label' => esc_html__('SubMenu Spacing(px)', 'total'),
-    'settings' => array(
-        'desktop_left' => 'total_pm_submenu_link_spacing_left_desktop',
-        'desktop_top' => 'total_pm_submenu_link_spacing_top_desktop',
-        'desktop_bottom' => 'total_pm_submenu_link_spacing_bottom_desktop',
-        'desktop_right' => 'total_pm_submenu_link_spacing_right_desktop'
-    ),
-    'input_attrs' => array(
-        'min' => 0,
-        'max' => 100,
-        'step' => 1,
-    ),
-    'responsive' => false
-)));
-
 /* * **************************************************************** */
 $wp_customize->add_section('total_menu_typography', array(
     'panel' => 'total_typography',
@@ -499,7 +396,7 @@ $wp_customize->add_section('total_menu_typography', array(
 ));
 
 $wp_customize->add_setting('total_menu_family', array(
-    'default' => 'Poppins',
+    'default' => 'Oswald',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 
@@ -524,7 +421,7 @@ $wp_customize->add_setting('total_menu_size', array(
 ));
 
 $wp_customize->add_setting('total_menu_line_height', array(
-    'default' => '2',
+    'default' => '2.6',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 

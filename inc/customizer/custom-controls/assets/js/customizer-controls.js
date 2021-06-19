@@ -129,7 +129,7 @@ jQuery(document).ready(function ($) {
     });
 
     // Update slider if the input field loses focus as it's most likely changed
-    $('.customize-control-total-res-range-slider .total-slider-input').blur(function () {
+    $('.customize-control-total-range-slider .total-slider-input').blur(function () {
         var resetValue = $(this).val();
         var slider = $(this).parents('.customize-control-total-range-slider').find('.total-range-slider');
         var sliderMinValue = parseInt(slider.attr('slider-min-value'));
