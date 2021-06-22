@@ -2690,11 +2690,12 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     background: #111;
     height: 60px;
     width: 40px;
-    text-align: center;
     color: #FFF;
-    line-height: 60px;
     z-index: 99;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;

@@ -7,6 +7,7 @@ class Total_Preloader_Selector_Control extends WP_Customize_Control {
 
     public function __construct($manager, $id, $args = array(), $choices = array()) {
         $this->choices = $args['choices'];
+        $this->file_path = $args['file_path'];
         parent::__construct($manager, $id, $args);
     }
 
@@ -34,10 +35,13 @@ class Total_Preloader_Selector_Control extends WP_Customize_Control {
 
                 <div class="ht-preloader-container">
                     <?php
-                    for ($i = 1; $i <= 15; $i++) {
+                    for ($i = 1; $i <= 16; $i++) {
                         $style = ($this->value() != 'preloader' . $i) ? 'style="display:none"' : '';
                         echo '<div class="ht-preloader ht-preloader' . $i . '"' . $style . '>';
-                        require_once get_template_directory() . '/inc/preloader/preloader' . $i . '.php';
+                        $preloader_path = trailingslashit($this->file_path) . 'preloader' . $i . '.php';
+                        if (file_exists($preloader_path)) {
+                            require_once $preloader_path;
+                        }
                         echo '</div>';
                     }
                     ?>
