@@ -33,7 +33,7 @@ $wp_customize->add_setting('total_body_text_transform', array(
 ));
 
 $wp_customize->add_setting('total_body_size', array(
-    'default' => '17',
+    'default' => '16',
     'sanitize_callback' => 'absint',
 ));
 

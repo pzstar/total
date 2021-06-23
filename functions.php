@@ -228,10 +228,11 @@ if (!function_exists('total_fonts_url')) :
         $fonts = $standard_font_family = $default_font_list = $font_family_array = $variants_array = $font_array = $google_fonts = array();
 
         $customizer_fonts = apply_filters('total_customizer_fonts', array(
-            'total_body' => 'Poppins',
-            'total_menu' => 'Oswald',
-            'total_h' => 'Oswald'
+            'total_body_family' => 'Poppins',
+            'total_menu_family' => 'Oswald',
+            'total_h_family' => 'Oswald'
         ));
+        
         $standard_font = total_standard_font_array();
         $google_font_list = total_google_font_array();
         $default_font_list = total_default_font_array();

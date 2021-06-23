@@ -257,7 +257,7 @@ function total_dymanic_styles() {
         'style' => '400',
         'text_transform' => 'none',
         'text_decoration' => 'none',
-        'size' => '17',
+        'size' => '16',
         'line_height' => '1.6',
         'letter_spacing' => '0',
         'color' => '#444444'
