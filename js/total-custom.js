@@ -14,7 +14,7 @@ jQuery(function ($) {
     if ($('body').hasClass('admin-bar')) {
         adminbarHeight = 32;
     }
-    var $stickyHeader = $('.ht-site-header');
+    var $stickyHeader = $('.ht-header');
     if ($('.ht-sticky-header').length > 0 && $stickyHeader.length > 0) {
         hHeight = $stickyHeader.outerHeight();
         $pageWrapper = $('#ht-content');

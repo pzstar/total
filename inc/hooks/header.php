@@ -57,14 +57,16 @@ if (!function_exists('total_display_header')) {
     function total_display_header() {
         ?>
         <header id="ht-masthead" class="ht-site-header">
-            <div class="ht-container">
-                <div id="ht-site-branding">
-                    <?php total_custom_logo(); ?>
-                </div>
+            <div class="ht-header">
+                <div class="ht-container">
+                    <div id="ht-site-branding">
+                        <?php total_custom_logo(); ?>
+                    </div>
 
-                <nav id="ht-site-navigation" class="ht-main-navigation">
-                    <?php total_main_navigation(); ?>
-                </nav>
+                    <nav id="ht-site-navigation" class="ht-main-navigation">
+                        <?php total_main_navigation(); ?>
+                    </nav>
+                </div>
             </div>
         </header>
         <?php

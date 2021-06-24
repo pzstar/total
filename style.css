@@ -1295,7 +1295,7 @@ body.ht-boxed #ht-page {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.ht-site-header{
+.ht-header{
     border-top: 4px solid #FFC107;
     background: #FFF; 
     border-bottom: 1px solid #F1F1F1;
@@ -1304,14 +1304,14 @@ body.ht-boxed #ht-page {
     transition: padding 0.3s ease;
 }
 
-.ht-sticky-header .headroom--not-top#ht-masthead{
+.ht-sticky-header .ht-header.headroom--not-top{
     position: fixed;
     left: 0;
     right: 0;
     padding: 5px 0;
 }
 
-.ht-site-header .ht-container{
+.ht-header .ht-container{
     display: flex;
     align-items: center;
     justify-content: space-between;

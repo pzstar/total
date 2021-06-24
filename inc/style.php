@@ -313,15 +313,15 @@ function total_dymanic_styles() {
     $logo_width_mobile = get_theme_mod('total_logo_width_mobile');
 
     if ($logo_width === 0 || $logo_width) {
-        $custom_css .= "#ht-site-branding img.custom-logo{max-width:{$logo_width}px}";
+        $custom_css .= "#ht-site-branding img.custom-logo{width:{$logo_width}px}";
     }
 
     if ($logo_width_tablet === 0 || $logo_width_tablet) {
-        $tablet_css .= "#ht-site-branding img.custom-logo{max-width:{$logo_width_tablet}px}";
+        $tablet_css .= "#ht-site-branding img.custom-logo{width:{$logo_width_tablet}px}";
     }
 
     if ($logo_width_mobile === 0 || $logo_width_mobile) {
-        $mobile_css .= "#ht-site-branding img.custom-logo{max-width:{$logo_width_mobile}px}";
+        $mobile_css .= "#ht-site-branding img.custom-logo{width:{$logo_width_mobile}px}";
     }
 
     /* =============== Site Title & Tagline Color =============== */
