@@ -110,7 +110,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                             echo '<img src="' . esc_url($new_value) . '" style="max-width:100%;"/>';
                                         }
                                         echo '</div>';
-                                        echo '<div class="actions clearfix">';
+                                        echo '<div class="actions total-clearfix">';
                                         echo '<button type="button" class="button total-delete-button align-left">' . esc_html__('Remove', 'total') . '</button>';
                                         echo '<button type="button" class="button total-upload-button alignright">' . esc_html__('Select Image', 'total') . '</button>';
                                         echo '<input data-default="' . esc_attr($default) . '" class="upload-id" data-name="' . esc_attr($key) . '" type="hidden" value="' . esc_attr($new_value) . '"/>';
@@ -235,7 +235,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                         echo '</div>';
 
                                         if (apply_filters('total_show_ico_font', true)) {
-                                            echo '<ul class="total-icon-list icofont-list clearfix active">';
+                                            echo '<ul class="total-icon-list icofont-list total-clearfix active">';
                                             $total_icofont_icon_array = total_icofont_icon_array();
                                             foreach ($total_icofont_icon_array as $total_icofont_icon) {
                                                 $icon_class = $new_value == $total_icofont_icon ? 'icon-active' : '';
@@ -245,7 +245,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                         }
 
                                         if (apply_filters('total_show_material_icon', true)) {
-                                            echo '<ul class="total-icon-list material-icon-list clearfix">';
+                                            echo '<ul class="total-icon-list material-icon-list total-clearfix">';
                                             $total_materialdesignicons_icon_array = total_materialdesignicons_array();
                                             foreach ($total_materialdesignicons_icon_array as $total_materialdesignicons_icon) {
                                                 $icon_class = $new_value == $total_materialdesignicons_icon ? 'icon-active' : '';
@@ -255,7 +255,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                         }
 
                                         if (apply_filters('total_show_elegant_icon', true)) {
-                                            echo '<ul class="total-icon-list elegant-icon-list clearfix">';
+                                            echo '<ul class="total-icon-list elegant-icon-list total-clearfix">';
                                             $total_eleganticons_icon_array = total_eleganticons_array();
                                             foreach ($total_eleganticons_icon_array as $total_eleganticons_icon) {
                                                 $icon_class = $new_value == $total_eleganticons_icon ? 'icon-active' : '';
@@ -293,7 +293,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
                         <?php }
                         ?>
 
-                        <div class="clearfix total-repeater-footer">
+                        <div class="total-clearfix total-repeater-footer">
                             <div class="alignright">
                                 <a class="total-repeater-field-remove" href="#remove"><?php esc_html_e('Delete', 'total') ?></a> |
                                 <a class="total-repeater-field-close" href="#close"><?php esc_html_e('Close', 'total') ?></a>

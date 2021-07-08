@@ -248,7 +248,6 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'choices' => array(
         esc_html__('6 header styles', 'total'),
         esc_html__('Option to enable/disable top header', 'total'),
-        esc_html__('Increase/Decrease logo and header height', 'total'),
         esc_html__('Search and social button option on header', 'total'),
         esc_html__('7 menu hover styles', 'total'),
         esc_html__('Mega menu', 'total'),

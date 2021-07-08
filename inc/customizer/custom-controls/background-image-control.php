@@ -126,7 +126,7 @@ class Total_Background_Image_Control extends WP_Customize_Control {
             <# } #>
         </div>
 
-        <div class="total-actions clearfix">
+        <div class="total-actions total-clearfix">
             <button type="button" class="button total-upload-button align-left">{{{ data.button_label.select }}}</button>
             <button type="button" class="button total-remove-button alignright">{{{ data.button_label.remove }}}</button>
         </div>

@@ -23,7 +23,6 @@ $total_pro_features = '<ul class="upsell-features">
 	<li>' . esc_html__("Top header bar", "total") . '</li>
 	<li>' . esc_html__("PreLoader option", "total") . '</li>
 	<li>' . esc_html__("Sidebar layout options", "total") . '</li>
-	<li>' . esc_html__("Website layout (Fullwidth or Boxed)", "total") . '</li>
 	<li>' . esc_html__("Advanced blog settings", "total") . '</li>
 	<li>' . esc_html__("Advanced footer setting", "total") . '</li>
 	<li>' . esc_html__("Front page sections with full window height", "total") . '</li>
