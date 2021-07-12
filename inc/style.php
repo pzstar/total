@@ -212,7 +212,6 @@ function total_dymanic_styles() {
         border-color: {$color};
     }
 
-    #ht-masthead,
     .woocommerce-error, 
     .woocommerce-info, 
     .woocommerce-message{
@@ -251,6 +250,16 @@ function total_dymanic_styles() {
         }   
     }";
 
+    $total_enable_header_border = get_theme_mod('total_enable_header_border', true);
+    $total_enable_footer_border = get_theme_mod('total_enable_footer_border', true);
+
+    if ($total_enable_header_border) {
+        $custom_css .= ".ht-header{border-top: 4px solid {$color}}";
+    }
+
+    if ($total_enable_footer_border) {
+        $custom_css .= "#ht-colophon{border-top: 4px solid {$color}}";
+    }
     /* =============== Typography CSS =============== */
     $custom_css .= total_typography_css('total_body', 'html, body, button, input, select, textarea', array(
         'family' => 'Poppins',
@@ -326,10 +335,10 @@ function total_dymanic_styles() {
 
     /* =============== Site Title & Tagline Color =============== */
     $mh_bg_color = get_theme_mod('total_mh_bg_color', '#FFFFFF');
-    $custom_css .= ".ht-site-header{background-color:{$mh_bg_color}}";
+    $custom_css .= ".ht-site-header .ht-header{background-color:{$mh_bg_color}}";
     $custom_css .= total_dimension_css('total_mh_spacing', array(
         'position' => array('left', 'top', 'bottom', 'right'),
-        'selector' => '.ht-site-header',
+        'selector' => '.ht-header .ht-container',
         'type' => 'padding',
         'unit' => 'px',
         'responsive' => false
@@ -404,7 +413,7 @@ function total_dymanic_styles() {
     $top_footer_anchor_color = get_theme_mod('total_top_footer_anchor_color', '#EEEEEE');
     $bottom_footer_text_color = get_theme_mod('total_bottom_footer_text_color', '#EEEEEE');
     $bottom_footer_anchor_color = get_theme_mod('total_bottom_footer_anchor_color', '#EEEEEE');
-    $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color', get_template_directory_uri().'/images/footer-bg.jpg');
+    $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color', get_template_directory_uri() . '/images/footer-bg.jpg');
 
     $custom_css .= total_background_css('total_footer_bg', '#ht-colophon', array(
         'url' => '',

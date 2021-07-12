@@ -24,7 +24,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_na
             'name' => esc_html__('Style', 'total'),
             'fields' => array(
                 'total_footer_bg',
-                'total_footer_bg_color',
+                'total_enable_footer_border',
                 'total_top_footer_heading',
                 'total_top_footer_title_color',
                 'total_top_footer_text_color',
@@ -57,7 +57,7 @@ $wp_customize->add_control(new Total_Selector_Control($wp_customize, 'total_foot
 
 $wp_customize->add_setting('total_footer_bg_url', array(
     'sanitize_callback' => 'esc_url_raw',
-    'default' => get_template_directory_uri().'/images/footer-bg.jpg'
+    'default' => get_template_directory_uri() . '/images/footer-bg.jpg'
 ));
 
 $wp_customize->add_setting('total_footer_bg_id', array(
@@ -86,7 +86,7 @@ $wp_customize->add_setting('total_footer_bg_attachment', array(
 
 $wp_customize->add_setting('total_footer_bg_color', array(
     'default' => '#222222',
-    'sanitize_callback' => 'sanitize_hex_color',
+    'sanitize_callback' => 'total_sanitize_color_alpha',
 ));
 
 $wp_customize->add_setting('total_footer_bg_overlay', array(
@@ -107,6 +107,16 @@ $wp_customize->add_control(new Total_Background_Image_Control($wp_customize, 'to
         'color' => 'total_footer_bg_color',
         'overlay' => 'total_footer_bg_overlay'
     )
+)));
+
+$wp_customize->add_setting('total_enable_footer_border', array(
+    'sanitize_callback' => 'total_sanitize_text',
+    'default' => true
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable_footer_border', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Enable Footer Top Border', 'total')
 )));
 
 $wp_customize->add_setting('total_top_footer_title_color', array(

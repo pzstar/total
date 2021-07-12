@@ -148,6 +148,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_main_head
             'icon' => 'dashicons dashicons-welcome-write-blog',
             'fields' => array(
                 'total_sticky_header_enable',
+                'total_enable_header_border'
             ),
             'active' => true,
         ),
@@ -177,23 +178,35 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_sticky
         'off' => esc_html__('No', 'total')
 ))));
 
+$wp_customize->add_setting('total_enable_header_border', array(
+    'sanitize_callback' => 'total_sanitize_text',
+    'default' => true
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable_header_border', array(
+    'section' => 'total_main_header_section',
+    'label' => esc_html__('Enable Header Top Border', 'total')
+)));
+
 $wp_customize->add_setting('total_mh_color_heading', array(
     'sanitize_callback' => 'total_sanitize_text',
 ));
 
 $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_mh_color_heading', array(
     'section' => 'total_main_header_section',
-    'label' => esc_html__('Colors', 'total')
+    'label' => esc_html__('Colors', 'total'),
+    'priority' => 5
 )));
 
 $wp_customize->add_setting('total_mh_bg_color', array(
     'default' => '#FFFFFF',
-    'sanitize_callback' => 'sanitize_hex_color',
+    'sanitize_callback' => 'sanitize_hex_color'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_mh_bg_color', array(
     'section' => 'total_main_header_section',
-    'label' => esc_html__('Background Color', 'total')
+    'label' => esc_html__('Header Background Color', 'total'),
+    'priority' => 5
 )));
 
 $wp_customize->add_setting('total_mh_spacing_heading', array(
@@ -223,7 +236,7 @@ $wp_customize->add_setting('total_mh_spacing_right_desktop', array(
 
 $wp_customize->add_control(new Total_Dimensions_Control($wp_customize, 'total_mh_spacing', array(
     'section' => 'total_main_header_section',
-    'label' => esc_html__('Spacing(px)', 'total'),
+    'label' => esc_html__('Header Spacing(px)', 'total'),
     'settings' => array(
         'desktop_left' => 'total_mh_spacing_left_desktop',
         'desktop_top' => 'total_mh_spacing_top_desktop',

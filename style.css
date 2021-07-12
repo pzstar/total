@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/total/
 Author: Hash Themes
 Author URI: https://hashthemes.com
 Description: Total as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The home page consist of slider, featured section with icon, about us section with progress bar, portfolio section with masonary layout, team section, testimonial section, counter section, blog section with option to add 3, 6 or 9 blog posts, clients logo carousel slider and call to action section. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce - an ecommerce plugin and all other major plugins. The theme can also be used with all major page builder plugins like Elementor, SiteOrigin, WpBakery VisualComposer and Beaver Builder. The theme provides option to import the demo with just one click. DEMO: https://demo.hashthemes.com/total/
-Version: 2.0.0
+Version: 2.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: total
@@ -1296,22 +1296,28 @@ body.ht-boxed #ht-page {
 ## Header
 --------------------------------------------------------------*/
 .ht-header{
-    border-top: 4px solid #FFC107;
     background: #FFF; 
-    border-bottom: 1px solid #F1F1F1;
     z-index: 99;
-    padding: 15px 0;
+}
+
+.ht-header .ht-container{
     transition: padding 0.3s ease;
+    padding: 15px 0;
 }
 
 .ht-sticky-header .ht-header.headroom--not-top{
     position: fixed;
     left: 0;
     right: 0;
-    padding: 5px 0;
+}
+
+.ht-sticky-header .ht-header.headroom--not-top .ht-container{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .ht-header .ht-container{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1329,11 +1335,6 @@ body.ht-titlebar-disabled:not(.ht-enable-frontpage) #ht-content{
 body.home.blog.ht-sticky-header:not(.ht-enable-frontpage) #ht-content,
 body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content{
     padding-top: 134px;
-}
-
-#ht-site-branding{
-    float: left;
-    width: 30%;
 }
 
 #ht-site-branding img{
@@ -1500,7 +1501,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     min-width: 200px;
     z-index: 999;
     padding: 8px;
-    margin-top: 27px;
+    margin-top: 10px;
     border-top: 2px solid #FFC107;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.05)
 }
@@ -2587,8 +2588,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 ## Footer
 --------------------------------------------------------------*/
 #ht-colophon{
-    border-top: 4px solid #FFC107;
-    font-size: 16px;
     position: relative;
 }
 
@@ -3296,7 +3295,8 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 @media screen and (max-width: 1200px){
     .ht-container{
         width: auto;
-        padding: 0 15px;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 
     .ht-slide-caption{
@@ -3308,9 +3308,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 @media screen and (max-width: 1000px){
     .toggle-bar{
         display: block;
-        position: absolute;
-        top: 22px;
-        right: 20px;
+        position: relative;
         height: 50px;
         width: 50px;
         background: #FFC107;
@@ -3336,11 +3334,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         height: 94px;	
     }
 
-    #ht-site-branding{
-        width: 80%;
-        float: left;
-    }
-
     .ht-sticky #ht-site-branding{
         padding: 15px 0;
     }
@@ -3359,7 +3352,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         background: #FFF;
         left: 0;
         right: 0;
-        top: 90px;
+        top: 100%;
         z-index: 999;
         width: 100%;
         padding: 0;

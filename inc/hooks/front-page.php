@@ -8,7 +8,7 @@ if (!function_exists('total_front_page_loop')) {
         if ($total_enable_frontpage) {
             $total_home_sections = total_home_section();
 
-            get_template_part('section/section', 'slider');
+            get_template_part('sections/section', 'slider');
 
             foreach ($total_home_sections as $total_home_section) {
                 $total_home_section = str_replace('total_', '', $total_home_section);
