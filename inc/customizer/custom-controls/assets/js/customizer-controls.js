@@ -18,6 +18,27 @@ jQuery(document).ready(function ($) {
     });
 
     // Icon Control JS
+    $('body').on('click', '.total-icon-box-wrap .total-icon-list li', function () {
+        var icon_class = $(this).find('i').attr('class');
+        $(this).closest('.total-icon-box').find('.total-icon-list li').removeClass('icon-active');
+        $(this).addClass('icon-active');
+        $(this).closest('.total-icon-box').prev('.total-selected-icon').children('i').attr('class', '').addClass(icon_class);
+        $(this).closest('.total-icon-box').next('input').val(icon_class).trigger('change');
+        $(this).closest('.total-icon-box').slideUp();
+    });
+
+    $('body').on('click', '.total-icon-box-wrap .total-selected-icon', function () {
+        $(this).next().slideToggle();
+    });
+
+    $('body').on('change', '.total-icon-box-wrap .total-icon-search select', function () {
+        var selected = $(this).val();
+        $(this).closest('.total-icon-box').find('.total-icon-search-input').val('');
+        $(this).closest('.total-icon-box').find('.total-icon-list li').show();
+        $(this).closest('.total-icon-box').find('.total-icon-list').hide().removeClass('active');
+        $(this).closest('.total-icon-box').find('.' + selected).fadeIn().addClass('active');
+    });
+
     $('body').on('keyup', '.total-icon-box-wrap .total-icon-search input', function (e) {
         var $input = $(this);
         var keyword = $input.val().toLowerCase();
@@ -31,14 +52,6 @@ jQuery(document).ready(function ($) {
                 }
             });
         }, 500);
-    });
-
-
-    // Select Preloader
-    $('.ht-preloader-selector').on('change', function () {
-        var activePreloader = $(this).val();
-        $(this).next('.ht-preloader-container').find('.ht-preloader').hide();
-        $(this).next('.ht-preloader-container').find('.ht-' + activePreloader).show();
     });
 
     // Switch Control
@@ -358,7 +371,7 @@ jQuery(document).ready(function ($) {
                         }
                     });
                 });
-                field.find('.onoffswitch').each(function () {
+                field.find('.total-onoffswitch').each(function () {
                     var defaultValue = $(this).next('input[data-name]').attr('data-default');
                     $(this).next('input[data-name]').val(defaultValue);
                     if (defaultValue == 'on') {

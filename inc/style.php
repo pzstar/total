@@ -40,7 +40,7 @@ function total_dymanic_styles() {
     } else if ($website_layout == "fluid") {
         $custom_css .= "
         .ht-container{
-                max-width:{$container_width}%; 
+            max-width:{$container_width}%; 
         }";
     }
 

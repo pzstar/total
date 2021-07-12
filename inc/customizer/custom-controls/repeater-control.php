@@ -184,14 +184,14 @@ class Total_Repeater_Control extends WP_Customize_Control {
 
                                     case 'switch':
                                         $switch = $field['switch'];
-                                        $switch_class = ($new_value == 'on') ? 'switch-on' : '';
-                                        echo '<div class="onoffswitch ' . esc_attr($switch_class) . '">';
-                                        echo '<div class="onoffswitch-inner">';
-                                        echo '<div class="onoffswitch-active">';
-                                        echo '<div class="onoffswitch-switch">' . esc_html($switch["on"]) . '</div>';
+                                        $switch_class = ($new_value == 'on') ? 'total-switch-on' : '';
+                                        echo '<div class="total-onoffswitch ' . esc_attr($switch_class) . '">';
+                                        echo '<div class="total-onoffswitch-inner">';
+                                        echo '<div class="total-onoffswitch-active">';
+                                        echo '<div class="total-onoffswitch-switch">' . esc_html($switch["on"]) . '</div>';
                                         echo '</div>';
-                                        echo '<div class="onoffswitch-inactive">';
-                                        echo '<div class="onoffswitch-switch">' . esc_html($switch["off"]) . '</div>';
+                                        echo '<div class="total-onoffswitch-inactive">';
+                                        echo '<div class="total-onoffswitch-switch">' . esc_html($switch["off"]) . '</div>';
                                         echo '</div>';
                                         echo '</div>';
                                         echo '</div>';
@@ -201,7 +201,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                     case 'range':
                                         $options = $field['options'];
                                         $new_value = $new_value ? $new_value : $options['val'];
-                                        echo '<div class="total-total-responsive-range-slider" >';
+                                        echo '<div class="total-responsive-range-slider" >';
                                         echo '<div class="range-input" data-defaultvalue="' . esc_attr($options['val']) . '" data-value="' . esc_attr($new_value) . '" data-min="' . esc_attr($options['min']) . '" data-max="' . esc_attr($options['max']) . '" data-step="' . esc_attr($options['step']) . '"></div>';
                                         echo '<input  class="range-input-selector" type="text" disabled="disabled" value="' . esc_attr($new_value) . '"  data-name="' . esc_attr($key) . '"/>';
                                         echo '<span class="unit">' . esc_html($options['unit']) . '</span>';

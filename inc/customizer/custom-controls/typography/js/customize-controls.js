@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
         $.ajax({
             url: ajaxurl,
             data: {
-                action: 'get_google_font_variants',
+                action: 'total_get_google_font_variants',
                 font_family: font_family,
             },
             beforeSend: function () {

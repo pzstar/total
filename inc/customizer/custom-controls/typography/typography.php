@@ -20,7 +20,7 @@ function total_get_google_font_variants() {
     die();
 }
 
-add_action("wp_ajax_get_google_font_variants", "total_get_google_font_variants");
+add_action("wp_ajax_total_get_google_font_variants", "total_get_google_font_variants");
 
 function total_search_key($array, $key, $value) {
     $results = array();
