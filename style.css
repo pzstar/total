@@ -841,7 +841,7 @@ a:active {
     color: #FFC107;
 }
 
-.ht-post-info a{
+.ht-post-info > a{
     display: block;
     text-decoration: none;
     line-height: 1.4;
