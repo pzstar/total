@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.0.3 - Jul 12, 2021 =
+* Customizer icon chooser jquery issue fixed
+
 = 2.0.2 - Jul 05, 2021 =
 * Responsive Menu issue fixed
 * Added option to remove header and footer border
