@@ -54,7 +54,7 @@ if (!function_exists('total_change_wp_page_menu_args')) {
 if (!function_exists('total_breadcrumb_trial')) {
 
     function total_breadcrumb_trial() {
-        $display_breadcrumb = get_theme_mod('total_breadcrumb', true);
+        $display_breadcrumb = get_theme_mod('total_breadcrumb_enable', true);
         if ($display_breadcrumb) {
             $args = array(
                 'show_browse' => false,

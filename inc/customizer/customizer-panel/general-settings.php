@@ -140,12 +140,12 @@ $wp_customize->add_section('total_breadcrumb_section', array(
     'panel' => 'total_general_settings_panel'
 ));
 
-$wp_customize->add_setting('total_breadcrumb', array(
+$wp_customize->add_setting('total_breadcrumb_enable', array(
     'sanitize_callback' => 'total_sanitize_checkbox',
     'default' => true
 ));
 
-$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_breadcrumb', array(
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_breadcrumb_enable', array(
     'section' => 'total_breadcrumb_section',
     'label' => esc_html__('BreadCrumb', 'total'),
     'description' => esc_html__('Breadcrumbs are a great way of letting your visitors find out where they are on your site.', 'total'),
