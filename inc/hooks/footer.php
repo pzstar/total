@@ -52,14 +52,19 @@ if (!function_exists('total_bottom_footer')) {
             <div class="ht-container">
                 <div class="ht-site-info ht-bottom-footer">
                     <?php
+                    $show_credit = apply_filters('total_display_footer_credit', '__return_true');
                     $total_footer_copyright = get_theme_mod('total_footer_copyright');
                     if ($total_footer_copyright) {
                         echo do_shortcode($total_footer_copyright);
-                        echo '<span class="sep"> | </span>';
+                        if ($show_credit) {
+                            echo '<span class="sep"> | </span>';
+                        }
                     }
-                    printf(
-                            // translators: 1-Theme URL, 2-Theme Author
-                            esc_html__('%1$s by %2$s', 'total'), '<a href="https://hashthemes.com/wordpress-theme/total/" target="_blank">WordPress Theme - Total</a>', 'HashThemes');
+                    if ($show_credit) {
+                        printf(
+                                // translators: 1-Theme URL, 2-Theme Author
+                                esc_html__('%1$s by %2$s', 'total'), '<a href="https://hashthemes.com/wordpress-theme/total/" target="_blank">WordPress Theme - Total</a>', 'HashThemes');
+                    }
                     ?>
                 </div><!-- #site-info -->
             </div>
@@ -72,8 +77,9 @@ if (!function_exists('total_bottom_footer')) {
 if (!function_exists('total_footer_open')) {
 
     function total_footer_open() {
+        $footer_class = apply_filters('total_footer_class', array('ht-site-footer'));
         echo '</div><!-- #content -->';
-        echo '<footer id="ht-colophon" class="ht-site-footer">';
+        echo '<footer id="ht-colophon" class="' . implode($footer_class, ' ') . '">';
     }
 
 }

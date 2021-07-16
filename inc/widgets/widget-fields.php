@@ -141,8 +141,8 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
                 </div>
 
                 <div class="actions clearfix">
-                    <button type="button" class="button total-delete-button align-left"><?php esc_html_e('Remove', 'total'); ?></button>
-                    <button type="button" class="button total-upload-button alignright"><?php esc_html_e('Select Image', 'total'); ?></button>
+                    <button type="button" class="button total-widget-delete-button align-left"><?php esc_html_e('Remove', 'total'); ?></button>
+                    <button type="button" class="button total-widget-upload-button alignright"><?php esc_html_e('Select Image', 'total'); ?></button>
 
                     <input name="<?php echo esc_attr($instance->get_field_name($total_widgets_name)); ?>" id="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>" class="upload-id" type="hidden" value="<?php echo esc_url($total_field_value) ?>"/>
                 </div>

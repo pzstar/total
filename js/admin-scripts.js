@@ -54,6 +54,6 @@ function total_delete_media_image(selector) {
 }
 
 jQuery(document).ready(function (jQuery) {
-    total_upload_media_image('.total-upload-button');
-    total_delete_media_image('.total-delete-button');
+    total_upload_media_image('.total-widget-upload-button');
+    total_delete_media_image('.total-widget-delete-button');
 });
