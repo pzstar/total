@@ -345,6 +345,44 @@ if (!function_exists('total_typography_css')) {
 
 }
 
+if (!function_exists('total_meta_dimension_css')) {
+
+    function total_meta_dimension_css($key, $params = array()) {
+        if (!$key) {
+            return;
+        }
+
+        global $post;
+        $dimensions = get_post_meta($post->ID, $key, true);
+
+        $default_params = array(
+            'selector' => '',
+            'type' => 'margin',
+            'unit' => 'px'
+        );
+
+        $params = wp_parse_args($params, $default_params);
+        $selector = $params['selector'];
+        $type = $params['type'];
+        $unit = $params['unit'];
+
+        if ($dimensions) {
+            $css = array();
+            foreach ($dimensions as $position => $value) {
+                if ($value || $value === '0') {
+                    $css[] = "{$type}-{$position}:{$value}{$unit}";
+                }
+            }
+
+            if ($css) {
+                $style = implode(';', $css);
+                return $selector . '{' . $style . '}';
+            }
+        }
+    }
+
+}
+
 if (!function_exists('total_home_section')) {
 
     function total_home_section() {
