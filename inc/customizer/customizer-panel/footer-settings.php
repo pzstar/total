@@ -169,9 +169,10 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_botto
 
 $wp_customize->add_setting('total_bottom_footer_bg_color', array(
     'sanitize_callback' => 'total_sanitize_color_alpha',
+    'default' => 'rgba(0,0,0,0.1)',
 ));
 
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_bottom_footer_bg_color', array(
+$wp_customize->add_control(new Total_Alpha_Color_Control($wp_customize, 'total_bottom_footer_bg_color', array(
     'label' => esc_html__('Footer Background', 'total'),
     'section' => 'total_footer_settings'
 )));
