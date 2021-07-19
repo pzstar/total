@@ -1,7 +1,7 @@
 === Total ===
 Contributors: hashthemes
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.7.2
 Stable tag: 1.0.0
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.0.4 - Jul 19, 2021 =
+* Minor tweaks to make it compatible with the premium version
+
 = 2.0.3 - Jul 12, 2021 =
 * Customizer icon chooser jquery issue fixed
 
