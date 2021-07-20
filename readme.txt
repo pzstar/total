@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.0.5 - Jul 20, 2021 =
+* Icon Selector Control JS issue fixed
+
 = 2.0.4 - Jul 19, 2021 =
 * Minor tweaks to make it compatible with the premium version
 
