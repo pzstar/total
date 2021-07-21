@@ -89,7 +89,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_about_
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 //ABOUT US PAGE
@@ -151,40 +152,41 @@ for ($i = 1; $i < 6; $i++) {
         'label' => esc_html__('Percentage', 'total'),
         'choices' => total_percentage()
     )));
-
-    $wp_customize->add_setting('total_about_image_heading', array(
-        'sanitize_callback' => 'total_sanitize_text'
-    ));
-
-    $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_about_image_heading', array(
-        'settings' => 'total_about_image_heading',
-        'section' => 'total_about_section',
-        'label' => esc_html__('Right Image', 'total'),
-    )));
-
-    $wp_customize->add_setting('total_about_image', array(
-        'sanitize_callback' => 'esc_url_raw'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'total_about_image', array(
-        'section' => 'total_about_section',
-        'settings' => 'total_about_image',
-        'description' => esc_html__('Recommended Image Size: 500X600px', 'total')
-    )));
-
-    $wp_customize->add_setting('total_about_widget', array(
-        'default' => '0',
-        'sanitize_callback' => 'total_sanitize_choices'
-    ));
-
-    $wp_customize->add_control('total_about_widget', array(
-        'settings' => 'total_about_widget',
-        'section' => 'total_about_section',
-        'type' => 'select',
-        'label' => esc_html__('Replace Image by widget', 'total'),
-        'choices' => total_widget_list()
-    ));
 }
+
+$wp_customize->add_setting('total_about_image_heading', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_about_image_heading', array(
+    'settings' => 'total_about_image_heading',
+    'section' => 'total_about_section',
+    'label' => esc_html__('Right Image', 'total'),
+)));
+
+$wp_customize->add_setting('total_about_image', array(
+    'sanitize_callback' => 'esc_url_raw'
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'total_about_image', array(
+    'section' => 'total_about_section',
+    'settings' => 'total_about_image',
+    'description' => esc_html__('Recommended Image Size: 500X600px', 'total')
+)));
+
+$wp_customize->add_setting('total_about_widget', array(
+    'default' => '0',
+    'sanitize_callback' => 'total_sanitize_choices'
+));
+
+$wp_customize->add_control('total_about_widget', array(
+    'settings' => 'total_about_widget',
+    'section' => 'total_about_section',
+    'type' => 'select',
+    'label' => esc_html__('Replace Image by widget', 'total'),
+    'choices' => total_widget_list()
+));
+
 
 $wp_customize->add_setting('total_about_upgrade_text', array(
     'sanitize_callback' => 'total_sanitize_text'
@@ -219,7 +221,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_featur
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 $wp_customize->add_setting('total_featured_title_sub_title_heading', array(

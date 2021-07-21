@@ -9,6 +9,7 @@
     clear: both;
 }
 
+.initial-customizer-hidden,
 .customizer-hidden {
     visibility: hidden;
     opacity: 0;
