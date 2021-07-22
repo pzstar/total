@@ -862,7 +862,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_testim
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 $wp_customize->add_setting('total_testimonial_title_subtitle_heading', array(
