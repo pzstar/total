@@ -27,8 +27,7 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
                 <?php
                 for ($i = 1; $i < 5; $i++) {
                     $total_team_page_id = get_theme_mod('total_team_page' . $i);
-                    $total_team_page_icon = get_theme_mod('total_team_page_icon' . $i);
-
+                    
                     if ($total_team_page_id) {
                         $args = array('page_id' => absint($total_team_page_id));
                         $query = new WP_Query($args);

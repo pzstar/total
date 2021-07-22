@@ -175,7 +175,7 @@ $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'total_
 )));
 
 $wp_customize->add_setting('total_about_widget', array(
-    'default' => '0',
+    'default' => 'none',
     'sanitize_callback' => 'total_sanitize_choices'
 ));
 
@@ -563,7 +563,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_team_s
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 $wp_customize->add_setting('total_team_title_subtitle_heading', array(
