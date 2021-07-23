@@ -395,12 +395,19 @@ if (!function_exists('total_home_section')) {
             'total_counter_section',
             'total_testimonial_section',
             'total_blog_section',
-            'total_client_logo_section',
+            'total_logo_section',
             'total_cta_section'
                 )
         );
         $sections = get_theme_mod('total_frontpage_sections', $defaults);
-        return $sections;
+        foreach ($sections as $section) {
+            if ($section == 'total_client_logo_section') {
+                $section_array[] = 'total_logo_section';
+            } else {
+                $section_array[] = $section;
+            }
+        }
+        return $section_array;
     }
 
 }

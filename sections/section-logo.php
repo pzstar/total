@@ -3,7 +3,7 @@
  *
  * @package Total
  */
-if (get_theme_mod('total_client_logo_section_disable') != 'on') {
+if (get_theme_mod('total_logo_section_disable') != 'on') {
     ?>
     <section id="ht-logo-section" class="ht-section">
         <div class="ht-container">
@@ -25,13 +25,15 @@ if (get_theme_mod('total_client_logo_section_disable') != 'on') {
 
             <?php
             $total_client_logo_image = get_theme_mod('total_client_logo_image');
-            $total_client_logo_image = explode(',', $total_client_logo_image);
+            $total_client_logo_default = $total_client_logo_image ? $total_client_logo_image : '';
+            $total_logo_image = get_theme_mod('total_logo_image', $total_client_logo_default);
+            $total_logo_image = explode(',', $total_logo_image);
             ?>
 
             <div class="ht_client_logo_slider owl-carousel">
                 <?php
-                foreach ($total_client_logo_image as $total_client_logo_image_single) {
-                    $image = wp_get_attachment_image_src($total_client_logo_image_single, 'full');
+                foreach ($total_logo_image as $total_logo_image_single) {
+                    $image = wp_get_attachment_image_src($total_logo_image_single, 'full');
                     ?>
                     <img class="no-lazyload" src="<?php echo esc_url($image[0]); ?>">
                     <?php

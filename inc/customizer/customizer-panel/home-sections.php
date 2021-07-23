@@ -332,7 +332,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_portfo
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 $wp_customize->add_setting('total_portfolio_title_sec_heading', array(
@@ -431,7 +432,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_servic
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 $wp_customize->add_setting('total_service_section_heading', array(
@@ -724,7 +726,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_counte
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_counter_title_subtitle_heading', array(
@@ -959,7 +962,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_blog_s
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 $wp_customize->add_setting('total_blog_title_subtitle_heading', array(
@@ -1038,35 +1042,36 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============CLIENTS LOGO SECTION============ */
-$wp_customize->add_Section('total_client_logo_section', array(
+$wp_customize->add_Section('total_logo_section', array(
     'title' => esc_html__('Clients Logo Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_client_logo_section')
+    'priority' => total_get_section_position('total_logo_section')
 ));
 
 //ENABLE/DISABLE LOGO SECTION
-$wp_customize->add_setting('total_client_logo_section_disable', array(
+$wp_customize->add_setting('total_logo_section_disable', array(
     'sanitize_callback' => 'total_sanitize_text',
     'default' => 'off'
 ));
 
-$wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_client_logo_section_disable', array(
-    'settings' => 'total_client_logo_section_disable',
-    'section' => 'total_client_logo_section',
+$wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_logo_section_disable', array(
+    'settings' => 'total_logo_section_disable',
+    'section' => 'total_logo_section',
     'label' => esc_html__('Disable Section', 'total'),
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
-$wp_customize->add_setting('total_client_logo_title_subtitle_heading', array(
+$wp_customize->add_setting('total_logo_title_subtitle_heading', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));
 
-$wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_client_logo_title_subtitle_heading', array(
-    'settings' => 'total_client_logo_title_subtitle_heading',
-    'section' => 'total_client_logo_section',
+$wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_logo_title_subtitle_heading', array(
+    'settings' => 'total_logo_title_subtitle_heading',
+    'section' => 'total_logo_section',
     'label' => esc_html__('Section Title & Sub Title', 'total'),
 )));
 
@@ -1077,7 +1082,7 @@ $wp_customize->add_setting('total_logo_title', array(
 
 $wp_customize->add_control('total_logo_title', array(
     'settings' => 'total_logo_title',
-    'section' => 'total_client_logo_section',
+    'section' => 'total_logo_section',
     'type' => 'text',
     'label' => esc_html__('Title', 'total')
 ));
@@ -1089,28 +1094,28 @@ $wp_customize->add_setting('total_logo_sub_title', array(
 
 $wp_customize->add_control('total_logo_sub_title', array(
     'settings' => 'total_logo_sub_title',
-    'section' => 'total_client_logo_section',
+    'section' => 'total_logo_section',
     'type' => 'textarea',
     'label' => esc_html__('Sub Title', 'total')
 ));
 
 //CLIENTS LOGOS
-$wp_customize->add_setting('total_client_logo_image', array(
+$wp_customize->add_setting('total_logo_image', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));
 
-$wp_customize->add_control(new Total_Gallery_Control($wp_customize, 'total_client_logo_image', array(
-    'settings' => 'total_client_logo_image',
-    'section' => 'total_client_logo_section',
+$wp_customize->add_control(new Total_Gallery_Control($wp_customize, 'total_logo_image', array(
+    'settings' => 'total_logo_image',
+    'section' => 'total_logo_section',
     'label' => esc_html__('Upload Clients Logos', 'total'),
 )));
 
-$wp_customize->add_setting('total_client_logo_upgrade_text', array(
+$wp_customize->add_setting('total_logo_upgrade_text', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));
 
-$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_client_logo_upgrade_text', array(
-    'section' => 'total_client_logo_section',
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_logo_upgrade_text', array(
+    'section' => 'total_logo_section',
     'label' => esc_html__('For more settings,', 'total'),
     'choices' => array(
         esc_html__('Option to link the client logos to external url', 'total'),
@@ -1140,7 +1145,8 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_cta_se
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-    )
+    ),
+    'priority' => -1
 )));
 
 $wp_customize->add_setting('total_cta_title', array(
