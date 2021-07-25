@@ -32,7 +32,7 @@ class Total_Multiple_Selectize_Control extends WP_Customize_Control {
             } else {
 
                 $new_array = $choices = $this->choices;
-                $stored = array();
+                $stored = $unstored = array();
 
                 $saved_value = $this->value();
                 if (!is_array($saved_value)) {
