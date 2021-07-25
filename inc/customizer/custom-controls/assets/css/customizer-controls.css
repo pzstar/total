@@ -1443,7 +1443,7 @@
 }
 
 .control-section-total-toggle-section .total-toggle-section .dashicons{
-    font-size: 16px;
+    font-size: 18px;
     vertical-align: middle;
 }
 
@@ -1451,8 +1451,10 @@
     color: #929292;
 }
 
+.control-section .total-section-hidden.accordion-section-title:before,
+.control-section .accordion-section-title.total-section-hidden,
 .total-section-hidden .total-toggle-section{
-    color: #dcdcdc;
+    color: #dcdcdc !important;
 }
 
 .total-toggle-section {

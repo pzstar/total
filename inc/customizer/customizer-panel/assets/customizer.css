@@ -2,7 +2,7 @@
 #sub-accordion-panel-total_home_panel .control-section .accordion-section-title:before{
     font-family: dashicons;
     content: "\f103";
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 5px;
     vertical-align: middle;
 }
@@ -177,7 +177,7 @@
 }
 
 #sub-accordion-panel-total_home_panel #accordion-section-total_slider_section.control-section .accordion-section-title:before {
-    content: "\f160";
+    content: "\f333";
 }
 
 #sub-accordion-panel-total_home_panel .control-section .accordion-section-title:before {

@@ -8,11 +8,30 @@ $wp_customize->add_panel('total_home_panel', array(
 ));
 
 /* ============SLIDER IMAGES SECTION============ */
-$wp_customize->add_section('total_slider_section', array(
+
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_slider_section', array(
     'title' => esc_html__('Home Slider', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => -1
+    'priority' => -1,
+    'hiding_control' => 'total_slider_section_disable'
+)));
+
+//ENABLE/DISABLE ABOUT US PAGE
+$wp_customize->add_setting('total_slider_section_disable', array(
+    'sanitize_callback' => 'total_sanitize_text',
+    'default' => 'off'
 ));
+
+$wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_slider_section_disable', array(
+    'section' => 'total_slider_section',
+    'label' => esc_html__('Disable Section', 'total'),
+    'on_off_label' => array(
+        'on' => esc_html__('Yes', 'total'),
+        'off' => esc_html__('No', 'total')
+    ),
+    'class' => 'total-switch-section',
+    'priority' => -1
+)));
 
 //SLIDERS
 for ($i = 1; $i < 4; $i++) {
@@ -70,11 +89,13 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============ABOUT US SECTION============ */
-$wp_customize->add_section('total_about_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_about_section', array(
     'title' => esc_html__('About Us Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_about_section')
-));
+    'priority' => total_get_section_position('total_about_section'),
+    'hiding_control' => 'total_about_page_disable'
+)));
+
 
 //ENABLE/DISABLE ABOUT US PAGE
 $wp_customize->add_setting('total_about_page_disable', array(
@@ -90,6 +111,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_about_
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -203,11 +225,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============FEATURED SECTION PANEL============ */
-$wp_customize->add_section('total_featured_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_featured_section', array(
     'title' => esc_html__('Featured Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_featured_section')
-));
+    'priority' => total_get_section_position('total_featured_section'),
+    'hiding_control' => 'total_featured_section_disable'
+)));
 
 //ENABLE/DISABLE FEATURED SECTION
 $wp_customize->add_setting('total_featured_section_disable', array(
@@ -222,6 +245,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_featur
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -313,11 +337,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============PORTFOLIO SECTION PANEL============ */
-$wp_customize->add_section('total_portfolio_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_portfolio_section', array(
     'title' => esc_html__('Portfolio Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_portfolio_section')
-));
+    'priority' => total_get_section_position('total_portfolio_section'),
+    'hiding_control' => 'total_portfolio_section_disable'
+)));
 
 //ENABLE/DISABLE PORTFOLIO
 $wp_customize->add_setting('total_portfolio_section_disable', array(
@@ -333,6 +358,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_portfo
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -413,11 +439,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============SERVICE SECTION PANEL============ */
-$wp_customize->add_section('total_service_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_service_section', array(
     'title' => esc_html__('Service Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_service_section')
-));
+    'priority' => total_get_section_position('total_service_section'),
+    'hiding_control' => 'total_service_section_disable'
+)));
 
 //ENABLE/DISABLE SERVICE SECTION
 $wp_customize->add_setting('total_service_section_disable', array(
@@ -433,6 +460,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_servic
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -546,11 +574,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============TEAM SECTION PANEL============ */
-$wp_customize->add_section('total_team_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_team_section', array(
     'title' => esc_html__('Team Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_team_section')
-));
+    'priority' => total_get_section_position('total_team_section'),
+    'hiding_control' => 'total_team_section_disable'
+)));
 
 //ENABLE/DISABLE TEAM SECTION
 $wp_customize->add_setting('total_team_section_disable', array(
@@ -566,6 +595,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_team_s
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -703,11 +733,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============COUNTER SECTION PANEL============ */
-$wp_customize->add_section('total_counter_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_counter_section', array(
     'title' => esc_html__('Counter Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_counter_section')
-));
+    'priority' => total_get_section_position('total_counter_section'),
+    'hiding_control' => 'total_counter_section_disable'
+)));
 
 $wp_customize->add_setting('total_counter_title_subtitle_heading', array(
     'sanitize_callback' => 'total_sanitize_text'
@@ -727,6 +758,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_counte
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -846,11 +878,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============TESTIMONIAL PANEL============ */
-$wp_customize->add_section('total_testimonial_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_testimonial_section', array(
     'title' => esc_html__('Testimonial Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_testimonial_section')
-));
+    'priority' => total_get_section_position('total_testimonial_section'),
+    'hiding_control' => 'total_testimonial_section_disable'
+)));
 
 //ENABLE/DISABLE TESTIMONIAL SECTION
 $wp_customize->add_setting('total_testimonial_section_disable', array(
@@ -866,6 +899,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_testim
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -943,11 +977,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============BLOG PANEL============ */
-$wp_customize->add_section('total_blog_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_blog_section', array(
     'title' => esc_html__('Blog Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_blog_section')
-));
+    'priority' => total_get_section_position('total_blog_section'),
+    'hiding_control' => 'total_blog_section_disable'
+)));
 
 //ENABLE/DISABLE BLOG SECTION
 $wp_customize->add_setting('total_blog_section_disable', array(
@@ -963,6 +998,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_blog_s
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -1042,11 +1078,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============CLIENTS LOGO SECTION============ */
-$wp_customize->add_Section('total_logo_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_logo_section', array(
     'title' => esc_html__('Clients Logo Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_logo_section')
-));
+    'priority' => total_get_section_position('total_logo_section'),
+    'hiding_control' => 'total_logo_section_disable'
+)));
 
 //ENABLE/DISABLE LOGO SECTION
 $wp_customize->add_setting('total_logo_section_disable', array(
@@ -1062,6 +1099,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_logo_s
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
@@ -1126,11 +1164,12 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /* ============CALL TO ACTION PANEL============ */
-$wp_customize->add_section('total_cta_section', array(
+$wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_cta_section', array(
     'title' => esc_html__('Call To Action Section', 'total'),
     'panel' => 'total_home_panel',
-    'priority' => total_get_section_position('total_cta_section')
-));
+    'priority' => total_get_section_position('total_cta_section'),
+    'hiding_control' => 'total_cta_section_disable'
+)));
 
 //ENABLE/DISABLE LOGO SECTION
 $wp_customize->add_setting('total_cta_section_disable', array(
@@ -1146,6 +1185,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_cta_se
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
+    'class' => 'total-switch-section',
     'priority' => -1
 )));
 
