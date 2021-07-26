@@ -212,7 +212,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                         echo '<div class="total-icon-box-wrap">';
                                         echo '<div class="total-selected-icon">';
                                         echo '<i class="' . esc_attr($new_value) . '"></i>';
-                                        echo '<span><i class="icofont-simple-down"></i></span>';
+                                        echo '<span><i class="total-down-icon"></i></span>';
                                         echo '</div>';
                                         echo '<div class="total-icon-box">';
                                         echo '<div class="total-icon-search">';

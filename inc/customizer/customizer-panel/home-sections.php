@@ -62,7 +62,7 @@ $wp_customize->add_setting('total_slider_info', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));
 
-$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_slider_info', array(
+$wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_slider_info', array(
     'settings' => 'total_slider_info',
     'section' => 'total_slider_section',
     'label' => esc_html__('Note:', 'total'),
@@ -524,7 +524,7 @@ for ($i = 1; $i < 7; $i++) {
     ));
 
     $wp_customize->add_setting('total_service_page_icon' . $i, array(
-        'default' => 'fa-bell',
+        'default' => 'far fa-bell',
         'sanitize_callback' => 'total_sanitize_text'
     ));
 

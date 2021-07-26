@@ -14,6 +14,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_na
     'buttons' => array(
         array(
             'name' => esc_html__('Content', 'total'),
+            'icon' => 'dashicons dashicons-welcome-write-blog',
             'fields' => array(
                 'total_footer_col',
                 'total_footer_copyright'
@@ -22,6 +23,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_na
         ),
         array(
             'name' => esc_html__('Style', 'total'),
+            'icon' => 'dashicons dashicons-art',
             'fields' => array(
                 'total_footer_bg',
                 'total_enable_footer_border',

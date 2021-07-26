@@ -177,7 +177,7 @@
 }
 
 #sub-accordion-panel-total_home_panel #accordion-section-total_slider_section.control-section .accordion-section-title:before {
-    content: "\f333";
+    content: "\f180";
 }
 
 #sub-accordion-panel-total_home_panel .control-section .accordion-section-title:before {
@@ -202,4 +202,9 @@
     background: #e2e2e2;
     padding: 12px;
     border: 1px solid #DDD;
+}
+
+.upsell-features{
+    list-style: decimal outside;
+    margin-left: 20px;
 }

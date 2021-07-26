@@ -272,7 +272,7 @@ function total_dymanic_styles() {
         'color' => '#444444'
     ));
 
-    $custom_css .= total_typography_css('total_menu', '.ht-menu > ul > li.menu-item > a', array(
+    $custom_css .= total_typography_css('total_menu', '.ht-menu > ul > li > a', array(
         'family' => 'Oswald',
         'style' => '400',
         'text_transform' => 'uppercase',

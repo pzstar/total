@@ -32,7 +32,7 @@ if (get_theme_mod('total_counter_section_disable') != 'on') {
                     for ($i = 1; $i < 5; $i++) {
                         $total_counter_title = get_theme_mod('total_counter_title' . $i);
                         $total_counter_count = get_theme_mod('total_counter_count' . $i);
-                        $total_counter_icon = get_theme_mod('total_counter_icon' . $i);
+                        $total_counter_icon = get_theme_mod('total_counter_icon' . $i, 'far fa-bell');
                         if ($total_counter_count) {
                             ?>
                             <div class="ht-counter">

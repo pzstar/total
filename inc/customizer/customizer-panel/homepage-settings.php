@@ -49,9 +49,10 @@ $wp_customize->add_setting('total_pro_features', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));
 
-$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_pro_features', array(
+$wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_pro_features', array(
     'settings' => 'total_pro_features',
     'section' => 'total_pro_feature_section',
+    'input_attrs' => array('class' => 'ht-white-box'),
     'description' => $total_pro_features
 )));
 

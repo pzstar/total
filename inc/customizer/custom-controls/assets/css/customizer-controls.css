@@ -268,11 +268,6 @@
     justify-content: center;
 }
 
-.total-icon-box-wrap .total-selected-icon span i {
-    display: block;
-    line-height: 45px;
-}
-
 .total-icon-box-wrap .total-selected-icon span {
     position: absolute;
     background: #f6f6f6;
@@ -282,6 +277,18 @@
     width: 45px;
     border: 1px solid #eee;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-icon-box-wrap .total-selected-icon span i.total-down-icon{
+    display: block;
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
 }
 
 .total-icon-box-wrap .total-icon-search {
@@ -1403,6 +1410,7 @@
 }
 
 /*Upgrade Text*/
+.ht-white-box,
 .customize-control-total-upgrade-info{
     background: #FFFFFF;
     box-sizing: border-box;

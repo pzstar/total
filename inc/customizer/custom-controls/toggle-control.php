@@ -25,7 +25,7 @@ class Total_Toggle_Control extends WP_Customize_Control {
             <span class="customize-control-title total-toggle-title"><?php echo esc_html($this->label); ?></span>
             <?php if (!empty($this->description)) { ?>
                 <span class="description customize-control-description">
-                    <?php echo wp_kses_post($this->description); ?>
+                    <?php echo $this->description; ?>
                 </span>
             <?php } ?>
         </div>

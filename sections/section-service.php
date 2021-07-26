@@ -31,7 +31,7 @@ if (get_theme_mod('total_service_section_disable') != 'on') {
                     <?php
                     for ($i = 1; $i < 7; $i++) {
                         $total_service_page_id = get_theme_mod('total_service_page' . $i);
-                        $total_service_page_icon = get_theme_mod('total_service_page_icon' . $i);
+                        $total_service_page_icon = get_theme_mod('total_service_page_icon' . $i, 'far fa-bell');
 
                         if ($total_service_page_id) {
                             $args = array('page_id' => absint($total_service_page_id));

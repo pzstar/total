@@ -42,7 +42,7 @@ class Total_Icon_Selector_Control extends WP_Customize_Control {
             <div class="total-icon-box-wrap">
                 <div class="total-selected-icon">
                     <i class="{{ data.value }}"></i>
-                    <span><i class="icofont-simple-down"></i></span>
+                    <span><i class="total-down-icon"></i></span>
                 </div>
 
                 <div class="total-icon-box">
