@@ -1,7 +1,7 @@
 === Total ===
 Contributors: hashthemes
 Requires at least: 5.0
-Tested up to: 5.7.2
+Tested up to: 5.8
 Stable tag: 1.0.0
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -23,6 +23,11 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.0.6 - Jul 26, 2021 =
+* Dropdown arrow not displaying in the Icon Selector in cutomizer fixed
+* Client Logo Section fixes to adapt with premium version
+* Added Toggle Section option in home page sections
+
 = 2.0.5 - Jul 20, 2021 =
 * Icon Selector Control JS issue fixed
 

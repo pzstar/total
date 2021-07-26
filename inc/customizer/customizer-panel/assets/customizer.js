@@ -132,7 +132,7 @@ function TotalscrollToSection(section_id) {
             preview_section_id = "ht-blog-section";
             break;
 
-        case 'accordion-section-total_client_logo_section':
+        case 'accordion-section-total_logo_section':
             preview_section_id = "ht-logo-section";
             break;
 

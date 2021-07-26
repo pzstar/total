@@ -7,14 +7,6 @@
  */
 get_header();
 
-$total_home_sections = total_home_section();
-
-get_template_part('sections/section', 'slider');
-
-foreach ($total_home_sections as $total_home_section) {
-    $total_home_section = str_replace('total_', '', $total_home_section);
-    $total_home_section = str_replace('_section', '', $total_home_section);
-    get_template_part('sections/section', $total_home_section);
-}
+do_action('total_home_page_template');
 
 get_footer();

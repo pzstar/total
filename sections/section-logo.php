@@ -30,7 +30,7 @@ if (get_theme_mod('total_logo_section_disable') != 'on') {
             $total_logo_image = explode(',', $total_logo_image);
             ?>
 
-            <div class="ht_client_logo_slider owl-carousel">
+            <div class="ht-logo-slider owl-carousel">
                 <?php
                 foreach ($total_logo_image as $total_logo_image_single) {
                     $image = wp_get_attachment_image_src($total_logo_image_single, 'full');

@@ -42,8 +42,9 @@ if (class_exists('WP_Customize_Section')) {
         public function __construct(WP_Customize_Manager $manager, $id, array $args = array()) {
             parent::__construct($manager, $id, $args);
 
+            $default = isset($args['default']) ? $args['default'] : 'off';
             if (isset($args['hiding_control'])) {
-                $this->hide = get_theme_mod($args['hiding_control'], 'off');
+                $this->hide = get_theme_mod($args['hiding_control'], $default);
             }
 
             add_action('customize_controls_init', array($this, 'enqueue'));

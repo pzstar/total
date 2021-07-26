@@ -59,7 +59,7 @@ jQuery(function ($) {
         navText: ['<i class="fas fa-chevron-left" aria-hidden="true"></i>', '<i class="fas fa-chevron-right" aria-hidden="true"></i>']
     });
 
-    $(".ht_client_logo_slider").owlCarousel({
+    $(".ht-logo-slider").owlCarousel({
         autoplay: true,
         items: 5,
         loop: true,
