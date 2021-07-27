@@ -2056,7 +2056,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 .ht-service-post{
     margin-bottom: 25px;
     position: relative;
-    z-index: 9;
+    z-index: 1;
 }
 
 .ht-service-post:last-child{
