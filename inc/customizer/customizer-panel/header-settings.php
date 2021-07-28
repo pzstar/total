@@ -199,11 +199,10 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_mh_co
 )));
 
 $wp_customize->add_setting('total_mh_bg_color', array(
-    'default' => '#FFFFFF',
-    'sanitize_callback' => 'sanitize_hex_color'
+    'sanitize_callback' => 'total_sanitize_color_alpha'
 ));
 
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_mh_bg_color', array(
+$wp_customize->add_control(new Total_Alpha_Color_Control($wp_customize, 'total_mh_bg_color', array(
     'section' => 'total_main_header_section',
     'label' => esc_html__('Header Background Color', 'total'),
     'priority' => 5

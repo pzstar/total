@@ -934,31 +934,29 @@
     line-height: 18px;
 }
 
-.customize-control-total-range-slider .control-wrap {
+.total-range-slider-control-wrap {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.customize-control-total-range-slider .total-range-slider {
-    display: inline-block;
+.total-range-slider {
     position: relative;
-    width: 67%;
+    flex-grow: 1;
     height: 4px;
     margin: 12px 0;
     background: rgba(0, 0, 0, 0.15);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    -webkit-transition: background 0.5s;
     transition: background 0.5s;
 }
 
-.customize-control-total-range-slider .total-range-slider:hover {
+.total-range-slider:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
-.customize-control-total-range-slider .ui-slider-range {
+.total-range-slider .ui-slider-range {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -966,7 +964,7 @@
     background: #13a1dc;
 }
 
-.customize-control-total-range-slider .ui-slider-handle {
+.total-range-slider .ui-slider-handle {
     height: 16px;
     width: 16px;
     background: #fff;
@@ -975,22 +973,18 @@
     position: absolute;
     top: 50%;
     margin: 0;
-    -webkit-transform: translateY(-50%) translateX(-4px);
     transform: translateY(-50%) translateX(-4px);
-    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     cursor: pointer;
 }
 
-.customize-control-total-range-slider .total-range-slider-input {
-    float: right;
-    width: 33%;
+.total-range-slider-control-wrap .total-range-slider-input {
+    margin-left: 14px;
 }
 
-.customize-control-total-range-slider input.total-slider-input {
-    float: right;
-    width: 80%;
+.total-range-slider-control-wrap .total-range-slider-input input {
+    width: 60px;
     height: 28px;
     text-align: center;
     border-radius: 4px;
@@ -1000,7 +994,7 @@
     color: #555;
 }
 
-.customize-control-total-range-slider .total-range-slider-unit{
+.total-range-slider-control-wrap .total-range-slider-unit{
     margin-left: 5px;
 }
 
@@ -1224,6 +1218,10 @@
     line-height: 24px;
     font-weight: 600;
     margin-bottom: 4px;
+    margin-top: 10px;
+}
+
+.total-repeater-fields .total-type-checkbox{
     margin-top: 10px;
 }
 

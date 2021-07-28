@@ -27,20 +27,20 @@ function total_dymanic_styles() {
     if ($website_layout == "wide") {
         $custom_css .= "
 	.ht-container{
-            max-width:{$container_width}px; 
+            width:{$container_width}px; 
 	}";
     } else if ($website_layout == "boxed") {
         $custom_css .= "
         .ht-container{
-            max-width:{$container_width}px; 
+            width:{$container_width}px; 
         }
         body.ht-boxed #ht-page{
-            max-width:{$boxed_container_width}px;
+            width:{$boxed_container_width}px;
 	}";
     } else if ($website_layout == "fluid") {
         $custom_css .= "
         .ht-container{
-            max-width:{$container_width}%; 
+            width:{$container_width}%; 
         }";
     }
 
