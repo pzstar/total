@@ -23,8 +23,11 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.0.7 - Jul 29, 2021 =
+* Woocommerce sidebar not displaying issue fixed
+
 = 2.0.6 - Jul 26, 2021 =
-* Dropdown arrow not displaying in the Icon Selector in cutomizer fixed
+* Dropdown arrow not displaying in the Icon Selector in customizer fixed
 * Client Logo Section fixes to adapt with premium version
 * Added Toggle Section option in home page sections
 

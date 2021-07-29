@@ -5,4 +5,5 @@
  *
  * @package Total
  */
-do_action('total_sidebar_shop_template');
+
+do_action('total_sidebar_shop_sidebar');

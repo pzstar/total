@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/total/
 Author: Hash Themes
 Author URI: https://hashthemes.com
 Description: Total as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The home page consist of slider, featured section with icon, about us section with progress bar, portfolio section with masonary layout, team section, testimonial section, counter section, blog section with option to add 3, 6 or 9 blog posts, clients logo carousel slider and call to action section. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce - an ecommerce plugin and all other major plugins. The theme can also be used with all major page builder plugins like Elementor, SiteOrigin, WpBakery VisualComposer and Beaver Builder. The theme provides option to import the demo with just one click. DEMO: https://demo.hashthemes.com/total/
-Version: 2.0.6
+Version: 2.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: total
@@ -3295,9 +3295,9 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 
 @media screen and (max-width: 1200px){
     .ht-container{
-        width: auto;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+        width: auto !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
     }
 
     .ht-slide-caption{
@@ -3327,20 +3327,12 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         box-shadow: 0 10px 0 0 #FFF, 0 -10px 0 0 #FFF;
     }
 
-    .ht-sticky-header #ht-masthead{
+    .ht-sticky-header .ht-header.headroom--not-top{
         position: relative;
     }
 
-    .ht-sticky#ht-masthead{
-        height: 94px;	
-    }
-
-    .ht-sticky #ht-site-branding{
+    .ht-sticky-header .ht-header.headroom--not-top .ht-container{
         padding: 15px 0;
-    }
-
-    .ht-sticky-header .headroom--not-top#ht-masthead{
-        position: relative;
     }
 
     .ht-sticky-header #ht-content{
@@ -3370,7 +3362,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         text-align: center;
     }
 
-    .ht-menu a,
+    .ht-site-header .ht-menu > ul > li > a,
     .ht-menu ul ul a{
         line-height: 1.3;
         padding: 15px 20px;
@@ -3393,7 +3385,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         position: absolute;
         height: 26px;
         width: 26px;
-        border: 1px solid rgba(255, 252, 252, 0.6);
+        border: 1px solid rgba(0, 0, 0, 0.3);
         top: 50%;
         right: 10px;
         -webkit-transform: translateY(-50%);
@@ -3413,6 +3405,10 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     .menu-item-has-children .ht-opened.ht-dropdown:after,
     .menu-item-has-children ul .ht-opened.ht-dropdown:after{
         content: '\f106';
+    }
+
+    .ht-menu > ul li.menu-item:hover > a .ht-dropdown{
+        border-color: #FFF;
     }
 
     .ht-menu ul li:hover > ul{

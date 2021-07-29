@@ -334,7 +334,7 @@ function total_dymanic_styles() {
     }
 
     /* =============== Site Title & Tagline Color =============== */
-    $mh_bg_color = get_theme_mod('total_mh_bg_color', '#FFFFFF');
+    $mh_bg_color = get_theme_mod('total_mh_bg_color') ? get_theme_mod('total_mh_bg_color') : '#FFF';
     $custom_css .= ".ht-site-header .ht-header{background-color:{$mh_bg_color}}";
     $custom_css .= total_dimension_css('total_mh_spacing', array(
         'position' => array('left', 'top', 'bottom', 'right'),
