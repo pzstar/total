@@ -56,6 +56,8 @@ class Total_Icon_Selector_Control extends WP_Customize_Control {
                         <# } ) #>
                     </ul>
                 </div>
+
+                <input type="hidden" value="<?php esc_attr($this->value()); ?>" <?php $this->link(); ?> />
             </div>
         </label>
         <?php

@@ -4,6 +4,11 @@
  * @package Total
  */
 function total_dymanic_styles() {
+
+    $dynamic_css = apply_filters('total_dynamic_styles', '__return_true');
+    if (!$dynamic_css)
+        return;
+
     $custom_css = $tablet_css = $mobile_css = "";
     $color = get_theme_mod('total_template_color', '#FFC107');
     $color_rgba = total_hex2rgba($color, 0.9);
@@ -416,7 +421,7 @@ function total_dymanic_styles() {
     $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color');
 
     $custom_css .= total_background_css('total_footer_bg', '#ht-colophon', array(
-        'url' => '',
+        'url' => get_template_directory_uri() . '/images/footer-bg.jpg',
         'repeat' => 'no-repeat',
         'size' => 'cover',
         'position' => 'center-center',
