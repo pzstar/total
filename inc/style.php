@@ -422,8 +422,8 @@ function total_dymanic_styles() {
 
     $custom_css .= total_background_css('total_footer_bg', '#ht-colophon', array(
         'url' => get_template_directory_uri() . '/images/footer-bg.jpg',
-        'repeat' => 'no-repeat',
-        'size' => 'cover',
+        'repeat' => 'repeat',
+        'size' => 'auto',
         'position' => 'center-center',
         'attachment' => 'scroll',
         'color' => '#222222',
