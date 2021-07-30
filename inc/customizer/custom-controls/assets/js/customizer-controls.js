@@ -655,8 +655,8 @@ function total_set_bg_color_value($container, $element, $obj) {
             control.container.on('change', '.background-image-size select', function () {
                 control.settings['size'].set(jQuery(this).val());
             });
-            control.container.on('change', '.background-image-attach select', function () {
-                control.settings['attach'].set(jQuery(this).val());
+            control.container.on('change', '.background-image-attachment select', function () {
+                control.settings['attachment'].set(jQuery(this).val());
             });
             control.container.on('change', '.background-image-position select', function () {
                 control.settings['position'].set(jQuery(this).val());

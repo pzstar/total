@@ -105,7 +105,7 @@ $wp_customize->add_control(new Total_Background_Image_Control($wp_customize, 'to
         'repeat' => 'total_footer_bg_repeat',
         'size' => 'total_footer_bg_size',
         'position' => 'total_footer_bg_position',
-        'attach' => 'total_footer_bg_attachment',
+        'attachment' => 'total_footer_bg_attachment',
         'color' => 'total_footer_bg_color',
         'overlay' => 'total_footer_bg_overlay'
     )

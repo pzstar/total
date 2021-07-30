@@ -1015,15 +1015,15 @@ a:active {
     margin-bottom: 50px;
 }
 
-h3#reply-title,
-h3.comments-title{
+.comment-reply-title,
+.comments-title{
     position: relative;
     padding-bottom: 15px;
     margin-bottom: 30px;
 }
 
-h3#reply-title:after,
-h3.comments-title:after{
+.comment-reply-title:after,
+.comments-title:after{
     content: "";
     position: absolute;
     left: 0;

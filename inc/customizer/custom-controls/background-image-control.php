@@ -99,8 +99,8 @@ class Total_Background_Image_Control extends WP_Customize_Control {
                 $this->json[$setting_key]['choices'] = $background_choices['size'];
             } elseif ('position' === $setting_key) {
                 $this->json[$setting_key]['choices'] = $background_choices['position'];
-            } elseif ('attach' === $setting_key) {
-                $this->json[$setting_key]['choices'] = $background_choices['attach'];
+            } elseif ('attachment' === $setting_key) {
+                $this->json[$setting_key]['choices'] = $background_choices['attachment'];
             }
         }
     }
@@ -175,14 +175,14 @@ class Total_Background_Image_Control extends WP_Customize_Control {
             </li>
             <# } #>
 
-            <# if ( data.attach && data.attach.choices ) { #>
-            <li class="background-image-attach">
-                <# if ( data.attach.label ) { #>
-                <span class="customize-control-title">{{ data.attach.label }}</span>
+            <# if ( data.attachment && data.attachment.choices ) { #>
+            <li class="background-image-attachment">
+                <# if ( data.attachment.label ) { #>
+                <span class="customize-control-title">{{ data.attachment.label }}</span>
                 <# } #>
-                <select {{{ data.attach.link }}}>
-                    <# _.each( data.attach.choices, function( label, choice ) { #>
-                    <option value="{{ choice }}" <# if ( choice === data.attach.value ) { #> selected="selected" <# } #>>{{ label }}</option>
+                <select {{{ data.attachment.link }}}>
+                    <# _.each( data.attachment.choices, function( label, choice ) { #>
+                    <option value="{{ choice }}" <# if ( choice === data.attachment.value ) { #> selected="selected" <# } #>>{{ label }}</option>
                     <# } ) #>
                 </select>
             </li>
@@ -235,7 +235,7 @@ class Total_Background_Image_Control extends WP_Customize_Control {
             'repeat' => esc_html__('Repeat', 'total'),
             'size' => esc_html__('Size', 'total'),
             'position' => esc_html__('Position', 'total'),
-            'attach' => esc_html__('Attachment', 'total'),
+            'attachment' => esc_html__('Attachment', 'total'),
             'color' => esc_html__('Background Color', 'total'),
             'overlay' => esc_html__('Overlay Color', 'total')
         );
@@ -274,7 +274,7 @@ class Total_Background_Image_Control extends WP_Customize_Control {
                 'center-center' => esc_html__('Center Center', 'total'),
                 'center-bottom' => esc_html__('Center Bottom', 'total')
             ),
-            'attach' => array(
+            'attachment' => array(
                 'fixed' => esc_html__('Fixed', 'total'),
                 'scroll' => esc_html__('Scroll', 'total')
             )
