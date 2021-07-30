@@ -154,9 +154,9 @@ if (!function_exists('total_archive_content')) {
 }
 add_action('total_home_template', 'total_home_header', 10);
 add_action('total_home_template', 'total_home_content', 20);
+
 add_action('total_search_template', 'total_search_header', 10);
 add_action('total_search_template', 'total_search_content', 20);
+
 add_action('total_archive_template', 'total_archive_header', 10);
 add_action('total_archive_template', 'total_archive_content', 20);
-
-

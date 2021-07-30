@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.0.8 - Jul 29, 2021 =
+* Customizer Icon Selector not working issue fixed
+
 = 2.0.7 - Jul 29, 2021 =
 * Woocommerce sidebar not displaying issue fixed
 
