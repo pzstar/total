@@ -79,7 +79,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                 if ($field['type'] != 'toggle' && $field['type'] != 'checkbox') {
                                     ?>
                                     <span class="customize-control-repeater-title"><?php echo esc_html($label); ?></span>
-                                    <span class="description customize-control-description"><?php echo esc_html($description); ?></span>
+                                    <span class="description customize-control-description"><?php echo wp_kses_post($description); ?></span>
                                     <?php
                                 }
 
