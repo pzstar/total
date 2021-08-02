@@ -232,12 +232,16 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                             echo '<option value="icofont-list">' . esc_html__('Ico Font', 'total') . '</option>';
                                         }
 
+                                        if (apply_filters('total_show_font_awesome', true)) {
+                                            echo '<option value="fontawesome-list">' . esc_html__('Font Awesome', 'total') . '</option>';
+                                        }
+
                                         if (apply_filters('total_show_material_icon', true)) {
                                             echo '<option value="material-icon-list">' . esc_html__('Material Icon', 'total') . '</option>';
                                         }
 
-                                        if (apply_filters('total_show_elegant_icon', true)) {
-                                            echo '<option value="elegant-icon-list">' . esc_html__('Elegant Icon', 'total') . '</option>';
+                                        if (apply_filters('total_show_essential_icon', true)) {
+                                            echo '<option value="essential-icon-list">' . esc_html__('Essential Icon', 'total') . '</option>';
                                         }
 
                                         echo '</select>';
@@ -254,6 +258,16 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                             echo '</ul>';
                                         }
 
+                                        if (apply_filters('total_show_font_awesome', true)) {
+                                            echo '<ul class="total-icon-list fontawesome-list clearfix">';
+                                            $total_plus_font_awesome_icon_array = total_font_awesome_icon_array();
+                                            foreach ($total_plus_font_awesome_icon_array as $total_plus_font_awesome_icon) {
+                                                $icon_class = $new_value == $total_plus_font_awesome_icon ? 'icon-active' : '';
+                                                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_plus_font_awesome_icon) . '"></i></li>';
+                                            }
+                                            echo '</ul>';
+                                        }
+
                                         if (apply_filters('total_show_material_icon', true)) {
                                             echo '<ul class="total-icon-list material-icon-list total-clearfix">';
                                             $total_materialdesignicons_icon_array = total_materialdesignicons_array();
@@ -264,12 +278,12 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                             echo '</ul>';
                                         }
 
-                                        if (apply_filters('total_show_elegant_icon', true)) {
-                                            echo '<ul class="total-icon-list elegant-icon-list total-clearfix">';
-                                            $total_eleganticons_icon_array = total_eleganticons_array();
-                                            foreach ($total_eleganticons_icon_array as $total_eleganticons_icon) {
-                                                $icon_class = $new_value == $total_eleganticons_icon ? 'icon-active' : '';
-                                                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_eleganticons_icon) . '"></i></li>';
+                                        if (apply_filters('total_show_essential_icon', true)) {
+                                            echo '<ul class="total-icon-list essential-icon-list total-clearfix">';
+                                            $total_essentialicons_icon_array = total_essential_icon_array();
+                                            foreach ($total_essentialicons_icon_array as $total_essentialicons_icon) {
+                                                $icon_class = $new_value == $total_essentialicons_icon ? 'icon-active' : '';
+                                                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_essentialicons_icon) . '"></i></li>';
                                             }
                                             echo '</ul>';
                                         }
