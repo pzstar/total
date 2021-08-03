@@ -25,7 +25,7 @@ if (!function_exists('total_body_classes')) {
             $classes[] = !$total_hide_title ? 'ht-titlebar-enabled' : 'ht-titlebar-disabled';
         }
 
-        $sticky_header = get_theme_mod('total_sticky_header_enable');
+        $sticky_header = get_theme_mod('total_sticky_header_enable', 'off');
 
         if ($sticky_header == 'on') {
             $classes[] = 'ht-sticky-header';
