@@ -11,10 +11,10 @@ jQuery(document).ready(function ($) {
     })();
 
     // Select Preloader
-    $('.ht-preloader-selector').on('change', function () {
+    $('.total-preloader-selector').on('change', function () {
         var activePreloader = $(this).val();
-        $(this).next('.ht-preloader-container').find('.ht-preloader').hide();
-        $(this).next('.ht-preloader-container').find('.ht-' + activePreloader).show();
+        $(this).next('.total-preloader-container').find('.total-preloader').hide();
+        $(this).next('.total-preloader-container').find('.ht-' + activePreloader).show();
     });
 
     // Icon Control JS

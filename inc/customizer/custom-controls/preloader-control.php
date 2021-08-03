@@ -25,7 +25,7 @@ class Total_Preloader_Selector_Control extends WP_Customize_Control {
                     </span>
                 <?php } ?>
 
-                <select class="ht-preloader-selector" <?php $this->link(); ?>>
+                <select class="total-preloader-selector" <?php $this->link(); ?>>
                     <?php
                     foreach ($this->choices as $key => $choice) {
                         printf('<option value="%1$s" %2$s>%3$s</option>', esc_attr($key), selected($this->value(), $key, false), esc_html($choice));
@@ -33,11 +33,11 @@ class Total_Preloader_Selector_Control extends WP_Customize_Control {
                     ?>
                 </select>
 
-                <div class="ht-preloader-container">
+                <div class="total-preloader-container">
                     <?php
                     for ($i = 1; $i <= 16; $i++) {
                         $style = ($this->value() != 'preloader' . $i) ? 'style="display:none"' : '';
-                        echo '<div class="ht-preloader ht-preloader' . $i . '"' . $style . '>';
+                        echo '<div class="total-preloader total-preloader' . $i . '"' . $style . '>';
                         $preloader_path = trailingslashit($this->file_path) . 'preloader' . $i . '.php';
                         if (file_exists($preloader_path)) {
                             require_once $preloader_path;

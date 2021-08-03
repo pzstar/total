@@ -71,7 +71,7 @@ $wp_customize->add_control(new Total_Range_Slider_Control($wp_customize, 'total_
     'label' => esc_html__('Website Container Width (px)', 'total'),
     'input_attrs' => array(
         'min' => 900,
-        'max' => 1400,
+        'max' => 1800,
         'step' => 10
     )
 )));
