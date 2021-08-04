@@ -1039,7 +1039,7 @@ $wp_customize->add_control('total_blog_sub_title', array(
 //BLOG SETTINGS
 $wp_customize->add_setting('total_blog_post_count', array(
     'default' => '3',
-    'sanitize_callback' => 'total_sanitize_choices'
+    'sanitize_callback' => 'absint'
 ));
 
 $wp_customize->add_control(new Total_Chosen_Select_Control($wp_customize, 'total_blog_post_count', array(
