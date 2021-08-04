@@ -79,7 +79,7 @@ if (!function_exists('total_footer_open')) {
     function total_footer_open() {
         $footer_class = apply_filters('total_footer_class', array('ht-site-footer'));
         echo '</div><!-- #content -->';
-        echo '<footer id="ht-colophon" class="' . implode($footer_class, ' ') . '">';
+        echo '<footer id="ht-colophon" class="' . implode(' ', $footer_class) . '">';
     }
 
 }
