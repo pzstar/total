@@ -417,14 +417,15 @@ table {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+div.wpforms-container-full .wpforms-form input[type=submit], 
+div.wpforms-container-full .wpforms-form button[type=submit], 
+div.wpforms-container-full .wpforms-form .wpforms-page-button{
     background: #FFC107;
     padding: 0 20px;
     height: 40px;
     color: #FFF;
     border: 0;
-    -moz-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
