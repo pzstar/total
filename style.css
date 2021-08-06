@@ -432,8 +432,22 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button{
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+div.wpforms-container-full .wpforms-form input[type=submit]:hover, 
+div.wpforms-container-full .wpforms-form input[type=submit]:focus, 
+div.wpforms-container-full .wpforms-form input[type=submit]:active, 
+div.wpforms-container-full .wpforms-form button[type=submit]:hover, 
+div.wpforms-container-full .wpforms-form button[type=submit]:focus, 
+div.wpforms-container-full .wpforms-form button[type=submit]:active, 
+div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, 
+div.wpforms-container-full .wpforms-form .wpforms-page-button:active, 
+div.wpforms-container-full .wpforms-form .wpforms-page-button:focus{
     background: #333;
+    border: 0;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field-label{
+    font-weight: normal;
 }
 
 button:focus,
