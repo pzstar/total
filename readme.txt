@@ -23,6 +23,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.0.9 - Aug 8, 2021 =
+* CSS added for wpform button
+* Implode function error fixed in footer
+
 = 2.0.8 - Jul 29, 2021 =
 * Customizer Icon Selector not working issue fixed
 
