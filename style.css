@@ -960,11 +960,6 @@ a:active {
 }
 
 .widget-area ul ul{
-    border-top: 1px solid #f9f9f9;
-    margin-top: 5px;
-}
-
-.widget-area ul ul li{
     padding-left: 10px;
 }
 
@@ -974,8 +969,12 @@ a:active {
 }
 
 .widget-area li{
-    padding: 5px 0;
-    border-bottom: 1px solid #f9f9f9;
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.widget-area li:last-child{
+    margin-bottom: 0;
 }
 
 .widget-area a{
@@ -993,6 +992,10 @@ a:active {
 
 .widget-area .widget .search-field{
     width: 100%;
+}
+
+.widget-area .widget_block{
+    margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -2668,6 +2671,10 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 
 .ht-footer .widget{
     margin-bottom: 30px;
+}
+
+.ht-footer .widget_block{
+    margin-bottom: 0;
 }
 
 .ht-footer .widget:last-child{
