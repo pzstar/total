@@ -415,6 +415,22 @@ function total_dymanic_styles() {
         }";
     }
 
+    $custom_css .= "
+        @media screen and (max-width: 1000px){
+            #ht-site-navigation .ht-menu{background-color: $submenu_bg_color;}
+            .ht-menu > ul > li.menu-item > a{color: $submenu_link_color;}
+            .ht-menu > ul > li.menu-item:hover > a, 
+            .ht-menu > ul > li.menu-item.current_page_item > a, 
+            .ht-menu > ul > li.menu-item.current-menu-item > a, 
+            .ht-menu > ul > li.menu-item.current_page_ancestor > a, 
+            .ht-menu > ul > li.menu-item.current > a{
+                color: $submenu_link_hover_color;
+                background-color: $submenu_link_hover_bg_color;
+            }
+            
+        }
+        ";
+
     /* =============== Footer Settings =============== */
     $top_footer_title_color = get_theme_mod('total_top_footer_title_color', '#EEEEEE');
     $top_footer_text_color = get_theme_mod('total_top_footer_text_color', '#EEEEEE');

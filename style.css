@@ -2021,7 +2021,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 --------------------------------------------------------------*/
 #ht-service-post-section{
     position: relative;
-    padding: 40px 0;
+    padding: 60px 0;
     background: #F5F5F5;
 }
 
@@ -3510,10 +3510,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         float: none;
         width: auto;
         padding: 0;
-    }
-
-    #ht-service-post-section{
-        padding: 60px 0;
     }
 
     #ht-counter-section{

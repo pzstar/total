@@ -60,8 +60,8 @@ if (get_theme_mod('total_about_page_disable') != 'on') {
 
             <div class="ht-about-image">
                 <?php
-                $total_about_widget = get_theme_mod('total_about_widget');
-                if ($total_about_widget) {
+                $total_about_widget = get_theme_mod('total_about_widget', 'none');
+                if ($total_about_widget && $total_about_widget != 'none') {
                     dynamic_sidebar($total_about_widget);
                 } else {
                     $total_about_image = get_theme_mod('total_about_image');
