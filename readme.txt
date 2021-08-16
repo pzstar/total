@@ -23,6 +23,11 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.0.91 - Aug 16, 2021 =
+* Mobile Toggle menu dynamic design fixed
+* About us widget not working issue fixed
+* Minor design fixes
+
 = 2.0.9 - Aug 8, 2021 =
 * CSS added for wpform button
 * Implode function error fixed in footer
