@@ -18,11 +18,5 @@
     <body <?php body_class(); ?>>
         <?php
         wp_body_open();
-        do_action('total_before_page');
-        ?>
-        <div id="ht-page">
-            <a class="skip-link screen-reader-text" href="#ht-content"><?php esc_html_e('Skip to content', 'total'); ?></a>
-
-            <?php do_action('total_header'); ?>
-
-            <div id="ht-content" class="ht-site-content ht-clearfix">
+        do_action('total_body_open');
+        

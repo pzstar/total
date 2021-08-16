@@ -74,4 +74,17 @@ if (!function_exists('total_display_header')) {
 
 }
 
+if (!function_exists('total_main_wrap_open')) {
+
+    function total_main_wrap_open() {
+
+        echo '<div id="ht-page">';
+        echo '<a class="skip-link screen-reader-text" href="#ht-content">' . esc_html('Skip to content', 'total') . '</a>';
+        do_action('total_header');
+        echo '<div id="ht-content" class="ht-site-content ht-clearfix">';
+    }
+
+}
+
+add_action('total_body_open', 'total_main_wrap_open', 10);
 add_action('total_header', 'total_display_header');
