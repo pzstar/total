@@ -23,9 +23,9 @@ function total_dymanic_styles() {
     } elseif ($website_layout == 'fluid') {
         $container_width = get_theme_mod('total_fluid_container_width', 80);
     } elseif ($website_layout == 'boxed') {
-        $container_width = get_theme_mod('total_wide_container_width', 1170);
         $container_padding = get_theme_mod('total_container_padding', 80);
-        $boxed_container_width = $container_width + $container_padding + $container_padding;
+        $container_width = get_theme_mod('total_wide_container_width', 1170);
+        $boxed_container_width = $container_width - $container_padding - $container_padding;
     }
 
     /* =============== Full & Boxed width =============== */
@@ -37,10 +37,10 @@ function total_dymanic_styles() {
     } else if ($website_layout == "boxed") {
         $custom_css .= "
         .ht-container{
-            width:{$container_width}px; 
+            width:{$boxed_container_width}px; 
         }
         body.ht-boxed #ht-page{
-            width:{$boxed_container_width}px;
+            width:{$container_width}px;
 	}";
     } else if ($website_layout == "fluid") {
         $custom_css .= "
@@ -483,6 +483,28 @@ function total_dymanic_styles() {
     $custom_css .= '.ht-service-left-bg{ background-image:url(' . esc_url($total_service_left_bg) . ');}';
     $custom_css .= '#ht-counter-section{ background-image:url(' . esc_url($total_counter_bg) . ');}';
     $custom_css .= '#ht-cta-section{ background-image:url(' . esc_url($total_cta_bg) . ');}';
+
+    if ($website_layout != 'fluid') {
+        $custom_css .= "@media screen and (max-width:{$container_width}px){
+            .ht-container{
+                width: auto !important;
+                padding-left: 30px !important;
+                padding-right: 30px !important;
+            }
+
+            body.ht-boxed #ht-page{
+                width: 95% !important;
+            }
+
+            .ht-slide-caption{
+                width: 80%;
+                margin-left: -40%;
+            }
+        }";
+    } else {
+        $container_half_width = $container_width / 2;
+        $custom_css .= ".ht-slide-caption{ width: {$container_width}%; margin-left: -{$container_half_width}%; }";
+    }
 
     $custom_css .= "@media screen and (max-width:768px){{$tablet_css}}";
     $custom_css .= "@media screen and (max-width:480px){{$mobile_css}}";

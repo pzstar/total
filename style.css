@@ -1304,7 +1304,7 @@ object {
 }
 
 body.ht-boxed #ht-page {
-    max-width: 1250px;
+    width: 1250px;
     margin: 0 auto;
     position: relative;
     background: #FFF;
@@ -3312,19 +3312,6 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 .woocommerce-MyAccount-navigation-link.is-active a,
 .woocommerce-MyAccount-navigation-link a:hover{
     background: #333;
-}
-
-@media screen and (max-width: 1200px){
-    .ht-container{
-        width: auto !important;
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-    }
-
-    .ht-slide-caption{
-        width: 80%;
-        margin-left: -40%;
-    }
 }
 
 @media screen and (max-width: 1000px){
