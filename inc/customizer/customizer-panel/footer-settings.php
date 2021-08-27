@@ -31,10 +31,12 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_na
                 'total_top_footer_title_color',
                 'total_top_footer_text_color',
                 'total_top_footer_anchor_color',
+                'total_top_footer_anchor_color_hover',
                 'total_bottom_footer_heading',
                 'total_bottom_footer_bg_color',
                 'total_bottom_footer_text_color',
                 'total_bottom_footer_anchor_color',
+                'total_bottom_footer_anchor_color_hover'
             ),
         )
     ),
@@ -160,6 +162,15 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
     'label' => esc_html__('Footer Anchor Color', 'total')
 )));
 
+$wp_customize->add_setting('total_top_footer_anchor_color_hover', array(
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_top_footer_anchor_color_hover', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Footer Anchor Color (Hover)', 'total')
+)));
+
 $wp_customize->add_setting('total_bottom_footer_heading', array(
     'sanitize_callback' => 'total_sanitize_text',
 ));
@@ -199,6 +210,15 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
     'label' => esc_html__('Footer Anchor Color', 'total')
 )));
 
+$wp_customize->add_setting('total_bottom_footer_anchor_color_hover', array(
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_bottom_footer_anchor_color_hover', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Footer Anchor Color (Hover)', 'total')
+)));
+
 $wp_customize->add_setting('total_footer_copyright', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));
@@ -207,5 +227,6 @@ $wp_customize->add_control('total_footer_copyright', array(
     'section' => 'total_footer_settings',
     'type' => 'textarea',
     'label' => esc_html__('Copyright Text', 'total'),
-    'description' => esc_html__('Custom HTMl and Shortcodes Supported', 'total')
+    'description' => esc_html__('Custom HTMl and Shortcodes Supported', 'total'),
+    'priority' => 15
 ));

@@ -1,5 +1,4 @@
 jQuery(document).ready(function ($) {
-
     'use strict';
 
     var delay = (function () {
@@ -32,11 +31,11 @@ jQuery(document).ready(function ($) {
     });
 
     $('body').on('change', '.total-icon-box-wrap .total-icon-search select', function () {
-        var selected = $(this).val();
-        $(this).closest('.total-icon-box').find('.total-icon-search-input').val('');
-        $(this).closest('.total-icon-box').find('.total-icon-list li').show();
-        $(this).closest('.total-icon-box').find('.total-icon-list').hide().removeClass('active');
-        $(this).closest('.total-icon-box').find('.' + selected).fadeIn().addClass('active');
+        var $ele = $(this);
+        var selected = $ele.val();
+        $ele.parent('.total-icon-search').siblings('.total-icon-list').hide().removeClass('active');
+        $ele.parent('.total-icon-search').siblings('.' + selected).show().addClass('active');
+        $ele.closest('.total-icon-box').find('.total-icon-search-input').val('');
     });
 
     $('body').on('keyup', '.total-icon-box-wrap .total-icon-search input', function (e) {

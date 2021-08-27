@@ -435,8 +435,10 @@ function total_dymanic_styles() {
     $top_footer_title_color = get_theme_mod('total_top_footer_title_color', '#EEEEEE');
     $top_footer_text_color = get_theme_mod('total_top_footer_text_color', '#EEEEEE');
     $top_footer_anchor_color = get_theme_mod('total_top_footer_anchor_color', '#EEEEEE');
+    $top_footer_anchor_color_hover = get_theme_mod('total_top_footer_anchor_color_hover');
     $bottom_footer_text_color = get_theme_mod('total_bottom_footer_text_color', '#EEEEEE');
     $bottom_footer_anchor_color = get_theme_mod('total_bottom_footer_anchor_color', '#EEEEEE');
+    $bottom_footer_anchor_color_hover = get_theme_mod('total_bottom_footer_anchor_color_hover');
     $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color');
 
     $custom_css .= total_background_css('total_footer_bg', '#ht-colophon', array(
@@ -463,6 +465,14 @@ function total_dymanic_styles() {
         color: {$top_footer_anchor_color};
     }";
 
+    if ($top_footer_anchor_color_hover) {
+        $custom_css .= "
+        .ht-main-footer a:hover,
+        .ht-main-footer a:hover *{
+            color: {$top_footer_anchor_color_hover};
+        }";
+    }
+
     $custom_css .= "
     #ht-bottom-footer{
         color: {$bottom_footer_text_color};
@@ -471,6 +481,13 @@ function total_dymanic_styles() {
     #ht-bottom-footer a{
         color: {$bottom_footer_anchor_color};
     }";
+
+    if ($bottom_footer_anchor_color_hover) {
+        $custom_css .= "
+        #ht-bottom-footer a:hover{
+            color: {$bottom_footer_anchor_color_hover};
+        }";
+    }
 
     if ($bottom_footer_bg_color) {
         $custom_css .= "#ht-bottom-footer{background-color:$bottom_footer_bg_color}";
