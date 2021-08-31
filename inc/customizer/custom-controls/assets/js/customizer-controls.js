@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
         $ele.parent('.total-icon-search').siblings('.total-icon-list').hide().removeClass('active');
         $ele.parent('.total-icon-search').siblings('.' + selected).show().addClass('active');
         $ele.closest('.total-icon-box').find('.total-icon-search-input').val('');
-        $ele.closest('.total-icon-box').siblings('.' + selected).find('li').show();
+        $ele.parent('.total-icon-search').siblings('.' + selected).find('li').show();
     });
 
     $('body').on('keyup', '.total-icon-box-wrap .total-icon-search input', function (e) {
