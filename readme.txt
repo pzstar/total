@@ -23,6 +23,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.0 - Sep 01, 2021 =
+* Boxed layout issue fixed
+* Icon Chooser bug fixed
+
 = 2.0.91 - Aug 16, 2021 =
 * Mobile Toggle menu dynamic design fixed
 * About us widget not working issue fixed
