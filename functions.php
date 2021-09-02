@@ -424,40 +424,27 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
   file_put_contents('content1.xml', $xml->saveXML());
 */
-/* ========== Delete Product Image ======== 
+/* ========== Delete Product Image ========
 $xml = simplexml_load_file("content.xml");
 $strings = array(
-    'logo-1',
-    'pennant-1',
-    'beanie-with-logo-1',
-    't-shirt-with-logo-1',
-    'single-1',
-    'album-1',
-    'polo-2',
-    'long-sleeve-tee-2',
-    'hoodie-with-pocket-2',
-    'hoodie-with-zipper-2',
-    'sunglasses-2',
-    'cap-2',
-    'belt-2',
-    'tshirt-2',
-    'beanie-2',
-    'hoodie-with-logo-2',
-    'hoodie-green-1',
-    'hoodie-blue-1',
-    'hoodie-2',
-    'vnech-tee-blue-1',
-    'vnech-tee-green-1',
-    'vneck-tee-2'
+    'anglegrinder',
+    'pipe-wrench',
+    'drill',
+    'nipper',
+    'wire-stripper',
+    'hand-tools',
+    'Construction-hammer',
+    'meter',
+    'cutter'
 );
 $i = 0;
 $count = array();
-echo count($xml->children()->children()) . ' Items <br/>';
+//echo count($xml->children()->children()) . ' Items <br/>';
 
 foreach ($xml->children()->children() as $data) {
     //echo $data->title . $i . ".<br/>";
     foreach ($strings as $string) {
-        if ($data->title == $string.'.jpg') {
+        if ($data->title == $string) {
             echo $data->title . ' -- ' . $i . "--<br/>";
             $count[] = $i;
         }
@@ -474,4 +461,4 @@ foreach ($count as $key => $k) {
 }
 
 file_put_contents('content1.xml', $xml->saveXML());
-*/
+ */
