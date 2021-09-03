@@ -423,42 +423,42 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
   }
 
   file_put_contents('content1.xml', $xml->saveXML());
-*/
+ */
 /* ========== Delete Product Image ========
-$xml = simplexml_load_file("content.xml");
-$strings = array(
-    'anglegrinder',
-    'pipe-wrench',
-    'drill',
-    'nipper',
-    'wire-stripper',
-    'hand-tools',
-    'Construction-hammer',
-    'meter',
-    'cutter'
-);
-$i = 0;
-$count = array();
-//echo count($xml->children()->children()) . ' Items <br/>';
+  $xml = simplexml_load_file("content.xml");
+  $strings = array(
+  'anglegrinder',
+  'pipe-wrench',
+  'drill',
+  'nipper',
+  'wire-stripper',
+  'hand-tools',
+  'Construction-hammer',
+  'meter',
+  'cutter'
+  );
+  $i = 0;
+  $count = array();
+  //echo count($xml->children()->children()) . ' Items <br/>';
 
-foreach ($xml->children()->children() as $data) {
-    //echo $data->title . $i . ".<br/>";
-    foreach ($strings as $string) {
-        if ($data->title == $string) {
-            echo $data->title . ' -- ' . $i . "--<br/>";
-            $count[] = $i;
-        }
-    }
+  foreach ($xml->children()->children() as $data) {
+  //echo $data->title . $i . ".<br/>";
+  foreach ($strings as $string) {
+  if ($data->title == $string) {
+  echo $data->title . ' -- ' . $i . "--<br/>";
+  $count[] = $i;
+  }
+  }
 
-    if ($data->guid) {
-        $i++;
-    }
-}
+  if ($data->guid) {
+  $i++;
+  }
+  }
 
-foreach ($count as $key => $k) {
-    $p = $k - $key;
-    unset($xml->children()->children()->item[$p]);
-}
+  foreach ($count as $key => $k) {
+  $p = $k - $key;
+  unset($xml->children()->children()->item[$p]);
+  }
 
-file_put_contents('content1.xml', $xml->saveXML());
+  file_put_contents('content1.xml', $xml->saveXML());
  */

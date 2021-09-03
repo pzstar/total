@@ -17,6 +17,7 @@ class Total_Icon_Selector_Control extends WP_Customize_Control {
         parent::to_json();
         $this->json['filter_text'] = esc_attr__('Type to filter', 'total');
         $this->json['value'] = $this->value();
+        $this->json['link'] = $this->get_link();
         if (isset($this->icon_array) && !empty($this->icon_array)) {
             $this->json['icon_array'] = $this->icon_array;
         } else {
@@ -57,7 +58,7 @@ class Total_Icon_Selector_Control extends WP_Customize_Control {
                     </ul>
                 </div>
 
-                <input type="hidden" value="<?php esc_attr($this->value()); ?>" <?php $this->link(); ?> />
+                <input type="hidden" value="{{ data.value }}" {{{ data.link }}} />
             </div>
         </label>
         <?php
