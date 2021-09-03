@@ -187,6 +187,13 @@ if (!function_exists('total_404_content')) {
 
 }
 
+function total_file_types_to_uploads($file_types) {
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    $file_types = array_merge($file_types, $new_filetypes);
+    return $file_types;
+}
+
 if (!function_exists('total_premium_demo_config')) {
 
     function total_premium_demo_config($demos) {
@@ -289,4 +296,5 @@ add_action('total_comments_template', 'total_comments_content');
 add_action('total_404_template', 'total_404_content');
 add_action('tgmpa_register', 'total_register_required_plugins');
 add_action('hdi_import_files', 'total_premium_demo_config');
+add_filter('upload_mimes', 'total_file_types_to_uploads');
 
