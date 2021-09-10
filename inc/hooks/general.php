@@ -194,6 +194,19 @@ function total_file_types_to_uploads($file_types) {
     return $file_types;
 }
 
+function total_create_elementor_kit() {
+    if (!did_action('elementor/loaded')) {
+        return;
+    }
+
+    $kit = Elementor\Plugin::$instance->kits_manager->get_active_kit();
+
+    if (!$kit->get_id()) {
+        $created_default_kit = Elementor\Plugin::$instance->kits_manager->create_default();
+        update_option('elementor_active_kit', $created_default_kit);
+    }
+}
+
 if (!function_exists('total_premium_demo_config')) {
 
     function total_premium_demo_config($demos) {
@@ -297,4 +310,5 @@ add_action('total_404_template', 'total_404_content');
 add_action('tgmpa_register', 'total_register_required_plugins');
 add_action('hdi_import_files', 'total_premium_demo_config');
 add_filter('upload_mimes', 'total_file_types_to_uploads');
+add_action('init', 'total_create_elementor_kit');
 
