@@ -15,13 +15,13 @@
 
         <div class="free-pro-demos">
             <a class="button button-primary" href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>/" target="_blank"><span class="dashicons dashicons-visibility"></span><?php esc_html_e('Free Demos', 'total'); ?></a>
-            <a class="button button-primary" href="https://demo.hashthemes.com/total-plus/" target="_blank"><span class="dashicons dashicons-cart"></span><?php esc_html_e('Premium Demos', 'total'); ?></a>
+            <a class="button button-primary" href="https://demo.hashthemes.com/total/" target="_blank"><span class="dashicons dashicons-cart"></span><?php esc_html_e('Premium Demos', 'total'); ?></a>
         </div>
     </div>
 
     <div class="welcome-promo-banner">
-        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibilities with Total Plus.', 'total'); ?></a>
-        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade for $55', 'total'); ?></a>
+        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibilities with Total Plus.', 'total'); ?></a>
+        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade for $55', 'total'); ?></a>
     </div>
 </div>
 

@@ -187,13 +187,6 @@ if (!function_exists('total_404_content')) {
 
 }
 
-function total_file_types_to_uploads($file_types) {
-    $new_filetypes = array();
-    $new_filetypes['svg'] = 'image/svg+xml';
-    $file_types = array_merge($file_types, $new_filetypes);
-    return $file_types;
-}
-
 function total_create_elementor_kit() {
     if (!did_action('elementor/loaded')) {
         return;
@@ -215,7 +208,7 @@ if (!function_exists('total_premium_demo_config')) {
                 'slug' => 'total',
                 'name' => 'Total Plus - Total',
                 'type' => 'pro',
-                'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
                 'image' => 'https://hashthemes.com/import-files/total-plus/screen/total.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/total/',
             ),
@@ -223,7 +216,7 @@ if (!function_exists('total_premium_demo_config')) {
                 'slug' => 'main-demo',
                 'name' => 'Total Plus - Main Demo',
                 'type' => 'pro',
-                'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
                 'image' => 'https://hashthemes.com/import-files/total-plus/screen/main-demo.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/main/'
             ),
@@ -231,7 +224,7 @@ if (!function_exists('total_premium_demo_config')) {
                 'slug' => 'creative-agency',
                 'name' => 'Total Plus - Creative Agency',
                 'type' => 'pro',
-                'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
                 'image' => 'https://hashthemes.com/import-files/total-plus/screen/creative-agency.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/creative-agency'
             ),
@@ -239,7 +232,7 @@ if (!function_exists('total_premium_demo_config')) {
                 'slug' => 'one-page',
                 'name' => 'Total Plus - One Page',
                 'type' => 'pro',
-                'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
                 'image' => 'https://hashthemes.com/import-files/total-plus/screen/one-page.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/one-page'
             ),
@@ -247,7 +240,7 @@ if (!function_exists('total_premium_demo_config')) {
                 'slug' => 'construction',
                 'name' => 'Total Plus - Construction',
                 'type' => 'pro',
-                'buy_url' => 'https://hashthemes.com/wordpress-theme/total-plus/',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
                 'image' => 'https://hashthemes.com/import-files/total-plus/screen/construction.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/construction'
         ));
@@ -309,6 +302,5 @@ add_action('total_comments_template', 'total_comments_content');
 add_action('total_404_template', 'total_404_content');
 add_action('tgmpa_register', 'total_register_required_plugins');
 add_action('hdi_import_files', 'total_premium_demo_config');
-add_filter('upload_mimes', 'total_file_types_to_uploads');
 add_action('init', 'total_create_elementor_kit');
 

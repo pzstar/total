@@ -16,7 +16,7 @@ class Total_Upgrade_Info_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
 
-            <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'total'); ?></strong></a>
+            <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'total'); ?></strong></a>
         </label>
 
         <?php if ($this->description) { ?>

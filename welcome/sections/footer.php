@@ -80,6 +80,6 @@
         <p><?php echo esc_html__('Try the Premium version and check if it fits your need or not. If not, we have 7 days money-back guarantee.', 'total'); ?></p>
     </div>
 
-    <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-footer&utm_campaign=total-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'total'); ?></a>
+    <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-footer&utm_campaign=total-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'total'); ?></a>
 </div>
 

@@ -32,12 +32,12 @@ $total_pro_features = '<ul class="upsell-features">
 	<li>' . esc_html__("Fully Multilingual and Translation ready", "total") . '</li>
 	<li>' . esc_html__("Fully RTL(Right to left) languages compatible", "total") . '</li>
 	</ul>
-	<a class="ht-implink" href="https://hashthemes.com/wordpress-theme/total-plus/#theme-comparision-tab" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "total") . '</a>';
+	<a class="ht-implink" href="https://hashthemes.com/wordpress-theme/total/#theme-comparision" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "total") . '</a>';
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-pro-section', array(
     'priority' => 0,
     'pro_text' => esc_html__('Upgrade to Pro', 'total'),
-    'pro_url' => 'https://hashthemes.com/wordpress-theme/total-plus/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade'
+    'pro_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade'
 )));
 
 $wp_customize->add_section('total_pro_feature_section', array(
