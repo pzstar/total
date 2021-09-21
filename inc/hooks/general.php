@@ -316,5 +316,5 @@ add_action('total_404_template', 'total_404_content');
 add_action('tgmpa_register', 'total_register_required_plugins');
 add_action('hdi_import_files', 'total_premium_demo_config');
 add_action('init', 'total_create_elementor_kit');
-add_filter('wpforms_post_type_args', array($this, 'total_enable_wpform_export'));
+add_filter('wpforms_post_type_args', 'total_enable_wpform_export');
 
