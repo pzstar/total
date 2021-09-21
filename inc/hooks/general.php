@@ -187,17 +187,30 @@ if (!function_exists('total_404_content')) {
 
 }
 
-function total_create_elementor_kit() {
-    if (!did_action('elementor/loaded')) {
-        return;
+if (!function_exists('total_create_elementor_kit')) {
+
+    function total_create_elementor_kit() {
+        if (!did_action('elementor/loaded')) {
+            return;
+        }
+
+        $kit = Elementor\Plugin::$instance->kits_manager->get_active_kit();
+
+        if (!$kit->get_id()) {
+            $created_default_kit = Elementor\Plugin::$instance->kits_manager->create_default();
+            update_option('elementor_active_kit', $created_default_kit);
+        }
     }
 
-    $kit = Elementor\Plugin::$instance->kits_manager->get_active_kit();
+}
 
-    if (!$kit->get_id()) {
-        $created_default_kit = Elementor\Plugin::$instance->kits_manager->create_default();
-        update_option('elementor_active_kit', $created_default_kit);
+if (!function_exists('total_enable_wpform_export')) {
+
+    function total_enable_wpform_export($args) {
+        $args['can_export'] = true;
+        return $args;
     }
+
 }
 
 if (!function_exists('total_premium_demo_config')) {
@@ -303,4 +316,5 @@ add_action('total_404_template', 'total_404_content');
 add_action('tgmpa_register', 'total_register_required_plugins');
 add_action('hdi_import_files', 'total_premium_demo_config');
 add_action('init', 'total_create_elementor_kit');
+add_filter('wpforms_post_type_args', array($this, 'total_enable_wpform_export'));
 
