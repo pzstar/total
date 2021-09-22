@@ -23,9 +23,11 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.02 - Sep 21, 2021 =
+* pro url link changed
+
 = 2.1.01 - Sep 01, 2021 =
 * Added code to create elementor kit
-* Added support for SVG upload
 
 = 2.1.0 - Sep 01, 2021 =
 * Boxed layout issue fixed

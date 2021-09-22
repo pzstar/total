@@ -456,19 +456,17 @@ function total_dymanic_styles() {
         color: {$top_footer_title_color};
     }
 
-    .ht-main-footer *{
+    .ht-main-footer .ht-footer{
         color: {$top_footer_text_color};
     }
 
-    .ht-main-footer a,
-    .ht-main-footer a *{
+    .ht-main-footer a{
         color: {$top_footer_anchor_color};
     }";
 
     if ($top_footer_anchor_color_hover) {
         $custom_css .= "
-        .ht-main-footer a:hover,
-        .ht-main-footer a:hover *{
+        .ht-main-footer a:hover{
             color: {$top_footer_anchor_color_hover};
         }";
     }

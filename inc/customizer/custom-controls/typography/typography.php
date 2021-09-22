@@ -40,12 +40,14 @@ function total_default_font_array() {
         'default' => array(
             'family' => 'Default',
             'variants' => array(
-                '100' => 'Thin',
-                '300' => 'Light',
-                '400' => 'Normal',
-                '500' => 'Medium',
-                '600' => 'Semi Bold',
-                '700' => 'Bold',
+                '100' => esc_html__('Thin', 'total'),
+                '300' => esc_html__('Light', 'total'),
+                '400' => esc_html__('Normal', 'total'),
+                '400italic' => esc_html__('Normal Italic', 'total'),
+                '500' => esc_html__('Medium', 'total'),
+                '600' => esc_html__('Semi Bold', 'total'),
+                '700' => esc_html__('Bold', 'total'),
+                '700italic' => esc_html__('Bold Italic', 'total')
             ),
             'subsets' => array(
                 'latin' => 'Latin'
