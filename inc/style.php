@@ -501,7 +501,9 @@ function total_dymanic_styles() {
 
     if ($website_layout != 'fluid') {
         $custom_css .= "@media screen and (max-width:{$container_width}px){
-            .ht-container{
+            .ht-container,
+            .elementor-section.elementor-section-boxed.elementor-section-stretched>.elementor-container,
+            .elementor-template-full-width .elementor-section.elementor-section-boxed>.elementor-container{
                 width: auto !important;
                 padding-left: 30px !important;
                 padding-right: 30px !important;

@@ -100,6 +100,12 @@ if (!function_exists('total_setup')) :
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
 
+        add_theme_support('custom-line-height');
+
+        add_theme_support('custom-spacing');
+
+        add_theme_support('custom-units');
+
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
