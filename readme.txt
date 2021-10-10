@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.04 - Oct 11, 2021 =
+* Elementor CSS fixes
+
 = 2.1.03 - Oct 04, 2021 =
 * Optimization to reduce the size of the zip
 * Minor CSS fixes
