@@ -314,7 +314,7 @@ add_filter('wp_page_menu_args', 'total_change_wp_page_menu_args');
 add_action('total_comments_template', 'total_comments_content');
 add_action('total_404_template', 'total_404_content');
 add_action('tgmpa_register', 'total_register_required_plugins');
-add_action('hdi_import_files', 'total_premium_demo_config');
+add_filter('hdi_import_files', 'total_premium_demo_config');
 add_action('init', 'total_create_elementor_kit');
 add_filter('wpforms_post_type_args', 'total_enable_wpform_export');
 
