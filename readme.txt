@@ -23,6 +23,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.06 - Nov 24, 2021 =
+* Black Friday discount added
+
 = 2.1.05 - Oct 24, 2021 =
 * Demo Importer bug fixed
 
