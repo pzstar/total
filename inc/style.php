@@ -299,8 +299,8 @@ function total_dymanic_styles() {
         'letter_spacing' => '0'
     ));
 
-    $i_font_size = get_theme_mod('menu_font_size', '14');
-    $i_font_family = get_theme_mod('menu_font_family', 'Oswald');
+    $i_font_size = get_theme_mod('total_menu_font_size', '14');
+    $i_font_family = get_theme_mod('total_menu_family', 'Oswald');
     $custom_css .= ".ht-menu ul ul{
             font-size: {$i_font_size}px;
             font-family: {$i_font_family};

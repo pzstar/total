@@ -2,13 +2,12 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 5.8
-Stable tag: 2.1.07
+Stable tag: 2.1.09
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Total WordPress Theme copyright HashThemes 2016
-Total WordPress Theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Total WordPress Theme copyright HashThemes 2022
 Total is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==
@@ -23,6 +22,12 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.09 - Jan 07, 2022 =
+* New Year & Christmas discount removed
+
+= 2.1.08 - Dec 21, 2021 =
+* New Year & Christmas discount added
+
 = 2.1.07 - Dec 12, 2021 =
 * Black Friday discount removed
 
