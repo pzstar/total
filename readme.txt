@@ -1,7 +1,7 @@
 === Total ===
 Contributors: hashthemes
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 Stable tag: 2.1.09
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.10 - Jan 28, 2022 =
+* Minor fixes in customizer panel
+
 = 2.1.09 - Jan 07, 2022 =
 * New Year & Christmas discount removed
 
