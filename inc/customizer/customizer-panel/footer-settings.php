@@ -230,3 +230,20 @@ $wp_customize->add_control('total_footer_copyright', array(
     'description' => esc_html__('Custom HTMl and Shortcodes Supported', 'total'),
     'priority' => 15
 ));
+
+$wp_customize->add_setting('total_footer_upgrade_text', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_footer_upgrade_text', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('For more settings,', 'total'),
+    'choices' => array(
+        esc_html__('5 different footer styles', 'total'),
+        esc_html__('Set custom footer columns and width', 'total'),
+        esc_html__('Remove footer credit text', 'total'),
+        esc_html__('Typography for footer heading and text', 'total'),
+        esc_html__('Set footer spacing', 'total'),
+    ),
+    'priority' => 100
+)));

@@ -1,12 +1,13 @@
 .total-sidebar-layouts{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
     margin-bottom: 20px;
 }
 
 .total-sidebar-layouts label{
     position: relative;
-    display: inline-block;
-    margin-right: 20px;
-    margin-top: 10px;
+    display: block;
 }
 
 .total-sidebar-layouts label input{
@@ -19,7 +20,7 @@
 .total-sidebar-layouts label img{
     vertical-align: middle;
     border: 2px solid #EEE;
-    width: 100px;
+    width: 100%;
 }
 
 .total-sidebar-layouts label input:checked + img{

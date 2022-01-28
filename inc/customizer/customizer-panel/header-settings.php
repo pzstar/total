@@ -128,6 +128,21 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
     'label' => esc_html__('Site Tagline Color', 'total')
 )));
 
+$wp_customize->add_setting('total_title_tagline_upgrade_text', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_title_tagline_upgrade_text', array(
+    'section' => 'title_tagline',
+    'label' => esc_html__('For more settings,', 'total'),
+    'choices' => array(
+        esc_html__('Separate typography option for title & tagline', 'total'),
+        esc_html__('Set spacing for title & tagline', 'total'),
+        esc_html__('Display logo inline with title & tagline', 'total'),
+    ),
+    'priority' => 100
+)));
+
 /** Main Header Options */
 $wp_customize->add_section('total_main_header_section', array(
     'title' => esc_html__('Main Header', 'total'),
@@ -323,8 +338,6 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_pm_co
     'label' => esc_html__('Colors', 'total'),
 )));
 
-
-
 /* * **************************************************************** */
 
 $wp_customize->add_setting('total_pm_menu_link_color', array(
@@ -458,6 +471,23 @@ $wp_customize->add_control(new Total_Typography_Control($wp_customize, 'total_me
         'max' => 40,
         'step' => 1
     )
+)));
+
+$wp_customize->add_setting('total_menu_upgrade_text', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_menu_upgrade_text', array(
+    'section' => 'total_menu_settings',
+    'label' => esc_html__('For more settings,', 'total'),
+    'choices' => array(
+        esc_html__('Option to display search button, social icons & CTA button', 'total'),
+        esc_html__('7 different menu styles', 'total'),
+        esc_html__('Option to diplay different menu in mobile', 'total'),
+        esc_html__('Set spacing of menu and submenu', 'total'),
+        esc_html__('Set mobile menu breakpoint', 'total'),
+    ),
+    'priority' => 100
 )));
 
 $wp_customize->selective_refresh->add_partial(

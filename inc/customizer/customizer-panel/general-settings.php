@@ -134,6 +134,22 @@ $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_backto
     'description' => esc_html__('A button on click scrolls to the top of the page.', 'total'),
 )));
 
+$wp_customize->add_setting('total_backtotop_upgrade_text', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_backtotop_upgrade_text', array(
+    'section' => 'total_backtotop_section',
+    'label' => esc_html__('For more settings,', 'total'),
+    'choices' => array(
+        esc_html__('Choose from multiple go to top icons', 'total'),
+        esc_html__('Change the position & size of the button', 'total'),
+        esc_html__('Configure multiple styled button', 'total'),
+        esc_html__('Change Colors', 'total')
+    ),
+    'priority' => 100
+)));
+
 /* BREADCRUMB SECTION */
 $wp_customize->add_section('total_breadcrumb_section', array(
     'title' => esc_html__('Breadcrumb', 'total'),
@@ -151,3 +167,16 @@ $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_breadc
     'description' => esc_html__('Breadcrumbs are a great way of letting your visitors find out where they are on your site.', 'total'),
 )));
 
+$wp_customize->add_setting('total_breadcrumb_upgrade_text', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_breadcrumb_upgrade_text', array(
+    'section' => 'total_breadcrumb_section',
+    'label' => esc_html__('For more settings,', 'total'),
+    'choices' => array(
+        esc_html__('Multiple Breadcrumb styles', 'total'),
+        esc_html__('Set Breadcrumb typography and colors', 'total'),
+    ),
+    'priority' => 100
+)));
