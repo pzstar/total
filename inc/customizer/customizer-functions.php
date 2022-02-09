@@ -95,3 +95,80 @@ if (!function_exists('total_menu_choice')) {
     }
 
 }
+
+function total_icon_box() {
+    $new_value = '';
+    echo '<div id="total-append-icon-box" class="total-icon-box" style="display:none">';
+    echo '<div class="total-icon-search">';
+    echo '<select>';
+
+    if (apply_filters('total_show_ico_font', true)) {
+        echo '<option value="icofont-list">' . esc_html__('Ico Font', 'total') . '</option>';
+    }
+
+    if (apply_filters('total_show_font_awesome', true)) {
+        echo '<option value="fontawesome-list">' . esc_html__('Font Awesome', 'total') . '</option>';
+    }
+
+    if (apply_filters('total_show_material_icon', true)) {
+        echo '<option value="material-icon-list">' . esc_html__('Material Icon', 'total') . '</option>';
+    }
+
+    if (apply_filters('total_show_essential_icon', true)) {
+        echo '<option value="essential-icon-list">' . esc_html__('Essential Icon', 'total') . '</option>';
+    }
+
+    echo '</select>';
+    echo '<input type="text" class="total-icon-search-input" placeholder="' . esc_html__('Type to filter', 'total') . '" />';
+    echo '</div>';
+
+    $active_class = ' active';
+
+    if (apply_filters('total_show_ico_font', true)) {
+        echo '<ul class="total-icon-list icofont-list total-clearfix' . $active_class . '">';
+        $total_icofont_icon_array = total_icofont_icon_array();
+        foreach ($total_icofont_icon_array as $total_icofont_icon) {
+            $icon_class = $new_value == $total_icofont_icon ? 'icon-active' : '';
+            echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_icofont_icon) . '"></i></li>';
+        }
+        echo '</ul>';
+        $active_class = '';
+    }
+
+    if (apply_filters('total_show_font_awesome', true)) {
+        echo '<ul class="total-icon-list fontawesome-list total-clearfix' . $active_class . '">';
+        $total_plus_font_awesome_icon_array = total_font_awesome_icon_array();
+        foreach ($total_plus_font_awesome_icon_array as $total_plus_font_awesome_icon) {
+            $icon_class = $new_value == $total_plus_font_awesome_icon ? 'icon-active' : '';
+            echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_plus_font_awesome_icon) . '"></i></li>';
+        }
+        echo '</ul>';
+        $active_class = '';
+    }
+
+    if (apply_filters('total_show_material_icon', true)) {
+        echo '<ul class="total-icon-list material-icon-list total-clearfix' . $active_class . '">';
+        $total_materialdesignicons_icon_array = total_materialdesignicons_array();
+        foreach ($total_materialdesignicons_icon_array as $total_materialdesignicons_icon) {
+            $icon_class = $new_value == $total_materialdesignicons_icon ? 'icon-active' : '';
+            echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_materialdesignicons_icon) . '"></i></li>';
+        }
+        echo '</ul>';
+        $active_class = '';
+    }
+
+    if (apply_filters('total_show_essential_icon', true)) {
+        echo '<ul class="total-icon-list essential-icon-list total-clearfix' . $active_class . '">';
+        $total_essentialicons_icon_array = total_essential_icon_array();
+        foreach ($total_essentialicons_icon_array as $total_essentialicons_icon) {
+            $icon_class = $new_value == $total_essentialicons_icon ? 'icon-active' : '';
+            echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_essentialicons_icon) . '"></i></li>';
+        }
+        echo '</ul>';
+        $active_class = '';
+    }
+
+    echo '</div>';
+}
+
+add_action('customize_controls_print_scripts', 'total_icon_box');

@@ -157,7 +157,7 @@ class Total_Typography_Control extends WP_Customize_Control {
             <# if ( data.style && data.style.choices ) { #>
             <li class="total-typography-font-style">
                 <# if ( data.style.label ) { #>
-                <span class=            "total-typography-customize-control-title">{{ data.style.label }}</span>
+                <span class="total-typography-customize-control-title">{{ data.style.label }}</span>
                 <# } #>
                 <select {{{ data.style.link }}}>
                     <# _.each( data.style.choices, function( label, choice ) { #>

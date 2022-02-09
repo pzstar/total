@@ -27,6 +27,7 @@ jQuery(document).ready(function ($) {
     });
 
     $('body').on('click', '.total-icon-box-wrap .total-selected-icon', function () {
+        ($('#total-append-icon-box')).insertAfter($(this));
         $(this).next().slideToggle();
     });
 
