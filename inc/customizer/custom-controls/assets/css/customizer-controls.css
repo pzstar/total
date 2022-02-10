@@ -1462,6 +1462,8 @@
 .control-section-total-toggle-section .total-toggle-section .dashicons{
     font-size: 18px;
     vertical-align: middle;
+    height: auto;
+    width: auto;
 }
 
 .total-section-visible .total-toggle-section {

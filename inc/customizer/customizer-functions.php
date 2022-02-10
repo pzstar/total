@@ -97,10 +97,9 @@ if (!function_exists('total_menu_choice')) {
 }
 
 
-if (!function_exists('total_menu_choice')) {
+if (!function_exists('total_icon_box_selector')) {
 
-    function total_icon_box() {
-        $new_value = '';
+    function total_icon_box_selector() {
         echo '<div id="total-append-icon-box" class="total-icon-box" style="display:none">';
         echo '<div class="total-icon-search">';
         echo '<select>';
@@ -131,8 +130,7 @@ if (!function_exists('total_menu_choice')) {
             echo '<ul class="total-icon-list icofont-list total-clearfix' . $active_class . '">';
             $total_icofont_icon_array = total_icofont_icon_array();
             foreach ($total_icofont_icon_array as $total_icofont_icon) {
-                $icon_class = $new_value == $total_icofont_icon ? 'icon-active' : '';
-                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_icofont_icon) . '"></i></li>';
+                echo '<li><i class="' . esc_attr($total_icofont_icon) . '"></i></li>';
             }
             echo '</ul>';
             $active_class = '';
@@ -142,8 +140,7 @@ if (!function_exists('total_menu_choice')) {
             echo '<ul class="total-icon-list fontawesome-list total-clearfix' . $active_class . '">';
             $total_plus_font_awesome_icon_array = total_font_awesome_icon_array();
             foreach ($total_plus_font_awesome_icon_array as $total_plus_font_awesome_icon) {
-                $icon_class = $new_value == $total_plus_font_awesome_icon ? 'icon-active' : '';
-                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_plus_font_awesome_icon) . '"></i></li>';
+                echo '<li><i class="' . esc_attr($total_plus_font_awesome_icon) . '"></i></li>';
             }
             echo '</ul>';
             $active_class = '';
@@ -153,8 +150,7 @@ if (!function_exists('total_menu_choice')) {
             echo '<ul class="total-icon-list material-icon-list total-clearfix' . $active_class . '">';
             $total_materialdesignicons_icon_array = total_materialdesignicons_array();
             foreach ($total_materialdesignicons_icon_array as $total_materialdesignicons_icon) {
-                $icon_class = $new_value == $total_materialdesignicons_icon ? 'icon-active' : '';
-                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_materialdesignicons_icon) . '"></i></li>';
+                echo '<li><i class="' . esc_attr($total_materialdesignicons_icon) . '"></i></li>';
             }
             echo '</ul>';
             $active_class = '';
@@ -164,8 +160,7 @@ if (!function_exists('total_menu_choice')) {
             echo '<ul class="total-icon-list essential-icon-list total-clearfix' . $active_class . '">';
             $total_essentialicons_icon_array = total_essential_icon_array();
             foreach ($total_essentialicons_icon_array as $total_essentialicons_icon) {
-                $icon_class = $new_value == $total_essentialicons_icon ? 'icon-active' : '';
-                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($total_essentialicons_icon) . '"></i></li>';
+                echo '<li><i class="' . esc_attr($total_essentialicons_icon) . '"></i></li>';
             }
             echo '</ul>';
             $active_class = '';
@@ -176,4 +171,4 @@ if (!function_exists('total_menu_choice')) {
 
 }
 
-add_action('customize_controls_print_scripts', 'total_icon_box');
+add_action('customize_controls_print_footer_scripts', 'total_icon_box_selector');

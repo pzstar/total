@@ -315,6 +315,7 @@ for ($i = 1; $i < 4; $i++) {
         'settings' => 'total_featured_page_icon' . $i,
         'section' => 'total_featured_section',
         'label' => esc_html__('FontAwesome Icon', 'total'),
+        'icon_array' => total_font_awesome_icon_array()
     )));
 }
 
@@ -531,7 +532,8 @@ for ($i = 1; $i < 7; $i++) {
     $wp_customize->add_control(new Total_Icon_Selector_Control($wp_customize, 'total_service_page_icon' . $i, array(
         'settings' => 'total_service_page_icon' . $i,
         'section' => 'total_service_section',
-        'label' => esc_html__('FontAwesome Icon', 'total')
+        'label' => esc_html__('FontAwesome Icon', 'total'),
+        'icon_array' => total_font_awesome_icon_array()
     )));
 }
 $wp_customize->add_setting('total_service_left_bg_heading', array(
@@ -857,7 +859,8 @@ for ($i = 1; $i < 5; $i++) {
     $wp_customize->add_control(new Total_Icon_Selector_Control($wp_customize, 'total_counter_icon' . $i, array(
         'settings' => 'total_counter_icon' . $i,
         'section' => 'total_counter_section',
-        'label' => esc_html__('Counter Icon', 'total')
+        'label' => esc_html__('Counter Icon', 'total'),
+        'icon_array' => total_font_awesome_icon_array()
     )));
 }
 

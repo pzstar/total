@@ -20,8 +20,6 @@ class Total_Icon_Selector_Control extends WP_Customize_Control {
         $this->json['link'] = $this->get_link();
         if (isset($this->icon_array) && !empty($this->icon_array)) {
             $this->json['icon_array'] = $this->icon_array;
-        } else {
-            $this->json['icon_array'] = total_font_awesome_icon_array();
         }
     }
 
@@ -45,6 +43,20 @@ class Total_Icon_Selector_Control extends WP_Customize_Control {
                     <i class="{{ data.value }}"></i>
                     <span><i class="total-down-icon"></i></span>
                 </div>
+
+                <# if( data.icon_array ) { #>
+                <div class="total-icon-box">
+                    <div class="total-icon-search">
+                        <input type="text" class="total-icon-search-input" placeholder="{{ data.filter_text }}" />
+                    </div>
+
+                    <ul class="total-icon-list total-clearfix active">
+                        <# _.each( data.icon_array, function( val ) { #>
+                        <li class="<# if ( val === data.value ) { #> icon-active <# } #>"><i class="{{ val }}"></i></li>
+                        <# } ) #>
+                    </ul>
+                </div>
+                <# } #>
 
                 <input type="hidden" value="{{ data.value }}" {{{ data.link }}} />
             </div>
