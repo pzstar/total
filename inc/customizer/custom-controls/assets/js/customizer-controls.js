@@ -27,7 +27,11 @@ jQuery(document).ready(function ($) {
     });
 
     $('body').on('click', '.total-icon-box-wrap .total-selected-icon', function () {
-        ($('#total-append-icon-box')).insertAfter($(this));
+        if (!$(this).next().is('.total-icon-box')) {
+            var iconbox = $('#total-append-icon-box').clone();
+            iconbox.removeAttr('id');
+            iconbox.insertAfter($(this));
+        }
         $(this).next().slideToggle();
     });
 

@@ -224,7 +224,6 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                         echo '<i class="' . esc_attr($new_value) . '"></i>';
                                         echo '<span><i class="total-down-icon"></i></span>';
                                         echo '</div>';
-                                        
                                         echo '<input data-default="' . esc_attr($default) . '" type="hidden" value="' . esc_attr($new_value) . '" data-name="' . esc_attr($key) . '"/>';
                                         echo '</div>';
                                         break;

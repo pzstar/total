@@ -46,18 +46,6 @@ class Total_Icon_Selector_Control extends WP_Customize_Control {
                     <span><i class="total-down-icon"></i></span>
                 </div>
 
-                <div class="total-icon-box">
-                    <div class="total-icon-search">
-                        <input type="text" class="total-icon-search-input" placeholder="{{ data.filter_text }}" />
-                    </div>
-
-                    <ul class="total-icon-list total-clearfix active">
-                        <# _.each( data.icon_array, function( val ) { #>
-                        <li class="<# if ( val === data.value ) { #> icon-active <# } #>"><i class="{{ val }}"></i></li>
-                        <# } ) #>
-                    </ul>
-                </div>
-
                 <input type="hidden" value="{{ data.value }}" {{{ data.link }}} />
             </div>
         </label>
