@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.11 - Feb 18, 2022 =
+* Customizer control refinements
+
 = 2.1.10 - Jan 28, 2022 =
 * Minor fixes in customizer panel
 
