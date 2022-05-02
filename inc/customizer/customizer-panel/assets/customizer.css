@@ -59,6 +59,10 @@
     content: "\f316";
 }
 
+#accordion-section-total_blog_options_section .accordion-section-title:before {
+    content: "\f119";
+}
+
 #customize-control-total_pro_features .description ul{
     list-style: disc;
     font-style: normal;
@@ -207,4 +211,9 @@
 .upsell-features{
     list-style: decimal outside;
     margin-left: 20px;
+}
+
+#customize-control-total_blog_sec_nav + #customize-control-total_single_display_featured_image,
+#customize-control-total_blog_sec_nav + #customize-control-total_single_display_featured_image + #customize-control-total_single_post_settings_upgrade_text{
+    display: none;
 }

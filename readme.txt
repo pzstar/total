@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 5.9
-Stable tag: 2.1.09
+Stable tag: 2.1.12
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.12 - Apr 20, 2022 =
+* Option to display featured image in single post - Added
+
 = 2.1.11 - Feb 18, 2022 =
 * Customizer control refinements
 

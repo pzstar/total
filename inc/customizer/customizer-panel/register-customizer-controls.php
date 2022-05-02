@@ -25,6 +25,7 @@ if (!class_exists('Total_Register_Customizer_Controls')) {
             require TOTAL_CUSTOMIZER_PATH . 'customizer-panel/typography-settings.php';
             require TOTAL_CUSTOMIZER_PATH . 'customizer-panel/color-settings.php';
             require TOTAL_CUSTOMIZER_PATH . 'customizer-panel/header-settings.php';
+            require TOTAL_CUSTOMIZER_PATH . 'customizer-panel/single-post-settings.php';
             require TOTAL_CUSTOMIZER_PATH . 'customizer-panel/home-sections.php';
             require TOTAL_CUSTOMIZER_PATH . 'customizer-panel/footer-settings.php';
 
