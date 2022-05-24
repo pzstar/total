@@ -22,7 +22,7 @@
     </div>
 
     <div class="welcome-demo-import">
-        <h3><?php echo esc_html__('Demo Importer', 'total'); ?><a href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>" target="_blank" class="button button-primary"><?php esc_html_e('View Demo', 'total'); ?></a></h3>
+        <h3><?php echo esc_html__('Demo Importer', 'total'); ?><a href="https://hashthemes.com/wordpress-theme/total/" target="_blank" class="button button-primary"><?php esc_html_e('View Demo', 'total'); ?></a></h3>
         <div class="welcome-theme-thumb">
             <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.jpg'); ?>" alt="<?php printf(esc_attr__('%s Demo', 'total'), $this->theme_name); ?>">
         </div>

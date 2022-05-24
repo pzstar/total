@@ -15,8 +15,8 @@
         </div>
 
         <div class="free-pro-demos">
-            <a class="button button-primary" href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>/" target="_blank"><span class="dashicons dashicons-visibility"></span><?php esc_html_e('Free Demos', 'total'); ?></a>
-            <a class="button button-primary" href="https://demo.hashthemes.com/total/" target="_blank"><span class="dashicons dashicons-cart"></span><?php esc_html_e('Premium Demos', 'total'); ?></a>
+            <a class="button button-primary" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-demo" target="_blank"><span class="dashicons dashicons-visibility"></span><?php esc_html_e('Free Demos', 'total'); ?></a>
+            <a class="button button-primary" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-demo" target="_blank"><span class="dashicons dashicons-cart"></span><?php esc_html_e('Premium Demos', 'total'); ?></a>
         </div>
     </div>
 

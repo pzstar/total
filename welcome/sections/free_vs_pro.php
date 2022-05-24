@@ -56,7 +56,14 @@
             <span><?php esc_html_e('Elementor Widgets', 'total'); ?></span>
             <p><?php esc_html_e('Elementor provides you with unlimited possibilities to create the website of your imagination.', 'total'); ?></td>
         <td>10 Widgets</td>
-        <td>40+ Widgets</td>
+        <td>45+ Widgets</td>
+    </tr>
+    <tr>
+        <td>
+            <span><?php esc_html_e('Elementor Section Extenders', 'total'); ?></span>
+            <p><?php esc_html_e('You can extend the Elementor section with amazing interactive extenders like Parallax Background , Parallax Animation, Colors Animation, Water Ripples, Particles Background, Background Effects & lot more.', 'total'); ?></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
     <tr>
         <td>

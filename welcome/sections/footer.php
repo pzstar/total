@@ -1,7 +1,7 @@
 <div class="welcome-upgrade-wrap">
     <div class="welcome-upgrade-header">
-        <h3><?php printf(esc_html__('Total Plus Demos - Premium Version of %s', 'total'), $this->theme_name); ?></h3>
-        <p><?php echo sprintf(esc_html__('Check out the websites that you can create with the premium version of the %s Theme. These demos can be imported with just one click in the premium version.', 'total'), $this->theme_name); ?></p>
+        <h3><?php printf(esc_html__('Total Plus Demos - Premium Version of %s (Customizer & Elementor Version)', 'total'), $this->theme_name); ?></h3>
+        <p><?php echo sprintf(esc_html__('Create beautiful websites with the premium version of the %s Theme. The demos are available in both Customizer and Elementor Version. These demos can be imported with just one click in the premium version.', 'total'), $this->theme_name); ?></p>
     </div>
 
     <div class="recomended-plugin-wrap">

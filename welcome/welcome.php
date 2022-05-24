@@ -52,6 +52,12 @@ if (!class_exists('Total_Welcome')) :
                     'slug' => 'simple-floating-menu',
                     'filename' => 'simple-floating-menu',
                     'thumb_path' => 'https://ps.w.org/simple-floating-menu/assets/icon-256x256.png'
+                ),
+                'mini-ajax-woo-cart' => array(
+                    'name' => 'Ajax Cart for WooCommerce',
+                    'slug' => 'mini-ajax-woo-cart',
+                    'filename' => 'mini-ajax-woo-cart',
+                    'thumb_path' => 'https://ps.w.org/mini-ajax-woo-cart/assets/icon-256x256.gif'
                 )
             );
 

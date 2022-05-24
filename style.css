@@ -3,7 +3,7 @@ Theme Name: Total
 Theme URI: https://hashthemes.com/wordpress-theme/total/
 Author: HashThemes
 Author URI: https://hashthemes.com
-Description: Total as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The home page consist of slider, featured section with icon, about us section with progress bar, portfolio section with masonary layout, team section, testimonial section, counter section, blog section with option to add 3, 6 or 9 blog posts, clients logo carousel slider and call to action section. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce - an ecommerce plugin and all other major plugins. The theme can also be used with all major page builder plugins like Elementor, SiteOrigin, WpBakery VisualComposer and Beaver Builder. The theme provides option to import the demo with just one click. DEMO: https://demo.hashthemes.com/total/
+Description: Total as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The home page consist of slider, featured section with icon, about us section with progress bar, portfolio section with masonary layout, team section, testimonial section, counter section, blog section with option to add 3, 6 or 9 blog posts, clients logo carousel slider and call to action section. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce - an ecommerce plugin and all other major plugins. The theme can also be used with all major page builder plugins like Elementor, SiteOrigin, WpBakery VisualComposer and Beaver Builder. The theme provides option to import the demo with just one click. DEMO: https://hashthemes.com/wordpress-theme/total/
 Version: 2.1.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2943,7 +2943,8 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     color: #FFF;
 }
 
-.woocommerce ul.products li.product .button{
+.woocommerce ul.products li.product .button,
+.woocommerce ul.products li.product .added_to_cart{
     margin: 0;
     transform: translateY(50%);
     -ms-transform: translateY(50%);
@@ -2952,27 +2953,32 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     background-color: #FFF;
     border:1px solid #dadada;
     border-radius: 3px;
+    padding: 10px 20px;
+    line-height: 20px;
+    text-transform: capitalize;
 }
 
-.woocommerce ul.products li.product:hover .button{
+.woocommerce ul.products li.product:hover .button,
+.woocommerce ul.products li.product:hover .added_to_cart{
     border-color: #FFC107;
     background-color: #FFC107;
     color: #FFF;
+}
+
+.woocommerce ul.products li.product .button.added{
+    display: none;
 }
 
 .woocommerce ul.products li.product .button.loading{
     opacity: 1;
 }
 
-.woocommerce a.added_to_cart{
-    padding-top: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    margin-top: 25px;
-    font-size: 13px;
+.woocommerce ul.products li.product .button.loading:after{
+    position: static;
+    display: inline-block;
+    margin-left: 6px;
 }
+
 
 .woocommerce #respond input#submit.alt, 
 .woocommerce a.button.alt, 
@@ -3606,6 +3612,10 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 }
 
 @media screen and (max-width: 580px){
+    #ht-site-branding{
+        margin-right: 20px;
+    }
+
     #ht-home-slider-section .owl-carousel .owl-nav .owl-prev, 
     #ht-home-slider-section .owl-carousel .owl-nav .owl-next{
         display: none;
