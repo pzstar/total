@@ -22,6 +22,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.13 - May 24, 2022 =
+* Woocommerce Add To Cart button - Fixes
+* URL updated in customizer panel
+
 = 2.1.12 - Apr 20, 2022 =
 * Option to display featured image in single post - Added
 
