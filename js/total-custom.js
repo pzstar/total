@@ -99,7 +99,7 @@ jQuery(function ($) {
         }
     }).resize();
 
-    $('.menu-item-has-children > a').append('<button class="ht-dropdown"></button>');
+    $('.ht-menu .menu-item-has-children > a').append('<button class="ht-dropdown"></button>');
 
     $('.ht-dropdown').on('click', function () {
         $(this).parent('a').next('ul').slideToggle();
