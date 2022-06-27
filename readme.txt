@@ -1,8 +1,8 @@
 === Total ===
 Contributors: hashthemes
 Requires at least: 5.0
-Tested up to: 5.9
-Stable tag: 2.1.12
+Tested up to: 6.0
+Stable tag: 2.1.14
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.14 - Jun 27, 2022 =
+* Option to load Google Fonts locally - Added
+
 = 2.1.13 - May 24, 2022 =
 * Woocommerce Add To Cart button - Fixes
 * URL updated in customizer panel

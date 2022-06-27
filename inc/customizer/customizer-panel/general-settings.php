@@ -180,3 +180,21 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     ),
     'priority' => 100
 )));
+
+/* GOOGLE FONT SECTION */
+$wp_customize->add_section('total_google_font_section', array(
+    'title' => esc_html__('Google Fonts', 'total'),
+    'panel' => 'total_general_settings_panel',
+    'priority' => 1000
+));
+
+$wp_customize->add_setting('total_load_google_font_locally', array(
+    'sanitize_callback' => 'total_sanitize_checkbox',
+    'default' => false
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_load_google_font_locally', array(
+    'section' => 'total_google_font_section',
+    'label' => esc_html__('Load Google Fonts Locally', 'total'),
+    'description' => esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with Google Fonts then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'total'),
+)));
