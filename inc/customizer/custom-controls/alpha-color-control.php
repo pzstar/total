@@ -49,7 +49,7 @@ class Total_Alpha_Color_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
         </label>
-        <input class="total-alpha-color-control" data-alpha-enabled="<?php echo esc_attr($show_opacity); ?>" type="text" data-palette="<?php echo esc_attr($palette); ?>" data-default-color="<?php echo esc_attr($this->settings['default']->default); ?>" <?php $this->link(); ?>  />
+        <input class="total-alpha-color-control" data-alpha-color-type="hex" data-alpha-enabled="<?php echo esc_attr($show_opacity); ?>" type="text" data-palette="<?php echo esc_attr($palette); ?>" data-default-color="<?php echo esc_attr($this->settings['default']->default); ?>" <?php $this->link(); ?>  />
         <?php
     }
 

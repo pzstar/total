@@ -214,7 +214,7 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_mh_co
 )));
 
 $wp_customize->add_setting('total_mh_bg_color', array(
-    'sanitize_callback' => 'total_sanitize_color_alpha'
+    'sanitize_callback' => 'total_sanitize_color'
 ));
 
 $wp_customize->add_control(new Total_Alpha_Color_Control($wp_customize, 'total_mh_bg_color', array(

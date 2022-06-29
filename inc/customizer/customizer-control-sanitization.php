@@ -41,30 +41,26 @@ function total_sanitize_choices_array($input, $setting) {
     return $input;
 }
 
-function total_sanitize_color_alpha($total_color) {
-    $total_color = str_replace('#', '', $total_color);
-    if ('' === $total_color) {
+function total_sanitize_color_alpha($color) {
+    if ('' === $color) {
         return '';
     }
 
-    // 3 or 6 hex digits, or the empty string.
-    if (preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', '#' . $total_color)) {
-        // convert to rgb
-        $colour = $total_color;
-        if (strlen($colour) == 6) {
-            list( $r, $g, $b ) = array($colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5]);
-        } elseif (strlen($colour) == 3) {
-            list( $r, $g, $b ) = array($colour[0] . $colour[0], $colour[1] . $colour[1], $colour[2] . $colour[2]);
-        } else {
-            return false;
-        }
-        $r = hexdec($r);
-        $g = hexdec($g);
-        $b = hexdec($b);
-        return 'rgba(' . join(',', array('r' => $r, 'g' => $g, 'b' => $b, 'a' => 1)) . ')';
-    }
+    $color = str_replace(' ', '', $color);
+    sscanf($color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha);
+    return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+}
 
-    return strpos(trim($total_color), 'rgb') !== false ? $total_color : false;
+function total_sanitize_color($color) {
+    // Is this an rgba color or a hex?
+    $mode = ( false === strpos($color, 'rgba') ) ? 'hex' : 'rgba';
+    if ('rgba' === $mode) {
+        $color = str_replace(' ', '', $color);
+        sscanf($color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha);
+        return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+    } else {
+        return sanitize_hex_color($color);
+    }
 }
 
 /**
