@@ -181,7 +181,7 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_botto
 )));
 
 $wp_customize->add_setting('total_bottom_footer_bg_color', array(
-    'sanitize_callback' => 'total_sanitize_color',
+    'sanitize_callback' => 'total_sanitize_color_alpha',
     'default' => 'rgba(0,0,0,0.1)',
 ));
 
