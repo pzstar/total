@@ -85,7 +85,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Option to change caption background and text color', 'total'),
         esc_html__('Advanced slider settings', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============ABOUT US SECTION============ */
@@ -221,7 +222,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Option to disable the Right Image', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total')
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============FEATURED SECTION PANEL============ */
@@ -334,7 +336,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Configure no of column to display in a row', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============PORTFOLIO SECTION PANEL============ */
@@ -436,7 +439,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Enable/Disable gap between portfolio images', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============SERVICE SECTION PANEL============ */
@@ -572,7 +576,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Display image postion in left or right', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============TEAM SECTION PANEL============ */
@@ -731,7 +736,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Display team in grid or carousel slider', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============COUNTER SECTION PANEL============ */
@@ -877,7 +883,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('5000+ icon to choose from(5 icon packs)', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============TESTIMONIAL PANEL============ */
@@ -976,7 +983,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('4 testiminial block layouts', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============BLOG PANEL============ */
@@ -1077,7 +1085,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Show/Hide date, author and comment', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============CLIENTS LOGO SECTION============ */
@@ -1163,7 +1172,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('4 client logo layouts', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* ============CALL TO ACTION PANEL============ */
@@ -1287,7 +1297,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Option to display vide in CTA with popup', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-upgrade-section', array(

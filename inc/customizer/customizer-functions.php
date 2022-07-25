@@ -96,6 +96,11 @@ if (!function_exists('total_menu_choice')) {
 
 }
 
+function total_is_upgrade_notice_active() {
+    $show_upgrade_notice = get_theme_mod('total_hide_upgrade_notice', false);
+    return !$show_upgrade_notice;
+}
+
 
 if (!function_exists('total_icon_box_selector')) {
 

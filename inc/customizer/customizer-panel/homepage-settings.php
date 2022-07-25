@@ -37,13 +37,25 @@ $total_pro_features = '<ul class="upsell-features">
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-pro-section', array(
     'priority' => 0,
     'pro_text' => esc_html__('Upgrade to Pro', 'total'),
-    'pro_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade'
+    'pro_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade',
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 $wp_customize->add_section('total_pro_feature_section', array(
     'title' => esc_html__('Pro Theme Features', 'total'),
     'priority' => 0
 ));
+
+$wp_customize->add_setting('total_hide_upgrade_notice', array(
+    'sanitize_callback' => 'total_sanitize_checkbox',
+    'default' => false,
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_hide_upgrade_notice', array(
+    'section' => 'total_pro_feature_section',
+    'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'total'),
+    'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'total')
+)));
 
 $wp_customize->add_setting('total_pro_features', array(
     'sanitize_callback' => 'total_sanitize_text'
@@ -53,7 +65,8 @@ $wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_pro
     'settings' => 'total_pro_features',
     'section' => 'total_pro_feature_section',
     'input_attrs' => array('class' => 'ht-white-box'),
-    'description' => $total_pro_features
+    'description' => $total_pro_features,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-doc-section', array(

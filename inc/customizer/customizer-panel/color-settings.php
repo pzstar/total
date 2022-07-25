@@ -78,5 +78,6 @@ $wp_customize->add_setting('total_color_upgrade_text', array(
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_color_upgrade_text', array(
     'section' => 'colors',
     'label' => esc_html__('For more color options,', 'total'),
-    'priority' => 100
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
