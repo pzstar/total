@@ -87,7 +87,6 @@ if (!class_exists('Total_Welcome')) :
 
         /** Welcome Message Notification */
         public function admin_notice_content() {
-            $hide_notice = get_option('total_hide_notice');
             if (!$this->is_dismissed('welcome')) {
                 $this->total_notice();
             }
@@ -280,9 +279,8 @@ if (!class_exists('Total_Welcome')) :
         }
 
         public function erase_hide_notice() {
-            delete_option('total_hide_notice');
+            delete_option('total_dismissed_notices');
         }
-
 
         /**
          * Displays a notice asking for a review
@@ -354,7 +352,8 @@ if (!class_exists('Total_Welcome')) :
             };
 
             if (get_option('total_hide_notice') && !$this->is_dismissed('welcome')) {
-                self::dissmiss('welcome');
+                delete_option('total_hide_notice');
+                self::dismiss('welcome');
             }
 
             if (isset($_GET['total-hide-notice'], $_GET['total_notice_nonce'])) {
