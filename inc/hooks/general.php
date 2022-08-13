@@ -76,7 +76,6 @@ if (!function_exists('total_remove_hentry_class')) {
 
 }
 
-
 if (!function_exists('total_comments_content')) {
 
     function total_comments_content() {

@@ -141,7 +141,6 @@ if (!class_exists('Total_Welcome')) :
             <?php
         }
 
-
         /** Register Menu for Welcome Page */
         public function welcome_register_menu() {
             add_menu_page(esc_html__('Welcome', 'total'), sprintf(esc_html__('%s Settings', 'total'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'total-welcome', array($this, 'welcome_screen'), '', 60);
@@ -239,7 +238,7 @@ if (!class_exists('Total_Welcome')) :
 
             if (!empty($slug) && !empty($file)) {
                 $result = activate_plugin($slug . '/' . $file . '.php');
-                update_option('total_hide_notice', true);
+                self::dismiss('welcome');
                 if (!is_wp_error($result)) {
                     $success = true;
                 }
@@ -280,6 +279,7 @@ if (!class_exists('Total_Welcome')) :
 
         public function erase_hide_notice() {
             delete_option('total_dismissed_notices');
+            delete_option('total_first_activation');
         }
 
         /**
@@ -290,17 +290,17 @@ if (!class_exists('Total_Welcome')) :
         private function review_notice() {
             ?>
             <div class="total-notice notice notice-info">
-            <?php $this->dismiss_button('review'); ?>
+                <?php $this->dismiss_button('review'); ?>
                 <p>
                     <?php
                     printf(
-                        /* translators: %1$s is link start tag, %2$s is link end tag. */
-                        esc_html__('We have noticed that you have been using Total for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'total'),
-                        '<a href="https://wordpress.org/support/theme/total/reviews/?rate=5#new-post">',
-                        '</a>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag. */
+                            esc_html__('We have noticed that you have been using Total for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'total'), '<a href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>'
                     );
                     ?>
                 </p>
+                <a target="_blank" class="button action" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'total') ?></a> &nbsp;
+                <a class="button action" href="<?php echo esc_url(wp_nonce_url(add_query_arg('total-hide-notice', 'review'), 'review', 'total_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'total') ?></a>
             </div>
             <?php
         }
@@ -336,8 +336,8 @@ if (!class_exists('Total_Welcome')) :
          * @param string $name Notice name
          * @return void
          */
-        public function dismiss_button( $name ) {
-            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('total-hide-notice', $name), $name, 'total_notice_nonce')), esc_html__( 'Dismiss this notice.', 'total' )
+        public function dismiss_button($name) {
+            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('total-hide-notice', $name), $name, 'total_notice_nonce')), esc_html__('Dismiss this notice.', 'total')
             );
         }
 
@@ -347,9 +347,9 @@ if (!class_exists('Total_Welcome')) :
          * @return void
          */
         public function welcome_init() {
-            if(!get_option('total_first_activation')) {
+            if (!get_option('total_first_activation')) {
                 update_option('total_first_activation', time());
-            };
+            }
 
             if (get_option('total_hide_notice') && !$this->is_dismissed('welcome')) {
                 delete_option('total_hide_notice');
@@ -358,10 +358,11 @@ if (!class_exists('Total_Welcome')) :
 
             if (isset($_GET['total-hide-notice'], $_GET['total_notice_nonce'])) {
                 $notice = sanitize_key($_GET['total-hide-notice']);
-                check_admin_referer($notice, 'total_notice_nonce');
-                self::dismiss($notice);
-                wp_safe_redirect(remove_query_arg(array('total-hide-notice', 'total_notice_nonce' ), wp_get_referer()));
-                exit;
+                if (check_admin_referer($notice, 'total_notice_nonce')) {
+                    self::dismiss($notice);
+                    wp_safe_redirect(remove_query_arg(array('total-hide-notice', 'total_notice_nonce'), wp_get_referer()));
+                    exit;
+                }
             }
         }
 
@@ -371,7 +372,7 @@ if (!class_exists('Total_Welcome')) :
          * @param string $notice
          * @return void
          */
-        public static function dismiss( $notice ) {
+        public static function dismiss($notice) {
             $dismissed = get_option('total_dismissed_notices', array());
 
             if (!in_array($notice, $dismissed)) {
