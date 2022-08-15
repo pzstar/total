@@ -134,9 +134,7 @@ if (!class_exists('Total_Welcome')) :
                             <p><a href="<?php echo esc_url(admin_url('admin.php?page=total-welcome')); ?>" class="button button-primary"><?php esc_html_e('Go to Setting Page', 'total'); ?></a></p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
             <?php
         }
@@ -283,29 +281,6 @@ if (!class_exists('Total_Welcome')) :
         }
 
         /**
-         * Displays a notice asking for a review
-         *
-         * @return void
-         */
-        private function review_notice() {
-            ?>
-            <div class="total-notice notice notice-info">
-                <?php $this->dismiss_button('review'); ?>
-                <p>
-                    <?php
-                    printf(
-                            /* translators: %1$s is link start tag, %2$s is link end tag. */
-                            esc_html__('We have noticed that you have been using Total for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'total'), '<a href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>'
-                    );
-                    ?>
-                </p>
-                <a target="_blank" class="button action" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'total') ?></a> &nbsp;
-                <a class="button action" href="<?php echo esc_url(wp_nonce_url(add_query_arg('total-hide-notice', 'review'), 'review', 'total_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'total') ?></a>
-            </div>
-            <?php
-        }
-
-        /**
          * Has a notice been dismissed?
          *
          * @param string $notice Notice name
@@ -364,6 +339,29 @@ if (!class_exists('Total_Welcome')) :
                     exit;
                 }
             }
+        }
+        
+        /**
+         * Displays a notice asking for a review
+         *
+         * @return void
+         */
+        private function review_notice() {
+            ?>
+            <div class="total-notice notice notice-info">
+                <?php $this->dismiss_button('review'); ?>
+                <p>
+                    <?php
+                    printf(
+                            /* translators: %1$s is link start tag, %2$s is link end tag. */
+                            esc_html__('We have noticed that you have been using Total for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'total'), '<a href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>'
+                    );
+                    ?>
+                </p>
+                <a target="_blank" class="button action" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'total') ?></a> &nbsp;
+                <a class="button action" href="<?php echo esc_url(wp_nonce_url(add_query_arg('total-hide-notice', 'review'), 'review', 'total_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'total') ?></a>
+            </div>
+            <?php
         }
 
         /**
