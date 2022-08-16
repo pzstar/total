@@ -198,5 +198,5 @@ $wp_customize->add_setting('total_load_google_font_locally', array(
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_load_google_font_locally', array(
     'section' => 'total_google_font_section',
     'label' => esc_html__('Load Google Fonts Locally', 'total'),
-    'description' => esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with Google Fonts then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'total'),
+    'description' => esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with GDPR then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'total'),
 )));
