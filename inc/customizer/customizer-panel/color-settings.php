@@ -7,6 +7,7 @@ $wp_customize->get_section('colors')->priority = 30;
 $wp_customize->add_setting('total_template_color', array(
     'default' => '#FFC107',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_template_color', array(
@@ -35,6 +36,7 @@ $wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_col
 $wp_customize->add_setting('total_content_header_color', array(
     'default' => '#000000',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_content_header_color', array(
@@ -45,6 +47,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 $wp_customize->add_setting('total_content_text_color', array(
     'default' => '#333333',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_content_text_color', array(
@@ -55,6 +58,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 $wp_customize->add_setting('total_content_link_color', array(
     'default' => '#000000',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_content_link_color', array(
@@ -64,6 +68,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_content_link_hov_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_content_link_hov_color', array(

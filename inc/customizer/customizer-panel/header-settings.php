@@ -73,14 +73,17 @@ $wp_customize->add_control('total_hide_tagline', array(
 
 $wp_customize->add_setting('total_logo_width', array(
     'sanitize_callback' => 'total_sanitize_number_blank',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_logo_width_tablet', array(
     'sanitize_callback' => 'total_sanitize_number_blank',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_logo_width_mobile', array(
     'sanitize_callback' => 'total_sanitize_number_blank',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Responsive_Range_Slider_Control($wp_customize, 'total_logo_width', array(
@@ -99,7 +102,7 @@ $wp_customize->add_control(new Total_Responsive_Range_Slider_Control($wp_customi
 )));
 
 $wp_customize->add_setting('total_tl_color_heading', array(
-    'sanitize_callback' => 'total_sanitize_text',
+    'sanitize_callback' => 'total_sanitize_text'
 ));
 
 $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_tl_color_heading', array(
@@ -111,6 +114,7 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_tl_co
 $wp_customize->add_setting('total_title_color', array(
     'default' => '#000000',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_title_color', array(
@@ -121,6 +125,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 $wp_customize->add_setting('total_tagline_color', array(
     'default' => '#000000',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_tagline_color', array(
@@ -215,7 +220,8 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_mh_co
 )));
 
 $wp_customize->add_setting('total_mh_bg_color', array(
-    'sanitize_callback' => 'total_sanitize_color_alpha'
+    'sanitize_callback' => 'total_sanitize_color_alpha',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Alpha_Color_Control($wp_customize, 'total_mh_bg_color', array(
@@ -235,18 +241,22 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_mh_sp
 
 $wp_customize->add_setting('total_mh_spacing_left_desktop', array(
     'sanitize_callback' => 'total_sanitize_number_blank',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_mh_spacing_top_desktop', array(
     'sanitize_callback' => 'total_sanitize_number_blank',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_mh_spacing_bottom_desktop', array(
     'sanitize_callback' => 'total_sanitize_number_blank',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_mh_spacing_right_desktop', array(
     'sanitize_callback' => 'total_sanitize_number_blank',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Dimensions_Control($wp_customize, 'total_mh_spacing', array(
@@ -344,6 +354,7 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_pm_co
 
 $wp_customize->add_setting('total_pm_menu_link_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_menu_link_color', array(
@@ -353,6 +364,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_pm_menu_link_hover_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_menu_link_hover_color', array(
@@ -362,6 +374,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_pm_menu_hover_bg_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_menu_hover_bg_color', array(
@@ -381,6 +394,7 @@ $wp_customize->add_control(new Total_Separator_Control($wp_customize, 'total_pm_
 
 $wp_customize->add_setting('total_pm_submenu_bg_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_submenu_bg_color', array(
@@ -390,6 +404,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_pm_submenu_link_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_submenu_link_color', array(
@@ -399,6 +414,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_pm_submenu_link_hover_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_submenu_link_hover_color', array(
@@ -408,6 +424,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_pm_submenu_link_bg_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_pm_submenu_link_bg_color', array(

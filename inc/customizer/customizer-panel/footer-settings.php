@@ -61,40 +61,48 @@ $wp_customize->add_control(new Total_Selector_Control($wp_customize, 'total_foot
 
 $wp_customize->add_setting('total_footer_bg_url', array(
     'sanitize_callback' => 'esc_url_raw',
-    'default' => get_template_directory_uri() . '/images/footer-bg.jpg'
+    'default' => get_template_directory_uri() . '/images/footer-bg.jpg',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_footer_bg_id', array(
     'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_footer_bg_repeat', array(
     'default' => 'repeat',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_footer_bg_size', array(
     'default' => 'auto',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_footer_bg_position', array(
     'default' => 'center-center',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_footer_bg_attachment', array(
     'default' => 'scroll',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_footer_bg_color', array(
     'default' => '#222222',
     'sanitize_callback' => 'total_sanitize_color_alpha',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_footer_bg_overlay', array(
     'sanitize_callback' => 'total_sanitize_color_alpha',
+    'transport' => 'postMessage'
 ));
 
 // Registers example_background control
@@ -145,6 +153,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 $wp_customize->add_setting('total_top_footer_text_color', array(
     'default' => '#EEEEEE',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_top_footer_text_color', array(
@@ -155,6 +164,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 $wp_customize->add_setting('total_top_footer_anchor_color', array(
     'default' => '#EEEEEE',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_top_footer_anchor_color', array(
@@ -164,6 +174,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_top_footer_anchor_color_hover', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_top_footer_anchor_color_hover', array(
@@ -173,6 +184,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_bottom_footer_heading', array(
     'sanitize_callback' => 'total_sanitize_text',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_bottom_footer_heading', array(
@@ -183,6 +195,7 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_botto
 $wp_customize->add_setting('total_bottom_footer_bg_color', array(
     'sanitize_callback' => 'total_sanitize_color_alpha',
     'default' => 'rgba(0,0,0,0.1)',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Alpha_Color_Control($wp_customize, 'total_bottom_footer_bg_color', array(
@@ -193,6 +206,7 @@ $wp_customize->add_control(new Total_Alpha_Color_Control($wp_customize, 'total_b
 $wp_customize->add_setting('total_bottom_footer_text_color', array(
     'default' => '#EEEEEE',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_bottom_footer_text_color', array(
@@ -203,6 +217,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 $wp_customize->add_setting('total_bottom_footer_anchor_color', array(
     'default' => '#EEEEEE',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_bottom_footer_anchor_color', array(
@@ -212,6 +227,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 
 $wp_customize->add_setting('total_bottom_footer_anchor_color_hover', array(
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_bottom_footer_anchor_color_hover', array(
