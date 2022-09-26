@@ -10,6 +10,7 @@ function total_dymanic_styles() {
         return;
 
     $custom_css = $tablet_css = $mobile_css = "";
+
     $color = get_theme_mod('total_template_color', '#FFC107');
     $color_rgba = total_hex2rgba($color, 0.9);
     $darker_color = total_color_brightness($color, -0.9);
@@ -18,6 +19,73 @@ function total_dymanic_styles() {
     $primary_width = 100 - 4 - $sidebar_width;
 
     $website_layout = get_theme_mod('total_website_layout', 'wide');
+    $container_width = get_theme_mod('total_wide_container_width', 1170);
+    $fluid_container_width = get_theme_mod('total_fluid_container_width', 80);
+    $container_padding = get_theme_mod('total_container_padding', 80);
+    
+    $content_header_color = get_theme_mod('total_content_header_color', '#000000');
+    $content_text_color = get_theme_mod('total_content_text_color', '#333333');
+    $content_link_color = get_theme_mod('total_content_link_color', '#000000');
+    $content_link_hov_color = get_theme_mod('total_content_link_hov_color');
+    $title_color = get_theme_mod('total_title_color', '#333333');
+    $tagline_color = get_theme_mod('total_tagline_color', '#333333');
+    $logo_width = get_theme_mod('total_logo_width');
+    $logo_width_tablet = get_theme_mod('total_logo_width_tablet');
+    $logo_width_mobile = get_theme_mod('total_logo_width_mobile');
+    $mh_bg_color = get_theme_mod('total_mh_bg_color');
+    $menu_link_color = get_theme_mod('total_pm_menu_link_color');
+    $menu_link_hover_color = get_theme_mod('total_pm_menu_link_hover_color');
+    $menu_link_hover_bg_color = get_theme_mod('total_pm_menu_hover_bg_color');
+    $submenu_bg_color = get_theme_mod('total_pm_submenu_bg_color');
+    $submenu_link_color = get_theme_mod('total_pm_submenu_link_color');
+    $submenu_link_hover_color = get_theme_mod('total_pm_submenu_link_hover_color');
+    $submenu_link_hover_bg_color = get_theme_mod('total_pm_submenu_link_bg_color');
+    $top_footer_title_color = get_theme_mod('total_top_footer_title_color', '#EEEEEE');
+    $top_footer_text_color = get_theme_mod('total_top_footer_text_color', '#EEEEEE');
+    $top_footer_anchor_color = get_theme_mod('total_top_footer_anchor_color', '#EEEEEE');
+    $top_footer_anchor_color_hover = get_theme_mod('total_top_footer_anchor_color_hover');
+    $bottom_footer_text_color = get_theme_mod('total_bottom_footer_text_color', '#EEEEEE');
+    $bottom_footer_anchor_color = get_theme_mod('total_bottom_footer_anchor_color', '#EEEEEE');
+    $bottom_footer_anchor_color_hover = get_theme_mod('total_bottom_footer_anchor_color_hover');
+    $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color');
+    $service_left_bg = get_theme_mod('total_service_left_bg');
+    $counter_bg = get_theme_mod('total_counter_bg');
+    $cta_bg = get_theme_mod('total_cta_bg');
+
+    $custom_css .= ":root {
+        --total-color: {$color};
+        --total-transparent-color: {$color_rgba};
+        --total-darker-color: {$darker_color};
+        --total-sidebar-width: {$sidebar_width}%;
+        --total-primary-width: {$primary_width}%;   
+        --total-container-width: {$container_width}px;   
+        --total-fluid-container-width: {$fluid_container_width}%;  
+        --total-container-padding: {$container_padding}px;   
+            }";
+
+    $custom_css .= ":root {" .
+            total_typography_vars('total_body').
+            total_typography_vars('total_menu').
+            total_typography_vars('total_h')
+            . "}";
+
+    $enable_header_border = get_theme_mod('total_enable_header_border', true);
+    $enable_footer_border = get_theme_mod('total_enable_footer_border', true);
+
+    if ($enable_header_border) {
+        $custom_css .= ".ht-header{border-top: 4px solid {$color}}";
+    }
+
+    if ($enable_footer_border) {
+        $custom_css .= "#ht-colophon{border-top: 4px solid {$color}}";
+    }
+
+
+
+
+
+
+
     if ($website_layout == 'wide') {
         $container_width = get_theme_mod('total_wide_container_width', 1170);
     } elseif ($website_layout == 'fluid') {
@@ -260,16 +328,7 @@ function total_dymanic_styles() {
         }   
     }";
 
-    $total_enable_header_border = get_theme_mod('total_enable_header_border', true);
-    $total_enable_footer_border = get_theme_mod('total_enable_footer_border', true);
 
-    if ($total_enable_header_border) {
-        $custom_css .= ".ht-header{border-top: 4px solid {$color}}";
-    }
-
-    if ($total_enable_footer_border) {
-        $custom_css .= "#ht-colophon{border-top: 4px solid {$color}}";
-    }
     /* =============== Typography CSS =============== */
     $custom_css .= total_typography_css('total_body', 'html, body, button, input, select, textarea', array(
         'family' => 'Poppins',
@@ -494,12 +553,12 @@ function total_dymanic_styles() {
     }
 
     /* =============== Front Page Sections =============== */
-    $total_service_left_bg = get_theme_mod('total_service_left_bg');
-    $total_counter_bg = get_theme_mod('total_counter_bg');
-    $total_cta_bg = get_theme_mod('total_cta_bg');
-    $custom_css .= '.ht-service-left-bg{ background-image:url(' . esc_url($total_service_left_bg) . ');}';
-    $custom_css .= '#ht-counter-section{ background-image:url(' . esc_url($total_counter_bg) . ');}';
-    $custom_css .= '#ht-cta-section{ background-image:url(' . esc_url($total_cta_bg) . ');}';
+    $service_left_bg = get_theme_mod('total_service_left_bg');
+    $counter_bg = get_theme_mod('total_counter_bg');
+    $cta_bg = get_theme_mod('total_cta_bg');
+    $custom_css .= '.ht-service-left-bg{ background-image:url(' . esc_url($service_left_bg) . ');}';
+    $custom_css .= '#ht-counter-section{ background-image:url(' . esc_url($counter_bg) . ');}';
+    $custom_css .= '#ht-cta-section{ background-image:url(' . esc_url($cta_bg) . ');}';
 
     if ($website_layout != 'fluid') {
         $custom_css .= "@media screen and (max-width:{$container_width}px){
@@ -529,4 +588,41 @@ function total_dymanic_styles() {
     $custom_css .= "@media screen and (max-width:480px){{$mobile_css}}";
 
     return total_css_strip_whitespace($custom_css);
+}
+
+function total_typography_vars($key) {
+    if (!$key) {
+        return;
+    }
+    $css = array();
+
+    $family = get_theme_mod($key . '_family');
+    $style = get_theme_mod($key . '_style');
+    $text_decoration = get_theme_mod($key . '_text_decoration');
+    $text_transform = get_theme_mod($key . '_text_transform');
+    $size = get_theme_mod($key . '_size');
+    $line_height = get_theme_mod($key . '_line_height');
+    $letter_spacing = get_theme_mod($key . '_letter_spacing');
+    $color = get_theme_mod($key . '_color');
+
+    if (strpos($style, 'italic')) {
+        $italic = 'italic';
+    }
+
+    $weight = absint($style);
+    $key = str_replace('_', '-', $key);
+
+    $css[] = (!empty($family) && $family != 'Default') ? "--" . $key . "-family: '{$family}', serif" : NULL;
+    $css[] = !empty($weight) ? "--" . $key . "-weight: {$weight}" : NULL;
+    $css[] = !empty($italic) ? "--" . $key . "-style: {$italic}" : NULL;
+    $css[] = !empty($text_transform) ? "--" . $key . "-text-transform: {$text_transform}" : NULL;
+    $css[] = !empty($text_decoration) ? "--" . $key . "-text-decoration: {$text_decoration}" : NULL;
+    $css[] = !empty($size) ? "--" . $key . "-font-size: {$size}px" : NULL;
+    $css[] = !empty($line_height) ? "--" . $key . "-line-height: {$line_height}" : NULL;
+    $css[] = !empty($letter_spacing) ? "--" . $key . "-letter-spacing: {$letter_spacing}px" : NULL;
+    $css[] = !empty($color) ? "--" . $key . "-color: {$color}" : NULL;
+
+    $css = array_filter($css);
+
+    return implode(';', $css);
 }
