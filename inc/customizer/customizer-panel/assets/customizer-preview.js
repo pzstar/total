@@ -32,7 +32,6 @@ function totalConvertHex(hexcolor, opacity) {
 
     wp.customize('total_wide_container_width', function (value) {
         value.bind(function (to) {
-            console.log(to);
             var css = '--total-container-width:' + to + 'px;';
             totalDynamicCss('total_wide_container_width', css);
         });
@@ -40,7 +39,6 @@ function totalConvertHex(hexcolor, opacity) {
 
     wp.customize('total_fluid_container_width', function (value) {
         value.bind(function (to) {
-            console.log(to);
             var css = '--total-fluid-container-width:' + to + '%;';
             totalDynamicCss('total_fluid_container_width', css);
         });
@@ -48,7 +46,6 @@ function totalConvertHex(hexcolor, opacity) {
 
     wp.customize('total_sidebar_width', function (value) {
         value.bind(function (to) {
-            console.log(to);
             var css = '--total-sidebar-width:' + to + '%;';
             totalDynamicCss('total_sidebar_width', css);
         });
@@ -56,7 +53,6 @@ function totalConvertHex(hexcolor, opacity) {
 
     wp.customize('total_container_padding', function (value) {
         value.bind(function (to) {
-            console.log(to);
             var css = '--total-container-padding:' + to + 'px;';
             totalDynamicCss('total_container_padding', css);
         });

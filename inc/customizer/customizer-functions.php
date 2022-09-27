@@ -101,6 +101,83 @@ function total_is_upgrade_notice_active() {
     return !$show_upgrade_notice;
 }
 
+function total_customizer_settings($wp_customize) {
+    if (class_exists('TotalPlus') && version_compare(TOTALPLUS_VERSION, '2.0.8') <= 0) {
+        $settings = array(
+            'total_template_color',
+            'total_wide_container_width',
+            'total_fluid_container_width',
+            'total_sidebar_width',
+            'total_container_padding',
+            'total_content_header_color',
+            'total_content_text_color',
+            'total_content_link_color',
+            'total_content_link_hov_color',
+            'total_title_color',
+            'total_tagline_color',
+            'total_logo_width',
+            'total_logo_width_tablet',
+            'total_logo_width_mobile',
+            'total_mh_bg_color',
+            'total_mh_spacing_left_desktop',
+            'total_mh_spacing_top_desktop',
+            'total_mh_spacing_bottom_desktop',
+            'total_mh_spacing_right_desktop',
+            'total_pm_menu_link_color',
+            'total_pm_menu_link_hover_color',
+            'total_pm_menu_hover_bg_color',
+            'total_pm_submenu_bg_color',
+            'total_pm_submenu_link_color',
+            'total_pm_submenu_link_hover_color',
+            'total_pm_submenu_link_bg_color',
+            'total_footer_bg_url',
+            'total_footer_bg_size',
+            'total_footer_bg_repeat',
+            'total_footer_bg_position',
+            'total_footer_bg_attachment',
+            'total_footer_bg_color',
+            'total_footer_bg_overlay',
+            'total_top_footer_title_color',
+            'total_top_footer_text_color',
+            'total_top_footer_anchor_color',
+            'total_top_footer_anchor_color_hover',
+            'total_bottom_footer_text_color',
+            'total_bottom_footer_anchor_color',
+            'total_bottom_footer_anchor_color_hover',
+            'total_bottom_footer_bg_color',
+            'total_service_left_bg',
+            'total_counter_bg',
+            'total_cta_bg',
+            'total_body_family',
+            'total_body_style',
+            'total_body_text_transform',
+            'total_body_text_decoration',
+            'total_body_size',
+            'total_body_letter_spacing',
+            'total_body_line_height',
+            'total_body_color',
+            'total_menu_family',
+            'total_menu_style',
+            'total_menu_text_transform',
+            'total_menu_text_decoration',
+            'total_menu_size',
+            'total_menu_letter_spacing',
+            'total_menu_line_height',
+            'total_h_family',
+            'total_h_style',
+            'total_h_text_transform',
+            'total_h_text_decoration',
+            'total_h_letter_spacing',
+            'total_h_line_height'
+        );
+
+        foreach ($settings as $setting) {
+            $wp_customize->get_setting($setting)->transport = 'refresh';
+        }
+    }
+}
+
+add_action('customize_register', 'total_customizer_settings', 100);
 
 if (!function_exists('total_icon_box_selector')) {
 

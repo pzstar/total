@@ -49,7 +49,7 @@ $wp_customize->add_control('total_website_layout', array(
 $wp_customize->add_setting('total_fluid_container_width', array(
     'sanitize_callback' => 'absint',
     'default' => 80,
-    'transport' => 'PostMessage'
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Range_Slider_Control($wp_customize, 'total_fluid_container_width', array(
@@ -65,7 +65,7 @@ $wp_customize->add_control(new Total_Range_Slider_Control($wp_customize, 'total_
 $wp_customize->add_setting('total_wide_container_width', array(
     'sanitize_callback' => 'absint',
     'default' => 1170,
-    'transport' => 'PostMessage'
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Range_Slider_Control($wp_customize, 'total_wide_container_width', array(
@@ -81,7 +81,7 @@ $wp_customize->add_control(new Total_Range_Slider_Control($wp_customize, 'total_
 $wp_customize->add_setting('total_container_padding', array(
     'sanitize_callback' => 'absint',
     'default' => 80,
-    'transport' => 'PostMessage'
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Range_Slider_Control($wp_customize, 'total_container_padding', array(
