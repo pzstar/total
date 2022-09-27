@@ -446,31 +446,37 @@ $wp_customize->add_setting('total_menu_family', array(
 $wp_customize->add_setting('total_menu_style', array(
     'default' => '400',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_menu_text_decoration', array(
     'default' => 'none',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_menu_text_transform', array(
     'default' => 'uppercase',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_menu_size', array(
     'default' => '14',
     'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_menu_line_height', array(
     'default' => '2.6',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_menu_letter_spacing', array(
     'default' => '0',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Typography_Control($wp_customize, 'total_menu', array(

@@ -131,11 +131,6 @@ $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable
     'label' => esc_html__('Enable Footer Top Border', 'total')
 )));
 
-$wp_customize->add_setting('total_top_footer_title_color', array(
-    'default' => '#EEEEEE',
-    'sanitize_callback' => 'sanitize_hex_color',
-));
-
 $wp_customize->add_setting('total_top_footer_heading', array(
     'sanitize_callback' => 'total_sanitize_text',
 ));
@@ -144,6 +139,12 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_top_f
     'section' => 'total_footer_settings',
     'label' => esc_html__('Top Footer', 'total'),
 )));
+
+$wp_customize->add_setting('total_top_footer_title_color', array(
+    'default' => '#EEEEEE',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
+));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_top_footer_title_color', array(
     'section' => 'total_footer_settings',

@@ -9,11 +9,10 @@ function total_dymanic_styles() {
     if (!$dynamic_css)
         return;
 
-    $custom_css = $tablet_css = $mobile_css = "";
+    $custom_css = "";
 
     $color = get_theme_mod('total_template_color', '#FFC107');
     $color_rgba = total_hex2rgba($color, 0.9);
-    $darker_color = total_color_brightness($color, -0.9);
 
     $sidebar_width = get_theme_mod('total_sidebar_width', 30);
 
@@ -42,7 +41,7 @@ function total_dymanic_styles() {
     $footer_bg_url = get_theme_mod('total_footer_bg_url', get_template_directory_uri() . '/images/footer-bg.jpg');
     $footer_bg_size = get_theme_mod('total_footer_bg_size', 'auto');
     $footer_bg_repeat = get_theme_mod('total_footer_bg_repeat', 'repeat');
-    $footer_bg_position = get_theme_mod('total_footer_bg_position', 'repeat');
+    $footer_bg_position = str_replace('-', ' ', get_theme_mod('total_footer_bg_position', 'center-center'));
     $footer_bg_attachment = get_theme_mod('total_footer_bg_attachment', 'scroll');
     $footer_bg_color = get_theme_mod('total_footer_bg_color', '#222222');
     $footer_bg_overlay = get_theme_mod('footer_bg_overlay');
@@ -105,17 +104,17 @@ function total_dymanic_styles() {
         $custom_css .= "--total-submenu-link-hover-bg-color: {$submenu_link_hover_bg_color};";
     }
 
-    if ($total_footer_bg_url) {
-        $custom_css .= "--total-footer-bg-url: url({$total_footer_bg_url});";
-        $custom_css .= "--total-footer-bg-size: {$total_footer_bg_size};";
-        $custom_css .= "--total-footer-bg-repeat: {$total_footer_bg_repeat};";
-        $custom_css .= "--total-footer-bg-position: {$total_footer_bg_position};";
-        $custom_css .= "--total-footer-bg-attachment: {$total_footer_bg_attachment};";
-        $custom_css .= "--total-footer-bg-overlay: {$total_footer_bg_overlay};";
+    if ($footer_bg_url) {
+        $custom_css .= "--total-footer-bg-url: url({$footer_bg_url});";
+        $custom_css .= "--total-footer-bg-size: {$footer_bg_size};";
+        $custom_css .= "--total-footer-bg-repeat: {$footer_bg_repeat};";
+        $custom_css .= "--total-footer-bg-position: {$footer_bg_position};";
+        $custom_css .= "--total-footer-bg-attachment: {$footer_bg_attachment};";
+        $custom_css .= "--total-footer-bg-overlay: {$footer_bg_overlay};";
     }
 
-    if ($total_footer_bg_color) {
-        $custom_css .= "--total-footer-bg-color: {$total_footer_bg_color};";
+    if ($footer_bg_color) {
+        $custom_css .= "--total-footer-bg-color: {$footer_bg_color};";
     }
 
     if ($top_footer_title_color) {
@@ -166,128 +165,7 @@ function total_dymanic_styles() {
         $custom_css .= "#ht-colophon{border-top: 4px solid var(--total-template-color)}";
     }
 
-
     /* =============== Typography CSS =============== */
-    $custom_css .= total_typography_css('total_body', 'html, body, button, input, select, textarea', array(
-        'family' => 'Poppins',
-        'style' => '400',
-        'text_transform' => 'none',
-        'text_decoration' => 'none',
-        'size' => '16',
-        'line_height' => '1.6',
-        'letter_spacing' => '0',
-        'color' => '#444444'
-    ));
-
-    $custom_css .= total_typography_css('total_menu', '.ht-menu > ul > li > a', array(
-        'family' => 'Oswald',
-        'style' => '400',
-        'text_transform' => 'uppercase',
-        'text_decoration' => 'none',
-        'size' => '14',
-        'line_height' => '2.6',
-        'letter_spacing' => '0'
-    ));
-
-    $custom_css .= total_typography_css('total_h', 'h1, h2, h3, h4, h5, h6, .ht-site-title, .ht-slide-cap-title, .ht-counter-count', array(
-        'family' => 'Oswald',
-        'style' => '400',
-        'text_transform' => 'none',
-        'text_decoration' => 'none',
-        'line_height' => '1.3',
-        'letter_spacing' => '0'
-    ));
-
-    $i_font_size = get_theme_mod('total_menu_font_size', '14');
-    $i_font_family = get_theme_mod('total_menu_family', 'Oswald');
-    $custom_css .= ".ht-menu ul ul{
-            font-size: {$i_font_size}px;
-            font-family: {$i_font_family};
-	}";
-
-    $custom_css .= "
-        @media screen and (max-width: 1000px){
-            #ht-site-navigation .ht-menu{background-color: $submenu_bg_color;}
-            .ht-menu > ul > li.menu-item > a{color: $submenu_link_color;}
-            .ht-menu > ul > li.menu-item:hover > a, 
-            .ht-menu > ul > li.menu-item.current_page_item > a, 
-            .ht-menu > ul > li.menu-item.current-menu-item > a, 
-            .ht-menu > ul > li.menu-item.current_page_ancestor > a, 
-            .ht-menu > ul > li.menu-item.current > a{
-                color: $submenu_link_hover_color;
-                background-color: $submenu_link_hover_bg_color;
-            }
-            
-        }
-        ";
-
-    /* =============== Footer Settings =============== */
-    $top_footer_title_color = get_theme_mod('total_top_footer_title_color', '#EEEEEE');
-    $top_footer_text_color = get_theme_mod('total_top_footer_text_color', '#EEEEEE');
-    $top_footer_anchor_color = get_theme_mod('total_top_footer_anchor_color', '#EEEEEE');
-    $top_footer_anchor_color_hover = get_theme_mod('total_top_footer_anchor_color_hover');
-    $bottom_footer_text_color = get_theme_mod('total_bottom_footer_text_color', '#EEEEEE');
-    $bottom_footer_anchor_color = get_theme_mod('total_bottom_footer_anchor_color', '#EEEEEE');
-    $bottom_footer_anchor_color_hover = get_theme_mod('total_bottom_footer_anchor_color_hover');
-    $bottom_footer_bg_color = get_theme_mod('total_bottom_footer_bg_color');
-
-    $custom_css .= total_background_css('total_footer_bg', '#ht-colophon', array(
-        'url' => get_template_directory_uri() . '/images/footer-bg.jpg',
-        'repeat' => 'repeat',
-        'size' => 'auto',
-        'position' => 'center-center',
-        'attachment' => 'scroll',
-        'color' => '#222222',
-        'overlay' => ''
-    ));
-
-    $custom_css .= "
-    .ht-main-footer .widget-title{
-        color: {$top_footer_title_color};
-    }
-
-    .ht-main-footer .ht-footer{
-        color: {$top_footer_text_color};
-    }
-
-    .ht-main-footer a{
-        color: {$top_footer_anchor_color};
-    }";
-
-    if ($top_footer_anchor_color_hover) {
-        $custom_css .= "
-        .ht-main-footer a:hover{
-            color: {$top_footer_anchor_color_hover};
-        }";
-    }
-
-    $custom_css .= "
-    #ht-bottom-footer{
-        color: {$bottom_footer_text_color};
-    }
-
-    #ht-bottom-footer a{
-        color: {$bottom_footer_anchor_color};
-    }";
-
-    if ($bottom_footer_anchor_color_hover) {
-        $custom_css .= "
-        #ht-bottom-footer a:hover{
-            color: {$bottom_footer_anchor_color_hover};
-        }";
-    }
-
-    if ($bottom_footer_bg_color) {
-        $custom_css .= "#ht-bottom-footer{background-color:$bottom_footer_bg_color}";
-    }
-
-    /* =============== Front Page Sections =============== */
-    $service_left_bg = get_theme_mod('total_service_left_bg');
-    $counter_bg = get_theme_mod('total_counter_bg');
-    $cta_bg = get_theme_mod('total_cta_bg');
-    $custom_css .= '.ht-service-left-bg{ background-image:url(' . esc_url($service_left_bg) . ');}';
-    $custom_css .= '#ht-counter-section{ background-image:url(' . esc_url($counter_bg) . ');}';
-    $custom_css .= '#ht-cta-section{ background-image:url(' . esc_url($cta_bg) . ');}';
 
     if ($website_layout != 'fluid') {
         $custom_css .= "@media screen and (max-width:{$container_width}px){
@@ -312,9 +190,6 @@ function total_dymanic_styles() {
         $container_half_width = $container_width / 2;
         $custom_css .= ".ht-slide-caption{ width: {$container_width}%; margin-left: -{$container_half_width}%; }";
     }
-
-    $custom_css .= "@media screen and (max-width:768px){{$tablet_css}}";
-    $custom_css .= "@media screen and (max-width:480px){{$mobile_css}}";
 
     return total_css_strip_whitespace($custom_css);
 }
@@ -347,7 +222,7 @@ function total_typography_vars($keys) {
         $css[] = !empty($italic) ? "--" . $key . "-style: {$italic}" : NULL;
         $css[] = !empty($text_transform) ? "--" . $key . "-text-transform: {$text_transform}" : NULL;
         $css[] = !empty($text_decoration) ? "--" . $key . "-text-decoration: {$text_decoration}" : NULL;
-        $css[] = !empty($size) ? "--" . $key . "-font-size: {$size}px" : NULL;
+        $css[] = !empty($size) ? "--" . $key . "-size: {$size}px" : NULL;
         $css[] = !empty($line_height) ? "--" . $key . "-line-height: {$line_height}" : NULL;
         $css[] = !empty($letter_spacing) ? "--" . $key . "-letter-spacing: {$letter_spacing}px" : NULL;
         $css[] = !empty($color) ? "--" . $key . "-color: {$color}" : NULL;

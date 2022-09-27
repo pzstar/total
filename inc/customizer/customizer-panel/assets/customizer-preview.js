@@ -29,7 +29,7 @@ function totalConvertHex(hexcolor, opacity) {
             totalDynamicCss('total_template_color', css);
         });
     });
-    
+
     wp.customize('total_wide_container_width', function (value) {
         value.bind(function (to) {
             console.log(to);
@@ -45,7 +45,7 @@ function totalConvertHex(hexcolor, opacity) {
             totalDynamicCss('total_fluid_container_width', css);
         });
     });
-    
+
     wp.customize('total_sidebar_width', function (value) {
         value.bind(function (to) {
             console.log(to);
@@ -131,28 +131,28 @@ function totalConvertHex(hexcolor, opacity) {
             totalDynamicCss('total_mh_bg_color', css);
         });
     });
-    
+
     wp.customize('total_mh_spacing_left_desktop', function (value) {
         value.bind(function (to) {
             var css = '--total-mh-spacing-left:' + to + 'px;';
             totalDynamicCss('total_mh_spacing_left_desktop', css);
         });
     });
-    
+
     wp.customize('total_mh_spacing_top_desktop', function (value) {
         value.bind(function (to) {
             var css = '--total-mh-spacing-top:' + to + 'px;';
             totalDynamicCss('total_mh_spacing_top_desktop', css);
         });
     });
-    
+
     wp.customize('total_mh_spacing_bottom_desktop', function (value) {
         value.bind(function (to) {
             var css = '--total-mh-spacing-bottom:' + to + 'px;';
             totalDynamicCss('total_mh_spacing_bottom_desktop', css);
         });
     });
-    
+
     wp.customize('total_mh_spacing_right_desktop', function (value) {
         value.bind(function (to) {
             var css = '--total-mh-spacing-right:' + to + 'px;';
@@ -206,6 +206,63 @@ function totalConvertHex(hexcolor, opacity) {
         value.bind(function (to) {
             var css = '--total-submenu-link-hover-bg-color:' + to + ';';
             totalDynamicCss('total_pm_submenu_link_bg_color', css);
+        });
+    });
+
+    wp.customize('total_footer_bg_url', function (value) {
+        value.bind(function (to) {
+            var css = '--total-footer-bg-url:url(' + to + ');';
+            totalDynamicCss('total_footer_bg_url', css);
+            if (to) {
+                var overlay = wp.customize('total_footer_bg_overlay').get();
+                var overlaycss = '--total-footer-bg-overlay:' + overlay + ';';
+                totalDynamicCss('total_footer_bg_overlay', overlaycss);
+            } else {
+                var overlaycss = '--total-footer-bg-overlay: ;';
+                totalDynamicCss('total_footer_bg_overlay', overlaycss);
+            }
+        });
+    });
+
+    wp.customize('total_footer_bg_size', function (value) {
+        value.bind(function (to) {
+            var css = '--total-footer-bg-size:' + to + ';';
+            totalDynamicCss('total_footer_bg_size', css);
+        });
+    });
+
+    wp.customize('total_footer_bg_repeat', function (value) {
+        value.bind(function (to) {
+            var css = '--total-footer-bg-repeat:' + to + ';';
+            totalDynamicCss('total_footer_bg_repeat', css);
+        });
+    });
+
+    wp.customize('total_footer_bg_position', function (value) {
+        value.bind(function (to) {
+            var css = '--total-footer-bg-position:' + to.replace('-', ' ') + ';';
+            totalDynamicCss('total_footer_bg_position', css);
+        });
+    });
+
+    wp.customize('total_footer_bg_attachment', function (value) {
+        value.bind(function (to) {
+            var css = '--total-footer-bg-attachment:' + to + ';';
+            totalDynamicCss('total_footer_bg_attachment', css);
+        });
+    });
+
+    wp.customize('total_footer_bg_color', function (value) {
+        value.bind(function (to) {
+            var css = '--total-footer-bg-color:' + to + ';';
+            totalDynamicCss('total_footer_bg_color', css);
+        });
+    });
+
+    wp.customize('total_footer_bg_overlay', function (value) {
+        value.bind(function (to) {
+            var css = '--total-footer-bg-overlay:' + to + ';';
+            totalDynamicCss('total_footer_bg_overlay', css);
         });
     });
 
@@ -283,6 +340,171 @@ function totalConvertHex(hexcolor, opacity) {
         value.bind(function (to) {
             var css = '--total-cta-bg:' + to + ';';
             totalDynamicCss('total_cta_bg', css);
+        });
+    });
+
+    wp.customize('total_body_family', function (value) {
+        value.bind(function (to) {
+            var css = '--total-body-family:' + to + ';';
+            totalDynamicCss('total_body_family', css);
+        });
+    });
+
+    wp.customize('total_body_style', function (value) {
+        value.bind(function (to) {
+            var weight = to.replace(/\D/g, '');
+            var style = to.replace(/\d+/g, '');
+            if ('' == style) {
+                style = 'normal';
+            }
+            var css = '--total-body-weight:' + weight + ';';
+            css += '--total-body-style:' + style + ';';
+            totalDynamicCss('total_body_style', css);
+        });
+    });
+
+    wp.customize('total_body_text_transform', function (value) {
+        value.bind(function (to) {
+            var css = '--total-body-text-transform:' + to + ';';
+            totalDynamicCss('total_body_text_transform', css);
+        });
+    });
+
+    wp.customize('total_body_text_decoration', function (value) {
+        value.bind(function (to) {
+            var css = '--total-body-text-decoration:' + to + ';';
+            totalDynamicCss('total_body_text_decoration', css);
+        });
+    });
+
+    wp.customize('total_body_size', function (value) {
+        value.bind(function (to) {
+            var css = '--total-body-size:' + to + 'px;';
+            totalDynamicCss('total_body_size', css);
+        });
+    });
+
+    wp.customize('total_body_letter_spacing', function (value) {
+        value.bind(function (to) {
+            var css = '--total-body-letter-spacing:' + to + 'px;';
+            totalDynamicCss('total_body_letter_spacing', css);
+        });
+    });
+
+    wp.customize('total_body_line_height', function (value) {
+        value.bind(function (to) {
+            var css = '--total-body-line-height:' + to + ';';
+            totalDynamicCss('total_body_line_height', css);
+        });
+    });
+
+    wp.customize('total_body_color', function (value) {
+        value.bind(function (to) {
+            var css = '--total-body-color:' + to + ';';
+            totalDynamicCss('total_body_color', css);
+        });
+    });
+
+    wp.customize('total_menu_family', function (value) {
+        value.bind(function (to) {
+            var css = '--total-menu-family:' + to + ';';
+            totalDynamicCss('total_menu_family', css);
+        });
+    });
+
+    wp.customize('total_menu_style', function (value) {
+        value.bind(function (to) {
+            var weight = to.replace(/\D/g, '');
+            var style = to.replace(/\d+/g, '');
+            if ('' == style) {
+                style = 'normal';
+            }
+            var css = '--total-menu-weight:' + weight + ';';
+            css += '--total-menu-style:' + style + ';';
+            totalDynamicCss('total_menu_style', css);
+        });
+    });
+
+    wp.customize('total_menu_text_transform', function (value) {
+        value.bind(function (to) {
+            var css = '--total-menu-text-transform:' + to + ';';
+            totalDynamicCss('total_menu_text_transform', css);
+        });
+    });
+
+    wp.customize('total_menu_text_decoration', function (value) {
+        value.bind(function (to) {
+            var css = '--total-menu-text-decoration:' + to + ';';
+            totalDynamicCss('total_menu_text_decoration', css);
+        });
+    });
+
+    wp.customize('total_menu_size', function (value) {
+        value.bind(function (to) {
+            var css = '--total-menu-size:' + to + 'px;';
+            totalDynamicCss('total_menu_size', css);
+        });
+    });
+
+    wp.customize('total_menu_letter_spacing', function (value) {
+        value.bind(function (to) {
+            var css = '--total-menu-letter-spacing:' + to + 'px;';
+            totalDynamicCss('total_menu_letter_spacing', css);
+        });
+    });
+
+    wp.customize('total_menu_line_height', function (value) {
+        value.bind(function (to) {
+            var css = '--total-menu-line-height:' + to + ';';
+            totalDynamicCss('total_menu_line_height', css);
+        });
+    });
+
+    wp.customize('total_h_family', function (value) {
+        value.bind(function (to) {
+            var css = '--total-h-family:' + to + ';';
+            totalDynamicCss('total_h_family', css);
+        });
+    });
+
+    wp.customize('total_h_style', function (value) {
+        value.bind(function (to) {
+            var weight = to.replace(/\D/g, '');
+            var style = to.replace(/\d+/g, '');
+            if ('' == style) {
+                style = 'normal';
+            }
+            var css = '--total-h-weight:' + weight + ';';
+            css += '--total-h-style:' + style + ';';
+            totalDynamicCss('total_h_style', css);
+        });
+    });
+
+    wp.customize('total_h_text_transform', function (value) {
+        value.bind(function (to) {
+            var css = '--total-h-text-transform:' + to + ';';
+            totalDynamicCss('total_h_text_transform', css);
+        });
+    });
+
+    wp.customize('total_h_text_decoration', function (value) {
+        value.bind(function (to) {
+            var css = '--total-h-text-decoration:' + to + ';';
+            totalDynamicCss('total_h_text_decoration', css);
+        });
+    });
+
+    wp.customize('total_h_letter_spacing', function (value) {
+        value.bind(function (to) {
+            var css = '--total-h-letter-spacing:' + to + 'px;';
+            totalDynamicCss('total_h_letter_spacing', css);
+        });
+    });
+
+    wp.customize('total_h_line_height', function (value) {
+        value.bind(function (to) {
+            var css = '--total-h-line-height:' + to + ';';
+            totalDynamicCss('total_h_line_height', css);
         });
     });
 

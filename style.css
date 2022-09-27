@@ -234,11 +234,15 @@ button,
 input,
 select,
 textarea {
-    color: #444;
-    font-size: 17px;
-    line-height: 1.6;
-    font-family: 'Pontano Sans', sans-serif;
-    font-weight: 400;
+    color: var(--total-body-color, #444);
+    font-size: var(--total-body-size, 17px);
+    letter-spacing: var(--total-body-letter-spacing, 0);
+    line-height: var(--total-body-line-height, 1.6);
+    font-family: var(--total-body-family, 'Pontano Sans', sans-serif);
+    font-weight: var(--total-body-weight, 400);
+    font-style: var(--total-body-style, normal);
+    text-decoration: var(--total-body-text-decoration, none);
+    text-transform: var(--total-body-text-transform, none);
 }
 
 h1,
@@ -246,41 +250,47 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-    margin: 0;
-    font-weight: 300;
-    line-height: 1.2;
-    font-family: 'Oswald', sans-serif;
+h6,
+.ht-site-title, 
+.ht-slide-cap-title, 
+.ht-counter-count{
+    font-family: var(--total-h-family, Oswald);
+    letter-spacing: var(--total-h-letter-spacing, 0);
+    line-height: var(--total-h-line-height, 1.3);
+    font-weight: var(--total-h-weight, 400);
+    font-style: var(--total-bhstyle, normal);
+    text-decoration: var(--total-h-text-decoration, none);
+    text-transform: var(--total-h-text-transform, none);
 }
 
 h1{
     font-size: 28px;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
 }
 
 h2{
     font-size: 26px;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
 }
 
 h3{
     font-size: 24px;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
 }
 
 h4{
     font-size: 22px;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
 h5{
     font-size: 20px;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
 h6{
     font-size: 18px;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 p {
     margin:0 0 15px;
@@ -902,7 +912,6 @@ a:active {
 }
 
 .entry-header .entry-title{
-    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
@@ -1549,6 +1558,8 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 }
 
 .ht-menu ul ul {
+    font-size: var(--total-menu-size, 14);
+    font-family: var(--total-menu-family, Oswald);
     display: none;
     position: absolute;
     left: 0;
@@ -1605,6 +1616,14 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 }
 
 .ht-menu > ul > li.menu-item > a{
+    font-family: var(--total-menu-family, Oswald);
+    font-size: var(--total-menu-size, 14px);
+    letter-spacing: var(--total-menu-letter-spacing, 0);
+    line-height: var(--total-menu-line-height, 2.6);
+    font-weight: var(--total-menu-weight, 400);
+    font-style: var(--total-menu-style, normal);
+    text-decoration: var(--total-menu-text-decoration, none);
+    text-transform: var(--total-menu-text-transform, uppercase);
     color: var(--total-menu-link-color, #333);
 }
 
@@ -2081,6 +2100,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     background-repeat: no-repeat;
     min-height: 200px;
     width: 50%;
+    background-image: var(--total-service-left-bg);
 }
 
 .ht-service-posts{
@@ -2317,6 +2337,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 ## Counter Section
 --------------------------------------------------------------*/
 #ht-counter-section{
+    background-image: var(--total-counter-bg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2583,6 +2604,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 ## Contact Section
 --------------------------------------------------------------*/
 #ht-cta-section{
+    background-image: var(--total-cta-bg);
     color: #FFF;
     background-position: center;
     background-repeat: no-repeat;
@@ -2683,13 +2705,12 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 .ht-main-footer .widget-title{
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #BBB;
+    color: var(--total-top-footer-title-color, #BBB);
     margin-bottom: 15px;
 }
 
 #ht-main-footer{
     position: relative;
-    color: #BBB;
     padding: 50px 0;
 }
 
@@ -2701,6 +2722,15 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 .ht-footer{
     width: 25%;
     padding: 0 20px;
+    color: var(--total-top-footer-text-color, #EEEEEE);
+}
+
+.ht-footer a{
+    color: var(--total-footer-anchor-color, var(--total-top-footer-text-color, #EEEEEE));
+}
+
+.ht-footer a:hover{
+    color: var(--total-footer-anchor-color-hover, var(--total-footer-anchor-color, var(--total-top-footer-text-color, #EEEEEE)));
 }
 
 .col-1-1 .ht-footer1 {
@@ -2748,15 +2778,21 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 
 #ht-bottom-footer{
     position: relative;
-    background: rgba(0,0,0,0.3);
+    background: var(--total-bottom-footer-bg-color, rgba(0,0,0,0.3));
     padding: 30px 0;
-    color: #AAA;
+    color: var(--total-bottom-footer-text-color, #AAA);
     line-height: 1.2;
     text-align: center;
 }
 
 .ht-site-info a{
-    border-bottom: 1px dotted #AAA;
+    color: var(--total-bottom-footer-anchor-color, #AAA);
+    border-bottom: 1px dotted var(--total-bottom-footer-anchor-color, #AAA);
+}
+
+.ht-site-info a:hover{
+    color: var(--total-bottom-footer-anchor-color-hover, var(--total-bottom-footer-anchor-color, #AAA));
+    border-bottom-color: var(--total-bottom-footer-anchor-color-hover, var(--total-bottom-footer-anchor-color, #AAA));
 }
 
 #ht-back-top{
@@ -3437,7 +3473,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     #ht-site-navigation .ht-menu{
         display: none;
         position: absolute;
-        background: #FFF;
+        background: var(--total-submenu-bg-color, #FFF);
         left: 0;
         right: 0;
         top: 100%;
@@ -3445,6 +3481,19 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
         width: 100%;
         padding: 0;
         float: none;
+    }
+
+    .ht-menu > ul > li.menu-item > a{
+        color: var(--total-submenu-link-color, #333);
+    }
+
+    .ht-menu > ul > li.menu-item:hover > a, 
+    .ht-menu > ul > li.menu-item.current_page_item > a, 
+    .ht-menu > ul > li.menu-item.current-menu-item > a, 
+    .ht-menu > ul > li.menu-item.current_page_ancestor > a, 
+    .ht-menu > ul > li.menu-item.current > a{
+        color: var(--total-submenu-link-hover-color);
+        background-color: var(--total-submenu-link-hover-bg-color);
     }
 
     .ht-menu{
@@ -3904,11 +3953,4 @@ body.ht-boxed .alignwide {
 .wp-block-gallery .blocks-gallery-item figcaption,
 .wp-block-image figcaption {
     font-size: 0.9em;
-}
-
-/* Plugins CSS*/
-body div.wpforms-container-full .wpforms-form input[type=submit], 
-body div.wpforms-container-full .wpforms-form button[type=submit], 
-body div.wpforms-container-full .wpforms-form .wpforms-page-button{
-    background: var(--total-template-color);
 }
