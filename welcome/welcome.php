@@ -177,6 +177,7 @@ if (!class_exists('Total_Welcome')) :
                     'importer_page' => esc_html__('Go to Demo Importer Page', 'total'),
                     'importer_url' => admin_url('themes.php?page=hdi-demo-importer'),
                     'error' => esc_html__('Error! Reload the page and try again.', 'total'),
+                    'ajax_nonce' => wp_create_nonce('total_activate_hdi_plugin')
                 );
                 wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), TOTAL_VERSION);
                 wp_enqueue_script('total-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), TOTAL_VERSION, true);
@@ -230,6 +231,12 @@ if (!class_exists('Total_Welcome')) :
 
         /** Ajax Plugin Activation */
         public function activate_plugin() {
+            if (!current_user_can('manage_options')) {
+                return;
+            }
+
+            check_ajax_referer('total_activate_hdi_plugin', 'security');
+
             $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
             $file = isset($_POST['file']) ? $_POST['file'] : '';
             $success = false;
@@ -340,7 +347,7 @@ if (!class_exists('Total_Welcome')) :
                 }
             }
         }
-        
+
         /**
          * Displays a notice asking for a review
          *
