@@ -44,7 +44,7 @@ function total_dymanic_styles() {
     $footer_bg_position = str_replace('-', ' ', get_theme_mod('total_footer_bg_position', 'center-center'));
     $footer_bg_attachment = get_theme_mod('total_footer_bg_attachment', 'scroll');
     $footer_bg_color = get_theme_mod('total_footer_bg_color', '#222222');
-    $footer_bg_overlay = get_theme_mod('footer_bg_overlay');
+    $footer_bg_overlay = get_theme_mod('total_footer_bg_overlay');
     $top_footer_title_color = get_theme_mod('total_top_footer_title_color', '#EEEEEE');
     $top_footer_text_color = get_theme_mod('total_top_footer_text_color', '#EEEEEE');
     $top_footer_anchor_color = get_theme_mod('total_top_footer_anchor_color', '#EEEEEE');

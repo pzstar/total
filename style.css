@@ -1642,13 +1642,16 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 
 /* styling for both css and generated arrows */
 .menu-item-has-children .ht-dropdown{
-    position: relative;
-    right: -5px;
     padding: 0;
     background: none;
     color: inherit;
     transition: none;
     height: auto;
+    min-height: 0;
+    line-height: 1;
+    font-size: inherit;
+    margin: 0 0 0 5px;
+    border: 0;
 }
 
 .menu-item-has-children .ht-dropdown:after {

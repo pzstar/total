@@ -38,7 +38,6 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-pro-s
     'priority' => 0,
     'pro_text' => esc_html__('Upgrade to Pro', 'total'),
     'pro_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade',
-    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 $wp_customize->add_section('total_pro_feature_section', array(
