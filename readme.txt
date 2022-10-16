@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.21 - Oct 16, 2022 =
+* Google Fonts list - Updated
+
 = 2.1.20 - Oct 06, 2022 =
 * Minor security issue related to activate plugin - fixed
 
