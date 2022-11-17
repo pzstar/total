@@ -36,7 +36,7 @@ $total_pro_features = '<ul class="upsell-features">
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-pro-section', array(
     'priority' => 0,
-    'pro_text' => esc_html__('Upgrade to Pro', 'total'),
+    'pro_text' => esc_html__('Upgrade to Pro (30% OFF)', 'total'),
     'pro_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade',
 )));
 

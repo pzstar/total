@@ -1145,8 +1145,9 @@
     top: 0;
     bottom: 0;
     margin: 3px;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 24px;
+    text-transform: uppercase;
 }
 
 .total-switch-active .total-switch-button {

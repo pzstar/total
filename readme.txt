@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 2.1.22
+Stable tag: 2.1.23
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.23 - Nov 17, 2022 =
+* Minor CSS fixes for dynamic styles
+
 = 2.1.22 - Oct 31, 2022 =
 * Footer background overlay color not working - fixed
 * SubMenu arrow design issue - fixed
