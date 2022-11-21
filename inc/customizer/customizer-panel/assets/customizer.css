@@ -110,6 +110,13 @@
     font-size: 15px;
 }
 
+#accordion-section-total-pro-section .accordion-section-title span{
+    font-size: 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
 #accordion-section-total-doc-section .accordion-section-title .button,
 #accordion-section-total-demo-import-section .accordion-section-title .button{
     float: right;
