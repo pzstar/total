@@ -264,32 +264,32 @@ h6,
 }
 
 h1{
-    font-size: 28px;
+    font-size: var(--total-h-size, 26px);
     margin: 0 0 15px 0;
 }
 
 h2{
-    font-size: 26px;
+    font-size: calc(var(--total-h-size, 26px) * 7/8);
     margin: 0 0 15px 0;
 }
 
 h3{
-    font-size: 24px;
+    font-size: calc(var(--total-h-size, 26px) * 6/8);
     margin: 0 0 15px 0;
 }
 
 h4{
-    font-size: 22px;
+    font-size: calc(var(--total-h-size, 26px) * 5/8);
     margin: 0 0 10px 0;
 }
 
 h5{
-    font-size: 20px;
+    font-size: calc(var(--total-h-size, 26px) * 4/8);
     margin: 0 0 10px 0;
 }
 
 h6{
-    font-size: 18px;
+    font-size: calc(var(--total-h-size, 26px) * 3/8);
     margin: 0 0 10px 0;
 }
 p {

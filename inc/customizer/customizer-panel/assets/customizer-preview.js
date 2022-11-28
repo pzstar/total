@@ -462,6 +462,13 @@ function totalConvertHex(hexcolor, opacity) {
             totalDynamicCss('total_h_family', css);
         });
     });
+    
+    wp.customize('total_h_size', function (value) {
+        value.bind(function (to) {
+            var css = '--total-h-size:' + to + 'px;';
+            totalDynamicCss('total_h_size', css);
+        });
+    });
 
     wp.customize('total_h_style', function (value) {
         value.bind(function (to) {

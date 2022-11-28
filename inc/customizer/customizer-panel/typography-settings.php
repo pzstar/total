@@ -111,6 +111,12 @@ $wp_customize->add_setting('total_h_text_transform', array(
     'transport' => 'postMessage'
 ));
 
+$wp_customize->add_setting('total_h_size', array(
+    'default' => '26',
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
+));
+
 $wp_customize->add_setting('total_h_line_height', array(
     'default' => '1.3',
     'sanitize_callback' => 'sanitize_text_field',
@@ -125,13 +131,14 @@ $wp_customize->add_setting('total_h_letter_spacing', array(
 
 $wp_customize->add_control(new Total_Typography_Control($wp_customize, 'total_h_typography', array(
     'label' => esc_html__('Header Typography', 'total'),
-    'description' => __('Select how you want your Header to appear.', 'total'),
+    'description' => __('Select how you want your Header (H1, H2, H3, H4, H5, H6) to appear.', 'total'),
     'section' => 'total_header_typography_section',
     'settings' => array(
         'family' => 'total_h_family',
         'style' => 'total_h_style',
         'text_decoration' => 'total_h_text_decoration',
         'text_transform' => 'total_h_text_transform',
+        'size' => 'total_h_size',
         'line_height' => 'total_h_line_height',
         'letter_spacing' => 'total_h_letter_spacing'
     ),
@@ -142,3 +149,28 @@ $wp_customize->add_control(new Total_Typography_Control($wp_customize, 'total_h_
     )
 )));
 
+$wp_customize->add_setting('total_h_typography_info', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_h_typography_info', array(
+    'section' => 'total_header_typography_section',
+    'label' => esc_html__('Note', 'total'),
+    'description' => esc_html__('The font size applies for H1 and decreases uniformly with H2, H3, H4, H5 and H6', 'total')
+)));
+
+$wp_customize->add_setting('total_h_typography_upgrade_text', array(
+    'sanitize_callback' => 'total_sanitize_text',
+));
+
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_h_typography_upgrade_text', array(
+    'section' => 'total_header_typography_section',
+    'label' => esc_html__('For more Options,', 'total'),
+    'choices' => array(
+        esc_html__('Configure H1, H2, H3, H4, H5, H6 individually or all at once', 'total'),
+        esc_html__('Set font size of H1, H2, H3, H4, H5, H6 individually', 'total'),
+        esc_html__('Seperate header font typography for home page sections header, inner page title bar heading, widget header', 'total')
+    ),
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active'
+)));
