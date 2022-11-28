@@ -31,6 +31,10 @@ function total_dymanic_styles() {
     $logo_width_tablet = get_theme_mod('total_logo_width_tablet');
     $logo_width_mobile = get_theme_mod('total_logo_width_mobile');
     $mh_bg_color = get_theme_mod('total_mh_bg_color');
+    $mh_spacing_left_desktop = get_theme_mod('total_mh_spacing_left_desktop');
+    $mh_spacing_right_desktop = get_theme_mod('total_mh_spacing_right_desktop');
+    $mh_spacing_bottom_desktop = get_theme_mod('total_mh_spacing_bottom_desktop');
+    $mh_spacing_top_desktop = get_theme_mod('total_mh_spacing_top_desktop');
     $menu_link_color = get_theme_mod('total_pm_menu_link_color');
     $menu_link_hover_color = get_theme_mod('total_pm_menu_link_hover_color');
     $menu_link_hover_bg_color = get_theme_mod('total_pm_menu_hover_bg_color');
@@ -81,6 +85,18 @@ function total_dymanic_styles() {
     }
     if ($mh_bg_color) {
         $custom_css .= "--total-mh-bg-color : {$mh_bg_color};";
+    }
+    if(is_numeric($mh_spacing_left_desktop)){
+        $custom_css .= "--total-mh-spacing-left : {$mh_spacing_left_desktop}px;";
+    }
+    if(is_numeric($mh_spacing_right_desktop)){
+        $custom_css .= "--total-mh-spacing-right : {$mh_spacing_right_desktop}px;";
+    }
+    if(is_numeric($mh_spacing_top_desktop)){
+        $custom_css .= "--total-mh-spacing-top : {$mh_spacing_top_desktop}px;";
+    }
+    if(is_numeric($mh_spacing_bottom_desktop)){
+        $custom_css .= "--total-mh-spacing-bottom : {$mh_spacing_bottom_desktop}px;";
     }
     if ($menu_link_color) {
         $custom_css .= "--total-menu-link-color: {$menu_link_color};";
