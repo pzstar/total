@@ -150,8 +150,8 @@ function total_widgets_init() {
         'description' => esc_html__('Add widgets here to appear in your sidebar.', 'total'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
+        'before_title' => '<h5 class="widget-title">',
+        'after_title' => '</h5>',
     ));
 
     register_sidebar(array(
@@ -160,8 +160,8 @@ function total_widgets_init() {
         'description' => esc_html__('Add widgets here to appear in your sidebar.', 'total'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
+        'before_title' => '<h5 class="widget-title">',
+        'after_title' => '</h5>',
     ));
 
     if (total_is_woocommerce_activated()) {
@@ -171,8 +171,8 @@ function total_widgets_init() {
             'description' => esc_html__('Add widgets here to appear in your sidebar of shop page.', 'total'),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => '</aside>',
-            'before_title' => '<h4 class="widget-title">',
-            'after_title' => '</h4>',
+            'before_title' => '<h5 class="widget-title">',
+            'after_title' => '</h5>',
         ));
     }
 
@@ -182,8 +182,8 @@ function total_widgets_init() {
         'description' => esc_html__('Add widgets here to appear in your Footer.', 'total'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
+        'before_title' => '<h5 class="widget-title">',
+        'after_title' => '</h5>',
     ));
 
     register_sidebar(array(
@@ -192,8 +192,8 @@ function total_widgets_init() {
         'description' => esc_html__('Add widgets here to appear in your Footer.', 'total'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
+        'before_title' => '<h5 class="widget-title">',
+        'after_title' => '</h5>',
     ));
 
     register_sidebar(array(
@@ -202,8 +202,8 @@ function total_widgets_init() {
         'description' => esc_html__('Add widgets here to appear in your Footer.', 'total'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
+        'before_title' => '<h5 class="widget-title">',
+        'after_title' => '</h5>',
     ));
 
     register_sidebar(array(
@@ -212,8 +212,8 @@ function total_widgets_init() {
         'description' => esc_html__('Add widgets here to appear in your Footer.', 'total'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
+        'before_title' => '<h5 class="widget-title">',
+        'after_title' => '</h5>',
     ));
 }
 

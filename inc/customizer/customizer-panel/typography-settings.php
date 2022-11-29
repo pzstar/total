@@ -112,7 +112,7 @@ $wp_customize->add_setting('total_h_text_transform', array(
 ));
 
 $wp_customize->add_setting('total_h_size', array(
-    'default' => '26',
+    'default' => '42',
     'sanitize_callback' => 'absint',
     'transport' => 'postMessage'
 ));
