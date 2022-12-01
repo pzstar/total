@@ -1,11 +1,13 @@
 <div class="welcome-header clearfix">
     <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-blackfriday&utm_campaign=total-upgrade'); ?>" target="_blank"><img style="width:100%;margin-bottom:40px;display:block;" src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/bf-banner.jpg'); ?>"></a>
     <div class="welcome-intro">
-        <h2><?php
+        <h2>
+            <?php
             printf(// WPCS: XSS OK.
                     /* translators: 1-theme name, 2-theme version */
                     esc_html__('Welcome to %1$s - Version %2$s', 'total'), $this->theme_name, $this->theme_version);
-            ?></h2>
+            ?>
+        </h2>
         <div class="welcome-text">
             <?php
             printf(// WPCS: XSS OK.
@@ -21,6 +23,9 @@
     </div>
 
     <div class="welcome-promo-banner">
+        <div class="welcome-logo">
+            <img src="<?php echo get_template_directory_uri() . '/welcome/css/total.svg' ?>"/>
+        </div>
         <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibilities with Total Plus.', 'total'); ?></a>
         <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('UPGRADE TO PRO', 'total'); ?></a>
     </div>
