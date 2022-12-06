@@ -459,6 +459,10 @@ a.buy-pro-btn:hover{
     font-size: 18px;
 }
 
+#adminmenu .toplevel_page_total-welcome div.wp-menu-image.svg{
+    background-size: 18px auto;
+}
+
 /** Footer Review **/
 body.toplevel_page_total-welcome #wpfooter{
     position: fixed;
