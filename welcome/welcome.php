@@ -375,7 +375,7 @@ if (!class_exists('Total_Welcome')) :
                         ?>
                     </p>
                     <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'total') ?></a> &nbsp;
-                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('total-hide-notice', 'review'), 'review', 'total_notice_nonce')); ?>"><?php echo esc_html__('I have already rated!', 'total') ?></a>
+                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('total-hide-notice', 'review'), 'review', 'total_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'total') ?></a>
                 </div>
             </div>
             <?php

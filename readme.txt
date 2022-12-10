@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 2.1.26
+Stable tag: 2.1.27
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.27 - Dec 10, 2022 =
+* Google font list - Updated
+* Black Friday discount offer removed
+
 = 2.1.26 - Dec 4, 2022 =
 * Added font size for Header
 * Minor update in welcome panel

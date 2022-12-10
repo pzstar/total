@@ -231,7 +231,7 @@ if (!function_exists('total_fonts_url')) :
     function total_fonts_url() {
         $fonts_url = '';
         $subsets = 'latin,latin-ext';
-        $fonts = $standard_font_family = $default_font_list = $font_family_array = $variants_array = $font_array = $google_fonts = array();
+        $fonts = $standard_font_family = $default_font_family = $customizer_font_family = $variants_array = $font_array = array();
 
         $customizer_fonts = apply_filters('total_customizer_fonts', array(
             'total_body_family' => 'Poppins',
@@ -240,32 +240,35 @@ if (!function_exists('total_fonts_url')) :
         ));
 
         $standard_font = total_standard_font_array();
-        $google_font_list = total_google_font_array();
-        $default_font_list = total_default_font_array();
+        $google_font = total_google_font_array();
+        $default_font = total_default_font_array();
+        $all_font = total_font_array();
 
         foreach ($standard_font as $key => $value) {
             $standard_font_family[] = $value['family'];
         }
 
-        foreach ($default_font_list as $key => $value) {
+        foreach ($default_font as $key => $value) {
             $default_font_family[] = $value['family'];
         }
 
         foreach ($customizer_fonts as $key => $value) {
-            $font_family_array[] = get_theme_mod($key, $value);
+            $customizer_font_family[] = get_theme_mod($key, $value);
         }
 
-        $font_family_array = array_unique($font_family_array);
-        $font_family_array = array_diff($font_family_array, array_merge($standard_font_family, $default_font_family));
+        $customizer_font_family = array_unique($customizer_font_family);
+        $customizer_font_family = array_diff($customizer_font_family, array_merge($standard_font_family, $default_font_family));
 
-        foreach ($font_family_array as $font_family) {
-            $font_array = total_search_key($google_font_list, 'family', $font_family);
-            $variants_array = $font_array['0']['variants'];
-            $variants_keys = array_keys($variants_array);
-            $variants = implode(',', $variants_keys);
+        foreach ($customizer_font_family as $font_family) {
+            if (isset($all_font[$font_family]['variants'])) {
+                $variants_array = $all_font[$font_family]['variants'];
+                $variants_keys = array_keys($variants_array);
+                $variants = implode(',', $variants_keys);
 
-            $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
+                $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
+            }
         }
+        
         /*
          * Translators: To add an additional character subset specific to your language,
          * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
