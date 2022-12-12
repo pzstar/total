@@ -1,10 +1,9 @@
 <?php
 
 function total_get_google_font_variants() {
+    $font_family = isset($_REQUEST['font_family']) ? sanitize_text_field(wp_unslash($_REQUEST['font_family'])) : '';
 
     $all_font = total_font_array();
-
-    $font_family = isset($_REQUEST['font_family']) ? sanitize_text_field(wp_unslash($_REQUEST['font_family'])) : '';
 
     if (isset($all_font[$font_family]['variants'])) {
         $variants_array = $all_font[$font_family]['variants'];

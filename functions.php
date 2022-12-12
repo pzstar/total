@@ -231,7 +231,7 @@ if (!function_exists('total_fonts_url')) :
     function total_fonts_url() {
         $fonts_url = '';
         $subsets = 'latin,latin-ext';
-        $fonts = $standard_font_family = $default_font_family = $customizer_font_family = $variants_array = $font_array = array();
+        $fonts = $standard_font_family = $default_font_family = $customizer_font_family = $variants_array = array();
 
         $customizer_fonts = apply_filters('total_customizer_fonts', array(
             'total_body_family' => 'Poppins',
