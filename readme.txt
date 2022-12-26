@@ -22,6 +22,11 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.29 - Dec 26, 2022 =
+* Review message not hiding issue - Fixed
+* Minor style - Updated
+* New year sales banner - Added
+
 = 2.1.28 - Dec 18, 2022 =
 * Hex color support for background image - Added
 * Filter initiated for upgrade notice
