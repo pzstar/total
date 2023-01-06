@@ -1652,10 +1652,11 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     transition: none;
     height: auto;
     min-height: 0;
-    line-height: 1;
+    line-height: inherit;
     font-size: inherit;
     margin: 0 0 0 5px;
     border: 0;
+    vertical-align: middle;
 }
 
 .menu-item-has-children .ht-dropdown:after {
