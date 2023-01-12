@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 2.1.28
+Stable tag: 2.1.30
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.30 - Jan 12, 2023 =
+* New year sales banner - Removed
+
 = 2.1.29 - Dec 26, 2022 =
 * Review message not hiding issue - Fixed
 * Minor style - Updated
