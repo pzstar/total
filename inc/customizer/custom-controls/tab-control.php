@@ -3,7 +3,7 @@
 /** Control Tab */
 class Total_Tab_Control extends WP_Customize_Control {
 
-    public $type = 'total-tab';
+    public $type = 'ht--tab';
     public $buttons = '';
 
     public function __construct($manager, $id, $args = array()) {
@@ -38,11 +38,11 @@ class Total_Tab_Control extends WP_Customize_Control {
 
     public function content_template() {
         ?>
-        <div class="total-customizer-tab-wrap">
+        <div class="ht--customizer-tab-wrap">
             <# if ( data.buttons ) { #>
-            <div class="total-customizer-tabs">
+            <div class="ht--customizer-tabs">
                 <# for (tab in data.buttons) { #>
-                <a href="#" class="total-customizer-tab <# if ( data.buttons[tab].active ) { #> active <# } #>" data-tab="{{ tab }}">
+                <a href="#" class="ht--customizer-tab <# if ( data.buttons[tab].active ) { #> active <# } #>" data-tab="{{ tab }}">
                     <# if ( data.buttons[tab].icon ) { #> 
                     <span class="{{ data.buttons[tab].icon }}"></span>
                     <# } #>

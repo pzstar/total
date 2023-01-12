@@ -3,7 +3,7 @@
 /** Color Tab Control */
 class Total_Color_Tab_Control extends WP_Customize_Control {
 
-    public $type = 'total-color-tab';
+    public $type = 'ht--color-tab';
 
     /**
      * Add support for palettes to be passed in.
@@ -86,7 +86,7 @@ class Total_Color_Tab_Control extends WP_Customize_Control {
             <# } #>
 
             <# if ( data.hide_control ) { #>
-            <div class="total-color-tab-toggle"><span class="dashicons dashicons-edit"></span></div>
+            <div class="ht--color-tab-toggle"><span class="dashicons dashicons-edit"></span></div>
             <# } #>
         </span>
 
@@ -94,27 +94,27 @@ class Total_Color_Tab_Control extends WP_Customize_Control {
         <span class="description customize-control-description">{{{ data.description }}}</span>
         <# } #>
 
-        <div class="total-color-tab-wrap" {{{ data.hide_control_style }}}>
-             <ul class="total-color-tab-switchers">
-                <li data-tab="total-color-tab-content-normal" class="active">{{{ data.l10n['normal'] }}}</li>
-                <li data-tab="total-color-tab-content-hover">{{{ data.l10n['hover'] }}}</li>
+        <div class="ht--color-tab-wrap" {{{ data.hide_control_style }}}>
+             <ul class="ht--color-tab-switchers">
+                <li data-tab="ht--color-tab-content-normal" class="active">{{{ data.l10n['normal'] }}}</li>
+                <li data-tab="ht--color-tab-content-hover">{{{ data.l10n['hover'] }}}</li>
             </ul>
 
-            <div class="total-color-tab-contents">
-                <div class="total-color-tab-content-normal" style="display:block">
+            <div class="ht--color-tab-contents">
+                <div class="ht--color-tab-content-normal" style="display:block">
                     <# _.each( data.normal, function( args, key ) { #>
-                    <div class="total-color-content-wrap {{ key }}">
-                        <label class="total-color-tab-label">{{ data.group[ key ] }}</label>
-                        <input class="total-alpha-color-control" type="text" value="{{ args.value }}" data-alpha="{{ data.show_opacity }}" data-default-color="{{ args.default }}" data-palette="{{ data.palette }}" {{{ args.link }}} />   
+                    <div class="ht--color-content-wrap {{ key }}">
+                        <label class="ht--color-tab-label">{{ data.group[ key ] }}</label>
+                        <input class="ht--alpha-color-control" type="text" value="{{ args.value }}" data-alpha="{{ data.show_opacity }}" data-default-color="{{ args.default }}" data-palette="{{ data.palette }}" {{{ args.link }}} />   
                     </div>
                     <# } ); #>
                 </div>
 
-                <div class="total-color-tab-content-hover" style="display:none">
+                <div class="ht--color-tab-content-hover" style="display:none">
                     <# _.each( data.hover, function( args, key ) { #>
-                    <div class="total-color-content-wrap {{ key }}">
-                        <label class="total-color-tab-label">{{ data.group[ key ] }}</label>
-                        <input class="total-alpha-color-control" type="text"  value="{{ args.value }}" data-alpha="{{ data.show_opacity }}" data-default-color="{{ args.default }}" data-palette="{{ data.palette }}" {{{ args.link }}} />   
+                    <div class="ht--color-content-wrap {{ key }}">
+                        <label class="ht--color-tab-label">{{ data.group[ key ] }}</label>
+                        <input class="ht--alpha-color-control" type="text"  value="{{ args.value }}" data-alpha="{{ data.show_opacity }}" data-default-color="{{ args.default }}" data-palette="{{ data.palette }}" {{{ args.link }}} />   
                     </div>
                     <# } ); #>
                 </div>

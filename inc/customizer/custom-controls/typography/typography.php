@@ -1,9 +1,14 @@
 <?php
 
 function total_get_google_font_variants() {
-    $font_family = isset($_REQUEST['font_family']) ? sanitize_text_field(wp_unslash($_REQUEST['font_family'])) : '';
+    $all_font = array();
+    $fonts = total_font_array();
 
-    $all_font = total_font_array();
+    foreach ($fonts as $font) {
+        $all_font += $font['fonts'];
+    }
+
+    $font_family = isset($_REQUEST['font_family']) ? sanitize_text_field(wp_unslash($_REQUEST['font_family'])) : '';
 
     if (isset($all_font[$font_family]['variants'])) {
         $variants_array = $all_font[$font_family]['variants'];
@@ -24,15 +29,15 @@ function total_default_font_array() {
         'Default' => array(
             'family' => 'Default',
             'variants' => array(
-                'Default' => 'Default',
-                '100' => 'Thin',
-                '300' => 'Light',
-                '400' => 'Normal',
-                '400italic' => 'Normal Italic',
-                '500' => 'Medium',
-                '600' => 'Semi Bold',
-                '700' => 'Bold',
-                '700italic' => 'Bold Italic'
+                'Default' => esc_html__('Default', 'total'),
+                '100' => esc_html__('Thin', 'total'),
+                '300' => esc_html__('Light', 'total'),
+                '400' => esc_html__('Normal', 'total'),
+                '400italic' => esc_html__('Normal Italic', 'total'),
+                '500' => esc_html__('Medium', 'total'),
+                '600' => esc_html__('Semi Bold', 'total'),
+                '700' => esc_html__('Bold', 'total'),
+                '700italic' => esc_html__('Bold Italic', 'total')
             ),
             'subsets' => array(
                 'latin' => 'Latin'
@@ -145,5 +150,18 @@ function total_standard_font_array() {
 }
 
 function total_font_array() {
-    return array_merge(total_default_font_array(), total_standard_font_array(), total_google_font_array());
+    return apply_filters('total_customizer_fonts', array(
+        array(
+            'label' => '',
+            'fonts' => total_default_font_array()
+        ),
+        array(
+            'label' => esc_html__('Standard Fonts', 'total'),
+            'fonts' => total_google_font_array()
+        ),
+        array(
+            'label' => esc_html__('Google Fonts', 'total'),
+            'fonts' => total_standard_font_array()
+        )
+    ));
 }

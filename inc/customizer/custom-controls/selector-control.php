@@ -3,7 +3,7 @@
 /** Selector Control */
 class Total_Selector_Control extends WP_Customize_Control {
 
-    public $type = 'total-selector';
+    public $type = 'ht--selector';
     public $options = array();
     public $class = '';
 
@@ -27,7 +27,7 @@ class Total_Selector_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
 
-            <div class="total-selector-labels <?php echo esc_attr($this->class) ?>">
+            <div class="ht--selector-labels <?php echo esc_attr($this->class) ?>">
                 <?php
                 foreach ($options as $key => $image) {
                     $selected_class = ( $this->value() == $key ) ? 'selector-selected' : '';

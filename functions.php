@@ -231,7 +231,10 @@ if (!function_exists('total_fonts_url')) :
     function total_fonts_url() {
         $fonts_url = '';
         $subsets = 'latin,latin-ext';
-        $fonts = $standard_font_family = $default_font_family = $customizer_font_family = $variants_array = array();
+        $fonts = $all_font = $customizer_font_family = $variants_array = array();
+        foreach ($fonts as $font) {
+            $all_font += $font['fonts'];
+        }
 
         $customizer_fonts = apply_filters('total_customizer_fonts', array(
             'total_body_family' => 'Poppins',
@@ -239,26 +242,16 @@ if (!function_exists('total_fonts_url')) :
             'total_h_family' => 'Oswald'
         ));
 
-        $standard_font = total_standard_font_array();
         $google_font = total_google_font_array();
-        $default_font = total_default_font_array();
-        $all_font = total_font_array();
-
-        foreach ($standard_font as $key => $value) {
-            $standard_font_family[] = $value['family'];
-        }
-
-        foreach ($default_font as $key => $value) {
-            $default_font_family[] = $value['family'];
-        }
 
         foreach ($customizer_fonts as $key => $value) {
-            $customizer_font_family[] = get_theme_mod($key, $value);
+            if(array_key_exists($value, $google_font)){
+                $customizer_font_family[] = get_theme_mod($key, $value);
+            }
         }
 
         $customizer_font_family = array_unique($customizer_font_family);
-        $customizer_font_family = array_diff($customizer_font_family, array_merge($standard_font_family, $default_font_family));
-
+        
         foreach ($customizer_font_family as $font_family) {
             if (isset($all_font[$font_family]['variants'])) {
                 $variants_array = $all_font[$font_family]['variants'];
@@ -268,7 +261,7 @@ if (!function_exists('total_fonts_url')) :
                 $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
             }
         }
-        
+
         /*
          * Translators: To add an additional character subset specific to your language,
          * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.

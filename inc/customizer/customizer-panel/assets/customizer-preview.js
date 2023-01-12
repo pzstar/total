@@ -1,27 +1,5 @@
-function totalDynamicCss(control, style) {
-    jQuery('style.' + control).remove();
-
-    jQuery('head').append(
-            '<style class="' + control + '">:root{' + style + '}</style>'
-            );
-}
-
-function totalConvertHex(hexcolor, opacity) {
-    if (hexcolor) {
-        var hex = String(hexcolor).replace(/[^0-9a-f]/gi, '');
-        if (hex.length < 6) {
-            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-        }
-        r = parseInt(hex.substring(0, 2), 16);
-        g = parseInt(hex.substring(2, 4), 16);
-        b = parseInt(hex.substring(4, 6), 16);
-
-        result = 'rgba(' + r + ',' + g + ',' + b + ',' + opacity / 100 + ')';
-        return result;
-    }
-}
-
-(function ($) {
+jQuery(document).ready(function ($) {
+    'use strict';
     wp.customize('total_template_color', function (value) {
         value.bind(function (to) {
             var css = '--total-template-color:' + to + ';';
@@ -462,7 +440,7 @@ function totalConvertHex(hexcolor, opacity) {
             totalDynamicCss('total_h_family', css);
         });
     });
-    
+
     wp.customize('total_h_size', function (value) {
         value.bind(function (to) {
             var css = '--total-h-size:' + to + 'px;';
@@ -511,4 +489,27 @@ function totalConvertHex(hexcolor, opacity) {
         });
     });
 
-})(jQuery);
+});
+
+function totalDynamicCss(control, style) {
+    jQuery('style.' + control).remove();
+
+    jQuery('head').append(
+            '<style class="' + control + '">:root{' + style + '}</style>'
+            );
+}
+
+function totalConvertHex(hexcolor, opacity) {
+    if (hexcolor) {
+        var hex = String(hexcolor).replace(/[^0-9a-f]/gi, '');
+        if (hex.length < 6) {
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        }
+        r = parseInt(hex.substring(0, 2), 16);
+        g = parseInt(hex.substring(2, 4), 16);
+        b = parseInt(hex.substring(4, 6), 16);
+
+        result = 'rgba(' + r + ',' + g + ',' + b + ',' + opacity / 100 + ')';
+        return result;
+    }
+}

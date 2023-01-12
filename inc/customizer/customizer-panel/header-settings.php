@@ -146,7 +146,9 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Display logo inline with title & tagline', 'total'),
     ),
     'priority' => 100,
-    'active_callback' => 'total_is_upgrade_notice_active'
+    'active_callback' => 'total_is_upgrade_notice_active',
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
 )));
 
 /** Main Header Options */
@@ -293,7 +295,9 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Option for different header banner on each post/page', 'total'),
     ),
     'priority' => 100,
-    'active_callback' => 'total_is_upgrade_notice_active'
+    'active_callback' => 'total_is_upgrade_notice_active',
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
 )));
 
 /* Primary Menu */
@@ -514,7 +518,9 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Inbuilt MegaMenu', 'total'),
     ),
     'priority' => 100,
-    'active_callback' => 'total_is_upgrade_notice_active'
+    'active_callback' => 'total_is_upgrade_notice_active',
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
 )));
 
 $wp_customize->selective_refresh->add_partial(

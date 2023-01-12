@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-    $("body").on("click", ".total-switch-section.total-switch", function () {
+    $("body").on("click", ".ht--switch-section.ht--switch", function () {
         var controlName = $(this).siblings("input").data("customize-setting-link");
         var controlValue = $(this).siblings("input").val();
         var iconClass = "dashicons-visibility";
@@ -7,13 +7,13 @@ jQuery(document).ready(function ($) {
             iconClass = "dashicons-hidden";
             $("[data-control=" + controlName + "]")
                     .parent()
-                    .addClass("total-section-hidden")
-                    .removeClass("total-section-visible");
+                    .addClass("ht--section-hidden")
+                    .removeClass("ht--section-visible");
         } else {
             $("[data-control=" + controlName + "]")
                     .parent()
-                    .addClass("total-section-visible")
-                    .removeClass("total-section-hidden");
+                    .addClass("ht--section-visible")
+                    .removeClass("ht--section-hidden");
         }
         $("[data-control=" + controlName + "]")
                 .children()

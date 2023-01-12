@@ -2,7 +2,7 @@
 
 /* ============PRO FEATURES============ */
 
-$total_pro_features = '<ul class="upsell-features">
+$total_pro_features = '<ul>
 	<li>' . esc_html__("5+ Demos that can be imported with one click", "total") . '</li>
         <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
         <li>' . esc_html__("18 Front Page Customizer sections with lots of variations", "total") . '</li>
@@ -37,8 +37,8 @@ $total_pro_features = '<ul class="upsell-features">
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-pro-section', array(
     'priority' => 0,
     //'title' => esc_html__('New Year Deal. Use Coupon Code : HOLIDAY', 'total'),
-    'pro_text' => esc_html__('Upgrade to Pro', 'total'),
-    'pro_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade',
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade',
 )));
 
 $wp_customize->add_section('total_pro_feature_section', array(
@@ -64,7 +64,6 @@ $wp_customize->add_setting('total_pro_features', array(
 $wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_pro_features', array(
     'settings' => 'total_pro_features',
     'section' => 'total_pro_feature_section',
-    'input_attrs' => array('class' => 'ht-white-box'),
     'description' => $total_pro_features,
     'active_callback' => 'total_is_upgrade_notice_active'
 )));
@@ -72,15 +71,17 @@ $wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_pro
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-doc-section', array(
     'title' => esc_html__('Documentation', 'total'),
     'priority' => 1000,
-    'pro_text' => esc_html__('View', 'total'),
-    'pro_url' => 'https://hashthemes.com/documentation/total-documentation/'
+    'class' => 'ht--single-row',
+    'upgrade_text' => esc_html__('View', 'total'),
+    'upgrade_url' => 'https://hashthemes.com/documentation/total-documentation/'
 )));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-demo-import-section', array(
     'title' => esc_html__('Import Demo Content', 'total'),
     'priority' => 999,
-    'pro_text' => esc_html__('Import', 'total'),
-    'pro_url' => admin_url('admin.php?page=total-welcome')
+    'class' => 'ht--single-row',
+    'upgrade_text' => esc_html__('Import', 'total'),
+    'upgrade_url' => admin_url('admin.php?page=total-welcome')
 )));
 
 /* ============HOMEPAGE SETTINGS PANEL============ */

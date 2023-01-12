@@ -3,7 +3,7 @@
 /** Dropdown Multiple Chooser Control */
 class Total_Multiple_Select_Control extends WP_Customize_Control {
 
-    public $type = 'total-multiple-select';
+    public $type = 'ht--multiple-select';
     public $placeholder;
 
     public function __construct($manager, $id, $args = array()) {
@@ -29,11 +29,12 @@ class Total_Multiple_Select_Control extends WP_Customize_Control {
             <?php }
             ?>
 
-            <select data-placeholder="<?php echo esc_attr($this->placeholder); ?>" multiple="multiple" class="total-chosen-select" <?php $this->link(); ?>>
+            <select data-placeholder="<?php echo esc_attr($this->placeholder); ?>" multiple="multiple" class="ht--chosen-select" <?php $this->link(); ?>>
                 <?php
+                $selected_value = is_array($this->value()) ? $this->value() : array($this->value());
                 foreach ($this->choices as $value => $label) {
                     $selected = '';
-                    if (in_array($value, $this->value())) {
+                    if (in_array($value, $selected_value)) {
                         $selected = 'selected="selected"';
                     }
                     echo '<option value="' . esc_attr($value) . '"' . $selected . '>' . esc_html($label) . '</option>';

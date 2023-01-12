@@ -3,7 +3,7 @@
 /** Multiple Checkbox Control */
 class Total_Multiple_Checkbox_Control extends WP_Customize_Control {
 
-    public $type = 'total-checkbox-multiple';
+    public $type = 'ht--checkbox-multiple';
 
     public function render_content() {
 

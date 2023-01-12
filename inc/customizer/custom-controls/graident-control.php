@@ -3,7 +3,7 @@
 /** Gradient Control */
 class Total_Gradient_Control extends WP_Customize_Control {
 
-    public $type = 'total-gradient';
+    public $type = 'ht--gradient';
     public $params = array();
 
     public function __construct($manager, $id, $args = array()) {
@@ -45,38 +45,38 @@ class Total_Gradient_Control extends WP_Customize_Control {
         $angle_label = isset($params['angle_label']) ? $params['angle_label'] : esc_html__("Define Gradient Direction", 'total');
         $preview_label = isset($params['preview_label']) ? $params['preview_label'] : esc_html__("Gradient Preview", 'total');
         ?>
-        <div class="total-gradient-box" data-default-color="<?php echo esc_attr($default_color); ?>">
+        <div class="ht--gradient-box" data-default-color="<?php echo esc_attr($default_color); ?>">
 
-            <div class="total-gradient-row">
-                <div class="total-gradient-label"><?php echo esc_html($picker_label); ?></div>
-                <div class="total-gradient-picker"></div>
-                <div class="total-gradient-description"><?php echo esc_html($picker_description); ?></div>
+            <div class="ht--gradient-row">
+                <div class="ht--gradient-label"><?php echo esc_html($picker_label); ?></div>
+                <div class="ht--gradient-picker"></div>
+                <div class="ht--gradient-description"><?php echo esc_html($picker_description); ?></div>
             </div>
 
-            <div class="total-gradient-row">
-                <div class="total-gradient-label"><?php echo esc_html($angle_label); ?></div>
-                <select class="total-gradient-direction">
+            <div class="ht--gradient-row">
+                <div class="ht--gradient-label"><?php echo esc_html($angle_label); ?></div>
+                <select class="ht--gradient-direction">
                     <option value="vertical"><?php echo esc_html__('Vertical Spread (Top to Bottom)', 'total'); ?></option>
                     <option value="horizontal"><?php echo esc_html__('Horizontal Spread (Left To Right)', 'total'); ?></option>
                     <option value="custom"><?php echo esc_html__('Custom Angle Spread', 'total'); ?></option>
                 </select>
             </div>
 
-            <div class="total-gradient-row">
-                <div class="total-gradient-custom" style="display: none;">
-                    <div class="total-gradient-label"><?php echo esc_html__('Define Custom Angle', 'total'); ?></div>
-                    <div class="total-gradient-angle-slider">
-                        <div class="total-gradient-range"></div>
+            <div class="ht--gradient-row">
+                <div class="ht--gradient-custom" style="display: none;">
+                    <div class="ht--gradient-label"><?php echo esc_html__('Define Custom Angle', 'total'); ?></div>
+                    <div class="ht--gradient-angle-slider">
+                        <div class="ht--gradient-range"></div>
                     </div>
                 </div>
             </div>
             <!--
-              <div class="total-gradient-row">
-              <div class="total-gradient-label"><?php echo esc_html($preview_label); ?></div>
-              <div class="total-gradient-preview"></div>
+              <div class="ht--gradient-row">
+              <div class="ht--gradient-label"><?php echo esc_html($preview_label); ?></div>
+              <div class="ht--gradient-preview"></div>
               </div>
             -->
-            <input type="hidden" class="<?php echo esc_attr($type); ?> <?php echo esc_attr($class) ?> total-gradient-val"  value="<?php echo esc_attr($this->value()) ?>" <?php $this->link(); ?> />
+            <input type="hidden" class="<?php echo esc_attr($type); ?> <?php echo esc_attr($class) ?> ht--gradient-val"  value="<?php echo esc_attr($this->value()) ?>" <?php $this->link(); ?> />
         </div>
         <?php
     }

@@ -10,44 +10,44 @@ jQuery(document).ready(function ($) {
     })();
 
     // Select Preloader
-    $('.total-preloader-selector').on('change', function () {
+    $('.ht--preloader-selector').on('change', function () {
         var activePreloader = $(this).val();
-        $(this).next('.total-preloader-container').find('.total-preloader').hide();
-        $(this).next('.total-preloader-container').find('.ht-' + activePreloader).show();
+        $(this).next('.ht--preloader-container').find('.ht--preloader').hide();
+        $(this).next('.ht--preloader-container').find('.ht--' + activePreloader).show();
     });
 
     // Icon Control JS
-    $('body').on('click', '.total-icon-box-wrap .total-icon-list li', function () {
+    $('body').on('click', '.ht--icon-box-wrap .ht--icon-list li', function () {
         var icon_class = $(this).find('i').attr('class');
-        $(this).closest('.total-icon-box').find('.total-icon-list li').removeClass('icon-active');
+        $(this).closest('.ht--icon-box').find('.ht--icon-list li').removeClass('icon-active');
         $(this).addClass('icon-active');
-        $(this).closest('.total-icon-box').prev('.total-selected-icon').children('i').attr('class', '').addClass(icon_class);
-        $(this).closest('.total-icon-box').slideUp()
-        $(this).closest('.total-icon-box').next('input').val(icon_class).trigger('change');
+        $(this).closest('.ht--icon-box').prev('.ht--selected-icon').children('i').attr('class', '').addClass(icon_class);
+        $(this).closest('.ht--icon-box').slideUp()
+        $(this).closest('.ht--icon-box').next('input').val(icon_class).trigger('change');
     });
 
-    $('body').on('click', '.total-icon-box-wrap .total-selected-icon', function () {
-        if (!$(this).next().is('.total-icon-box')) {
-            var iconbox = $('#total-append-icon-box').clone();
+    $('body').on('click', '.ht--icon-box-wrap .ht--selected-icon', function () {
+        if (!$(this).next().is('.ht--icon-box')) {
+            var iconbox = $('#ht--icon-box').clone();
             iconbox.removeAttr('id');
             iconbox.insertAfter($(this));
         }
         $(this).next().slideToggle();
     });
 
-    $('body').on('change', '.total-icon-box-wrap .total-icon-search select', function () {
+    $('body').on('change', '.ht--icon-box-wrap .ht--icon-search select', function () {
         var $ele = $(this);
         var selected = $ele.val();
-        $ele.parent('.total-icon-search').siblings('.total-icon-list').hide().removeClass('active');
-        $ele.parent('.total-icon-search').siblings('.' + selected).show().addClass('active');
-        $ele.closest('.total-icon-box').find('.total-icon-search-input').val('');
-        $ele.parent('.total-icon-search').siblings('.' + selected).find('li').show();
+        $ele.parent('.ht--icon-search').siblings('.ht--icon-list').hide().removeClass('active');
+        $ele.parent('.ht--icon-search').siblings('.' + selected).show().addClass('active');
+        $ele.closest('.ht--icon-box').find('.ht--icon-search-input').val('');
+        $ele.parent('.ht--icon-search').siblings('.' + selected).find('li').show();
     });
 
-    $('body').on('keyup', '.total-icon-box-wrap .total-icon-search input', function (e) {
+    $('body').on('keyup', '.ht--icon-box-wrap .ht--icon-search input', function (e) {
         var $input = $(this);
         var keyword = $input.val().toLowerCase();
-        var search_criteria = $input.closest('.total-icon-box').find('.total-icon-list.active i');
+        var search_criteria = $input.closest('.ht--icon-box').find('.ht--icon-list.active i');
         delay(function () {
             $(search_criteria).each(function () {
                 if ($(this).attr('class').indexOf(keyword) > -1) {
@@ -60,19 +60,19 @@ jQuery(document).ready(function ($) {
     });
 
     // Switch Control
-    $('body').on('click', '.total-switch', function () {
+    $('body').on('click', '.ht--switch', function () {
         var $this = $(this);
-        if ($this.hasClass('total-switch-on')) {
-            $(this).removeClass('total-switch-on');
+        if ($this.hasClass('ht--switch-on')) {
+            $(this).removeClass('ht--switch-on');
             $this.next('input').val('off').trigger('change');
         } else {
-            $(this).addClass('total-switch-on');
+            $(this).addClass('ht--switch-on');
             $this.next('input').val('on').trigger('change');
         }
     });
 
     // MultiCheck box Control JS
-    $('.customize-control-total-checkbox-multiple input[type="checkbox"]').on('change', function () {
+    $('.customize-control-ht--checkbox-multiple input[type="checkbox"]').on('change', function () {
         var checkbox_values = $(this).parents('.customize-control').find('input[type="checkbox"]:checked').map(function () {
             return $(this).val();
         }).get().join(',');
@@ -80,45 +80,34 @@ jQuery(document).ready(function ($) {
     });
 
     // Chosen JS
-    $('.total-chosen-select').chosen({
+    $('.ht--chosen-select').chosen({
         width: '100%'
     });
 
     // Selectize JS
-    $(".total-selectize").selectize({
+    $(".ht--selectize").selectize({
         plugins: ['remove_button', 'drag_drop'],
         delimiter: ',',
         persist: false
     });
 
     // Image Selector JS
-    $('body').on('click', '.total-selector-labels label', function () {
+    $('body').on('click', '.ht--selector-labels label', function () {
         var $this = $(this);
         var value = $this.attr('data-val');
         $this.siblings().removeClass('selector-selected');
         $this.addClass('selector-selected');
-        $this.closest('.total-selector-labels').next('input').val(value).trigger('change');
-    });
-    $('body').on('change', '.total-type-radio input[type="radio"]', function () {
-        var $this = $(this);
-        $this.parent('label').siblings('label').find('input[type="radio"]').prop('checked', false);
-        var value = $this.closest('.radio-labels').find('input[type="radio"]:checked').val();
-        $this.closest('.radio-labels').next('input').val(value).trigger('change');
-    });
-    $('body').on('change', '.total-type-radio input[type="radio"]', function () {
-        var $this = $(this);
-        $this.parent('label').siblings('label').find('input[type="radio"]').prop('checked', false);
-        var value = $this.closest('.radio-labels').find('input[type="radio"]:checked').val();
-        $this.closest('.radio-labels').next('input').val(value).trigger('change');
+        $this.closest('.ht--selector-labels').next('input').val(value).trigger('change');
     });
 
     // Range JS
-    $('.customize-control-total-range-slider').each(function () {
-        var sliderValue = $(this).find('input').val();
-        var newSlider = $(this).find('.total-range-slider');
-        var sliderMinValue = parseFloat(newSlider.attr('slider-min-value'));
-        var sliderMaxValue = parseFloat(newSlider.attr('slider-max-value'));
-        var sliderStepValue = parseFloat(newSlider.attr('slider-step-value'));
+    $('.ht--range-slider-control-wrap').each(function () {
+        var input = $(this).find('input');
+        var sliderValue = input.val();
+        var newSlider = $(this).find('.ht--range-slider');
+        var sliderMinValue = parseFloat(input.attr('min'));
+        var sliderMaxValue = parseFloat(input.attr('max'));
+        var sliderStepValue = parseFloat(input.attr('step'));
         newSlider.slider({
             value: sliderValue,
             min: sliderMinValue,
@@ -126,42 +115,38 @@ jQuery(document).ready(function ($) {
             step: sliderStepValue,
             range: 'min',
             slide: function (e, ui) {
-                $(this).parent().find('input').trigger('change');
+                input.val(ui.value).trigger('change');
             },
             change: function (e, ui) {
-                $(this).parent().find('input').trigger('change');
+                input.trigger('change');
             }
         });
-    });
+    })
 
-    // Change the value of the input field as the slider is moved
-    $('.customize-control-total-range-slider .total-range-slider').on('slide', function (event, ui) {
-        $(this).parent().find('input').val(ui.value);
+    // Update slider if the input field loses focus as it's most likely changed
+    $('.ht--range-slider-control-wrap input').blur(function () {
+        var resetValue = isNaN($(this).val()) ? '' : $(this).val();
+
+        if (resetValue) {
+            var sliderMinValue = parseFloat($(this).attr('min'));
+            var sliderMaxValue = parseFloat($(this).attr('max'));
+            // Make sure our manual input value doesn't exceed the minimum & maxmium values
+            if (resetValue < sliderMinValue) {
+                resetValue = sliderMinValue;
+            }
+            if (resetValue > sliderMaxValue) {
+                resetValue = sliderMaxValue;
+            }
+        }
+        $(this).val(resetValue);
+        $(this).closest('.ht--range-slider-control-wrap').find('.ht--range-slider').slider('value', resetValue);
     });
 
     // Reset slider and input field back to the default value
-    $('.customize-control-total-range-slider .total-slider-reset').on('click', function () {
+    $('.ht--slider-reset').on('click', function () {
         var resetValue = $(this).attr('slider-reset-value');
-        $(this).parents('.customize-control-total-range-slider').find('input').val(resetValue);
-        $(this).parents('.customize-control-total-range-slider').find('.total-range-slider').slider('value', resetValue);
-    });
-
-    // Update slider if the input field loses focus as it's most likely changed
-    $('.customize-control-total-range-slider input').blur(function () {
-        var resetValue = $(this).val();
-        var slider = $(this).parents('.customize-control-total-range-slider').find('.total-range-slider');
-        var sliderMinValue = parseInt(slider.attr('slider-min-value'));
-        var sliderMaxValue = parseInt(slider.attr('slider-max-value'));
-        // Make sure our manual input value doesn't exceed the minimum & maxmium values
-        if (resetValue < sliderMinValue) {
-            resetValue = sliderMinValue;
-            $(this).val(resetValue);
-        }
-        if (resetValue > sliderMaxValue) {
-            resetValue = sliderMaxValue;
-            $(this).val(resetValue);
-        }
-        $(this).parents('.customize-control-total-range-slider').find('.total-range-slider').slider('value', resetValue);
+        $(this).parents('.customize-control-ht--range-slider').find('input').val(resetValue);
+        $(this).parents('.customize-control-ht--range-slider').find('.ht--range-slider').slider('value', resetValue);
     });
 
     // TinyMCE Editor
@@ -189,34 +174,56 @@ jQuery(document).ready(function ($) {
     });
 
     // Select Image
-    $('.total-image-selector').on('change', function () {
+    $('.ht--image-selector').on('change', function () {
         var activeImage = $(this).find(':selected').attr('data-image');
-        $(this).next('.total-image-container').find('img').attr('src', activeImage);
+        $(this).next('.ht--image-container').find('img').attr('src', activeImage);
     });
 
     // Date Picker
-    $('.total-datepicker').datepicker({
+    $('.ht--datepicker').datepicker({
         dateFormat: 'yy/mm/dd'
     });
 
     // Color Tab
-    $('.total-color-tab-toggle').on('click', function () {
-        $(this).closest('.customize-control').find('.total-color-tab-wrap').slideToggle();
+    $('.ht--color-tab-toggle').on('click', function () {
+        $(this).closest('.customize-control').find('.ht--color-tab-wrap').slideToggle();
     });
 
-    $('.total-color-tab-switchers li').on('click', function () {
+    $('.ht--color-tab-switchers li').on('click', function () {
         if ($(this).hasClass('active')) {
             return false;
         }
         var clicked = $(this).attr('data-tab');
-        $(this).parent('.total-color-tab-switchers').find('li').removeClass('active');
+        $(this).parent('.ht--color-tab-switchers').find('li').removeClass('active');
         $(this).addClass('active');
-        $(this).closest('.total-color-tab-wrap').find('.total-color-tab-contents > div').hide();
-        $(this).closest('.total-color-tab-wrap').find('.' + clicked).fadeIn();
+        $(this).closest('.ht--color-tab-wrap').find('.ht--color-tab-contents > div').hide();
+        $(this).closest('.ht--color-tab-wrap').find('.' + clicked).fadeIn();
+    });
+
+    $('.ht--border-color .ht--color-picker-hex').wpColorPicker({
+        change: function (event, ui) {
+            var setting = $(this).attr('data-customize-setting-link');
+            var hexcolor = $(this).wpColorPicker('color');
+            // Set the new value.
+            wp.customize(setting, function (obj) {
+                obj.set(hexcolor);
+            });
+        }
+    });
+
+    $('.ht--box-shadow-color .ht--color-picker-hex').wpColorPicker({
+        change: function (event, ui) {
+            var setting = $(this).attr('data-customize-setting-link');
+            var hexcolor = $(this).wpColorPicker('color');
+            // Set the new value.
+            wp.customize(setting, function (obj) {
+                obj.set(hexcolor);
+            });
+        }
     });
 
     //Gallery Control
-    $('.total-gallery-button').click(function (e) {
+    $('.ht--gallery-button').click(function (e) {
         e.preventDefault();
 
         var button = $(this);
@@ -246,25 +253,25 @@ jQuery(document).ready(function ($) {
             /* loop through all the images */
             for (i = 0; i < attachments.length; ++i) {
                 /* add HTML element with an image */
-                $('ul.total-gallery-container').append('<li data-id="' + attachments[i].id + '"><span style="background-image:url(' + attachments[i].attributes.url + ')"></span><a href="#" class="total-gallery-remove">×</a></li>');
+                $('ul.ht--gallery-container').append('<li data-id="' + attachments[i].id + '"><span style="background-image:url(' + attachments[i].attributes.url + ')"></span><a href="#" class="ht--gallery-remove">×</a></li>');
                 /* add an image ID to the array of all images */
                 hiddenfieldvalue.push(attachments[i].id);
             }
             /* refresh sortable */
-            $("ul.total-gallery-container").sortable("refresh");
+            $("ul.ht--gallery-container").sortable("refresh");
             /* add the IDs to the hidden field value */
             hiddenfield.val(hiddenfieldvalue.join()).trigger('change');
         }).open();
     });
 
-    $('ul.total-gallery-container').sortable({
+    $('ul.ht--gallery-container').sortable({
         items: 'li',
         cursor: '-webkit-grabbing', /* mouse cursor */
         stop: function (event, ui) {
             ui.item.removeAttr('style');
 
             var sort = new Array(), /* array of image IDs */
-                    gallery = $(this); /* ul.total-gallery-container */
+                    gallery = $(this); /* ul.ht--gallery-container */
 
             /* each time after dragging we resort our array */
             gallery.find('li').each(function (index) {
@@ -275,10 +282,8 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    /*
-     * Remove certain images
-     */
-    $('body').on('click', '.total-gallery-remove', function () {
+    //Remove certain images
+    $('body').on('click', '.ht--gallery-remove', function () {
         var id = $(this).parent().attr('data-id'),
                 gallery = $(this).parent().parent(),
                 hiddenfield = gallery.next(),
@@ -302,8 +307,8 @@ jQuery(document).ready(function ($) {
     });
 
     // Scroll to Footer - add scroll to header as well
-    $('.customize-control-total-repeater').on('click', '#accordion-section-total_footer_section .accordion-section-title', function (event) {
-        var preview_section_id = 'total-colophon';
+    $('.customize-control-ht--repeater').on('click', '#accordion-section-footer_section .accordion-section-title', function (event) {
+        var preview_section_id = 'ht--colophon';
         var $contents = jQuery('#customize-preview iframe').contents();
         if ($contents.find('#' + preview_section_id).length > 0) {
             $contents.find('html, body').animate({
@@ -313,20 +318,20 @@ jQuery(document).ready(function ($) {
     });
 
     // Repeater Fields
-    $('.customize-control-total-repeater').on('click', '.total-repeater-field-title', function () {
+    $('.customize-control-ht--repeater').on('click', '.ht--repeater-field-title', function () {
         $(this).next().slideToggle();
-        $(this).closest('.total-repeater-field-control').toggleClass('expanded');
+        $(this).closest('.ht--repeater-field-control').toggleClass('expanded');
     });
 
-    $('.customize-control-total-repeater').on('click', '.total-repeater-field-close', function () {
-        $(this).closest('.total-repeater-fields').slideUp();
-        $(this).closest('.total-repeater-field-control').toggleClass('expanded');
+    $('.customize-control-ht--repeater').on('click', '.ht--repeater-field-close', function () {
+        $(this).closest('.ht--repeater-fields').slideUp();
+        $(this).closest('.ht--repeater-field-control').toggleClass('expanded');
     });
 
-    $('.customize-control-total-repeater').on('click', '.total-add-control-field', function () {
+    $('.customize-control-ht--repeater').on('click', '.ht--add-control-field', function () {
         var $this = $(this).parent();
         if (typeof $this != 'undefined') {
-            var field = $this.find('.total-repeater-field-control:first').clone();
+            var field = $this.find('.ht--repeater-field-control:first').clone();
             if (typeof field != 'undefined') {
                 field.find('input[type="text"][data-name]').each(function () {
                     var defaultValue = $(this).attr('data-default');
@@ -349,7 +354,7 @@ jQuery(document).ready(function ($) {
                         $(this).prop('checked', false);
                     }
                 });
-                field.find('.total-type-checkbox input[type="checkbox"]').each(function () {
+                field.find('.ht--type-checkbox input[type="checkbox"]').each(function () {
                     var defaultValue = $(this).attr('data-default');
                     if ($(this).val() == defaultValue) {
                         $(this).prop('checked', true);
@@ -357,59 +362,63 @@ jQuery(document).ready(function ($) {
                         $(this).prop('checked', false);
                     }
                 });
-                field.find('.total-selector-labels label').each(function () {
-                    var defaultValue = $(this).closest('.total-selector-labels').next('input[data-name]').attr('data-default');
+                field.find('.ht--selector-labels label').each(function () {
+                    var defaultValue = $(this).closest('.ht--selector-labels').next('input[data-name]').attr('data-default');
                     var dataVal = $(this).attr('data-val');
-                    $(this).closest('.total-selector-labels').next('input[data-name]').val(defaultValue);
+                    $(this).closest('.ht--selector-labels').next('input[data-name]').val(defaultValue);
                     if (defaultValue == dataVal) {
                         $(this).addClass('selector-selected');
                     } else {
                         $(this).removeClass('selector-selected');
                     }
                 });
-                field.find('.total-range-slider-control-wrap').each(function () {
-                    var $slider = $(this).find('.total-range-slider');
-                    $slider.removeClass('ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all').empty();
-                    var defaultValue = parseFloat($slider.attr('data-default'));
-                    $(this).find('input').val(defaultValue);
-                    $slider.slider({
+                field.find('.ht--range-slider-control-wrap').each(function () {
+                    var input = $(this).find('input');
+                    var newSlider = $(this).find('.ht--range-slider');
+                    newSlider.removeClass('ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all').empty();
+                    var sliderValue = parseFloat(newSlider.attr('data-default'));
+                    input.val(sliderValue);
+                    var sliderMinValue = parseFloat(input.attr('min'));
+                    var sliderMaxValue = parseFloat(input.attr('max'));
+                    var sliderStepValue = parseFloat(input.attr('step'));
+                    newSlider.slider({
+                        value: sliderValue,
+                        min: sliderMinValue,
+                        max: sliderMaxValue,
+                        step: sliderStepValue,
                         range: 'min',
-                        value: parseFloat($slider.attr('data-default')),
-                        min: parseFloat($slider.attr('data-min')),
-                        max: parseFloat($slider.attr('data-max')),
-                        step: parseFloat($slider.attr('data-step')),
-                        slide: function (event, ui) {
-                            $slider.closest('.total-range-slider-control-wrap').find('input[data-name]').val(ui.value);
-                            total_refresh_repeater_values();
+                        slide: function (e, ui) {
+                            input.val(ui.value);
+                            refresh_repeater_values();
                         }
                     });
                 });
-                field.find('.total-onoffswitch').each(function () {
+                field.find('.ht--onoffswitch').each(function () {
                     var defaultValue = $(this).next('input[data-name]').attr('data-default');
                     $(this).next('input[data-name]').val(defaultValue);
                     if (defaultValue == 'on') {
-                        $(this).addClass('total-switch-on');
+                        $(this).addClass('ht--switch-on');
                     } else {
-                        $(this).removeClass('total-switch-on');
+                        $(this).removeClass('ht--switch-on');
                     }
                 });
-                field.find('.total-toggle').each(function () {
+                field.find('.ht--toggle').each(function () {
                     var defaultValue = $(this).find('input[data-name]').attr('data-default');
                     $(this).find('input[data-name]').val(defaultValue);
                     if (defaultValue == 'yes') {
-                        $(this).find('.total-onoff-switch-label').addClass('total-toggle-on');
+                        $(this).find('.ht--onoff-switch-label').addClass('ht--toggle-on');
                     } else {
-                        $(this).find('.total-onoff-switch-label').removeClass('total-toggle-on');
+                        $(this).find('.ht--onoff-switch-label').removeClass('ht--toggle-on');
                     }
                 });
-                field.find('.total-color-picker').each(function () {
-                    $total_colorPicker = $(this);
-                    $total_colorPicker.closest('.wp-picker-container').after($(this));
-                    $total_colorPicker.prev('.wp-picker-container').remove();
+                field.find('.ht--color-picker').each(function () {
+                    $colorPicker = $(this);
+                    $colorPicker.closest('.wp-picker-container').after($(this));
+                    $colorPicker.prev('.wp-picker-container').remove();
                     $(this).wpColorPicker({
                         change: function (event, ui) {
                             setTimeout(function () {
-                                total_refresh_repeater_values();
+                                refresh_repeater_values();
                             }, 100);
                         }
                     });
@@ -423,10 +432,10 @@ jQuery(document).ready(function ($) {
                         $(this).find('.thumbnail-image').html('').prev('.placeholder').removeClass('hidden');
                     }
                 });
-                field.find('.total-icon-box').each(function () {
+                field.find('.ht--icon-box').each(function () {
                     var defaultValue = $(this).next('input[data-name]').attr('data-default');
                     $(this).next('input[data-name]').val(defaultValue);
-                    $(this).prev('.total-selected-icon').children('i').attr('class', '').addClass(defaultValue);
+                    $(this).prev('.ht--selected-icon').children('i').attr('class', '').addClass(defaultValue);
                     $(this).find('li').each(function () {
                         var icon_class = $(this).find('i').attr('class');
                         if (defaultValue == icon_class) {
@@ -436,7 +445,7 @@ jQuery(document).ready(function ($) {
                         }
                     });
                 });
-                field.find('.total-multi-category-list').each(function () {
+                field.find('.ht--multi-category-list').each(function () {
                     var defaultValue = $(this).next('input[data-name]').attr('data-default');
                     $(this).next('input[data-name]').val(defaultValue);
                     $(this).find('input[type="checkbox"]').each(function () {
@@ -447,62 +456,62 @@ jQuery(document).ready(function ($) {
                         }
                     });
                 });
-                //field.find('.total-fields').show();
-                $this.find('.total-repeater-field-control-wrap').append(field);
-                field.addClass('expanded').find('.total-repeater-fields').show();
+                //field.find('.ht--fields').show();
+                $this.find('.ht--repeater-field-control-wrap').append(field);
+                field.addClass('expanded').find('.ht--repeater-fields').show();
                 $('.accordion-section-content').animate({
                     scrollTop: $this.height()
                 }, 1000);
-                total_refresh_repeater_values();
+                refresh_repeater_values();
             }
         }
         return false;
     });
 
-    $('.customize-control-total-repeater').on('click', '.total-repeater-field-remove', function () {
+    $('.customize-control-ht--repeater').on('click', '.ht--repeater-field-remove', function () {
         if (typeof $(this).parent() != 'undefined') {
-            $(this).closest('.total-repeater-field-control').slideUp('normal', function () {
+            $(this).closest('.ht--repeater-field-control').slideUp('normal', function () {
                 $(this).remove();
-                total_refresh_repeater_values();
+                refresh_repeater_values();
             });
         }
         return false;
     });
 
-    $('.customize-control-total-repeater').on('keyup change', '[data-name]', function () {
+    $('.customize-control-ht--repeater').on('keyup change', '[data-name]', function () {
         delay(function () {
-            total_refresh_repeater_values();
+            refresh_repeater_values();
             return false;
         }, 500);
     });
 
-    $('.customize-control-total-repeater').on('change', 'input[type="checkbox"][data-name]', function () {
+    $('.customize-control-ht--repeater').on('change', 'input[type="checkbox"][data-name]', function () {
         if ($(this).is(':checked')) {
             $(this).val('yes');
-            $(this).parent('label').addClass('total-toggle-on');
+            $(this).parent('label').addClass('ht--toggle-on');
         } else {
             $(this).val('no');
-            $(this).parent('label').removeClass('total-toggle-on');
+            $(this).parent('label').removeClass('ht--toggle-on');
         }
         return false;
     });
 
     // Drag and drop to change order
-    $('.total-repeater-field-control-wrap').sortable({
+    $('.ht--repeater-field-control-wrap').sortable({
         orientation: 'vertical',
-        handle: '.total-repeater-field-title',
+        handle: '.ht--repeater-field-title',
         update: function (event, ui) {
-            total_refresh_repeater_values();
+            refresh_repeater_values();
         }
     });
 
     // Set all variables to be used in scope
     var frame;
     // ADD IMAGE LINK
-    $('.customize-control-total-repeater').on('click', '.total-upload-button', function (event) {
+    $('.customize-control-ht--repeater').on('click', '.ht--upload-button', function (event) {
         event.preventDefault();
-        var imgContainer = $(this).closest('.total-fields-wrap').find('.thumbnail-image'),
-                placeholder = $(this).closest('.total-fields-wrap').find('.placeholder'),
+        var imgContainer = $(this).closest('.ht--fields-wrap').find('.thumbnail-image'),
+                placeholder = $(this).closest('.ht--fields-wrap').find('.placeholder'),
                 imgIdInput = $(this).siblings('.upload-id');
         // Create a new media frame
         frame = wp.media({
@@ -527,10 +536,10 @@ jQuery(document).ready(function ($) {
     });
 
     // DELETE IMAGE LINK
-    $('.customize-control-total-repeater').on('click', '.total-delete-button', function (event) {
+    $('.customize-control-ht--repeater').on('click', '.ht--delete-button', function (event) {
         event.preventDefault();
-        var imgContainer = $(this).closest('.total-fields-wrap').find('.thumbnail-image'),
-                placeholder = $(this).closest('.total-fields-wrap').find('.placeholder'),
+        var imgContainer = $(this).closest('.ht--fields-wrap').find('.thumbnail-image'),
+                placeholder = $(this).closest('.ht--fields-wrap').find('.placeholder'),
                 imgIdInput = $(this).siblings('.upload-id');
         // Clear out the preview image
         imgContainer.find('img').remove();
@@ -540,43 +549,28 @@ jQuery(document).ready(function ($) {
     });
 
     var ColorChange = false;
-    $('.customize-control-total-repeater .total-color-picker').wpColorPicker({
+    $('.customize-control-ht--repeater .ht--color-picker').wpColorPicker({
         change: function (event, ui) {
-            total_refresh_repeater_values();
+            refresh_repeater_values();
         }
     });
     ColorChange = true;
 
     //MultiCheck box Control JS
-    $('.customize-control-total-repeater').on('change', '.total-type-multicategory input[type="checkbox"]', function () {
-        var checkbox_values = $(this).parents('.total-type-multicategory').find('input[type="checkbox"]:checked').map(function () {
+    $('.customize-control-ht--repeater').on('change', '.ht--type-multicategory input[type="checkbox"]', function () {
+        var checkbox_values = $(this).parents('.ht--type-multicategory').find('input[type="checkbox"]:checked').map(function () {
             return $(this).val();
         }).get().join(',');
-        $(this).parents('.total-type-multicategory').find('input[type="hidden"]').val(checkbox_values).trigger('change');
-        total_refresh_repeater_values();
+        $(this).parents('.ht--type-multicategory').find('input[type="hidden"]').val(checkbox_values).trigger('change');
+        refresh_repeater_values();
     });
 
-    $('.total-type-range').each(function () {
-        var $slider = $(this).find('.total-range-slider');
-        $slider.slider({
-            range: 'min',
-            value: parseFloat($slider.attr('data-value')),
-            min: parseFloat($slider.attr('data-min')),
-            max: parseFloat($slider.attr('data-max')),
-            step: parseFloat($slider.attr('data-step')),
-            slide: function (event, ui) {
-                $slider.closest('.total-range-slider-control-wrap').find('input').val(ui.value);
-                total_refresh_repeater_values();
-            }
-        });
-    });
-
-    function total_refresh_repeater_values() {
-        $('.control-section.open .total-repeater-field-control-wrap').each(function () {
+    function refresh_repeater_values() {
+        $('.control-section.open .ht--repeater-field-control-wrap').each(function () {
             var values = [];
             var $this = $(this);
 
-            $this.find('.total-repeater-field-control').each(function () {
+            $this.find('.ht--repeater-field-control').each(function () {
                 var valueToPush = {};
 
                 $(this).find('[data-name]').each(function () {
@@ -588,9 +582,88 @@ jQuery(document).ready(function ($) {
                 values.push(valueToPush);
             });
 
-            $this.next('.total-repeater-collector').val(JSON.stringify(values)).trigger('change');
+            $this.next('.ht--repeater-collector').val(JSON.stringify(values)).trigger('change');
         });
     }
+
+    // Responsive switchers
+    $('.customize-control .responsive-switchers button').on('click', function (event) {
+        // Set up variables
+        var $this = $(this),
+                $devices = $('.responsive-switchers'),
+                $device = $(event.currentTarget).data('device'),
+                $control = $('.customize-control.has-switchers'),
+                $body = $('.wp-full-overlay'),
+                $footer_devices = $('.wp-full-overlay-footer .devices');
+        // Button class
+        $devices.find('button').removeClass('active');
+        $devices.find('button.preview-' + $device).addClass('active');
+        // Control class
+        $control.find('.control-wrap').removeClass('active');
+        $control.find('.control-wrap.' + $device).addClass('active');
+        $control.removeClass('control-device-desktop control-device-tablet control-device-mobile').addClass('control-device-' + $device);
+        // Wrapper class
+        $body.removeClass('preview-desktop preview-tablet preview-mobile').addClass('preview-' + $device);
+        // Panel footer buttons
+        $footer_devices.find('button').removeClass('active').attr('aria-pressed', false);
+        $footer_devices.find('button.preview-' + $device).addClass('active').attr('aria-pressed', true);
+        // Open switchers
+        if ($this.hasClass('preview-desktop')) {
+            $control.toggleClass('responsive-switchers-open');
+        }
+    });
+
+    // If panel footer buttons clicked
+    $('.wp-full-overlay-footer .devices button').on('click', function (event) {
+        // Set up variables
+        var $this = $(this),
+                $devices = $('.customize-control.has-switchers .responsive-switchers'),
+                $device = $(event.currentTarget).data('device'),
+                $control = $('.customize-control.has-switchers');
+        // Button class
+        $devices.find('button').removeClass('active');
+        $devices.find('button.preview-' + $device).addClass('active');
+        // Control class
+        $control.find('.control-wrap').removeClass('active');
+        $control.find('.control-wrap.' + $device).addClass('active');
+        $control.removeClass('control-device-desktop control-device-tablet control-device-mobile').addClass('control-device-' + $device);
+        // Open switchers
+        if (!$this.hasClass('preview-desktop')) {
+            $control.addClass('responsive-switchers-open');
+        } else {
+            $control.removeClass('responsive-switchers-open');
+        }
+    });
+
+    // Linked button
+    $('.ht--linked').on('click', function () {
+        // Set up variables
+        var $this = $(this);
+        // Remove linked class
+        $this.parent().parent('.ht--dimension-wrap').prevAll().slice(0, 4).find('input').removeClass('linked').attr('data-element', '');
+        // Remove class
+        $this.parent('.ht--link-dimensions').removeClass('unlinked');
+    });
+
+    // Unlinked button
+    $('.ht--unlinked').on('click', function () {
+        // Set up variables
+        var $this = $(this),
+                $element = $this.data('element');
+        // Add linked class
+        $this.parent().parent('.ht--dimension-wrap').prevAll().slice(0, 4).find('input').addClass('linked').attr('data-element', $element);
+        // Add class
+        $this.parent('.ht--link-dimensions').addClass('unlinked');
+    });
+
+    // Values linked inputs
+    $('.ht--dimension-wrap').on('input', '.linked', function () {
+        var $data = $(this).attr('data-element'),
+                $val = $(this).val();
+        $('.linked[ data-element="' + $data + '" ]').each(function (key, value) {
+            $(this).val($val).change();
+        });
+    });
 });
 
 function total_set_bg_color_value($container, $element, $obj) {
@@ -610,16 +683,16 @@ function total_set_bg_color_value($container, $element, $obj) {
 }
 
 (function (api) {
-    api.controlConstructor['background-image'] = api.Control.extend({
+    api.controlConstructor['ht--background-image'] = api.Control.extend({
         ready: function () {
             var control = this;
-            control.container.on('click', '.total-upload-button', function (event) {
+            control.container.on('click', '.ht--upload-button', function (event) {
                 event.preventDefault();
-                var imgContainer = jQuery(this).closest('.customize-control-background-image').find('.total-thumbnail'),
-                        placeholder = jQuery(this).closest('.customize-control-background-image').find('.total-placeholder'),
-                        imgIdInput = jQuery(this).closest('.customize-control-background-image').find('.total-background-image-id'),
-                        imgUrlInput = jQuery(this).closest('.customize-control-background-image').find('.total-background-image-url'),
-                        backgroundFields = jQuery(this).closest('.customize-control-background-image').find('.total-background-image-fields');
+                var imgContainer = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--thumbnail'),
+                        placeholder = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--placeholder'),
+                        imgIdInput = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--background-image-id'),
+                        imgUrlInput = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--background-image-url'),
+                        backgroundFields = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--background-image-fields');
                 var frame = wp.media({
                     title: 'Select or Upload Image',
                     button: {
@@ -640,13 +713,13 @@ function total_set_bg_color_value($container, $element, $obj) {
             });
 
             // DELETE IMAGE LINK
-            control.container.on('click', '.total-remove-button', function (event) {
+            control.container.on('click', '.ht--remove-button', function (event) {
                 event.preventDefault();
-                var imgContainer = jQuery(this).closest('.customize-control-background-image').find('.total-thumbnail'),
-                        placeholder = jQuery(this).closest('.customize-control-background-image').find('.total-placeholder'),
-                        imgIdInput = jQuery(this).closest('.customize-control-background-image').find('.total-background-image-id'),
-                        imgUrlInput = jQuery(this).closest('.customize-control-background-image').find('.total-background-image-url'),
-                        backgroundFields = jQuery(this).closest('.customize-control-background-image').find('.total-background-image-fields');
+                var imgContainer = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--thumbnail'),
+                        placeholder = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--placeholder'),
+                        imgIdInput = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--background-image-id'),
+                        imgUrlInput = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--background-image-url'),
+                        backgroundFields = jQuery(this).closest('.customize-control-ht--background-image').find('.ht--background-image-fields');
                 imgContainer.find('img').remove();
                 placeholder.removeClass('hidden');
                 imgIdInput.val('').trigger('change');
@@ -654,20 +727,20 @@ function total_set_bg_color_value($container, $element, $obj) {
                 backgroundFields.hide();
             });
 
-            control.container.on('change', '.background-image-repeat select', function () {
+            control.container.on('change', '.ht--background-image-repeat select', function () {
                 control.settings['repeat'].set(jQuery(this).val());
             });
-            control.container.on('change', '.background-image-size select', function () {
+            control.container.on('change', '.ht--background-image-size select', function () {
                 control.settings['size'].set(jQuery(this).val());
             });
-            control.container.on('change', '.background-image-attachment select', function () {
+            control.container.on('change', '.ht--background-image-attachment select', function () {
                 control.settings['attachment'].set(jQuery(this).val());
             });
-            control.container.on('change', '.background-image-position select', function () {
+            control.container.on('change', '.ht--background-image-position select', function () {
                 control.settings['position'].set(jQuery(this).val());
             });
-            total_set_bg_color_value(control.container, '.background-image-color input', control.settings['color']);
-            total_set_bg_color_value(control.container, '.background-image-overlay input', control.settings['overlay']);
+            total_set_bg_color_value(control.container, '.ht--background-image-color input', control.settings['color']);
+            total_set_bg_color_value(control.container, '.ht--background-image-overlay input', control.settings['overlay']);
         }
     });
 
@@ -676,10 +749,10 @@ function total_set_bg_color_value($container, $element, $obj) {
     api.Tab = api.Control.extend({
         ready: function () {
             var control = this;
-            control.container.find('a.total-customizer-tab').click(function (evt) {
+            control.container.find('a.ht--customizer-tab').click(function (evt) {
                 var tab = jQuery(this).data('tab');
                 evt.preventDefault();
-                control.container.find('a.total-customizer-tab').removeClass('active');
+                control.container.find('a.ht--customizer-tab').removeClass('active');
                 jQuery(this).addClass('active');
                 control.toggleActiveControls(tab);
             });
@@ -700,9 +773,11 @@ function total_set_bg_color_value($container, $element, $obj) {
             });
         }
     });
+
     jQuery.extend(api.controlConstructor, {
-        'total-tab': api.Tab
+        'ht--tab': api.Tab
     });
+
     api.bind('ready', function () {
         _.each(api.Tabs, function (id) {
             var control = api.control(id);
@@ -711,10 +786,10 @@ function total_set_bg_color_value($container, $element, $obj) {
     });
 
     // Alpha Color Picker Control
-    api.controlConstructor['total-alpha-color'] = api.Control.extend({
+    api.controlConstructor['ht--alpha-color'] = api.Control.extend({
         ready: function () {
             var control = this;
-            var paletteInput = control.container.find('.total-alpha-color-control').data('palette');
+            var paletteInput = control.container.find('.ht--alpha-color-control').data('palette');
             if (true == paletteInput) {
                 palette = true;
             } else if (typeof paletteInput !== 'undefined' && paletteInput.indexOf('|') !== -1) {
@@ -722,7 +797,7 @@ function total_set_bg_color_value($container, $element, $obj) {
             } else {
                 palette = false;
             }
-            control.container.find('.total-alpha-color-control').wpColorPicker({
+            control.container.find('.ht--alpha-color-control').wpColorPicker({
                 change: function (event, ui) {
                     var color = ui.color.to_s();
                     control.setting.set(color);
@@ -740,10 +815,10 @@ function total_set_bg_color_value($container, $element, $obj) {
     });
 
     // Color Tab Control
-    api.controlConstructor['total-color-tab'] = api.Control.extend({
+    api.controlConstructor['ht--color-tab'] = api.Control.extend({
         ready: function () {
             var control = this;
-            control.container.find('.total-alpha-color-control').each(function () {
+            control.container.find('.ht--alpha-color-control').each(function () {
                 var $elem = jQuery(this);
                 var paletteInput = $elem.data('palette');
                 var setting = jQuery(this).attr('data-customize-setting-link');
@@ -780,138 +855,51 @@ function total_set_bg_color_value($container, $element, $obj) {
     api.controlConstructor['dimensions'] = api.Control.extend({
         ready: function () {
             var control = this;
-            control.container.on('change keyup paste', '.total-dimension-desktop_top', function () {
+            control.container.on('change keyup paste', '.ht--dimension-desktop_top', function () {
                 control.settings['desktop_top'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-desktop_right', function () {
+            control.container.on('change keyup paste', '.ht--dimension-desktop_right', function () {
                 control.settings['desktop_right'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-desktop_bottom', function () {
+            control.container.on('change keyup paste', '.ht--dimension-desktop_bottom', function () {
                 control.settings['desktop_bottom'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-desktop_left', function () {
+            control.container.on('change keyup paste', '.ht--dimension-desktop_left', function () {
                 control.settings['desktop_left'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-tablet_top', function () {
+            control.container.on('change keyup paste', '.ht--dimension-tablet_top', function () {
                 control.settings['tablet_top'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-tablet_right', function () {
+            control.container.on('change keyup paste', '.ht--dimension-tablet_right', function () {
                 control.settings['tablet_right'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-tablet_bottom', function () {
+            control.container.on('change keyup paste', '.ht--dimension-tablet_bottom', function () {
                 control.settings['tablet_bottom'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-tablet_left', function () {
+            control.container.on('change keyup paste', '.ht--dimension-tablet_left', function () {
                 control.settings['tablet_left'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-mobile_top', function () {
+            control.container.on('change keyup paste', '.ht--dimension-mobile_top', function () {
                 control.settings['mobile_top'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-mobile_right', function () {
+            control.container.on('change keyup paste', '.ht--dimension-mobile_right', function () {
                 control.settings['mobile_right'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-mobile_bottom', function () {
+            control.container.on('change keyup paste', '.ht--dimension-mobile_bottom', function () {
                 control.settings['mobile_bottom'].set(jQuery(this).val());
             });
-            control.container.on('change keyup paste', '.total-dimension-mobile_left', function () {
+            control.container.on('change keyup paste', '.ht--dimension-mobile_left', function () {
                 control.settings['mobile_left'].set(jQuery(this).val());
             });
         }
     });
 
-    // Range Slider Control
-    api.controlConstructor['total-responsive-range-slider'] = api.Control.extend({
-        ready: function () {
-            var control = this,
-                    desktop_slider = control.container.find('.total-res-range-slider.desktop-slider'),
-                    desktop_slider_input = desktop_slider.next('.total-res-range-slider-input').find('input.desktop-input'),
-                    tablet_slider = control.container.find('.total-res-range-slider.tablet-slider'),
-                    tablet_slider_input = tablet_slider.next('.total-res-range-slider-input').find('input.tablet-input'),
-                    mobile_slider = control.container.find('.total-res-range-slider.mobile-slider'),
-                    mobile_slider_input = mobile_slider.next('.total-res-range-slider-input').find('input.mobile-input'),
-                    slider_input,
-                    $this,
-                    val;
-            // Desktop slider
-            desktop_slider.slider({
-                range: 'min',
-                value: desktop_slider_input.val(),
-                min: +desktop_slider_input.attr('min'),
-                max: +desktop_slider_input.attr('max'),
-                step: +desktop_slider_input.attr('step'),
-                slide: function (event, ui) {
-                    desktop_slider_input.val(ui.value).keyup();
-                },
-                change: function (event, ui) {
-                    control.settings['desktop'].set(ui.value);
-                }
-            });
-            // Tablet slider
-            tablet_slider.slider({
-                range: 'min',
-                value: tablet_slider_input.val(),
-                min: +tablet_slider_input.attr('min'),
-                max: +tablet_slider_input.attr('max'),
-                step: +desktop_slider_input.attr('step'),
-                slide: function (event, ui) {
-                    tablet_slider_input.val(ui.value).keyup();
-                },
-                change: function (event, ui) {
-                    control.settings['tablet'].set(ui.value);
-                }
-            });
-            // Mobile slider
-            mobile_slider.slider({
-                range: 'min',
-                value: mobile_slider_input.val(),
-                min: +mobile_slider_input.attr('min'),
-                max: +mobile_slider_input.attr('max'),
-                step: +desktop_slider_input.attr('step'),
-                slide: function (event, ui) {
-                    mobile_slider_input.val(ui.value).keyup();
-                },
-                change: function (event, ui) {
-                    control.settings['mobile'].set(ui.value);
-                }
-            });
-            // Update the slider when the number value change
-            jQuery('input.desktop-input').on('change keyup paste', function () {
-                $this = jQuery(this);
-                val = $this.val();
-                slider_input = $this.parent().prev('.total-res-range-slider.desktop-slider');
-                slider_input.slider('value', val);
-            });
-            jQuery('input.tablet-input').on('change keyup paste', function () {
-                $this = jQuery(this);
-                val = $this.val();
-                slider_input = $this.parent().prev('.total-res-range-slider.tablet-slider');
-                slider_input.slider('value', val);
-            });
-            jQuery('input.mobile-input').on('change keyup paste', function () {
-                $this = jQuery(this);
-                val = $this.val();
-                slider_input = $this.parent().prev('.total-res-range-slider.mobile-slider');
-                slider_input.slider('value', val);
-            });
-            // Save the values
-            control.container.on('change keyup paste', '.desktop input', function () {
-                control.settings['desktop'].set(jQuery(this).val());
-            });
-            control.container.on('change keyup paste', '.tablet input', function () {
-                control.settings['tablet'].set(jQuery(this).val());
-            });
-            control.container.on('change keyup paste', '.mobile input', function () {
-                control.settings['mobile'].set(jQuery(this).val());
-            });
-        }
-    });
-
     // Sortable Control
-    api.controlConstructor['total-sortable'] = api.Control.extend({
+    api.controlConstructor['ht--sortable'] = api.Control.extend({
         ready: function () {
             var control = this;
             // Set the sortable container.
-            control.sortableContainer = control.container.find('ul.total-sortable').first();
+            control.sortableContainer = control.container.find('ul.ht--sortable').first();
             // Init sortable.
             control.sortableContainer.sortable({
                 // Update value when we stop sorting.
@@ -943,7 +931,7 @@ function total_set_bg_color_value($container, $element, $obj) {
         }
     });
 
-    api.sectionConstructor['total-upgrade-section'] = api.Section.extend({
+    api.sectionConstructor['ht--upgrade-section'] = api.Section.extend({
 
         // No events for this type of section.
         attachEvents: function () {},
@@ -953,93 +941,8 @@ function total_set_bg_color_value($container, $element, $obj) {
             return true;
         }
     });
+
 })(wp.customize);
 
-
-jQuery(document).ready(function ($) {
-    // Responsive switchers
-    $('.customize-control .responsive-switchers button').on('click', function (event) {
-        // Set up variables
-        var $this = $(this),
-                $devices = $('.responsive-switchers'),
-                $device = $(event.currentTarget).data('device'),
-                $control = $('.customize-control.has-switchers'),
-                $body = $('.wp-full-overlay'),
-                $footer_devices = $('.wp-full-overlay-footer .devices');
-        // Button class
-        $devices.find('button').removeClass('active');
-        $devices.find('button.preview-' + $device).addClass('active');
-        // Control class
-        $control.find('.control-wrap').removeClass('active');
-        $control.find('.control-wrap.' + $device).addClass('active');
-        $control.removeClass('control-device-desktop control-device-tablet control-device-mobile').addClass('control-device-' + $device);
-        // Wrapper class
-        $body.removeClass('preview-desktop preview-tablet preview-mobile').addClass('preview-' + $device);
-        // Panel footer buttons
-        $footer_devices.find('button').removeClass('active').attr('aria-pressed', false);
-        $footer_devices.find('button.preview-' + $device).addClass('active').attr('aria-pressed', true);
-        // Open switchers
-        if ($this.hasClass('preview-desktop')) {
-            $control.toggleClass('responsive-switchers-open');
-        }
-    });
-    // If panel footer buttons clicked
-    $('.wp-full-overlay-footer .devices button').on('click', function (event) {
-        // Set up variables
-        var $this = $(this),
-                $devices = $('.customize-control.has-switchers .responsive-switchers'),
-                $device = $(event.currentTarget).data('device'),
-                $control = $('.customize-control.has-switchers');
-        // Button class
-        $devices.find('button').removeClass('active');
-        $devices.find('button.preview-' + $device).addClass('active');
-        // Control class
-        $control.find('.control-wrap').removeClass('active');
-        $control.find('.control-wrap.' + $device).addClass('active');
-        $control.removeClass('control-device-desktop control-device-tablet control-device-mobile').addClass('control-device-' + $device);
-        // Open switchers
-        if (!$this.hasClass('preview-desktop')) {
-            $control.addClass('responsive-switchers-open');
-        } else {
-            $control.removeClass('responsive-switchers-open');
-        }
-    });
-    // Linked button
-    $('.total-linked').on('click', function () {
-        // Set up variables
-        var $this = $(this);
-        // Remove linked class
-        $this.parent().parent('.total-dimension-wrap').prevAll().slice(0, 4).find('input').removeClass('linked').attr('data-element', '');
-        // Remove class
-        $this.parent('.total-link-dimensions').removeClass('unlinked');
-    });
-    // Unlinked button
-    $('.total-unlinked').on('click', function () {
-        // Set up variables
-        var $this = $(this),
-                $element = $this.data('element');
-        // Add linked class
-        $this.parent().parent('.total-dimension-wrap').prevAll().slice(0, 4).find('input').addClass('linked').attr('data-element', $element);
-        // Add class
-        $this.parent('.total-link-dimensions').addClass('unlinked');
-    });
-    // Values linked inputs
-    $('.total-dimension-wrap').on('input', '.linked', function () {
-        var $data = $(this).attr('data-element'),
-                $val = $(this).val();
-        $('.linked[ data-element="' + $data + '" ]').each(function (key, value) {
-            $(this).val($val).change();
-        });
-    });
-
-
-    // Select Preloader
-    $('.total-preloader-selector').on('change', function () {
-        var activePreloader = $(this).val();
-        $(this).next('.total-preloader-container').find('.total-preloader').hide();
-        $(this).next('.total-preloader-container').find('.total-' + activePreloader).show();
-    });
-
-});
 
 

@@ -4,15 +4,7 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
 
     class Total_Customizer_Custom_Controls {
 
-        protected $version;
-
         function __construct() {
-            if (defined('TOTAL_VERSION')) {
-                $this->version = TOTAL_VERSION;
-            } else {
-                $this->version = '1.0.0';
-            }
-
             add_action('customize_register', array($this, 'register_controls'));
             add_action('customize_controls_enqueue_scripts', array($this, 'enqueue_customizer_script'));
         }
@@ -50,6 +42,8 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/upgrade-section.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/upgrade-info.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/toggle-section.php';
+            require TOTAL_CUSTOMIZER_PATH . 'custom-controls/border-control.php';
+            require TOTAL_CUSTOMIZER_PATH . 'custom-controls/box-shadow-control.php';
 
             /** Register Control Type */
             $wp_customize->register_control_type('Total_Color_Tab_Control');
@@ -60,6 +54,8 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
             $wp_customize->register_control_type('Total_Sortable_Control');
             $wp_customize->register_control_type('Total_Typography_Control');
             $wp_customize->register_control_type('Total_Icon_Selector_Control');
+            $wp_customize->register_control_type('Total_Border_Control');
+            $wp_customize->register_control_type('Total_Box_Shadow_Control');
 
             // Register custom section types.
             $wp_customize->register_section_type('Total_Upgrade_Section');
@@ -67,18 +63,26 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
         }
 
         public function enqueue_customizer_script() {
-            wp_enqueue_script('selectize', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/selectize.js', array('jquery'), $this->get_version(), true);
-            wp_enqueue_script('chosen-jquery', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/chosen.jquery.js', array('jquery'), $this->get_version(), true);
-            wp_enqueue_script('wp-color-picker-alpha', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/wp-color-picker-alpha.js', array('jquery', 'wp-color-picker'), $this->get_version(), true);
-            wp_enqueue_script('total-customizer-control', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/customizer-controls.js', array('jquery', 'jquery-ui-datepicker'), $this->get_version(), true);
+            //See customizer-fonts-iucon.php file
+            $icons = apply_filters('total_register_icon', array());
 
-            wp_enqueue_style('selectize', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/selectize.css', array(), $this->get_version());
-            wp_enqueue_style('chosen', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/chosen.css', array(), $this->get_version());
-            wp_enqueue_style('total-customizer-control', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/customizer-controls.css', array('wp-color-picker'), $this->get_version());
-        }
+            if ($icons && is_array($icons)) {
+                foreach ($icons as $icon) {
+                    if (isset($icon['name']) && isset($icon['url'])) {
+                        wp_enqueue_style($icon['name'], $icon['url'], array(), TOTAL_VERSION);
+                    }
+                }
+            }
 
-        public function get_version() {
-            return $this->version;
+            wp_enqueue_script('selectize', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/selectize.js', array('jquery'), TOTAL_VERSION, true);
+            wp_enqueue_script('chosen-jquery', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/chosen.jquery.js', array('jquery'), TOTAL_VERSION, true);
+            wp_enqueue_script('wp-color-picker-alpha', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/wp-color-picker-alpha.js', array('jquery', 'wp-color-picker'), TOTAL_VERSION, true);
+            wp_enqueue_script('total-customizer-control', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/customizer-controls.js', array('jquery', 'jquery-ui-datepicker'), TOTAL_VERSION, true);
+
+            wp_enqueue_style('selectize', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/selectize.css', array(), TOTAL_VERSION);
+            wp_enqueue_style('chosen', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/chosen.css', array(), TOTAL_VERSION);
+            wp_enqueue_style('total-preloader', TOTAL_CUSTOMIZER_URL . 'preloader/css/preloader.css', array('wp-color-picker'), TOTAL_VERSION);
+            wp_enqueue_style('total-customizer-control', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/customizer-controls.css', array('wp-color-picker'), TOTAL_VERSION);
         }
 
     }

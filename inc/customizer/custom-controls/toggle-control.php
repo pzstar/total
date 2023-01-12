@@ -8,7 +8,7 @@ class Total_Toggle_Control extends WP_Customize_Control {
      *
      * @var string
      */
-    public $type = 'total-toggle';
+    public $type = 'ht--toggle';
 
     /**
      * Control method
@@ -17,12 +17,12 @@ class Total_Toggle_Control extends WP_Customize_Control {
      */
     public function render_content() {
         ?>
-        <div class="total-toggle-container">
-            <div class="total-toggle">
-                <input class="total-toggle-checkbox" type="checkbox" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> <?php checked($this->value()); ?>>
-                <label class="total-toggle-label" for="<?php echo esc_attr($this->id); ?>"></label>
+        <div class="ht--toggle-container">
+            <div class="ht--toggle">
+                <input class="ht--toggle-checkbox" type="checkbox" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> <?php checked($this->value()); ?>>
+                <label class="ht--toggle-label" for="<?php echo esc_attr($this->id); ?>"></label>
             </div>
-            <span class="customize-control-title total-toggle-title"><?php echo esc_html($this->label); ?></span>
+            <span class="customize-control-title ht--toggle-title"><?php echo esc_html($this->label); ?></span>
             <?php if (!empty($this->description)) { ?>
                 <span class="description customize-control-description">
                     <?php echo $this->description; ?>

@@ -172,5 +172,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Seperate header font typography for home page sections header, inner page title bar heading, widget header', 'total')
     ),
     'priority' => 100,
-    'active_callback' => 'total_is_upgrade_notice_active'
+    'active_callback' => 'total_is_upgrade_notice_active',
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
 )));

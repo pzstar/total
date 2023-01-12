@@ -8,7 +8,7 @@ class Total_Separator_Control extends WP_Customize_Control {
      *
      * @var string
      */
-    public $type = 'total-separator';
+    public $type = 'ht--separator';
 
     /**
      * Control method

@@ -42,6 +42,17 @@ function total_sanitize_choices_array($input, $setting) {
 }
 
 function total_sanitize_color_alpha($color) {
+    $mode = ( false === strpos($color, 'rgba') ) ? 'hex' : 'rgba';
+    if ('rgba' === $mode) {
+        $color = str_replace(' ', '', $color);
+        sscanf($color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha);
+        return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+    } else {
+        return sanitize_hex_color($color);
+    }
+}
+
+function total_sanitize_color($color) {
     // Is this an rgba color or a hex?
     $mode = ( false === strpos($color, 'rgba') ) ? 'hex' : 'rgba';
     if ('rgba' === $mode) {

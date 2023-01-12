@@ -3,7 +3,7 @@
 /** Switch Control */
 class Total_Switch_Control extends WP_Customize_Control {
 
-    public $type = 'total-switch';
+    public $type = 'ht--switch';
     public $on_off_label = array();
     public $class;
 
@@ -14,18 +14,18 @@ class Total_Switch_Control extends WP_Customize_Control {
     }
 
     public function render_content() {
-        $switch_class = ($this->value() == 'on') ? 'total-switch-on ' : '';
+        $switch_class = ($this->value() == 'on') ? 'ht--switch-on ' : '';
         $switch_class .= $this->class;
         $on_off_label = $this->on_off_label;
         ?>
-        <div class="total-switch <?php echo esc_attr($switch_class); ?>">
-            <div class="total-switch-inner">
-                <div class="total-switch-active">
-                    <div class="total-switch-button"><?php echo esc_html($on_off_label['on']) ?></div>
+        <div class="ht--switch <?php echo esc_attr($switch_class); ?>">
+            <div class="ht--switch-inner">
+                <div class="ht--switch-active">
+                    <div class="ht--switch-button"><?php echo esc_html($on_off_label['on']) ?></div>
                 </div>
 
-                <div class="total-switch-inactive">
-                    <div class="total-switch-button"><?php echo esc_html($on_off_label['off']) ?></div>
+                <div class="ht--switch-inactive">
+                    <div class="ht--switch-button"><?php echo esc_html($on_off_label['off']) ?></div>
                 </div>
             </div>
         </div>
