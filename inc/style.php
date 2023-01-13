@@ -217,6 +217,7 @@ function total_typography_vars($keys) {
     $css = array();
 
     foreach ($keys as $key) {
+        $italic = '';
         $family = get_theme_mod($key . '_family');
         $style = get_theme_mod($key . '_style');
         $text_decoration = get_theme_mod($key . '_text_decoration');

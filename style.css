@@ -1533,6 +1533,12 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     list-style: none;
     margin: 0;
     padding-left: 0;
+    font-family: var(--total-menu-family, Oswald);
+    font-size: var(--total-menu-size, 14px);
+    letter-spacing: var(--total-menu-letter-spacing, 0);
+    font-weight: var(--total-menu-weight, 400);
+    font-style: var(--total-menu-style, normal);
+    text-transform: var(--total-menu-text-transform, uppercase);
 }
 
 .ht-menu li {
@@ -1546,23 +1552,16 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     display: block;
     text-decoration: none;
     color: #444;
-    text-transform: uppercase;
-    font-size: 14px;
     line-height: 36px;
     padding: 0 15px;
-    font-weight: 400;
     transition: none;
-    -moz-transition: none;
-    -webkit-transition: none;
 }
 
 .ht-menu ul ul {
-    font-size: var(--total-menu-size, 14);
-    font-family: var(--total-menu-family, Oswald);
     display: none;
     position: absolute;
     left: 0;
-    top: 100% ;
+    top: 100%;
     background: var(--total-submenu-bg-color, #FFF);
     min-width: 200px;
     z-index: 999;
@@ -1593,12 +1592,10 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 }
 
 .ht-menu ul ul a {
-    text-transform: none;
-    font-weight: 400;
     color: #444;
     line-height: 1.5;
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 0.88em;
 }
 
 .ht-menu ul ul li {
@@ -1615,14 +1612,7 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
 }
 
 .ht-menu > ul > li.menu-item > a{
-    font-family: var(--total-menu-family, Oswald);
-    font-size: var(--total-menu-size, 14px);
-    letter-spacing: var(--total-menu-letter-spacing, 0);
     line-height: var(--total-menu-line-height, 2.6);
-    font-weight: var(--total-menu-weight, 400);
-    font-style: var(--total-menu-style, normal);
-    text-decoration: var(--total-menu-text-decoration, none);
-    text-transform: var(--total-menu-text-transform, uppercase);
     color: var(--total-menu-link-color, #333);
 }
 

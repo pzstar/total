@@ -113,7 +113,7 @@ class Total_Typography_Control extends WP_Customize_Control {
             );
 
             if ('family' === $setting_key) {
-                $this->json[$setting_key]['choices'] = $this->get_fonts();
+                $this->json[$setting_key]['choices'] = $this->get_registered_fonts();
             } elseif ('style' === $setting_key) {
                 $this->json[$setting_key]['choices'] = $this->get_font_weight_choices();
             } elseif ('text_transform' === $setting_key) {
@@ -384,6 +384,17 @@ class Total_Typography_Control extends WP_Customize_Control {
     }
 
     /**
+     * Returns the all registered fonts with label.
+     *
+     * @since  1.0.0
+     * @access public
+     * @return array
+     */
+    public function get_registered_fonts() {
+        return total_register_fonts();
+    }
+
+    /**
      * Returns the all fonts.
      *
      * @since  1.0.0
@@ -391,7 +402,7 @@ class Total_Typography_Control extends WP_Customize_Control {
      * @return array
      */
     public function get_fonts() {
-        return total_font_array();
+        return total_all_fonts();
     }
 
     /**
@@ -402,23 +413,16 @@ class Total_Typography_Control extends WP_Customize_Control {
      * @return array
      */
     public function get_font_weight_choices() {
-        $variants_array = $all_font = array();
-
         $fonts = $this->get_fonts();
-
-        foreach ($fonts as $font) {
-            $all_font += $font['fonts'];
-        }
 
         if ($this->settings['family']->id) {
             $font_family_id = $this->settings['family']->id;
             $default_font_family = $this->settings['family']->default;
             $font_family = get_theme_mod($font_family_id, $default_font_family);
 
-            if (isset($all_font[$font_family]['variants'])) {
-                $variants_array = $all_font[$font_family]['variants'];
+            if (isset($fonts[$font_family]['variants'])) {
+                return $fonts[$font_family]['variants'];
             }
-            return $variants_array;
         } else {
             return array(
                 '400' => esc_html__('Normal', 'total'),
