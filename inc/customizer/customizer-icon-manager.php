@@ -22,7 +22,7 @@ class Total_Icon_Manager {
     public function icons() {
         $icons_args = array(
             'total-font-awesome-icon' => array(
-                'name' => 'font-awesome-5.2.0',
+                'name' => 'total-font-awesome-icon',
                 'label' => esc_html__('Font Awesome', 'total'),
                 'prefix' => '',
                 'displayPrefix' => '',

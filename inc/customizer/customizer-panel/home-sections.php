@@ -167,7 +167,7 @@ for ($i = 1; $i < 6; $i++) {
     ));
 
     $wp_customize->add_setting('total_about_progressbar_percentage' . $i, array(
-        'sanitize_callback' => 'total_sanitize_choices',
+        'sanitize_callback' => 'total_sanitize_integer',
         'default' => rand(60, 100)
     ));
 

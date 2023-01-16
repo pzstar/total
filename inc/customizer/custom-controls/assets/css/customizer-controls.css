@@ -1246,6 +1246,7 @@
     bottom: 0;
     z-index: 2;
     background-color: inherit;
+    border: 0;
 }
 
 .customize-control .wp-picker-container .wp-color-result.button[style*="background-image"]:after{

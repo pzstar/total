@@ -231,7 +231,7 @@ class Total_Typography_Control extends WP_Customize_Control {
                 </span>
                 <# } #>
 
-                <div class="desktop ht--range-slider-control-wrap control-wrap active">
+                <div class="ht--range-slider-control-wrap<# if ( !_.isEmpty(data.size_tablet) && !_.isEmpty(data.size_mobile) ) { #> desktop control-wrap active<# } #>">
                     <div class="ht--range-slider"></div>
                     <div class="ht--range-slider-input">
                         <input type="number" value="{{ data.size.value }}" {{{ data.size.link }}} {{{ data.inputAttrs }}} />
@@ -285,7 +285,7 @@ class Total_Typography_Control extends WP_Customize_Control {
                 </span>
                 <# } #>
 
-                <div class="desktop ht--range-slider-control-wrap control-wrap active">
+                <div class="ht--range-slider-control-wrap<# if ( !_.isEmpty(data.letter_spacing_tablet) && !_.isEmpty(data.letter_spacing_mobile) ) { #> desktop control-wrap active <# } #>">
                     <div class="ht--range-slider"></div>
                     <div class="ht--range-slider-input">
                         <input type="number" value="{{ data.letter_spacing.value }}" min="-10" max="10" step="0.1" {{{ data.letter_spacing.link }}} />
@@ -339,12 +339,11 @@ class Total_Typography_Control extends WP_Customize_Control {
                 </span>
                 <# } #>
 
-                <div class="desktop ht--range-slider-control-wrap control-wrap active">
+                <div class="ht--range-slider-control-wrap<# if ( !_.isEmpty(data.line_height_tablet) && !_.isEmpty(data.line_height_mobile) ) { #> desktop control-wrap active <# } #>">
                     <div class="ht--range-slider"></div>
                     <div class="ht--range-slider-input">
                         <input type="number" value="{{ data.line_height.value }}" min="0.8" max="5" step="0.1" {{{ data.line_height.link }}} />
                     </div>
-
                 </div>
 
                 <# if ( !_.isEmpty(data.line_height_tablet) ) { #>
