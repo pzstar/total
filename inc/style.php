@@ -223,8 +223,14 @@ function total_typography_vars($keys) {
         $text_decoration = get_theme_mod($key . '_text_decoration');
         $text_transform = get_theme_mod($key . '_text_transform');
         $size = get_theme_mod($key . '_size');
+        $size_tablet = get_theme_mod($key . '_size_tablet');
+        $size_mobile = get_theme_mod($key . '_size_mobile');
         $line_height = get_theme_mod($key . '_line_height');
+        $line_height_tablet = get_theme_mod($key . '_line_height_tablet');
+        $line_height_mobile = get_theme_mod($key . '_line_height_mobile');
         $letter_spacing = get_theme_mod($key . '_letter_spacing');
+        $letter_spacing_tablet = get_theme_mod($key . '_letter_spacing_tablet');
+        $letter_spacing_mobile = get_theme_mod($key . '_letter_spacing_mobile');
         $color = get_theme_mod($key . '_color');
 
         if (strpos($style, 'italic')) {
@@ -240,8 +246,14 @@ function total_typography_vars($keys) {
         $css[] = !empty($text_transform) ? "--" . $key . "-text-transform: {$text_transform}" : NULL;
         $css[] = !empty($text_decoration) ? "--" . $key . "-text-decoration: {$text_decoration}" : NULL;
         $css[] = !empty($size) ? "--" . $key . "-size: {$size}px" : NULL;
+        $css[] = !empty($size_tablet) ? "--" . $key . "-size-tablet: {$size_tablet}px" : NULL;
+        $css[] = !empty($size_mobile) ? "--" . $key . "-size-mobile: {$size_mobile}px" : NULL;
         $css[] = !empty($line_height) ? "--" . $key . "-line-height: {$line_height}" : NULL;
+        $css[] = !empty($line_height_tablet) ? "--" . $key . "-line-height-tablet: {$line_height_tablet}" : NULL;
+        $css[] = !empty($line_height_mobile) ? "--" . $key . "-line-height-mobile: {$line_height_mobile}" : NULL;
         $css[] = !empty($letter_spacing) ? "--" . $key . "-letter-spacing: {$letter_spacing}px" : NULL;
+        $css[] = !empty($letter_spacing_tablet) ? "--" . $key . "-letter-spacing-tablet: {$letter_spacing_tablet}px" : NULL;
+        $css[] = !empty($letter_spacing_mobile) ? "--" . $key . "-letter-spacing-mobile: {$letter_spacing_mobile}px" : NULL;
         $css[] = !empty($color) ? "--" . $key . "-color: {$color}" : NULL;
     }
 
