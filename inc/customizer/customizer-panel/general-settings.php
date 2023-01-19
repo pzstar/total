@@ -33,6 +33,7 @@ $wp_customize->get_control('background_attachment')->priority = 20;
 $wp_customize->add_setting('total_website_layout', array(
     'default' => 'wide',
     'sanitize_callback' => 'total_sanitize_choices',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control('total_website_layout', array(
@@ -200,7 +201,8 @@ $wp_customize->add_section('total_google_font_section', array(
 
 $wp_customize->add_setting('total_load_google_font_locally', array(
     'sanitize_callback' => 'total_sanitize_checkbox',
-    'default' => false
+    'default' => false,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_load_google_font_locally', array(

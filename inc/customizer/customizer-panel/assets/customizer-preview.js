@@ -1,5 +1,12 @@
 jQuery(document).ready(function ($) {
     'use strict';
+
+    wp.customize('total_website_layout', function (value) {
+        value.bind(function (to) {
+            $('body').removeClass('tp-boxed tp-wide tp-fluid').addClass('tp-' + to);
+        });
+    });
+
     wp.customize('total_template_color', function (value) {
         value.bind(function (to) {
             var css = '--total-template-color:' + to + ';';
