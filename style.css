@@ -1365,10 +1365,10 @@ object {
 
 .ht-header .ht-container{
     transition: padding 0.3s ease;
-    padding-left: var(--total-mh-spacing-left, 0);
-    padding-top: var(--total-mh-spacing-top, 15px);
-    padding-right: var(--total-mh-spacing-right, 0);
-    padding-bottom: var(--total-mh-spacing-bottom, 15px);
+    padding-left: var(--total-mh-spacing-left-desktop, 0);
+    padding-top: var(--total-mh-spacing-top-desktop, 15px);
+    padding-right: var(--total-mh-spacing-right-desktop, 0);
+    padding-bottom: var(--total-mh-spacing-bottom-desktop, 15px);
 }
 
 .ht-sticky-header .ht-header.headroom--not-top{

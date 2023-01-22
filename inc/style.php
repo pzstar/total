@@ -87,16 +87,16 @@ function total_dymanic_styles() {
         $custom_css .= "--total-mh-bg-color : {$mh_bg_color};";
     }
     if(is_numeric($mh_spacing_left_desktop)){
-        $custom_css .= "--total-mh-spacing-left : {$mh_spacing_left_desktop}px;";
+        $custom_css .= "--total-mh-spacing-left-desktop : {$mh_spacing_left_desktop}px;";
     }
     if(is_numeric($mh_spacing_right_desktop)){
-        $custom_css .= "--total-mh-spacing-right : {$mh_spacing_right_desktop}px;";
+        $custom_css .= "--total-mh-spacing-right-desktop : {$mh_spacing_right_desktop}px;";
     }
     if(is_numeric($mh_spacing_top_desktop)){
-        $custom_css .= "--total-mh-spacing-top : {$mh_spacing_top_desktop}px;";
+        $custom_css .= "--total-mh-spacing-top-desktop : {$mh_spacing_top_desktop}px;";
     }
     if(is_numeric($mh_spacing_bottom_desktop)){
-        $custom_css .= "--total-mh-spacing-bottom : {$mh_spacing_bottom_desktop}px;";
+        $custom_css .= "--total-mh-spacing-bottom-desktop : {$mh_spacing_bottom_desktop}px;";
     }
     if ($menu_link_color) {
         $custom_css .= "--total-menu-link-color: {$menu_link_color};";

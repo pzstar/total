@@ -115,28 +115,28 @@ jQuery(document).ready(function ($) {
 
     wp.customize('total_mh_spacing_left_desktop', function (value) {
         value.bind(function (to) {
-            var css = '--total-mh-spacing-left:' + to + 'px;';
+            var css = '--total-mh-spacing-left-desktop:' + to + 'px;';
             totalDynamicCss('total_mh_spacing_left_desktop', css);
         });
     });
 
     wp.customize('total_mh_spacing_top_desktop', function (value) {
         value.bind(function (to) {
-            var css = '--total-mh-spacing-top:' + to + 'px;';
+            var css = '--total-mh-spacing-top-desktop:' + to + 'px;';
             totalDynamicCss('total_mh_spacing_top_desktop', css);
         });
     });
 
     wp.customize('total_mh_spacing_bottom_desktop', function (value) {
         value.bind(function (to) {
-            var css = '--total-mh-spacing-bottom:' + to + 'px;';
+            var css = '--total-mh-spacing-bottom-desktop:' + to + 'px;';
             totalDynamicCss('total_mh_spacing_bottom_desktop', css);
         });
     });
 
     wp.customize('total_mh_spacing_right_desktop', function (value) {
         value.bind(function (to) {
-            var css = '--total-mh-spacing-right:' + to + 'px;';
+            var css = '--total-mh-spacing-right-desktop:' + to + 'px;';
             totalDynamicCss('total_mh_spacing_right_desktop', css);
         });
     });
