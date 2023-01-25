@@ -29,7 +29,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_slider
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -114,7 +114,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_about_
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -255,7 +255,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_featur
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -370,7 +370,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_portfo
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -475,7 +475,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_servic
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -612,7 +612,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_team_s
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -778,7 +778,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_counte
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -921,7 +921,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_testim
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -1023,7 +1023,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_blog_s
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -1127,7 +1127,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_logo_s
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
@@ -1216,7 +1216,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_cta_se
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
     ),
-    'class' => 'total-switch-section',
+    'class' => 'ht--switch-section',
     'priority' => -1
 )));
 
