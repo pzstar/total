@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
 
     wp.customize('total_website_layout', function (value) {
         value.bind(function (to) {
-            $('body').removeClass('tp-boxed tp-wide tp-fluid').addClass('tp-' + to);
+            $('body').removeClass('ht-boxed ht-wide ht-fluid').addClass('ht-' + to);
         });
     });
 
