@@ -242,7 +242,7 @@ textarea {
     font-size: var(--total-body-size, 17px);
     letter-spacing: var(--total-body-letter-spacing, 0);
     line-height: var(--total-body-line-height, 1.6);
-    font-family: var(--total-body-family, 'Pontano Sans', sans-serif);
+    font-family: var(--total-body-family, Poppins);
     font-weight: var(--total-body-weight, 400);
     font-style: var(--total-body-style, normal);
     text-decoration: var(--total-body-text-decoration, none);
@@ -902,7 +902,7 @@ a:active {
     text-transform: uppercase;
     border-top: 1px solid #EEE;
     font-size: 12px;
-    color: #444;
+    color: inherit;
     font-weight: 300;
 }
 
@@ -930,12 +930,11 @@ a:active {
 
 .entry-header .entry-title a{
     text-decoration: none;
-    color: #333;
+    color: var(--total-content-text-color);
 }
 
 .entry-categories{
     font-size: 14px;
-    color: #666;
     font-style: italic;
     margin-bottom: 15px;
 }
@@ -946,7 +945,7 @@ a:active {
 }
 
 .entry-categories a{
-    color: #666;
+    color: inherit;
     text-decoration: none; 
 }
 
@@ -1016,6 +1015,7 @@ a:active {
 
 .widget-area a{
     text-decoration: none;
+    color: var(--total-content-text-color);
 }
 
 .widget-area .widget{
@@ -1719,10 +1719,19 @@ body.ht-titlebar-disabled.ht-sticky-header:not(.ht-enable-frontpage) #ht-content
     top: 50%;
     left: 50%;
     width: 1170px;
-    margin-left: -585px;
-    -ms-transform: translateY(-50%); 
-    -webkit-transform: translateY(-50%); 
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
+}
+
+.ht-wide .ht-slide-caption{
+    width: var(--total-container-width);
+}
+
+.ht-boxed .ht-slide-caption{
+    width: calc(var(--total-container-width) - var(--total-container-padding) - var(--total-container-padding))
+}
+
+.ht-fluid .ht-slide-caption{
+    width: var(--total-fluid-container-width);
 }
 
 .ht-slide-cap-title{

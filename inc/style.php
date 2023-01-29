@@ -86,16 +86,16 @@ function total_dymanic_styles() {
     if ($mh_bg_color) {
         $custom_css .= "--total-mh-bg-color : {$mh_bg_color};";
     }
-    if(is_numeric($mh_spacing_left_desktop)){
+    if (is_numeric($mh_spacing_left_desktop)) {
         $custom_css .= "--total-mh-spacing-left-desktop : {$mh_spacing_left_desktop}px;";
     }
-    if(is_numeric($mh_spacing_right_desktop)){
+    if (is_numeric($mh_spacing_right_desktop)) {
         $custom_css .= "--total-mh-spacing-right-desktop : {$mh_spacing_right_desktop}px;";
     }
-    if(is_numeric($mh_spacing_top_desktop)){
+    if (is_numeric($mh_spacing_top_desktop)) {
         $custom_css .= "--total-mh-spacing-top-desktop : {$mh_spacing_top_desktop}px;";
     }
-    if(is_numeric($mh_spacing_bottom_desktop)){
+    if (is_numeric($mh_spacing_bottom_desktop)) {
         $custom_css .= "--total-mh-spacing-bottom-desktop : {$mh_spacing_bottom_desktop}px;";
     }
     if ($menu_link_color) {
@@ -202,9 +202,6 @@ function total_dymanic_styles() {
                 margin-left: -40%;
             }
         }";
-    } else {
-        $container_half_width = $container_width / 2;
-        $custom_css .= ".ht-slide-caption{ width: {$container_width}%; margin-left: -{$container_half_width}%; }";
     }
 
     return total_css_strip_whitespace($custom_css);
