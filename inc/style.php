@@ -198,8 +198,7 @@ function total_dymanic_styles() {
             }
 
             .ht-slide-caption{
-                width: 80%;
-                margin-left: -40%;
+                width: 80% !important;
             }
         }";
     }
