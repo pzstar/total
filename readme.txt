@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.32 - Jan 31, 2023 =
+* Slider responsive issue fixed
+
 = 2.1.31 - Jan 29, 2023 =
 * Customizer updated and refined
 
