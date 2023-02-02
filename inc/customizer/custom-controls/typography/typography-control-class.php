@@ -422,14 +422,14 @@ class Total_Typography_Control extends WP_Customize_Control {
             if (isset($fonts[$font_family]['variants'])) {
                 return $fonts[$font_family]['variants'];
             }
-        } else {
-            return array(
-                '400' => esc_html__('Normal', 'total'),
-                '400italic' => esc_html__('Normal Italic', 'total'),
-                '700' => esc_html__('Bold', 'total'),
-                '700italic' => esc_html__('Bold Italic', 'total')
-            );
         }
+
+        return array(
+            '400' => esc_html__('Normal', 'total'),
+            '400italic' => esc_html__('Normal Italic', 'total'),
+            '700' => esc_html__('Bold', 'total'),
+            '700italic' => esc_html__('Bold Italic', 'total')
+        );
     }
 
     /**

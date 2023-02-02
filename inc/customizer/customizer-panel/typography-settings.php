@@ -176,3 +176,15 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
     'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
 )));
+
+$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-hcfu-section', array(
+    'title' => esc_html__('Want To Use Custom Fonts?', 'total'),
+    'panel' => 'total_typography_panel',
+    'priority' => 1000,
+    'class' => 'ht--boxed',
+    'options' => array(
+        esc_html__('Upload custom fonts. The uploaded font will display in the typography font family list.', 'total'),
+    ),
+    'upgrade_text' => esc_html__('Purchase Custom Font Uploader', 'total'),
+    'upgrade_url' => 'https://hashthemes.com/checkout?edd_action=add_to_cart&download_id=48193',
+)));
