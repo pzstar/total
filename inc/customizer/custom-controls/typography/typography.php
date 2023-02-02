@@ -146,7 +146,7 @@ function total_standard_fonts() {
 function total_register_fonts() {
     return apply_filters('total_regsiter_fonts', array(
         array(
-            'label' => '',
+            'label' => esc_html__('Default', 'total'),
             'fonts' => total_default_fonts()
         ),
         array(
