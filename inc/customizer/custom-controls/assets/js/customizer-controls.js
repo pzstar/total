@@ -227,6 +227,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
 
         var button = $(this);
+        var galleryContainer = button.siblings('ul.ht--gallery-container');
         var hiddenfield = button.prev();
         if (hiddenfield.val()) {
             var hiddenfieldvalue = hiddenfield.val().split(",");
@@ -253,12 +254,12 @@ jQuery(document).ready(function ($) {
             /* loop through all the images */
             for (i = 0; i < attachments.length; ++i) {
                 /* add HTML element with an image */
-                $('ul.ht--gallery-container').append('<li data-id="' + attachments[i].id + '"><span style="background-image:url(' + attachments[i].attributes.url + ')"></span><a href="#" class="ht--gallery-remove">×</a></li>');
+                galleryContainer.append('<li data-id="' + attachments[i].id + '"><span style="background-image:url(' + attachments[i].attributes.url + ')"></span><a href="#" class="ht--gallery-remove">×</a></li>');
                 /* add an image ID to the array of all images */
                 hiddenfieldvalue.push(attachments[i].id);
             }
             /* refresh sortable */
-            $("ul.ht--gallery-container").sortable("refresh");
+            galleryContainer.sortable("refresh");
             /* add the IDs to the hidden field value */
             hiddenfield.val(hiddenfieldvalue.join()).trigger('change');
         }).open();
