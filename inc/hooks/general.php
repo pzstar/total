@@ -306,17 +306,21 @@ if (!function_exists('total_register_required_plugins')) {
 
 }
 
-function total_add_custom_fonts($fonts) {
-    if (class_exists('Hash_Custom_Font_Uploader_Public')) {
-        if (!empty(Hash_Custom_Font_Uploader_Public::get_all_fonts_list())) {
-            $new_fonts = array(
-                'label' => esc_html__('Custom Fonts', 'totalplus'),
-                'fonts' => Hash_Custom_Font_Uploader_Public::get_all_fonts_list()
-            );
-            array_unshift($fonts, $new_fonts);
+if (!function_exists('total_add_custom_fonts')) {
+
+    function total_add_custom_fonts($fonts) {
+        if (class_exists('Hash_Custom_Font_Uploader_Public')) {
+            if (!empty(Hash_Custom_Font_Uploader_Public::get_all_fonts_list())) {
+                $new_fonts = array(
+                    'label' => esc_html__('Custom Fonts', 'total'),
+                    'fonts' => Hash_Custom_Font_Uploader_Public::get_all_fonts_list()
+                );
+                array_unshift($fonts, $new_fonts);
+            }
         }
+        return $fonts;
     }
-    return $fonts;
+
 }
 
 add_filter('total_regsiter_fonts', 'total_add_custom_fonts');
