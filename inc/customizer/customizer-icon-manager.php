@@ -21,8 +21,8 @@ class Total_Icon_Manager {
 
     public function icons() {
         $icons_args = array(
-            'total-font-awesome-icon' => array(
-                'name' => 'total-font-awesome-icon',
+            'total-fontawesome-icon' => array(
+                'name' => 'total-fontawesome-icon',
                 'label' => esc_html__('Font Awesome', 'total'),
                 'prefix' => '',
                 'displayPrefix' => '',
