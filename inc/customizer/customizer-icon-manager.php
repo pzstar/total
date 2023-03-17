@@ -26,7 +26,7 @@ class Total_Icon_Manager {
                 'label' => esc_html__('Font Awesome', 'total'),
                 'prefix' => '',
                 'displayPrefix' => '',
-                'url' => get_template_directory_uri() . '/css/font-awesome-6.3.0.css',
+                'url' => get_template_directory_uri() . '/css/fontawesome-6.3.0.css',
                 'icons' => $this->font_awesome_icon_array(),
             )
         );
