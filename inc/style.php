@@ -7,7 +7,7 @@ function total_dymanic_styles() {
 
     $dynamic_css = apply_filters('total_dynamic_styles', '__return_true');
     if (!$dynamic_css)
-        return;
+        return '';
 
     $custom_css = "";
 
