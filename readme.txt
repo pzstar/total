@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 6.2
-Stable tag: 2.1.37
+Stable tag: 2.1.38
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.38 - May 01, 2023 =
+* RTL Ready - Updated
+
 = 2.1.37 - Apr 04, 2023 =
 * FontAwesome Icon naming issue fixed
 * Return of empty string instead of NULL in style.php filter
