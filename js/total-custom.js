@@ -39,7 +39,7 @@ jQuery(function ($) {
 
     if ($('#ht-bx-slider .ht-slide').length > 0) {
         $('#ht-bx-slider').owlCarousel({
-            rtl: total_localize.is_rtl,
+            rtl: JSON.parse(total_localize.is_rtl),
             autoplay: true,
             items: 1,
             loop: true,
@@ -51,7 +51,7 @@ jQuery(function ($) {
     }
 
     $('.ht-testimonial-slider').owlCarousel({
-        rtl: total_localize.is_rtl,
+        rtl: JSON.parse(total_localize.is_rtl),
         autoplay: true,
         items: 1,
         loop: true,
@@ -62,7 +62,7 @@ jQuery(function ($) {
     });
 
     $(".ht-logo-slider").owlCarousel({
-        rtl: total_localize.is_rtl,
+        rtl: JSON.parse(total_localize.is_rtl),
         autoplay: true,
         items: 5,
         loop: true,
