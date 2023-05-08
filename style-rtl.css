@@ -865,11 +865,16 @@ a:active {
 }
 
 .single-entry-meta .entry-date span{
+    display: inline-block;
     margin-left: 5px;
 }
 
 .single-entry-meta a{
     color: inherit;
+}
+
+.single-entry-meta a i{
+    margin-left: 5px;
 }
 
 .single-featured-img{
@@ -940,7 +945,6 @@ a:active {
 }
 
 .entry-categories i{
-    color: var(--total-template-color);
     margin-left: 8px;
 }
 
@@ -3956,4 +3960,25 @@ body.ht-boxed .alignwide {
 .wp-block-gallery .blocks-gallery-item figcaption,
 .wp-block-image figcaption {
     font-size: 0.9em;
+}
+
+/* Additional RTL CSS */
+.ht-service-text a > i.fa-chevron-right:before{
+    content: "\f053";
+}
+
+.menu-item-has-children ul .ht-dropdown:after {
+    content: '\f104';
+}
+
+#ht-home-slider-section .owl-carousel .owl-nav .owl-next,
+.ht-testimonial-wrap .owl-carousel .owl-nav .owl-next{
+    left: auto;
+    right: 0;
+}
+
+#ht-home-slider-section .owl-carousel .owl-nav .owl-prev,
+.ht-testimonial-wrap .owl-carousel .owl-nav .owl-prev{
+    right: auto;
+    left: 0;
 }

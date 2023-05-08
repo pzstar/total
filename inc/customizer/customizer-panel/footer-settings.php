@@ -50,7 +50,7 @@ $wp_customize->add_setting('total_footer_col', array(
 $wp_customize->add_control(new Total_Selector_Control($wp_customize, 'total_footer_col', array(
     'section' => 'total_footer_settings',
     'label' => esc_html__('Footer Column', 'total'),
-    'class' => 'ht-one-third-width',
+    'class' => 'ht--one-third-width',
     'options' => array(
         'col-1-1' => TOTAL_CUSTOMIZER_URL . 'customizer-panel/assets/images/footer-columns/col-1-1.jpg',
         'col-2-1-1' => TOTAL_CUSTOMIZER_URL . 'customizer-panel/assets/images/footer-columns/col-2-1-1.jpg',

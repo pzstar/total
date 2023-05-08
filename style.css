@@ -865,11 +865,16 @@ a:active {
 }
 
 .single-entry-meta .entry-date span{
+    display: inline-block;
     margin-right: 5px;
 }
 
 .single-entry-meta a{
     color: inherit;
+}
+
+.single-entry-meta a i{
+    margin-right: 5px;
 }
 
 .single-featured-img{
@@ -940,7 +945,6 @@ a:active {
 }
 
 .entry-categories i{
-    color: var(--total-template-color);
     margin-right: 8px;
 }
 
