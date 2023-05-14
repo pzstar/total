@@ -39,13 +39,11 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                         $query = new WP_Query($args);
                         if ($query->have_posts()):
                             while ($query->have_posts()) : $query->the_post();
-                                $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-thumb');
                                 ?>
                                 <div class="ht-testimonial">
                                     <div class="ht-testimonial-excerpt">
                                         <i class="fas fa-quote-left"></i>
                                         <?php
-                                        
                                         if (has_excerpt() && '' != trim(get_the_excerpt())) {
                                             the_excerpt();
                                         } else {
@@ -55,9 +53,12 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                                     </div>
                                     <?php
                                     if (has_post_thumbnail()) {
-                                        ?>
-                                        <img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>">
-                                        <?php
+                                        $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-thumb');
+                                        if (isset($total_image[0])) {
+                                            ?>
+                                            <img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>">
+                                            <?php
+                                        }
                                     }
                                     ?>
                                     <h6><?php the_title(); ?></h6>

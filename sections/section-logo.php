@@ -34,9 +34,11 @@ if (get_theme_mod('total_logo_section_disable') != 'on') {
                 <?php
                 foreach ($total_logo_image as $total_logo_image_single) {
                     $image = wp_get_attachment_image_src($total_logo_image_single, 'full');
-                    ?>
-                    <img class="no-lazyload" src="<?php echo esc_url($image[0]); ?>">
-                    <?php
+                    if (isset($image[0])) {
+                        ?>
+                        <img class="no-lazyload" src="<?php echo esc_url($image[0]); ?>">
+                        <?php
+                    }
                 }
                 ?>
             </div>

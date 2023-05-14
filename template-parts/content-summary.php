@@ -15,14 +15,19 @@
 
 
     <div class="ht-post-wrapper">
-        <?php if (has_post_thumbnail()): ?>
-            <figure class="entry-figure">
-                <?php
-                $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-blog-header');
+        <?php
+        if (has_post_thumbnail()) {
+            $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-blog-header');
+            if (isset($total_image[0])) {
                 ?>
-                <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"></a>
-            </figure>
-        <?php endif; ?>
+                <figure class="entry-figure">
+                    <?php ?>
+                    <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"></a>
+                </figure>
+                <?php
+            }
+        }
+        ?>
 
         <header class="entry-header">
             <?php the_title(sprintf('<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>'); ?>

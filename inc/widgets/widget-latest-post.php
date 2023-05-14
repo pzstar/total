@@ -92,21 +92,23 @@ class Total_Latest_Posts extends WP_Widget {
                     if ($display_thumb && has_post_thumbnail()) {
                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'thumbnail');
                         $image_alt = get_post_meta(get_the_ID(), '_wp_attachment_image_alt', true);
-                        ?>
-                        <div class="ht-lp-image">
-                            <a href="<?php the_permalink(); ?>">
-                                <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                            </a>
-                        </div>
-                        <?php
+                        if (isset($image[0])) {
+                            ?>
+                            <div class="ht-lp-image">
+                                <a href="<?php the_permalink(); ?>">
+                                    <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                </a>
+                            </div>
+                            <?php
+                        }
                     }
                     ?>
 
                     <div class="ht-lp-content">
                         <h6 class="ht-lp-title">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
                         </h6>
 
                         <?php if ($display_excerpt) { ?>

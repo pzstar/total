@@ -27,13 +27,12 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
                 <?php
                 for ($i = 1; $i < 5; $i++) {
                     $total_team_page_id = get_theme_mod('total_team_page' . $i);
-                    
+
                     if ($total_team_page_id) {
                         $args = array('page_id' => absint($total_team_page_id));
                         $query = new WP_Query($args);
                         if ($query->have_posts()):
                             while ($query->have_posts()) : $query->the_post();
-                                $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-team-thumb');
                                 $total_team_designation = get_theme_mod('total_team_designation' . $i);
                                 $total_team_facebook = get_theme_mod('total_team_facebook' . $i);
                                 $total_team_twitter = get_theme_mod('total_team_twitter' . $i);
@@ -41,11 +40,11 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
                                 $total_team_linkedin = get_theme_mod('total_team_linkedin' . $i);
                                 ?>
                                 <div class="ht-team-member">
-
                                     <div class="ht-team-member-image">
                                         <?php
                                         if (has_post_thumbnail()) {
-                                            $image_url = $total_image[0];
+                                            $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-team-thumb');
+                                            $image_url = isset($total_image[0]) ? $total_image[0] : get_template_directory_uri() . '/images/team-thumb.png';
                                         } else {
                                             $image_url = get_template_directory_uri() . '/images/team-thumb.png';
                                         }
