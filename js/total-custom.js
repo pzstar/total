@@ -20,7 +20,7 @@ jQuery(function ($) {
         $pageWrapper = $('#ht-content');
         var hOffset = $stickyHeader.offset().top;
 
-        var offset = hOffset - adminbarHeight;
+        var offset = hOffset - adminbarHeight + 2;
 
         $stickyHeader.headroom({
             offset: offset,
