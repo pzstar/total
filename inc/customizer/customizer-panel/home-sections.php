@@ -1174,6 +1174,7 @@ $wp_customize->add_control(new Total_Gallery_Control($wp_customize, 'total_logo_
     'settings' => 'total_logo_image',
     'section' => 'total_logo_section',
     'label' => esc_html__('Upload Clients Logos', 'total'),
+    'description' => esc_html__('Drag and Drop to reorder', 'total'),
 )));
 
 $wp_customize->add_setting('total_logo_upgrade_text', array(
@@ -1327,6 +1328,7 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-upgra
     'priority' => 1000,
     'class' => 'ht--boxed',
     'options' => array(
+        esc_html__('- All above section with more styles and customization options', 'total'),
         esc_html__('- Highlight Section', 'total'),
         esc_html__('- Pricing Section', 'total'),
         esc_html__('- News and Update Section', 'total'),
