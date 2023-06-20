@@ -7,6 +7,14 @@ $wp_customize->add_panel('total_home_panel', array(
     'description' => esc_html__('Drag and Drop to Reorder', 'total') . '<img class="total-drag-spinner" src="' . admin_url('/images/spinner.gif') . '">',
 ));
 
+$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-frontpage-notice', array(
+    'title' => sprintf(esc_html('Important! Home Page Sections are not enabled. Enable it %1shere%2s.', 'total'), '<a href="javascript:wp.customize.section( \'static_front_page\' ).focus()">', '</a>'),
+    'priority' => -1,
+    'class' => 'ht--single-row',
+    'panel' => 'total_home_panel',
+    'active_callback' => 'total_check_frontpage'
+)));
+
 /* ============SLIDER IMAGES SECTION============ */
 
 $wp_customize->add_section(new Total_Toggle_Section($wp_customize, 'total_slider_section', array(

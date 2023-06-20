@@ -79,7 +79,7 @@ jQuery(document).ready(function ($) {
         axis: 'y',
         helper: 'clone',
         cursor: 'move',
-        items: '> li.control-section:not(#accordion-section-total_slider_section):not(#accordion-section-total-upgrade-section)',
+        items: '> li.control-section:not(#accordion-section-total_slider_section):not(#accordion-section-total-upgrade-section):not(#accordion-section-total-frontpage-notice)',
         delay: 150,
         update: function (event, ui) {
             $('#sub-accordion-panel-total_home_panel').find('.total-drag-spinner').show();

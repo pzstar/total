@@ -148,3 +148,19 @@
 #customize-control-total_blog_sec_nav + #customize-control-total_single_display_featured_image + #customize-control-total_single_post_settings_upgrade_text{
     display: none;
 }
+
+#accordion-section-total-frontpage-notice .accordion-section-title:before{
+    display: none !important;
+}
+
+#accordion-section-total-frontpage-notice .accordion-section-title {
+    background: #FF0000 !important;
+    color: #FFF !important;
+    text-align: center;
+    border: 0;
+}
+
+#accordion-section-total-frontpage-notice .accordion-section-title a{
+    color: #FFF;
+    text-decoration: underline;
+}
