@@ -22,7 +22,7 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
-= 2.1.44 - Jun 20, 2023 =
+= 2.1.44 - Jun 21, 2023 =
 * Notice added for Home Page section to know if it is active or not
 
 = 2.1.43 - Jun 11, 2023 =
