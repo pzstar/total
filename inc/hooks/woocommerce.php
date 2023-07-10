@@ -22,7 +22,7 @@ add_action('woocommerce_before_shop_loop_item_title', 'total_title_wrap', 20);
 add_action('total_shop_sidebar_template', 'total_shop_sidebar_content');
 
 function total_output_content_wrapper() {
-    echo '<header class="ht-main-header">';
+    echo '<div class="ht-main-header">';
     echo '<div class="ht-container">';
     echo '<h1 class="ht-main-title">';
     woocommerce_page_title();
@@ -30,9 +30,9 @@ function total_output_content_wrapper() {
     do_action('total_woocommerce_archive_description');
     do_action('total_woocommerce_breadcrumb');
     echo '</div>';
-    echo '</header>';
+    echo '</div>';
 
-    echo '<div class="ht-container">';
+    echo '<div class="ht-container ht-clearfix">';
     echo '<div id="primary">';
 }
 

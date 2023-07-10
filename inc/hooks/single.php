@@ -6,7 +6,7 @@ if (!function_exists('total_page_header')) {
 
         if (!$total_hide_title) {
             ?>
-            <header class="ht-main-header">
+            <div class="ht-main-header">
                 <div class="ht-container">
                     <?php the_title('<h1 class="ht-main-title">', '</h1>'); ?>
                     <?php
@@ -15,7 +15,7 @@ if (!function_exists('total_page_header')) {
                     }
                     ?>
                 </div>
-            </header><!-- .entry-header -->
+            </div><!-- .entry-header -->
             <?php
         }
     }
@@ -26,7 +26,7 @@ if (!function_exists('total_page_content')) {
 
     function total_page_content() {
         ?>
-        <div class="ht-container">
+        <div class="ht-container ht-clearfix">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
 
@@ -62,12 +62,12 @@ if (!function_exists('total_single_header')) {
 
         if (!$total_hide_title) {
             ?>
-            <header class="ht-main-header">
+            <div class="ht-main-header">
                 <div class="ht-container">
                     <?php the_title('<h1 class="ht-main-title">', '</h1>'); ?>
                     <?php do_action('total_breadcrumbs'); ?>
                 </div>
-            </header>
+            </div>
             <?php
         }
     }
@@ -78,7 +78,7 @@ if (!function_exists('total_single_content')) {
 
     function total_single_content() {
         ?>
-        <div class="ht-container">
+        <div class="ht-container ht-clearfix">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
 

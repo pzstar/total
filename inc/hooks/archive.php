@@ -2,16 +2,20 @@
 if (!function_exists('total_home_header')) {
 
     function total_home_header() {
-        if (is_home() && !is_front_page()) :
+        if (is_home() && !is_front_page()) {
             ?>
-            <header class="ht-main-header">
+            <div class="ht-main-header">
                 <div class="ht-container">
                     <h1 class="ht-main-title"><?php single_post_title(); ?></h1>
                     <?php do_action('total_breadcrumbs'); ?>
                 </div>
-            </header><!-- .entry-header -->
+            </div><!-- .entry-header -->
             <?php
-        endif;
+        } else {
+            ?>
+            <div class="ht-main-header" style="padding: 0"></div>
+            <?php
+        }
     }
 
 }
@@ -20,7 +24,7 @@ if (!function_exists('total_home_content')) {
 
     function total_home_content() {
         ?>
-        <div class="ht-main-content ht-container">
+        <div class="ht-main-content ht-container ht-clearfix">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
 
@@ -53,7 +57,7 @@ if (!function_exists('total_search_header')) {
 
     function total_search_header() {
         ?>
-        <header class="ht-main-header">
+        <div class="ht-main-header">
             <div class="ht-container">
                 <h1 class="ht-main-title">
                     <?php
@@ -65,7 +69,7 @@ if (!function_exists('total_search_header')) {
                 </h1>
                 <?php do_action('total_breadcrumbs'); ?>
             </div>
-        </header><!-- .entry-header -->
+        </div><!-- .entry-header -->
         <?php
     }
 
@@ -75,8 +79,8 @@ if (!function_exists('total_search_content')) {
 
     function total_search_content() {
         ?>
-        <div class="ht-container">
-            <section id="primary" class="content-area">
+        <div class="ht-container ht-clearfix">
+            <div id="primary" class="content-area">
                 <main id="main" class="site-main">
 
                     <?php
@@ -91,7 +95,7 @@ if (!function_exists('total_search_content')) {
                     ?>
 
                 </main><!-- #main -->
-            </section><!-- #primary -->
+            </div><!-- #primary -->
 
             <?php get_sidebar(); ?>
 
@@ -106,7 +110,7 @@ if (!function_exists('total_archive_header')) {
 
     function total_archive_header() {
         ?>
-        <header class="ht-main-header">
+        <div class="ht-main-header">
             <div class="ht-container">
                 <?php
                 the_archive_title('<h1 class="ht-main-title">', '</h1>');
@@ -116,7 +120,7 @@ if (!function_exists('total_archive_header')) {
                 do_action('total_breadcrumbs');
                 ?>
             </div>
-        </header><!-- .ht-main-header -->
+        </div><!-- .ht-main-header -->
         <?php
     }
 
@@ -126,7 +130,7 @@ if (!function_exists('total_archive_content')) {
 
     function total_archive_content() {
         ?>
-        <div class="ht-container">
+        <div class="ht-container ht-clearfix">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
 

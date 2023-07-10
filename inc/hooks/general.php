@@ -168,12 +168,12 @@ if (!function_exists('total_404_content')) {
     function total_404_content() {
         ?>
 
-        <header class="ht-main-header">
+        <div class="ht-main-header">
             <div class="ht-container">
                 <h1 class="ht-main-title"><?php esc_html_e('404 Error', 'total'); ?></h1>
                 <?php do_action('total_breadcrumbs'); ?>
             </div>
-        </header><!-- .entry-header -->
+        </div><!-- .entry-header -->
 
 
         <div class="ht-container">
