@@ -67,6 +67,8 @@ if (!function_exists('total_setup')) :
             'comment-list',
             'gallery',
             'caption',
+            'style',
+            'script'
         ));
 
         // Set up the WordPress core custom background feature.
@@ -88,17 +90,20 @@ if (!function_exists('total_setup')) :
         add_theme_support('wc-product-gallery-lightbox');
         add_theme_support('wc-product-gallery-slider');
 
-        // Add support for Block Styles.
-        add_theme_support('wp-block-styles');
-
-        // Add support for full and wide align images.
-        add_theme_support('align-wide');
-
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
 
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
+
+        // Add support editor style.
+        add_theme_support('editor-styles');
+
+        // Add support for Block Styles.
+        add_theme_support('wp-block-styles');
+
+        // Add support for full and wide align images.
+        add_theme_support('align-wide');
 
         add_theme_support('custom-line-height');
 
@@ -110,7 +115,7 @@ if (!function_exists('total_setup')) :
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
          */
-        add_editor_style(array('css/editor-style.css', total_fonts_url()));
+        add_editor_style(array('css/editor-style.css'));
     }
 
 endif; // total_setup
