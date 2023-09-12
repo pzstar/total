@@ -10,6 +10,7 @@ function total_woocommerce_remove_actions() {
     remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
     remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
     remove_action('woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 }
 
 add_action('woocommerce_before_main_content', 'total_output_content_wrapper', 10);
@@ -25,7 +26,11 @@ function total_output_content_wrapper() {
     echo '<div class="ht-main-header">';
     echo '<div class="ht-container">';
     echo '<h1 class="ht-main-title">';
-    woocommerce_page_title();
+    if (is_singular()) {
+        the_title();
+    } else {
+        woocommerce_page_title();
+    }
     echo '</h1>';
     do_action('total_woocommerce_archive_description');
     do_action('total_woocommerce_breadcrumb');
