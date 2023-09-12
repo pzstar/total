@@ -1,5 +1,5 @@
 <?php
-add_action('wp_head', 'total_woocommerce_remove_actions');
+add_action('wp_loaded', 'total_woocommerce_remove_actions');
 
 function total_woocommerce_remove_actions() {
     remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
