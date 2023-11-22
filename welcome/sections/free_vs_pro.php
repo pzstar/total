@@ -298,7 +298,6 @@
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
-
     <tr>
         <td>
             <span><?php esc_html_e('32) Advanced Footer Setting', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#FooterSection" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
