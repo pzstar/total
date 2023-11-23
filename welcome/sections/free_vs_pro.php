@@ -40,8 +40,8 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('2) GDPR Compliance & Cookies Consent', 'square'); ?> - <a href="https://hashthemes.com/articles/configuring-gdpr-settings/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
-            <p><?php esc_html_e('The Premium version is fully GDPR compliance. Means no data is collected if you use the theme alone. Also the premium version has option to add GDPR Compliance & Cookies Consent text with buttons.', 'square'); ?></p>
+            <span><?php esc_html_e('2) GDPR Compliance & Cookies Consent', 'total'); ?> - <a href="https://hashthemes.com/articles/configuring-gdpr-settings/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <p><?php esc_html_e('The Premium version is fully GDPR compliance. Means no data is collected if you use the theme alone. Also the premium version has option to add GDPR Compliance & Cookies Consent text with buttons.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
@@ -56,8 +56,8 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('4) Elementor Compatible', 'square'); ?></span>
-            <p><?php esc_html_e('Fan of Pagebuilder? No problem, with premium version you can create your website with Elementor. Elementor provides you with unlimited possibilities to create the website of your imagination.', 'square'); ?></p>
+            <span><?php esc_html_e('4) Elementor Compatible', 'total'); ?></span>
+            <p><?php esc_html_e('Fan of Pagebuilder? No problem, with premium version you can create your website with Elementor. Elementor provides you with unlimited possibilities to create the website of your imagination.', 'total'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
         <td><?php esc_html_e('Advanced', 'total'); ?></td>
