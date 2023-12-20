@@ -288,6 +288,11 @@ if (!function_exists('total_register_required_plugins')) {
                 'slug' => 'hash-elements',
                 'required' => false,
             ),
+            array(
+                'name' => 'Hash Form - Drag & Drop Form Builder',
+                'slug' => 'hash-form',
+                'required' => false,
+            ),
         );
 
         $config = array(
