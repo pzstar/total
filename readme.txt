@@ -1,8 +1,8 @@
 === Total ===
 Contributors: hashthemes
 Requires at least: 5.0
-Tested up to: 6.4
-Stable tag: 2.1.61
+Tested up to: 6.5
+Stable tag: 2.1.62
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.62 - Apr 8, 2024 =
+* CSS fixes
+* Translation fixed
+
 = 2.1.61 - Mar 25, 2024 =
 * Comparison page link fixed
 
