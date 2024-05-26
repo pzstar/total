@@ -3454,6 +3454,13 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container{
     margin: -30px;
 }
 
+.elementor-element.e-con {
+    --padding-top: var(--container-default-padding-top, 0);
+    --padding-right: var(--container-default-padding-right, 0);
+    --padding-bottom: var(--container-default-padding-bottom, 0);
+    --padding-left: var(--container-default-padding-left, 0);
+}
+
 @media screen and (max-width: 1000px){
     .toggle-bar{
         display: block;
@@ -3523,7 +3530,7 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container{
         margin-left: 0;
         text-align: center;
     }
-    
+
     .ht-menu ul ul li{
         margin: 0;
     }
@@ -3572,7 +3579,7 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container{
     .menu-item-has-children ul .ht-opened.ht-dropdown:after{
         content: '\f106';
     }
-    
+
     .ht-menu > ul li.menu-item > a .ht-dropdown{
         border-color: var(--total-submenu-link-color, #333);
     }
