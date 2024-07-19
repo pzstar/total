@@ -979,9 +979,10 @@ a:active {
     line-height: 40px;
     color: #FFF;
     border: 0;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     display: inline-block;
-    text-decoration: none;
 }
 
 .entry-readmore a:hover{
