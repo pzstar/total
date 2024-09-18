@@ -383,4 +383,3 @@ add_filter('hdi_import_files', 'total_premium_demo_config');
 add_action('init', 'total_create_elementor_kit');
 add_filter('wpforms_post_type_args', 'total_enable_wpform_export');
 add_action('hdi_after_demo_import', 'hdi_import_paymattic_options');
-
