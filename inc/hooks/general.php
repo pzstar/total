@@ -335,7 +335,7 @@ function hdi_import_paymattic_options($args) {
         return;
     }
 
-    $import_file = $args['slug'] . '/paymatic-form.json';
+    $import_file = $args['file_path'] . '/paymatic-form.json';
 
     if ($import_file) {
 
@@ -364,6 +364,8 @@ function hdi_import_paymattic_options($args) {
         foreach ($metas as $metaKey => $metaValue) {
             update_post_meta($formId, $metaKey, $metaValue);
         }
+
+        (new \WPPayForm\App\Hooks\Handlers\ActivationHandler)->handle();
     }
 
 }
