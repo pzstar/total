@@ -337,7 +337,7 @@ function hdi_import_paymattic_options($args) {
 
     $import_file = $args['file_path'] . '/paymatic-form.json';
 
-    if ($import_file) {
+    if ($import_file && class_exists('WPPayForm\Framework\Foundation\Application')) {
 
         $data = array(
             'post_title' => 'Hotel Booking Form',
