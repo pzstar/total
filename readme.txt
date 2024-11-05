@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.76 - Nov 05, 2024 =
+* Halloween Sale removed in welcome page
+
 = 2.1.75 - Oct 29, 2024 =
 * Halloween Sale added in welcome page
 
