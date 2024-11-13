@@ -1,5 +1,5 @@
-.customize-pane-parent .control-section .accordion-section-title:before,
-#sub-accordion-panel-total_home_panel .control-section .accordion-section-title:before {
+.customize-pane-parent .control-section .accordion-trigger:before,
+#sub-accordion-panel-total_home_panel .control-section .accordion-trigger:before {
     font-family: dashicons;
     content: "\f103";
     display: inline-block;
@@ -8,63 +8,63 @@
     vertical-align: middle;
 }
 
-#accordion-section-total_pro_feature_section .accordion-section-title:before {
+#accordion-section-total_pro_feature_section .accordion-trigger:before {
     content: "\f174";
 }
 
-#accordion-section-static_front_page .accordion-section-title:before {
+#accordion-section-static_front_page .accordion-trigger:before {
     content: "\f319";
 }
 
-#accordion-panel-total_general_settings_panel .accordion-section-title:before {
+#accordion-panel-total_general_settings_panel .accordion-trigger:before {
     content: "\f111";
 }
 
-#accordion-panel-total_typography_panel .accordion-section-title:before {
+#accordion-panel-total_typography_panel .accordion-trigger:before {
     content: "\f464";
 }
 
-#accordion-section-colors .accordion-section-title:before {
+#accordion-section-colors .accordion-trigger:before {
     content: "\f309";
 }
 
-#accordion-panel-total_header_settings_panel .accordion-section-title:before {
+#accordion-panel-total_header_settings_panel .accordion-trigger:before {
     content: "\f15b";
 }
 
-#accordion-panel-total_home_panel .accordion-section-title:before {
+#accordion-panel-total_home_panel .accordion-trigger:before {
     content: "\f102";
 }
 
-#accordion-section-total_footer_settings .accordion-section-title:before {
+#accordion-section-total_footer_settings .accordion-trigger:before {
     content: "\f15c";
 }
 
-#accordion-panel-nav_menus .accordion-section-title:before {
+#accordion-panel-nav_menus .accordion-trigger:before {
     content: "\f333";
 }
 
-#accordion-panel-widgets .accordion-section-title:before {
+#accordion-panel-widgets .accordion-trigger:before {
     content: "\f116";
 }
 
-#accordion-section-custom_css .accordion-section-title:before {
+#accordion-section-custom_css .accordion-trigger:before {
     content: "\f499";
 }
 
-#accordion-section-total-doc-section .accordion-section-title:before {
+#accordion-section-total-doc-section .accordion-trigger:before {
     content: "\f105";
 }
 
-#accordion-section-total-demo-import-section .accordion-section-title:before {
+#accordion-section-total-demo-import-section .accordion-trigger:before {
     content: "\f316";
 }
 
-#accordion-section-total_blog_options_section .accordion-section-title:before {
+#accordion-section-total_blog_options_section .accordion-trigger:before {
     content: "\f119";
 }
 
-#accordion-section-total-pro-section .accordion-section-title:before {
+#accordion-section-total-pro-section .accordion-trigger:before {
     display: none;
 }
 
@@ -135,11 +135,11 @@
     float: left;
 }
 
-#sub-accordion-panel-total_home_panel #accordion-section-total_slider_section.control-section .accordion-section-title:before {
+#sub-accordion-panel-total_home_panel #accordion-section-total_slider_section.control-section .accordion-trigger:before {
     content: "\f180";
 }
 
-#sub-accordion-panel-total_home_panel .control-section .accordion-section-title:before {
+#sub-accordion-panel-total_home_panel .control-section .accordion-trigger:before {
     content: "\f545";
     color: #AAA;
 }
@@ -147,4 +147,20 @@
 #customize-control-total_blog_sec_nav + #customize-control-total_single_display_featured_image,
 #customize-control-total_blog_sec_nav + #customize-control-total_single_display_featured_image + #customize-control-total_single_post_settings_upgrade_text {
     display: none;
+}
+
+#accordion-section-total-frontpage-notice .accordion-trigger:before {
+    display: none !important;
+}
+
+#accordion-section-total-frontpage-notice .accordion-section-title {
+    background: #FF0000 !important;
+    color: #FFF !important;
+    text-align: center;
+    border: 0;
+}
+
+#accordion-section-total-frontpage-notice .accordion-section-title a {
+    color: #FFF;
+    text-decoration: underline;
 }
