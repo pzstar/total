@@ -82,6 +82,9 @@ if (class_exists('WP_Customize_Section')) {
             ?>
             <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }}">
                 <h3 class="accordion-section-title <# if ( data.hide != 'on' ) { #> ht--section-visible <# } else { #> ht--section-hidden <# }#>" tabindex="0">
+                    <# if(data.hiding_control){ #>
+                    <span class="ht--sortable-handle dashicons dashicons-move"></span>
+                    <# } #>    
                     <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="{{ data.id }}-content">
                     {{ data.title }}
                     <# if ( data.hide !== 'on' ) { #>

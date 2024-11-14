@@ -1386,7 +1386,7 @@
 /*Upgrade Section*/
 .control-section-ht--upgrade-section.ht--single-row .button {
     float: right;
-    margin-top: -2px;
+    margin-top: -4px;
 }
 
 .control-section-ht--upgrade-section .accordion-section-title:after{
@@ -1414,7 +1414,6 @@
 /* Toggle Section Control*/
 .control-section-ht--toggle-section .ht--toggle-section {
     text-decoration: none;
-    margin-right: 20px;
     margin-left: auto;
 }
 
@@ -1431,10 +1430,6 @@
 .control-section .accordion-section-title.ht--section-hidden,
 .ht--section-hidden .ht--toggle-section {
     color: #dcdcdc !important;
-}
-
-.ht--toggle-section {
-    float: right
 }
 
 /* Box Shadow*/
@@ -1896,4 +1891,8 @@ body.wp-admin.rtl .ui-datepicker {
 .customize-control-ht--border > ul > li,
 .customize-control-ht--box-shadow > ul > li {
     margin-bottom: 10px;
+}
+
+.accordion-section-title button.accordion-trigger{
+    box-sizing: border-box;
 }

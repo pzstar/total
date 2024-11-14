@@ -1,11 +1,8 @@
-.customize-pane-parent .control-section .accordion-trigger:before,
-#sub-accordion-panel-total_home_panel .control-section .accordion-trigger:before {
+.customize-pane-parent .control-section .accordion-trigger:before {
     font-family: dashicons;
     content: "\f103";
-    display: inline-block;
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 5px;
-    vertical-align: middle;
 }
 
 #accordion-section-total_pro_feature_section .accordion-trigger:before {
@@ -62,6 +59,30 @@
 
 #accordion-section-total_blog_options_section .accordion-trigger:before {
     content: "\f119";
+}
+
+#accordion-section-total_slider_section .ht--sortable-handle:before {
+    content: "\f181";
+}
+
+#sub-accordion-panel-total_home_panel .accordion-section-title {
+    display: flex;
+}
+
+#sub-accordion-panel-total_home_panel .ht--sortable-handle {
+    flex-basis: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e0f3ff;
+    height: auto;
+    min-width: 40px;
+    font-size: 18px;
+    cursor: move;
+}
+
+#accordion-section-total_slider_section .ht--sortable-handle {
+    cursor: pointer;
 }
 
 #accordion-section-total-pro-section .accordion-trigger:before {
@@ -133,15 +154,6 @@
 .total-drag-spinner {
     display: none;
     float: left;
-}
-
-#sub-accordion-panel-total_home_panel #accordion-section-total_slider_section.control-section .accordion-trigger:before {
-    content: "\f180";
-}
-
-#sub-accordion-panel-total_home_panel .control-section .accordion-trigger:before {
-    content: "\f545";
-    color: #AAA;
 }
 
 #customize-control-total_blog_sec_nav + #customize-control-total_single_display_featured_image,
