@@ -31,6 +31,10 @@ if (!function_exists('total_body_classes')) {
             $classes[] = 'ht-sticky-header';
         }
 
+        if (total_is_ios_device()) {
+            $classes[] = 'ht-ios';
+        }
+
         $total_enable_frontpage = get_theme_mod('total_enable_frontpage', false);
 
         if (is_front_page() && $total_enable_frontpage) {
@@ -40,6 +44,16 @@ if (!function_exists('total_body_classes')) {
         return $classes;
     }
 
+}
+
+if (!function_exists('total_is_ios_device')) {
+    function total_is_ios_device() {
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        if (strpos($user_agent, 'iPhone') !== false || strpos($user_agent, 'iPad') !== false || strpos($user_agent, 'iPod') !== false) {
+            return true;
+        }
+        return false;
+    }
 }
 
 if (!function_exists('total_change_wp_page_menu_args')) {

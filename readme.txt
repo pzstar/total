@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 2.1.79
+Stable tag: 2.1.80
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.80 - Dec 06, 2024 =
+* Black Friday Discount banner removed from welcome page
+* Auto scrolling issue fixe on IOS device
+
 = 2.1.79 - Nov 22, 2024 =
 * Black Friday Discount banner added on welcome page
 

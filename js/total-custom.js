@@ -127,12 +127,14 @@ jQuery(function ($) {
         return false;
     });
 
-    setTimeout(function () {
-        $.stellar({
-            horizontalScrolling: false,
-            responsive: true,
-        });
-    }, 3000);
+    if ($('[data-stellar-background-ratio]').length) {
+        setTimeout(function () {
+            $.stellar({
+                horizontalScrolling: false,
+                responsive: true,
+            });
+        }, 3000);
+    }
 
     $('.ht-team-counter-wrap').waypoint(function () {
         setTimeout(function () {
