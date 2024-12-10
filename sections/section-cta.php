@@ -5,7 +5,7 @@
  */
 if (get_theme_mod('total_cta_section_disable') != 'on') {
     ?>
-    <section id="ht-cta-section" data-stellar-background-ratio="0.5">
+    <section id="ht-cta-section" data-pllx-bg-ratio="0.5">
         <div class="ht-cta-section ht-section">
             <div class="ht-cta-overlay"></div>
             <div class="ht-container">

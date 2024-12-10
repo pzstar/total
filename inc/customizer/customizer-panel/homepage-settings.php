@@ -4,10 +4,10 @@
 
 $total_pro_features = '<ul>
 	<li>' . esc_html__("5+ Demos that can be imported with one click", "total") . '</li>
-        <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
-        <li>' . esc_html__("18 Front Page Customizer sections with lots of variations", "total") . '</li>
+    <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
+    <li>' . esc_html__("18 Front Page Customizer sections with lots of variations", "total") . '</li>
 	<li>' . esc_html__("30+ Elementor Elements", "total") . '</li>
-        <li>' . esc_html__("26 custom widgets", "total") . '</li>
+    <li>' . esc_html__("26 custom widgets", "total") . '</li>
 	<li>' . esc_html__("Video background, Image Motion background, Parallax background, Gradient background option for each section", "total") . '</li>
 	<li>' . esc_html__("4 icon pack for icon picker (5000+ Icons)", "total") . '</li>
 	<li>' . esc_html__("Unlimited slider with linkable button", "total") . '</li>
@@ -36,8 +36,8 @@ $total_pro_features = '<ul>
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-pro-section', array(
     'priority' => 0,
-    'title' => esc_html__('Black Friday: Deals You Can\'t Miss!"', 'total'),
-    'upgrade_text' => esc_html__('Upgrade to Pro - 40% OFF', 'total'),
+    //'title' => esc_html__('Black Friday: Deals You Can\'t Miss!"', 'total'),
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
     'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-customizer-button&utm_campaign=total-upgrade',
 )));
 

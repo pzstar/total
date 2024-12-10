@@ -5,7 +5,7 @@
  */
 if (get_theme_mod('total_counter_section_disable') != 'on') {
     ?>
-    <section id="ht-counter-section" data-stellar-background-ratio="0.5">
+    <section id="ht-counter-section" data-pllx-bg-ratio="0.5">
         <div class="ht-counter-section ht-section">
             <div class="ht-counter-overlay"></div>
             <div class="ht-container">

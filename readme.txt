@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 2.1.80
+Stable tag: 2.1.81
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.81 - Dec 10, 2024 =
+* Stellar js removed and replace by custom js
+
 = 2.1.80 - Dec 06, 2024 =
 * Black Friday Discount banner removed from welcome page
 * Auto scrolling issue fixe on IOS device
@@ -635,9 +638,6 @@ License: MIT (http://opensource.org/licenses/MIT)
 
 * jQuery Superfish Menu -  Copyright (c) 2013 Joel Birch - http://users.tpg.com.au/j_birch/plugins/superfish/
 License: Dual licensed under the MIT and GPL licenses (http://opensource.org/licenses/MIT)
-
-* Stellar - Copyright 2014, Mark Dalgleish - http://markdalgleish.com/projects/stellar.js
-License: MIT (http://opensource.org/licenses/MIT)
 
 * SmoothScroll by Balazs Galambosi - http://www.smoothscroll.net/
 License: MIT (http://opensource.org/licenses/MIT)

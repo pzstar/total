@@ -17,7 +17,7 @@
             ]
         },
         "layout": {
-            "contentSize": "var(--total-container-width)",
+            "contentSize": "var(--total-container-width, var(--total-wide-container-width, 1170px))",
             "wideSize": "1200px",
             "fullSize": "none"
         },
