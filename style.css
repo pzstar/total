@@ -1414,7 +1414,7 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container {
 
 #ht-site-branding img {
     height: auto;
-    width: var(--total-logo-width);
+    width: var(--total-logo-width, 220px);
 }
 
 .ht-main-header {
@@ -3633,7 +3633,7 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container {
 
 @media screen and (max-width: 767px) {
     #ht-site-branding img {
-        width: var(--total-logo-width-tablet, var(--total-logo-width));
+        width: var(--total-logo-width-tablet, var(--total-logo-width, 220px));
     }
 
     .ht-section-title,
@@ -3835,7 +3835,7 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container {
 
 @media screen and (max-width: 480px) {
     #ht-site-branding img {
-        width: var(--total-logo-width-mobile, var(--total-logo-width-tablet, var(--total-logo-width)));
+        width: var(--total-logo-width-mobile, var(--total-logo-width-tablet, var(--total-logo-width, 220px)));
     }
 
     .ht-blog-post,
