@@ -332,7 +332,6 @@ jQuery(function ($) {
             if (e.keyCode === 27) {
                 elem.hide();
             }
-            ;
         });
     };
 

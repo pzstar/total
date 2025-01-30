@@ -2484,7 +2484,6 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container {
 .ht-testimonial-wrap .owl-carousel .owl-nav .owl-prev,
 .ht-testimonial-wrap .owl-carousel .owl-nav .owl-next {
     position: absolute;
-    ;
     top: 50%;
     margin-top: -25px;
     background: var(--total-template-color);
