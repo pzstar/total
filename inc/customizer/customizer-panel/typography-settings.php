@@ -61,7 +61,7 @@ $wp_customize->add_setting('total_body_color', array(
 
 $wp_customize->add_control(new Total_Typography_Control($wp_customize, 'total_body_typography', array(
     'label' => esc_html__('Body Typography', 'total'),
-    'description' => __('Select how you want your body to appear.', 'total'),
+    'description' => esc_html__('Select how you want your body to appear.', 'total'),
     'section' => 'total_body_typography_section',
     'settings' => array(
         'family' => 'total_body_family',
@@ -131,7 +131,7 @@ $wp_customize->add_setting('total_h_letter_spacing', array(
 
 $wp_customize->add_control(new Total_Typography_Control($wp_customize, 'total_h_typography', array(
     'label' => esc_html__('Header Typography', 'total'),
-    'description' => __('Select how you want your Header (H1, H2, H3, H4, H5, H6) to appear.', 'total'),
+    'description' => esc_html__('Select how you want your Header (H1, H2, H3, H4, H5, H6) to appear.', 'total'),
     'section' => 'total_header_typography_section',
     'settings' => array(
         'family' => 'total_h_family',
