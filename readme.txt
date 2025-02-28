@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.7
-Stable tag: 2.1.85
+Stable tag: 2.1.86
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.86 - Feb 28, 2025 =
+* Text escaping issue fixed
+
 = 2.1.85 - Feb 12, 2025 =
 * Home Section tab not opening in customizer fixed
 
