@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.88 - Apr 8, 2025 =
+* Screenshot changed
+
 = 2.1.87 - Mar 25, 2025 =
 * FontAwesome Icon updated
 
