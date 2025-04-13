@@ -52,7 +52,7 @@ if (!function_exists('total_entry_footer')):
         if ('post' == get_post_type()) {
             /* translators: used between list items, there is a space after the comma */
             $categories_list = get_the_category_list(', ');
-            if ($categories_list && total_categorized_blog()) {
+            if ($categories_list) {
                 printf(// WPCS: XSS OK.
                     /* translators: categories */
                     '<span class="cat-links">' . esc_html__('Posted in %s', 'total') . '</span>', $categories_list);
@@ -87,54 +87,10 @@ if (!function_exists('total_entry_category')):
         // Hide category and tag text for pages.
         if ('post' == get_post_type()) {
             $categories_list = get_the_category_list(', ');
-            if ($categories_list && total_categorized_blog()) {
+            if ($categories_list) {
                 echo '<i class="far fa-bookmark"></i>' . $categories_list; // WPCS: XSS OK.
             }
         }
     }
 
 endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function total_categorized_blog() {
-    if (false === ($all_the_cool_cats = get_transient('total_categories'))) {
-        // Create an array of all the categories that are attached to posts.
-        $all_the_cool_cats = get_categories(array(
-            'fields' => 'ids',
-            'hide_empty' => 1,
-            // We only need to know if there is more than one category.
-            'number' => 2,
-        ));
-
-        // Count the number of categories that are attached to the posts.
-        $all_the_cool_cats = count($all_the_cool_cats);
-
-        set_transient('total_categories', $all_the_cool_cats);
-    }
-
-    if ($all_the_cool_cats > 1) {
-        // This blog has more than 1 category so total_categorized_blog should return true.
-        return true;
-    } else {
-        // This blog has only 1 category so total_categorized_blog should return false.
-        return false;
-    }
-}
-
-/**
- * Flush out the transients used in total_categorized_blog.
- */
-function total_category_transient_flusher() {
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-    // Like, beat it. Dig?
-    delete_transient('total_categories');
-}
-
-add_action('edit_category', 'total_category_transient_flusher');
-add_action('save_post', 'total_category_transient_flusher');
