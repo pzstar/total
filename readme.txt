@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.7
-Stable tag: 2.1.87
+Stable tag: 2.1.89
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.89 - Apr 18, 2025 =
+* Notice: Function loadtextdomain_just_in_time was called incorrectly - Fixed
+
 = 2.1.88 - Apr 8, 2025 =
 * Screenshot changed
 
