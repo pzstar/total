@@ -233,9 +233,23 @@ if (!function_exists('total_premium_demo_config')) {
             'wave' => array(
                 'name' => 'Total Plus - Wave',
                 'type' => 'pro',
-                'buy_url' => 'https://hashthemes.com/wordpress-theme/wave/',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
                 'image' => 'https://hashthemes.com/import-files/totalplus/screen/wave.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/wave/',
+            ),
+            'cafe' => array(
+                'name' => 'Total Plus - Cafe',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/cafe.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/cafe/',
+            ),
+            'hotel-plus' => array(
+                'name' => 'Total Plus - Hotel Plus',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/hotel-plus.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/hotel/',
             ),
             'total' => array(
                 'name' => 'Total Plus - Total',

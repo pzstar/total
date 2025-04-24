@@ -20,6 +20,32 @@
 
         <div class="recommended-plugins">
             <div class="plugin-image">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/cafe.jpg'); ?>" alt="<?php echo esc_attr__('Total Plus Demo', 'total'); ?>">
+            </div>
+
+            <div class="plugin-title-wrap">
+                <div class="plugin-title">Cafe</div>
+                <div class="plugin-btn-wrapper">
+                    <a target="_blank" href="https://demo.hashthemes.com/total-plus/cafe/" class="button button-primary"><?php echo esc_html__('Preview', 'total'); ?></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommended-plugins">
+            <div class="plugin-image">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/hotel-plus.jpg'); ?>" alt="<?php echo esc_attr__('Total Plus Demo', 'total'); ?>">
+            </div>
+
+            <div class="plugin-title-wrap">
+                <div class="plugin-title">Hotel Plus</div>
+                <div class="plugin-btn-wrapper">
+                    <a target="_blank" href="https://demo.hashthemes.com/total-plus/hotel/" class="button button-primary"><?php echo esc_html__('Preview', 'total'); ?></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommended-plugins">
+            <div class="plugin-image">
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/total.jpg'); ?>" alt="<?php echo esc_attr__('Total Plus Demo', 'total'); ?>">
             </div>
 

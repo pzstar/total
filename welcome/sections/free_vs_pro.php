@@ -35,20 +35,12 @@
             <span><?php esc_html_e('1) One Click Demo Import', 'total'); ?></span>
             <p><?php esc_html_e('With one click demo-import, you can install the demo content with just one click.', 'total'); ?></p>
         </td>
-        <td><?php esc_html_e('3 Demos', 'total'); ?></td>
-        <td><?php esc_html_e('5 More Demos', 'total'); ?></td>
+        <td><?php esc_html_e('7 Demos', 'total'); ?></td>
+        <td><?php esc_html_e('8 More Demos', 'total'); ?></td>
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('2) GDPR Compliance & Cookies Consent', 'total'); ?> - <a href="https://hashthemes.com/articles/configuring-gdpr-settings/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
-            <p><?php esc_html_e('The Premium version is fully GDPR compliance. Means no data is collected if you use the theme alone. Also the premium version has option to add GDPR Compliance & Cookies Consent text with buttons.', 'total'); ?></p>
-        </td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
-    </tr>
-    <tr>
-        <td>
-            <span><?php esc_html_e('3) Maintenance Mode', 'total'); ?> - <a href="https://hashthemes.com/articles/setting-up-maintenance-mode-page/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('2) Maintenance Mode', 'total'); ?> - <a href="https://hashthemes.com/articles/setting-up-maintenance-mode-page/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version has an inbuilt option to add the Maintenance(under construction) Screen with countdown time. You don\'t need to install additional plugins.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -56,7 +48,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('4) Elementor Compatible', 'total'); ?></span>
+            <span><?php esc_html_e('3) Elementor Compatible', 'total'); ?></span>
             <p><?php esc_html_e('Fan of Pagebuilder? No problem, with premium version you can create your website with Elementor. Elementor provides you with unlimited possibilities to create the website of your imagination.', 'total'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
@@ -64,7 +56,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('5) Elementor Widgets', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#I)ElementorModule" target="_blank"><?php esc_html_e('View Demo', 'total'); ?></a></span>
+            <span><?php esc_html_e('4) Elementor Widgets', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#I)ElementorModule" target="_blank"><?php esc_html_e('View Demo', 'total'); ?></a></span>
             <p><?php esc_html_e('Elementor provides you with unlimited possibilities to create the website of your imagination.', 'total'); ?></p>
         </td>
         <td>10 Widgets</td>
@@ -72,7 +64,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('6) Elementor Section Extenders', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#II)ElementorExtender" target="_blank"><?php esc_html_e('View Demo', 'total'); ?></a></span>
+            <span><?php esc_html_e('5) Elementor Section Extenders', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#II)ElementorExtender" target="_blank"><?php esc_html_e('View Demo', 'total'); ?></a></span>
             <p><?php esc_html_e('You can extend the Elementor section with amazing interactive extenders like Parallax Background, Parallax Animation, Colors Animation, Water Ripples, Particles Background, Background Effects & lot more.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -80,7 +72,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('7) Elementor Template/Section Importer', 'total'); ?> - <a href="https://hashthemes.com/articles/import-elementor-template/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('6) Elementor Template/Section Importer', 'total'); ?> - <a href="https://hashthemes.com/articles/import-elementor-template/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('Import Elementor Templates and Sections with just one click without having to import the whole website.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -88,7 +80,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('8) Multiple Header Layouts and Settings', 'total'); ?> - <a href="https://hashthemes.com/wordpress-theme/total/#totalplus-headers" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('7) Multiple Header Layouts and Settings', 'total'); ?> - <a href="https://hashthemes.com/wordpress-theme/total/#totalplus-headers" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version gives the option to choose from 6 header layouts. Additionally, it allows changing the header background color, text color, header height, and more.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -96,7 +88,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('9) Mega Menu', 'total'); ?> - <a href="https://hashthemes.com/articles/create-mega-menu/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('8) Mega Menu', 'total'); ?> - <a href="https://hashthemes.com/articles/create-mega-menu/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The Premium version has an inbuilt mega menu that will allow you to create beautiful big menus in no time.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -104,7 +96,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('10) Advanced Typography Options for Specific Sections', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#TypographySettings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('9) Advanced Typography Options for Specific Sections', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#TypographySettings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version has 800+ Google Fonts to choose from. Don\'t want to use Google Fonts? No problem, it has web safe standard non-Google fonts to choose from as well.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -112,7 +104,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('11) Color Options', 'total'); ?></span>
+            <span><?php esc_html_e('10) Color Options', 'total'); ?></span>
             <p><?php esc_html_e('The free version has a basic color option but the premium version has advanced color options that allow customizing the color everywhere like header, post/page, footer, and front page sections.', 'total'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
@@ -120,7 +112,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('12) Front Page Section Reorder', 'total'); ?></span>
+            <span><?php esc_html_e('11) Front Page Section Reorder', 'total'); ?></span>
             <p><?php esc_html_e('Option to organize how the front page section appears.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
@@ -128,7 +120,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('13) Front Page Unlimited Blocks for Each Section', 'total'); ?></span>
+            <span><?php esc_html_e('12) Front Page Unlimited Blocks for Each Section', 'total'); ?></span>
             <p><?php esc_html_e('The premium version allows adding an unlimited block for all the sections on the front page. This includes a slider, featured block, highlight block, service, team, testimonial, counter, pricing, tabs, news and update block, and logo. Moreover, it has the option to choose the number of columns to show in each row.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -136,7 +128,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('14) Front Page Video Background, Image Motion Background, Gradient Background', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-background-types" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('13) Front Page Video Background, Image Motion Background, Gradient Background', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-background-types" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version has advanced background options that include an option to choose from a video background, moving background, or gradient background.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -144,7 +136,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('15) Front Page Sections', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomePageSection/Settings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('14) Front Page Sections', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomePageSection/Settings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('Total Plus has an additional 7 sections.', 'total'); ?></p>
         </td>
         <td>11</td>
@@ -152,7 +144,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('16) Front Page Blocks - Style Variations', 'total'); ?></span>
+            <span><?php esc_html_e('15) Front Page Blocks - Style Variations', 'total'); ?></span>
             <p><?php esc_html_e('Option to switch the style of the front page blocks.', 'total'); ?></p>
             <ul>
                 <li><a href="https://demo.hashthemes.com/total-plus/featured-block/" target="_blank"><?php esc_html_e('Featured block - 7 styles', 'total'); ?></a></li>
@@ -174,7 +166,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('17) Front Page Shape Dividers', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-shape-divider" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('16) Front Page Shape Dividers', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-shape-divider" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The theme has 16 shape dividers that you can choose from to create a nice transition effect between sections', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -182,7 +174,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('18) Front Page Sections with Full Screen Height', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-full-window-height" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('17) Front Page Sections with Full Screen Height', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-full-window-height" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('A front page section that covers the full screen despite having less content. It is useful for a one-page website.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -190,7 +182,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('19) Front Page Slider', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomeSlider" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('18) Front Page Slider', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomeSlider" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version has an option for the Simple Slider, Revolution Slider, and Single Banner Image with advanced customization options.', 'total'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
@@ -198,7 +190,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('20) Top Header Bar', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#TopHeader" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('19) Top Header Bar', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#TopHeader" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('Total Plus comes with an option for the top bar where you can add a contact address, social icon, language picker, or any informative text.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -206,7 +198,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('21) Add New Widget Area', 'total'); ?> - <a href="https://hashthemes.com/articles/add-new-widget-area/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('20) Add New Widget Area', 'total'); ?> - <a href="https://hashthemes.com/articles/add-new-widget-area/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('Create unlimited widget areas using our premium version. You can create new widget areas for placing widgets.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -214,7 +206,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('22) Custom Widgets', 'total'); ?> - <a href="https://hashthemes.com/wordpress-theme/total/#totalplus-widgets" target="_blank"><?php esc_html_e('View Demo', 'total'); ?></a></span>
+            <span><?php esc_html_e('21) Custom Widgets', 'total'); ?> - <a href="https://hashthemes.com/wordpress-theme/total/#totalplus-widgets" target="_blank"><?php esc_html_e('View Demo', 'total'); ?></a></span>
             <p><?php esc_html_e('With a custom widget and Site origin page builder, you can play to create various website layouts.', 'total'); ?></p>
         </td>
         <td>3</td>
@@ -222,7 +214,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('23) PreLoader Option', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#PreloaderOption" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('22) PreLoader Option', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#PreloaderOption" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The loading screen appears until the website is fully loaded. The premium version has the option to choose from 16 preloaders or add your preloader image as well.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -230,7 +222,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('24) Sidebar Layout Options', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#SidebarSettings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('23) Sidebar Layout Options', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#SidebarSettings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php printf(esc_html__('The premium version has the option to change the sidebar layout universally or %1schange the sidebar for individual posts/pages%2s. Moreover, it allows choosing the sidebar widgets for individual posts/pages.', 'total'), '<a href="https://hashthemes.com/articles/change-the-sidebar-layout-and-choose-unique-widget/" target="_blank">', '</a>'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
@@ -238,7 +230,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('25) Advanced Blog Settings', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#Blog/SinglePostSettings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('24) Advanced Blog Settings', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#Blog/SinglePostSettings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The Premium version has an advanced blog page setting option. The option allows you to show or hide each element of the blog.', 'total'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
@@ -246,7 +238,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('26) Blog Layouts', 'total'); ?></span>
+            <span><?php esc_html_e('25) Blog Layouts', 'total'); ?></span>
             <p><?php esc_html_e('The premium version gives the option to choose from 4 differently designed blog layouts.', 'total'); ?></p>
             <ul>
                 <li><a href="https://demo.hashthemes.com/total-plus/total/blog/" target="_blank"><?php esc_html_e('Blog Layout 1 Demo', 'total'); ?></a></li>
@@ -260,7 +252,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('27) Reorder and Show/Hide Elements of Single Post', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#SinglePostSettings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('26) Reorder and Show/Hide Elements of Single Post', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#SinglePostSettings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('Change the position(reorder) the single post elements like post meta, featured image, content, category, tags, and social share icons and place them in the order you want. You can disable it individually if you do not want to show it.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -268,7 +260,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('28) Author Box, Social Share, and Related Post at the Bottom of the Single Post', 'total'); ?></span>
+            <span><?php esc_html_e('27) Author Box, Social Share, and Related Post at the Bottom of the Single Post', 'total'); ?></span>
             <p><?php esc_html_e('Shows the short intro of the post author along with social icons, major Social Share Icons without using a plugin, and related posts by category.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -276,7 +268,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('29) Unique Header Background for Each Post and Page', 'total'); ?> - <a href="https://hashthemes.com/articles/changing-the-title-bar-background/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('28) Unique Header Background for Each Post and Page', 'total'); ?> - <a href="https://hashthemes.com/articles/changing-the-title-bar-background/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version has the option to add a unique Title Bar(Header) background for each post and page.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -284,7 +276,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('30) Different Background and Text Color for Each Post and Page', 'total'); ?> - <a href="https://hashthemes.com/articles/change-the-background-and-text-color/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('29) Different Background and Text Color for Each Post and Page', 'total'); ?> - <a href="https://hashthemes.com/articles/change-the-background-and-text-color/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version comes with the option to configure the background and text color of each page and post on the website. It will allow you to choose the custom background color, background image, and text color for any page or post you like.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -292,7 +284,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('31) Hide Header and Footer for Each Post and Page', 'total'); ?> - <a href="https://hashthemes.com/articles/hide-header-and-footer/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('30) Hide Header and Footer for Each Post and Page', 'total'); ?> - <a href="https://hashthemes.com/articles/hide-header-and-footer/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('You can show/hide the header and footer for each of the pages/posts. It is helpful if you are running an infographic website.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -300,7 +292,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('32) Advanced Footer Setting', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#FooterSection" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('31) Advanced Footer Setting', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#FooterSection" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version has the option to choose from 5 different footer styles. Apart from that, you can set the number of footer columns and resize them as you want with dragging column resizer.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -308,7 +300,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('33) Remove Footer Credit Text', 'total'); ?></span>
+            <span><?php esc_html_e('32) Remove Footer Credit Text', 'total'); ?></span>
             <p><?php esc_html_e('The premium version easily allows you to remove or change the footer credit text or replace it with the widget.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -316,7 +308,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('34) Google Map Option', 'total'); ?></span>
+            <span><?php esc_html_e('33) Google Map Option', 'total'); ?></span>
             <p><?php esc_html_e('Shows the physical location with an interactive contact form.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -324,7 +316,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('35) Icon Picker', 'total'); ?></span>
+            <span><?php esc_html_e('34) Icon Picker', 'total'); ?></span>
             <p><?php esc_html_e('The premium theme has 4 icon packs with more than 5000+ icons. They can be used on the various sections of the Front Page, WordPress Widget Blocks, and Elementor Modules.', 'total'); ?></p>
             <ul>
                 <li><?php esc_html_e('i) Ico Font', 'total'); ?></li>
@@ -338,11 +330,19 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('36) WooCommerce Compatible', 'total'); ?></span>
+            <span><?php esc_html_e('35) WooCommerce Compatible', 'total'); ?></span>
             <p><?php esc_html_e('The premium version has enhanced WooCommerce options like adding a cart icon in the menu, product page settings, sidebar layout settings, and more.', 'total'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
         <td><?php esc_html_e('Advanced', 'total'); ?></td>
+    </tr>
+    <tr>
+        <td>
+            <span><?php esc_html_e('36) GDPR Compliance & Cookies Consent', 'total'); ?> - <a href="https://hashthemes.com/articles/configuring-gdpr-settings/" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <p><?php esc_html_e('The Premium version is fully GDPR compliance. Means no data is collected if you use the theme alone. Also the premium version has option to add GDPR Compliance & Cookies Consent text with buttons.', 'total'); ?></p>
+        </td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
     <tr>
         <td>
