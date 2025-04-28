@@ -1,18 +1,15 @@
 === Total ===
+Total WordPress Theme, Copyright HashThemes 2025
+Total is distributed under the terms of the GNU GPL v2 or later.
+
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.7
-Stable tag: 2.1.89
+Stable tag: 2.1.90
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Total WordPress Theme copyright HashThemes 2025
-Total is distributed under the terms of the GNU GPL v2 or later.
-
-== Description ==
-
-Total is a clean and beautiful WordPress theme with lots of features to make a complete website. The theme is perfect for business, photography, education, creative websites. The powerful customizer panel allows to configure the theme with live preview. The theme is SEO friendly, browser compatible, fully translation ready.
 
 == Installation ==
 	
@@ -22,6 +19,10 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.90 - Apr 28, 2025 =
+* New Demos Added
+* Screenshots updated
+
 = 2.1.89 - Apr 18, 2025 =
 * Notice: Function loadtextdomain_just_in_time was called incorrectly - Fixed
 
