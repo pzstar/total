@@ -32,6 +32,12 @@ if (!class_exists('Total_Welcome')):
                     'filename' => 'elementor',
                     'thumb_path' => 'https://ps.w.org/elementor/assets/icon-256x256.gif'
                 ),
+                'easy-elementor-addons' => array(
+                    'name' => 'Easy Elementor Addons',
+                    'slug' => 'easy-elementor-addons',
+                    'filename' => 'easy-elementor-addons',
+                    'thumb_path' => 'https://ps.w.org/easy-elementor-addons/assets/icon-256x256.png'
+                ),
                 'hash-form' => array(
                     'name' => 'Hash Form - Drag & Drop Form Builder',
                     'slug' => 'hash-form',
@@ -49,13 +55,7 @@ if (!class_exists('Total_Welcome')):
                     'slug' => 'simple-floating-menu',
                     'filename' => 'simple-floating-menu',
                     'thumb_path' => 'https://ps.w.org/simple-floating-menu/assets/icon-256x256.png'
-                ),
-                'mini-ajax-woo-cart' => array(
-                    'name' => 'Ajax Cart for WooCommerce',
-                    'slug' => 'mini-ajax-woo-cart',
-                    'filename' => 'mini-ajax-woo-cart',
-                    'thumb_path' => 'https://ps.w.org/mini-ajax-woo-cart/assets/icon-256x256.gif'
-                ),
+                )
             );
 
             /* Create a Welcome Page */

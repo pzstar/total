@@ -299,18 +299,13 @@ if (!function_exists('total_register_required_plugins')) {
     function total_register_required_plugins() {
         $plugins = array(
             array(
-                'name' => 'HashThemes Demo Importer',
-                'slug' => 'hashthemes-demo-importer',
-                'required' => false,
-            ),
-            array(
-                'name' => 'Simple Floating Menu',
-                'slug' => 'simple-floating-menu',
-                'required' => false,
-            ),
-            array(
                 'name' => 'Elementor',
                 'slug' => 'elementor',
+                'required' => false,
+            ),
+            array(
+                'name' => 'Easy Elementor Addons',
+                'slug' => 'easy-elementor-addons',
                 'required' => false,
             ),
             array(
@@ -321,6 +316,11 @@ if (!function_exists('total_register_required_plugins')) {
             array(
                 'name' => 'Hash Form - Drag & Drop Form Builder',
                 'slug' => 'hash-form',
+                'required' => false,
+            ),
+            array(
+                'name' => 'Simple Floating Menu',
+                'slug' => 'simple-floating-menu',
                 'required' => false,
             ),
         );
