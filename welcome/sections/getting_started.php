@@ -5,20 +5,20 @@
         <div class="welcome-theme-thumb">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/set-front-page.gif'); ?>" alt="<?php echo esc_attr__('Viral Demo', 'total'); ?>">
         </div> -->
-        <p><?php echo esc_html__('You can setup the home page sections either from Customizer Panel or from Elementor Pagebuilder', 'total'); ?></p>
+        <p><?php echo esc_html__('You can set up the homepage sections either through the Customizer Panel or using the Elementor Page Builder.', 'total'); ?></p>
         <p><strong><?php echo esc_html__('FROM CUSTOMIZER', 'total'); ?></strong></p>
         <ol>
-            <li><?php echo esc_html__('Go to Appearance > Customize', 'total'); ?></li>
-            <li><?php echo sprintf(esc_html__('Click on "%s" and turn on the option for "Enable FrontPage" Setting', 'total'), '<a href="' . admin_url('customize.php?autofocus[section]=static_front_page') . '" target="_blank">' . esc_html__('Homepage Settings', 'total') . '</a>'); ?> </li>
-            <li><?php echo esc_html__('Now go back and click on "Front Page Sections" and set up the FrontPage Section', 'total'); ?> </li>
+            <li><?php echo sprintf(esc_html__('Go to Appearance > Customize > %s.', 'total'), '<a href="' . admin_url('customize.php?autofocus[section]=static_front_page') . '" target="_blank">' . esc_html__('Homepage Settings', 'total') . '</a>'); ?></li>
+            <li><?php echo esc_html__('Activate "Enable Home Sections".', 'total'); ?> </li>
+            <li><?php echo esc_html__('Go back, select "Home Sections", and configure the sections as needed.', 'total'); ?> </li>
         </ol>
         <p><strong><?php echo esc_html__('FROM ELEMENTOR', 'total'); ?></strong></p>
         <ol>
-            <li><?php printf(esc_html__('Firstly install and activate "Elementor" and "Hash Elements" plugin from %s.', 'total'), '<a href="' . admin_url('admin.php?page=total-welcome&section=recommended_plugins') . '" target="_blank">' . esc_html__('Recommended Plugin page', 'total') . '</a>'); ?></li>
-            <li><?php echo esc_html__('Create a new page and edit with Elementor. Drag and drop the news elements in the Elementor to create your own design.', 'total'); ?></li>
-            <li><?php echo esc_html__('Now go to Appearance > Customize > Homepage Settings and choose "A static page" for "Your latest posts" and select the created page for "Home Page" option.', 'total'); ?> </li>
+            <li><?php printf(esc_html__('Install and activate the "Elementor" and "Hash Elements" plugins from the %s.', 'total'), '<a href="' . admin_url('admin.php?page=total-welcome&section=recommended_plugins') . '" target="_blank">' . esc_html__('Recommended Plugin Page', 'total') . '</a>'); ?></li>
+            <li><?php echo esc_html__('Create a new page and edit it with Elementor. Drag and drop the Elementor widgets to design your homepage.', 'total'); ?></li>
+            <li><?php echo sprintf(esc_html__('Go to Appearance > Customize > %s, choose "A static page" for the "Your homepage displays" option, deactivate "Enable Home Section" and select the newly created page in "Homepage" select box.', 'total'), '<a href="' . admin_url('customize.php?autofocus[section]=static_front_page') . '" target="_blank">' . esc_html__('Homepage Settings', 'total') . '</a>'); ?> </li>
         </ol>
-        <p style="margin-bottom: 0"><?php printf(esc_html__('For detailed documentation, please visit %s.', 'total'), '<a href="https://hashthemes.com/documentation/total-documentation/#HomePageSetup" target="_blank">' . esc_html__('Documentation Page', 'total') . '</a>'); ?></p>
+        <p style="margin-bottom: 0"><?php printf(esc_html__('For step-by-step guidance, please refer to the %s.', 'total'), '<a href="https://hashthemes.com/documentation/total-documentation/#HomePageSetup" target="_blank">' . esc_html__('Documentation Page', 'total') . '</a>'); ?></p>
     </div>
 
     <div class="welcome-demo-import">

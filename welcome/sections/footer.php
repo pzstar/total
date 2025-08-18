@@ -1,7 +1,7 @@
 <div class="welcome-upgrade-wrap">
     <div class="welcome-upgrade-header">
         <h3><?php printf(esc_html__('Total Plus Demos - Premium Version of %s (Customizer & Elementor Version)', 'total'), $this->theme_name); ?></h3>
-        <p><?php echo sprintf(esc_html__('Create beautiful websites with the premium version of the %s Theme. The demos are available in both Customizer and Elementor Version. These demos can be imported with just one click in the premium version.', 'total'), $this->theme_name); ?></p>
+        <p><?php echo sprintf(esc_html__('Unlock the full potential of your website with the Premium version of %s Theme. Choose from professionally designed demos available in both Customizer and Elementor versions. With just one click, you can import these demos and launch a beautiful, fully functional website in minutes.', 'total'), $this->theme_name); ?></p>
     </div>
 
     <div class="recomended-plugin-wrap">
@@ -115,8 +115,8 @@
 <div class="welcome-upgrade-box">
     <div class="upgrade-box-text">
         <h3><?php echo esc_html__('Upgrade To Premium Version (7 Days Money Back Guarantee)', 'total'); ?></h3>
-        <p><?php echo sprintf(esc_html__('With %s Theme you can create a beautiful website. But if you want to unlock more possibilities then upgrade to the premium version.', 'total'), $this->theme_name); ?></p>
-        <p><?php echo esc_html__('Try the Premium version and check if it fits your need or not. If not, we have 7 days money-back guarantee.', 'total'); ?></p>
+        <p><?php echo sprintf(esc_html__('The %s Theme already allows you to build a beautiful website, but the Premium version unlocks even more powerful features and flexibility.', 'total'), $this->theme_name); ?></p>
+        <p><?php echo esc_html__('Experience the full potential of the Premium version with complete peace of mind. If it doesn\'t meet your needs, you\'re covered by our 7 day money back guarantee.', 'total'); ?></p>
     </div>
 
     <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-footer&utm_campaign=total-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'total'); ?></a>
