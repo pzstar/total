@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Total 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com\n"
-"POT-Creation-Date: 2025-06-01 08:38+0000\n"
+"POT-Creation-Date: 2025-08-19 15:32+0000\n"
 "POT-Revision-Date: Wed Jul 20 2016 15:08:32 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -132,24 +132,24 @@ msgid "10) Color Options"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:115
-msgid "11) Front Page Section Reorder"
+msgid "11) Home Page Section Reorder"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:123
-msgid "12) Front Page Unlimited Blocks for Each Section"
+msgid "12) Home Page Unlimited Blocks for Each Section"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:131
 msgid ""
-"13) Front Page Video Background, Image Motion Background, Gradient Background"
+"13) Home Page Video Background, Image Motion Background, Gradient Background"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:139
-msgid "14) Front Page Sections"
+msgid "14) Home Page Sections"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:147
-msgid "15) Front Page Blocks - Style Variations"
+msgid "15) Home Page Blocks - Style Variations"
 msgstr ""
 
 #: inc/customizer/customizer-panel/homepage-settings.php:16
@@ -157,19 +157,19 @@ msgid "15+ Shape divider to choose from for each section"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:169
-msgid "16) Front Page Shape Dividers"
+msgid "16) Home Page Shape Dividers"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:177
-msgid "17) Front Page Sections with Full Screen Height"
+msgid "17) Home Page Sections with Full Screen Height"
 msgstr ""
 
 #: inc/customizer/customizer-panel/homepage-settings.php:8
-msgid "18 Front Page Customizer sections with lots of variations"
+msgid "18 Home Page Customizer sections with lots of variations"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:185
-msgid "18) Front Page Slider"
+msgid "18) Home Page Slider"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:193
@@ -419,8 +419,8 @@ msgstr ""
 
 #: welcome/sections/free_vs_pro.php:178
 msgid ""
-"A front page section that covers the full screen despite having less content."
-" It is useful for a one-page website."
+"A home page section that covers the full screen despite having less content. "
+"It is useful for a one-page website."
 msgstr ""
 
 #: inc/widgets/widget-contact-info.php:17
@@ -442,6 +442,10 @@ msgstr ""
 #: inc/class-tgm-plugin-activation.php:2658
 #: welcome/sections/recommended_plugins.php:28
 msgid "Activate"
+msgstr ""
+
+#: welcome/sections/getting_started.php:12
+msgid "Activate \"Enable Home Sections\"."
 msgstr ""
 
 #. %2$s: plugin name in screen reader markup
@@ -790,11 +794,6 @@ msgstr ""
 msgid "Click below to install and active HashThemes Demo Importer Plugin."
 msgstr ""
 
-#: welcome/sections/getting_started.php:12
-#, php-format
-msgid "Click on \"%s\" and turn on the option for \"Enable FrontPage\" Setting"
-msgstr ""
-
 #: welcome/sections/getting_started.php:32
 #, php-format
 msgid ""
@@ -965,16 +964,8 @@ msgstr ""
 
 #: welcome/sections/getting_started.php:18
 msgid ""
-"Create a new page and edit with Elementor. Drag and drop the news elements "
-"in the Elementor to create your own design."
-msgstr ""
-
-#: welcome/sections/footer.php:4
-#, php-format
-msgid ""
-"Create beautiful websites with the premium version of the %s Theme. The "
-"demos are available in both Customizer and Elementor Version. These demos "
-"can be imported with just one click in the premium version."
+"Create a new page and edit it with Elementor. Drag and drop the Elementor "
+"widgets to design your homepage."
 msgstr ""
 
 #: welcome/sections/support.php:13 welcome/sections/support.php:15
@@ -1184,7 +1175,7 @@ msgid "Enable Footer Top Border"
 msgstr ""
 
 #: inc/customizer/customizer-panel/homepage-settings.php:96
-msgid "Enable FrontPage"
+msgid "Enable Front Page"
 msgstr ""
 
 #: inc/customizer/customizer-panel/header-settings.php:211
@@ -1201,6 +1192,13 @@ msgstr ""
 
 #: inc/customizer/customizer-panel/home-sections.php:1090
 msgid "Exclude Category from Blog Posts"
+msgstr ""
+
+#: welcome/sections/footer.php:119
+msgid ""
+"Experience the full potential of the Premium version with complete peace of "
+"mind. If it doesn't meet your needs, you're covered by our 7 day money back "
+"guarantee."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2248
@@ -1237,13 +1235,6 @@ msgstr ""
 
 #: welcome/sections/free_vs_pro.php:29
 msgid "Features"
-msgstr ""
-
-#: welcome/sections/getting_started.php:17
-#, php-format
-msgid ""
-"Firstly install and activate \"Elementor\" and \"Hash Elements\" plugin from "
-"%s."
 msgstr ""
 
 #: inc/customizer/custom-controls/background-image-control.php:278
@@ -1358,11 +1349,6 @@ msgid ""
 "For a gradient, at least one starting and one end color should be defined."
 msgstr ""
 
-#: welcome/sections/getting_started.php:21
-#, php-format
-msgid "For detailed documentation, please visit %s."
-msgstr ""
-
 #: inc/customizer/customizer-panel/color-settings.php:85
 msgid "For more color options,"
 msgstr ""
@@ -1394,6 +1380,11 @@ msgstr ""
 msgid "For more settings,"
 msgstr ""
 
+#: welcome/sections/getting_started.php:21
+#, php-format
+msgid "For step-by-step guidance, please refer to the %s."
+msgstr ""
+
 #: welcome/sections/free_vs_pro.php:399
 msgid "For the Premium theme, the user will get a reply in 10 hours or less."
 msgstr ""
@@ -1422,10 +1413,6 @@ msgstr ""
 msgid "FROM ELEMENTOR"
 msgstr ""
 
-#: inc/customizer/customizer-panel/homepage-settings.php:97
-msgid "Front Page Sections"
-msgstr ""
-
 #: inc/customizer/customizer-panel/homepage-settings.php:28
 msgid "Front page sections with full window height"
 msgstr ""
@@ -1435,7 +1422,7 @@ msgid "Fully"
 msgstr ""
 
 #: inc/customizer/customizer-panel/homepage-settings.php:15
-msgid "Fully customizable options for Front Page blocks"
+msgid "Fully customizable options for Home Page blocks"
 msgstr ""
 
 #: inc/customizer/customizer-panel/homepage-settings.php:32
@@ -1458,8 +1445,22 @@ msgstr ""
 msgid "Getting Started"
 msgstr ""
 
+#: welcome/sections/getting_started.php:13
+msgid ""
+"Go back, select \"Home Sections\", and configure the sections as needed."
+msgstr ""
+
+#: welcome/sections/getting_started.php:19
+#, php-format
+msgid ""
+"Go to Appearance > Customize > %s, choose \"A static page\" for the \"Your "
+"homepage displays\" option, deactivate \"Enable Home Section\" and select "
+"the newly created page in \"Homepage\" select box."
+msgstr ""
+
 #: welcome/sections/getting_started.php:11
-msgid "Go to Appearance > Customize"
+#, php-format
+msgid "Go to Appearance > Customize > %s."
 msgstr ""
 
 #: welcome/welcome.php:178 welcome/welcome.php:282
@@ -1571,6 +1572,7 @@ msgid "Home Page"
 msgstr ""
 
 #: inc/customizer/customizer-panel/home-sections.php:5
+#: inc/customizer/customizer-panel/homepage-settings.php:97
 msgid "Home Sections"
 msgstr ""
 
@@ -1578,7 +1580,8 @@ msgstr ""
 msgid "Home Slider"
 msgstr ""
 
-#: welcome/sections/getting_started.php:12
+#: welcome/sections/getting_started.php:11
+#: welcome/sections/getting_started.php:19
 msgid "Homepage Settings"
 msgstr ""
 
@@ -1677,6 +1680,13 @@ msgstr ""
 #: inc/class-tgm-plugin-activation.php:2539
 #, php-format
 msgid "Install %2$s"
+msgstr ""
+
+#: welcome/sections/getting_started.php:17
+#, php-format
+msgid ""
+"Install and activate the \"Elementor\" and \"Hash Elements\" plugins from "
+"the %s."
 msgstr ""
 
 #: welcome/welcome.php:286
@@ -2034,19 +2044,6 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: welcome/sections/getting_started.php:13
-msgid ""
-"Now go back and click on \"Front Page Sections\" and set up the FrontPage "
-"Section"
-msgstr ""
-
-#: welcome/sections/getting_started.php:19
-msgid ""
-"Now go to Appearance > Customize > Homepage Settings and choose \"A static "
-"page\" for \"Your latest posts\" and select the created page for \"Home "
-"Page\" option."
-msgstr ""
-
 #: inc/customizer/customizer-panel/home-sections.php:1081
 msgid "Number of Posts to show"
 msgstr ""
@@ -2114,7 +2111,7 @@ msgid "Option to link the client logos to external url"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:116
-msgid "Option to organize how the front page section appears."
+msgid "Option to organize how the home page section appears."
 msgstr ""
 
 #: inc/customizer/customizer-panel/home-sections.php:450
@@ -2126,7 +2123,7 @@ msgid "Option to show/hide zoom and link button"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:148
-msgid "Option to switch the style of the front page blocks."
+msgid "Option to switch the style of the home page blocks."
 msgstr ""
 
 #: welcome/sections/getting_started.php:31
@@ -2149,7 +2146,7 @@ msgstr ""
 #: inc/customizer/customizer-panel/homepage-settings.php:97
 #, php-format
 msgid ""
-"Overwrites the homepage displays setting and shows the frontpage for "
+"Overwrites the homepage displays setting and replaces frontpage with "
 "Customizer %s"
 msgstr ""
 
@@ -2365,7 +2362,7 @@ msgid "Recommended Image Size: 770X650px"
 msgstr ""
 
 #: welcome/sections/getting_started.php:17
-msgid "Recommended Plugin page"
+msgid "Recommended Plugin Page"
 msgstr ""
 
 #: welcome/welcome.php:147 welcome/sections/recommended_plugins.php:6
@@ -2800,6 +2797,13 @@ msgstr ""
 msgid "TGMPA v%s"
 msgstr ""
 
+#: welcome/sections/footer.php:118
+#, php-format
+msgid ""
+"The %s Theme already allows you to build a beautiful website, but the "
+"Premium version unlocks even more powerful features and flexibility."
+msgstr ""
+
 #: inc/class-tgm-plugin-activation.php:342
 #, php-format
 msgid ""
@@ -2840,7 +2844,7 @@ msgstr ""
 msgid ""
 "The free version has a basic color option but the premium version has "
 "advanced color options that allow customizing the color everywhere like "
-"header, post/page, footer, and front page sections."
+"header, post/page, footer, and home page sections."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:3445
@@ -2877,14 +2881,14 @@ msgstr ""
 #: welcome/sections/free_vs_pro.php:320
 msgid ""
 "The premium theme has 4 icon packs with more than 5000+ icons. They can be "
-"used on the various sections of the Front Page, WordPress Widget Blocks, and "
+"used on the various sections of the Home Page, WordPress Widget Blocks, and "
 "Elementor Modules."
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:124
 msgid ""
 "The premium version allows adding an unlimited block for all the sections on "
-"the front page. This includes a slider, featured block, highlight block, "
+"the home page. This includes a slider, featured block, highlight block, "
 "service, team, testimonial, counter, pricing, tabs, news and update block, "
 "and logo. Moreover, it has the option to choose the number of columns to "
 "show in each row."
@@ -3166,12 +3170,6 @@ msgstr ""
 msgid "Total Plus has an additional 7 sections."
 msgstr ""
 
-#: welcome/sections/footer.php:119
-msgid ""
-"Try the Premium version and check if it fits your need or not. If not, we "
-"have 7 days money-back guarantee."
-msgstr ""
-
 #: inc/customizer/customizer-panel/home-sections.php:716
 msgid "Twitter Url"
 msgstr ""
@@ -3231,6 +3229,15 @@ msgstr ""
 
 #: welcome/sections/header.php:29
 msgid "Unlock all the possibilities with Total Plus."
+msgstr ""
+
+#: welcome/sections/footer.php:4
+#, php-format
+msgid ""
+"Unlock the full potential of your website with the Premium version of %s "
+"Theme. Choose from professionally designed demos available in both "
+"Customizer and Elementor versions. With just one click, you can import these "
+"demos and launch a beautiful, fully functional website in minutes."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2655
@@ -3409,10 +3416,11 @@ msgstr ""
 #: welcome/sections/header.php:15
 #, php-format
 msgid ""
-"Welcome and thank you for installing %1$s. Getting started with %1$s is very "
-"easy. Here you will find all the necessary information required to get "
-"started with the theme. And of course, the premium version if you require "
-"more features."
+"Welcome to %1$s - Thank You for Installing! Getting started with %1$s is "
+"quick and simple. Here, you'll find all the essential information you need "
+"to set up and begin using the theme with ease. And if you'd like to unlock "
+"even more features and flexibility, you can always upgrade to the Premium "
+"version."
 msgstr ""
 
 #. 1-theme name, 2-theme version
@@ -3427,13 +3435,6 @@ msgstr ""
 
 #: inc/customizer/custom-controls/border-control.php:59
 msgid "Width"
-msgstr ""
-
-#: welcome/sections/footer.php:118
-#, php-format
-msgid ""
-"With %s Theme you can create a beautiful website. But if you want to unlock "
-"more possibilities then upgrade to the premium version."
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:210
@@ -3510,8 +3511,8 @@ msgstr ""
 
 #: welcome/sections/getting_started.php:8
 msgid ""
-"You can setup the home page sections either from Customizer Panel or from "
-"Elementor Pagebuilder"
+"You can set up the homepage sections either through the Customizer Panel or "
+"using the Elementor Page Builder."
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:288

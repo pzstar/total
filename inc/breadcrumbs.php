@@ -306,12 +306,12 @@ class Breadcrumb_Trail {
      */
     protected function add_items() {
 
-        // If viewing the front page.
+        // If viewing the home page.
         if (is_front_page()) {
             $this->add_front_page_items();
         }
 
-        // If not viewing the front page.
+        // If not viewing the home page.
         else {
 
             // Add the network and site home links.
@@ -439,7 +439,7 @@ class Breadcrumb_Trail {
     }
 
     /**
-     * Adds items for the front page to the items array.
+     * Adds items for the home page to the items array.
      *
      * @since  1.0.0
      * @access protected
@@ -457,7 +457,7 @@ class Breadcrumb_Trail {
             if (is_paged())
                 $this->add_site_home_link();
 
-            // If on the main front page, add the network home title.
+            // If on the main home page, add the network home title.
             elseif (true === $this->args['show_title'])
                 $this->items[] = is_multisite() && true === $this->args['network'] ? get_bloginfo('name') : $this->labels['home'];
         }
@@ -910,7 +910,7 @@ class Breadcrumb_Trail {
             // Get the post by ID.
             $post = get_post($post_id);
 
-            // If we hit a page that's set as the front page, bail.
+            // If we hit a page that's set as the home page, bail.
             if ('page' == $post->post_type && 'page' == get_option('show_on_front') && $post_id == get_option('page_on_front'))
                 break;
 

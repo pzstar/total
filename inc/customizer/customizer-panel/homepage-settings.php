@@ -5,14 +5,14 @@
 $total_pro_features = '<ul>
 	<li>' . esc_html__("5+ Demos that can be imported with one click", "total") . '</li>
     <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
-    <li>' . esc_html__("18 Front Page Customizer sections with lots of variations", "total") . '</li>
+    <li>' . esc_html__("18 Home Page Customizer sections with lots of variations", "total") . '</li>
 	<li>' . esc_html__("30+ Elementor Elements", "total") . '</li>
     <li>' . esc_html__("26 custom widgets", "total") . '</li>
 	<li>' . esc_html__("Video background, Image Motion background, Parallax background, Gradient background option for each section", "total") . '</li>
 	<li>' . esc_html__("4 icon pack for icon picker (5000+ Icons)", "total") . '</li>
 	<li>' . esc_html__("Unlimited slider with linkable button", "total") . '</li>
 	<li>' . esc_html__("Add unlimited blocks(like slider, team, testimonial) for each Section", "total") . '</li>
-	<li>' . esc_html__("Fully customizable options for Front Page blocks", "total") . '</li>
+	<li>' . esc_html__("Fully customizable options for Home Page blocks", "total") . '</li>
 	<li>' . esc_html__("15+ Shape divider to choose from for each section", "total") . '</li>
 	<li>' . esc_html__("Remove footer credit Text", "total") . '</li>
 	<li>' . esc_html__("6 header layouts and advanced header settings", "total") . '</li>
@@ -93,7 +93,7 @@ $wp_customize->add_setting('total_enable_frontpage', array(
 
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable_frontpage', array(
     'section' => 'static_front_page',
-    'label' => esc_html__('Enable FrontPage', 'total'),
-    'description' => sprintf(esc_html__('Overwrites the homepage displays setting and shows the frontpage for Customizer %s', 'total'), '<a href="javascript:wp.customize.panel(\'total_home_panel\').focus()">' . esc_html__('Front Page Sections', 'total') . '</a>') . '<br/><br/>' . esc_html__('Do not enable this option if you want to use Elementor in home page.', 'total')
+    'label' => esc_html__('Enable Front Page', 'total'),
+    'description' => sprintf(esc_html__('Overwrites the homepage displays setting and replaces frontpage with Customizer %s', 'total'), '<a href="javascript:wp.customize.panel(\'total_home_panel\').focus()">' . esc_html__('Home Sections', 'total') . '</a>') . '<br/><br/>' . esc_html__('Do not enable this option if you want to use Elementor in home page.', 'total')
 )));
 

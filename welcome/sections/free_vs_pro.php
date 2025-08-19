@@ -105,30 +105,30 @@
     <tr>
         <td>
             <span><?php esc_html_e('10) Color Options', 'total'); ?></span>
-            <p><?php esc_html_e('The free version has a basic color option but the premium version has advanced color options that allow customizing the color everywhere like header, post/page, footer, and front page sections.', 'total'); ?></p>
+            <p><?php esc_html_e('The free version has a basic color option but the premium version has advanced color options that allow customizing the color everywhere like header, post/page, footer, and home page sections.', 'total'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
         <td><?php esc_html_e('Advanced', 'total'); ?></td>
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('11) Front Page Section Reorder', 'total'); ?></span>
-            <p><?php esc_html_e('Option to organize how the front page section appears.', 'total'); ?></p>
+            <span><?php esc_html_e('11) Home Page Section Reorder', 'total'); ?></span>
+            <p><?php esc_html_e('Option to organize how the home page section appears.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('12) Front Page Unlimited Blocks for Each Section', 'total'); ?></span>
-            <p><?php esc_html_e('The premium version allows adding an unlimited block for all the sections on the front page. This includes a slider, featured block, highlight block, service, team, testimonial, counter, pricing, tabs, news and update block, and logo. Moreover, it has the option to choose the number of columns to show in each row.', 'total'); ?></p>
+            <span><?php esc_html_e('12) Home Page Unlimited Blocks for Each Section', 'total'); ?></span>
+            <p><?php esc_html_e('The premium version allows adding an unlimited block for all the sections on the home page. This includes a slider, featured block, highlight block, service, team, testimonial, counter, pricing, tabs, news and update block, and logo. Moreover, it has the option to choose the number of columns to show in each row.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('13) Front Page Video Background, Image Motion Background, Gradient Background', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-background-types" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('13) Home Page Video Background, Image Motion Background, Gradient Background', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-background-types" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version has advanced background options that include an option to choose from a video background, moving background, or gradient background.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -136,7 +136,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('14) Front Page Sections', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomePageSection/Settings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('14) Home Page Sections', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomePageSection/Settings" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('Total Plus has an additional 7 sections.', 'total'); ?></p>
         </td>
         <td>11</td>
@@ -144,8 +144,8 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('15) Front Page Blocks - Style Variations', 'total'); ?></span>
-            <p><?php esc_html_e('Option to switch the style of the front page blocks.', 'total'); ?></p>
+            <span><?php esc_html_e('15) Home Page Blocks - Style Variations', 'total'); ?></span>
+            <p><?php esc_html_e('Option to switch the style of the home page blocks.', 'total'); ?></p>
             <ul>
                 <li><a href="https://demo.hashthemes.com/total-plus/featured-block/" target="_blank"><?php esc_html_e('Featured block - 7 styles', 'total'); ?></a></li>
                 <li><a href="https://demo.hashthemes.com/total-plus/highlights-block/" target="_blank"><?php esc_html_e('Highlight Block - 4 styles', 'total'); ?></a></li>
@@ -166,7 +166,7 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('16) Front Page Shape Dividers', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-shape-divider" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('16) Home Page Shape Dividers', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-shape-divider" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The theme has 16 shape dividers that you can choose from to create a nice transition effect between sections', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
@@ -174,15 +174,15 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('17) Front Page Sections with Full Screen Height', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-full-window-height" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
-            <p><?php esc_html_e('A front page section that covers the full screen despite having less content. It is useful for a one-page website.', 'total'); ?></p>
+            <span><?php esc_html_e('17) Home Page Sections with Full Screen Height', 'total'); ?> - <a href="https://hashthemes.com/articles/configure-advanced-settings/#totalplus-full-window-height" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <p><?php esc_html_e('A home page section that covers the full screen despite having less content. It is useful for a one-page website.', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('18) Front Page Slider', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomeSlider" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
+            <span><?php esc_html_e('18) Home Page Slider', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomeSlider" target="_blank"><?php esc_html_e('Detail', 'total'); ?></a></span>
             <p><?php esc_html_e('The premium version has an option for the Simple Slider, Revolution Slider, and Single Banner Image with advanced customization options.', 'total'); ?></p>
         </td>
         <td><?php esc_html_e('Basic', 'total'); ?></td>
@@ -317,7 +317,7 @@
     <tr>
         <td>
             <span><?php esc_html_e('34) Icon Picker', 'total'); ?></span>
-            <p><?php esc_html_e('The premium theme has 4 icon packs with more than 5000+ icons. They can be used on the various sections of the Front Page, WordPress Widget Blocks, and Elementor Modules.', 'total'); ?></p>
+            <p><?php esc_html_e('The premium theme has 4 icon packs with more than 5000+ icons. They can be used on the various sections of the Home Page, WordPress Widget Blocks, and Elementor Modules.', 'total'); ?></p>
             <ul>
                 <li><?php esc_html_e('i) Ico Font', 'total'); ?></li>
                 <li><?php esc_html_e('ii) FontAwesome', 'total'); ?></li>
