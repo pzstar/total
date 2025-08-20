@@ -93,7 +93,7 @@ $wp_customize->add_setting('total_enable_frontpage', array(
 
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable_frontpage', array(
     'section' => 'static_front_page',
-    'label' => esc_html__('Enable Front Page', 'total'),
+    'label' => esc_html__('Enable Home Sections', 'total'),
     'description' => sprintf(esc_html__('Overwrites the homepage displays setting and replaces frontpage with Customizer %s', 'total'), '<a href="javascript:wp.customize.panel(\'total_home_panel\').focus()">' . esc_html__('Home Sections', 'total') . '</a>') . '<br/><br/>' . esc_html__('Do not enable this option if you want to use Elementor in home page.', 'total')
 )));
 
