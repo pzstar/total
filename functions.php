@@ -426,3 +426,8 @@ require get_template_directory() . '/welcome/welcome.php';
  * TGMPA
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+/**
+ * Starter Content
+ */
+require get_template_directory() . '/inc/starter-content.php';
