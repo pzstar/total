@@ -17,7 +17,6 @@ if (!class_exists('Total_Starter_Content')):
 			add_action('wp_ajax_total_dismiss_notice', array($this, 'dismiss_nux'));
 			add_action('admin_post_total_starter_content', array($this, 'redirect_customizer'));
 			add_action('after_setup_theme', array($this, 'starter_content'));
-			//echo get_option( 'total_nux_dismissed' ).'ssssss';
 		}
 
 
@@ -131,12 +130,18 @@ if (!class_exists('Total_Starter_Content')):
 						'post_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 					),
 					'testimonial' => array(
-						'post_type' => 'post',
+						'post_type' => 'page',
 						'post_title' => 'Baraksfs Stuart',
 						'post_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 					),
 					'contact',
-					'blog'
+					'blog',
+					'sample_post' => array(
+						'post_type' => 'post',
+						'post_title' => __('Welcome to Our Blog', 'textdomain'),
+						'post_content' => 'This is your first sample blog post. Edit or delete it.',
+						'thumbnail' => '{{team-member}}', // reference attachment by key
+					),
 				),
 
 				// Create the custom image attachments used as post thumbnails for pages.
@@ -167,7 +172,9 @@ if (!class_exists('Total_Starter_Content')):
 
 				// Set the front page section theme mods to the IDs of the core-registered pages.
 				'theme_mods' => array(
+					'custom_logo' => '{{total-logo}}',
 					'total_enable_frontpage' => true,
+					'total_template_color' => '#009dea',
 					'total_slider_page1' => '{{slider}}',
 					'total_about_page' => '{{about}}',
 					'total_about_progressbar_title1' => _x('Management', 'Theme starter content', 'total'),
@@ -181,6 +188,9 @@ if (!class_exists('Total_Starter_Content')):
 					'total_featured_page1' => '{{consulting}}',
 					'total_featured_page2' => '{{consulting}}',
 					'total_featured_page3' => '{{consulting}}',
+					'total_featured_page_icon1' => 'fas fa-plane',
+					'total_featured_page_icon2' => 'fa fa-money',
+					'total_featured_page_icon3' => 'fa fa-lightbulb-o',
 					'total_service_title' => _x('Our Services', 'Theme starter content', 'total'),
 					'total_service_sub_title' => 'Auctor orci proin consequat magna natoque mattis nostra eiusmod esse lunga laboriosam luctus pulvinar tenetur fugito similique',
 					'total_service_page1' => '{{consulting}}',
@@ -189,6 +199,12 @@ if (!class_exists('Total_Starter_Content')):
 					'total_service_page4' => '{{consulting}}',
 					'total_service_page5' => '{{consulting}}',
 					'total_service_page6' => '{{consulting}}',
+					'total_service_page_icon1' => 'fa fa-headphones',
+					'total_service_page_icon2' => 'fa fa-pencil',
+					'total_service_page_icon3' => 'fa fa-pie-chart',
+					'total_service_page_icon4' => 'fa fa-line-chart',
+					'total_service_page_icon5' => 'fa fa-balance-scale',
+					'total_service_page_icon6' => 'fa fa-diamond',
 					'total_team_title' => _x('Our Talented Members', 'Theme starter content', 'total'),
 					'total_team_sub_title' => 'Auctor orci proin consequat magna natoque mattis nostra eiusmod esse lunga laboriosam luctus pulvinar tenetur fugito similique',
 					'total_team_page1' => '{{team}}',
@@ -200,7 +216,7 @@ if (!class_exists('Total_Starter_Content')):
 					'total_team_page4' => '{{team}}',
 					'total_team_designation4' => _x('Chief Executive Officer', 'Theme starter content', 'total'),
 					'total_testimonial_title' => _x('From Our Clients', 'Theme starter content', 'total'),
-					'total_testimonial_page' => '',
+					'total_testimonial_page' => array('{{team}}'),
 					'total_counter_count1' => '450',
 					'total_counter_title1' => _x('Projects Completed', 'Theme starter content', 'total'),
 					'total_counter_icon1' => 'fa fa-briefcase',
@@ -217,17 +233,13 @@ if (!class_exists('Total_Starter_Content')):
 					'total_blog_sub_title' => _x('Get information on everything.', 'Theme starter content', 'total'),
 					'total_logo_title' => _x('Awesome Clients', 'Theme starter content', 'total'),
 					'total_logo_sub_title' => _x('Get information on everything.', 'Theme starter content', 'total'),
+					'total_logo_image' => '{{slider}},{{people}}',
 					'total_cta_title' => _x('CREATE OWN BUSINESS WITH OUR IDEAS !', 'Theme starter content', 'total'),
 					'total_cta_sub_title' => _x('Get information on everything.', 'Theme starter content', 'total'),
 					'total_cta_button1_text' => _x('Read More', 'Theme starter content', 'total'),
 					'total_cta_button1_link' => '#',
 					'total_cta_button2_text' => _x('Purchase', 'Theme starter content', 'total'),
 					'total_cta_button2_link' => '#',
-					'total_social_facebook' => '#',
-					'total_social_twitter' => '#',
-					'total_social_google_plus' => '#',
-					'total_social_pinterest' => '#',
-					'custom_logo' => '{{total-logo}}',
 				),
 				'nav_menus' => array(
 					'primary' => array(
@@ -235,12 +247,9 @@ if (!class_exists('Total_Starter_Content')):
 						'items' => array(
 							'link_home',
 							'page_about',
-							'page_team',
-							'page_testimonial',
 							'page_blog',
 							'page_contact',
-							'page_consulting',
-							'page_slider'
+							'post_news'
 						),
 					)
 				),

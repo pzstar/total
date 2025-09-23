@@ -308,7 +308,7 @@ msgid "4 service block layouts"
 msgstr ""
 
 #: inc/customizer/customizer-panel/home-sections.php:1003
-msgid "4 testiminial block layouts"
+msgid "4 testimonial block layouts"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:59

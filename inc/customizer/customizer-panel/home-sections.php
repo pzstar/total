@@ -1000,7 +1000,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'label' => esc_html__('For more settings,', 'total'),
     'choices' => array(
         esc_html__('Display testimonial block with repeater instead of page with option of external url field', 'total'),
-        esc_html__('4 testiminial block layouts', 'total'),
+        esc_html__('4 testimonial block layouts', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
