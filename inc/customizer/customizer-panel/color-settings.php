@@ -5,7 +5,7 @@ $wp_customize->get_section('colors')->priority = 30;
 
 //COLOR SETTINGS
 $wp_customize->add_setting('total_template_color', array(
-    'default' => '#FFC107',
+    'default' => '#009dea',
     'sanitize_callback' => 'sanitize_hex_color',
     'transport' => 'postMessage'
 ));
