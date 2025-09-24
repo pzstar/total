@@ -19,7 +19,7 @@ class Total_Multiple_Selectize_Control extends WP_Customize_Control {
                 <?php echo esc_html($this->label); ?>
             </span>
 
-            <?php if ($this->description && !empty($this->choices)) { ?>
+            <?php if ($this->description) { ?>
                 <span class="description customize-control-description">
                     <?php echo wp_kses_post($this->description); ?>
                 </span>
@@ -27,42 +27,20 @@ class Total_Multiple_Selectize_Control extends WP_Customize_Control {
             }
 
             if (empty($this->choices)) {
-                echo $this->empty_text;
+                echo esc_html($this->empty_text);
                 return;
             } else {
-
-                $new_array = $choices = $this->choices;
-                $stored = $unstored = array();
-
-                $saved_value = $this->value();
-                if (!is_array($saved_value)) {
-                    $saved_value = array();
-                }
-
-                if ($saved_value) {
-                    foreach ($saved_value as $val) {
-                        $stored[$val] = $choices[$val];
-                    }
-
-                    foreach ($choices as $value => $label) {
-                        $selected = '';
-                        if (!in_array($value, $saved_value)) {
-                            $unstored[$value] = $label;
-                        }
-                    }
-
-                    $new_array = $stored + $unstored;
-                }
+                $saved_value = (array) $this->value();
                 ?>
-
-                <select data-placeholder="<?php echo esc_html($this->placeholder); ?>" multiple="multiple" class="ht--selectize" <?php $this->link(); ?>>
-                    <?php
-                    foreach ($new_array as $value => $label) {
-                        echo '<option value="' . esc_attr($value) . '">' . esc_html($label) . '</option>';
-                    }
-                    ?>
+                <select multiple="multiple" class="ht--selectize" data-placeholder="<?php echo esc_attr($this->placeholder); ?>" <?php $this->link(); ?>>
+                    <?php foreach ($this->choices as $value => $label): ?>
+                        <option value="<?php echo esc_attr($value); ?>" <?php selected(in_array($value, $saved_value), true); ?>>
+                            <?php echo esc_html($label); ?>
+                        </option>
+                    <?php endforeach; ?>
                 </select>
-            <?php } ?>
+                <?php
+            } ?>
         </label>
         <?php
     }
