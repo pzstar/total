@@ -4,12 +4,12 @@ Theme URI: https://hashthemes.com/wordpress-theme/total/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: ​The Total WordPress Theme is a versatile, feature-rich, and fully responsive theme designed to help you create stunning websites effortlessly. With over 40,000 active installations, Total offers a clean and elegant design complemented by vibrant color options and parallax sections. Its homepage layout includes a slider, featured sections with icons, an about us section with progress bars, a masonry-style portfolio, team and testimonial sections, counters, a customizable blog section, client logo carousel, and a compelling call-to-action area. Built on the WordPress Customizer, Total allows real-time configuration with live previews, making customization intuitive and straightforward. The theme is SEO-friendly, cross-browser compatible, translation-ready, and seamlessly integrates with WooCommerce, enabling you to set up an online store with ease. It also supports major page builders like Elementor, WPBakery, SiteOrigin, and Beaver Builder, providing flexibility in designing your site. With a one-click demo import feature, you can quickly replicate the demo layout and customize it to fit your needs. Whether you're building a business website, portfolio, blog, or online store, Total provides all the essential tools and features to create a professional and engaging online presence. DEMO: https://hashthemes.com/wordpress-theme/total/
-Version: 2.1.94
+Version: 2.1.95
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: total
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, portfolio, education, blog
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
 */
 
@@ -1035,10 +1035,6 @@ a:active {}
 
 .widget-area .widget .search-field {
     width: 100%;
-}
-
-.widget-area .widget_block {
-    margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------

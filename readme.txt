@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.8
-Stable tag: 2.1.94
+Stable tag: 2.1.95
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.1.95 - Oct 12, 2025 =
+* Starter Content added
+
 = 2.1.94 - Aug 19, 2025 =
 * Typos fixed in welcome page and customizer
 

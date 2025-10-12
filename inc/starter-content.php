@@ -33,12 +33,10 @@ if (!class_exists('Total_Starter_Content')):
 				'nonce' => wp_create_nonce('total_notice_dismiss')
 			);
 
-			wp_localize_script('total-starter-admin-script', 'santamasNUX', $total_nux);
+			wp_localize_script('total-starter-admin-script', 'totalNUX', $total_nux);
 		}
 
 		public function admin_notices() {
-
-			global $pagenow;
 			if (true === (bool) get_option('total_nux_dismissed')) {
 				return;
 			}
@@ -47,13 +45,13 @@ if (!class_exists('Total_Starter_Content')):
 			<div class="notice notice-info total-notice-nux is-dismissible">
 
 				<div class="notice-content">
-					<h2><?php esc_html_e('Thank you for installing the SantaMas Theme', 'total'); ?></h2>
+					<h2><?php esc_html_e('Thank you for installing the Total Theme', 'total'); ?></h2>
 					<p>
 						<?php
 						echo esc_attr__('Let\'s get started by Customizing the website.', 'total');
 						?>
 					</p>
-
+					<p></p>
 					<form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
 						<input type="hidden" name="action" value="total_starter_content">
 						<?php wp_nonce_field('total_starter_content'); ?>

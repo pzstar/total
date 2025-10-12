@@ -1,4 +1,4 @@
-/* global ajaxurl, storefrontNUX */
+/* global ajaxurl */
 (function (wp, $) {
     'use strict';
 
@@ -12,7 +12,10 @@
             $.ajax({
                 type: 'POST',
                 url: ajaxurl,
-                data: {nonce: storefrontNUX.nonce, action: 'total_dismiss_notice'},
+                data: {
+                    nonce: totalNUX.nonce,
+                    action: 'total_dismiss_notice'
+                },
                 dataType: 'json'
             });
         });
