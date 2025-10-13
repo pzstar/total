@@ -136,7 +136,7 @@ if (!class_exists('Total_Starter_Content')):
 					'blog',
 					'sample_post' => array(
 						'post_type' => 'post',
-						'post_title' => __('Welcome to Our Blog', 'textdomain'),
+						'post_title' => __('Welcome to Our Blog', 'total'),
 						'post_content' => 'This is your first sample blog post. Edit or delete it.',
 						'thumbnail' => '{{team-member}}', // reference attachment by key
 					),
