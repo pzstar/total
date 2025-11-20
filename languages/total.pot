@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Total 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com\n"
-"POT-Creation-Date: 2025-08-19 15:32+0000\n"
+"POT-Creation-Date: 2025-11-20 11:18+0000\n"
 "POT-Revision-Date: Wed Jul 20 2016 15:08:32 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -599,6 +599,10 @@ msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
+#: inc/customizer/customizer-panel/homepage-settings.php:39
+msgid "BLACK FRIDAY & CYBER MONDAY DISCOUNT!"
+msgstr ""
+
 #. Name of the template
 #: templates/page-builder-template.php:2
 msgid "Blank Template(For Page Builders)"
@@ -653,12 +657,12 @@ msgstr ""
 msgid "Body Typography"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography.php:33
+#: inc/customizer/custom-controls/typography/typography.php:37
 #: inc/customizer/custom-controls/typography/typography-control-class.php:425
 msgid "Bold"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography.php:34
+#: inc/customizer/custom-controls/typography/typography.php:38
 #: inc/customizer/custom-controls/typography/typography-control-class.php:426
 msgid "Bold Italic"
 msgstr ""
@@ -1000,8 +1004,8 @@ msgid "Dashed"
 msgstr ""
 
 #: inc/customizer/custom-controls/background-image-control.php:262
-#: inc/customizer/custom-controls/typography/typography.php:26
-#: inc/customizer/custom-controls/typography/typography.php:149
+#: inc/customizer/custom-controls/typography/typography.php:30
+#: inc/customizer/custom-controls/typography/typography.php:153
 msgid "Default"
 msgstr ""
 
@@ -1174,12 +1178,12 @@ msgstr ""
 msgid "Enable Footer Top Border"
 msgstr ""
 
-#: inc/customizer/customizer-panel/homepage-settings.php:96
-msgid "Enable Front Page"
-msgstr ""
-
 #: inc/customizer/customizer-panel/header-settings.php:211
 msgid "Enable Header Top Border"
+msgstr ""
+
+#: inc/customizer/customizer-panel/homepage-settings.php:96
+msgid "Enable Home Sections"
 msgstr ""
 
 #: inc/customizer/customizer-panel/home-sections.php:455
@@ -1472,7 +1476,7 @@ msgid "Go to Setting Page"
 msgstr ""
 
 #: inc/customizer/customizer-panel/general-settings.php:197
-#: inc/customizer/custom-controls/typography/typography.php:157
+#: inc/customizer/custom-controls/typography/typography.php:161
 msgid "Google Fonts"
 msgstr ""
 
@@ -1803,11 +1807,19 @@ msgstr ""
 msgid "Left Top"
 msgstr ""
 
+#: inc/starter-content.php:51
+msgid "Let's get started by Customizing the website."
+msgstr ""
+
+#: inc/starter-content.php:59
+msgid "Let's go!"
+msgstr ""
+
 #: inc/customizer/custom-controls/typography/typography-control-class.php:51
 msgid "Letter Spacing"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography.php:28
+#: inc/customizer/custom-controls/typography/typography.php:32
 msgid "Light"
 msgstr ""
 
@@ -1851,7 +1863,7 @@ msgstr ""
 msgid "Manual Setup"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography.php:31
+#: inc/customizer/custom-controls/typography/typography.php:35
 msgid "Medium"
 msgstr ""
 
@@ -2018,12 +2030,12 @@ msgid "None"
 msgstr ""
 
 #: inc/customizer/custom-controls/color-tab-control.php:136
-#: inc/customizer/custom-controls/typography/typography.php:29
+#: inc/customizer/custom-controls/typography/typography.php:33
 #: inc/customizer/custom-controls/typography/typography-control-class.php:423
 msgid "Normal"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography.php:30
+#: inc/customizer/custom-controls/typography/typography.php:34
 #: inc/customizer/custom-controls/typography/typography-control-class.php:424
 msgid "Normal Italic"
 msgstr ""
@@ -2290,7 +2302,7 @@ msgstr ""
 msgid "Pricing - 4 styles"
 msgstr ""
 
-#: functions.php:57
+#: functions.php:57 inc/starter-content.php:244
 msgid "Primary Menu"
 msgstr ""
 
@@ -2524,7 +2536,7 @@ msgstr ""
 msgid "Select the Pages"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography.php:32
+#: inc/customizer/custom-controls/typography/typography.php:36
 msgid "Semi Bold"
 msgstr ""
 
@@ -2677,7 +2689,7 @@ msgstr ""
 msgid "Spread"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography.php:153
+#: inc/customizer/custom-controls/typography/typography.php:157
 msgid "Standard Fonts"
 msgstr ""
 
@@ -2795,6 +2807,10 @@ msgstr ""
 #: inc/class-tgm-plugin-activation.php:1930
 #, php-format
 msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/starter-content.php:48
+msgid "Thank you for installing the Total Theme"
 msgstr ""
 
 #: welcome/sections/footer.php:118
@@ -3031,6 +3047,128 @@ msgstr ""
 msgid "Theme Primary Color"
 msgstr ""
 
+#: inc/starter-content.php:109 inc/starter-content.php:152
+msgctxt "Theme starter content"
+msgid "About Us"
+msgstr ""
+
+#: inc/starter-content.php:222
+msgctxt "Theme starter content"
+msgid "Awards Won"
+msgstr ""
+
+#: inc/starter-content.php:232
+msgctxt "Theme starter content"
+msgid "Awesome Clients"
+msgstr ""
+
+#: inc/starter-content.php:209 inc/starter-content.php:211
+#: inc/starter-content.php:213 inc/starter-content.php:215
+msgctxt "Theme starter content"
+msgid "Chief Executive Officer"
+msgstr ""
+
+#: inc/starter-content.php:235
+msgctxt "Theme starter content"
+msgid "CREATE OWN BUSINESS WITH OUR IDEAS !"
+msgstr ""
+
+#: inc/starter-content.php:182
+msgctxt "Theme starter content"
+msgid "Deployment"
+msgstr ""
+
+#: inc/starter-content.php:228
+msgctxt "Theme starter content"
+msgid "Employee Working"
+msgstr ""
+
+#: inc/starter-content.php:216
+msgctxt "Theme starter content"
+msgid "From Our Clients"
+msgstr ""
+
+#: inc/starter-content.php:231 inc/starter-content.php:233
+#: inc/starter-content.php:236
+msgctxt "Theme starter content"
+msgid "Get information on everything."
+msgstr ""
+
+#: inc/starter-content.php:230
+msgctxt "Theme starter content"
+msgid "Latest Blog"
+msgstr ""
+
+#: inc/starter-content.php:178
+msgctxt "Theme starter content"
+msgid "Management"
+msgstr ""
+
+#: inc/starter-content.php:179
+msgctxt "Theme starter content"
+msgid "Marketing"
+msgstr ""
+
+#: inc/starter-content.php:225
+msgctxt "Theme starter content"
+msgid "OnGoing Projects"
+msgstr ""
+
+#: inc/starter-content.php:192
+msgctxt "Theme starter content"
+msgid "Our Services"
+msgstr ""
+
+#: inc/starter-content.php:206
+msgctxt "Theme starter content"
+msgid "Our Talented Members"
+msgstr ""
+
+#: inc/starter-content.php:181
+msgctxt "Theme starter content"
+msgid "Planning"
+msgstr ""
+
+#: inc/starter-content.php:219
+msgctxt "Theme starter content"
+msgid "Projects Completed"
+msgstr ""
+
+#: inc/starter-content.php:239
+msgctxt "Theme starter content"
+msgid "Purchase"
+msgstr ""
+
+#: inc/starter-content.php:237
+msgctxt "Theme starter content"
+msgid "Read More"
+msgstr ""
+
+#: inc/starter-content.php:148
+msgctxt "Theme starter content"
+msgid "Slider"
+msgstr ""
+
+#: inc/starter-content.php:180
+msgctxt "Theme starter content"
+msgid "Strategy"
+msgstr ""
+
+#: inc/starter-content.php:156
+msgctxt "Theme starter content"
+msgid "Team Member"
+msgstr ""
+
+#: inc/starter-content.php:160
+msgctxt "Theme starter content"
+msgid "Total Logo"
+msgstr ""
+
+#: inc/starter-content.php:184
+msgctxt "Theme starter content"
+msgid "Why Choose Us"
+msgstr ""
+
 #: inc/class-tgm-plugin-activation.php:378
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
@@ -3044,7 +3182,7 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/customizer/custom-controls/typography/typography.php:27
+#: inc/customizer/custom-controls/typography/typography.php:31
 msgid "Thin"
 msgstr ""
 
@@ -3311,13 +3449,16 @@ msgstr ""
 #: inc/customizer/customizer-panel/home-sections.php:1350
 #: inc/customizer/customizer-panel/color-settings.php:88
 #: inc/customizer/customizer-panel/typography-settings.php:176
-#: inc/customizer/customizer-panel/homepage-settings.php:40
 #: inc/customizer/customizer-panel/footer-settings.php:267
 #: inc/customizer/customizer-panel/single-post-settings.php:39
 #: inc/customizer/customizer-panel/header-settings.php:150
 #: inc/customizer/customizer-panel/header-settings.php:299
 #: inc/customizer/customizer-panel/header-settings.php:522
 msgid "Upgrade to Pro"
+msgstr ""
+
+#: inc/customizer/customizer-panel/homepage-settings.php:40
+msgid "Upgrade to Pro (40% OFF)"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:22 welcome/sections/free_vs_pro.php:407
@@ -3427,6 +3568,10 @@ msgstr ""
 #: welcome/sections/header.php:8
 #, php-format
 msgid "Welcome to %1$s - Version %2$s"
+msgstr ""
+
+#: inc/starter-content.php:139
+msgid "Welcome to Our Blog"
 msgstr ""
 
 #: inc/customizer/customizer-panel/general-settings.php:44

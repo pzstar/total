@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.8
-Stable tag: 2.1.96
+Stable tag: 2.1.97
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.1.97 - Nov 20, 2025 =
+* Black Friday Deal - Added
+
 = 2.1.96 - Nov 10, 2025 =
 * Dimiss Nux not working - Fixed
 
