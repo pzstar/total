@@ -656,7 +656,8 @@ body.toplevel_page_total-welcome #wpfooter a {
     white-space: pre;
     position: absolute;
     right: 0;
-    top: -12px;
+    top: 50%;
+    transform: translateY(-50%);
     background: #FF0000;
     color: #FFF;
     font-size: 10px;
