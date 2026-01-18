@@ -650,7 +650,7 @@ body.toplevel_page_total-welcome #wpfooter a {
 #toplevel_page_total-welcome .wp-menu-name{
     position: relative;
 }
-
+/*
 #toplevel_page_total-welcome .wp-menu-name:after{
     content: "40%\AOFF";
     white-space: pre;
@@ -666,3 +666,4 @@ body.toplevel_page_total-welcome #wpfooter a {
     border-radius: 20px;
     text-align: center;
 }
+*/

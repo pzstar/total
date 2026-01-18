@@ -323,6 +323,11 @@ if (!function_exists('total_register_required_plugins')) {
                 'slug' => 'simple-floating-menu',
                 'required' => false,
             ),
+            array(
+                'name' => 'Onyx Dark Mode Switcher',
+                'slug' => 'onyx-dark-mode-switcher',
+                'required' => false,
+            ),
         );
 
         $config = array(
