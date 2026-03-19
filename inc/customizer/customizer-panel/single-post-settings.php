@@ -29,7 +29,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Display social share button', 'total'),
         esc_html__('Display Author Box & Related Post', 'total'),
         esc_html__('Show/Hide & Reorder all the elements with drag and drop', 'total'),
-        esc_html__('----------------', 'total'),
+        esc_html('----------------'),
         esc_html__('BLOG/ARCHIVE PAGE  -', 'total'),
         esc_html__('4 differently designed blog page', 'total'),
         esc_html__('Option to display Full Content, Custom Excerpt or WordPress Excerpt', 'total'),

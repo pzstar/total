@@ -1343,7 +1343,7 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-upgra
         esc_html__('- Tab Section', 'total'),
         esc_html__('- Contact Section with Google Map', 'total'),
         esc_html__('- Custom Elementor Section', 'total'),
-        esc_html__('------------------------', 'total'),
+        esc_html('------------------------'),
         esc_html__('- Elementor Pagebuilder Compatible. All the above sections can be created with Elementor Page Builder or Customizer whichever you like.', 'total'),
     ),
     'active_callback' => 'total_is_upgrade_notice_active',
