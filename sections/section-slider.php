@@ -27,7 +27,7 @@ if (get_theme_mod('total_slider_section_disable') != 'on') {
                                 if (has_post_thumbnail()) {
                                     $total_slider_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
                                     if (isset($total_slider_image[0])) {
-                                        echo '<img class="no-lazyload" alt="' . esc_html(get_the_title()) . '" src="' . esc_url($total_slider_image[0]) . '">';
+                                        echo '<img class="no-lazyload" alt="' . esc_attr(get_the_title()) . '" src="' . esc_url($total_slider_image[0]) . '">';
                                     }
                                 }
                                 ?>

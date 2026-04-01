@@ -45,7 +45,7 @@ if (get_theme_mod('total_blog_section_disable') != 'on') {
                                 if (isset($total_image[0])) {
                                     ?>
                                     <div class="ht-blog-thumbnail">
-                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
+                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php echo esc_attr(get_the_title()); ?>"></a>
                                     </div>
                                     <?php
                                 }
