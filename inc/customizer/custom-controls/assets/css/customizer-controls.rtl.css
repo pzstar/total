@@ -97,13 +97,12 @@
 
 /* Choosen CSS */
 .customize-control .chosen-container-single .chosen-single {
-    min-height: 30px;
+    min-height: 40px;
     font-size: 14px;
-    line-height: 2;
-    color: #2c3338;
-    border-color: #8c8f94;
+    color: #1e1e1e;
+    border-color: #949494;
     box-shadow: none;
-    border-radius: 3px;
+    border-radius: 2px;
     background: #fff url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E) no-repeat left 5px top 55%;
     background-size: 16px 16px;
     cursor: pointer;
@@ -117,6 +116,7 @@
 
 .customize-control .chosen-container-single .chosen-single span {
     margin: 0 0 0 26px;
+    line-height: 40px;
 }
 
 .customize-control .chosen-container-single .chosen-search input[type="text"] {
@@ -144,7 +144,7 @@
 .customize-control-ht--typography .ht--typography-customize-control-title:before {
     content: '';
     height: 10px;
-    background: #000;
+    background: var(--wp-admin-theme-color);
     width: 10px;
     margin-left: 10px;
 }
@@ -153,7 +153,7 @@
 .customize-control-ht--typography .ht--typography-customize-control-title:after {
     content: '';
     height: 10px;
-    background: #000;
+    background: var(--wp-admin-theme-color);
     flex-grow: 1;
     margin-right: 10px;
 }
@@ -170,7 +170,7 @@
 .ht--customizer-tabs {
     background: #FFF;
     display: flex;
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid var(--wp-admin-theme-color);
 }
 
 .ht--customizer-tabs a {
@@ -194,7 +194,7 @@
 }
 
 .ht--customizer-tabs a.active {
-    background: #000;
+    background: var(--wp-admin-theme-color);
     color: #fff;
 }
 
@@ -233,29 +233,28 @@
     height: 45px;
     line-height: 45px;
     text-align: center;
-    border: 1px solid #eee;
+    border: 1px solid #949494;
     position: relative;
-    margin-left: 44px;
     cursor: pointer;
     font-size: 22px;
-    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ht--icon-box-wrap .ht--selected-icon span {
+    background: #f6f6f6;
+    height: 45px;
+    width: 45px;
+    border-right: 1px solid #949494;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.ht--icon-box-wrap .ht--selected-icon span {
-    position: absolute;
-    background: #f6f6f6;
-    left: -45px;
-    top: -1px;
-    height: 45px;
-    width: 45px;
-    border: 1px solid #eee;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ht--icon-box-wrap .ht--selected-icon > i {
+    flex-grow: 1;
 }
 
 .ht--icon-box-wrap .ht--selected-icon span i.ht--down-icon {
@@ -270,8 +269,8 @@
 .ht--icon-box-wrap .ht--icon-search {
     padding: 10px;
     background: #f7f7f7;
-    border: 1px solid #eee;
-    border-top: 0;
+    border: 1px solid #949494;
+    margin-top: -1px;
 }
 
 .ht--icon-box-wrap .ht--icon-search select {
@@ -282,7 +281,7 @@
     height: 215px;
     overflow-y: scroll;
     font-size: 18px;
-    border: 1px solid #eee;
+    border: 1px solid #949494;
     background: #fff;
     border-top: 0;
     padding: 4px;
@@ -310,7 +309,7 @@
     justify-content: center;
     height: 43px;
     width: 43px;
-    border: 1px solid #eee;
+    border: 1px solid #949494;
     border-radius: 3px;
     font-size: 18px;
     margin: 4px;
@@ -331,8 +330,8 @@
 }
 
 .ht--icon-box-wrap .ht--icon-list li.icon-active {
-    background: #0073aa;
-    border: 1px solid #0073aa;
+    background: var(--wp-admin-theme-color);
+    border: 1px solid var(--wp-admin-theme-color);
     color: #fff;
 }
 
@@ -576,7 +575,7 @@
     position: absolute;
     top: 0;
     height: 100%;
-    background-color: #13a1dc;
+    background-color: var(--wp-admin-theme-color)
 }
 
 .ht--gradient-box .ui-slider-horizontal .ui-slider-handle {
@@ -678,22 +677,17 @@
 .customize-control-ht--border .ht--dimension-wrap button,
 .customize-control-ht--box-shadow .ht--dimension-wrap input {
     display: block;
-    font-size: 12px;
-    padding: 4px 0;
     width: 100%;
-    height: 28px;
-    border: 1px solid;
-    border-color: #a4afb7;
     border-right-width: 0;
-    border-radius: 0;
     text-align: center;
+    border-radius: 0;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap:first-child input,
 .customize-control-ht--border .ht--dimension-wrap:first-child input,
 .customize-control-ht--box-shadow .ht--dimension-wrap:first-child input {
     border-right-width: 1px;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 2px 2px 0;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap .ht--dimension-label,
@@ -717,26 +711,30 @@
 .customize-control-ht--dimensions .ht--dimension-wrap .ht--link-dimensions,
 .customize-control-ht--border .ht--dimension-wrap .ht--link-dimensions {
     background-color: #fff;
-    border: 1px solid #a4afb7;
+    border: 1px solid #959495;
     border-right-width: 0;
     padding: 0;
     outline: none;
-    border-radius: 3px 0 0 3px;
+    border-radius: 2px 0 0 2px;
     cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap .ht--link-dimensions span,
 .customize-control-ht--border .ht--dimension-wrap .ht--link-dimensions span {
     display: block;
-    width: 100%;
-    height: 28px;
-    line-height: 28px;
-    font-size: 16px;
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 12px;
+    width: auto;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap .ht--link-dimensions .ht--linked,
 .customize-control-ht--border .ht--dimension-wrap .ht--link-dimensions .ht--linked {
-    background-color: #a4afb7;
+    background-color: var(--wp-admin-theme-color);
     color: #fff;
 }
 
@@ -802,7 +800,7 @@
 }
 
 .customize-control .responsive-switchers li button.active {
-    background-color: #13aff0;
+    background-color: var(--wp-admin-theme-color);
 }
 
 .customize-control .responsive-switchers li button i {
@@ -899,7 +897,7 @@
     position: absolute;
     top: 0;
     height: 100%;
-    background: #13a1dc;
+    background: var(--wp-admin-theme-color)
 }
 
 .ht--range-slider-control-wrap .ht--range-slider .ui-slider-handle {
@@ -922,14 +920,8 @@
 }
 
 .ht--range-slider-control-wrap .ht--range-slider-input input {
-    width: 60px;
-    height: 28px;
+    width: 75px;
     text-align: center;
-    border-radius: 4px;
-    padding: 3px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #555;
 }
 
 .ht--range-slider-control-wrap .ht--range-slider-unit {
@@ -1384,9 +1376,10 @@
 }
 
 /*Upgrade Section*/
-.control-section-ht--upgrade-section.ht--single-row .button {
-    float: left;
-    margin-top: -4px;
+.control-section-ht--upgrade-section.ht--single-row h3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .control-section-ht--upgrade-section .accordion-section-title:after{
