@@ -19,11 +19,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.2.3 - Jul 06, 2026 =
+* Compatibility test with WordPress v 7.0
+* Design fixes
+
 = 2.2.2 - Apr 1, 2026 =
 * Security bug fixes (Cross-site Scripting)
 
 = 2.2.1 - Mar 19, 2026 =
-*  Minor typo fixes
+*  Minor typo fixess
 
 = 2.2.0 - Jan 12, 2026 =
 * Christmas Discount removed from welcome page
