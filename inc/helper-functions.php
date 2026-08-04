@@ -384,10 +384,10 @@ if (!function_exists('total_meta_dimension_css')) {
 
 }
 
-if (!function_exists('total_home_section')) {
+if (!function_exists('total_home_section_defaults')) {
 
-    function total_home_section() {
-        $defaults = apply_filters('total_home_section', array(
+    function total_home_section_defaults() {
+        return apply_filters('total_home_section', array(
             'total_about_section',
             'total_featured_section',
             'total_portfolio_section',
@@ -400,7 +400,15 @@ if (!function_exists('total_home_section')) {
             'total_cta_section'
         )
         );
-        $sections = get_theme_mod('total_frontpage_sections', $defaults);
+    }
+
+}
+
+if (!function_exists('total_home_section')) {
+
+    function total_home_section() {
+        $sections = get_theme_mod('total_frontpage_sections', total_home_section_defaults());
+        $section_array = array();
 
         foreach ($sections as $section) {
             if ($section == 'total_client_logo_section') {

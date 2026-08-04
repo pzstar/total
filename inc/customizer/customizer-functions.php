@@ -118,8 +118,15 @@ function total_order_sections() {
 
     check_ajax_referer('total-order-sections', 'secure');
 
-    if (isset($_POST['sections'])) {
-        set_theme_mod('total_frontpage_sections', $_POST['sections']);
+    if (isset($_POST['sections']) && is_array($_POST['sections'])) {
+        // Only accept known section keys. The saved value is used to build a
+        // template path in total_front_page_loop(), so it must never be free form.
+        $allowed = array_merge(total_home_section_defaults(), array('total_client_logo_section'));
+        $sections = array_values(array_intersect(array_map('sanitize_key', wp_unslash($_POST['sections'])), $allowed));
+
+        if (!empty($sections)) {
+            set_theme_mod('total_frontpage_sections', $sections);
+        }
     }
     wp_die();
 }

@@ -48,7 +48,7 @@ if (!function_exists('total_body_classes')) {
 
 if (!function_exists('total_is_ios_device')) {
     function total_is_ios_device() {
-        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])) : '';
         if (strpos($user_agent, 'iPhone') !== false || strpos($user_agent, 'iPad') !== false || strpos($user_agent, 'iPod') !== false) {
             return true;
         }
