@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.0
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.2.4 - Aug 04, 2026 =
+* Block Pattern added
+* Other fixes
+
 = 2.2.3 - Jul 06, 2026 =
 * Compatibility test with WordPress v 7.0
 * Design fixes
