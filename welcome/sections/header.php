@@ -17,8 +17,8 @@
         </div>
 
         <div class="free-pro-demos">
-            <a class="button button-primary" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-demo" target="_blank"><span class="dashicons dashicons-visibility"></span><?php esc_html_e('Free Demos', 'total'); ?></a>
-            <a class="button button-primary" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-demo" target="_blank"><span class="dashicons dashicons-cart"></span><?php esc_html_e('Premium Demos', 'total'); ?></a>
+            <a class="button button-primary" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome-free-demos&utm_campaign=total-demo" target="_blank"><span class="dashicons dashicons-visibility"></span><?php esc_html_e('Free Demos', 'total'); ?></a>
+            <a class="button button-primary" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome-premium-demos&utm_campaign=total-demo" target="_blank"><span class="dashicons dashicons-cart"></span><?php esc_html_e('Premium Demos', 'total'); ?></a>
         </div>
     </div>
 
@@ -26,8 +26,15 @@
         <div class="welcome-logo">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/total.svg'); ?>" />
         </div>
-        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibilities with Total Plus.', 'total'); ?></a>
-        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome&utm_campaign=total-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('UPGRADE TO PRO', 'total'); ?></a>
+        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome-banner&utm_campaign=total-upgrade'); ?>" target="_blank"><?php echo esc_html__('Total Plus adds 6 header layouts, unlimited home page blocks, a demo importer and 40+ other features.', 'total'); ?></a>
+
+        <ul class="welcome-promo-points">
+            <li><span class="dashicons dashicons-yes"></span><?php echo esc_html__('One time payment, no renewals', 'total'); ?></li>
+            <li><span class="dashicons dashicons-yes"></span><?php echo esc_html__('Use on unlimited websites', 'total'); ?></li>
+            <li><span class="dashicons dashicons-yes"></span><?php echo esc_html__('Lifetime updates included', 'total'); ?></li>
+        </ul>
+
+        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome-banner&utm_campaign=total-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('UPGRADE TO PRO', 'total'); ?></a>
     </div>
 </div>
 

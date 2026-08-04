@@ -165,7 +165,7 @@ $wp_customize->add_setting('total_h_typography_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_h_typography_upgrade_text', array(
     'section' => 'total_header_typography_section',
-    'label' => esc_html__('For more Options,', 'total'),
+    'label' => esc_html__('Free styles all headings together. Pro controls H1 to H6 individually', 'total'),
     'choices' => array(
         esc_html__('Configure H1, H2, H3, H4, H5, H6 individually or all at once', 'total'),
         esc_html__('Set font size of H1, H2, H3, H4, H5, H6 individually', 'total'),
@@ -174,7 +174,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-typography&utm_campaign=total-upgrade'
 )));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-hcfu-section', array(

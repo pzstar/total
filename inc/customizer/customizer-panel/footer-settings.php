@@ -254,7 +254,7 @@ $wp_customize->add_setting('total_footer_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_footer_upgrade_text', array(
     'section' => 'total_footer_settings',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Give the footer its own layout, columns and colors, and drop the credit line', 'total'),
     'choices' => array(
         esc_html__('5 different footer styles', 'total'),
         esc_html__('Set custom footer columns and width', 'total'),
@@ -265,5 +265,5 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-footer&utm_campaign=total-upgrade'
 )));

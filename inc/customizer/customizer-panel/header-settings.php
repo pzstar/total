@@ -139,7 +139,7 @@ $wp_customize->add_setting('total_title_tagline_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_title_tagline_upgrade_text', array(
     'section' => 'title_tagline',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Control the spacing and typography of your site title and tagline', 'total'),
     'choices' => array(
         esc_html__('Separate typography option for title & tagline', 'total'),
         esc_html__('Set spacing for title & tagline', 'total'),
@@ -148,7 +148,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-title&utm_campaign=total-upgrade'
 )));
 
 /** Main Header Options */
@@ -284,7 +284,7 @@ $wp_customize->add_setting('total_header_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_header_upgrade_text', array(
     'section' => 'total_main_header_section',
-    'label' => esc_html__('For more header layouts and settings,', 'total'),
+    'label' => esc_html__('One header layout here, six in Pro, plus a top bar and search', 'total'),
     'choices' => array(
         esc_html__('6 header styles', 'total'),
         esc_html__('Option to enable/disable top header', 'total'),
@@ -297,7 +297,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-header&utm_campaign=total-upgrade'
 )));
 
 /* Primary Menu */
@@ -508,11 +508,11 @@ $wp_customize->add_setting('total_menu_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_menu_upgrade_text', array(
     'section' => 'total_menu_settings',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Add search, social icons and a call to action button to your menu', 'total'),
     'choices' => array(
         esc_html__('Option to display search button, social icons & CTA button', 'total'),
         esc_html__('7 different menu styles', 'total'),
-        esc_html__('Option to diplay different menu in mobile', 'total'),
+        esc_html__('Option to display different menu in mobile', 'total'),
         esc_html__('Set spacing of menu and submenu', 'total'),
         esc_html__('Set mobile menu breakpoint', 'total'),
         esc_html__('Inbuilt MegaMenu', 'total'),
@@ -520,7 +520,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-menu&utm_campaign=total-upgrade'
 )));
 
 $wp_customize->selective_refresh->add_partial(

@@ -19,10 +19,10 @@
     <tr>
         <td>
             <span><?php echo esc_html_x('Upgrade to Pro', 'free vs pro content', 'total'); ?></span>
-            <p><?php echo esc_html_x('Upgrade to the pro version for additional features and better support.', 'free vs pro content', 'total'); ?></p>
+            <p><?php echo esc_html_x('Everything below, on as many sites as you like, for a single payment. No renewals, and updates stay free for life.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td colspan="2">
-            <a target="_blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-freevspro&utm_campaign=total-upgrade"><?php echo esc_html_x('Buy Now ($65 only)', 'free vs pro content', 'total'); ?></a>
+            <a target="_blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-freevspro-top&utm_campaign=total-upgrade"><?php echo esc_html_x('Buy Now ($65 only)', 'free vs pro content', 'total'); ?></a>
         </td>
     </tr>
     <tr>
@@ -404,10 +404,10 @@
     <tr>
         <td>
             <span><?php echo esc_html_x('Upgrade to Pro', 'free vs pro content', 'total'); ?></span>
-            <p><?php echo esc_html_x('Upgrade to the pro version for additional features and better support.', 'free vs pro content', 'total'); ?></p>
+            <p><?php echo esc_html_x('Everything below, on as many sites as you like, for a single payment. No renewals, and updates stay free for life.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-freevspro&utm_campaign=total-upgrade"><?php echo esc_html_x('Buy Now ($65 only)', 'free vs pro content', 'total'); ?></a>
+            <a target="_blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-freevspro-bottom&utm_campaign=total-upgrade"><?php echo esc_html_x('Buy Now ($65 only)', 'free vs pro content', 'total'); ?></a>
         </td>
     </tr>
 </table>

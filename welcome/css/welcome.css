@@ -123,6 +123,32 @@
     font-weight: bold;
 }
 
+/* The reassurance points sit with the button, not buried in the Free vs Pro
+   tab, because "is this a subscription?" is what stalls the click. */
+.welcome-promo-points {
+    margin: 0 0 15px;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.welcome-promo-points li {
+    margin: 0 0 6px;
+    font-size: 13px;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+}
+
+.welcome-promo-points .dashicons {
+    color: #46b450;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    flex: 0 0 auto;
+}
+
 /** Nav **/
 .welcome-nav-wrapper {
     display: flex;

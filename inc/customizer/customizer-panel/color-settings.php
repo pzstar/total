@@ -82,9 +82,15 @@ $wp_customize->add_setting('total_color_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_color_upgrade_text', array(
     'section' => 'colors',
-    'label' => esc_html__('For more color options,', 'total'),
+    'label' => esc_html__('Free sets one accent color. Color every element separately with Pro', 'total'),
+    'choices' => array(
+        esc_html__('Separate colors for header, menu, footer and each home page section', 'total'),
+        esc_html__('Individual button, link and hover colors', 'total'),
+        esc_html__('Gradient and overlay backgrounds for every section', 'total'),
+        esc_html__('Unique background and text color for each post and page', 'total'),
+    ),
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-colors&utm_campaign=total-upgrade'
 )));

@@ -83,7 +83,7 @@ $wp_customize->add_setting('total_slider_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_slider_upgrade_text', array(
     'section' => 'total_slider_section',
-    'label' => esc_html__('To add unlimited slider block and for more settings,', 'total'),
+    'label' => esc_html__('Slides come from pages here. Pro adds unlimited slides with their own image, caption and button', 'total'),
     'choices' => array(
         esc_html__('Unlimited slider blocks', 'total'),
         esc_html__('Repeatable slider block with image, caption and button fields instead of page', 'total'),
@@ -96,7 +96,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-slider&utm_campaign=total-upgrade'
 )));
 
 /* ============ABOUT US SECTION============ */
@@ -231,7 +231,7 @@ $wp_customize->add_setting('total_about_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_about_upgrade_text', array(
     'section' => 'total_about_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Add a video, gradient or motion background to this section', 'total'),
     'choices' => array(
         esc_html__('Option to disable the Right Image', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total')
@@ -239,7 +239,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-about&utm_campaign=total-upgrade'
 )));
 
 /* ============FEATURED SECTION PANEL============ */
@@ -341,7 +341,7 @@ $wp_customize->add_setting('total_featured_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_featured_upgrade_text', array(
     'section' => 'total_featured_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Free shows 3 featured blocks. Pro removes the limit and adds 7 layouts', 'total'),
     'choices' => array(
         esc_html__('Unlimited featured block', 'total'),
         esc_html__('Display featured block with repeater instead of page with option of external url field', 'total'),
@@ -353,7 +353,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-featured&utm_campaign=total-upgrade'
 )));
 
 /* ============PORTFOLIO SECTION PANEL============ */
@@ -444,12 +444,12 @@ $wp_customize->add_setting('total_portfolio_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_portfolio_upgrade_text', array(
     'section' => 'total_portfolio_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Add 6 masonry styles, filter tabs and external project links', 'total'),
     'choices' => array(
         esc_html__('Link portfolio to external url', 'total'),
         esc_html__('Option to select active category in the tab', 'total'),
         esc_html__('4 portfolio tab styles', 'total'),
-        esc_html__('6 portfolio masonary styles', 'total'),
+        esc_html__('6 portfolio masonry styles', 'total'),
         esc_html__('Order portfolio by date, title or random in ascending or descending order', 'total'),
         esc_html__('Option to show/hide zoom and link button', 'total'),
         esc_html__('Enable/Disable gap between portfolio images', 'total'),
@@ -458,7 +458,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-portfolio&utm_campaign=total-upgrade'
 )));
 
 /* ============SERVICE SECTION PANEL============ */
@@ -583,7 +583,7 @@ $wp_customize->add_setting('total_service_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_service_upgrade_text', array(
     'section' => 'total_service_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Free shows 6 service blocks. Pro removes the limit and adds 4 layouts', 'total'),
     'choices' => array(
         esc_html__('Unlimited service block', 'total'),
         esc_html__('Display service block with repeater instead of page with option of external url field', 'total'),
@@ -595,7 +595,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-service&utm_campaign=total-upgrade'
 )));
 
 /* ============TEAM SECTION PANEL============ */
@@ -745,7 +745,7 @@ $wp_customize->add_setting('total_team_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_team_upgrade_text', array(
     'section' => 'total_team_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Free shows 4 team members. Pro removes the limit and adds 6 layouts', 'total'),
     'choices' => array(
         esc_html__('Unlimited team block', 'total'),
         esc_html__('Display team block with repeater instead of page with option of external url field', 'total'),
@@ -757,7 +757,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-team&utm_campaign=total-upgrade'
 )));
 
 /* ============COUNTER SECTION PANEL============ */
@@ -894,7 +894,7 @@ $wp_customize->add_setting('total_counter_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_counter_upgrade_text', array(
     'section' => 'total_counter_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Free shows 4 counters. Pro removes the limit and adds 4 layouts', 'total'),
     'choices' => array(
         esc_html__('Unlimited counter block', 'total'),
         esc_html__('4 counter block layouts', 'total'),
@@ -904,7 +904,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-counter&utm_campaign=total-upgrade'
 )));
 
 /* ============TESTIMONIAL PANEL============ */
@@ -997,7 +997,7 @@ $wp_customize->add_setting('total_testimonial_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_testimonial_upgrade_text', array(
     'section' => 'total_testimonial_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Add 4 testimonial layouts and write testimonials inline instead of as pages', 'total'),
     'choices' => array(
         esc_html__('Display testimonial block with repeater instead of page with option of external url field', 'total'),
         esc_html__('4 testimonial block layouts', 'total'),
@@ -1006,7 +1006,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-testimonial&utm_campaign=total-upgrade'
 )));
 
 /* ============BLOG PANEL============ */
@@ -1099,7 +1099,7 @@ $wp_customize->add_setting('total_blog_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_blog_upgrade_text', array(
     'section' => 'total_blog_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Add 4 blog layouts and choose how many posts sit in a row', 'total'),
     'choices' => array(
         esc_html__('4 blog layouts', 'total'),
         esc_html__('Configure no of column to display in a row', 'total'),
@@ -1110,7 +1110,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-blog&utm_campaign=total-upgrade'
 )));
 
 /* ============CLIENTS LOGO SECTION============ */
@@ -1191,7 +1191,7 @@ $wp_customize->add_setting('total_logo_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_logo_upgrade_text', array(
     'section' => 'total_logo_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Add 4 logo layouts and link each client logo out', 'total'),
     'choices' => array(
         esc_html__('Option to link the client logos to external url', 'total'),
         esc_html__('4 client logo layouts', 'total'),
@@ -1200,7 +1200,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-logo&utm_campaign=total-upgrade'
 )));
 
 /* ============CALL TO ACTION PANEL============ */
@@ -1318,16 +1318,16 @@ $wp_customize->add_setting('total_cta_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_cta_upgrade_text', array(
     'section' => 'total_cta_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Add 4 call to action layouts and a video popup', 'total'),
     'choices' => array(
         esc_html__('4 CTA layouts', 'total'),
-        esc_html__('Option to display vide in CTA with popup', 'total'),
+        esc_html__('Option to display video in CTA with popup', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-cta&utm_campaign=total-upgrade'
 )));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-upgrade-section', array(

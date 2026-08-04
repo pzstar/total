@@ -22,7 +22,7 @@ $wp_customize->add_setting('total_single_post_settings_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_single_post_settings_upgrade_text', array(
     'section' => 'total_blog_options_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Reorder single post elements and add an author box, share buttons and related posts', 'total'),
     'choices' => array(
         esc_html__('SINGLE POST  -', 'total'),
         esc_html__('Choose featured image size', 'total'),
@@ -37,5 +37,5 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     ),
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-single-post&utm_campaign=total-upgrade'
 )));

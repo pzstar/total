@@ -145,7 +145,7 @@ $wp_customize->add_setting('total_backtotop_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_backtotop_upgrade_text', array(
     'section' => 'total_backtotop_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Restyle and reposition the back to top button', 'total'),
     'choices' => array(
         esc_html__('Choose from multiple go to top icons', 'total'),
         esc_html__('Change the position & size of the button', 'total'),
@@ -155,7 +155,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-backtotop&utm_campaign=total-upgrade'
 )));
 
 /* BREADCRUMB SECTION */
@@ -181,7 +181,7 @@ $wp_customize->add_setting('total_breadcrumb_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_breadcrumb_upgrade_text', array(
     'section' => 'total_breadcrumb_section',
-    'label' => esc_html__('For more settings,', 'total'),
+    'label' => esc_html__('Restyle the breadcrumb and set its own typography', 'total'),
     'choices' => array(
         esc_html__('Multiple Breadcrumb styles', 'total'),
         esc_html__('Set Breadcrumb typography and colors', 'total'),
@@ -189,7 +189,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-link&utm_campaign=total-upgrade'
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-breadcrumb&utm_campaign=total-upgrade'
 )));
 
 /* GOOGLE FONT SECTION */
