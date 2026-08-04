@@ -46,16 +46,12 @@ $wp_customize->add_section('total_pro_feature_section', array(
     'priority' => 0
 ));
 
-$wp_customize->add_setting('total_hide_upgrade_notice', array(
-    'sanitize_callback' => 'total_sanitize_checkbox',
-    'default' => false,
-));
-
-$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_hide_upgrade_notice', array(
-    'section' => 'total_pro_feature_section',
-    'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'total'),
-    'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'total')
-)));
+/*
+ *  The feature list is registered ahead of the opt-out switch, and the two
+ *  carry explicit priorities so the order does not depend on which happens to
+ *  be added first. Showing someone the way out before showing them what is on
+ *  offer is the wrong way round.
+ */
 
 $wp_customize->add_setting('total_pro_features', array(
     'sanitize_callback' => 'total_sanitize_text'
@@ -64,8 +60,21 @@ $wp_customize->add_setting('total_pro_features', array(
 $wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_pro_features', array(
     'settings' => 'total_pro_features',
     'section' => 'total_pro_feature_section',
+    'priority' => 10,
     'description' => $total_pro_features,
     'active_callback' => 'total_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_setting('total_hide_upgrade_notice', array(
+    'sanitize_callback' => 'total_sanitize_checkbox',
+    'default' => false,
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_hide_upgrade_notice', array(
+    'section' => 'total_pro_feature_section',
+    'priority' => 20,
+    'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'total'),
+    'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'total')
 )));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-doc-section', array(

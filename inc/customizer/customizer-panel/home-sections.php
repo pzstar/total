@@ -341,7 +341,7 @@ $wp_customize->add_setting('total_featured_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_featured_upgrade_text', array(
     'section' => 'total_featured_section',
-    'label' => esc_html__('Free shows 3 featured blocks. Pro removes the limit and adds 7 layouts', 'total'),
+    'label' => total_section_upgrade_label('total_featured_page', 3, esc_html__('You have used all 3 featured blocks. Pro makes them unlimited and adds 7 layouts', 'total'), esc_html__('Free shows 3 featured blocks. Pro removes the limit and adds 7 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited featured block', 'total'),
         esc_html__('Display featured block with repeater instead of page with option of external url field', 'total'),
@@ -583,7 +583,7 @@ $wp_customize->add_setting('total_service_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_service_upgrade_text', array(
     'section' => 'total_service_section',
-    'label' => esc_html__('Free shows 6 service blocks. Pro removes the limit and adds 4 layouts', 'total'),
+    'label' => total_section_upgrade_label('total_service_page', 6, esc_html__('You have used all 6 service blocks. Pro makes them unlimited and adds 4 layouts', 'total'), esc_html__('Free shows 6 service blocks. Pro removes the limit and adds 4 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited service block', 'total'),
         esc_html__('Display service block with repeater instead of page with option of external url field', 'total'),
@@ -745,7 +745,7 @@ $wp_customize->add_setting('total_team_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_team_upgrade_text', array(
     'section' => 'total_team_section',
-    'label' => esc_html__('Free shows 4 team members. Pro removes the limit and adds 6 layouts', 'total'),
+    'label' => total_section_upgrade_label('total_team_page', 4, esc_html__('You have used all 4 team members. Pro makes them unlimited and adds 6 layouts', 'total'), esc_html__('Free shows 4 team members. Pro removes the limit and adds 6 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited team block', 'total'),
         esc_html__('Display team block with repeater instead of page with option of external url field', 'total'),
@@ -894,7 +894,7 @@ $wp_customize->add_setting('total_counter_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_counter_upgrade_text', array(
     'section' => 'total_counter_section',
-    'label' => esc_html__('Free shows 4 counters. Pro removes the limit and adds 4 layouts', 'total'),
+    'label' => total_section_upgrade_label('total_counter_title', 4, esc_html__('You have used all 4 counters. Pro makes them unlimited and adds 4 layouts', 'total'), esc_html__('Free shows 4 counters. Pro removes the limit and adds 4 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited counter block', 'total'),
         esc_html__('4 counter block layouts', 'total'),

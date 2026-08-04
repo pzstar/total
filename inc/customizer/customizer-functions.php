@@ -166,6 +166,46 @@ if (!function_exists('total_is_upgrade_notice_active')) {
 
 }
 
+if (!function_exists('total_section_slots_full')) {
+
+    /*
+     *  Whether every block slot of a fixed size home page section is in use.
+     *
+     *  The free version gives each of these sections a set number of blocks.
+     *  Somebody who has filled all of them has already met the limit, which is
+     *  a different situation from somebody who has just opened the panel, and
+     *  the upgrade notice reads better if it says so.
+     *
+     *  @param string $prefix Setting name without the trailing index.
+     *  @param int    $slots  How many blocks the free version allows.
+     *  @return bool
+     */
+
+    function total_section_slots_full($prefix, $slots) {
+        for ($i = 1; $i <= $slots; $i++) {
+            if (!get_theme_mod($prefix . $i)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+}
+
+if (!function_exists('total_section_upgrade_label')) {
+
+    /*
+     *  The upgrade headline for a fixed size section: the "you have run out"
+     *  wording once every slot is used, the general pitch before that.
+     */
+
+    function total_section_upgrade_label($prefix, $slots, $full_label, $default_label) {
+        return total_section_slots_full($prefix, $slots) ? $full_label : $default_label;
+    }
+
+}
+
 function total_customizer_settings($wp_customize) {
     if (class_exists('TotalPlus') && version_compare(TOTALPLUS_VERSION, '3.0') < 0) {
         $settings = array(
