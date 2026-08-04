@@ -106,7 +106,9 @@ if (!function_exists('total_setup')):
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
          */
-        add_editor_style(array('css/editor-style.css'));
+        // Font Awesome comes along so the icons used by the block patterns
+        // render in the editor as well as on the front end.
+        add_editor_style(array('css/fontawesome-6.3.0.css', 'css/editor-style.css'));
     }
 
 endif; // total_setup
@@ -408,6 +410,11 @@ require get_template_directory() . '/inc/hooks.php';
  * Dynamic Styles additions.
  */
 require get_template_directory() . '/inc/style.php';
+
+/**
+ * Block pattern categories.
+ */
+require get_template_directory() . '/inc/block-patterns.php';
 
 /**
  * Widgets additions.
