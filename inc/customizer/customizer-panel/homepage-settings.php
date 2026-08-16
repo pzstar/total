@@ -3,7 +3,7 @@
 /* ============PRO FEATURES============ */
 
 $total_pro_features = '<ul>
-	<li>' . esc_html__("5 ready made demos that can be imported with one click", "total") . '</li>
+	<li>' . esc_html__("8 premium demos that can be imported with one click, each in a Customizer and an Elementor build", "total") . '</li>
     <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
     <li>' . esc_html__("18 Home Page Customizer sections with lots of variations", "total") . '</li>
 	<li>' . esc_html__("24 Elementor Elements", "total") . '</li>

@@ -41,6 +41,30 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 /*
+ *  The four blog layouts the notice above refers to, shown rather than counted.
+ *  These are Pro's Blog Layout choices, which cover the blog and archive pages.
+ */
+$wp_customize->add_setting('total_blog_layout_preview', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Pro_Preview_Control($wp_customize, 'total_blog_layout_preview', array(
+    'section' => 'total_blog_options_section',
+    'priority' => 101,
+    'label' => esc_html__('4 blog layouts in Total Pro', 'total'),
+    'columns' => 2,
+    'images' => array(
+        'blog-layout1.png',
+        'blog-layout2.png',
+        'blog-layout3.png',
+        'blog-layout4.png'
+    ),
+    'upgrade_text' => esc_html__('Unlock these layouts', 'total'),
+    'upgrade_url' => total_upgrade_url('preview-blog-layout', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
+)));
+
+/*
  *  Blog and archive settings.
  *
  *  Pro combines blog and single post into one section; free covers only the
