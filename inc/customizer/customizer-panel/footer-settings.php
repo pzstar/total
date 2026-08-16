@@ -265,5 +265,28 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-footer&utm_campaign=total-upgrade'
+    'upgrade_url' => total_upgrade_url('footer', 'total-customizer')
 )));
+
+/* The 5 Pro footer layouts, shown rather than described. */
+$wp_customize->add_setting('total_footer_preview', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Pro_Preview_Control($wp_customize, 'total_footer_preview', array(
+    'section' => 'total_footer_settings',
+    'priority' => 101,
+    'label' => esc_html__('5 footer layouts in Total Pro', 'total'),
+    'columns' => 2,
+    'images' => array(
+        'footer-style1.png',
+        'footer-style2.png',
+        'footer-style3.png',
+        'footer-style4.png',
+        'footer-style5.png'
+    ),
+    'upgrade_text' => esc_html__('Unlock these layouts', 'total'),
+    'upgrade_url' => total_upgrade_url('preview-footer', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
+)));
+

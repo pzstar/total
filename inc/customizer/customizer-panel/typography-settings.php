@@ -174,7 +174,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-typography&utm_campaign=total-upgrade'
+    'upgrade_url' => total_upgrade_url('typography', 'total-customizer')
 )));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-hcfu-section', array(

@@ -120,6 +120,28 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_backg
     'label' => esc_html__('Background', 'total'),
 )));
 
+/*
+ *  The remaining General Options that Pro offers here. The layout and width
+ *  controls above are the free half of that section; these three are the rest.
+ */
+$wp_customize->add_setting('total_container_upgrade_text', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_container_upgrade_text', array(
+    'section' => 'total_container_section',
+    'label' => esc_html__('Animate elements on scroll and control how custom CSS is served', 'total'),
+    'choices' => array(
+        esc_html__('Animation effect as elements scroll into view', 'total'),
+        esc_html__('Fancy scrollbar in place of the browser default', 'total'),
+        esc_html__('Serve custom CSS from a separate file instead of the page head', 'total'),
+    ),
+    'priority' => 100,
+    'active_callback' => 'total_is_upgrade_notice_active',
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
+    'upgrade_url' => total_upgrade_url('container', 'total-customizer')
+)));
+
 
 /* BACK TO TOP SECTION */
 $wp_customize->add_section('total_backtotop_section', array(
@@ -155,7 +177,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-backtotop&utm_campaign=total-upgrade'
+    'upgrade_url' => total_upgrade_url('backtotop', 'total-customizer')
 )));
 
 /* BREADCRUMB SECTION */
@@ -189,7 +211,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-breadcrumb&utm_campaign=total-upgrade'
+    'upgrade_url' => total_upgrade_url('breadcrumb', 'total-customizer')
 )));
 
 /* GOOGLE FONT SECTION */
@@ -209,4 +231,26 @@ $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_load_g
     'section' => 'total_google_font_section',
     'label' => esc_html__('Load Google Fonts Locally', 'total'),
     'description' => esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with GDPR then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'total'),
+)));
+
+/* PRELOADER — Pro only, so the free theme shows where the setting lives */
+$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-preloader-upgrade-section', array(
+    'title' => esc_html__('Preloader Settings', 'total'),
+    'panel' => 'total_general_settings_panel',
+    'priority' => 1001,
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_text' => esc_html__('Get Pro', 'total'),
+    'upgrade_url' => total_upgrade_url('sec-preloader', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
+)));
+
+/* ADMIN LOGO - Pro only, sits in General Settings as it does in Pro */
+$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-admin-logo-upgrade-section', array(
+    'title' => esc_html__('Admin Logo', 'total'),
+    'panel' => 'total_general_settings_panel',
+    'priority' => 1002,
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_text' => esc_html__('Get Pro', 'total'),
+    'upgrade_url' => total_upgrade_url('sec-admin-logo', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));

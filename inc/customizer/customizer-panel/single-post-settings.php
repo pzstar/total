@@ -37,5 +37,21 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     ),
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-single-post&utm_campaign=total-upgrade'
+    'upgrade_url' => total_upgrade_url('single-post', 'total-customizer')
+)));
+
+/*
+ *  Blog and archive settings.
+ *
+ *  Pro combines blog and single post into one section; free covers only the
+ *  single post, so the archive half has no home at all. This sits directly
+ *  before Single Post Settings, where its Pro counterpart begins.
+ */
+$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-blog-archive-upgrade-section', array(
+    'title' => esc_html__('Blog & Archive Settings', 'total'),
+    'priority' => 44,
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_text' => esc_html__('Get Pro', 'total'),
+    'upgrade_url' => total_upgrade_url('sec-blog-archive', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));

@@ -41,6 +41,7 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/preloader-control.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/upgrade-section.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/upgrade-info.php';
+            require TOTAL_CUSTOMIZER_PATH . 'custom-controls/pro-preview-control.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/toggle-section.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/border-control.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/box-shadow-control.php';

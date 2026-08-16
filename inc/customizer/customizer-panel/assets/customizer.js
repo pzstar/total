@@ -80,7 +80,12 @@ jQuery(document).ready(function ($) {
         axis: 'y',
         helper: 'clone',
         cursor: 'move',
-        items: '> li.control-section:not(#accordion-section-total_slider_section):not(#accordion-section-total-upgrade-section):not(#accordion-section-total-frontpage-notice)',
+        /*
+         *  Only real home sections reorder. Upgrade sections are excluded by
+         *  class rather than by id so every Get Pro row - and any added later -
+         *  is covered automatically; the slider stays pinned to the top.
+         */
+        items: '> li.control-section:not(#accordion-section-total_slider_section):not(.control-section-ht--upgrade-section)',
         delay: 150,
         update: function (event, ui) {
             $('#sub-accordion-panel-total_home_panel').find('.total-drag-spinner').show();

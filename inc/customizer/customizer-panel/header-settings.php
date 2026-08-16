@@ -148,7 +148,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-title&utm_campaign=total-upgrade'
+    'upgrade_url' => total_upgrade_url('title', 'total-customizer')
 )));
 
 /** Main Header Options */
@@ -297,7 +297,30 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-header&utm_campaign=total-upgrade'
+    'upgrade_url' => total_upgrade_url('header', 'total-customizer')
+)));
+
+/* The six Pro header layouts, shown rather than described. */
+$wp_customize->add_setting('total_main_header_preview', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Pro_Preview_Control($wp_customize, 'total_main_header_preview', array(
+    'section' => 'total_main_header_section',
+    'priority' => 101,
+    'label' => esc_html__('6 header layouts in Total Pro', 'total'),
+    'columns' => 2,
+    'images' => array(
+        'header-1.png',
+        'header-2.png',
+        'header-3.png',
+        'header-4.png',
+        'header-5.png',
+        'header-6.png'
+    ),
+    'upgrade_text' => esc_html__('Unlock these layouts', 'total'),
+    'upgrade_url' => total_upgrade_url('preview-header', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
 /* Primary Menu */
@@ -520,7 +543,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-menu&utm_campaign=total-upgrade'
+    'upgrade_url' => total_upgrade_url('menu', 'total-customizer')
 )));
 
 $wp_customize->selective_refresh->add_partial(
@@ -535,3 +558,41 @@ $wp_customize->selective_refresh->add_partial(
         'render_callback' => 'total_customize_partial_blogdescription',
     )
 );
+
+/*
+ *  Header sections that exist only in Pro.
+ *
+ *  Each is placed at the position its Pro counterpart occupies in the header
+ *  panel, so the panel reads in the same order in both versions and someone
+ *  looking for the setting meets the prompt where the control would be.
+ */
+
+$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-top-header-upgrade-section', array(
+    'title' => esc_html__('Top Header', 'total'),
+    'panel' => 'total_header_settings_panel',
+    'priority' => 25,
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_text' => esc_html__('Get Pro', 'total'),
+    'upgrade_url' => total_upgrade_url('sec-top-header', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-header-cta-upgrade-section', array(
+    'title' => esc_html__('Header CTA Button', 'total'),
+    'panel' => 'total_header_settings_panel',
+    'priority' => 35,
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_text' => esc_html__('Get Pro', 'total'),
+    'upgrade_url' => total_upgrade_url('sec-header-cta', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-titlebar-upgrade-section', array(
+    'title' => esc_html__('Title Bar Settings', 'total'),
+    'panel' => 'total_header_settings_panel',
+    'priority' => 40,
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_text' => esc_html__('Get Pro', 'total'),
+    'upgrade_url' => total_upgrade_url('sec-title-bar', 'total-customizer'),
+    'active_callback' => 'total_is_upgrade_notice_active'
+)));

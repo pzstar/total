@@ -166,6 +166,85 @@ if (!function_exists('total_is_upgrade_notice_active')) {
 
 }
 
+if (!function_exists('total_upgrade_url')) {
+
+    /*
+     *  Upgrade link with campaign tracking.
+     *
+     *  $placement is passed through as utm_content so each prompt in the
+     *  customizer can be told apart in analytics — without it every link
+     *  reports as one undifferentiated source and there is no way to tell
+     *  which prompt actually earns the upgrade.
+     */
+
+    function total_upgrade_url($placement = '', $medium = 'total-link') {
+        $args = array(
+            'utm_source' => 'wordpress',
+            'utm_medium' => $medium,
+            'utm_campaign' => 'total-upgrade',
+        );
+
+        if ('' !== $placement) {
+            $args['utm_content'] = $placement;
+        }
+
+        return add_query_arg($args, 'https://hashthemes.com/wordpress-theme/total/');
+    }
+
+}
+
+if (!function_exists('total_get_active_campaign')) {
+
+    /*
+     *  The seasonal sale currently running, or false.
+     *
+     *  Windows are month-day so they repeat every year without anyone having to
+     *  edit a date. Filterable so a campaign can be added or the dates moved
+     *  without touching the theme.
+     */
+
+    function total_get_active_campaign() {
+        $campaigns = apply_filters('total_upgrade_campaigns', array(
+            array(
+                'id' => 'blackfriday',
+                'start' => '11-20',
+                'end' => '12-02',
+                'title' => esc_html__('Black Friday - our biggest discount of the year', 'total'),
+                'button' => esc_html__('Get Total Pro - $65', 'total')
+            ),
+            array(
+                'id' => 'newyear',
+                'start' => '12-15',
+                'end' => '01-05',
+                'title' => esc_html__('Christmas & New Year Sale', 'total'),
+                'button' => esc_html__('Get Total Pro - $65', 'total')
+            )
+        ));
+
+        $today = current_time('m-d');
+
+        foreach ($campaigns as $campaign) {
+            if (empty($campaign['start']) || empty($campaign['end'])) {
+                continue;
+            }
+
+            // A window whose end sorts before its start crosses into the new year.
+            if ($campaign['end'] < $campaign['start']) {
+                $running = ($today >= $campaign['start'] || $today <= $campaign['end']);
+            } else {
+                $running = ($today >= $campaign['start'] && $today <= $campaign['end']);
+            }
+
+            if ($running) {
+                return $campaign;
+            }
+        }
+
+        return false;
+    }
+
+}
+
 if (!function_exists('total_section_slots_full')) {
 
     /*
