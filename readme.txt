@@ -1,5 +1,5 @@
 === Total ===
-Total WordPress Theme, Copyright HashThemes 2025
+Total WordPress Theme, Copyright HashThemes 2026
 Total is distributed under the terms of the GNU GPL v2 or later.
 
 Contributors: hashthemes

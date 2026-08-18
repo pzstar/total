@@ -1,5 +1,22 @@
 <div class="welcome-header clearfix">
-    <!--<a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-bf&utm_campaign=total-upgrade'); ?>" target="_blank"><img style="width:100%;margin-bottom:40px;display:block;" src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/christmas-sale.jpg'); ?>"></a>-->
+<?php
+/*
+ *  Seasonal sale banner.
+ *
+ *  This used to be a commented-out block that had to be uncommented each
+ *  November and remembered again in January. It now opens and closes on the
+ *  same campaign window as the customizer banner.
+ */
+$total_header_campaign = total_get_active_campaign();
+
+if ($total_header_campaign && !empty($total_header_campaign['image'])) {
+    ?>
+    <a class="welcome-sale-banner" target="_blank" href="<?php echo esc_url(total_upgrade_url('welcome-banner-' . $total_header_campaign['id'], 'total-welcome-banner')); ?>">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/' . $total_header_campaign['image']); ?>" alt="<?php echo esc_attr($total_header_campaign['title']); ?>">
+    </a>
+    <?php
+}
+?>
     <div class="welcome-intro">
         <h2>
             <?php

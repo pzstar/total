@@ -207,6 +207,7 @@ if (!function_exists('total_get_active_campaign')) {
         $campaigns = apply_filters('total_upgrade_campaigns', array(
             array(
                 'id' => 'blackfriday',
+                'image' => 'blackfriday.jpg',
                 'start' => '11-20',
                 'end' => '12-02',
                 'title' => esc_html__('Black Friday - our biggest discount of the year', 'total'),
@@ -214,6 +215,7 @@ if (!function_exists('total_get_active_campaign')) {
             ),
             array(
                 'id' => 'newyear',
+                'image' => 'christmas-sale.jpg',
                 'start' => '12-15',
                 'end' => '01-05',
                 'title' => esc_html__('Christmas & New Year Sale', 'total'),

@@ -85,6 +85,18 @@
     vertical-align: inherit !important;
 }
 
+/* Seasonal sale banner on the welcome screen. Rendered only while a campaign
+   window is open - see total_get_active_campaign(). */
+.welcome-sale-banner {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.welcome-sale-banner img {
+    width: 100%;
+    display: block;
+}
+
 .welcome-promo-banner {
     width: 25%;
     background: #fff;
