@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.0
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.2.5 - Aug 18, 2026 =
+* Free Vs Pro comparison checked against Total Plus and corrected - Elementor widget count, custom widget count, featured block styles, Google Fonts claim, typography, GDPR and RTL rows
+* Free Vs Pro rows added for the Elementor sticky column/container, menu CTA button, page banner settings, social links, admin logo and the enable/disable options in Theme Options
+* Free Vs Pro rows numbered by CSS so a new row no longer renumbers every string below it - Changed
+* Broken markup and typos in the Free Vs Pro table - Fixed
+* Welcome screen registered under Total Plus even though the plugin removes its menu, leaving the page with no title - Fixed
+* Welcome notice showing on the settings page it links to - Fixed
+* RTL stylesheet for the welcome screen enqueued under the wrong file name - Fixed
+* Welcome screen styles and scripts loading on every admin page - Fixed
+
 = 2.2.4 - Aug 04, 2026 =
 * Block Pattern added
 * Other fixes

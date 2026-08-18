@@ -442,6 +442,34 @@ if (!function_exists('total_check_active_footer')) {
 
 }
 
+if (!function_exists('total_is_totalplus_activated')) {
+
+    function total_is_totalplus_activated() {
+        return class_exists('TotalPlus');
+    }
+
+}
+
+if (!function_exists('total_settings_page_url')) {
+
+    /*
+     *  Where "theme settings" should point.
+     *
+     *  Total Plus registers its own panel and removes the theme's welcome menu,
+     *  so under Pro the theme's own page does not exist to link to.
+     */
+    function total_settings_page_url($section = '') {
+        if (total_is_totalplus_activated()) {
+            return admin_url('admin.php?page=totalplus');
+        }
+
+        $url = admin_url('admin.php?page=total-welcome');
+
+        return '' === $section ? $url : add_query_arg('section', $section, $url);
+    }
+
+}
+
 if (!function_exists('total_is_woocommerce_activated')) {
 
     function total_is_woocommerce_activated() {
