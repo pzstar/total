@@ -155,7 +155,6 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 $wp_customize->add_section('total_main_header_section', array(
     'title' => esc_html__('Main Header', 'total'),
     'panel' => 'total_header_settings_panel',
-    'priority' => 30
 ));
 
 $wp_customize->add_setting('total_main_header_nav', array(
@@ -570,7 +569,6 @@ $wp_customize->selective_refresh->add_partial(
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-top-header-upgrade-section', array(
     'title' => esc_html__('Top Header', 'total'),
     'panel' => 'total_header_settings_panel',
-    'priority' => 25,
     'class' => 'ht--single-row ht--pro-row',
     'upgrade_text' => esc_html__('Get Pro', 'total'),
     'upgrade_url' => total_upgrade_url('sec-top-header', 'total-customizer'),
@@ -580,7 +578,6 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-top-h
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-header-cta-upgrade-section', array(
     'title' => esc_html__('Header CTA Button', 'total'),
     'panel' => 'total_header_settings_panel',
-    'priority' => 35,
     'class' => 'ht--single-row ht--pro-row',
     'upgrade_text' => esc_html__('Get Pro', 'total'),
     'upgrade_url' => total_upgrade_url('sec-header-cta', 'total-customizer'),
@@ -590,7 +587,6 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-heade
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-titlebar-upgrade-section', array(
     'title' => esc_html__('Title Bar Settings', 'total'),
     'panel' => 'total_header_settings_panel',
-    'priority' => 40,
     'class' => 'ht--single-row ht--pro-row',
     'upgrade_text' => esc_html__('Get Pro', 'total'),
     'upgrade_url' => total_upgrade_url('sec-title-bar', 'total-customizer'),

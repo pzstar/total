@@ -364,6 +364,20 @@ table.comparison-table td p:last-child {
     margin-bottom: 0;
 }
 
+/* Feature rows are numbered here rather than in the PHP, so a row can be
+   inserted without renumbering - and retranslating - every row below it.
+   The counter is isolated as its own LTR run so "1)" is not mirrored. */
+table.comparison-table {
+    counter-reset: comparison-feature;
+}
+
+table.comparison-table tr.feature-row > td:first-child > span::before {
+    counter-increment: comparison-feature;
+    content: counter(comparison-feature) ") ";
+    display: inline-block;
+    direction: ltr;
+}
+
 table.comparison-table td span {
     font-weight: bold;
 }

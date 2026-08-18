@@ -142,7 +142,24 @@ if (!class_exists('Total_Welcome')):
 
         /** Register Menu for Welcome Page */
         public function welcome_register_menu() {
-            add_menu_page(esc_html__('Welcome', 'total'), sprintf(esc_html__('%s Settings', 'total'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'total-welcome', array($this, 'welcome_screen'), 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MC4zNiA4MC4zNiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zc0Fzc2V0IDRAMzJ4PC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTczLDgwLjM2QTcuMzMsNy4zMywwLDAsMCw4MC4zNiw3M1Y3LjMzQTcuMzMsNy4zMywwLDAsMCw3MywwSDcuMzNBNy4zMyw3LjMzLDAsMCwwLDAsNy4zM1Y3M2E3LjMzLDcuMzMsMCwwLDAsNy4zMyw3LjMzWk01OC4yNiw0LjE0bDcsMy4yM0wyMi4xMywyNy4xMWwtNy0zLjIzWm0tOS4zNSwxOS0uNDYuN1Y3Mi45NGwtNy4zOSwzLjM1VjI4bC0xLjE2LS42OS0xNyw3Ljc0VjI4LjQ5TDY2LjM0LDguNjR2Ni41OFpNMjEuMzIsMzUuMDhsLTcuMzktMy4yNFYyNS4yNmw3LjM5LDMuMzVaTTMyLjA1LDcyLjk0VjMyLjY1bDcuMzktMy4zNXY0N1oiLz48L2c+PC9nPjwvc3ZnPg==', 60);
+            $hook = add_menu_page(esc_html__('Welcome', 'total'), sprintf(esc_html__('%s Settings', 'total'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'total-welcome', array($this, 'welcome_screen'), 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MC4zNiA4MC4zNiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zc0Fzc2V0IDRAMzJ4PC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTczLDgwLjM2QTcuMzMsNy4zMywwLDAsMCw4MC4zNiw3M1Y3LjMzQTcuMzMsNy4zMywwLDAsMCw3MywwSDcuMzNBNy4zMyw3LjMzLDAsMCwwLDAsNy4zM1Y3M2E3LjMzLDcuMzMsMCwwLDAsNy4zMyw3LjMzWk01OC4yNiw0LjE0bDcsMy4yM0wyMi4xMywyNy4xMWwtNy0zLjIzWm0tOS4zNSwxOS0uNDYuN1Y3Mi45NGwtNy4zOSwzLjM1VjI4bC0xLjE2LS42OS0xNyw3Ljc0VjI4LjQ5TDY2LjM0LDguNjR2Ni41OFpNMjEuMzIsMzUuMDhsLTcuMzktMy4yNFYyNS4yNmw3LjM5LDMuMzVaTTMyLjA1LDcyLjk0VjMyLjY1bDcuMzktMy4zNXY0N1oiLz48L2c+PC9nPjwvc3ZnPg==', 60);
+
+            /*
+             *  Total Plus removes this menu entry in favour of its own panel,
+             *  but the page itself stays registered and reachable. With no menu
+             *  entry left for get_admin_page_title() to read, WordPress leaves
+             *  the global $title null and admin-header.php hands that null to
+             *  strip_tags(). Set the title here - the load-* hook runs just
+             *  before admin-header.php is included.
+             */
+            add_action('load-' . $hook, array($this, 'set_welcome_page_title'));
+        }
+
+        /** Give the welcome screen a title even when its menu entry is gone */
+        public function set_welcome_page_title() {
+            if (empty($GLOBALS['title'])) {
+                $GLOBALS['title'] = esc_html__('Welcome', 'total');
+            }
         }
 
         /** Welcome Page */

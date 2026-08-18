@@ -79,8 +79,10 @@
 .free-pro-demos a.button .dashicons {
     height: auto;
     width: auto;
-    line-height: 42px;
+    line-height: 42px !important;
     margin-right: 8px;
+    color: #FFF !important;
+    vertical-align: inherit !important;
 }
 
 .welcome-promo-banner {
@@ -268,7 +270,7 @@
     position: relative;
     font-size: 14px;
     font-weight: 600;
-    line-height: 26px;
+    line-height: 36px;
     padding: 10px 15px;
     border-top: 1px solid #EEE;
     overflow: hidden;
@@ -282,8 +284,8 @@
     top: 0;
     bottom: 0;
     right: 0;
-    height: 46px;
-    padding: 10px 20px;
+    height: 56px;
+    padding: 8px;
     background: rgba(244, 244, 244, .7);
     border-left: 1px solid rgba(0, 0, 0, .05);
 }
@@ -362,6 +364,17 @@ table.comparison-table th {
 table.comparison-table th p:last-child,
 table.comparison-table td p:last-child {
     margin-bottom: 0;
+}
+
+/* Feature rows are numbered here rather than in the PHP, so a row can be
+   inserted without renumbering - and retranslating - every row below it. */
+table.comparison-table {
+    counter-reset: comparison-feature;
+}
+
+table.comparison-table tr.feature-row > td:first-child > span::before {
+    counter-increment: comparison-feature;
+    content: counter(comparison-feature) ") ";
 }
 
 table.comparison-table td span {

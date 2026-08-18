@@ -26,7 +26,7 @@
         <div class="welcome-logo">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/total.svg'); ?>" />
         </div>
-        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome-banner&utm_campaign=total-upgrade'); ?>" target="_blank"><?php echo esc_html__('Total Plus adds 6 header layouts, unlimited home page blocks, a demo importer and 40+ other features.', 'total'); ?></a>
+        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-welcome-banner&utm_campaign=total-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all possibilities with Total Plus', 'total'); ?></a>
 
         <ul class="welcome-promo-points">
             <li><span class="dashicons dashicons-yes"></span><?php echo esc_html__('One time payment, no renewals', 'total'); ?></li>

@@ -1647,7 +1647,7 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container {
     font-size: inherit;
     margin: 0 0 0 5px;
     border: 0;
-    vertical-align: middle;
+    display: inline-flex;
 }
 
 .menu-item-has-children .ht-dropdown:after {
@@ -3560,6 +3560,7 @@ body.ht-titlebar-disabled .ht-site-content > .ht-container {
         border: 1px solid rgba(0, 0, 0, 0.3);
         top: 50%;
         right: 10px;
+        display: block;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
