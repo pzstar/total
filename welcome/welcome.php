@@ -123,7 +123,7 @@ if (!class_exists('Total_Welcome')):
                 <?php $this->dismiss_button('welcome'); ?>
                 <div class="total-welcome-notice-wrap">
                     <h2><?php esc_html_e('Congratulations!', 'total'); ?></h2>
-                    <p><?php printf(esc_html__('%1$s is now installed and ready to use. You can start either by importing the ready made demo or get started by customizing it your self.', 'total'), $this->theme_name); ?></p>
+                    <p><?php /* translators: %1$s: theme name */ printf(esc_html__('%1$s is now installed and ready to use. You can start either by importing the ready made demo or get started by customizing it your self.', 'total'), $this->theme_name); ?></p>
 
                     <div class="total-welcome-info">
                         <div class="total-welcome-thumb">
@@ -144,7 +144,7 @@ if (!class_exists('Total_Welcome')):
 
                         <div class="total-welcome-getting-started">
                             <h3><?php esc_html_e('Get Started', 'total'); ?></h3>
-                            <p><?php printf(esc_html__('Here you will find all the necessary links and information on how to use %s.', 'total'), $this->theme_name); ?></p>
+                            <p><?php /* translators: %s: theme name */ printf(esc_html__('Here you will find all the necessary links and information on how to use %s.', 'total'), $this->theme_name); ?></p>
                             <p><a href="<?php echo esc_url(total_settings_page_url()); ?>" class="button button-primary"><?php esc_html_e('Go to Setting Page', 'total'); ?></a></p>
                         </div>
                     </div>
@@ -166,6 +166,7 @@ if (!class_exists('Total_Welcome')):
                 return;
             }
 
+            /* translators: %s: theme name */
             $hook = add_menu_page(esc_html__('Welcome', 'total'), sprintf(esc_html__('%s Settings', 'total'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'total-welcome', array($this, 'welcome_screen'), 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MC4zNiA4MC4zNiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zc0Fzc2V0IDRAMzJ4PC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTczLDgwLjM2QTcuMzMsNy4zMywwLDAsMCw4MC4zNiw3M1Y3LjMzQTcuMzMsNy4zMywwLDAsMCw3MywwSDcuMzNBNy4zMyw3LjMzLDAsMCwwLDAsNy4zM1Y3M2E3LjMzLDcuMzMsMCwwLDAsNy4zMyw3LjMzWk01OC4yNiw0LjE0bDcsMy4yM0wyMi4xMywyNy4xMWwtNy0zLjIzWm0tOS4zNSwxOS0uNDYuN1Y3Mi45NGwtNy4zOSwzLjM1VjI4bC0xLjE2LS42OS0xNyw3Ljc0VjI4LjQ5TDY2LjM0LDguNjR2Ni41OFpNMjEuMzIsMzUuMDhsLTcuMzktMy4yNFYyNS4yNmw3LjM5LDMuMzVaTTMyLjA1LDcyLjk0VjMyLjY1bDcuMzktMy4zNXY0N1oiLz48L2c+PC9nPjwvc3ZnPg==', 60);
 
             /*
@@ -331,6 +332,7 @@ if (!class_exists('Total_Welcome')):
             $screen = get_current_screen();
 
             if ('toplevel_page_total-welcome' == $screen->id) {
+                /* translators: %s: five-star link */
                 $text = sprintf(esc_html__('Please leave us a %s rating if you like our theme . A huge thank you from HashThemes in advance!', 'total'), '<a href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>');
             }
 

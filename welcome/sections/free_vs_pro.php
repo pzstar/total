@@ -5,7 +5,7 @@
     </div>
 
     <div class="free-vs-pro-info">
-        <h4><?php echo esc_html_x('UNLIMITED DOMAIN LICENCE', 'free vs pro content', 'total'); ?></h4>
+        <h4><?php echo esc_html_x('UNLIMITED DOMAIN LICENSE', 'free vs pro content', 'total'); ?></h4>
         <p><?php echo esc_html_x('Use in as many websites as you need', 'free vs pro content', 'total'); ?></p>
     </div>
 
@@ -65,10 +65,10 @@
     <tr class="feature-row">
         <td>
             <span><?php echo esc_html_x('Elementor Widgets', 'free vs pro content', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#I.ElementorModule" target="_blank"><?php echo esc_html_x('View Demo', 'free vs pro content', 'total'); ?></a></span>
-            <p><?php echo esc_html_x('Total Plus adds its own Elementor widgets - sliders, featured, highlight, service, portfolio, team, testimonial, counter, pricing, tabs, news, logo carousel, progress bar, animated text, animation layers, video popup and more. Each one can be switched off individually in Theme Options.', 'free vs pro content', 'total'); ?></p>
+            <p><?php echo esc_html_x('Total Plus adds its own Elementor widgets - sliders, featured, highlight, service, portfolio, team, testimonial, counter, pricing, tabs, news, logo carousel, progress bar, animated text, animation layers, video popup, FAQ, timeline and more. Each one can be switched off individually in Theme Options.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
-        <td><?php echo esc_html_x('24 Widgets', 'free vs pro content', 'total'); ?></td>
+        <td><?php echo esc_html_x('26 Widgets', 'free vs pro content', 'total'); ?></td>
     </tr>
     <tr class="feature-row">
         <td>
@@ -96,6 +96,14 @@
     </tr>
     <tr class="feature-row">
         <td>
+            <span><?php echo esc_html_x('Gutenberg Blocks', 'free vs pro content', 'total'); ?></span>
+            <p><?php echo esc_html_x('Services, team, testimonials, counters, pricing table, FAQ, timeline and portfolio blocks for the block editor, each with its own settings in the sidebar.', 'free vs pro content', 'total'); ?></p>
+        </td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
+        <td><?php echo esc_html_x('8 Blocks', 'free vs pro content', 'total'); ?></td>
+    </tr>
+    <tr class="feature-row">
+        <td>
             <span><?php echo esc_html_x('Multiple Header Layouts and Settings', 'free vs pro content', 'total'); ?> - <a href="https://hashthemes.com/wordpress-theme/total/#totalplus-headers" target="_blank"><?php echo esc_html_x('Detail', 'free vs pro content', 'total'); ?></a></span>
             <p><?php echo esc_html_x('The premium version gives the option to choose from 6 header layouts. Additionally, it allows changing the header background color, text color, header height, and more.', 'free vs pro content', 'total'); ?></p>
         </td>
@@ -104,8 +112,24 @@
     </tr>
     <tr class="feature-row">
         <td>
-            <span><?php echo esc_html_x('Menu CTA Button', 'free vs pro content', 'total'); ?></span>
-            <p><?php echo esc_html_x('Add a call to action button next to the menu, with its own text, link, colors, border radius and typography.', 'free vs pro content', 'total'); ?></p>
+            <span><?php echo esc_html_x('Menu Search, Cart and Button', 'free vs pro content', 'total'); ?></span>
+            <p><?php echo esc_html_x('Add a search icon, a cart icon and a call to action button next to the menu. The premium version adds a mini cart, social icons, more button styles and typography.', 'free vs pro content', 'total'); ?></p>
+        </td>
+        <td><?php echo esc_html_x('Basic', 'free vs pro content', 'total'); ?></td>
+        <td><?php echo esc_html_x('Advanced', 'free vs pro content', 'total'); ?></td>
+    </tr>
+    <tr class="feature-row">
+        <td>
+            <span><?php echo esc_html_x('Transparent Header', 'free vs pro content', 'total'); ?></span>
+            <p><?php echo esc_html_x('Place the header over the slider or page banner with a transparent background and its own menu color. Turn it on or off for each page.', 'free vs pro content', 'total'); ?></p>
+        </td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+    </tr>
+    <tr class="feature-row">
+        <td>
+            <span><?php echo esc_html_x('Off-Canvas Panel', 'free vs pro content', 'total'); ?></span>
+            <p><?php echo esc_html_x('A menu icon opens a panel that slides in from the left or right, filled with any widgets.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
@@ -169,10 +193,10 @@
     <tr class="feature-row">
         <td>
             <span><?php echo esc_html_x('Home Page Sections', 'free vs pro content', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#HomePageSection/Settings" target="_blank"><?php echo esc_html_x('Detail', 'free vs pro content', 'total'); ?></a></span>
-            <p><?php echo esc_html_x('Total Plus adds 7 more sections - Highlight, Pricing, News & Update, Tab, Contact, and the two Custom Sections you can build with Elementor.', 'free vs pro content', 'total'); ?></p>
+            <p><?php echo esc_html_x('Total Plus adds 10 more sections - Highlight, Pricing, News & Update, Tab, Contact, FAQ, Video, Timeline and the two Custom Sections you can build with Elementor.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td>11</td>
-        <td>18</td>
+        <td>21</td>
     </tr>
     <tr class="feature-row">
         <td>
@@ -231,10 +255,10 @@
     <tr class="feature-row">
         <td>
             <span><?php echo esc_html_x('Social Links', 'free vs pro content', 'total'); ?></span>
-            <p><?php echo esc_html_x('Set your social profiles once in the customizer and reuse them in the top header, menu, footer, author box and the social icon widget.', 'free vs pro content', 'total'); ?></p>
+            <p><?php echo esc_html_x('Set your social profiles once in the customizer. The free version shows them in the footer; the premium version also uses them in the top header, menu, author box and the social icon widget.', 'free vs pro content', 'total'); ?></p>
         </td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+        <td><?php echo esc_html_x('Footer', 'free vs pro content', 'total'); ?></td>
+        <td><?php echo esc_html_x('Everywhere', 'free vs pro content', 'total'); ?></td>
     </tr>
     <tr class="feature-row">
         <td>
@@ -295,7 +319,7 @@
     <tr class="feature-row">
         <td>
             <span><?php echo esc_html_x('Blog Layouts', 'free vs pro content', 'total'); ?></span>
-            <p><?php echo esc_html_x('The premium version gives the option to choose from 4 differently designed blog layouts.', 'free vs pro content', 'total'); ?></p>
+            <p><?php echo esc_html_x('The free version has a list and a grid layout. The premium version adds 4 more differently designed blog layouts, and its grid uses a card design.', 'free vs pro content', 'total'); ?></p>
             <ul>
                 <li><a href="https://demo.hashthemes.com/total-plus/total/blog/" target="_blank"><?php echo esc_html_x('Blog Layout 1 Demo', 'free vs pro content', 'total'); ?></a></li>
                 <li><a href="https://demo.hashthemes.com/total-plus/creative-agency/blog/" target="_blank"><?php echo esc_html_x('Blog Layout 2 Demo', 'free vs pro content', 'total'); ?></a></li>
@@ -303,13 +327,21 @@
                 <li><a href="https://demo.hashthemes.com/total-plus/one-page/blog/" target="_blank"><?php echo esc_html_x('Blog Layout 4 Demo', 'free vs pro content', 'total'); ?></a></li>
             </ul>
         </td>
-        <td>1</td>
-        <td>4</td>
+        <td>2</td>
+        <td>5</td>
     </tr>
     <tr class="feature-row">
         <td>
             <span><?php echo esc_html_x('Reorder and Show/Hide Elements of Single Post', 'free vs pro content', 'total'); ?> - <a href="https://hashthemes.com/documentation/total-plus-plugin-documentation/#SinglePostSettings" target="_blank"><?php echo esc_html_x('Detail', 'free vs pro content', 'total'); ?></a></span>
             <p><?php echo esc_html_x('Change the position(reorder) the single post elements like post meta, featured image, content, category, tags, and social share icons and place them in the order you want. You can disable it individually if you do not want to show it.', 'free vs pro content', 'total'); ?></p>
+        </td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+    </tr>
+    <tr class="feature-row">
+        <td>
+            <span><?php echo esc_html_x('Reading Progress Bar', 'free vs pro content', 'total'); ?></span>
+            <p><?php echo esc_html_x('A bar at the top of single posts that fills as the post is read, in your own color and height.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
@@ -344,6 +376,14 @@
             <p><?php echo esc_html_x('You can show/hide the header and footer for each of the pages/posts. It is helpful if you are running an infographic website.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+    </tr>
+    <tr class="feature-row">
+        <td>
+            <span><?php echo esc_html_x('Full Width Pages and Spacing Control', 'free vs pro content', 'total'); ?></span>
+            <p><?php echo esc_html_x('Make any page full width and remove the space below the header or above the footer - ideal for pages built with Elementor.', 'free vs pro content', 'total'); ?></p>
+        </td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
     <tr class="feature-row">
@@ -399,6 +439,14 @@
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+    </tr>
+    <tr class="feature-row">
+        <td>
+            <span><?php echo esc_html_x('Block Patterns', 'free vs pro content', 'total'); ?></span>
+            <p><?php echo esc_html_x('Ready-made sections and full pages - about, services, contact, FAQ, video, timeline and more - to insert from the block editor.', 'free vs pro content', 'total'); ?></p>
+        </td>
+        <td><?php echo esc_html_x('19 Patterns', 'free vs pro content', 'total'); ?></td>
+        <td><?php echo esc_html_x('19 Patterns', 'free vs pro content', 'total'); ?></td>
     </tr>
     <tr class="feature-row">
         <td>

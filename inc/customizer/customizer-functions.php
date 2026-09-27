@@ -166,6 +166,23 @@ if (!function_exists('total_is_upgrade_notice_active')) {
 
 }
 
+if (!function_exists('total_page_transparent_header_used')) {
+
+    // Whether any post or page turns the transparent header on in its Page Settings box.
+    function total_page_transparent_header_used() {
+        return (bool) get_posts(array(
+            'post_type' => array('post', 'page'),
+            'post_status' => 'any',
+            'posts_per_page' => 1,
+            'fields' => 'ids',
+            'no_found_rows' => true,
+            'meta_key' => 'total_transparent_header',
+            'meta_value' => 'on',
+        ));
+    }
+
+}
+
 if (!function_exists('total_upgrade_url')) {
 
     /*

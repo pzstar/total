@@ -17,7 +17,9 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_na
             'icon' => 'dashicons dashicons-welcome-write-blog',
             'fields' => array(
                 'total_footer_col',
-                'total_footer_copyright'
+                'total_footer_copyright',
+                'total_footer_show_social',
+                'total_social_icons'
             ),
             'active' => true,
         ),
@@ -44,7 +46,8 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_footer_na
 
 $wp_customize->add_setting('total_footer_col', array(
     'sanitize_callback' => 'total_sanitize_text',
-    'default' => 'col-4-1-1-1-1'
+    'default' => 'col-4-1-1-1-1',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Selector_Control($wp_customize, 'total_footer_col', array(
@@ -123,7 +126,8 @@ $wp_customize->add_control(new Total_Background_Image_Control($wp_customize, 'to
 
 $wp_customize->add_setting('total_enable_footer_border', array(
     'sanitize_callback' => 'total_sanitize_text',
-    'default' => true
+    'default' => true,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable_footer_border', array(
@@ -237,7 +241,8 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_
 )));
 
 $wp_customize->add_setting('total_footer_copyright', array(
-    'sanitize_callback' => 'total_sanitize_text'
+    'sanitize_callback' => 'total_sanitize_text',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control('total_footer_copyright', array(
@@ -247,6 +252,50 @@ $wp_customize->add_control('total_footer_copyright', array(
     'description' => esc_html__('Custom HTMl and Shortcodes Supported', 'total'),
     'priority' => 15
 ));
+
+$wp_customize->add_setting('total_footer_show_social', array(
+    'sanitize_callback' => 'total_sanitize_boolean',
+    'default' => false,
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_footer_show_social', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Display Social Icons', 'total'),
+    'description' => esc_html__('Shown above the copyright text.', 'total'),
+    'priority' => 16
+)));
+
+// Same setting and format as Total Plus, which also uses these links in the header.
+$wp_customize->add_setting('total_social_icons', array(
+    'sanitize_callback' => 'total_sanitize_repeater',
+    'default' => total_default_social_icons(),
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Total_Repeater_Control($wp_customize, 'total_social_icons', array(
+    'section' => 'total_footer_settings',
+    'label' => esc_html__('Social Links', 'total'),
+    'box_label' => esc_html__('Social Link', 'total'),
+    'add_label' => esc_html__('Add New', 'total'),
+    'priority' => 17
+), array(
+    'icon' => array(
+        'type' => 'icon',
+        'label' => esc_html__('Select Icon', 'total'),
+        'default' => 'fa-brands fa-facebook-f'
+    ),
+    'link' => array(
+        'type' => 'text',
+        'label' => esc_html__('Add Link', 'total'),
+        'default' => '#'
+    ),
+    'enable' => array(
+        'type' => 'toggle',
+        'label' => esc_html__('Enable', 'total'),
+        'default' => 'yes'
+    )
+)));
 
 $wp_customize->add_setting('total_footer_upgrade_text', array(
     'sanitize_callback' => 'total_sanitize_text'
@@ -290,3 +339,8 @@ $wp_customize->add_control(new Total_Pro_Preview_Control($wp_customize, 'total_f
     'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
+$wp_customize->selective_refresh->add_partial('total_footer', array(
+    'selector' => '#ht-colophon',
+    'settings' => array('total_footer_col', 'total_footer_copyright', 'total_footer_show_social', 'total_social_icons'),
+    'render_callback' => 'total_customize_partial_footer',
+));

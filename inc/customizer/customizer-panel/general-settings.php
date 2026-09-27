@@ -152,7 +152,8 @@ $wp_customize->add_section('total_backtotop_section', array(
 
 $wp_customize->add_setting('total_backtotop', array(
     'sanitize_callback' => 'total_sanitize_text',
-    'default' => true
+    'default' => true,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_backtotop', array(
@@ -188,7 +189,8 @@ $wp_customize->add_section('total_breadcrumb_section', array(
 
 $wp_customize->add_setting('total_breadcrumb_enable', array(
     'sanitize_callback' => 'total_sanitize_checkbox',
-    'default' => true
+    'default' => true,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_breadcrumb_enable', array(

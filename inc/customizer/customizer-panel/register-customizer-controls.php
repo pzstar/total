@@ -29,7 +29,8 @@ if (!class_exists('Total_Register_Customizer_Controls')) {
             wp_enqueue_script('total-customizer', TOTAL_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.js', array('jquery'), TOTAL_VERSION, true);
 
             wp_localize_script('total-customizer', 'total_ajax_data', array(
-                'nonce' => wp_create_nonce('total-order-sections')
+                'nonce' => wp_create_nonce('total-order-sections'),
+                'page_transparent_header' => total_page_transparent_header_used()
             ));
             if (is_rtl()) {
                 wp_enqueue_style('total-customizer', TOTAL_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.rtl.css', array(), TOTAL_VERSION);

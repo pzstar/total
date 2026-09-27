@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<div class="ht-container">
+<div class="<?php echo esc_attr(total_content_container_class()); ?>">
     <div class="content-area">
         <main id="main" class="site-main">
 

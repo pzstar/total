@@ -31,6 +31,34 @@ if (!function_exists('total_body_classes')) {
             $classes[] = 'ht-sticky-header';
         }
 
+        if (is_singular(array('post', 'page'))) {
+            if (get_post_meta(get_queried_object_id(), 'total_disable_space_below_header', true)) {
+                $classes[] = 'ht-no-header-space';
+            }
+
+            if (get_post_meta(get_queried_object_id(), 'total_disable_space_above_footer', true)) {
+                $classes[] = 'ht-no-footer-space';
+            }
+        }
+
+        $header_state = total_header_state();
+
+        if ($header_state['over']) {
+            $classes[] = 'ht-header-over';
+        }
+
+        if ($header_state['transparent']) {
+            $classes[] = 'ht-transparent-header';
+        }
+
+        // Lets the Customizer preview recompute the header position without a reload.
+        if (is_customize_preview()) {
+            $classes[] = $header_state['has_banner'] ? 'ht-preview-has-banner' : 'ht-preview-no-banner';
+            if ($header_state['page_setting']) {
+                $classes[] = 'ht-preview-transparent-' . $header_state['page_setting'];
+            }
+        }
+
         if (total_is_ios_device()) {
             $classes[] = 'ht-ios';
         }
@@ -42,6 +70,47 @@ if (!function_exists('total_body_classes')) {
         }
 
         return $classes;
+    }
+
+}
+
+if (!function_exists('total_content_container_class')) {
+
+    // The page's Content Width setting: the site container or the full browser width.
+    function total_content_container_class() {
+        $full_width = is_singular(array('post', 'page')) && get_post_meta(get_queried_object_id(), 'total_content_width', true) == 'full-width';
+        return $full_width ? 'ht-fullwidth-container' : 'ht-container';
+    }
+
+}
+
+if (!function_exists('total_header_state')) {
+
+    // Whether the header sits over the slider/banner, and whether it is transparent there.
+    function total_header_state() {
+        $page_setting = is_singular(array('post', 'page')) ? get_post_meta(get_queried_object_id(), 'total_transparent_header', true) : '';
+
+        // Without a slider or banner under it, the header would cover the content.
+        $has_slider = total_is_home_sections_page();
+        $hidden_title = is_singular(array('post', 'page')) && get_post_meta(get_queried_object_id(), 'total_hide_title', true);
+        $empty_banner = is_home() && is_front_page();
+        $has_banner = $has_slider || !($hidden_title || $empty_banner);
+
+        if ($page_setting == 'on') {
+            $over = $transparent = true;
+        } elseif ($page_setting == 'off' || get_theme_mod('total_header_position', 'header-above') != 'header-over') {
+            $over = $transparent = false;
+        } else {
+            $over = $has_banner;
+            $transparent = $has_banner && get_theme_mod('total_header_transparent', false);
+        }
+
+        return array(
+            'over' => $over,
+            'transparent' => $transparent,
+            'page_setting' => $page_setting,
+            'has_banner' => $has_banner
+        );
     }
 
 }
@@ -69,7 +138,8 @@ if (!function_exists('total_breadcrumb_trial')) {
 
     function total_breadcrumb_trial() {
         $display_breadcrumb = get_theme_mod('total_breadcrumb_enable', true);
-        if ($display_breadcrumb) {
+        // Printed in the preview even when off; the preview script hides it.
+        if ($display_breadcrumb || is_customize_preview()) {
             $args = array(
                 'show_browse' => false,
             );

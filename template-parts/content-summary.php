@@ -33,18 +33,52 @@
             <?php the_title(sprintf('<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>'); ?>
         </header><!-- .entry-header -->
 
-        <div class="entry-categories">
-            <?php echo total_entry_category(); // WPCS: XSS OK.  ?>
-        </div>
+        <?php
+        ob_start();
+        total_entry_category();
+        $total_categories = ob_get_clean();
 
-        <div class="entry-summary">
-            <?php
-            echo esc_html(wp_trim_words(get_the_content(), 130));
+        if ($total_categories) {
             ?>
-        </div><!-- .entry-content -->
+            <div class="entry-categories">
+                <?php echo $total_categories; // WPCS: XSS OK.  ?>
+            </div>
+            <?php
+        }
 
-        <div class="entry-readmore">
-            <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'total'); ?></a>
-        </div>
+        total_entry_tags();
+
+        $total_archive_content = get_theme_mod('total_archive_content', 'excerpt');
+        $total_excerpt_length = get_theme_mod('total_archive_excerpt_length', 130);
+        $total_readmore = get_theme_mod('total_archive_readmore', esc_html__('Read More', 'total'));
+
+        if ($total_archive_content == 'full-content') {
+            ?>
+            <div class="entry-content">
+                <?php the_content(); ?>
+            </div><!-- .entry-content -->
+            <?php
+        } elseif ($total_archive_content == 'wp-excerpt') {
+            ?>
+            <div class="entry-summary">
+                <?php the_excerpt(); ?>
+            </div><!-- .entry-summary -->
+            <?php
+        } elseif ($total_excerpt_length) {
+            ?>
+            <div class="entry-summary">
+                <?php echo esc_html(wp_trim_words(strip_shortcodes(get_the_content()), $total_excerpt_length)); ?>
+            </div><!-- .entry-summary -->
+            <?php
+        }
+
+        if ($total_readmore) {
+            ?>
+            <div class="entry-readmore">
+                <a href="<?php the_permalink(); ?>"><?php echo esc_html($total_readmore); ?></a>
+            </div>
+            <?php
+        }
+        ?>
     </div>
 </article><!-- #post-## -->

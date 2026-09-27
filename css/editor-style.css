@@ -371,3 +371,43 @@ del {
 .mce-content-body .wp-audio-playlist {
     margin: 0;
 }
+
+/* FAQ pattern */
+.wp-block-details.ht-faq-item {
+    margin: 0;
+    padding: 18px 0;
+    border-bottom: 1px solid #EEE;
+}
+
+.ht-faq-item summary {
+    position: relative;
+    padding-right: 30px;
+    color: var(--total-content-header-color);
+    font-size: 1.1em;
+    font-weight: 500;
+    list-style: none;
+    cursor: pointer;
+}
+
+.ht-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.ht-faq-item summary:after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    color: var(--total-template-color);
+    font-size: 1.4em;
+    line-height: 1;
+}
+
+.ht-faq-item[open] summary:after {
+    content: "\2212";
+}
+
+.ht-faq-item summary + * {
+    margin-top: 12px;
+}

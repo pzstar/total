@@ -43,6 +43,40 @@ jQuery(document).ready(function ($) {
         wp.customize.control('total_fluid_container_width', setupFluidLayout);
     });
 
+    /* Controls that depend on another setting. The settings preview live, so this runs here rather than in PHP. */
+    var totalShowWhen = function (controlId, settingIds, test) {
+        wp.customize.control(controlId, function (control) {
+            var values = settingIds.map(function (id) {
+                return wp.customize(id);
+            });
+            var visibility = function () {
+                control.container.toggleClass('customizer-hidden', !test.apply(null, values.map(function (v) {
+                    return v.get();
+                })));
+            };
+            visibility();
+            values.forEach(function (v) {
+                v.bind(visibility);
+            });
+        });
+    };
+
+    totalShowWhen('total_header_transparent', ['total_header_position'], function (position) {
+        return position === 'header-over';
+    });
+
+    totalShowWhen('total_transparent_menu_color', ['total_header_position', 'total_header_transparent'], function (position, transparent) {
+        return (position === 'header-over' && !!transparent) || !!total_ajax_data.page_transparent_header;
+    });
+
+    totalShowWhen('total_blog_grid_columns', ['total_blog_layout'], function (layout) {
+        return layout === 'blog-grid';
+    });
+
+    totalShowWhen('total_archive_excerpt_length', ['total_archive_content'], function (content) {
+        return content === 'excerpt';
+    });
+
     //Scroll to section
     $('body').on('click', '#sub-accordion-panel-total_home_panel .control-subsection .accordion-section-title', function (event) {
         var section_id = $(this).parent('.control-subsection').attr('id');

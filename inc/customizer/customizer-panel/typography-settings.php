@@ -15,6 +15,7 @@ $wp_customize->add_section('total_body_typography_section', array(
 $wp_customize->add_setting('total_body_family', array(
     'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_body_style', array(
@@ -91,6 +92,7 @@ $wp_customize->add_section('total_header_typography_section', array(
 $wp_customize->add_setting('total_h_family', array(
     'default' => 'Oswald',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_h_style', array(

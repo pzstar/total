@@ -52,6 +52,7 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_titletagl
 $wp_customize->add_setting('total_hide_title', array(
     'sanitize_callback' => 'total_sanitize_text',
     'default' => true,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control('total_hide_title', array(
@@ -63,6 +64,7 @@ $wp_customize->add_control('total_hide_title', array(
 $wp_customize->add_setting('total_hide_tagline', array(
     'sanitize_callback' => 'total_sanitize_text',
     'default' => true,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control('total_hide_tagline', array(
@@ -170,7 +172,10 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_main_head
             'icon' => 'dashicons dashicons-welcome-write-blog',
             'fields' => array(
                 'total_sticky_header_enable',
-                'total_enable_header_border'
+                'total_enable_header_border',
+                'total_header_position',
+                'total_header_transparent',
+                'total_transparent_menu_color'
             ),
             'active' => true,
         ),
@@ -202,12 +207,54 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_sticky
 
 $wp_customize->add_setting('total_enable_header_border', array(
     'sanitize_callback' => 'total_sanitize_text',
-    'default' => true
+    'default' => true,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_enable_header_border', array(
     'section' => 'total_main_header_section',
     'label' => esc_html__('Enable Header Top Border', 'total')
+)));
+
+// Same ids and defaults as Total Plus.
+$wp_customize->add_setting('total_header_position', array(
+    'sanitize_callback' => 'total_sanitize_choices',
+    'default' => 'header-above',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control('total_header_position', array(
+    'section' => 'total_main_header_section',
+    'type' => 'select',
+    'label' => esc_html__('Header Position', 'total'),
+    'description' => esc_html__('Pages with a hidden title keep the header above the content. Each page can override this in its Page Settings box.', 'total'),
+    'choices' => array(
+        'header-above' => esc_html__('Above Slider/Banner', 'total'),
+        'header-over' => esc_html__('Over Slider/Banner', 'total')
+    )
+));
+
+$wp_customize->add_setting('total_header_transparent', array(
+    'sanitize_callback' => 'total_sanitize_boolean',
+    'default' => false,
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_header_transparent', array(
+    'section' => 'total_main_header_section',
+    'label' => esc_html__('Enable Transparent Header', 'total'),
+    'description' => esc_html__('Applies when the header is over the slider or banner. The header turns solid once the page scrolls.', 'total')
+)));
+
+$wp_customize->add_setting('total_transparent_menu_color', array(
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'total_transparent_menu_color', array(
+    'section' => 'total_main_header_section',
+    'label' => esc_html__('Menu Color on Transparent Header', 'total'),
+    'description' => esc_html__('Colors the menu, icons, site title and tagline while the header is transparent, including on pages that turn it on in Page Settings. Use a light color over a dark slider.', 'total')
 )));
 
 $wp_customize->add_setting('total_mh_color_heading', array(
@@ -336,6 +383,17 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_pm_nav', 
     'section' => 'total_menu_settings',
     'buttons' => array(
         array(
+            'name' => esc_html__('Content', 'total'),
+            'icon' => 'dashicons dashicons-welcome-write-blog',
+            'fields' => array(
+                'total_mh_show_search',
+                'total_mh_show_cart',
+                'total_mh_show_cta',
+                'total_mh_show_cta_info',
+            ),
+            'active' => true,
+        ),
+        array(
             'name' => esc_html__('Style', 'total'),
             'icon' => 'dashicons dashicons-art',
             'fields' => array(
@@ -354,7 +412,6 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_pm_nav', 
                 'total_pm_menu_link_spacing',
                 'total_pm_submenu_link_spacing',
             ),
-            'active' => true,
         ),
         array(
             'name' => esc_html__('Typography', 'total'),
@@ -364,6 +421,52 @@ $wp_customize->add_control(new Total_Tab_Control($wp_customize, 'total_pm_nav', 
             ),
         ),
     )
+)));
+
+// Setting ids and defaults match Total Plus so the values carry over on upgrade.
+$wp_customize->add_setting('total_mh_show_search', array(
+    'sanitize_callback' => 'total_sanitize_boolean',
+    'default' => false,
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_mh_show_search', array(
+    'section' => 'total_menu_settings',
+    'label' => esc_html__('Display Search Button', 'total')
+)));
+
+if (total_is_woocommerce_activated()) {
+    $wp_customize->add_setting('total_mh_show_cart', array(
+        'sanitize_callback' => 'total_sanitize_boolean',
+        'default' => false,
+    'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_mh_show_cart', array(
+        'section' => 'total_menu_settings',
+        'label' => esc_html__('Display Cart Button', 'total')
+    )));
+}
+
+$wp_customize->add_setting('total_mh_show_cta', array(
+    'sanitize_callback' => 'total_sanitize_boolean',
+    'default' => false,
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_mh_show_cta', array(
+    'section' => 'total_menu_settings',
+    'label' => esc_html__('Display Header Button', 'total')
+)));
+
+$wp_customize->add_setting('total_mh_show_cta_info', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Text_Info_Control($wp_customize, 'total_mh_show_cta_info', array(
+    'section' => 'total_menu_settings',
+    /* translators: %s: link to the Header Button section */
+    'description' => sprintf(esc_html__('Set the button text, link and colors in %s.', 'total'), '<a href="javascript:wp.customize.section(\'total_header_button_section\').focus()">' . esc_html__('Header Button', 'total') . '</a>')
 )));
 
 /* * **************************************************************** */
@@ -467,6 +570,7 @@ $wp_customize->add_section('total_menu_typography', array(
 $wp_customize->add_setting('total_menu_family', array(
     'default' => 'Oswald',
     'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('total_menu_style', array(
@@ -530,9 +634,10 @@ $wp_customize->add_setting('total_menu_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_menu_upgrade_text', array(
     'section' => 'total_menu_settings',
-    'label' => esc_html__('Add search, social icons and a call to action button to your menu', 'total'),
+    'label' => esc_html__('Add social icons, a mini cart and more menu styles', 'total'),
     'choices' => array(
-        esc_html__('Option to display search button, social icons & CTA button', 'total'),
+        esc_html__('Option to display social icons in the menu', 'total'),
+        esc_html__('Mini cart dropdown on the cart button', 'total'),
         esc_html__('7 different menu styles', 'total'),
         esc_html__('Option to display different menu in mobile', 'total'),
         esc_html__('Set spacing of menu and submenu', 'total'),
@@ -545,18 +650,17 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'upgrade_url' => total_upgrade_url('menu', 'total-customizer')
 )));
 
-$wp_customize->selective_refresh->add_partial(
-    'blogname', array(
-        'selector' => '.site-title a',
-        'render_callback' => 'total_customize_partial_blogname',
-    )
-);
-$wp_customize->selective_refresh->add_partial(
-    'blogdescription', array(
-        'selector' => '.site-description',
-        'render_callback' => 'total_customize_partial_blogdescription',
-    )
-);
+$wp_customize->selective_refresh->add_partial('total_site_branding', array(
+    'selector' => '#ht-site-branding',
+    'settings' => array('blogname', 'blogdescription', 'total_hide_title', 'total_hide_tagline'),
+    'render_callback' => 'total_custom_logo',
+));
+
+$wp_customize->selective_refresh->add_partial('total_menu_extra_items', array(
+    'selector' => '.ht-menu-extra-items',
+    'settings' => array('total_mh_show_search', 'total_mh_show_cart', 'total_mh_show_cta', 'total_hb_text', 'total_hb_link', 'total_hb_open_new_tab'),
+    'render_callback' => 'total_nav_additional_items_markup',
+));
 
 /*
  *  Header sections that exist only in Pro.
@@ -575,13 +679,90 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-top-h
     'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
-$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-header-cta-upgrade-section', array(
-    'title' => esc_html__('Header CTA Button', 'total'),
+$wp_customize->add_section('total_header_button_section', array(
+    'title' => esc_html__('Header Button', 'total'),
+    'description' => esc_html__('The button displays at the end of the menu when "Display Header Button" is on in Menu Settings.', 'total'),
     'panel' => 'total_header_settings_panel',
-    'class' => 'ht--single-row ht--pro-row',
-    'upgrade_text' => esc_html__('Get Pro', 'total'),
-    'upgrade_url' => total_upgrade_url('sec-header-cta', 'total-customizer'),
-    'active_callback' => 'total_is_upgrade_notice_active'
+));
+
+$wp_customize->add_setting('total_hb_text', array(
+    'sanitize_callback' => 'total_sanitize_text',
+    'default' => esc_html__('Call Us', 'total'),
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control('total_hb_text', array(
+    'section' => 'total_header_button_section',
+    'type' => 'text',
+    'label' => esc_html__('Button Text', 'total')
+));
+
+$wp_customize->add_setting('total_hb_link', array(
+    'sanitize_callback' => 'total_sanitize_text',
+    'default' => '#',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control('total_hb_link', array(
+    'section' => 'total_header_button_section',
+    'type' => 'text',
+    'label' => esc_html__('Button Link', 'total'),
+    'description' => esc_html__('A page address, or tel: or mailto: followed by a number or email.', 'total')
+));
+
+$wp_customize->add_setting('total_hb_open_new_tab', array(
+    'sanitize_callback' => 'total_sanitize_boolean',
+    'default' => false,
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_hb_open_new_tab', array(
+    'section' => 'total_header_button_section',
+    'label' => esc_html__('Open in New Tab', 'total')
+)));
+
+$wp_customize->add_setting('total_hb_color_heading', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_hb_color_heading', array(
+    'section' => 'total_header_button_section',
+    'label' => esc_html__('Colors', 'total')
+)));
+
+$total_hb_colors = array(
+    'total_hb_bg_color' => esc_html__('Background Color', 'total'),
+    'total_hb_text_color' => esc_html__('Text Color', 'total'),
+    'total_hb_bg_hov_color' => esc_html__('Background Color on Hover', 'total'),
+    'total_hb_text_hov_color' => esc_html__('Text Color on Hover', 'total'),
+);
+
+foreach ($total_hb_colors as $total_hb_color_id => $total_hb_color_label) {
+    $wp_customize->add_setting($total_hb_color_id, array(
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $total_hb_color_id, array(
+        'section' => 'total_header_button_section',
+        'label' => $total_hb_color_label
+    )));
+}
+
+$wp_customize->add_setting('total_hb_borderradius', array(
+    'sanitize_callback' => 'absint',
+    'default' => 0,
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Total_Range_Slider_Control($wp_customize, 'total_hb_borderradius', array(
+    'section' => 'total_header_button_section',
+    'label' => esc_html__('Button Border Radius', 'total'),
+    'input_attrs' => array(
+        'min' => 0,
+        'max' => 100,
+        'step' => 1
+    )
 )));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-titlebar-upgrade-section', array(

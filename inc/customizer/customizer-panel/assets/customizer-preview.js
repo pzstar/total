@@ -496,6 +496,93 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    /* Font families: load the chosen Google font into the preview, then use it. */
+    $.each({total_body_family: 'body', total_menu_family: 'menu', total_h_family: 'h'}, function (setting, key) {
+        wp.customize(setting, function (value) {
+            value.bind(function (to) {
+                totalLoadFont(to);
+                totalDynamicCss(setting, '--total-' + key + '-family:' + to + ';');
+            });
+        });
+    });
+
+    /* Top borders of the header and footer. */
+    wp.customize('total_enable_header_border', function (value) {
+        value.bind(function (to) {
+            totalPreviewCss('total_enable_header_border', '.ht-header{border-top:' + (to ? '4px solid var(--total-template-color)' : '0') + '}');
+        });
+    });
+
+    wp.customize('total_enable_footer_border', function (value) {
+        value.bind(function (to) {
+            totalPreviewCss('total_enable_footer_border', '#ht-colophon{border-top:' + (to ? '4px solid var(--total-template-color)' : '0') + '}');
+        });
+    });
+
+    /* Header button colors and rounding. */
+    $.each({total_hb_bg_color: 'bg-color', total_hb_text_color: 'text-color', total_hb_bg_hov_color: 'bg-hov-color', total_hb_text_hov_color: 'text-hov-color'}, function (setting, key) {
+        wp.customize(setting, function (value) {
+            value.bind(function (to) {
+                totalDynamicCss(setting, to ? '--total-hb-' + key + ':' + to + ';' : '');
+            });
+        });
+    });
+
+    wp.customize('total_hb_borderradius', function (value) {
+        value.bind(function (to) {
+            totalDynamicCss('total_hb_borderradius', '--total-hb-border-radius:' + parseInt(to, 10) + 'px;');
+        });
+    });
+
+    wp.customize('total_transparent_menu_color', function (value) {
+        value.bind(function (to) {
+            totalDynamicCss('total_transparent_menu_color', to ? '--total-transparent-menu-color:' + to + ';' : '');
+        });
+    });
+
+    /* Header over the slider/banner and transparent header, as total_header_state() decides it. */
+    var totalHeaderState = function () {
+        var $body = $('body');
+        var over, transparent;
+
+        if ($body.hasClass('ht-preview-transparent-on')) {
+            over = transparent = true;
+        } else if ($body.hasClass('ht-preview-transparent-off') || wp.customize('total_header_position').get() !== 'header-over') {
+            over = transparent = false;
+        } else {
+            over = $body.hasClass('ht-preview-has-banner');
+            transparent = over && !!wp.customize('total_header_transparent').get();
+        }
+
+        $body.toggleClass('ht-header-over', over).toggleClass('ht-transparent-header', transparent);
+        document.documentElement.style.setProperty('--total-header-height', $('#ht-masthead').outerHeight() + 'px');
+    };
+
+    wp.customize('total_header_position', function (value) {
+        value.bind(totalHeaderState);
+    });
+
+    wp.customize('total_header_transparent', function (value) {
+        value.bind(totalHeaderState);
+    });
+
+    /* Elements printed in the preview even when off, so they can be shown and hidden here. */
+    wp.customize('total_backtotop', function (value) {
+        var toggle = function (to) {
+            totalPreviewCss('total_backtotop', to ? '' : '#ht-back-top{display:none !important}');
+        };
+        toggle(value.get());
+        value.bind(toggle);
+    });
+
+    wp.customize('total_breadcrumb_enable', function (value) {
+        var toggle = function (to) {
+            totalPreviewCss('total_breadcrumb_enable', to ? '' : '.breadcrumb-trail{display:none !important}');
+        };
+        toggle(value.get());
+        value.bind(toggle);
+    });
+
 });
 
 function totalDynamicCss(control, style) {
@@ -519,4 +606,23 @@ function totalConvertHex(hexcolor, opacity) {
         result = 'rgba(' + r + ',' + g + ',' + b + ',' + opacity / 100 + ')';
         return result;
     }
+}
+
+function totalPreviewCss(control, css) {
+    jQuery('style.' + control).remove();
+
+    if (css) {
+        jQuery('head').append('<style class="' + control + '">' + css + '</style>');
+    }
+}
+
+function totalLoadFont(family) {
+    var id = 'total-preview-font-' + String(family).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+    if (!family || document.getElementById(id)) {
+        return;
+    }
+
+    var weights = '100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic';
+    jQuery('head').append('<link id="' + id + '" rel="stylesheet" href="https://fonts.googleapis.com/css?family=' + encodeURIComponent(family).replace(/%20/g, '+') + ':' + weights + '&display=swap">');
 }

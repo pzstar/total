@@ -67,6 +67,49 @@ function total_shop_sidebar_content() {
     <?php
 }
 
+if (!function_exists('total_cart_link')) {
+
+    function total_cart_link() {
+        $count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
+        ?>
+        <a class="ht-cart-link" href="<?php echo esc_url(wc_get_cart_url()); ?>">
+            <i class="fas fa-cart-shopping" aria-hidden="true"></i>
+            <span class="ht-cart-count" aria-hidden="true"><?php echo esc_html($count); ?></span>
+            <span class="screen-reader-text">
+                <?php
+                /* translators: %d: number of items in the cart */
+                echo esc_html(sprintf(_n('Cart, %d item', 'Cart, %d items', $count, 'total'), $count));
+                ?>
+            </span>
+        </a>
+        <?php
+    }
+
+}
+
+function total_header_cart() {
+    if (!get_theme_mod('total_mh_show_cart', false)) {
+        return;
+    }
+    ?>
+    <div class="ht-menu-extra-item ht-menu-cart<?php echo is_cart() ? ' ht-current' : ''; ?>">
+        <?php total_cart_link(); ?>
+    </div>
+    <?php
+}
+
+add_action('total_nav_additional_items', 'total_header_cart', 20);
+
+// Refreshes the header count after an AJAX add to cart.
+function total_cart_link_fragment($fragments) {
+    ob_start();
+    total_cart_link();
+    $fragments['a.ht-cart-link'] = ob_get_clean();
+    return $fragments;
+}
+
+add_filter('woocommerce_add_to_cart_fragments', 'total_cart_link_fragment');
+
 add_filter('woocommerce_show_page_title', '__return_false');
 add_filter('woocommerce_product_description_heading', '__return_false');
 add_filter('woocommerce_product_additional_information_heading', '__return_false');

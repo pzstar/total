@@ -42,6 +42,12 @@ function total_dymanic_styles() {
     $submenu_link_color = get_theme_mod('total_pm_submenu_link_color');
     $submenu_link_hover_color = get_theme_mod('total_pm_submenu_link_hover_color');
     $submenu_link_hover_bg_color = get_theme_mod('total_pm_submenu_link_bg_color');
+    $hb_bg_color = get_theme_mod('total_hb_bg_color');
+    $hb_text_color = get_theme_mod('total_hb_text_color');
+    $hb_bg_hov_color = get_theme_mod('total_hb_bg_hov_color');
+    $hb_text_hov_color = get_theme_mod('total_hb_text_hov_color');
+    $hb_borderradius = get_theme_mod('total_hb_borderradius');
+    $transparent_menu_color = get_theme_mod('total_transparent_menu_color');
     $footer_bg_url = get_theme_mod('total_footer_bg_url', get_template_directory_uri() . '/images/footer-bg.jpg');
     $footer_bg_size = get_theme_mod('total_footer_bg_size', 'auto');
     $footer_bg_repeat = get_theme_mod('total_footer_bg_repeat', 'repeat');
@@ -118,6 +124,24 @@ function total_dymanic_styles() {
     }
     if ($submenu_link_hover_bg_color) {
         $custom_css .= "--total-submenu-link-hover-bg-color: {$submenu_link_hover_bg_color};";
+    }
+    if ($hb_bg_color) {
+        $custom_css .= "--total-hb-bg-color: {$hb_bg_color};";
+    }
+    if ($hb_text_color) {
+        $custom_css .= "--total-hb-text-color: {$hb_text_color};";
+    }
+    if ($hb_bg_hov_color) {
+        $custom_css .= "--total-hb-bg-hov-color: {$hb_bg_hov_color};";
+    }
+    if ($hb_text_hov_color) {
+        $custom_css .= "--total-hb-text-hov-color: {$hb_text_hov_color};";
+    }
+    if (is_numeric($hb_borderradius)) {
+        $custom_css .= "--total-hb-border-radius: {$hb_borderradius}px;";
+    }
+    if ($transparent_menu_color) {
+        $custom_css .= "--total-transparent-menu-color: {$transparent_menu_color};";
     }
 
     if ($footer_bg_url) {

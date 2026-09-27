@@ -28,20 +28,7 @@ if (!function_exists('total_home_content')) {
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
 
-                    <?php
-                    if (have_posts()):
-                        while (have_posts()):
-                            the_post();
-
-                            get_template_part('template-parts/content', 'summary');
-
-                        endwhile;
-
-                        the_posts_pagination();
-                    else:
-                        get_template_part('template-parts/content', 'none');
-                    endif;
-                    ?>
+                    <?php total_blog_loop(); ?>
 
                 </main><!-- #main -->
             </div><!-- #primary -->
@@ -136,17 +123,7 @@ if (!function_exists('total_archive_content')) {
             <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
 
-                    <?php
-                    if (have_posts()):
-                        while (have_posts()):
-                            the_post();
-                            get_template_part('template-parts/content', 'summary');
-                        endwhile;
-                        the_posts_pagination();
-                    else:
-                        get_template_part('template-parts/content', 'none');
-                    endif;
-                    ?>
+                    <?php total_blog_loop(); ?>
 
                 </main><!-- #main -->
             </div><!-- #primary -->
@@ -159,6 +136,46 @@ if (!function_exists('total_archive_content')) {
     }
 
 }
+if (!function_exists('total_blog_loop')) {
+
+    // The blog and archive post list; also re-rendered by the Customizer's live preview.
+    function total_blog_loop() {
+        if (have_posts()):
+            total_blog_grid_open();
+            while (have_posts()):
+                the_post();
+                get_template_part('template-parts/content', 'summary');
+            endwhile;
+            total_blog_grid_close();
+            the_posts_pagination();
+        else:
+            get_template_part('template-parts/content', 'none');
+        endif;
+    }
+
+}
+
+if (!function_exists('total_blog_grid_open')) {
+
+    function total_blog_grid_open() {
+        if (get_theme_mod('total_blog_layout', 'blog-layout1') == 'blog-grid') {
+            $columns = get_theme_mod('total_blog_grid_columns', '2') == '3' ? 3 : 2;
+            echo '<div class="ht-blog-grid ht-blog-grid-' . absint($columns) . '">';
+        }
+    }
+
+}
+
+if (!function_exists('total_blog_grid_close')) {
+
+    function total_blog_grid_close() {
+        if (get_theme_mod('total_blog_layout', 'blog-layout1') == 'blog-grid') {
+            echo '</div>';
+        }
+    }
+
+}
+
 add_action('total_home_template', 'total_home_header', 10);
 add_action('total_home_template', 'total_home_content', 20);
 

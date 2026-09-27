@@ -13,7 +13,7 @@ function total_sidebar_layout_meta_box() {
     $screens = array('post', 'page');
 
     add_meta_box(
-        'total_sidebar_layout', esc_html__('Sidebar Layout', 'total'), 'total_sidebar_layout_meta_box_callback', $screens, 'side', 'high'
+        'total_sidebar_layout', esc_html__('Page Settings', 'total'), 'total_sidebar_layout_meta_box_callback', $screens, 'side', 'high'
     );
 }
 
@@ -35,6 +35,10 @@ function total_sidebar_layout_meta_box_callback($post) {
      */
     $total_sidebar_layout = get_post_meta($post->ID, 'total_sidebar_layout', true);
     $total_hide_title = get_post_meta($post->ID, 'total_hide_title', true);
+    $total_transparent_header = get_post_meta($post->ID, 'total_transparent_header', true);
+    $total_content_width = get_post_meta($post->ID, 'total_content_width', true);
+    $total_no_header_space = get_post_meta($post->ID, 'total_disable_space_below_header', true);
+    $total_no_footer_space = get_post_meta($post->ID, 'total_disable_space_above_footer', true);
 
     if (!$total_sidebar_layout) {
         $total_sidebar_layout = 'right_sidebar';
@@ -65,8 +69,38 @@ function total_sidebar_layout_meta_box_callback($post) {
     echo '<p>';
     echo '<input type="checkbox" id="total_hide_title" name="total_hide_title" value="1" ' . checked($total_hide_title, 1, false) . ' />';
     echo '<label for="total_hide_title">';
-    echo esc_html__('Hide Title', 'total');
+    echo esc_html__('Hide Title Banner', 'total');
     echo '</label>';
+    echo '</p>';
+
+    echo '<p>';
+    echo '<label for="total_content_width">' . esc_html__('Content Width', 'total') . '</label><br>';
+    echo '<select id="total_content_width" name="total_content_width">';
+    echo '<option value="container" ' . selected($total_content_width, 'container', false) . '>' . esc_html__('Inside Container', 'total') . '</option>';
+    echo '<option value="full-width" ' . selected($total_content_width, 'full-width', false) . '>' . esc_html__('Full Width', 'total') . '</option>';
+    echo '</select>';
+    echo '</p>';
+
+    echo '<p>';
+    echo '<input type="checkbox" id="total_disable_space_below_header" name="total_disable_space_below_header" value="1" ' . checked($total_no_header_space, 1, false) . ' />';
+    echo '<label for="total_disable_space_below_header">' . esc_html__('Remove Space Below Header', 'total') . '</label><br>';
+    echo '<input type="checkbox" id="total_disable_space_above_footer" name="total_disable_space_above_footer" value="1" ' . checked($total_no_footer_space, 1, false) . ' />';
+    echo '<label for="total_disable_space_above_footer">' . esc_html__('Remove Space Above Footer', 'total') . '</label>';
+    echo '</p>';
+
+    $transparent_choices = array(
+        '' => esc_html__('Default (from Customizer)', 'total'),
+        'on' => esc_html__('On: over the content', 'total'),
+        'off' => esc_html__('Off', 'total'),
+    );
+    echo '<p>';
+    echo '<label for="total_transparent_header">' . esc_html__('Transparent Header', 'total') . '</label><br>';
+    echo '<select id="total_transparent_header" name="total_transparent_header">';
+    foreach ($transparent_choices as $value => $label) {
+        echo '<option value="' . esc_attr($value) . '" ' . selected($total_transparent_header, $value, false) . '>' . esc_html($label) . '</option>';
+    }
+    echo '</select>';
+    echo '<span class="description" style="display:block;margin-top:4px">' . esc_html__('"On" places a transparent header over the top of the page, even with the title hidden, e.g. over a full-width Elementor hero.', 'total') . '</span>';
     echo '</p>';
 }
 
@@ -114,6 +148,22 @@ function total_sidebar_layout_save_meta_box($post_id) {
 
     $total_hide_title = isset($_POST['total_hide_title']) ? true : false;
     update_post_meta($post_id, 'total_hide_title', $total_hide_title);
+    // Total Plus reads the banner setting from this key.
+    update_post_meta($post_id, 'total_hide_titlebar', $total_hide_title);
+
+    $total_content_width = isset($_POST['total_content_width']) && $_POST['total_content_width'] === 'full-width' ? 'full-width' : 'container';
+    update_post_meta($post_id, 'total_content_width', $total_content_width);
+
+    foreach (array('total_disable_space_below_header', 'total_disable_space_above_footer') as $total_space_key) {
+        update_post_meta($post_id, $total_space_key, isset($_POST[$total_space_key]) ? true : false);
+    }
+
+    $total_transparent_header = isset($_POST['total_transparent_header']) ? sanitize_key(wp_unslash($_POST['total_transparent_header'])) : '';
+    if (in_array($total_transparent_header, array('on', 'off'), true)) {
+        update_post_meta($post_id, 'total_transparent_header', $total_transparent_header);
+    } else {
+        delete_post_meta($post_id, 'total_transparent_header');
+    }
 }
 
 add_action('save_post', 'total_sidebar_layout_save_meta_box');

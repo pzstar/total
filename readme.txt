@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.0
-Stable tag: 2.2.5
+Stable tag: 2.3.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,28 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.3.0 =
+* Header search with a full-screen search overlay - Added
+* Header button with its own text, link, colors and corner rounding - Added
+* Header cart icon with a live item count, for WooCommerce - Added
+* Transparent header over the slider or page banner, with its own menu color and an on/off switch for each page - Added
+* Blog grid layout with 2 or 3 columns, plus excerpt length and Read More text settings - Added
+* Show/hide switches for the posted date, author, comments, categories and tags, and an estimated reading time - Added
+* Previous and next post links on single posts - Added
+* Page Settings for full width content and for removing the space below the header or above the footer - Added
+* Social icons in the footer - Added
+* Block patterns: FAQ, How We Work, Video With Text, Contact Details, and About, Services and Contact pages - Added
+* Live preview in the Customizer for the header, blog, footer, font and other settings, without reloading the page - Added
+* Block editor now uses the Customizer's colors, fonts and content width - Changed
+* Carousel, portfolio, lightbox and counter scripts load only on pages that show the home sections - Changed
+* animate.css no longer loads, as the theme does not use it; add_filter('total_load_animate_css', '__return_true') loads it again - Changed
+* Header button link now defaults to # and opens in the same tab - Changed
+* Sidebar Layout box renamed Page Settings, with Hide Title renamed Hide Title Banner - Changed
+* Free Vs Pro table updated for the new free features and Total Plus 3.5.0 - Changed
+* Skip to content link could not be translated - Fixed
+* Menu button and submenu arrows had no labels for screen readers, and submenus did not open with the keyboard before the menu script loaded - Fixed
+* Site title and tagline did not update live in the Customizer - Fixed
+
 = 2.2.5 - Aug 18, 2026 =
 * Free Vs Pro comparison checked against Total Plus and corrected - Elementor widget count, custom widget count, featured block styles, Google Fonts claim, typography, GDPR and RTL rows
 * Free Vs Pro rows added for the Elementor sticky column/container, menu CTA button, page banner settings, social links, admin logo and the enable/disable options in Theme Options

@@ -275,25 +275,46 @@ endif;
  * Enqueue scripts and styles.
  */
 function total_scripts() {
+    // Libraries only the home page sections use; registered everywhere, loaded where the sections show.
+    wp_register_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), TOTAL_VERSION, true);
+    wp_register_script('isotope-pkgd', get_template_directory_uri() . '/js/isotope.pkgd.js', array('jquery', 'imagesloaded'), TOTAL_VERSION, true);
+    wp_register_script('nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.js', array('jquery'), TOTAL_VERSION, true);
+    wp_register_script('odometer', get_template_directory_uri() . '/js/odometer.js', array('jquery'), TOTAL_VERSION, true);
+    wp_register_script('waypoint', get_template_directory_uri() . '/js/waypoint.js', array('jquery'), TOTAL_VERSION, true);
+    wp_register_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), TOTAL_VERSION);
+    wp_register_style('nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css', array(), TOTAL_VERSION);
+
+    $load_section_scripts = apply_filters('total_load_section_scripts', total_is_home_sections_page());
+
     wp_enqueue_script('jquery-nav', get_template_directory_uri() . '/js/jquery.nav.js', array('jquery'), TOTAL_VERSION, true);
-    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), TOTAL_VERSION, true);
-    wp_enqueue_script('isotope-pkgd', get_template_directory_uri() . '/js/isotope.pkgd.js', array('jquery', 'imagesloaded'), TOTAL_VERSION, true);
-    wp_enqueue_script('nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.js', array('jquery'), TOTAL_VERSION, true);
+    if ($load_section_scripts) {
+        wp_enqueue_script('owl-carousel');
+        wp_enqueue_script('isotope-pkgd');
+        wp_enqueue_script('nivo-lightbox');
+    }
     wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), TOTAL_VERSION, true);
-    wp_enqueue_script('odometer', get_template_directory_uri() . '/js/odometer.js', array('jquery'), TOTAL_VERSION, true);
-    wp_enqueue_script('waypoint', get_template_directory_uri() . '/js/waypoint.js', array('jquery'), TOTAL_VERSION, true);
+    if ($load_section_scripts) {
+        wp_enqueue_script('odometer');
+        wp_enqueue_script('waypoint');
+    }
     wp_enqueue_script('headroom', get_template_directory_uri() . '/js/headroom.js', array('jquery'), TOTAL_VERSION, true);
     wp_enqueue_script('total-custom', get_template_directory_uri() . '/js/total-custom.js', array('jquery'), TOTAL_VERSION, true);
     wp_localize_script('total-custom', 'total_localize', array(
         'template_path' => get_template_directory_uri(),
-        'is_rtl' => is_rtl() ? 'true' : 'false'
+        'is_rtl' => is_rtl() ? 'true' : 'false',
+        'submenu_label' => esc_html__('Show submenu', 'total')
     ));
 
-    wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), TOTAL_VERSION);
+    // Nothing in the theme uses animate.css any more; sites that added its classes to their own content can load it again.
+    if (apply_filters('total_load_animate_css', false)) {
+        wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), TOTAL_VERSION);
+    }
     wp_enqueue_style('fontawesome-6.4.2', get_template_directory_uri() . '/css/fontawesome-6.3.0.css', array(), TOTAL_VERSION);
     wp_enqueue_style('font-awesome-v4-shims', get_template_directory_uri() . '/css/v4-shims.css', array(), TOTAL_VERSION);
-    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), TOTAL_VERSION);
-    wp_enqueue_style('nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css', array(), TOTAL_VERSION);
+    if ($load_section_scripts) {
+        wp_enqueue_style('owl-carousel');
+        wp_enqueue_style('nivo-lightbox');
+    }
     wp_enqueue_style('total-style', get_stylesheet_uri(), array(), TOTAL_VERSION);
     wp_style_add_data('total-style', 'rtl', 'replace');
     wp_add_inline_style('total-style', total_dymanic_styles());
@@ -357,6 +378,19 @@ if (!function_exists('wp_body_open')) {
 
 add_filter('template_include', 'total_frontpage_template', 9999);
 
+// True where the home page sections render: the Home Page template, or the front page when total_frontpage_template() swaps it in.
+function total_is_home_sections_page() {
+    if (is_page_template('templates/home-template.php')) {
+        return true;
+    }
+
+    if (!get_theme_mod('total_enable_frontpage', false)) {
+        return false;
+    }
+
+    return is_front_page() || ('page' == get_option('show_on_front') && !get_option('page_on_front'));
+}
+
 function total_frontpage_template($template) {
     $enable_frontpage = get_theme_mod('total_enable_frontpage', false);
     $new_template = locate_template(array('templates/home-template.php'));
@@ -410,6 +444,11 @@ require get_template_directory() . '/inc/hooks.php';
  * Dynamic Styles additions.
  */
 require get_template_directory() . '/inc/style.php';
+
+/**
+ * Block editor colors, fonts and content width.
+ */
+require get_template_directory() . '/inc/editor.php';
 
 /**
  * Block pattern categories.
