@@ -36,7 +36,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * animate.css no longer loads, as the theme does not use it; add_filter('total_load_animate_css', '__return_true') loads it again - Changed
 * Header button link now defaults to # and opens in the same tab - Changed
 * Sidebar Layout box renamed Page Settings, with Hide Title renamed Hide Title Banner - Changed
-* Free Vs Pro table updated for the new free features and Total Plus 3.5.0 - Changed
+* Free Vs Pro table and the Customizer's Pro feature lists updated for the new free features and Total Plus 3.5.0, including the AI Site Builder, Write with AI and the FAQ, Video and Timeline sections - Changed
 * Skip to content link could not be translated - Fixed
 * Menu button and submenu arrows had no labels for screen readers, and submenus did not open with the keyboard before the menu script loaded - Fixed
 * Site title and tagline did not update live in the Customizer - Fixed

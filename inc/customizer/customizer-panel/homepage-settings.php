@@ -3,13 +3,16 @@
 /* ============PRO FEATURES============ */
 
 $total_pro_features = '<ul>
+	<li>' . esc_html__("AI Site Builder - describe your business and get a complete website, built with the home page sections or with Elementor", "total") . '</li>
+	<li>' . esc_html__("Write with AI for the home page sections and blocks, and AI agents that edit the home page sections through a draft", "total") . '</li>
 	<li>' . esc_html__("8 premium demos that can be imported with one click, each in a Customizer and an Elementor build", "total") . '</li>
-    <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
-    <li>' . esc_html__("18 Home Page Customizer sections with lots of variations", "total") . '</li>
-	<li>' . esc_html__("24 Elementor Elements", "total") . '</li>
+    <li>' . esc_html__("Elementor compatible - Build your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
+    <li>' . esc_html__("21 Home Page Customizer sections, including FAQ, Video and Timeline, with lots of variations", "total") . '</li>
+	<li>' . esc_html__("27 Elementor widgets", "total") . '</li>
+	<li>' . esc_html__("8 Gutenberg blocks - services, team, testimonials, counters, pricing, FAQ, timeline and portfolio", "total") . '</li>
     <li>' . esc_html__("25 custom widgets", "total") . '</li>
 	<li>' . esc_html__("Video, parallax and gradient background options for each section", "total") . '</li>
-	<li>' . esc_html__("5 icon packs for the icon picker (9000+ icons)", "total") . '</li>
+	<li>' . esc_html__("4 icon packs for the icon picker (11,000+ icons)", "total") . '</li>
 	<li>' . esc_html__("Unlimited slider with linkable button", "total") . '</li>
 	<li>' . esc_html__("Add unlimited blocks(like slider, team, testimonial) for each Section", "total") . '</li>
 	<li>' . esc_html__("Fully customizable options for Home Page blocks", "total") . '</li>
