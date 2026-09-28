@@ -1459,6 +1459,9 @@ $total_pro_home_sections = array(
     'contact' => array(esc_html__('Contact Section', 'total'), 165),
     'customa' => array(esc_html__('Custom Section A', 'total'), 166),
     'customb' => array(esc_html__('Custom Section B', 'total'), 167),
+    'faq' => array(esc_html__('FAQ Section', 'total'), 168),
+    'video' => array(esc_html__('Video Section', 'total'), 169),
+    'timeline' => array(esc_html__('Timeline Section', 'total'), 170),
 );
 
 foreach ($total_pro_home_sections as $total_pro_key => $total_pro_section) {
