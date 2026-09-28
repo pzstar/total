@@ -88,11 +88,13 @@ if (!function_exists('total_cart_link')) {
 }
 
 function total_header_cart() {
-    if (!get_theme_mod('total_mh_show_cart', false)) {
+    $show = get_theme_mod('total_mh_show_cart', false);
+    // Printed hidden in the preview, so its switch can show it instantly.
+    if (!$show && !is_customize_preview()) {
         return;
     }
     ?>
-    <div class="ht-menu-extra-item ht-menu-cart<?php echo is_cart() ? ' ht-current' : ''; ?>">
+    <div class="ht-menu-extra-item ht-menu-cart<?php echo is_cart() ? ' ht-current' : ''; ?>"<?php echo $show ? '' : ' hidden'; ?>>
         <?php total_cart_link(); ?>
     </div>
     <?php

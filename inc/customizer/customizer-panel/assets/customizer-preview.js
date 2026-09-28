@@ -566,6 +566,32 @@ jQuery(document).ready(function ($) {
         value.bind(totalHeaderState);
     });
 
+    /* Header search, cart and button: printed hidden in the preview when off, so their switches act instantly. */
+    var totalExtraItems = function () {
+        // The wrapper has spacing of its own, so it goes too when every item is off.
+        $('.ht-menu-extra-items').each(function () {
+            $(this).css('display', $(this).children('.ht-menu-extra-item:not([hidden])').length ? '' : 'none');
+        });
+    };
+
+    $.each({total_mh_show_search: '.ht-menu-search', total_mh_show_cart: '.ht-menu-cart', total_mh_show_cta: '.ht-menu-cta'}, function (setting, selector) {
+        wp.customize(setting, function (value) {
+            value.bind(function (to) {
+                $(selector).prop('hidden', !to);
+                totalExtraItems();
+            });
+        });
+    });
+
+    totalExtraItems();
+    if (wp.customize.selectiveRefresh) {
+        wp.customize.selectiveRefresh.bind('partial-content-rendered', function (placement) {
+            if (placement.partial.id === 'total_menu_extra_items') {
+                totalExtraItems();
+            }
+        });
+    }
+
     /* Elements printed in the preview even when off, so they can be shown and hidden here. */
     wp.customize('total_backtotop', function (value) {
         var toggle = function (to) {

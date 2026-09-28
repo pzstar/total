@@ -81,11 +81,13 @@ if (!function_exists('total_nav_additional_items_markup')) {
 if (!function_exists('total_header_search_button')) {
 
     function total_header_search_button() {
-        if (!get_theme_mod('total_mh_show_search', false)) {
+        $show = get_theme_mod('total_mh_show_search', false);
+        // Printed hidden in the preview, so its switch can show it instantly.
+        if (!$show && !is_customize_preview()) {
             return;
         }
         ?>
-        <div class="ht-menu-extra-item ht-menu-search">
+        <div class="ht-menu-extra-item ht-menu-search"<?php echo $show ? '' : ' hidden'; ?>>
             <button type="button" class="ht-search-toggle" aria-controls="ht-search-overlay" aria-expanded="false">
                 <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
                 <span class="screen-reader-text"><?php esc_html_e('Search', 'total'); ?></span>
@@ -122,7 +124,9 @@ if (!function_exists('total_header_search_overlay')) {
 if (!function_exists('total_header_button')) {
 
     function total_header_button() {
-        if (!get_theme_mod('total_mh_show_cta', false)) {
+        $show = get_theme_mod('total_mh_show_cta', false);
+        // Printed hidden in the preview, so its switch can show it instantly.
+        if (!$show && !is_customize_preview()) {
             return;
         }
 
@@ -134,7 +138,7 @@ if (!function_exists('total_header_button')) {
             return;
         }
         ?>
-        <div class="ht-menu-extra-item ht-menu-cta">
+        <div class="ht-menu-extra-item ht-menu-cta"<?php echo $show ? '' : ' hidden'; ?>>
             <a class="ht-header-button" href="<?php echo esc_url($link); ?>"<?php echo $new_tab ? ' target="_blank" rel="noopener"' : ''; ?>><?php echo wp_kses_post($text); ?></a>
         </div>
         <?php

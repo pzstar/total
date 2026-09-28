@@ -656,9 +656,10 @@ $wp_customize->selective_refresh->add_partial('total_site_branding', array(
     'render_callback' => 'total_custom_logo',
 ));
 
+// The show switches need no server trip: the preview prints the items hidden and customizer-preview.js shows them.
 $wp_customize->selective_refresh->add_partial('total_menu_extra_items', array(
     'selector' => '.ht-menu-extra-items',
-    'settings' => array('total_mh_show_search', 'total_mh_show_cart', 'total_mh_show_cta', 'total_hb_text', 'total_hb_link', 'total_hb_open_new_tab'),
+    'settings' => array('total_hb_text', 'total_hb_link', 'total_hb_open_new_tab'),
     'render_callback' => 'total_nav_additional_items_markup',
 ));
 
