@@ -2,7 +2,7 @@
 
 $wp_customize->add_section('total_footer_settings', array(
     'title' => esc_html__('Footer Settings', 'total'),
-    'priority' => 60
+    'priority' => 42
 ));
 
 $wp_customize->add_setting('total_footer_nav', array(

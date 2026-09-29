@@ -3,7 +3,7 @@
 /* ============HOME PANEL============ */
 $wp_customize->add_panel('total_home_panel', array(
     'title' => esc_html__('Home Sections', 'total'),
-    'priority' => 50,
+    'priority' => 43,
     'description' => esc_html__('Drag and Drop to Reorder', 'total') . '<img class="total-drag-spinner" src="' . admin_url('/images/spinner.gif') . '">',
 ));
 

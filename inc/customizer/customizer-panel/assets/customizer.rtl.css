@@ -29,6 +29,10 @@
     content: "\f15b";
 }
 
+#accordion-section-total_blog_archive_section .accordion-trigger:before {
+    content: "\f480";
+}
+
 #accordion-panel-total_home_panel .accordion-trigger:before {
     content: "\f102";
 }

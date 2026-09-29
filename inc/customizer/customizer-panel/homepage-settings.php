@@ -39,7 +39,7 @@ $total_pro_features = '<ul>
 	<li>' . esc_html__("Fully Multilingual and Translation ready", "total") . '</li>
 	<li>' . esc_html__("Fully RTL(Right to left) languages compatible", "total") . '</li>
 	</ul>
-	<a class="ht-implink button button-primary" href="' . esc_url(total_settings_page_url('free_vs_pro')) . '">' . esc_html__("Comparison - Free Vs Pro", "total") . '</a>';
+	<a class="ht-implink button button-primary" target="_blank" href="' . esc_url(total_settings_page_url('free_vs_pro')) . '">' . esc_html__("Comparison - Free Vs Pro", "total") . '</a>';
 
 // Seasonal campaigns swap the banner copy automatically - see total_get_active_campaign().
 $total_campaign = total_get_active_campaign();
