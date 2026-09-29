@@ -225,8 +225,8 @@
     </tr>
     <tr class="feature-row">
         <td>
-            <span><?php echo esc_html_x('Add a Section More Than Once', 'free vs pro content', 'total'); ?></span>
-            <p><?php echo esc_html_x('Add any home page section more than once, like a second FAQ, Pricing or Team section, each copy with its own content, style and colors.', 'free vs pro content', 'total'); ?></p>
+            <span><?php echo esc_html_x('Add Any Section, More Than Once', 'free vs pro content', 'total'); ?></span>
+            <p><?php echo esc_html_x('Build the home page from only the sections you need, each starting with sample content. Add any section more than once, like a second FAQ, Pricing or Team section, each with its own content, style and colors, and give each one its own name in the Customizer.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
