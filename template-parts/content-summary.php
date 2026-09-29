@@ -22,7 +22,7 @@
                 ?>
                 <figure class="entry-figure">
                     <?php ?>
-                    <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"></a>
+                    <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"<?php echo total_image_loading_attrs('lead'); ?>></a>
                 </figure>
                 <?php
             }

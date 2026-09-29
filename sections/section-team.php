@@ -51,7 +51,7 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
                                         }
                                         ?>
 
-                                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title(); ?>" />
+                                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"<?php echo total_image_loading_attrs(); ?> />
                                         <div class="ht-title-wrap">
                                             <h6><?php the_title(); ?></h6>
                                         </div>

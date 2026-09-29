@@ -36,7 +36,7 @@ if (get_theme_mod('total_logo_section_disable') != 'on') {
                     $image = wp_get_attachment_image_src($total_logo_image_single, 'full');
                     if (isset($image[0])) {
                         ?>
-                        <img class="no-lazyload" src="<?php echo esc_url($image[0]); ?>">
+                        <img class="no-lazyload" src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(get_post_meta($total_logo_image_single, '_wp_attachment_image_alt', true)); ?>">
                         <?php
                     }
                 }

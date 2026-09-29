@@ -481,3 +481,24 @@ if (!function_exists('total_is_woocommerce_activated')) {
     }
 
 }
+
+if (!function_exists('total_image_loading_attrs')) {
+
+    /*
+     * Loading hints for a theme image. 'slider': the first slide jumps the queue, the others load normally,
+     * as slides fade in place. 'lead': the first loads normally. Everything else loads lazily unless switched off.
+     */
+    function total_image_loading_attrs($role = '') {
+        static $first = array();
+        $is_first = $role && !isset($first[$role]);
+        $first[$role] = true;
+        if ('slider' === $role) {
+            return $is_first ? ' fetchpriority="high"' : '';
+        }
+        if ('lead' === $role && $is_first) {
+            return '';
+        }
+        return get_theme_mod('total_lazy_load_images', true) ? ' loading="lazy" decoding="async"' : '';
+    }
+
+}

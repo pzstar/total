@@ -82,7 +82,7 @@ if (get_theme_mod('total_portfolio_section_disable') != 'on') {
                                     <div class="ht-portfolio-outer-wrap">
                                         <div class="ht-portfolio-wrap" style="background-image: url(<?php echo esc_url($total_image[0]) ?>);">
 
-                                            <img class="no-lazyload" src="<?php echo esc_url($image_url); ?>" alt="<?php esc_attr(get_the_title()); ?>">
+                                            <img class="no-lazyload" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
 
                                             <div class="ht-portfolio-caption">
                                                 <h5><?php the_title(); ?></h5>

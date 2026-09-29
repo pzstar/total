@@ -358,6 +358,43 @@ if (!class_exists('Total_Welcome')):
             return '<a data-slug="' . esc_attr($slug) . '" data-filename="' . esc_attr($filename) . '" class="' . esc_attr($import_class) . '" href="' . $import_url . '">' . esc_html($import_button_text) . '</a>';
         }
 
+        // The first things to set up, each marked done from the site's own settings.
+        public function setup_steps() {
+            $demo_active = $this->check_plugin_active_state('hashthemes-demo-importer', 'hashthemes-demo-importer');
+            return array(
+                array(
+                    'title' => esc_html__('Show the home page sections', 'total'),
+                    'text' => esc_html__('Turn on "Enable Home Sections", then fill in each section under Home Sections.', 'total'),
+                    'done' => get_theme_mod('total_enable_frontpage', false) || ('page' === get_option('show_on_front') && 'templates/home-template.php' === get_page_template_slug(get_option('page_on_front'))),
+                    'url' => admin_url('customize.php?autofocus[section]=static_front_page'),
+                ),
+                array(
+                    'title' => esc_html__('Add your logo', 'total'),
+                    'text' => esc_html__('Upload a logo, or keep the site title as text.', 'total'),
+                    'done' => has_custom_logo(),
+                    'url' => admin_url('customize.php?autofocus[control]=custom_logo'),
+                ),
+                array(
+                    'title' => esc_html__('Set up the main menu', 'total'),
+                    'text' => esc_html__('Create a menu and assign it to the Primary Menu location.', 'total'),
+                    'done' => has_nav_menu('primary'),
+                    'url' => admin_url('customize.php?autofocus[panel]=nav_menus'),
+                ),
+                array(
+                    'title' => esc_html__('Choose your colors', 'total'),
+                    'text' => esc_html__('Set the theme color used for buttons, links and highlights.', 'total'),
+                    'done' => false !== get_theme_mod('total_template_color', false),
+                    'url' => admin_url('customize.php?autofocus[section]=colors'),
+                ),
+                array(
+                    'title' => esc_html__('Import a demo (optional)', 'total'),
+                    'text' => esc_html__('Start from a ready-made website instead of an empty one.', 'total'),
+                    'done' => (bool) get_option('hdi_last_imported_demo'),
+                    'url' => $demo_active ? admin_url('themes.php?page=hdi-demo-importer') : '',
+                ),
+            );
+        }
+
         public function erase_hide_notice() {
             delete_option('total_dismissed_notices');
             delete_option('total_first_activation');

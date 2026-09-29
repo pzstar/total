@@ -57,7 +57,7 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                                         $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-thumb');
                                         if (isset($total_image[0])) {
                                             ?>
-                                            <img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>">
+                                            <img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php echo esc_attr(get_the_title()); ?>"<?php echo total_image_loading_attrs(); ?>>
                                             <?php
                                         }
                                     }

@@ -235,6 +235,35 @@ $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_load_g
     'description' => esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with GDPR then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'total'),
 )));
 
+/* PERFORMANCE SECTION */
+$wp_customize->add_section('total_performance_section', array(
+    'title' => esc_html__('Performance', 'total'),
+    'panel' => 'total_general_settings_panel',
+    'priority' => 999
+));
+
+$wp_customize->add_setting('total_lazy_load_images', array(
+    'sanitize_callback' => 'total_sanitize_checkbox',
+    'default' => true
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_lazy_load_images', array(
+    'section' => 'total_performance_section',
+    'label' => esc_html__('Lazy Load Images', 'total'),
+    'description' => esc_html__('Images further down the page load as visitors scroll to them. Turn this off if a caching or image plugin already lazy loads images.', 'total'),
+)));
+
+$wp_customize->add_setting('total_load_fa4_shims', array(
+    'sanitize_callback' => 'total_sanitize_checkbox',
+    'default' => true
+));
+
+$wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_load_fa4_shims', array(
+    'section' => 'total_performance_section',
+    'label' => esc_html__('Support Old Icon Names', 'total'),
+    'description' => esc_html__('Keeps icons chosen with Font Awesome 4 names (such as "fa fa-star") working. Turn this off to skip one stylesheet if all your icons were chosen with the current icon picker.', 'total'),
+)));
+
 /* PRELOADER — Pro only, so the free theme shows where the setting lives */
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-preloader-upgrade-section', array(
     'title' => esc_html__('Preloader Settings', 'total'),

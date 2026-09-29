@@ -8,6 +8,7 @@ $total_pro_features = '<ul>
 	<li>' . esc_html__("8 premium demos that can be imported with one click, each in a Customizer and an Elementor build", "total") . '</li>
     <li>' . esc_html__("Elementor compatible - Build your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
     <li>' . esc_html__("21 Home Page Customizer sections, including FAQ, Video and Timeline, with lots of variations", "total") . '</li>
+    <li>' . esc_html__("Add a section more than once, like a second FAQ or Call to Action", "total") . '</li>
 	<li>' . esc_html__("27 Elementor widgets", "total") . '</li>
 	<li>' . esc_html__("8 Gutenberg blocks - services, team, testimonials, counters, pricing, FAQ, timeline and portfolio", "total") . '</li>
     <li>' . esc_html__("25 custom widgets", "total") . '</li>

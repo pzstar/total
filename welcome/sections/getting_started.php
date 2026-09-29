@@ -1,3 +1,34 @@
+<?php
+$total_steps = $this->setup_steps();
+$total_done = count(wp_list_filter($total_steps, array('done' => true)));
+?>
+<div class="welcome-setup-checklist">
+    <div class="welcome-setup-head">
+        <h3><?php esc_html_e('Set Up Your Website', 'total'); ?></h3>
+        <span class="welcome-setup-count"><?php /* translators: 1: steps done, 2: all steps */ printf(esc_html__('%1$d of %2$d done', 'total'), $total_done, count($total_steps)); ?></span>
+    </div>
+    <div class="welcome-setup-progress" role="progressbar" aria-valuemin="0" aria-valuemax="<?php echo count($total_steps); ?>" aria-valuenow="<?php echo absint($total_done); ?>" aria-label="<?php esc_attr_e('Setup progress', 'total'); ?>"><span style="width:<?php echo round(100 * $total_done / count($total_steps)); ?>%"></span></div>
+    <ol class="welcome-setup-steps">
+        <?php foreach ($total_steps as $total_step) { ?>
+            <li class="<?php echo $total_step['done'] ? 'is-done' : 'is-todo'; ?>">
+                <span class="welcome-setup-mark dashicons <?php echo $total_step['done'] ? 'dashicons-yes-alt' : 'dashicons-marker'; ?>" aria-hidden="true"></span>
+                <div class="welcome-setup-text">
+                    <strong><?php echo esc_html($total_step['title']); ?></strong>
+                    <span class="screen-reader-text"><?php echo $total_step['done'] ? esc_html__('(done)', 'total') : esc_html__('(to do)', 'total'); ?></span>
+                    <p><?php echo esc_html($total_step['text']); ?></p>
+                </div>
+                <?php
+                if ($total_step['url']) {
+                    echo '<a class="button' . ($total_step['done'] ? '' : ' button-primary') . '" href="' . esc_url($total_step['url']) . '">' . ($total_step['done'] ? esc_html__('Change', 'total') : esc_html__('Set up', 'total')) . '</a>';
+                } elseif (!$total_step['done']) {
+                    echo $this->generate_hdi_install_button();
+                }
+                ?>
+            </li>
+        <?php } ?>
+    </ol>
+</div>
+
 <div class="welcome-getting-started">
     <div class="welcome-manual-setup">
         <h3><?php echo esc_html__('Manual Setup', 'total'); ?></h3>

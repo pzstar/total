@@ -8,6 +8,9 @@
 
 jQuery(function ($) {
 
+    // Visitors who asked their system for less motion get no autoplay and no animated scrolling.
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     /* Sticky Header */
     var hHeight = 0;
     var adminbarHeight = 0;
@@ -55,7 +58,8 @@ jQuery(function ($) {
     if ($('#ht-bx-slider .ht-slide').length > 0 && $.fn.owlCarousel) {
         $('#ht-bx-slider').owlCarousel({
             rtl: JSON.parse(total_localize.is_rtl),
-            autoplay: true,
+            autoplay: !reduceMotion,
+            autoplayHoverPause: true,
             items: 1,
             loop: true,
             nav: true,
@@ -68,7 +72,8 @@ jQuery(function ($) {
     if ($.fn.owlCarousel) {
         $('.ht-testimonial-slider').owlCarousel({
             rtl: JSON.parse(total_localize.is_rtl),
-            autoplay: true,
+            autoplay: !reduceMotion,
+            autoplayHoverPause: true,
             items: 1,
             loop: true,
             nav: true,
@@ -79,7 +84,8 @@ jQuery(function ($) {
 
         $(".ht-logo-slider").owlCarousel({
             rtl: JSON.parse(total_localize.is_rtl),
-            autoplay: true,
+            autoplay: !reduceMotion,
+            autoplayHoverPause: true,
             items: 5,
             loop: true,
             nav: false,
@@ -101,6 +107,15 @@ jQuery(function ($) {
             }
         });
     }
+
+    // Carousels also pause while a keyboard user is inside them.
+    $('#ht-bx-slider, .ht-testimonial-slider, .ht-logo-slider').on('focusin', function () {
+        $(this).trigger('stop.owl.autoplay');
+    }).on('focusout', function () {
+        if (!reduceMotion) {
+            $(this).trigger('play.owl.autoplay', [7000]);
+        }
+    });
 
     if ($.fn.nivoLightbox) {
         $('.ht-portfolio-image').nivoLightbox();
@@ -251,7 +266,7 @@ jQuery(function ($) {
     $('.ht-sticky-header .ht-menu').onePageNav({
         currentClass: 'current',
         changeHash: false,
-        scrollSpeed: 750,
+        scrollSpeed: reduceMotion ? 0 : 750,
         scrollThreshold: 0.1,
         scrollOffset: onpageOffset
     });
@@ -262,7 +277,7 @@ jQuery(function ($) {
     if ($(anchorId).length > 0) {
         $('html, body').animate({
             scrollTop: $(anchorId).offset().top - onpageOffset
-        }, 1000);
+        }, reduceMotion ? 0 : 1000);
     }
 
     $(window).scroll(function () {
@@ -274,7 +289,7 @@ jQuery(function ($) {
     });
 
     $('#ht-back-top').click(function () {
-        $('html,body').animate({scrollTop: 0}, 800);
+        $('html,body').animate({scrollTop: 0}, reduceMotion ? 0 : 800);
     });
 
     if ($('.ht-portfolio-posts').length > 0 && $.fn.isotope) {

@@ -76,7 +76,7 @@ if (get_theme_mod('total_about_page_disable') != 'on') {
                 } else {
                     $total_about_image = get_theme_mod('total_about_image');
                     if ($total_about_image) {
-                        echo '<img alt="' . esc_html(get_the_title()) . '" src="' . esc_url($total_about_image) . '"/>';
+                        echo '<img alt="' . esc_attr(get_the_title()) . '" src="' . esc_url($total_about_image) . '"' . total_image_loading_attrs() . '/>';
                     }
                 }
                 ?>

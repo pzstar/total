@@ -31,6 +31,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Social icons in the footer - Added
 * Block patterns: FAQ, How We Work, Video With Text, Contact Details, and About, Services and Contact pages - Added
 * Live preview in the Customizer for the header, blog, footer, font and other settings, without reloading the page - Added
+* Setup checklist on the Getting Started page, showing which first steps are done - Added
+* Performance settings: lazy loading for theme images and an option to skip the Font Awesome 4 compatibility stylesheet - Added
+* Carousels pause on hover and keyboard focus, and don't autoplay or animate scrolling for visitors who prefer reduced motion - Added
+* Visible focus outline for keyboard users, and underlined links in post and page text - Added
+* Missing or broken image alt text in the Portfolio, Team, Testimonial, About and Clients Logo sections - Fixed
 * Block editor now uses the Customizer's colors, fonts and content width - Changed
 * Carousel, portfolio, lightbox and counter scripts load only on pages that show the home sections - Changed
 * animate.css no longer loads, as the theme does not use it; add_filter('total_load_animate_css', '__return_true') loads it again - Changed

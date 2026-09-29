@@ -691,3 +691,95 @@ body.toplevel_page_total-welcome #wpfooter a {
         margin-bottom: 0;
     }
 }
+
+/** Setup checklist **/
+.welcome-setup-checklist {
+    margin: 0 0 30px;
+    padding: 30px;
+    border: 1px solid #EEE;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, .04);
+}
+
+.welcome-setup-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 12px;
+}
+
+.welcome-setup-head h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.welcome-setup-count {
+    color: #50575e;
+    font-weight: 600;
+}
+
+.welcome-setup-progress {
+    height: 6px;
+    margin: 0 0 20px;
+    background: #f0f0f1;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.welcome-setup-progress span {
+    display: block;
+    height: 100%;
+    background: #00a32a;
+}
+
+.welcome-setup-steps {
+    margin: 0;
+    list-style: none;
+}
+
+.welcome-setup-steps li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+    padding: 14px 0;
+    border-top: 1px solid #f0f0f1;
+}
+
+.welcome-setup-steps li:first-child {
+    border-top: 0;
+}
+
+.welcome-setup-mark {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: #a7aaad;
+}
+
+.welcome-setup-steps li.is-done .welcome-setup-mark {
+    color: #00a32a;
+}
+
+.welcome-setup-text {
+    flex: 1;
+}
+
+.welcome-setup-text p {
+    margin: 4px 0 0;
+    color: #50575e;
+}
+
+.welcome-setup-steps li.is-done strong {
+    color: #50575e;
+}
+
+.welcome-setup-steps .button {
+    flex: none;
+}
+
+@media screen and (max-width: 782px) {
+    .welcome-setup-steps li {
+        flex-wrap: wrap;
+    }
+}
