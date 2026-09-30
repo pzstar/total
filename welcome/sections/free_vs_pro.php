@@ -248,6 +248,10 @@
                 <li><a href="https://demo.hashthemes.com/total-plus/tab-block/" target="_blank"><?php echo esc_html_x('Tabs - 5 styles', 'free vs pro content', 'total'); ?></a></li>
                 <li><a href="https://demo.hashthemes.com/total-plus/blog-section/" target="_blank"><?php echo esc_html_x('Blog Block - 4 styles', 'free vs pro content', 'total'); ?></a></li>
                 <li><a href="https://demo.hashthemes.com/total-plus/logo-carousel/" target="_blank"><?php echo esc_html_x('Client Logos - 4 styles', 'free vs pro content', 'total'); ?></a></li>
+                <li><?php echo esc_html_x('Call to Action - 4 styles', 'free vs pro content', 'total'); ?></li>
+                <li><?php echo esc_html_x('FAQ - 4 styles', 'free vs pro content', 'total'); ?></li>
+                <li><?php echo esc_html_x('Video - 4 styles', 'free vs pro content', 'total'); ?></li>
+                <li><?php echo esc_html_x('Timeline - 4 styles', 'free vs pro content', 'total'); ?></li>
             </ul>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>

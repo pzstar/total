@@ -36,30 +36,51 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'section' => 'total_blog_options_section',
     'label' => esc_html__('Reorder single post elements and add an author box, share buttons and related posts', 'total'),
     'choices' => array(
-        esc_html__('SINGLE POST  -', 'total'),
         esc_html__('Choose featured image size', 'total'),
         esc_html__('Display social share button', 'total'),
         esc_html__('Display Author Box & Related Post', 'total'),
         esc_html__('Show/Hide & Reorder all the elements with drag and drop', 'total'),
-        esc_html('----------------'),
-        esc_html__('BLOG/ARCHIVE PAGE  -', 'total'),
-        esc_html__('4 differently designed blog page', 'total'),
+        esc_html__('Reading progress bar with its own color and height', 'total'),
     ),
     'active_callback' => 'total_is_upgrade_notice_active',
     'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
     'upgrade_url' => total_upgrade_url('single-post', 'total-customizer')
 )));
 
+/* BLOG & ARCHIVE SECTION */
+// Setting ids match Total Plus so they carry over; defaults keep the free theme's existing output.
+$wp_customize->add_section('total_blog_archive_section', array(
+    'title' => esc_html__('Blog & Archive Settings', 'total'),
+    'description' => esc_html__('Applies to the blog page, category, tag, author and date archives.', 'total'),
+    'priority' => 44
+));
+
+$wp_customize->add_setting('total_blog_archive_upgrade_text', array(
+    'sanitize_callback' => 'total_sanitize_text'
+));
+
+$wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_blog_archive_upgrade_text', array(
+    'section' => 'total_blog_archive_section',
+    'priority' => 100,
+    'label' => esc_html__('More blog layouts, and a choice of which posts the blog page shows', 'total'),
+    'choices' => array(
+        esc_html__('5 blog layouts, including a card grid', 'total'),
+        esc_html__('Exclude categories from the blog page', 'total'),
+    ),
+    'active_callback' => 'total_is_upgrade_notice_active',
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'total'),
+    'upgrade_url' => total_upgrade_url('blog-archive', 'total-customizer')
+)));
+
 /*
- *  The four blog layouts the notice above refers to, shown rather than counted.
- *  These are Pro's Blog Layout choices, which cover the blog and archive pages.
+ *  Pro's blog layouts, shown rather than counted, next to the free Blog Layout choice.
  */
 $wp_customize->add_setting('total_blog_layout_preview', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));
 
 $wp_customize->add_control(new Total_Pro_Preview_Control($wp_customize, 'total_blog_layout_preview', array(
-    'section' => 'total_blog_options_section',
+    'section' => 'total_blog_archive_section',
     'priority' => 101,
     'label' => esc_html__('4 blog layouts in Total Pro', 'total'),
     'columns' => 2,
@@ -73,14 +94,6 @@ $wp_customize->add_control(new Total_Pro_Preview_Control($wp_customize, 'total_b
     'upgrade_url' => total_upgrade_url('preview-blog-layout', 'total-customizer'),
     'active_callback' => 'total_is_upgrade_notice_active'
 )));
-
-/* BLOG & ARCHIVE SECTION */
-// Setting ids match Total Plus so they carry over; defaults keep the free theme's existing output.
-$wp_customize->add_section('total_blog_archive_section', array(
-    'title' => esc_html__('Blog & Archive Settings', 'total'),
-    'description' => esc_html__('Applies to the blog page, category, tag, author and date archives.', 'total'),
-    'priority' => 44
-));
 
 $wp_customize->add_setting('total_blog_layout', array(
     'sanitize_callback' => 'total_sanitize_choices',

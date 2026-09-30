@@ -35,7 +35,7 @@
 
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/banner.jpg" alt="<?php echo esc_attr__('About us', 'total'); ?>" /></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/starter/banner-2.jpg" alt="<?php echo esc_attr__('About us', 'total'); ?>" /></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

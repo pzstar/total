@@ -27,7 +27,8 @@ if (get_theme_mod('total_logo_section_disable') != 'on') {
             $total_client_logo_image = get_theme_mod('total_client_logo_image');
             $total_client_logo_default = $total_client_logo_image ? $total_client_logo_image : '';
             $total_logo_image = get_theme_mod('total_logo_image', $total_client_logo_default);
-            $total_logo_image = explode(',', $total_logo_image);
+            // A comma separated list from the Customizer, or an array in the WordPress.org theme preview's starter content.
+            $total_logo_image = is_array($total_logo_image) ? $total_logo_image : explode(',', $total_logo_image);
             ?>
 
             <div class="ht-logo-slider owl-carousel">

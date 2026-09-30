@@ -20,8 +20,9 @@ $total_pro_features = '<ul>
 	<li>' . esc_html__("Animated section backgrounds - birds, fog, waves, particles, net and dots", "total") . '</li>
 	<li>' . esc_html__("Remove footer credit Text", "total") . '</li>
 	<li>' . esc_html__("6 header layouts and advanced header settings", "total") . '</li>
-	<li>' . esc_html__("4 blog layouts", "total") . '</li>
+	<li>' . esc_html__("5 blog layouts, including a card grid", "total") . '</li>
 	<li>' . esc_html__("In-built MegaMenu", "total") . '</li>
+	<li>' . esc_html__("Off-canvas panel opened from a header icon, with its own widget area", "total") . '</li>
 	<li>' . esc_html__("Advanced Typography options", "total") . '</li>
 	<li>' . esc_html__("Advanced color options", "total") . '</li>
 	<li>' . esc_html__("Top header bar", "total") . '</li>
@@ -31,6 +32,7 @@ $total_pro_features = '<ul>
 	<li>' . esc_html__("Advanced footer setting", "total") . '</li>
 	<li>' . esc_html__("Front page sections with full window height", "total") . '</li>
 	<li>' . esc_html__("Blog single page - Author Box, Social Share and Related Post", "total") . '</li>
+	<li>' . esc_html__("Reading progress bar on single posts", "total") . '</li>
 	<li>' . esc_html__("Google map option", "total") . '</li>
 	<li>' . esc_html__("Unlimited social links, each with its own icon from the icon picker", "total") . '</li>
 	<li>' . esc_html__("GDPR compliance and cookie consent bar", "total") . '</li>

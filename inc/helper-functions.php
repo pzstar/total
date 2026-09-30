@@ -8,7 +8,9 @@ if (!function_exists('total_excerpt')) {
 
     function total_excerpt($content, $letter_count) {
         $new_content = strip_shortcodes($content);
-        $new_content = wp_strip_all_tags($new_content);
+        // Keep a space where one paragraph, heading or line ends and the next begins.
+        $new_content = preg_replace('#</(p|div|h[1-6]|li|blockquote)>|<br\s*/?>#i', '$0 ', $new_content);
+        $new_content = trim(preg_replace('/\s+/', ' ', wp_strip_all_tags($new_content)));
         $content = mb_substr($new_content, 0, $letter_count);
 
         if (($letter_count !== 0) && (strlen($new_content) > $letter_count)) {
@@ -380,6 +382,61 @@ if (!function_exists('total_meta_dimension_css')) {
                 return $selector . '{' . $style . '}';
             }
         }
+    }
+
+}
+
+if (!function_exists('total_setup_section_post')) {
+
+    // Makes a post the current post for a home section; pair with wp_reset_postdata().
+    // get_post() rather than WP_Query, so posts held only in the object cache (starter content in the WordPress.org theme preview) are found too.
+    // Visibility follows WP_Query's single post rules, so users who can edit still see drafts, and the Customizer shows unpublished (auto-draft) starter content.
+    function total_setup_section_post($post_id) {
+        $section_post = $post_id ? get_post(absint($post_id)) : null;
+        $status = $section_post ? get_post_status_object(get_post_status($section_post)) : null;
+
+        if (!$status) {
+            return false;
+        } elseif ($status->public) {
+            $visible = true;
+        } elseif (!is_user_logged_in()) {
+            $visible = false;
+        } elseif ($status->protected) {
+            $visible = current_user_can('edit_post', $section_post->ID);
+        } elseif ($status->private) {
+            $visible = current_user_can('read_post', $section_post->ID);
+        } else {
+            $visible = false;
+        }
+
+        if (!$visible) {
+            return false;
+        }
+
+        $GLOBALS['post'] = $section_post;
+        setup_postdata($section_post);
+        return true;
+    }
+
+}
+
+if (!function_exists('total_customize_draft_post_ids')) {
+
+    // In the Customizer preview, the posts that this changeset's starter content created and that are still auto-drafts until it is published.
+    function total_customize_draft_post_ids($post_type = 'post') {
+        global $wp_customize;
+
+        if (!is_customize_preview() || !$wp_customize instanceof WP_Customize_Manager || !$wp_customize->get_setting('nav_menus_created_posts')) {
+            return array();
+        }
+
+        $post_ids = array();
+        foreach ((array) $wp_customize->get_setting('nav_menus_created_posts')->value() as $post_id) {
+            if ($post_type == get_post_type($post_id) && 'auto-draft' == get_post_status($post_id)) {
+                $post_ids[] = absint($post_id);
+            }
+        }
+        return $post_ids;
     }
 
 }

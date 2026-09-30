@@ -34,33 +34,28 @@ if (get_theme_mod('total_service_section_disable') != 'on') {
                         $total_service_page_icon = get_theme_mod('total_service_page_icon' . $i, 'far fa-bell');
 
                         if ($total_service_page_id) {
-                            $args = array('page_id' => absint($total_service_page_id));
-                            $query = new WP_Query($args);
-                            if ($query->have_posts()):
-                                while ($query->have_posts()):
-                                    $query->the_post();
-                                    ?>
-                                    <div class="ht-service-post ht-clearfix">
-                                        <div class="ht-service-icon"><i class="<?php echo esc_attr($total_service_page_icon); ?>"></i></div>
-                                        <div class="ht-service-excerpt">
-                                            <h5><?php the_title(); ?></h5>
-                                            <div class="ht-service-text">
-                                                <?php
-                                                if (has_excerpt() && '' != trim(get_the_excerpt())) {
-                                                    the_excerpt();
-                                                } else {
-                                                    echo esc_html(total_excerpt(get_the_content(), 100));
-                                                }
-                                                ?>
-                                                <br />
-                                                <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'total'); ?> <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
+                            if (total_setup_section_post($total_service_page_id)):
+                            ?>
+                            <div class="ht-service-post ht-clearfix">
+                                <div class="ht-service-icon"><i class="<?php echo esc_attr($total_service_page_icon); ?>"></i></div>
+                                <div class="ht-service-excerpt">
+                                    <h5><?php the_title(); ?></h5>
+                                    <div class="ht-service-text">
+                                        <?php
+                                        if (has_excerpt() && '' != trim(get_the_excerpt())) {
+                                            the_excerpt();
+                                        } else {
+                                            echo esc_html(total_excerpt(get_the_content(), 100));
+                                        }
+                                        ?>
+                                        <br />
+                                        <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'total'); ?> <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                                     </div>
-                                    <?php
-                                endwhile;
+                                </div>
+                            </div>
+                            <?php
+                                wp_reset_postdata();
                             endif;
-                            wp_reset_postdata();
                         }
                     }
                     ?>

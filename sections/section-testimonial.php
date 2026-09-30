@@ -29,17 +29,8 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                     $total_testimonial_page = get_theme_mod('total_testimonial_page');
 
                     if (is_array($total_testimonial_page)) {
-                        $args = array(
-                            'post_type' => 'page',
-                            'post__in' => $total_testimonial_page,
-                            'posts_per_page' => 8,
-                            'ignore_sticky_posts' => true,
-                            'orderby' => 'post__in'
-                        );
-                        $query = new WP_Query($args);
-                        if ($query->have_posts()):
-                            while ($query->have_posts()):
-                                $query->the_post();
+                        foreach (array_slice($total_testimonial_page, 0, 8) as $total_testimonial_page_id):
+                            if (total_setup_section_post($total_testimonial_page_id)):
                                 ?>
                                 <div class="ht-testimonial">
                                     <div class="ht-testimonial-excerpt">
@@ -65,9 +56,9 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                                     <h6><?php the_title(); ?></h6>
                                 </div>
                                 <?php
-                            endwhile;
-                        endif;
-                        wp_reset_postdata();
+                                wp_reset_postdata();
+                            endif;
+                        endforeach;
                     }
                     ?>
                 </div>

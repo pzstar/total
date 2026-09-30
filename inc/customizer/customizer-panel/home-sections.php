@@ -341,11 +341,11 @@ $wp_customize->add_setting('total_featured_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_featured_upgrade_text', array(
     'section' => 'total_featured_section',
-    'label' => total_section_upgrade_label('total_featured_page', 3, esc_html__('You have used all 3 featured blocks. Pro makes them unlimited and adds 7 layouts', 'total'), esc_html__('Free shows 3 featured blocks. Pro removes the limit and adds 7 layouts', 'total')),
+    'label' => total_section_upgrade_label('total_featured_page', 3, esc_html__('You have used all 3 featured blocks. Pro makes them unlimited, with 8 layouts', 'total'), esc_html__('Free shows 3 featured blocks. Pro removes the limit, with 8 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited featured block', 'total'),
         esc_html__('Display featured block with repeater instead of page with option of external url field', 'total'),
-        esc_html__('7 featured block layouts', 'total'),
+        esc_html__('8 featured block layouts', 'total'),
         esc_html__('11,000+ icons to choose from (4 icon packs)', 'total'),
         esc_html__('Configure no of column to display in a row', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
@@ -592,7 +592,7 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_servi
 
 $wp_customize->add_setting('total_service_left_bg', array(
     'sanitize_callback' => 'esc_url_raw',
-    'default' => get_template_directory_uri() . '/images/banner.jpg'
+    'default' => get_template_directory_uri() . '/images/starter/banner-2.jpg'
 ));
 
 $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'total_service_left_bg', array(
@@ -607,7 +607,7 @@ $wp_customize->add_setting('total_service_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_service_upgrade_text', array(
     'section' => 'total_service_section',
-    'label' => total_section_upgrade_label('total_service_page', 6, esc_html__('You have used all 6 service blocks. Pro makes them unlimited and adds 4 layouts', 'total'), esc_html__('Free shows 6 service blocks. Pro removes the limit and adds 4 layouts', 'total')),
+    'label' => total_section_upgrade_label('total_service_page', 6, esc_html__('You have used all 6 service blocks. Pro makes them unlimited, with 4 layouts', 'total'), esc_html__('Free shows 6 service blocks. Pro removes the limit, with 4 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited service block', 'total'),
         esc_html__('Display service block with repeater instead of page with option of external url field', 'total'),
@@ -791,7 +791,7 @@ $wp_customize->add_setting('total_team_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_team_upgrade_text', array(
     'section' => 'total_team_section',
-    'label' => total_section_upgrade_label('total_team_page', 4, esc_html__('You have used all 4 team members. Pro makes them unlimited and adds 6 layouts', 'total'), esc_html__('Free shows 4 team members. Pro removes the limit and adds 6 layouts', 'total')),
+    'label' => total_section_upgrade_label('total_team_page', 4, esc_html__('You have used all 4 team members. Pro makes them unlimited, with 6 layouts', 'total'), esc_html__('Free shows 4 team members. Pro removes the limit, with 6 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited team block', 'total'),
         esc_html__('Display team block with repeater instead of page with option of external url field', 'total'),
@@ -902,7 +902,7 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_count
 
 $wp_customize->add_setting('total_counter_bg', array(
     'sanitize_callback' => 'esc_url_raw',
-    'default' => get_template_directory_uri() . '/images/banner.jpg'
+    'default' => get_template_directory_uri() . '/images/starter/banner-1.jpg'
 ));
 
 $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'total_counter_bg', array(
@@ -964,7 +964,7 @@ $wp_customize->add_setting('total_counter_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_counter_upgrade_text', array(
     'section' => 'total_counter_section',
-    'label' => total_section_upgrade_label('total_counter_title', 4, esc_html__('You have used all 4 counters. Pro makes them unlimited and adds 4 layouts', 'total'), esc_html__('Free shows 4 counters. Pro removes the limit and adds 4 layouts', 'total')),
+    'label' => total_section_upgrade_label('total_counter_title', 4, esc_html__('You have used all 4 counters. Pro makes them unlimited, with 4 layouts', 'total'), esc_html__('Free shows 4 counters. Pro removes the limit, with 4 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited counter block', 'total'),
         esc_html__('4 counter block layouts', 'total'),
@@ -1394,7 +1394,7 @@ $wp_customize->add_control('total_cta_button2_link', array(
 
 $wp_customize->add_setting('total_cta_bg', array(
     'sanitize_callback' => 'esc_url_raw',
-    'default' => get_template_directory_uri() . '/images/banner.jpg'
+    'default' => get_template_directory_uri() . '/images/starter/banner-2.jpg'
 ));
 
 $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'total_cta_bg', array(
@@ -1430,6 +1430,8 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-upgra
     // The Pro-only sections now have a row each, so this box carries only what
     // those rows cannot say - what Pro adds to every section, free or not.
     'options' => array(
+        esc_html__('- Add any section except the slider more than once, each copy with its own content, style and colors', 'total'),
+        esc_html__('- Write with AI drafts the titles, text and items of each section', 'total'),
         esc_html__('- Every section above gains more layouts and customization options', 'total'),
         esc_html__('- Video, image motion, parallax and gradient backgrounds per section', 'total'),
         esc_html__('- Contact section includes a Google Map', 'total'),

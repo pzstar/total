@@ -32,34 +32,27 @@ if (get_theme_mod('total_featured_section_disable') != 'on') {
                     $total_featured_page_icon = get_theme_mod('total_featured_page_icon' . $i);
 
                     if ($total_featured_page_id) {
-                        $args = array(
-                            'page_id' => absint($total_featured_page_id)
-                        );
-                        $query = new WP_Query($args);
-                        if ($query->have_posts()):
-                            while ($query->have_posts()):
-                                $query->the_post();
-                                ?>
-                                <div class="ht-featured-post">
-                                    <div class="ht-featured-icon"><i class="<?php echo esc_attr($total_featured_page_icon); ?>"></i></div>
-                                    <h5><?php the_title(); ?></h5>
-                                    <div class="ht-featured-excerpt">
-                                        <?php
-                                        if (has_excerpt() && '' != trim(get_the_excerpt())) {
-                                            the_excerpt();
-                                        } else {
-                                            echo esc_html(total_excerpt(get_the_content(), 130));
-                                        }
-                                        ?>
-                                    </div>
-                                    <div class="ht-featured-link">
-                                        <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'total'); ?></a>
-                                    </div>
-                                </div>
+                        if (total_setup_section_post($total_featured_page_id)):
+                        ?>
+                        <div class="ht-featured-post">
+                            <div class="ht-featured-icon"><i class="<?php echo esc_attr($total_featured_page_icon); ?>"></i></div>
+                            <h5><?php the_title(); ?></h5>
+                            <div class="ht-featured-excerpt">
                                 <?php
-                            endwhile;
+                                if (has_excerpt() && '' != trim(get_the_excerpt())) {
+                                    the_excerpt();
+                                } else {
+                                    echo esc_html(total_excerpt(get_the_content(), 130));
+                                }
+                                ?>
+                            </div>
+                            <div class="ht-featured-link">
+                                <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'total'); ?></a>
+                            </div>
+                        </div>
+                        <?php
+                            wp_reset_postdata();
                         endif;
-                        wp_reset_postdata();
                     }
                 }
                 ?>

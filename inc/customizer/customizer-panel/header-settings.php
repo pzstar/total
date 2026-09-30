@@ -643,6 +643,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Set spacing of menu and submenu', 'total'),
         esc_html__('Set mobile menu breakpoint', 'total'),
         esc_html__('Inbuilt MegaMenu', 'total'),
+        esc_html__('Off-canvas panel opened from a menu icon, with its own widget area', 'total'),
     ),
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',

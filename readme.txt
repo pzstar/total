@@ -42,9 +42,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Header button link now defaults to # and opens in the same tab - Changed
 * Sidebar Layout box renamed Page Settings, with Hide Title renamed Hide Title Banner - Changed
 * Free Vs Pro table and the Customizer's Pro feature lists updated for the new free features and Total Plus 3.5.0, including the AI Site Builder, Write with AI and the FAQ, Video and Timeline sections - Changed
+* Starter content rewritten with real sample text, team and client photos, client logos, three blog posts with images and working section settings, so new sites and the WordPress.org theme preview show every home section filled in - Changed
 * Skip to content link could not be translated - Fixed
 * Menu button and submenu arrows had no labels for screen readers, and submenus did not open with the keyboard before the menu script loaded - Fixed
 * Site title and tagline did not update live in the Customizer - Fixed
+* Home sections showed only their titles in the WordPress.org theme preview, as their pages were looked up with a database query the preview's starter content can't answer - Fixed
+* Post excerpts in the home Blog, Featured, Service, Team and Testimonial sections ran paragraphs together with no space between them - Fixed
 
 = 2.2.5 - Aug 18, 2026 =
 * Free Vs Pro comparison checked against Total Plus and corrected - Elementor widget count, custom widget count, featured block styles, Google Fonts claim, typography, GDPR and RTL rows

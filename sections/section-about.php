@@ -19,28 +19,21 @@ if (get_theme_mod('total_about_page_disable') != 'on') {
                     } else if ($total_about_page_id == $page_for_posts) {
                         esc_html_e('You can not choose the page that is set as the Posts page. Please choose another Page in Settings > Reading', 'total');
                     } else {
-                        $args = array(
-                            'page_id' => absint($total_about_page_id)
-                        );
-                        $query = new WP_Query($args);
-                        if ($query->have_posts()):
-                            while ($query->have_posts()):
-                                $query->the_post();
-                                ?>
-                                    <h2 class="ht-section-title"><?php the_title(); ?></h2>
-                                    <div class="ht-content">
-                                        <?php
-                                        if (has_excerpt() && '' != trim(get_the_excerpt())) {
-                                            the_excerpt();
-                                        } else {
-                                            the_content();
-                                        }
-                                        ?>
-                                    </div>
+                        if (total_setup_section_post($total_about_page_id)):
+                        ?>
+                            <h2 class="ht-section-title"><?php the_title(); ?></h2>
+                            <div class="ht-content">
                                 <?php
-                            endwhile;
+                                if (has_excerpt() && '' != trim(get_the_excerpt())) {
+                                    the_excerpt();
+                                } else {
+                                    the_content();
+                                }
+                                ?>
+                            </div>
+                        <?php
+                            wp_reset_postdata();
                         endif;
-                        wp_reset_postdata();
                     }
                 }
                 ?>
