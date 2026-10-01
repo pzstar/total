@@ -420,6 +420,54 @@ if (!function_exists('total_setup_section_post')) {
 
 }
 
+if (!function_exists('total_section_repeater_items')) {
+
+    /*
+     * The items a home section shows when it is set to take its content from its repeater
+     * rather than from pages, or false when it uses pages.
+     *
+     * The page/repeater switch and the repeater itself are added to the Customizer by the
+     * HashThemes Demo Importer plugin. They use Total Plus's setting ids and item format, so
+     * the content carries over to Total Plus, and it keeps showing if the plugin is removed.
+     */
+    function total_section_repeater_items($section) {
+        $sections = array(
+            'slider' => array('total_slider_block_type', 'total_sliders'),
+            'featured' => array('total_featured_block_type', 'total_featured'),
+            'service' => array('total_service_block_type', 'total_service'),
+            'team' => array('total_team_block_type', 'total_team'),
+            'testimonial' => array('total_testimonial_block_type', 'total_testimonial'),
+        );
+
+        if (!isset($sections[$section]) || 'repeater' != get_theme_mod($sections[$section][0], 'page')) {
+            return false;
+        }
+
+        $items = json_decode(get_theme_mod($sections[$section][1], ''), true);
+        $enabled = array();
+
+        foreach (is_array($items) ? $items : array() as $item) {
+            if (is_array($item) && (!isset($item['enable']) || 'yes' == $item['enable'])) {
+                $enabled[] = $item;
+            }
+        }
+
+        return $enabled;
+    }
+
+}
+
+if (!function_exists('total_repeater_image_url')) {
+
+    // A repeater image, stored as a URL, at a registered image size when it is in the media library.
+    function total_repeater_image_url($url, $size = 'full') {
+        $attachment_id = $url ? attachment_url_to_postid($url) : 0;
+        $image = $attachment_id ? wp_get_attachment_image_src($attachment_id, $size) : false;
+        return isset($image[0]) ? $image[0] : $url;
+    }
+
+}
+
 if (!function_exists('total_customize_draft_post_ids')) {
 
     // In the Customizer preview, the posts that this changeset's starter content created and that are still auto-drafts until it is published.

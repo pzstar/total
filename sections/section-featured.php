@@ -27,32 +27,60 @@ if (get_theme_mod('total_featured_section_disable') != 'on') {
 
             <div class="ht-featured-post-wrap ht-clearfix">
                 <?php
-                for ($i = 1; $i < 4; $i++) {
-                    $total_featured_page_id = get_theme_mod('total_featured_page' . $i);
-                    $total_featured_page_icon = get_theme_mod('total_featured_page_icon' . $i);
+                $total_featured_items = total_section_repeater_items('featured');
 
-                    if ($total_featured_page_id) {
-                        if (total_setup_section_post($total_featured_page_id)):
+                if (false !== $total_featured_items) {
+                    foreach ($total_featured_items as $total_featured_item) {
+                        $total_featured_item = wp_parse_args($total_featured_item, array('icon' => '', 'title' => '', 'content' => '', 'link_text' => '', 'link' => ''));
+
+                        if ('' === trim($total_featured_item['title'] . $total_featured_item['content'])) {
+                            continue;
+                        }
                         ?>
                         <div class="ht-featured-post">
-                            <div class="ht-featured-icon"><i class="<?php echo esc_attr($total_featured_page_icon); ?>"></i></div>
-                            <h5><?php the_title(); ?></h5>
+                            <?php if ($total_featured_item['icon']) { ?>
+                                <div class="ht-featured-icon"><i class="<?php echo esc_attr($total_featured_item['icon']); ?>"></i></div>
+                            <?php } ?>
+                            <h5><?php echo esc_html($total_featured_item['title']); ?></h5>
                             <div class="ht-featured-excerpt">
-                                <?php
-                                if (has_excerpt() && '' != trim(get_the_excerpt())) {
-                                    the_excerpt();
-                                } else {
-                                    echo esc_html(total_excerpt(get_the_content(), 130));
-                                }
-                                ?>
+                                <?php echo wp_kses_post($total_featured_item['content']); ?>
                             </div>
-                            <div class="ht-featured-link">
-                                <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'total'); ?></a>
-                            </div>
+                            <?php if ($total_featured_item['link'] && $total_featured_item['link_text']) { ?>
+                                <div class="ht-featured-link">
+                                    <a href="<?php echo esc_url($total_featured_item['link']); ?>"><?php echo esc_html($total_featured_item['link_text']); ?></a>
+                                </div>
+                            <?php } ?>
                         </div>
                         <?php
-                            wp_reset_postdata();
-                        endif;
+                    }
+                } else {
+                    for ($i = 1; $i < 4; $i++) {
+                        $total_featured_page_id = get_theme_mod('total_featured_page' . $i);
+                        $total_featured_page_icon = get_theme_mod('total_featured_page_icon' . $i);
+
+                        if ($total_featured_page_id) {
+                            if (total_setup_section_post($total_featured_page_id)):
+                            ?>
+                            <div class="ht-featured-post">
+                                <div class="ht-featured-icon"><i class="<?php echo esc_attr($total_featured_page_icon); ?>"></i></div>
+                                <h5><?php the_title(); ?></h5>
+                                <div class="ht-featured-excerpt">
+                                    <?php
+                                    if (has_excerpt() && '' != trim(get_the_excerpt())) {
+                                        the_excerpt();
+                                    } else {
+                                        echo esc_html(total_excerpt(get_the_content(), 130));
+                                    }
+                                    ?>
+                                </div>
+                                <div class="ht-featured-link">
+                                    <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'total'); ?></a>
+                                </div>
+                            </div>
+                            <?php
+                                wp_reset_postdata();
+                            endif;
+                        }
                     }
                 }
                 ?>

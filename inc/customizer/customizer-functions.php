@@ -157,6 +157,123 @@ if (!function_exists('total_percentage')) {
 
 }
 
+if (!function_exists('total_custom_content_sections')) {
+
+    /*
+     * The home sections that can show their own items instead of pages, entered with the
+     * HashThemes Demo Importer plugin: each one's "Content From" setting, what its items are
+     * called, and its page controls. The plugin uses the same setting ids and control patterns.
+     */
+    function total_custom_content_sections() {
+        return array(
+            'total_slider_section' => array('total_slider_block_type', esc_html__('slides', 'total'), '/^(total_slider_(heading|page)\d+|total_slider_info)$/'),
+            'total_featured_section' => array('total_featured_block_type', esc_html__('featured blocks', 'total'), '/^total_featured_(header|page|page_icon)\d+$/'),
+            'total_service_section' => array('total_service_block_type', esc_html__('services', 'total'), '/^total_service_(header|page|page_icon)\d+$/'),
+            'total_team_section' => array('total_team_block_type', esc_html__('team members', 'total'), '/^total_team_(heading|page|designation|facebook|twitter|instagram|linkedin)\d+$/'),
+            'total_testimonial_section' => array('total_testimonial_block_type', esc_html__('testimonials', 'total'), '/^total_testimonial_(header|page)$/'),
+        );
+    }
+
+}
+
+if (!function_exists('total_custom_content_editable')) {
+
+    // The plugin's repeaters are loaded, or Total Plus (which has its own) is active.
+    function total_custom_content_editable() {
+        return class_exists('HDI_Total_Home_Sections') || class_exists('TotalPlus');
+    }
+
+}
+
+if (!function_exists('total_add_custom_content_notice')) {
+
+    /*
+     * While the HashThemes Demo Importer plugin is missing, inactive or too old to add a section's
+     * own items, a note in the section with a link to install, activate or update it. A section that
+     * already shows its own items keeps showing them, and the note says so.
+     */
+    function total_add_custom_content_notice($wp_customize, $section) {
+        $sections = total_custom_content_sections();
+
+        if (total_custom_content_editable() || !isset($sections[$section])) {
+            return;
+        }
+
+        // Customizer previews run on the front end, where this file isn't loaded.
+        if (!function_exists('is_plugin_active')) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+
+        $plugin = 'hashthemes-demo-importer/hashthemes-demo-importer.php';
+        $items = $sections[$section][1];
+        $showing_custom = 'repeater' == get_theme_mod($sections[$section][0], 'page');
+
+        if (!file_exists(WP_PLUGIN_DIR . '/' . $plugin)) {
+            $capability = 'install_plugins';
+            $url = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=hashthemes-demo-importer'), 'install-plugin_hashthemes-demo-importer');
+            $link_text = esc_html__('Install plugin', 'total');
+            /* translators: %s: what the section's items are called, such as slides or team members */
+            $text = $showing_custom ? esc_html__('This section is showing your custom %s. Install HashThemes Demo Importer to edit them.', 'total') : esc_html__('Add your own %s here instead of using pages. Install the free HashThemes Demo Importer plugin to get started.', 'total');
+        } elseif (!is_plugin_active($plugin)) {
+            $capability = 'activate_plugins';
+            $url = wp_nonce_url(self_admin_url('plugins.php?action=activate&plugin=' . rawurlencode($plugin)), 'activate-plugin_' . $plugin);
+            $link_text = esc_html__('Activate plugin', 'total');
+            /* translators: %s: what the section's items are called, such as slides or team members */
+            $text = $showing_custom ? esc_html__('This section is showing your custom %s. Activate HashThemes Demo Importer to edit them.', 'total') : esc_html__('Add your own %s here instead of using pages. Activate the HashThemes Demo Importer plugin to get started.', 'total');
+        } else {
+            $capability = 'update_plugins';
+            $url = self_admin_url('plugins.php?plugin_status=upgrade');
+            $link_text = esc_html__('Update plugin', 'total');
+            /* translators: %s: what the section's items are called, such as slides or team members */
+            $text = $showing_custom ? esc_html__('This section is showing your custom %s. Update HashThemes Demo Importer to edit them.', 'total') : esc_html__('Update HashThemes Demo Importer to add your own %s here instead of using pages.', 'total');
+        }
+
+        if (!current_user_can($capability)) {
+            return;
+        }
+
+        $id = $section . '_custom_content_notice';
+
+        $wp_customize->add_setting($id, array(
+            'sanitize_callback' => 'total_sanitize_text'
+        ));
+
+        $wp_customize->add_control(new Total_Text_Info_Control($wp_customize, $id, array(
+            'settings' => $id,
+            'section' => $section,
+            'label' => esc_html__('Custom Content', 'total'),
+            'description' => sprintf($text, $items) . ' <a href="' . esc_url($url) . '" target="_blank">' . $link_text . '</a>',
+        )));
+    }
+
+}
+
+if (!function_exists('total_hide_unused_page_controls')) {
+
+    /*
+     * A section left on its own items while the plugin that edits them is off keeps showing those
+     * items, so its page controls would change nothing. Hide them until the plugin is back.
+     */
+    function total_hide_unused_page_controls($wp_customize) {
+        if (total_custom_content_editable()) {
+            return;
+        }
+
+        foreach (total_custom_content_sections() as $section => $args) {
+            if ('repeater' != get_theme_mod($args[0], 'page')) {
+                continue;
+            }
+
+            foreach ($wp_customize->controls() as $control) {
+                if ($section === $control->section && preg_match($args[2], $control->id)) {
+                    $control->active_callback = '__return_false';
+                }
+            }
+        }
+    }
+
+}
+
 if (!function_exists('total_is_upgrade_notice_active')) {
 
     function total_is_upgrade_notice_active() {

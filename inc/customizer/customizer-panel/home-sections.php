@@ -42,6 +42,9 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_slider
 )));
 
 //SLIDERS
+// A note on getting the plugin that lets this section show its own items instead of pages.
+total_add_custom_content_notice($wp_customize, 'total_slider_section');
+
 for ($i = 1; $i < 4; $i++) {
 
     $wp_customize->add_setting('total_slider_heading' . $i, array(
@@ -83,15 +86,14 @@ $wp_customize->add_setting('total_slider_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_slider_upgrade_text', array(
     'section' => 'total_slider_section',
-    'label' => esc_html__('Slides come from pages here. Pro adds unlimited slides with their own image, caption and button', 'total'),
+    'label' => esc_html__('Pro adds unlimited slides, Revolution Slider or a single banner, and slider timing and colors', 'total'),
     'choices' => array(
         esc_html__('Unlimited slider blocks', 'total'),
-        esc_html__('Repeatable slider block with image, caption and button fields instead of page', 'total'),
+        esc_html__('A button with its own link, and left, center or right text, for each slide', 'total'),
         esc_html__('Option for Revolution slider or single banner display with text', 'total'),
-        esc_html__('Option to link slider externally with button', 'total'),
         esc_html__('Option to configure slider pause duration', 'total'),
         esc_html__('Option to change caption background and text color', 'total'),
-        esc_html__('Advanced slider settings', 'total'),
+        esc_html__('Slide transition, slider height, autoplay, arrows and dots', 'total'),
     ),
     'priority' => 100,
     'active_callback' => 'total_is_upgrade_notice_active',
@@ -234,6 +236,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'label' => esc_html__('Add a video, gradient or motion background to this section', 'total'),
     'choices' => array(
         esc_html__('Option to disable the Right Image', 'total'),
+        esc_html__('Unlimited progress bars, with their own colors', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total')
     ),
     'priority' => 100,
@@ -301,6 +304,9 @@ $wp_customize->add_control('total_featured_sub_title', array(
     'label' => esc_html__('Sub Title', 'total'),
 ));
 
+// A note on getting the plugin that lets this section show its own items instead of pages.
+total_add_custom_content_notice($wp_customize, 'total_featured_section');
+
 //FEATURED PAGES
 for ($i = 1; $i < 4; $i++) {
     $wp_customize->add_setting('total_featured_header' . $i, array(
@@ -344,10 +350,10 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'label' => total_section_upgrade_label('total_featured_page', 3, esc_html__('You have used all 3 featured blocks. Pro makes them unlimited, with 8 layouts', 'total'), esc_html__('Free shows 3 featured blocks. Pro removes the limit, with 8 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited featured block', 'total'),
-        esc_html__('Display featured block with repeater instead of page with option of external url field', 'total'),
         esc_html__('8 featured block layouts', 'total'),
         esc_html__('11,000+ icons to choose from (4 icon packs)', 'total'),
         esc_html__('Configure no of column to display in a row', 'total'),
+        esc_html__('Colors for the block background, border, icon, title and text', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -453,6 +459,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Order portfolio by date, title or random in ascending or descending order', 'total'),
         esc_html__('Option to show/hide zoom and link button', 'total'),
         esc_html__('Enable/Disable gap between portfolio images', 'total'),
+        esc_html__('Full width layout, and colors for the tabs, hover and buttons', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -545,6 +552,9 @@ $wp_customize->add_control('total_service_sub_title', array(
     'label' => esc_html__('Sub Title', 'total')
 ));
 
+// A note on getting the plugin that lets this section show its own items instead of pages.
+total_add_custom_content_notice($wp_customize, 'total_service_section');
+
 //SERVICE PAGES
 for ($i = 1; $i < 7; $i++) {
     $wp_customize->add_setting('total_service_header' . $i, array(
@@ -610,10 +620,10 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'label' => total_section_upgrade_label('total_service_page', 6, esc_html__('You have used all 6 service blocks. Pro makes them unlimited, with 4 layouts', 'total'), esc_html__('Free shows 6 service blocks. Pro removes the limit, with 4 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited service block', 'total'),
-        esc_html__('Display service block with repeater instead of page with option of external url field', 'total'),
         esc_html__('4 service block layouts', 'total'),
         esc_html__('11,000+ icons to choose from (4 icon packs)', 'total'),
         esc_html__('Display image postion in left or right', 'total'),
+        esc_html__('Colors for the icon, title, text and Read More link', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -703,6 +713,9 @@ $wp_customize->add_control('total_team_sub_title', array(
     'type' => 'textarea',
     'label' => esc_html__('Sub Title', 'total')
 ));
+
+// A note on getting the plugin that lets this section show its own items instead of pages.
+total_add_custom_content_notice($wp_customize, 'total_team_section');
 
 //TEAM PAGES
 for ($i = 1; $i < 5; $i++) {
@@ -794,10 +807,10 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'label' => total_section_upgrade_label('total_team_page', 4, esc_html__('You have used all 4 team members. Pro makes them unlimited, with 6 layouts', 'total'), esc_html__('Free shows 4 team members. Pro removes the limit, with 6 layouts', 'total')),
     'choices' => array(
         esc_html__('Unlimited team block', 'total'),
-        esc_html__('Display team block with repeater instead of page with option of external url field', 'total'),
         esc_html__('6 team block layouts', 'total'),
         esc_html__('Configure no of column to display in a row', 'total'),
         esc_html__('Display team in grid or carousel slider', 'total'),
+        esc_html__('Colors for the overlay, name, designation, text and social icons', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -969,6 +982,8 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Unlimited counter block', 'total'),
         esc_html__('4 counter block layouts', 'total'),
         esc_html__('11,000+ icons to choose from (4 icon packs)', 'total'),
+        esc_html__('Choose the number of columns and the counter font weight', 'total'),
+        esc_html__('Colors for the block, border, icon, title and number', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -1037,6 +1052,9 @@ $wp_customize->add_control('total_testimonial_sub_title', array(
     'label' => esc_html__('Sub Title', 'total')
 ));
 
+// A note on getting the plugin that lets this section show its own items instead of pages.
+total_add_custom_content_notice($wp_customize, 'total_testimonial_section');
+
 //TESTIMONIAL PAGES
 $wp_customize->add_setting('total_testimonial_header', array(
     'sanitize_callback' => 'total_sanitize_text'
@@ -1067,10 +1085,11 @@ $wp_customize->add_setting('total_testimonial_upgrade_text', array(
 
 $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_testimonial_upgrade_text', array(
     'section' => 'total_testimonial_section',
-    'label' => esc_html__('Add 4 testimonial layouts and write testimonials inline instead of as pages', 'total'),
+    'label' => esc_html__('Add 4 testimonial layouts and as many testimonials as you like', 'total'),
     'choices' => array(
-        esc_html__('Display testimonial block with repeater instead of page with option of external url field', 'total'),
         esc_html__('4 testimonial block layouts', 'total'),
+        esc_html__('A designation under each client\'s name', 'total'),
+        esc_html__('Slider pause duration, and colors for the block, name, text and arrows', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -1197,6 +1216,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
         esc_html__('Configure no of column to display in a row', 'total'),
         esc_html__('Control excerpt character', 'total'),
         esc_html__('Show/Hide date, author and comment', 'total'),
+        esc_html__('Colors for the title, text, date and Read More button', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -1287,6 +1307,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'choices' => array(
         esc_html__('Option to link the client logos to external url', 'total'),
         esc_html__('4 client logo layouts', 'total'),
+        esc_html__('Open logo links in a new tab, carousel timing and carousel colors', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -1414,6 +1435,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'choices' => array(
         esc_html__('4 CTA layouts', 'total'),
         esc_html__('Option to display video in CTA with popup', 'total'),
+        esc_html__('Colors for both buttons and the video play button', 'total'),
         esc_html__('Multiple background option(image, gradient, video) for the section', 'total'),
     ),
     'priority' => 100,
@@ -1433,6 +1455,9 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-upgra
         esc_html__('- Add any section except the slider more than once, each copy with its own content, style and colors', 'total'),
         esc_html__('- Write with AI drafts the titles, text and items of each section', 'total'),
         esc_html__('- Every section above gains more layouts and customization options', 'total'),
+        esc_html__('- A super title, 7 title styles and a More button for each section', 'total'),
+        esc_html__('- Top and bottom shape dividers, custom spacing and full window height for each section', 'total'),
+        esc_html__('- Separate colors for each section\'s titles, text and links', 'total'),
         esc_html__('- Video, image motion, parallax and gradient backgrounds per section', 'total'),
         esc_html__('- Contact section includes a Google Map', 'total'),
         esc_html__('- Custom Sections A and B build anything with Elementor', 'total'),
@@ -1477,3 +1502,6 @@ foreach ($total_pro_home_sections as $total_pro_key => $total_pro_section) {
         'active_callback' => 'total_is_upgrade_notice_active'
     )));
 }
+
+// Sections left showing their own items while the plugin that edits them is off: their page controls would change nothing.
+total_hide_unused_page_controls($wp_customize);

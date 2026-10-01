@@ -520,8 +520,8 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-    // Drag and drop to change order
-    $('.ht--repeater-field-control-wrap').sortable({
+    // Drag and drop to change order; a fixed repeater keeps its items in place
+    $('.ht--repeater-field-control-wrap').not('.ht--repeater-fixed').sortable({
         orientation: 'vertical',
         handle: '.ht--repeater-field-title',
         update: function (event, ui) {

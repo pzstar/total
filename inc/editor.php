@@ -26,10 +26,11 @@ if (!function_exists('total_editor_content_width')) {
             $container = absint(get_theme_mod('total_wide_container_width', 1170)) . 'px';
         }
 
-        $sidebar = $post_id ? get_post_meta($post_id, 'total_sidebar_layout', true) : '';
-        if ($sidebar == 'no_sidebar') {
+        // Total saves no_sidebar, Total Plus saves no-sidebar.
+        $sidebar = $post_id ? str_replace('_', '-', get_post_meta($post_id, 'total_sidebar_layout', true)) : '';
+        if ($sidebar == 'no-sidebar') {
             $factor = 1;
-        } elseif ($sidebar == 'no_sidebar_condensed') {
+        } elseif ($sidebar == 'no-sidebar-condensed') {
             $factor = 0.76;
         } else {
             $factor = (96 - absint(get_theme_mod('total_sidebar_width', 30))) / 100;
@@ -49,6 +50,8 @@ if (!function_exists('total_editor_settings')) {
 
         $css = total_dymanic_styles();
         $css .= '.editor-styles-wrapper{padding-left:20px;padding-right:20px}';
+        // Full-width blocks run edge to edge on the front end, so pull them over that padding.
+        $css .= '.editor-styles-wrapper .is-root-container > .alignfull{margin-left:-20px;margin-right:-20px;max-width:none}';
         if ($width != 'none') {
             $css .= '.editor-styles-wrapper .is-root-container > :not(.alignfull), .editor-styles-wrapper .editor-post-title{max-width:' . $width . ';margin-left:auto;margin-right:auto}';
         }

@@ -30,6 +30,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Page Settings for full width content and for removing the space below the header or above the footer - Added
 * Social icons in the footer - Added
 * Block patterns: FAQ, How We Work, Video With Text, Contact Details, and About, Services and Contact pages - Added
+* Slider, Featured, Service, Team and Testimonial home sections can show their own items instead of pages, entered in the Customizer with the HashThemes Demo Importer plugin, and carried over to Total Plus. Each section links to install, activate or update the plugin when it is needed - Added
 * Live preview in the Customizer for the header, blog, footer, font and other settings, without reloading the page - Added
 * Setup checklist on the Getting Started page, showing which first steps are done - Added
 * Performance settings: lazy loading for theme images and an option to skip the Font Awesome 4 compatibility stylesheet - Added
@@ -48,6 +49,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Site title and tagline did not update live in the Customizer - Fixed
 * Home sections showed only their titles in the WordPress.org theme preview, as their pages were looked up with a database query the preview's starter content can't answer - Fixed
 * Post excerpts in the home Blog, Featured, Service, Team and Testimonial sections ran paragraphs together with no space between them - Fixed
+* Team members with only a LinkedIn link showed no social icons - Fixed
 
 = 2.2.5 - Aug 18, 2026 =
 * Free Vs Pro comparison checked against Total Plus and corrected - Elementor widget count, custom widget count, featured block styles, Google Fonts claim, typography, GDPR and RTL rows

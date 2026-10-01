@@ -12,6 +12,8 @@ class Total_Repeater_Control extends WP_Customize_Control {
     public $type = 'ht--repeater';
     public $box_label = '';
     public $add_label = '';
+    // A fixed repeater keeps the number of items it is saved with: no Add button, and its items can't be deleted or reordered.
+    public $fixed = false;
     private $cats = '';
 
     /**
@@ -31,6 +33,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
         $this->fields = $fields;
         $this->box_label = isset($args['box_label']) ? $args['box_label'] : '';
         $this->add_label = isset($args['add_label']) ? $args['add_label'] : '';
+        $this->fixed = !empty($args['fixed']);
         $this->cats = get_categories(array('hide_empty' => false));
         parent::__construct($manager, $id, $args);
     }
@@ -45,14 +48,16 @@ class Total_Repeater_Control extends WP_Customize_Control {
             </span>
         <?php } ?>
 
-        <ul class="ht--repeater-field-control-wrap">
+        <ul class="ht--repeater-field-control-wrap<?php echo $this->fixed ? ' ht--repeater-fixed' : ''; ?>">
             <?php
             $this->get_fields();
             ?>
         </ul>
 
         <input type="hidden" <?php esc_attr($this->link()); ?> class="ht--repeater-collector" value="<?php echo esc_attr($this->value()); ?>" />
-        <button type="button" class="button ht--add-control-field"><?php echo esc_html($this->add_label); ?></button>
+        <?php if (!$this->fixed) { ?>
+            <button type="button" class="button ht--add-control-field"><?php echo esc_html($this->add_label); ?></button>
+        <?php } ?>
         <?php
     }
 
@@ -61,10 +66,10 @@ class Total_Repeater_Control extends WP_Customize_Control {
         $values = json_decode($this->value());
 
         if (is_array($values)) {
-            foreach ($values as $value) {
+            foreach ($values as $index => $value) {
                 ?>
                 <li class="ht--repeater-field-control">
-                    <h3 class="ht--repeater-field-title"><?php echo esc_html($this->box_label); ?></h3>
+                    <h3 class="ht--repeater-field-title"><?php echo esc_html($this->fixed ? $this->box_label . ' ' . ($index + 1) : $this->box_label); ?></h3>
 
                     <div class="ht--repeater-fields">
                         <?php
@@ -262,7 +267,9 @@ class Total_Repeater_Control extends WP_Customize_Control {
 
                         <div class="ht--clearfix ht--repeater-footer">
                             <div class="alignright">
-                                <a class="ht--repeater-field-remove" href="#remove"><?php esc_html_e('Delete', 'total') ?></a> |
+                                <?php if (!$this->fixed) { ?>
+                                    <a class="ht--repeater-field-remove" href="#remove"><?php esc_html_e('Delete', 'total') ?></a> |
+                                <?php } ?>
                                 <a class="ht--repeater-field-close" href="#close"><?php esc_html_e('Close', 'total') ?></a>
                             </div>
                         </div>
