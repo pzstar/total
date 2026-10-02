@@ -313,7 +313,7 @@ if (!function_exists('total_upgrade_url')) {
 
     function total_upgrade_url($placement = '', $medium = 'total-link') {
         $args = array(
-            'utm_source' => 'wordpress',
+            'utm_source' => 'WordPress',
             'utm_medium' => $medium,
             'utm_campaign' => 'total-upgrade',
         );
