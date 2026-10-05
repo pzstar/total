@@ -134,6 +134,21 @@ if (!function_exists('total_change_wp_page_menu_args')) {
 
 }
 
+if (!function_exists('total_widget_tag_cloud_args')) {
+
+    /*
+     * One size for every tag in the Tag Cloud widget. WordPress scales tags from 8pt to 22pt by post count,
+     * which on a small blog leaves one huge tag among tiny ones.
+     */
+    function total_widget_tag_cloud_args($args) {
+        $args['smallest'] = 14;
+        $args['largest'] = 14;
+        $args['unit'] = 'px';
+        return $args;
+    }
+
+}
+
 if (!function_exists('total_breadcrumb_trial')) {
 
     function total_breadcrumb_trial() {
@@ -479,6 +494,7 @@ add_filter('body_class', 'total_body_classes');
 add_filter('post_class', 'total_remove_hentry_class');
 add_action('total_breadcrumbs', 'total_breadcrumb_trial');
 add_filter('wp_page_menu_args', 'total_change_wp_page_menu_args');
+add_filter('widget_tag_cloud_args', 'total_widget_tag_cloud_args');
 add_action('total_comments_template', 'total_comments_content');
 add_action('total_404_template', 'total_404_content');
 add_action('tgmpa_register', 'total_register_required_plugins');
