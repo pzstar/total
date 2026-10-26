@@ -308,14 +308,14 @@ if (!class_exists('Total_Starter_Content')):
 					),
 					'total-logo' => array(
 						'post_title' => _x('Site logo', 'Theme starter content', 'total'),
-						'file' => 'images/starter/logo.png',
+						'file' => 'images/logo.png',
 					),
 				),
 
 				'options' => array(),
 
 				// Set the front page section theme mods to the IDs of the pages above.
-				// The logo alone, with the site title and tagline hidden. The WordPress.org preview can't show a custom logo, as it has no real attachments, so its header has no branding.
+				// The logo alone, with the site title and tagline hidden. The WordPress.org preview has no real attachments; total_custom_logo() falls back for it.
 				'theme_mods' => array(
 					'custom_logo' => '{{total-logo}}',
 					'total_hide_title' => true,

@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.0
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
-= 2.3.0 =
+= 2.3.1 - Oct 26, 2026 =
+* Tag cloud updated
+
+= 2.3.0 - Oct 1, 2026 =
 * Header search with a full-screen search overlay - Added
 * Header button with its own text, link, colors and corner rounding - Added
 * Header cart icon with a live item count, for WooCommerce - Added
