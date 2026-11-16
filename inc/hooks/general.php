@@ -315,6 +315,27 @@ if (!function_exists('total_premium_demo_config')) {
 
     function total_premium_demo_config($demos) {
         $premium_demos = array(
+            'gym' => array(
+                'name' => 'Total Plus - Gym & Fitness',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/gym.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/gym/',
+            ),
+            'medical' => array(
+                'name' => 'Total Plus - Medical Center',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/medical.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/medical/',
+            ),
+            'law-firm' => array(
+                'name' => 'Total Plus - Law Firm',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/law-firm.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/law-firm/',
+            ),
             'wave' => array(
                 'name' => 'Total Plus - Wave',
                 'type' => 'pro',

@@ -40,6 +40,7 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/column-control/column-control.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/preloader-control.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/upgrade-section.php';
+            require TOTAL_CUSTOMIZER_PATH . 'custom-controls/pro-banner-section.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/upgrade-info.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/pro-preview-control.php';
             require TOTAL_CUSTOMIZER_PATH . 'custom-controls/toggle-section.php';
@@ -60,6 +61,7 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
 
             // Register custom section types.
             $wp_customize->register_section_type('Total_Upgrade_Section');
+            $wp_customize->register_section_type('Total_Pro_Banner_Section');
             $wp_customize->register_section_type('Total_Toggle_Section');
         }
 
@@ -70,7 +72,10 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
             if ($icons && is_array($icons)) {
                 foreach ($icons as $icon) {
                     if (isset($icon['name']) && isset($icon['url'])) {
-                        wp_enqueue_style($icon['name'], $icon['url'], array(), TOTAL_VERSION);
+                        // Icon libraries load under one shared, versioned handle in every HashThemes product, so each file loads once.
+                        $shared_icon_handles = array('materialdesignicons.css' => 'materialdesignicons-7.4.47', 'icofont.css' => 'icofont-1.0.1', 'eleganticons.css' => 'eleganticons-1.0', 'essentialicon.css' => 'essentialicon-1.0', 'essential-icon.css' => 'essentialicon-1.0', 'fontawesome-6.3.0.css' => 'fontawesome-7.3.1', 'font-awesome-6.3.0.css' => 'fontawesome-7.3.1', 'font-awesome.css' => 'fontawesome-7.3.1');
+                        $icon_file = basename(strtok($icon['url'], '?'));
+                        wp_enqueue_style(isset($shared_icon_handles[$icon_file]) ? $shared_icon_handles[$icon_file] : $icon['name'], $icon['url'], array(), TOTAL_VERSION);
                     }
                 }
             }
@@ -83,7 +88,7 @@ if (!class_exists('Total_Customizer_Custom_Controls')) {
             wp_enqueue_style('selectize', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/selectize.css', array(), TOTAL_VERSION);
             wp_enqueue_style('chosen', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/chosen.css', array(), TOTAL_VERSION);
             wp_enqueue_style('total-preloader', TOTAL_CUSTOMIZER_URL . 'preloader/css/preloader.css', array('wp-color-picker'), TOTAL_VERSION);
-            wp_enqueue_style('font-awesome-v4-shims', get_template_directory_uri() . '/css/v4-shims.css', array(), TOTAL_VERSION);
+            wp_enqueue_style('fontawesome-7.3.1', get_template_directory_uri() . '/css/fontawesome-6.3.0.css', array(), TOTAL_VERSION);
             if (is_rtl()) {
                 wp_enqueue_style('total-customizer-control', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/css/customizer-controls.rtl.css', array('wp-color-picker'), TOTAL_VERSION);
             } else {

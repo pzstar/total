@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.1
-Stable tag: 2.3.1
+Stable tag: 2.4.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.4.0 - Nov 16, 2026 =
+* Settings page redesigned, with a compact header, a Total Plus card, clearer tabs, Customizer shortcuts and rewritten help text - Changed
+* Gym & Fitness, Medical Center and Law Firm Total Plus demos on the Settings page and in the demo importer - Added
+* Black Friday and Christmas & New Year sale banners redesigned - Changed
+* Customizer upgrade box redesigned, with the main Total Plus features, the price and the 7-day money-back guarantee - Changed
+* Font Awesome updated to 7.3.1, with the Font Awesome 4 compatibility rules in the same stylesheet - Changed
+* Icon picker updated with the Font Awesome 7 icons - Changed
+* Google Fonts list updated to 1,980 fonts - Changed
+* Font Awesome now loads under the same stylesheet handle as in the other HashThemes themes and plugins, so it loads only once - Changed
+* "Support Old Icon Names" performance setting, as the Font Awesome 4 names are now always supported - Removed
+* Unused files - Removed
+
 = 2.3.1 - Oct 26, 2026 =
 * Tag cloud updated
 

@@ -39,7 +39,7 @@ if (!class_exists('Total_Welcome')):
                     'thumb_path' => 'https://ps.w.org/easy-elementor-addons/assets/icon-256x256.png'
                 ),
                 'hash-form' => array(
-                    'name' => 'Hash Form - Drag & Drop Form Builder',
+                    'name' => 'Hash Form Builder',
                     'slug' => 'hash-form',
                     'filename' => 'hash-form',
                     'thumb_path' => 'https://ps.w.org/hash-form/assets/icon-256x256.gif'
@@ -123,7 +123,7 @@ if (!class_exists('Total_Welcome')):
                 <?php $this->dismiss_button('welcome'); ?>
                 <div class="total-welcome-notice-wrap">
                     <h2><?php esc_html_e('Congratulations!', 'total'); ?></h2>
-                    <p><?php /* translators: %1$s: theme name */ printf(esc_html__('%1$s is now installed and ready to use. You can start either by importing the ready made demo or get started by customizing it your self.', 'total'), $this->theme_name); ?></p>
+                    <p><?php /* translators: %1$s: theme name */ printf(esc_html__('%1$s is installed and ready to use. Start from a ready-made demo, or set up the site yourself.', 'total'), $this->theme_name); ?></p>
 
                     <div class="total-welcome-info">
                         <div class="total-welcome-thumb">
@@ -135,7 +135,7 @@ if (!class_exists('Total_Welcome')):
                             ?>
                             <div class="total-welcome-import">
                                 <h3><?php esc_html_e('Import Demo', 'total'); ?></h3>
-                                <p><?php esc_html_e('Click below to install and active HashThemes Demo Importer Plugin.', 'total'); ?></p>
+                                <p><?php esc_html_e('Install and activate the HashThemes Demo Importer plugin to import a demo in one click.', 'total'); ?></p>
                                 <p><?php echo $this->generate_hdi_install_button(); ?></p>
                             </div>
                             <?php
@@ -144,8 +144,8 @@ if (!class_exists('Total_Welcome')):
 
                         <div class="total-welcome-getting-started">
                             <h3><?php esc_html_e('Get Started', 'total'); ?></h3>
-                            <p><?php /* translators: %s: theme name */ printf(esc_html__('Here you will find all the necessary links and information on how to use %s.', 'total'), $this->theme_name); ?></p>
-                            <p><a href="<?php echo esc_url(total_settings_page_url()); ?>" class="button button-primary"><?php esc_html_e('Go to Setting Page', 'total'); ?></a></p>
+                            <p><?php /* translators: %s: theme name */ printf(esc_html__('A setup checklist, Customizer shortcuts and help for getting the most out of %s.', 'total'), $this->theme_name); ?></p>
+                            <p><a href="<?php echo esc_url(total_settings_page_url()); ?>" class="button button-primary"><?php esc_html_e('Go to Settings Page', 'total'); ?></a></p>
                         </div>
                     </div>
                 </div>
@@ -191,28 +191,21 @@ if (!class_exists('Total_Welcome')):
         public function welcome_screen() {
             /** Define Tabs Sections */
             $tabs = array(
-                'getting_started' => esc_html__('Getting Started', 'total'),
-                'recommended_plugins' => esc_html__('Recommended Plugins', 'total'),
-                'support' => esc_html__('Support', 'total'),
-                'free_vs_pro' => esc_html__('Free Vs Pro', 'total')
+                'getting_started' => array(esc_html__('Getting Started', 'total'), 'dashicons-flag'),
+                'recommended_plugins' => array(esc_html__('Recommended Plugins', 'total'), 'dashicons-admin-plugins'),
+                'support' => array(esc_html__('Help & Support', 'total'), 'dashicons-sos'),
+                'free_vs_pro' => array(esc_html__('Free vs Pro', 'total'), 'dashicons-star-filled')
             );
+            $section = isset($_GET['section']) && array_key_exists($_GET['section'], $tabs) ? sanitize_key($_GET['section']) : 'getting_started';
             ?>
             <div class="welcome-wrap">
-                <div class="welcome-main-content">
-                    <?php require_once get_template_directory() . '/welcome/sections/header.php'; ?>
+                <?php require_once get_template_directory() . '/welcome/sections/header.php'; ?>
 
-                    <div class="welcome-section-wrapper">
-                        <?php $section = isset($_GET['section']) && array_key_exists($_GET['section'], $tabs) ? $_GET['section'] : 'getting_started'; ?>
-
-                        <div class="welcome-section <?php echo esc_attr($section); ?> clearfix">
-                            <?php require_once get_template_directory() . '/welcome/sections/' . $section . '.php'; ?>
-                        </div>
-                    </div>
+                <div class="welcome-section welcome-section-<?php echo esc_attr($section); ?>">
+                    <?php require_once get_template_directory() . '/welcome/sections/' . $section . '.php'; ?>
                 </div>
 
-                <div class="welcome-footer-content">
-                    <?php require_once get_template_directory() . '/welcome/sections/footer.php'; ?>
-                </div>
+                <?php require_once get_template_directory() . '/welcome/sections/footer.php'; ?>
             </div>
             <?php
         }
@@ -253,11 +246,8 @@ if (!class_exists('Total_Welcome')):
                 wp_localize_script('total-welcome', 'importer_params', $importer_params);
             }
 
-            if (is_rtl()) {
-                wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome-rtl.css', array(), TOTAL_VERSION);
-            } else {
-                wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), TOTAL_VERSION);
-            }
+            // One stylesheet for both directions: it uses logical properties.
+            wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array('dashicons'), TOTAL_VERSION);
         }
 
         /* Check if plugin is installed */
@@ -333,7 +323,7 @@ if (!class_exists('Total_Welcome')):
 
             if ('toplevel_page_total-welcome' == $screen->id) {
                 /* translators: %s: five-star link */
-                $text = sprintf(esc_html__('Please leave us a %s rating if you like our theme . A huge thank you from HashThemes in advance!', 'total'), '<a href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>');
+                $text = sprintf(esc_html__('Enjoying Total? Please leave us a %s rating on WordPress.org. Thank you from the HashThemes team!', 'total'), '<a href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>');
             }
 
             return $text;
@@ -392,6 +382,49 @@ if (!class_exists('Total_Welcome')):
                     'done' => (bool) get_option('hdi_last_imported_demo'),
                     'url' => $demo_active ? admin_url('themes.php?page=hdi-demo-importer') : '',
                 ),
+            );
+        }
+
+        // Shortcuts into the Customizer panels people look for most.
+        public function quick_links() {
+            $links = array(
+                array('dashicons-id', esc_html__('Site Identity', 'total'), 'section', 'title_tagline'),
+                array('dashicons-admin-appearance', esc_html__('Header', 'total'), 'panel', 'total_header_settings_panel'),
+                array('dashicons-admin-home', esc_html__('Home Sections', 'total'), 'panel', 'total_home_panel'),
+                array('dashicons-art', esc_html__('Colors', 'total'), 'section', 'colors'),
+                array('dashicons-editor-textcolor', esc_html__('Typography', 'total'), 'panel', 'total_typography_panel'),
+                array('dashicons-menu', esc_html__('Menus', 'total'), 'panel', 'nav_menus'),
+                array('dashicons-admin-post', esc_html__('Blog', 'total'), 'section', 'total_blog_archive_section'),
+                array('dashicons-welcome-widgets-menus', esc_html__('Widgets', 'total'), 'panel', 'widgets'),
+                array('dashicons-editor-insertmore', esc_html__('Footer', 'total'), 'section', 'total_footer_settings'),
+                array('dashicons-admin-generic', esc_html__('General', 'total'), 'panel', 'total_general_settings_panel'),
+            );
+
+            foreach ($links as $i => $link) {
+                $links[$i] = array(
+                    'icon' => $link[0],
+                    'label' => $link[1],
+                    'url' => admin_url('customize.php?autofocus[' . $link[2] . ']=' . $link[3]),
+                );
+            }
+
+            return $links;
+        }
+
+        /*
+         *  One-line plugin descriptions. Built on demand, not in the constructor:
+         *  the class is created before init, and translating there makes
+         *  WordPress load the text domain too early.
+         */
+        public function plugin_descriptions() {
+            return array(
+                'hashthemes-demo-importer' => esc_html__('Import any Total demo, with its content and settings, in one click.', 'total'),
+                'elementor' => esc_html__('Design pages visually with drag and drop.', 'total'),
+                'easy-elementor-addons' => esc_html__('Extra widgets and design tools for Elementor.', 'total'),
+                'hash-form' => esc_html__('Build contact forms, surveys and quotes with drag and drop.', 'total'),
+                'hash-elements' => esc_html__('Elementor widgets designed to match the Total theme.', 'total'),
+                'simple-floating-menu' => esc_html__('Add a floating bar of buttons for calls, chat and social links.', 'total'),
+                'onyx-dark-mode-switcher' => esc_html__('Let visitors switch your site to dark mode.', 'total'),
             );
         }
 
@@ -482,8 +515,8 @@ if (!class_exists('Total_Welcome')):
                     <p>
                         <?php
                         printf(
-                            /* translators: %1$s is link start tag, %2$s is link end tag. */
-                            esc_html__('Great to see that you have been using Total Theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a %3$s rating%2$s. Your valuable review will inspire us to make it more better.', 'total'), '<a style="text-decoration:none;font-weight:bold;" target="_blank" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>', '<span class="total-notice-star"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag, %3$s is five stars. */
+                            esc_html__('You have been using the Total theme for a while now, and we hope you love it. Would you %1$sgive it a %3$s rating%2$s on WordPress.org? Your review helps other people find the theme and keeps us improving it.', 'total'), '<a style="text-decoration:none;font-weight:bold;" target="_blank" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>', '<span class="total-notice-star"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span>'
                         );
                         ?>
                     </p>

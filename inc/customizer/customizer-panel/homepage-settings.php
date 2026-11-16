@@ -5,7 +5,7 @@
 $total_pro_features = '<ul>
 	<li>' . esc_html__("AI Site Builder - describe your business and get a complete website, built with the home page sections or with Elementor", "total") . '</li>
 	<li>' . esc_html__("Write with AI for the home page sections and blocks, and AI agents that edit the home page sections through a draft", "total") . '</li>
-	<li>' . esc_html__("8 premium demos that can be imported with one click, each in a Customizer and an Elementor build", "total") . '</li>
+	<li>' . esc_html__("11 premium demos that can be imported with one click, built with the Customizer or with Elementor", "total") . '</li>
     <li>' . esc_html__("Elementor compatible - Build your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
     <li>' . esc_html__("21 Home Page Customizer sections, including FAQ, Video and Timeline, with lots of variations", "total") . '</li>
     <li>' . esc_html__("Add only the sections you need, each more than once if you like, and name them", "total") . '</li>
@@ -45,14 +45,23 @@ $total_pro_features = '<ul>
 
 // Seasonal campaigns swap the banner copy automatically - see total_get_active_campaign().
 $total_campaign = total_get_active_campaign();
-$total_banner_title = $total_campaign ? $total_campaign['title'] : esc_html__('One-time payment. Unlimited sites. Lifetime updates.', 'total');
-$total_banner_button = $total_campaign ? $total_campaign['button'] : esc_html__('Get Total Pro - $65', 'total');
-
-$wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-pro-section', array(
+// During a sale the card leads with the sale and drops the list price, which
+// would contradict the discount shown at checkout.
+$wp_customize->add_section(new Total_Pro_Banner_Section($wp_customize, 'total-pro-section', array(
     'priority' => 0,
-    'title' => $total_banner_title,
-    'upgrade_text' => $total_banner_button,
+    'badge' => $total_campaign ? $total_campaign['badge'] : esc_html__('Total Plus', 'total'),
+    'title' => $total_campaign ? $total_campaign['title'] : esc_html__('Build a better website, faster', 'total'),
+    'points' => array(
+        esc_html__('AI Site Builder and Write with AI', 'total'),
+        esc_html__('11 premium one-click demos', 'total'),
+        esc_html__('21 home sections and 27 Elementor widgets', 'total'),
+    ),
+    'price' => $total_campaign ? '' : '$65',
+    'price_note' => esc_html__('one-time · unlimited sites', 'total'),
+    'upgrade_text' => $total_campaign ? $total_campaign['button'] : esc_html__('Upgrade to Total Plus', 'total'),
     'upgrade_url' => total_upgrade_url($total_campaign ? 'banner-' . $total_campaign['id'] : 'banner', 'total-customizer-button'),
+    'note' => esc_html__('7-day money-back guarantee', 'total'),
+    'is_sale' => (bool) $total_campaign,
     'active_callback' => 'total_is_upgrade_notice_active'
 )));
 
