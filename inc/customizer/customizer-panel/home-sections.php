@@ -1449,8 +1449,7 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-upgra
     'panel' => 'total_home_panel',
     'priority' => 1000,
     'class' => 'ht--boxed',
-    // The Pro-only sections now have a row each, so this box carries only what
-    // those rows cannot say - what Pro adds to every section, free or not.
+    // The Pro-only sections have a row each, so this box only lists what Pro adds to every section.
     'options' => array(
         esc_html__('- Add any section except the slider more than once, each copy with its own content, style and colors', 'total'),
         esc_html__('- Write with AI drafts the titles, text and items of each section', 'total'),
@@ -1469,14 +1468,7 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-upgra
     'upgrade_url' => total_upgrade_url('banner', 'total-customizer-button'),
 )));
 
-/*
- *  Home page sections that exist only in Pro.
- *
- *  Listed individually, in the order Pro registers them, rather than only as
- *  names inside the summary box below - a row per section makes it clear what
- *  each one is and lets each be tracked separately. Priorities start just above
- *  the default so these sit after the free sections without reordering them.
- */
+/* Home page sections that exist only in Pro, in Pro's order, after the free ones. */
 
 $total_pro_home_sections = array(
     'highlight' => array(esc_html__('Highlight Section', 'total'), 161),
@@ -1503,5 +1495,5 @@ foreach ($total_pro_home_sections as $total_pro_key => $total_pro_section) {
     )));
 }
 
-// Sections left showing their own items while the plugin that edits them is off: their page controls would change nothing.
+// Sections showing their own items while the plugin is off: their page controls would change nothing.
 total_hide_unused_page_controls($wp_customize);

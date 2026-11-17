@@ -566,7 +566,7 @@ jQuery(document).ready(function ($) {
         value.bind(totalHeaderState);
     });
 
-    /* Header search, cart and button: printed hidden in the preview when off, so their switches act instantly. */
+    /* Header search, cart and button: printed hidden when off, so their switches act instantly. */
     var totalExtraItems = function () {
         // The wrapper has spacing of its own, so it goes too when every item is off.
         $('.ht-menu-extra-items').each(function () {

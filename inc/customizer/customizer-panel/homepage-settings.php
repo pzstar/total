@@ -45,8 +45,7 @@ $total_pro_features = '<ul>
 
 // Seasonal campaigns swap the banner copy automatically - see total_get_active_campaign().
 $total_campaign = total_get_active_campaign();
-// During a sale the card leads with the sale and drops the list price, which
-// would contradict the discount shown at checkout.
+// During a sale the card leads with the sale and drops the list price, which would contradict checkout.
 $wp_customize->add_section(new Total_Pro_Banner_Section($wp_customize, 'total-pro-section', array(
     'priority' => 0,
     'badge' => $total_campaign ? $total_campaign['badge'] : esc_html__('Total Plus', 'total'),
@@ -70,12 +69,7 @@ $wp_customize->add_section('total_pro_feature_section', array(
     'priority' => 0
 ));
 
-/*
- *  The feature list is registered ahead of the opt-out switch, and the two
- *  carry explicit priorities so the order does not depend on which happens to
- *  be added first. Showing someone the way out before showing them what is on
- *  offer is the wrong way round.
- */
+/* The feature list comes before the opt-out switch, with explicit priorities. */
 
 $wp_customize->add_setting('total_pro_features', array(
     'sanitize_callback' => 'total_sanitize_text'
@@ -117,13 +111,7 @@ $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-demo-
     'upgrade_url' => total_settings_page_url()
 )));
 
-/*
- *  Pro panels that have no free counterpart at all.
- *
- *  These sit at the position their Pro equivalent occupies, so someone looking
- *  for the setting finds the prompt where they expected the control — rather
- *  than only meeting it in a feature list they have to go and read.
- */
+/* Pro panels with no free counterpart, placed where Pro has them. */
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-sidebar-upgrade-section', array(
     'title' => esc_html__('Sidebar Settings', 'total'),

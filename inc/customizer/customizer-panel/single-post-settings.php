@@ -72,9 +72,7 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
     'upgrade_url' => total_upgrade_url('blog-archive', 'total-customizer')
 )));
 
-/*
- *  Pro's blog layouts, shown rather than counted, next to the free Blog Layout choice.
- */
+/* Pro's blog layouts, shown rather than counted, next to the free Blog Layout choice. */
 $wp_customize->add_setting('total_blog_layout_preview', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));

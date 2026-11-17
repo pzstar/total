@@ -82,13 +82,7 @@ a[href="admin.php?page=e-form-submissions"],
     display: none !important;
 }
 
-/*
- *  Admin menu entry for the welcome screen.
- *
- *  These live here rather than in welcome.css because they style the menu on
- *  every admin page, while welcome.css now only loads on the welcome screen and
- *  alongside the admin notices.
- */
+/* Admin menu entry for the welcome screen; here, not in welcome.css, as it shows on every admin page. */
 #adminmenu .toplevel_page_total-welcome div.wp-menu-image.svg {
     background-size: 18px auto;
 }
@@ -96,21 +90,3 @@ a[href="admin.php?page=e-form-submissions"],
 #toplevel_page_total-welcome .wp-menu-name {
     position: relative;
 }
-
-/*
-#toplevel_page_total-welcome .wp-menu-name:after{
-    content: "40%\AOFF";
-    white-space: pre;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #FF0000;
-    color: #FFF;
-    font-size: 10px;
-    line-height: 1;
-    padding: 5px;
-    border-radius: 20px;
-    text-align: center;
-}
-*/

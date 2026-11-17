@@ -12,7 +12,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
     public $type = 'ht--repeater';
     public $box_label = '';
     public $add_label = '';
-    // A fixed repeater keeps the number of items it is saved with: no Add button, and its items can't be deleted or reordered.
+    // A fixed repeater keeps its number of items: no Add button, no delete or reorder.
     public $fixed = false;
     private $cats = '';
 

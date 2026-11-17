@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.1
-Stable tag: 2.4.0
+Stable tag: 2.4.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.4.1 - Nov 17, 2026 =
+* Code comments shortened, and unused commented-out code removed - Changed
+
 = 2.4.0 - Nov 16, 2026 =
 * Settings page redesigned, with a compact header, a Total Plus card, clearer tabs, Customizer shortcuts and rewritten help text - Changed
 * Gym & Fitness, Medical Center and Law Firm Total Plus demos on the Settings page and in the demo importer - Added

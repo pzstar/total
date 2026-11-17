@@ -136,10 +136,7 @@ if (!function_exists('total_change_wp_page_menu_args')) {
 
 if (!function_exists('total_widget_tag_cloud_args')) {
 
-    /*
-     * One size for every tag in the Tag Cloud widget. WordPress scales tags from 8pt to 22pt by post count,
-     * which on a small blog leaves one huge tag among tiny ones.
-     */
+    /* One size for every tag in the Tag Cloud widget, instead of 8pt to 22pt by post count. */
     function total_widget_tag_cloud_args($args) {
         $args['smallest'] = 14;
         $args['largest'] = 14;

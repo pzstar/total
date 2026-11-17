@@ -2,10 +2,6 @@
 
 /**
  * Locked Pro layout previews.
- *
- * Shows the actual layout thumbnails a user is missing rather than describing
- * them in a bullet list. Rendered under the relevant free section, where the
- * user is already looking at that part of the site and the gap is most obvious.
  */
 class Total_Pro_Preview_Control extends WP_Customize_Control {
 

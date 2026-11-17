@@ -120,10 +120,7 @@ $wp_customize->add_control(new Total_Heading_Control($wp_customize, 'total_backg
     'label' => esc_html__('Background', 'total'),
 )));
 
-/*
- *  The remaining General Options that Pro offers here. The layout and width
- *  controls above are the free half of that section; these three are the rest.
- */
+/* The remaining General Options that Pro offers here. */
 $wp_customize->add_setting('total_container_upgrade_text', array(
     'sanitize_callback' => 'total_sanitize_text'
 ));

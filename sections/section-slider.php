@@ -12,7 +12,7 @@ if (get_theme_mod('total_slider_section_disable') != 'on') {
 
             if (false !== $total_slider_items) {
                 foreach ($total_slider_items as $total_slider_item) {
-                    // Slide buttons and text alignment are Total Plus features; the free theme shows the image, title and text.
+                    // Slide buttons and text alignment are Total Plus features.
                     $total_slider_item = wp_parse_args($total_slider_item, array('image' => '', 'title' => '', 'subtitle' => ''));
 
                     if (!$total_slider_item['image'] && '' === trim($total_slider_item['title'] . $total_slider_item['subtitle'])) {

@@ -657,20 +657,14 @@ $wp_customize->selective_refresh->add_partial('total_site_branding', array(
     'render_callback' => 'total_custom_logo',
 ));
 
-// The show switches need no server trip: the preview prints the items hidden and customizer-preview.js shows them.
+// The show switches need no server trip: the preview prints the items hidden.
 $wp_customize->selective_refresh->add_partial('total_menu_extra_items', array(
     'selector' => '.ht-menu-extra-items',
     'settings' => array('total_hb_text', 'total_hb_link', 'total_hb_open_new_tab'),
     'render_callback' => 'total_nav_additional_items_markup',
 ));
 
-/*
- *  Header sections that exist only in Pro.
- *
- *  Each is placed at the position its Pro counterpart occupies in the header
- *  panel, so the panel reads in the same order in both versions and someone
- *  looking for the setting meets the prompt where the control would be.
- */
+/* Header sections that exist only in Pro, placed where Pro has them. */
 
 $wp_customize->add_section('total_header_button_section', array(
     'title' => esc_html__('Header Button', 'total'),

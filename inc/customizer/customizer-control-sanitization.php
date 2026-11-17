@@ -76,11 +76,7 @@ function total_sanitize_lat_long($coords) {
 }
 
 function total_sanitize_image($image, $setting) {
-    /*
-     * Array of valid image file types.
-     *
-     * The array includes image mime types that are included in wp_get_mime_types()
-     */
+    /* Array of valid image file types. */
     $mimes = array(
         'jpg|jpeg|jpe' => 'image/jpeg',
         'gif' => 'image/gif',
@@ -173,7 +169,6 @@ function total_sanitize_repeater($input) {
         return json_encode($input_decoded);
     }
 
-    //return $input;
 }
 
 /**

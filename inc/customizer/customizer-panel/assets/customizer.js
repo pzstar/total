@@ -43,7 +43,7 @@ jQuery(document).ready(function ($) {
         wp.customize.control('total_fluid_container_width', setupFluidLayout);
     });
 
-    /* Controls that depend on another setting. The settings preview live, so this runs here rather than in PHP. */
+    /* Controls that depend on another setting; done here because the settings preview live. */
     var totalShowWhen = function (controlId, settingIds, test) {
         wp.customize.control(controlId, function (control) {
             var values = settingIds.map(function (id) {
@@ -114,11 +114,7 @@ jQuery(document).ready(function ($) {
         axis: 'y',
         helper: 'clone',
         cursor: 'move',
-        /*
-         *  Only real home sections reorder. Upgrade sections are excluded by
-         *  class rather than by id so every Get Pro row - and any added later -
-         *  is covered automatically; the slider stays pinned to the top.
-         */
+        /* Only real home sections reorder; Get Pro rows are excluded by class, the slider stays on top. */
         items: '> li.control-section:not(#accordion-section-total_slider_section):not(.control-section-ht--upgrade-section)',
         delay: 150,
         update: function (event, ui) {

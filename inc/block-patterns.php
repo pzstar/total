@@ -2,9 +2,6 @@
 /**
  * Block pattern support.
  *
- * The patterns themselves live in /patterns and are picked up by WordPress
- * automatically. This file only registers the category they group under.
- *
  * @package Total
  */
 
@@ -14,12 +11,7 @@ if (!defined('ABSPATH')) {
 
 if (!function_exists('total_register_block_pattern_categories')) {
 
-    /*
-     *  Registers the category the theme's patterns are filed under.
-     *
-     *  Without this the patterns still work, but WordPress drops them into
-     *  "Uncategorized" where nobody finds them.
-     */
+    /* Registers the theme's pattern category; without it the patterns land in Uncategorized. */
 
     function total_register_block_pattern_categories() {
         if (!function_exists('register_block_pattern_category')) {

@@ -8,7 +8,7 @@ if (!function_exists('total_custom_logo')) {
         if (function_exists('has_custom_logo') && has_custom_logo()) {
             the_custom_logo();
         } elseif (($logo_id = get_theme_mod('custom_logo')) && ($logo = wp_get_attachment_image_src($logo_id, 'full'))) {
-            // The WordPress.org theme preview fakes starter content attachments, so has_custom_logo() fails there while the image source resolves.
+            // The WordPress.org preview fakes starter content attachments, so has_custom_logo() fails there.
             printf('<a href="%1$s" class="custom-logo-link" rel="home"><img src="%2$s" class="custom-logo" alt="%3$s" /></a>', esc_url(home_url('/')), esc_url($logo[0]), esc_attr(get_bloginfo('name')));
         }
 
@@ -59,8 +59,7 @@ if (!function_exists('total_main_navigation')) {
 
 if (!function_exists('total_nav_additional_items')) {
 
-    // Search, cart and button hook in here; the wrapper is skipped when nothing is enabled,
-    // except in the Customizer preview, where live preview needs it to exist.
+    // Search, cart and button hook in here; the wrapper is skipped when none is on, except in the preview.
     function total_nav_additional_items() {
         $items = total_nav_additional_items_markup();
 
@@ -105,7 +104,6 @@ if (!function_exists('total_header_search_overlay')) {
 
     function total_header_search_overlay() {
         // Total Plus replaces the header and prints its own overlay for the same setting.
-        // In the preview it is printed hidden, so switching search on shows a working button.
         if ((!get_theme_mod('total_mh_show_search', false) && !is_customize_preview()) || !did_action('total_nav_additional_items')) {
             return;
         }

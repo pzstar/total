@@ -11,12 +11,7 @@
  * @package Total
  */
 
-/*
- *  Composed from the individual patterns rather than repeating their markup,
- *  so editing one section pattern keeps this page in step. Inserting this
- *  pattern expands each reference into real blocks, which the user is then
- *  free to edit or delete.
- */
+/* Composed from the individual patterns, so editing one keeps this page in step. */
 ?>
 <!-- wp:pattern {"slug":"total/hero-slider"} /-->
 

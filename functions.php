@@ -99,15 +99,13 @@ if (!function_exists('total_setup')):
         // Add support editor style.
         add_theme_support('editor-styles');
 
-        // Add support for Block Styles.
         add_theme_support('wp-block-styles');
 
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
          */
-        // Font Awesome comes along so the icons used by the block patterns
-        // render in the editor as well as on the front end.
+        // Font Awesome comes along so the icons used by the block patterns render in the editor as well as on the front end.
         add_editor_style(array('css/fontawesome-6.3.0.css', 'css/editor-style.css'));
     }
 
@@ -239,7 +237,7 @@ if (!function_exists('total_fonts_url')):
             'total_h_family' => 'Oswald'
         ));
 
-        // Uploaded fonts win over Google fonts of the same name, so a self-hosted copy is never fetched from Google.
+        // Uploaded fonts win over Google fonts of the same name, so a self-hosted copy is never fetched.
         $custom_fonts = class_exists('Hash_Custom_Font_Uploader_Public') ? Hash_Custom_Font_Uploader_Public::get_all_fonts_names() : array();
 
         foreach ($customizer_fonts as $key => $value) {
@@ -308,7 +306,7 @@ function total_scripts() {
         'submenu_label' => esc_html__('Show submenu', 'total')
     ));
 
-    // Nothing in the theme uses animate.css any more; sites that added its classes to their own content can load it again.
+    // Nothing in the theme uses animate.css any more; sites using its classes can load it themselves.
     if (apply_filters('total_load_animate_css', false)) {
         wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), TOTAL_VERSION);
     }
@@ -380,7 +378,7 @@ if (!function_exists('wp_body_open')) {
 
 add_filter('template_include', 'total_frontpage_template', 9999);
 
-// True where the home page sections render: the Home Page template, or the front page when total_frontpage_template() swaps it in.
+// True where the home page sections render: the Home Page template, or the front page it swaps in.
 function total_is_home_sections_page() {
     if (is_page_template('templates/home-template.php')) {
         return true;

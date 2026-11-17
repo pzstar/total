@@ -99,13 +99,7 @@ if (!class_exists('Total_Welcome')):
             }
         }
 
-        /*
-         *  Is the review notice due?
-         *
-         *  Kept as its own method because the asset enqueue has to answer the
-         *  same question before admin_notices runs, and two copies of the rule
-         *  would drift.
-         */
+        /* Is the review notice due? */
         private function is_review_notice_due() {
             $first_activation = get_option('total_first_activation');
 
@@ -155,13 +149,7 @@ if (!class_exists('Total_Welcome')):
 
         /** Register Menu for Welcome Page */
         public function welcome_register_menu() {
-            /*
-             *  Total Plus registers its own panel and removes this menu entry.
-             *  Registering anyway left the page live but unreachable from the
-             *  menu, and with no menu entry get_admin_page_title() had no title
-             *  to return - which is how admin-header.php ended up calling
-             *  strip_tags(null). Under Pro the page simply does not exist.
-             */
+            /* Total Plus registers its own panel and removes this menu entry, so the page isn't registered. */
             if (total_is_totalplus_activated()) {
                 return;
             }
@@ -169,14 +157,7 @@ if (!class_exists('Total_Welcome')):
             /* translators: %s: theme name */
             $hook = add_menu_page(esc_html__('Welcome', 'total'), sprintf(esc_html__('%s Settings', 'total'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'total-welcome', array($this, 'welcome_screen'), 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MC4zNiA4MC4zNiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zc0Fzc2V0IDRAMzJ4PC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTczLDgwLjM2QTcuMzMsNy4zMywwLDAsMCw4MC4zNiw3M1Y3LjMzQTcuMzMsNy4zMywwLDAsMCw3MywwSDcuMzNBNy4zMyw3LjMzLDAsMCwwLDAsNy4zM1Y3M2E3LjMzLDcuMzMsMCwwLDAsNy4zMyw3LjMzWk01OC4yNiw0LjE0bDcsMy4yM0wyMi4xMywyNy4xMWwtNy0zLjIzWm0tOS4zNSwxOS0uNDYuN1Y3Mi45NGwtNy4zOSwzLjM1VjI4bC0xLjE2LS42OS0xNyw3Ljc0VjI4LjQ5TDY2LjM0LDguNjR2Ni41OFpNMjEuMzIsMzUuMDhsLTcuMzktMy4yNFYyNS4yNmw3LjM5LDMuMzVaTTMyLjA1LDcyLjk0VjMyLjY1bDcuMzktMy4zNXY0N1oiLz48L2c+PC9nPjwvc3ZnPg==', 60);
 
-            /*
-             *  Total Plus removes this menu entry in favour of its own panel,
-             *  but the page itself stays registered and reachable. With no menu
-             *  entry left for get_admin_page_title() to read, WordPress leaves
-             *  the global $title null and admin-header.php hands that null to
-             *  strip_tags(). Set the title here - the load-* hook runs just
-             *  before admin-header.php is included.
-             */
+            /* Total Plus removes this menu entry; set the title so admin-header.php doesn't get null. */
             add_action('load-' . $hook, array($this, 'set_welcome_page_title'));
         }
 
@@ -212,14 +193,6 @@ if (!class_exists('Total_Welcome')):
 
         /** Enqueue Necessary Styles and Scripts for the Welcome Page */
         public function welcome_styles_and_scripts($hook) {
-            /*
-             *  These used to load on every admin screen - the stylesheet with no
-             *  check at all, and welcome.js (dragging core's plugin-install and
-             *  updates along with it) on everything but theme-install.php. They
-             *  are only needed on the welcome screen and on whichever screen a
-             *  notice is about to render on, so once both notices are dismissed
-             *  nothing is enqueued anywhere.
-             */
             $on_welcome_page = 'toplevel_page_total-welcome' === $hook;
 
             // Screens total_notice() deliberately stays off.
@@ -230,9 +203,7 @@ if (!class_exists('Total_Welcome')):
                 return;
             }
 
-            // welcome.js only drives the demo importer install/activate button,
-            // which the welcome screen and the welcome notice carry - the review
-            // notice is plain links.
+            // welcome.js only drives the demo importer button, so it loads only where that button is.
             if ($on_welcome_page || $welcome_notice) {
                 $importer_params = array(
                     'installing_text' => esc_html__('Installing Demo Importer Plugin', 'total'),

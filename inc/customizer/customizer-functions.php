@@ -119,8 +119,7 @@ function total_order_sections() {
     check_ajax_referer('total-order-sections', 'secure');
 
     if (isset($_POST['sections']) && is_array($_POST['sections'])) {
-        // Only accept known section keys. The saved value is used to build a
-        // template path in total_front_page_loop(), so it must never be free form.
+        // Only accept known section keys: the value builds a template path, so it must never be free form.
         $allowed = array_merge(total_home_section_defaults(), array('total_client_logo_section'));
         $sections = array_values(array_intersect(array_map('sanitize_key', wp_unslash($_POST['sections'])), $allowed));
 
@@ -159,11 +158,7 @@ if (!function_exists('total_percentage')) {
 
 if (!function_exists('total_custom_content_sections')) {
 
-    /*
-     * The home sections that can show their own items instead of pages, entered with the
-     * HashThemes Demo Importer plugin: each one's "Content From" setting, what its items are
-     * called, and its page controls. The plugin uses the same setting ids and control patterns.
-     */
+    /* Home sections that can show their own items instead of pages (via the HashThemes Demo Importer plugin). */
     function total_custom_content_sections() {
         return array(
             'total_slider_section' => array('total_slider_block_type', esc_html__('slides', 'total'), '/^(total_slider_(heading|page)\d+|total_slider_info)$/'),
@@ -187,11 +182,7 @@ if (!function_exists('total_custom_content_editable')) {
 
 if (!function_exists('total_add_custom_content_notice')) {
 
-    /*
-     * While the HashThemes Demo Importer plugin is missing, inactive or too old to add a section's
-     * own items, a note in the section with a link to install, activate or update it. A section that
-     * already shows its own items keeps showing them, and the note says so.
-     */
+    /* While the HashThemes Demo Importer plugin is missing, inactive or too old to add a section's own items, a note in the section with a link to install, activate or update it. */
     function total_add_custom_content_notice($wp_customize, $section) {
         $sections = total_custom_content_sections();
 
@@ -250,10 +241,7 @@ if (!function_exists('total_add_custom_content_notice')) {
 
 if (!function_exists('total_hide_unused_page_controls')) {
 
-    /*
-     * A section left on its own items while the plugin that edits them is off keeps showing those
-     * items, so its page controls would change nothing. Hide them until the plugin is back.
-     */
+    /* A section on its own items keeps showing them while the plugin is off, so hide its page controls. */
     function total_hide_unused_page_controls($wp_customize) {
         if (total_custom_content_editable()) {
             return;
@@ -302,14 +290,7 @@ if (!function_exists('total_page_transparent_header_used')) {
 
 if (!function_exists('total_upgrade_url')) {
 
-    /*
-     *  Upgrade link with campaign tracking.
-     *
-     *  $placement is passed through as utm_content so each prompt in the
-     *  customizer can be told apart in analytics — without it every link
-     *  reports as one undifferentiated source and there is no way to tell
-     *  which prompt actually earns the upgrade.
-     */
+    /* Upgrade link with campaign tracking. $placement is passed through as utm_content so each prompt in the customizer can be told apart in analytics — without it every link reports as one undifferentiated source and there is no way to tell which prompt actually earns the upgrade. */
 
     function total_upgrade_url($placement = '', $medium = 'total-link') {
         $args = array(
@@ -329,13 +310,7 @@ if (!function_exists('total_upgrade_url')) {
 
 if (!function_exists('total_get_active_campaign')) {
 
-    /*
-     *  The seasonal sale currently running, or false.
-     *
-     *  Windows are month-day so they repeat every year without anyone having to
-     *  edit a date. Filterable so a campaign can be added or the dates moved
-     *  without touching the theme.
-     */
+    /* The seasonal sale currently running, or false. Month-day windows, so they repeat yearly. */
 
     function total_get_active_campaign() {
         $campaigns = apply_filters('total_upgrade_campaigns', array(
@@ -385,17 +360,12 @@ if (!function_exists('total_get_active_campaign')) {
 
 if (!function_exists('total_section_slots_full')) {
 
-    /*
-     *  Whether every block slot of a fixed size home page section is in use.
+    /**
+     * Whether every block slot of a fixed size home page section is in use.
      *
-     *  The free version gives each of these sections a set number of blocks.
-     *  Somebody who has filled all of them has already met the limit, which is
-     *  a different situation from somebody who has just opened the panel, and
-     *  the upgrade notice reads better if it says so.
-     *
-     *  @param string $prefix Setting name without the trailing index.
-     *  @param int    $slots  How many blocks the free version allows.
-     *  @return bool
+     * @param string $prefix Setting name without the trailing index.
+     * @param int    $slots  How many blocks the free version allows.
+     * @return bool
      */
 
     function total_section_slots_full($prefix, $slots) {
@@ -412,10 +382,7 @@ if (!function_exists('total_section_slots_full')) {
 
 if (!function_exists('total_section_upgrade_label')) {
 
-    /*
-     *  The upgrade headline for a fixed size section: the "you have run out"
-     *  wording once every slot is used, the general pitch before that.
-     */
+    /* The upgrade headline for a fixed size section: "you have run out" once every slot is used. */
 
     function total_section_upgrade_label($prefix, $slots, $full_label, $default_label) {
         return total_section_slots_full($prefix, $slots) ? $full_label : $default_label;

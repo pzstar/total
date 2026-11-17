@@ -34,7 +34,7 @@ if (get_theme_mod('total_blog_section_disable') != 'on') {
                     'category__not_in' => $total_blog_cat_exclude
                 );
 
-                // Starter content posts are auto-drafts until the Customizer changeset is published; preview them with the published posts.
+                // Starter content posts are auto-drafts until the changeset is published, so preview them too.
                 $total_blog_draft_ids = total_customize_draft_post_ids('post');
                 if ($total_blog_draft_ids) {
                     $args['post__in'] = array_merge($total_blog_draft_ids, get_posts(array_merge($args, array('fields' => 'ids'))));

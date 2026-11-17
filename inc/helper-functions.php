@@ -389,8 +389,7 @@ if (!function_exists('total_meta_dimension_css')) {
 if (!function_exists('total_setup_section_post')) {
 
     // Makes a post the current post for a home section; pair with wp_reset_postdata().
-    // get_post() rather than WP_Query, so posts held only in the object cache (starter content in the WordPress.org theme preview) are found too.
-    // Visibility follows WP_Query's single post rules, so users who can edit still see drafts, and the Customizer shows unpublished (auto-draft) starter content.
+    // get_post() also finds starter content held only in the object cache (WordPress.org preview).
     function total_setup_section_post($post_id) {
         $section_post = $post_id ? get_post(absint($post_id)) : null;
         $status = $section_post ? get_post_status_object(get_post_status($section_post)) : null;
@@ -422,14 +421,7 @@ if (!function_exists('total_setup_section_post')) {
 
 if (!function_exists('total_section_repeater_items')) {
 
-    /*
-     * The items a home section shows when it is set to take its content from its repeater
-     * rather than from pages, or false when it uses pages.
-     *
-     * The page/repeater switch and the repeater itself are added to the Customizer by the
-     * HashThemes Demo Importer plugin. They use Total Plus's setting ids and item format, so
-     * the content carries over to Total Plus, and it keeps showing if the plugin is removed.
-     */
+    /* A home section's own items (from the Demo Importer plugin's repeater), or false when it uses pages. */
     function total_section_repeater_items($section) {
         $sections = array(
             'slider' => array('total_slider_block_type', 'total_sliders'),
@@ -557,12 +549,7 @@ if (!function_exists('total_is_totalplus_activated')) {
 
 if (!function_exists('total_settings_page_url')) {
 
-    /*
-     *  Where "theme settings" should point.
-     *
-     *  Total Plus registers its own panel and removes the theme's welcome menu,
-     *  so under Pro the theme's own page does not exist to link to.
-     */
+    /* Where "theme settings" should point: under Total Plus the theme's page doesn't exist. */
     function total_settings_page_url($section = '') {
         if (total_is_totalplus_activated()) {
             return admin_url('admin.php?page=totalplus');
@@ -589,10 +576,7 @@ if (!function_exists('total_is_woocommerce_activated')) {
 
 if (!function_exists('total_image_loading_attrs')) {
 
-    /*
-     * Loading hints for a theme image. 'slider': the first slide jumps the queue, the others load normally,
-     * as slides fade in place. 'lead': the first loads normally. Everything else loads lazily unless switched off.
-     */
+    /* Loading hints: 'slider' loads the first slide early, 'lead' normally, everything else lazily. */
     function total_image_loading_attrs($role = '') {
         static $first = array();
         $is_first = $role && !isset($first[$role]);
