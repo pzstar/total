@@ -43,7 +43,7 @@ class Total_Upgrade_Info_Control extends WP_Customize_Control {
         }
 
         if ($this->upgrade_url && false !== $this->upgrade_note) {
-            $note = $this->upgrade_note ? $this->upgrade_note : esc_html__('$65 one-time. Unlimited sites, lifetime updates, no renewal fees.', 'total');
+            $note = $this->upgrade_note ? $this->upgrade_note : apply_filters('total_upgrade_note', esc_html__('One-time payment, lifetime updates, no renewal fees.', 'total'));
             echo '<p class="ht--upgrade-note">' . esc_html($note) . '</p>';
         }
     }

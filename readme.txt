@@ -19,8 +19,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
-= 2.4.1 - Nov 17, 2026 =
+= 2.4.1 - Nov 19, 2026 =
+* Customizer upgrade box made smaller: the price is in the button, and the feature list is removed - Changed
+* Seasonal sale banner on the admin screens during a sale, which can be closed - Added
+* Customizer colour picker redesigned: one card with the picker on top and the hex field below - Changed
 * Code comments shortened, and unused commented-out code removed - Changed
+* Testimonial pages keep the order they are dragged into after a reload - Fixed
+* Typography colour Clear button now resets the colour - Fixed
 
 = 2.4.0 - Nov 16, 2026 =
 * Settings page redesigned, with a compact header, a Total Plus card, clearer tabs, Customizer shortcuts and rewritten help text - Changed

@@ -15,6 +15,7 @@ class Total_Repeater_Control extends WP_Customize_Control {
     // A fixed repeater keeps its number of items: no Add button, no delete or reorder.
     public $fixed = false;
     private $cats = '';
+    public $taxonomy = '';
 
     /**
      * The fields that each container row will contain.
@@ -127,8 +128,20 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                     case 'category':
                                         echo '<select data-default="' . esc_attr($default) . '"  data-name="' . esc_attr($key) . '">';
                                         echo '<option value="-1" ' . selected($new_value, '-1', false) . '>' . esc_html__('Latest Posts', 'total') . '</option>';
-                                        foreach ($this->cats as $cat) {
-                                            printf('<option value="%1$s" %2$s>%3$s</option>', esc_attr($cat->term_id), selected($new_value, $cat->term_id, false), esc_html($cat->name));
+                                        if (function_exists('total_get_dropdown_indent')) {
+                                            // Categories indented under their parents.
+                                            $all_categories = get_terms(array('taxonomy' => 'category', 'orderby' => 'name', 'order' => 'ASC', 'hierarchical' => 0, 'hide_empty' => 0));
+                                            $cat_ids = array();
+                                            if (!empty($all_categories) && !is_wp_error($all_categories)) {
+                                                foreach ($all_categories as $cat) {
+                                                    $cat_ids[] = $cat->term_id;
+                                                }
+                                                echo total_get_dropdown_indent(0, $all_categories, array($new_value), $cat_ids);
+                                            }
+                                        } else {
+                                            foreach ($this->cats as $cat) {
+                                                printf('<option value="%1$s" %2$s>%3$s</option>', esc_attr($cat->term_id), selected($new_value, $cat->term_id, false), esc_html($cat->name));
+                                            }
                                         }
                                         echo '</select>';
                                         break;
@@ -253,6 +266,23 @@ class Total_Repeater_Control extends WP_Customize_Control {
                                             echo '</label>';
                                             echo '</li>';
                                         }
+                                        echo '</ul>';
+                                        echo '<input data-default="' . esc_attr($default) . '" type="hidden" value="' . esc_attr(implode(',', $new_value_array)) . '" data-name="' . esc_attr($key) . '"/>';
+                                        break;
+
+                                    case 'taxonomycheckbox':
+                                        if (!function_exists('total_terms_checklist')) {
+                                            break;
+                                        }
+                                        $taxonomy = $field['taxonomy'];
+                                        $new_value_array = !is_array($new_value) ? explode(',', $new_value) : $new_value;
+                                        echo '<ul class="ht--taxonomy-checkbox">';
+                                        $args = array(
+                                            'selected_cats' => $new_value_array,
+                                            'taxonomy' => $taxonomy,
+                                            'show_count' => true
+                                        );
+                                        total_terms_checklist(0, $args);
                                         echo '</ul>';
                                         echo '<input data-default="' . esc_attr($default) . '" type="hidden" value="' . esc_attr(implode(',', $new_value_array)) . '" data-name="' . esc_attr($key) . '"/>';
                                         break;

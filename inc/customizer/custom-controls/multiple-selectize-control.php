@@ -31,9 +31,18 @@ class Total_Multiple_Selectize_Control extends WP_Customize_Control {
                 return;
             } else {
                 $saved_value = (array) $this->value();
+                // Saved items first, in their saved (dragged) order.
+                $choices = $this->choices;
+                $ordered = array();
+                foreach ($saved_value as $val) {
+                    if (isset($choices[$val])) {
+                        $ordered[$val] = $choices[$val];
+                    }
+                }
+                $ordered += $choices;
                 ?>
                 <select multiple="multiple" class="ht--selectize" data-placeholder="<?php echo esc_attr($this->placeholder); ?>" <?php $this->link(); ?>>
-                    <?php foreach ($this->choices as $value => $label): ?>
+                    <?php foreach ($ordered as $value => $label): ?>
                         <option value="<?php echo esc_attr($value); ?>" <?php selected(in_array($value, $saved_value), true); ?>>
                             <?php echo esc_html($label); ?>
                         </option>

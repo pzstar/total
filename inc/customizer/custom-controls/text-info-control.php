@@ -11,14 +11,13 @@ class Total_Text_Info_Control extends WP_Customize_Control {
             </span>
             <?php
         }
+
         if ($this->description) {
             ?>
             <span class="customize-control-description">
                 <?php echo wp_kses_post($this->description); ?>
             </span>
         <?php }
-        ?>
-        <?php
     }
 
 }
