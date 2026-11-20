@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.1
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.4.2 - Nov 20, 2026 =
+* Recommended Plugins tab shows each plugin's current icon from WordPress.org instead of an old copy - Fixed
+
 = 2.4.1 - Nov 19, 2026 =
 * Customizer upgrade box made smaller: the price is in the button, and the feature list is removed - Changed
 * Seasonal sale banner on the admin screens during a sale, which can be closed - Added
