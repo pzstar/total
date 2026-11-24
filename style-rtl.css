@@ -699,9 +699,38 @@ textarea:focus-visible,
     max-width: 100%;
 }
 
-/* Search widget. */
+/* Search widget: full-width field with an icon button inside it. */
+.widget_search .search-form {
+    position: relative;
+}
+
+.widget_search .search-form label {
+    display: block;
+    margin: 0;
+}
+
+.widget_search .search-field {
+    width: 100%;
+    padding-left: 52px;
+}
+
 .widget_search .search-submit {
-    display: none;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: 40px;
+    padding: 0;
+    border: 0;
+    font-size: 0;
+    color: transparent;
+    cursor: pointer;
+    background: var(--total-template-color, #FFC107) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E") no-repeat center / 17px;
+}
+
+.widget_search .search-submit:hover,
+.widget_search .search-submit:focus {
+    filter: brightness(0.9);
 }
 
 .widget-area select {
