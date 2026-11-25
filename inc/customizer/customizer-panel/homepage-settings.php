@@ -5,7 +5,7 @@
 $total_pro_features = '<ul>
 	<li>' . esc_html__("AI Site Builder - describe your business and get a complete website, built with the home page sections or with Elementor", "total") . '</li>
 	<li>' . esc_html__("Write with AI for the home page sections and blocks, and AI agents that edit the home page sections through a draft", "total") . '</li>
-	<li>' . esc_html__("11 premium demos that can be imported with one click, built with the Customizer or with Elementor", "total") . '</li>
+	<li>' . esc_html__("21 premium demos that can be imported with one click, built with the Customizer or with Elementor", "total") . '</li>
     <li>' . esc_html__("Elementor compatible - Build your Home Page with Customizer or Elementor whichever you like", "total") . '</li>
     <li>' . esc_html__("21 Home Page Customizer sections, including FAQ, Video and Timeline, with lots of variations", "total") . '</li>
     <li>' . esc_html__("Add only the sections you need, each more than once if you like, and name them", "total") . '</li>

@@ -1,5 +1,15 @@
 <?php
 $total_pro_demos = array(
+    array('Ocean', 'aquarium.jpg', 'https://demo.hashthemes.com/total-plus/aquarium/'),
+    array('Studio', 'architecture.jpg', 'https://demo.hashthemes.com/total-plus/architecture/'),
+    array('Weddings', 'wedding.jpg', 'https://demo.hashthemes.com/total-plus/wedding/'),
+    array('Spa', 'spa-plus.jpg', 'https://demo.hashthemes.com/total-plus/spa/'),
+    array('Garage', 'auto-repair.jpg', 'https://demo.hashthemes.com/total-plus/auto-repair/'),
+    array('Flow', 'saas.jpg', 'https://demo.hashthemes.com/total-plus/saas/'),
+    array('Real Estate', 'real-estate.jpg', 'https://demo.hashthemes.com/total-plus/real-estate/'),
+    array('Lens', 'photography.jpg', 'https://demo.hashthemes.com/total-plus/photography/'),
+    array('Scoop', 'ice-cream.jpg', 'https://demo.hashthemes.com/total-plus/ice-cream/'),
+    array('Summit', 'conference.jpg', 'https://demo.hashthemes.com/total-plus/conference/'),
     array('Gym & Fitness', 'gym.jpg', 'https://demo.hashthemes.com/total-plus/gym/'),
     array('Medical Center', 'medical.jpg', 'https://demo.hashthemes.com/total-plus/medical/'),
     array('Law Firm', 'law-firm.jpg', 'https://demo.hashthemes.com/total-plus/law-firm/'),
@@ -48,7 +58,7 @@ $total_pro_demos = array(
     </div>
     <div class="upgrade-box-text">
         <h3><?php echo esc_html__('Upgrade to Total Plus, Risk Free', 'total'); ?></h3>
-        <p><?php echo esc_html__('Total Plus adds an AI Site Builder and Write with AI, 21 home page sections that you can add more than once, 27 Elementor widgets, 8 Gutenberg blocks, 6 header layouts, a mega menu and 11 more one-click demos.', 'total'); ?></p>
+        <p><?php echo esc_html__('Total Plus adds an AI Site Builder and Write with AI, 21 home page sections that you can add more than once, 27 Elementor widgets, 8 Gutenberg blocks, 6 header layouts, a mega menu and 21 more one-click demos.', 'total'); ?></p>
         <p><?php echo esc_html__('Try it with peace of mind: if it is not right for you, ask within 7 days and we will refund your payment.', 'total'); ?></p>
     </div>
     <a class="welcome-btn welcome-btn-pro" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-footer&utm_campaign=total-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'total'); ?><span class="dashicons dashicons-arrow-right-alt" aria-hidden="true"></span></a>

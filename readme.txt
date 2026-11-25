@@ -5,7 +5,7 @@ Total is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.1
-Stable tag: 2.4.2
+Stable tag: 2.4.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.4.3 - Nov 25, 2026 =
+* Ocean, Studio, Weddings, Spa, Garage, Flow, Real Estate, Lens, Scoop and Summit Total Plus demos on the Settings page and in the demo importer - Added
+* Settings page and Customizer upgrade box now say 21 Total Plus demos - Changed
+
 = 2.4.2 - Nov 20, 2026 =
 * Recommended Plugins tab shows each plugin's current icon from WordPress.org instead of an old copy - Fixed
 

@@ -67,7 +67,7 @@
             <p><?php echo esc_html_x('Import a complete demo website, with its content and settings, in a single click.', 'free vs pro content', 'total'); ?></p>
         </td>
         <td><?php echo esc_html_x('7 Demos', 'free vs pro content', 'total'); ?></td>
-        <td><?php echo esc_html_x('11 More Demos', 'free vs pro content', 'total'); ?></td>
+        <td><?php echo esc_html_x('21 More Demos', 'free vs pro content', 'total'); ?></td>
     </tr>
     <tr class="feature-row">
         <td>

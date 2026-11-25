@@ -312,6 +312,76 @@ if (!function_exists('total_premium_demo_config')) {
 
     function total_premium_demo_config($demos) {
         $premium_demos = array(
+            'aquarium' => array(
+                'name' => 'Total Plus - Ocean',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/aquarium.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/aquarium/',
+            ),
+            'architecture' => array(
+                'name' => 'Total Plus - Studio',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/architecture.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/architecture/',
+            ),
+            'wedding' => array(
+                'name' => 'Total Plus - Weddings',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/wedding.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/wedding/',
+            ),
+            'spa-plus' => array(
+                'name' => 'Total Plus - Spa',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/spa-plus.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/spa/',
+            ),
+            'auto-repair' => array(
+                'name' => 'Total Plus - Garage',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/auto-repair.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/auto-repair/',
+            ),
+            'saas' => array(
+                'name' => 'Total Plus - Flow',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/saas.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/saas/',
+            ),
+            'real-estate' => array(
+                'name' => 'Total Plus - Real Estate',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/real-estate.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/real-estate/',
+            ),
+            'photography' => array(
+                'name' => 'Total Plus - Lens',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/photography.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/photography/',
+            ),
+            'ice-cream' => array(
+                'name' => 'Total Plus - Scoop',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/ice-cream.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/ice-cream/',
+            ),
+            'conference' => array(
+                'name' => 'Total Plus - Summit',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
+                'image' => get_template_directory_uri() . '/welcome/css/conference.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/conference/',
+            ),
             'gym' => array(
                 'name' => 'Total Plus - Gym & Fitness',
                 'type' => 'pro',
