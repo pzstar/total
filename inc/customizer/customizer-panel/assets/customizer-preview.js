@@ -551,7 +551,7 @@ jQuery(document).ready(function ($) {
             over = transparent = false;
         } else {
             over = $body.hasClass('ht-preview-has-banner');
-            transparent = over && !!wp.customize('total_header_transparent').get();
+            transparent = $body.hasClass('ht-preview-has-slider') && !!wp.customize('total_header_transparent').get();
         }
 
         $body.toggleClass('ht-header-over', over).toggleClass('ht-transparent-header', transparent);

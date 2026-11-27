@@ -243,7 +243,7 @@ $wp_customize->add_setting('total_header_transparent', array(
 $wp_customize->add_control(new Total_Toggle_Control($wp_customize, 'total_header_transparent', array(
     'section' => 'total_main_header_section',
     'label' => esc_html__('Enable Transparent Header', 'total'),
-    'description' => esc_html__('Applies when the header is over the slider or banner. The header turns solid once the page scrolls.', 'total')
+    'description' => esc_html__('Applies over the home page slider. Over the page title bar the header stays solid, and it turns solid once the page scrolls.', 'total')
 )));
 
 $wp_customize->add_setting('total_transparent_menu_color', array(

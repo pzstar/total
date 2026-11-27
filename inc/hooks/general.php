@@ -54,6 +54,9 @@ if (!function_exists('total_body_classes')) {
         // Lets the Customizer preview recompute the header position without a reload.
         if (is_customize_preview()) {
             $classes[] = $header_state['has_banner'] ? 'ht-preview-has-banner' : 'ht-preview-no-banner';
+            if ($header_state['has_slider']) {
+                $classes[] = 'ht-preview-has-slider';
+            }
             if ($header_state['page_setting']) {
                 $classes[] = 'ht-preview-transparent-' . $header_state['page_setting'];
             }
@@ -102,14 +105,16 @@ if (!function_exists('total_header_state')) {
             $over = $transparent = false;
         } else {
             $over = $has_banner;
-            $transparent = $has_banner && get_theme_mod('total_header_transparent', false);
+            // Transparent only over the slider: the title bar is light, so a transparent header (with a light menu for the slider) can't be read over it.
+            $transparent = $has_slider && get_theme_mod('total_header_transparent', false);
         }
 
         return array(
             'over' => $over,
             'transparent' => $transparent,
             'page_setting' => $page_setting,
-            'has_banner' => $has_banner
+            'has_banner' => $has_banner,
+            'has_slider' => $has_slider
         );
     }
 

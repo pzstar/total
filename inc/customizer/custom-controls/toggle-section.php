@@ -69,7 +69,7 @@ if (class_exists('WP_Customize_Section')) {
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_script('ht--toggle-section', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/toggle-section.js', array('jquery'), TOTAL_VERSION, true);
+            wp_enqueue_script('ht--toggle-section', TOTAL_CUSTOMIZER_URL . 'custom-controls/assets/js/toggle-section.js', array('jquery', 'customize-controls'), TOTAL_VERSION, true);
         }
 
         /**

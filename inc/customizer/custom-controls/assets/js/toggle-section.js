@@ -1,22 +1,31 @@
-jQuery(document).ready(function ($) {
-    $("body").on("click", ".ht--switch-section.ht--switch", function () {
-        var controlName = $(this).siblings("input").data("customize-setting-link");
-        var controlValue = $(this).siblings("input").val();
-        var iconClass = "dashicons-visibility";
-        if (controlValue === "off") {
-            iconClass = "dashicons-hidden";
-            $("[data-control=" + controlName + "]")
-                .parent()
-                .addClass("ht--section-hidden")
-                .removeClass("ht--section-visible");
-        } else {
-            $("[data-control=" + controlName + "]")
-                .parent()
-                .addClass("ht--section-visible")
-                .removeClass("ht--section-hidden");
-        }
-        $("[data-control=" + controlName + "]")
-            .children()
-            .attr("class", "dashicons " + iconClass);
+/* Keeps each home section's eye icon in the section list in step with its Enable Section switch. */
+(function ($, api) {
+    function updateSection(section, value) {
+        var hidden = 'on' === value;
+
+        section.headContainer.find('.accordion-section-title')
+            .toggleClass('ht--section-hidden', hidden)
+            .toggleClass('ht--section-visible', !hidden);
+
+        section.headContainer.find('.ht--toggle-section .dashicons')
+            .attr('class', 'dashicons ' + (hidden ? 'dashicons-hidden' : 'dashicons-visibility'));
+    }
+
+    // Follow the setting itself, so the icon is right however the value changes.
+    api.bind('ready', function () {
+        api.section.each(function (section) {
+            var hidingControl = section.params.hiding_control;
+
+            if (!hidingControl) {
+                return;
+            }
+
+            api(hidingControl, function (setting) {
+                updateSection(section, setting.get());
+                setting.bind(function (value) {
+                    updateSection(section, value);
+                });
+            });
+        });
     });
-});
+})(jQuery, wp.customize);
